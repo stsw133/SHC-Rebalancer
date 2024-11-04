@@ -1,0 +1,76 @@
+{
+	"Buildings":
+	[
+		
+	],
+	"Resources":
+	[
+		{ "Description": "Wood buy",									"Address": "0x217358", "Size": 4, "Value": 20 },
+		{ "Description": "Wood sell",									"Address": "0x2173C0", "Size": 4, "Value": 5 },
+		
+		{ "Description": "Hop buy",										"Address": "0x21735C", "Size": 4, "Value": 75 },
+		{ "Description": "Hop sell",									"Address": "0x2173C4", "Size": 4, "Value": 40 },
+		
+		{ "Description": "Stone buy",									"Address": "0x217360", "Size": 4, "Value": 70 },
+		{ "Description": "Stone sell",									"Address": "0x2173C8", "Size": 4, "Value": 35 },
+		
+		{ "Description": "Iron buy",									"Address": "0x217368", "Size": 4, "Value": 225 },
+		{ "Description": "Iron sell",									"Address": "0x2173D0", "Size": 4, "Value": 115 },
+		
+		{ "Description": "Pitch buy",									"Address": "0x21736C", "Size": 4, "Value": 100 },
+		{ "Description": "Pitch sell",									"Address": "0x2173D4", "Size": 4, "Value": 50 },
+		
+		{ "Description": "Wheat buy",									"Address": "0x217374", "Size": 4, "Value": 115 },
+		{ "Description": "Wheat sell",									"Address": "0x2173DC", "Size": 4, "Value": 40 },
+		
+		{ "Description": "Bread buy",									"Address": "0x217378", "Size": 4, "Value": 40 },
+		{ "Description": "Bread sell",									"Address": "0x2173E0", "Size": 4, "Value": 20 },
+		
+		{ "Description": "Cheese buy",									"Address": "0x21737C", "Size": 4, "Value": 40 },
+		{ "Description": "Cheese sell",									"Address": "0x2173E4", "Size": 4, "Value": 20 },
+		
+		{ "Description": "Meat buy",									"Address": "0x217380", "Size": 4, "Value": 40 },
+		{ "Description": "Meat sell",									"Address": "0x2173E8", "Size": 4, "Value": 20 },
+		
+		{ "Description": "Apple buy",									"Address": "0x217384", "Size": 4, "Value": 40 },
+		{ "Description": "Apple sell",									"Address": "0x2173EC", "Size": 4, "Value": 20 },
+		
+		{ "Description": "Beer buy",									"Address": "0x217388", "Size": 4, "Value": 100 },
+		{ "Description": "Beer sell",									"Address": "0x2173F0", "Size": 4, "Value": 50 },
+		
+		{ "Description": "Flour buy",									"Address": "0x217390", "Size": 4, "Value": 160 },
+		{ "Description": "Flour sell",									"Address": "0x2173F8", "Size": 4, "Value": 50 },
+		
+		{ "Description": "Bow buy",										"Address": "0x217394", "Size": 4, "Value": 155 },
+		{ "Description": "Bow sell",									"Address": "0x2173FC", "Size": 4, "Value": 75 },
+		
+		{ "Description": "Crossbow buy",								"Address": "0x217398", "Size": 4, "Value": 290 },
+		{ "Description": "Crossbow sell",								"Address": "0x217400", "Size": 4, "Value": 150 },
+		
+		{ "Description": "Spear buy",									"Address": "0x21739C", "Size": 4, "Value": 100 },
+		{ "Description": "Spear sell",									"Address": "0x217404", "Size": 4, "Value": 50 },
+		
+		{ "Description": "Pike buy",									"Address": "0x2173A0", "Size": 4, "Value": 180 },
+		{ "Description": "Pike sell",									"Address": "0x217408", "Size": 4, "Value": 90 },
+		
+		{ "Description": "Mace buy",									"Address": "0x2173A4", "Size": 4, "Value": 290 },
+		{ "Description": "Mace sell",									"Address": "0x21740C", "Size": 4, "Value": 150 },
+		
+		{ "Description": "Sword buy",									"Address": "0x2173A8", "Size": 4, "Value": 290 },
+		{ "Description": "Sword sell",									"Address": "0x217410", "Size": 4, "Value": 150 },
+		
+		{ "Description": "Leather buy",									"Address": "0x2173AC", "Size": 4, "Value": 100 },
+		{ "Description": "Leather sell",								"Address": "0x217414", "Size": 4, "Value": 50 },
+		
+		{ "Description": "Armor buy",									"Address": "0x2173B0", "Size": 4, "Value": 290 },
+		{ "Description": "Armor sell",									"Address": "0x217418", "Size": 4, "Value": 150 },
+	],
+	"Units":
+	[
+		{ "Description": "EuropArcher cost",							"Address": "0x6B92A4", "Size": 4, "Value": 12 },
+	],
+	"Other":
+	[
+		
+	]
+}
