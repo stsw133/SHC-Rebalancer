@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows;
 
-namespace S1CrusaderRebalancer;
+namespace SHC_Rebalancer;
 public partial class App : StswApp
 {
     public readonly static string ConfigsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", "rebalance");

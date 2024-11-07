@@ -1,4 +1,4 @@
-﻿namespace S1CrusaderRebalancer;
+﻿namespace SHC_Rebalancer;
 public enum StrongholdType
 {
     Stronghold,

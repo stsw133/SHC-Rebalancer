@@ -1,4 +1,4 @@
-﻿namespace S1CrusaderRebalancer {
+﻿namespace SHC_Rebalancer {
     
     
     // This class allows you to handle specific events on the settings class:

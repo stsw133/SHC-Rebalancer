@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace S1CrusaderRebalancer {
+namespace SHC_Rebalancer {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

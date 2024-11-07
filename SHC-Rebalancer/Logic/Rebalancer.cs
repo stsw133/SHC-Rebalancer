@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text.Json;
 
-namespace S1CrusaderRebalancer;
+namespace SHC_Rebalancer;
 internal class Rebalancer
 {
     /// Rebalance

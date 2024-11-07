@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace S1CrusaderRebalancer;
+namespace SHC_Rebalancer;
 public class MainContext : StswObservableObject
 {
     public StswCancellableAsyncCommand InstallCommand { get; }

@@ -1,4 +1,4 @@
-﻿namespace S1CrusaderRebalancer;
+﻿namespace SHC_Rebalancer;
 public class RebalanceHeaderModel
 {
     public IEnumerable<RebalanceItemModel> Buildings { get; set; } = [];

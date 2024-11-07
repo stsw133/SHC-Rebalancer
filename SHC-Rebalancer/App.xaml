@@ -1,7 +1,7 @@
-﻿<se:StswApp x:Class="S1CrusaderRebalancer.App"
+﻿<se:StswApp x:Class="SHC_Rebalancer.App"
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:local="clr-namespace:S1CrusaderRebalancer"
+            xmlns:local="clr-namespace:SHC_Rebalancer"
             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
             StartupUri="Modules/MainWindow.xaml">
     <se:StswApp.Resources>

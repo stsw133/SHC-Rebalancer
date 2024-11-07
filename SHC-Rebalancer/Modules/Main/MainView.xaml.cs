@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace S1CrusaderRebalancer;
+namespace SHC_Rebalancer;
 public partial class MainView : UserControl
 {
     public MainView()
