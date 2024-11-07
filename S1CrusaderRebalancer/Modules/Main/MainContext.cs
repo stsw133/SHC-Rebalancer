@@ -3,12 +3,14 @@
 namespace S1CrusaderRebalancer;
 public class MainContext : StswObservableObject
 {
-    public StswAsyncCommand InstallCommand { get; }
+    public StswCancellableAsyncCommand InstallCommand { get; }
+    public StswAsyncCommand ConfigFolderOpenCommand { get; }
     public StswAsyncCommand<StrongholdType> EditConfigCommand { get; }
 
     public MainContext()
     {
         InstallCommand = new(Install);
+        ConfigFolderOpenCommand = new(ConfigFolderOpen);
         EditConfigCommand = new(EditConfig);
 
         var configs = new Dictionary<StrongholdType, IEnumerable<string>>();
@@ -18,13 +20,30 @@ public class MainContext : StswObservableObject
     }
 
     /// Install
-    public async Task Install()
+    public async Task Install(CancellationToken token)
     {
         try
         {
+            InstallState = StswProgressState.Running;
+
             Rebalancer.Rebalance(Settings.Default.StrongholdPath, $"{App.ConfigsPath}\\{StrongholdType.Stronghold}\\{Settings.Default.StrongholdConfig}.json");
             Rebalancer.Rebalance(Settings.Default.CrusaderPath, $"{App.ConfigsPath}\\{StrongholdType.Crusader}\\{Settings.Default.CrusaderConfig}.json");
             Rebalancer.Rebalance(Settings.Default.ExtremePath, $"{App.ConfigsPath}\\{StrongholdType.Extreme}\\{Settings.Default.ExtremeConfig}.json");
+
+            InstallState = StswProgressState.Finished;
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, "Error", true);
+        }
+    }
+
+    /// ConfigFolderOpen
+    public async Task ConfigFolderOpen()
+    {
+        try
+        {
+            StswFn.OpenFile(App.ConfigsPath);
         }
         catch (Exception ex)
         {
@@ -63,4 +82,12 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _configs, value);
     }
     private Dictionary<StrongholdType, IEnumerable<string>> _configs = [];
+
+    /// InstallState
+    public StswProgressState InstallState
+    {
+        get => _installState;
+        set => SetProperty(ref _installState, value);
+    }
+    private StswProgressState _installState;
 }
