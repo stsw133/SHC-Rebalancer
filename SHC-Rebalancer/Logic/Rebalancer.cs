@@ -17,59 +17,75 @@ internal class Rebalancer
         using var reader = new BinaryReader(fs);
         using var writer = new BinaryWriter(fs);
 
-        foreach (var item in items.Buildings)
-            ProcessItem(fs, reader, writer, item);
-
-        foreach (var item in items.Resources)
-            ProcessItem(fs, reader, writer, item);
-
-        foreach (var item in items.Units)
-            ProcessItem(fs, reader, writer, item);
-
-        foreach (var item in items.Other)
-            ProcessItem(fs, reader, writer, item);
+        foreach (var category in new[] { items.Buildings, items.Resources, items.Units, items.Other })
+            ProcessItems(fs, reader, writer, category);
     }
 
-    /// ProcessItem
-    private static void ProcessItem(FileStream fs, BinaryReader reader, BinaryWriter writer, RebalanceItemModel item)
+    /// ProcessItems
+    private static void ProcessItems(FileStream fs, BinaryReader reader, BinaryWriter writer, IEnumerable<RebalanceItemModel> items)
     {
-        if (item.Size == 4)
+        foreach (var item in items)
         {
-            var newValue = Convert.ToInt32(item.Value);
-            fs.Seek(Convert.ToInt64(item.Address, 16), SeekOrigin.Begin);
+            var address = Convert.ToInt32(item.Address, 16);
+            fs.Seek(address, SeekOrigin.Begin);
 
-            var oldValue = reader.ReadInt32();
-            if (oldValue != newValue)
+            if (item.Value is not JsonElement jsonValue)
+                continue;
+
+            if (jsonValue.ValueKind == JsonValueKind.Array)
             {
-                Console.WriteLine($"Address: {item.Address}, old value: {oldValue}, new value: {newValue}, description: {item.Description}");
-
-                fs.Seek(Convert.ToInt64(item.Address, 16), SeekOrigin.Begin);
-                writer.Write(newValue);
+                var newValue = jsonValue.EnumerateArray().Select(x => (byte)x.GetInt32()).ToArray();
+                var oldValue = reader.ReadBytes(newValue.Length);
+                UpdateIfDifferent(writer, address, newValue, oldValue, item.Description);
+            }
+            else if (jsonValue.ValueKind == JsonValueKind.Number && jsonValue.GetInt32() is int intValue)
+            {
+                if (item.Size == 1)
+                {
+                    var newValue = Convert.ToByte(intValue);
+                    var oldValue = reader.ReadByte();
+                    UpdateIfDifferent(writer, address, newValue, oldValue, item.Description);
+                }
+                if (item.Size == 4)
+                {
+                    var newValue = Convert.ToInt32(intValue);
+                    var oldValue = reader.ReadInt32();
+                    UpdateIfDifferent(writer, address, newValue, oldValue, item.Description);
+                }
             }
         }
     }
-
-    /// IntToByteArray
-    private static byte[] IntToByteArray(int value, int size)
+    
+    /// UpdateIfDifferent
+    private static void UpdateIfDifferent(BinaryWriter writer, int address, byte[] newValue, byte[] oldValue, string? description)
     {
-        var bytes = BitConverter.GetBytes(value);
-
-        if (BitConverter.IsLittleEndian)
-            Array.Reverse(bytes);
-
-        if (size < bytes.Length)
+        if (!newValue.SequenceEqual(oldValue))
         {
-            var truncated = new byte[size];
-            Array.Copy(bytes, bytes.Length - size, truncated, 0, size);
-            return truncated;
+            Console.WriteLine($"Address: {address:X}, old bytes: {BitConverter.ToString(oldValue)}, new bytes: {BitConverter.ToString(newValue)}, description: {description}");
+            writer.Seek(address, SeekOrigin.Begin);
+            writer.Write(newValue);
         }
-        else if (size > bytes.Length)
+    }
+    
+    /// UpdateIfDifferent
+    private static void UpdateIfDifferent(BinaryWriter writer, int address, byte newValue, byte oldValue, string? description)
+    {
+        if (oldValue != newValue)
         {
-            byte[] padded = new byte[size];
-            Array.Copy(bytes, 0, padded, size - bytes.Length, bytes.Length);
-            return padded;
+            Console.WriteLine($"Address: {address:X}, old value: {oldValue}, new value: {newValue}, description: {description}");
+            writer.Seek(address, SeekOrigin.Begin);
+            writer.Write(newValue);
         }
+    }
 
-        return bytes;
+    /// UpdateIfDifferent
+    private static void UpdateIfDifferent(BinaryWriter writer, int address, int newValue, int oldValue, string? description)
+    {
+        if (oldValue != newValue)
+        {
+            Console.WriteLine($"Address: {address:X}, old value: {oldValue}, new value: {newValue}, description: {description}");
+            writer.Seek(address, SeekOrigin.Begin);
+            writer.Write(newValue);
+        }
     }
 }

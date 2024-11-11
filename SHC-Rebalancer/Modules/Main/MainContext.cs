@@ -13,10 +13,7 @@ public class MainContext : StswObservableObject
         ConfigFolderOpenCommand = new(ConfigFolderOpen);
         EditConfigCommand = new(EditConfig);
 
-        var configs = new Dictionary<StrongholdType, IEnumerable<string>>();
-        foreach (StrongholdType value in Enum.GetValues(typeof(StrongholdType)))
-            configs.Add(value, Directory.GetFiles($"{App.ConfigsPath}\\{value.ToString().ToLower()}", "*.json").Select(x => Path.GetFileNameWithoutExtension(x)));
-        Configs = configs;
+        Configs = LoadConfigs();
     }
 
     /// Install
@@ -34,6 +31,7 @@ public class MainContext : StswObservableObject
         }
         catch (Exception ex)
         {
+            InstallState = StswProgressState.Error;
             await StswMessageDialog.Show(ex, "Error", true);
         }
     }
@@ -56,23 +54,36 @@ public class MainContext : StswObservableObject
     {
         try
         {
-            await Task.Run(() =>
+            var configPath = GetConfigPath(type, type switch
             {
-                var configPath = type switch
-                {
-                    StrongholdType.Stronghold => $"{App.ConfigsPath}\\{type}\\{Settings.Default.StrongholdConfig}.json",
-                    StrongholdType.Crusader => $"{App.ConfigsPath}\\{type}\\{Settings.Default.CrusaderConfig}.json",
-                    StrongholdType.Extreme => $"{App.ConfigsPath}\\{type}\\{Settings.Default.ExtremeConfig}.json",
-                    _ => throw new NotImplementedException()
-                };
-                if (File.Exists(configPath))
-                    StswFn.OpenFile(configPath);
+                StrongholdType.Stronghold => Settings.Default.StrongholdConfig,
+                StrongholdType.Crusader => Settings.Default.CrusaderConfig,
+                StrongholdType.Extreme => Settings.Default.ExtremeConfig,
+                _ => throw new NotImplementedException()
             });
+
+            if (File.Exists(configPath))
+                StswFn.OpenFile(configPath);
         }
         catch (Exception ex)
         {
             await StswMessageDialog.Show(ex, "Error", true);
         }
+    }
+
+    /// GetConfigPath
+    private string GetConfigPath(StrongholdType type, string configName) => $"{App.ConfigsPath}\\{type}\\{configName}.json";
+
+    /// LoadConfigs
+    private Dictionary<StrongholdType, IEnumerable<string>> LoadConfigs()
+    {
+        var configs = new Dictionary<StrongholdType, IEnumerable<string>>();
+        foreach (StrongholdType value in Enum.GetValues(typeof(StrongholdType)))
+        {
+            var path = $"{App.ConfigsPath}\\{value.ToString().ToLower()}";
+            configs[value] = Directory.GetFiles(path, "*.json").Select(Path.GetFileNameWithoutExtension)!;
+        }
+        return configs;
     }
 
     /// Configs
