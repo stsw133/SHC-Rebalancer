@@ -6,36 +6,36 @@
 		{ "Description": "Buildings Cost",								"Address": "0x1C21D0", "Size": 4 },
 		
 		{ "Description": "Resources Buy",								"Address": "0x217350", "Size": 4 },
-		{ "Description": "Resources Sell",								"Address": "0x2173B8", "Size": 4 },
+		{ "Description": "Resources Sell",								"Address": "0x217228", "Size": 4 },
 		
-		{ "Description": "Units Speed",									"Address": "0x74E730", "Size": 4 },
-		{ "Description": "Units Health",								"Address": "0x74EAF0", "Size": 4 },
-		{ "Description": "Units DamageFromBow",							"Address": "0x74EC30", "Size": 4 },
-		{ "Description": "Units DamageFromCrossbow",					"Address": "0x74EEB0", "Size": 4 },
-		{ "Description": "Units DamageFromSling",						"Address": "0x74ED70", "Size": 4 },
-		{ "Description": "Units MeleeDamage",							"Address": "0x74EFF0", "Size": 4 },
+		{ "Description": "Units Speed",									"Address": "0x74E5A0", "Size": 4 },
+		{ "Description": "Units Health",								"Address": "0x74E960", "Size": 4 },
+		{ "Description": "Units DamageFromBow",							"Address": "0x74EAA0", "Size": 4 },
+		{ "Description": "Units DamageFromCrossbow",					"Address": "0x74ED20", "Size": 4 },
+		{ "Description": "Units DamageFromSling",						"Address": "0x74EBE0", "Size": 4 },
+		{ "Description": "Units MeleeDamage",							"Address": "0x74EE60", "Size": 4 },
 	],
 	"Buildings":
 	{
 		"Barracks":
 		{
 			"Health": 500,
-			"Cost": [0, 15, 0, 0, 0],
+			"Cost": [0, 10, 0, 0, 0],
 		},
 		"MercenaryPost":
 		{
-			"Health": 300,
+			"Health": 200,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Armory":
 		{
-			"Health": 500,
+			"Health": 300,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"LookoutTower":
 		{
-			"Health": 250,
-			"Cost": [0, 10, 0, 0, 0],
+			"Health": 500,
+			"Cost": [0, 15, 0, 0, 0],
 		},
 		"PerimeterTurret":
 		{
@@ -44,38 +44,38 @@
 		},
 		"DefenseTurret":
 		{
-			"Health": 1200,
-			"Cost": [0, 15, 0, 0, 0],
+			"Health": 1750,
+			"Cost": [0, 20, 0, 0, 0],
 		},
 		"SquareTower":
-		{
-			"Health": 1600,
-			"Cost": [0, 35, 0, 0, 0],
-		},
-		"RoundTower":
 		{
 			"Health": 2000,
 			"Cost": [0, 40, 0, 0, 0],
 		},
+		"RoundTower":
+		{
+			"Health": 3000,
+			"Cost": [0, 50, 0, 0, 0],
+		},
 		"EngineersGuild":
 		{
-			"Health": 500,
+			"Health": 300,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"TunnelersGuild":
 		{
-			"Health": 500,
+			"Health": 300,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"Stables":
 		{
-			"Health": 300,
+			"Health": 600,
 			"Cost": [20, 0, 0, 0, 400],
 		},
 		"OilSmelter":
 		{
-			"Health": 300,
-			"Cost": [0, 0, 10, 0, 100],
+			"Health": 500,
+			"Cost": [0, 0, 5, 0, 0],
 		},
 		"SmallGatehouse":
 		{
@@ -84,18 +84,18 @@
 		},
 		"LargeGatehouse":
 		{
-			"Health": 2000,
-			"Cost": [0, 20, 0, 0, 0],
+			"Health": 3000,
+			"Cost": [0, 30, 0, 0, 0],
 		},
 		"Drawbridge":
 		{
-			"Health": 0,
+			"Health": 100,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"CagedWarDogs":
 		{
 			"Health": 100,
-			"Cost": [10, 0, 0, 0, 100],
+			"Cost": [0, 0, 0, 0, 100],
 		},
 		"PitchDitch":
 		{
@@ -105,7 +105,7 @@
 		"KillingPits":
 		{
 			"Health": 0,
-			"Cost": [6, 0, 0, 0, 0],
+			"Cost": [5, 0, 0, 0, 0],
 		},
 		"BrazierMoatFlags":
 		{
@@ -119,37 +119,37 @@
 		},
 		"WoodcuttersHut":
 		{
-			"Health": 100,
+			"Health": 50,
 			"Cost": [3, 0, 0, 0, 0],
 		},
 		"Quarry":
 		{
-			"Health": 300,
+			"Health": 200,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"OxTether":
 		{
-			"Health": 100,
+			"Health": 50,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"IronMine":
 		{
-			"Health": 100,
+			"Health": 200,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"PitchRig":
 		{
-			"Health": 100,
+			"Health": 200,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"Marketplace":
 		{
-			"Health": 300,
-			"Cost": [5, 0, 0, 0, 0],
+			"Health": 50,
+			"Cost": [0, 0, 0, 0, 0],
 		},
 		"HuntersHut":
 		{
-			"Health": 100,
+			"Health": 50,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"DairyFarm":
@@ -159,122 +159,122 @@
 		},
 		"AppleOrchard":
 		{
-			"Health": 100,
+			"Health": 50,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"WheatFarm":
 		{
-			"Health": 100,
+			"Health": 150,
 			"Cost": [15, 0, 0, 0, 0],
 		},
 		"HopFarm":
 		{
-			"Health": 100,
+			"Health": 150,
 			"Cost": [15, 0, 0, 0, 0],
 		},
 		"Hovel":
 		{
-			"Health": 100,
-			"Cost": [6, 0, 0, 0, 0],
+			"Health": 50,
+			"Cost": [5, 0, 0, 0, 0],
 		},
 		"Chapel":
 		{
 			"Health": 400,
-			"Cost": [0, 0, 0, 0, 250],
+			"Cost": [0, 10, 0, 0, 50],
 		},
 		"Church":
 		{
-			"Health": 800,
-			"Cost": [0, 0, 0, 0, 500],
+			"Health": 1200,
+			"Cost": [0, 20, 0, 0, 250],
 		},
 		"Cathedral":
 		{
-			"Health": 1200,
-			"Cost": [0, 0, 0, 0, 1000],
+			"Health": 2000,
+			"Cost": [0, 40, 0, 0, 500],
 		},
 		"Apothecary":
 		{
-			"Health": 300,
-			"Cost": [20, 0, 0, 0, 150],
+			"Health": 400,
+			"Cost": [20, 0, 0, 0, 200],
 		},
 		"Well":
 		{
-			"Health": 300,
-			"Cost": [0, 0, 0, 0, 30],
+			"Health": 150,
+			"Cost": [0, 2, 0, 0, 0],
 		},
 		"WaterPot":
 		{
-			"Health": 200,
+			"Health": 500,
 			"Cost": [0, 0, 0, 0, 60],
 		},
 		"Gallows":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Cesspit":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 40],
 		},
 		"Stocks":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 45],
 		},
 		"BurningStake":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 45],
 		},
 		"Dungeon":
 		{
-			"Health": 100,
-			"Cost": [0, 0, 0, 0, 40],
+			"Health": 75,
+			"Cost": [0, 0, 0, 0, 45],
 		},
 		"StretchingRack":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 45],
 		},
 		"Gibbet":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 50],
 		},
 		"ChoppingBlock":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 45],
 		},
 		"DunkingStool":
 		{
-			"Health": 100,
-			"Cost": [0, 0, 0, 0, 40],
+			"Health": 75,
+			"Cost": [0, 0, 0, 0, 45],
 		},
 		"Maypole":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 25],
 		},
 		"DancingBear":
 		{
-			"Health": 100,
-			"Cost": [0, 0, 0, 0, 20],
+			"Health": 75,
+			"Cost": [0, 0, 0, 0, 25],
 		},
 		"Garden":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 30],
 		},
 		"Statue":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 30],
 		},
 		"Shrine":
 		{
-			"Health": 100,
+			"Health": 75,
 			"Cost": [0, 0, 0, 0, 30],
 		},
 		"Fletcher":
@@ -300,7 +300,7 @@
 		"Armourer":
 		{
 			"Health": 300,
-			"Cost": [20, 0, 0, 0, 100],
+			"Cost": [20, 0, 0, 0, 200],
 		},
 		"Granary":
 		{
@@ -309,17 +309,17 @@
 		},
 		"Bakery":
 		{
-			"Health": 300,
+			"Health": 100,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Brewery":
 		{
-			"Health": 300,
+			"Health": 100,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Mill":
 		{
-			"Health": 300,
+			"Health": 200,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"Inn":
@@ -329,43 +329,43 @@
 		},
 		"Catapult":
 		{
-			"Health": 100,
-			"Cost": [0, 0, 0, 0, 150],
+			"Health": 200,
+			"Cost": [0, 10, 0, 0, 150],
 		},
 		"Trebuchet":
 		{
-			"Health": 100,
-			"Cost": [0, 0, 0, 0, 150],
+			"Health": 200,
+			"Cost": [0, 10, 0, 0, 200],
 		},
 		"SiegeTower":
 		{
-			"Health": 100,
-			"Cost": [0, 0, 0, 0, 150],
+			"Health": 200,
+			"Cost": [0, 0, 0, 0, 200],
 		},
 		"BatteringRam":
 		{
-			"Health": 100,
-			"Cost": [0, 0, 0, 0, 150],
+			"Health": 200,
+			"Cost": [0, 0, 0, 0, 200],
 		},
 		"Shield":
 		{
-			"Health": 100,
-			"Cost": [0, 0, 0, 0, 5],
+			"Health": 200,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"FireBallista":
 		{
-			"Health": 100,
+			"Health": 200,
 			"Cost": [0, 0, 0, 0, 150],
 		},
 		"TowerBallista":
 		{
 			"Health": 100,
-			"Cost": [0, 0, 0, 0, 50],
+			"Cost": [0, 0, 0, 0, 100],
 		},
 		"Mangonel":
 		{
 			"Health": 100,
-			"Cost": [0, 0, 0, 0, 50],
+			"Cost": [0, 0, 0, 0, 100],
 		},
 	},
 	"Resources":
@@ -377,98 +377,98 @@
 		},
 		"Hop":
 		{
-			"Buy": 75,
-			"Sell": 40,
+			"Buy": 100,
+			"Sell": 20,
 		},
 		"Stone":
 		{
-			"Buy": 70,
-			"Sell": 35,
+			"Buy": 60,
+			"Sell": 15,
 		},
 		"Iron":
 		{
-			"Buy": 225,
-			"Sell": 115,
+			"Buy": 200,
+			"Sell": 50,
 		},
 		"Pitch":
 		{
-			"Buy": 100,
-			"Sell": 50,
+			"Buy": 120,
+			"Sell": 30,
 		},
 		"Wheat":
 		{
-			"Buy": 115,
-			"Sell": 40,
+			"Buy": 100,
+			"Sell": 20,
 		},
 		"Bread":
 		{
 			"Buy": 40,
-			"Sell": 20,
+			"Sell": 10,
 		},
 		"Cheese":
 		{
 			"Buy": 40,
-			"Sell": 20,
+			"Sell": 10,
 		},
 		"Meat":
 		{
 			"Buy": 40,
-			"Sell": 20,
+			"Sell": 10,
 		},
 		"Apple":
 		{
 			"Buy": 40,
-			"Sell": 20,
+			"Sell": 10,
 		},
 		"Beer":
 		{
-			"Buy": 100,
-			"Sell": 50,
+			"Buy": 150,
+			"Sell": 30,
 		},
 		"Flour":
 		{
-			"Buy": 160,
-			"Sell": 50,
+			"Buy": 150,
+			"Sell": 30,
 		},
 		"Bow":
 		{
-			"Buy": 155,
-			"Sell": 75,
+			"Buy": 150,
+			"Sell": 30,
 		},
 		"Crossbow":
 		{
-			"Buy": 290,
-			"Sell": 150,
+			"Buy": 300,
+			"Sell": 60,
 		},
 		"Spear":
 		{
 			"Buy": 100,
-			"Sell": 50,
+			"Sell": 20,
 		},
 		"Pike":
 		{
-			"Buy": 180,
-			"Sell": 90,
+			"Buy": 200,
+			"Sell": 40,
 		},
 		"Mace":
 		{
-			"Buy": 290,
-			"Sell": 150,
+			"Buy": 300,
+			"Sell": 60,
 		},
 		"Sword":
 		{
-			"Buy": 290,
-			"Sell": 150,
+			"Buy": 300,
+			"Sell": 60,
 		},
 		"Leather":
 		{
-			"Buy": 125,
-			"Sell": 60,
+			"Buy": 150,
+			"Sell": 30,
 		},
 		"Armor":
 		{
-			"Buy": 290,
-			"Sell": 150,
+			"Buy": 300,
+			"Sell": 60,
 		},
 	},
 	"Units":
@@ -584,7 +584,7 @@
 		},
 		"Swordsman":
 		{
-			"Speed": 4,
+			"Speed": 3,
 			"Health": 25000,
 			"DamageFromBow": 150,
 			"DamageFromCrossbow": 2200,
@@ -750,7 +750,7 @@
 		},
 		"ArabSwordsman":
 		{
-			"Speed": 3,
+			"Speed": 2,
 			"Health": 20000,
 			"DamageFromBow": 300,
 			"DamageFromCrossbow": 3500,
@@ -950,7 +950,7 @@
 		},
 		"Shield":
 		{
-			"Speed": 1,
+			"Speed": 4,
 			"Health": 10000,
 			"DamageFromBow": 50,
 			"DamageFromCrossbow": 150,
@@ -1718,11 +1718,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
-			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
-			},
+			"MeleeDamage": 0,
 		},
 		"Unknown79":
 		{
@@ -1731,38 +1727,30 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
-			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
-			},
+			"MeleeDamage": 0,
 		},
 	},
 	"Other":
 	[
-		{ "Description": "EuropArcher cost",							"Address": "0x6B92A4", "Size": 4, "Value": 12 },
-		{ "Description": "Spearman cost",								"Address": "0x6B92AC", "Size": 4, "Value": 8 },
-		{ "Description": "Maceman cost",								"Address": "0x6B92B4", "Size": 4, "Value": 20 },
-		{ "Description": "Crossbowman cost",							"Address": "0x6B92A8", "Size": 4, "Value": 20 },
-		{ "Description": "Pikeman cost",								"Address": "0x6B92B0", "Size": 4, "Value": 20 },
-		{ "Description": "Swordsman cost",								"Address": "0x6B92B8", "Size": 4, "Value": 40 },
-		{ "Description": "Knight cost",									"Address": "0x6B92BC", "Size": 4, "Value": 40 },
-		{ "Description": "ArabArcher display cost",						"Address": "0x6B92CC", "Size": 4, "Value": 75 },
-		{ "Description": "ArabArcher offset cost",						"Address": "0x12F06D", "Size": 1, "Value": 5 },
-		{ "Description": "Slave display cost",							"Address": "0x6B92D0", "Size": 4, "Value": 5 },
-		{ "Description": "Slave offset cost",							"Address": "0x12F077", "Size": 1, "Value": 190 },
-		{ "Description": "Slinger display cost",						"Address": "0x6B92D4", "Size": 4, "Value": 12 },
-		{ "Description": "Slinger offset cost",							"Address": "0x12F081", "Size": 1, "Value": 196 },
-		{ "Description": "Assassin display cost",						"Address": "0x6B92D8", "Size": 4, "Value": 60 },
-		{ "Description": "Assassin offset cost",						"Address": "0x12F08B", "Size": 1, "Value": 243 },
-		{ "Description": "HorseArcher display cost",					"Address": "0x6B92DC", "Size": 4, "Value": 80 },
-		{ "Description": "HorseArcher offset cost",						"Address": "0x12F095", "Size": 1, "Value": 6 },
-		{ "Description": "ArabSwordsman display cost",					"Address": "0x6B92E0", "Size": 4, "Value": 80 },
-		{ "Description": "ArabSwordsman offset cost",					"Address": "0x12F09F", "Size": 1, "Value": 5 },
-		{ "Description": "Firethrower display cost",					"Address": "0x6B92E4", "Size": 4, "Value": 100 },
-		{ "Description": "Tunneler & Engineer display cost",			"Address": "0x0F601B", "Size": 1, "Value": 30 },
-		{ "Description": "Tunneler offset cost",						"Address": "0x12F04F", "Size": 1, "Value": 25 },
-		{ "Description": "Ladderman display cost",						"Address": "0x0F6022", "Size": 1, "Value": 4 },
-		{ "Description": "Ladderman offset cost",						"Address": "0x12F059", "Size": 1, "Value": 231 },
+		{ "Description": "EuropArcher cost",							"Address": "0x6B9114", "Size": 4, "Value": 10 },
+		{ "Description": "Spearman cost",								"Address": "0x6B911C", "Size": 4, "Value": 10 },
+		{ "Description": "Maceman cost",								"Address": "0x6B9124", "Size": 4, "Value": 30 },
+		{ "Description": "Crossbowman cost",							"Address": "0x6B9118", "Size": 4, "Value": 30 },
+		{ "Description": "Pikeman cost",								"Address": "0x6B9120", "Size": 4, "Value": 30 },
+		{ "Description": "Swordsman cost",								"Address": "0x6B9128", "Size": 4, "Value": 40 },
+		{ "Description": "Knight cost",									"Address": "0x6B912C", "Size": 4, "Value": 50 },
+		{ "Description": "ArabArcher display cost",						"Address": "0x6B913C", "Size": 4, "Value": 60 },
+		{ "Description": "ArabArcher offset cost",						"Address": "0x12EC4D", "Size": 1, "Value": 246 },
+		{ "Description": "Slave display cost",							"Address": "0x6B9140", "Size": 4, "Value": 5 },
+		{ "Description": "Slave offset cost",							"Address": "0x12EC57", "Size": 1, "Value": 190 },
+		{ "Description": "Slinger display cost",						"Address": "0x6B9144", "Size": 4, "Value": 15 },
+		{ "Description": "Slinger offset cost",							"Address": "0x12EC61", "Size": 1, "Value": 199 },
+		{ "Description": "Assassin display cost",						"Address": "0x6B9148", "Size": 4, "Value": 60 },
+		{ "Description": "Assassin offset cost",						"Address": "0x12EC6B", "Size": 1, "Value": 243 },
+		{ "Description": "HorseArcher display cost",					"Address": "0x6B914C", "Size": 4, "Value": 80 },
+		{ "Description": "HorseArcher offset cost",						"Address": "0x12EC75", "Size": 1, "Value": 6 },
+		{ "Description": "ArabSwordsman display cost",					"Address": "0x6B9150", "Size": 4, "Value": 80 },
+		{ "Description": "ArabSwordsman offset cost",					"Address": "0x12EC7F", "Size": 1, "Value": 5 },
+		{ "Description": "Firethrower display cost",					"Address": "0x6B9154", "Size": 4, "Value": 100 },
 	]
 }

@@ -9,7 +9,7 @@ public enum StrongholdType
 
 public enum Building
 {
-    Unknown000,
+    BrazierMoatFlags,
     Hovel,
     Unknown002,
     WoodcuttersHut,
@@ -204,12 +204,12 @@ public enum Unit
     Unknown48,
     Unknown49,
     Unknown50,
-    Unknown51,
+    Cow,
     HunterDog,
     Waterboy,
     Unknown54,
     Lord,
-    Unknown56,
+    Lady,
     Jester,
     SiegeTower,
     BatteringRam,
@@ -219,7 +219,7 @@ public enum Unit
     Unknown63,
     Unknown64,
     Unknown65,
-    Unknown66,
+    FireEater,
     WarDog,
     Unknown68,
     Unknown69,
