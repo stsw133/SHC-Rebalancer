@@ -6,6 +6,7 @@ public class UnitDataModel
     public int? DamageFromBow { get; set; }
     public int? DamageFromCrossbow { get; set; }
     public int? DamageFromSling { get; set; }
+    public bool? CanMeleeDamage { get; set; }
     public int? MeleeDamage { get; set; }
     public Dictionary<string, int> MeleeDamageVs { get; set; } = [];
 }

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="StswExpress" Version="0.12.1" />
+    <PackageReference Include="StswExpress" Version="0.13.0" />
   </ItemGroup>
 
   <ItemGroup>

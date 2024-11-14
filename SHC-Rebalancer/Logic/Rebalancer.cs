@@ -15,7 +15,7 @@ internal class Rebalancer
             return;
 
         var json = File.ReadAllText(configPath);
-        var configData = JsonSerializer.Deserialize<ConfigDataModel>(json, new JsonSerializerOptions { AllowTrailingCommas = true })!;
+        var configData = JsonSerializer.Deserialize<ConfigDataModel>(json, new JsonSerializerOptions { AllowTrailingCommas = true, PropertyNameCaseInsensitive = false })!;
 
         using (_fs = new FileStream(exePath, FileMode.Open, FileAccess.ReadWrite))
         using (_reader = new BinaryReader(_fs))
@@ -52,6 +52,12 @@ internal class Rebalancer
         {
             var address = GetAddress<Building>(baseAddress, key);
             WriteIfDifferent(address, building.Health.Value, baseAddress.Size, $"{key} Health");
+        }
+        /// housing
+        if (building.Housing.HasValue && baseAddresses.TryGetValue("Buildings Housing", out baseAddress))
+        {
+            var address = GetAddress<Building>(baseAddress, key, 4);
+            WriteIfDifferent(address, building.Housing.Value, baseAddress.Size, $"{key} Housing");
         }
         /// cost
         if (building.Cost != null && building.Cost.Length > 0 && baseAddresses.TryGetValue("Buildings Cost", out baseAddress))
@@ -111,6 +117,12 @@ internal class Rebalancer
             var address = GetAddress<Unit>(baseAddress, key);
             WriteIfDifferent(address, unit.DamageFromSling.Value, baseAddress.Size, $"{key} DamageFromSling");
         }
+        /// canMeleeDamage
+        if (unit.CanMeleeDamage.HasValue && baseAddresses.TryGetValue("Units CanMeleeDamage", out baseAddress))
+        {
+            var address = GetAddress<Unit>(baseAddress, key);
+            WriteIfDifferent(address, unit.CanMeleeDamage.Value ? 1 : 0, baseAddress.Size, $"{key} CanMeleeDamage");
+        }
         /// meleeDamage
         var opponents = Enum.GetNames(typeof(Unit));
 
@@ -153,23 +165,34 @@ internal class Rebalancer
             {
                 if (jsonValue.ValueKind == JsonValueKind.Array)
                 {
-                    var newValue = jsonValue.EnumerateArray().Select(x => x.GetInt32()).ToArray();
-                    WriteIfDifferent(address, newValue, item.Size, item.Description);
+                    if (item.Size == 1)
+                    {
+                        var newValue = jsonValue.EnumerateArray().Select(x => x.GetByte()).ToArray();
+                        WriteIfDifferent(address, newValue, item.Size, item.Description);
+                    }
+                    else if (item.Size == 4)
+                    {
+                        var newValue = jsonValue.EnumerateArray().Select(x => x.GetInt32()).ToArray();
+                        WriteIfDifferent(address, newValue, item.Size, item.Description);
+                    }
                 }
                 else if (jsonValue.ValueKind == JsonValueKind.Number && jsonValue.TryGetInt32(out int intValue))
                 {
-                    WriteIfDifferent(address, intValue, item.Size, item.Description);
+                    if (item.Size == 1)
+                        WriteIfDifferent(address, (byte)intValue, item.Size, item.Description);
+                    else if (item.Size == 4)
+                        WriteIfDifferent(address, intValue, item.Size, item.Description);
                 }
             }
         }
     }
 
     /// GetAddress
-    private static int GetAddress<T>(AddressModel baseAddress, string key, int arraySize = 1) where T : Enum
+    private static int GetAddress<T>(AddressModel baseAddress, string key, int skipBy = 1) where T : Enum
     {
         try
         {
-            return Convert.ToInt32(baseAddress.Address, 16) + ((int)Enum.Parse(typeof(T), key) * baseAddress.Size * arraySize);
+            return Convert.ToInt32(baseAddress.Address, 16) + ((int)Enum.Parse(typeof(T), key) * baseAddress.Size * skipBy);
         }
         catch (Exception ex)
         {
@@ -204,26 +227,23 @@ internal class Rebalancer
             Console.WriteLine($"Address {address:X}, old value: [{FormatValue(oldValue)}], new value: [{FormatValue(newValue)}], description: {description}");
             _fs!.Seek(address, SeekOrigin.Begin);
 
-            if (newValue is int intValue)
-            {
-                if (size == 1)
-                    _writer!.Write((byte)intValue);
-                else if (size == 4)
-                    _writer!.Write(intValue);
-            }
-            else if (newValue is byte byteValue)
+            if (newValue is byte byteValue)
             {
                 _writer!.Write(byteValue);
             }
+            else if (newValue is int intValue)
+            {
+                _writer!.Write(intValue);
+            }
             else if (newValue is byte[] byteArray)
             {
-                foreach (var value in byteArray)
-                    _writer!.Write(value);
+                foreach (var x in byteArray)
+                    _writer!.Write(x);
             }
             else if (newValue is int[] intArray)
             {
-                foreach (var value in intArray)
-                    _writer!.Write(value);
+                foreach (var x in intArray)
+                    _writer!.Write(x);
             }
             else
             {

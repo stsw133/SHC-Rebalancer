@@ -6,7 +6,9 @@ namespace SHC_Rebalancer;
 public partial class App : StswApp
 {
     public readonly static string ConfigsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", "rebalance");
+    public static string GetConfigPath(StrongholdType type, string configName) => $"{ConfigsPath}\\{type}\\{configName}.json";
 
+    /// OnStartup
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
@@ -14,6 +16,7 @@ public partial class App : StswApp
             Directory.CreateDirectory($"{ConfigsPath}\\{name.ToLower()}");
     }
 
+    /// OnExit
     protected override void OnExit(ExitEventArgs e)
     {
         base.OnExit(e);

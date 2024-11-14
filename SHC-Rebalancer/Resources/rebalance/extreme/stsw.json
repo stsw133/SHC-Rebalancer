@@ -1,8 +1,9 @@
 {
-	
+	"Description": "stsw config for Stronghold Crusader Extreme 1.41 UCP",
 	"BaseAddresses":
 	[
 		{ "Description": "Buildings Health",							"Address": "0x1BA218", "Size": 4 },
+		{ "Description": "Buildings Housing",							"Address": "0x1BA438", "Size": 1 },
 		{ "Description": "Buildings Cost",								"Address": "0x1C21D0", "Size": 4 },
 		
 		{ "Description": "Resources Buy",								"Address": "0x217350", "Size": 4 },
@@ -13,6 +14,7 @@
 		{ "Description": "Units DamageFromBow",							"Address": "0x74EC30", "Size": 4 },
 		{ "Description": "Units DamageFromCrossbow",					"Address": "0x74EEB0", "Size": 4 },
 		{ "Description": "Units DamageFromSling",						"Address": "0x74ED70", "Size": 4 },
+		{ "Description": "Units CanMeleeDamage",						"Address": "0x755C10", "Size": 4 },
 		{ "Description": "Units MeleeDamage",							"Address": "0x74EFF0", "Size": 4 },
 	],
 	"Buildings":
@@ -112,6 +114,46 @@
 			"Health": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
+		"Keep1":
+		{
+			"Health": 0,
+			"Housing": 8,
+			"Cost": [0, 0, 0, 0, 0],
+		},
+		"Keep2":
+		{
+			"Health": 0,
+			"Housing": 10,
+			"Cost": [0, 0, 0, 0, 0],
+		},
+		"Keep3":
+		{
+			"Health": 0,
+			"Housing": 12,
+			"Cost": [0, 0, 0, 0, 0],
+		},
+		"Keep4":
+		{
+			"Health": 0,
+			"Housing": 14,
+			"Cost": [0, 0, 0, 0, 0],
+		},
+		"Keep5":
+		{
+			"Health": 0,
+			"Housing": 16,
+			"Cost": [0, 0, 0, 0, 0],
+		},
+		"EuropOutpost":
+		{
+			"Health": 1500,
+			"Cost": [0, 0, 0, 0, 0],
+		},
+		"ArabOutpost":
+		{
+			"Health": 1500,
+			"Cost": [0, 0, 0, 0, 0],
+		},
 		"Stockpile":
 		{
 			"Health": 500,
@@ -175,6 +217,7 @@
 		"Hovel":
 		{
 			"Health": 50,
+			"Housing": 10,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"Chapel":
@@ -480,6 +523,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 1000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
@@ -501,6 +545,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 9999,
 			"DamageFromSling": 1800,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
@@ -523,6 +568,7 @@
 			"DamageFromBow": 1000,
 			"DamageFromCrossbow": 5000,
 			"DamageFromSling": 500,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 75,
 			"MeleeDamageVs":
 			{
@@ -546,6 +592,7 @@
 			"DamageFromBow": 1500,
 			"DamageFromCrossbow": 5000,
 			"DamageFromSling": 750,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
@@ -567,6 +614,7 @@
 			"DamageFromBow": 1000,
 			"DamageFromCrossbow": 3000,
 			"DamageFromSling": 500,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
@@ -589,6 +637,7 @@
 			"DamageFromBow": 150,
 			"DamageFromCrossbow": 2200,
 			"DamageFromSling": 150,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
 			"MeleeDamageVs":
 			{
@@ -613,6 +662,7 @@
 			"DamageFromBow": 150,
 			"DamageFromCrossbow": 2500,
 			"DamageFromSling": 150,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 80,
 			"MeleeDamageVs":
 			{
@@ -637,6 +687,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 10000,
 			"DamageFromSling": 500,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
@@ -671,6 +722,7 @@
 			"DamageFromBow": 7000,
 			"DamageFromCrossbow": 6000,
 			"DamageFromSling": 4000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
@@ -692,6 +744,7 @@
 			"DamageFromBow": 4000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 3000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
@@ -713,6 +766,7 @@
 			"DamageFromBow": 1500,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 500,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 80,
 			"MeleeDamageVs":
 			{
@@ -734,6 +788,7 @@
 			"DamageFromBow": 1250,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 500,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
@@ -755,6 +810,7 @@
 			"DamageFromBow": 300,
 			"DamageFromCrossbow": 3500,
 			"DamageFromSling": 200,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
 			"MeleeDamageVs":
 			{
@@ -779,6 +835,7 @@
 			"DamageFromBow": 1250,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 400,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 15,
 			"MeleeDamageVs":
 			{
@@ -799,6 +856,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 10000,
 			"DamageFromSling": 2000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -812,6 +870,7 @@
 			"DamageFromBow": 420,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 1000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -825,6 +884,7 @@
 			"DamageFromBow": 5000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 25,
 			"MeleeDamageVs":
 			{
@@ -845,6 +905,7 @@
 			"DamageFromBow": 4000,
 			"DamageFromCrossbow": 7000,
 			"DamageFromSling": 500,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 50,
 			"MeleeDamageVs":
 			{
@@ -865,6 +926,7 @@
 			"DamageFromBow": 4000,
 			"DamageFromCrossbow": 10000,
 			"DamageFromSling": 2000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 50,
 			"MeleeDamageVs":
 			{
@@ -883,6 +945,7 @@
 			"DamageFromBow": 100,
 			"DamageFromCrossbow": 150,
 			"DamageFromSling": 100,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 150,
 			"MeleeDamageVs":
 			{
@@ -903,6 +966,7 @@
 			"DamageFromBow": 300,
 			"DamageFromCrossbow": 1500,
 			"DamageFromSling": 200,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -916,6 +980,7 @@
 			"DamageFromBow": 200,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 150,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -929,6 +994,7 @@
 			"DamageFromBow": 3000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 2000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -942,6 +1008,7 @@
 			"DamageFromBow": 3000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 2000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -955,6 +1022,7 @@
 			"DamageFromBow": 50,
 			"DamageFromCrossbow": 150,
 			"DamageFromSling": 10,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -968,6 +1036,7 @@
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 500,
 			"DamageFromSling": 100,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
@@ -988,6 +1057,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 3000,
 			"DamageFromSling": 1000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1001,6 +1071,7 @@
 			"DamageFromBow": 1200,
 			"DamageFromCrossbow": 1500,
 			"DamageFromSling": 1000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1014,6 +1085,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1027,6 +1099,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1040,6 +1113,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1053,6 +1127,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
@@ -1073,6 +1148,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1086,6 +1162,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
@@ -1108,6 +1185,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
@@ -1128,6 +1206,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
@@ -1148,6 +1227,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1161,6 +1241,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1174,6 +1255,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1187,6 +1269,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1200,6 +1283,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1213,6 +1297,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1226,6 +1311,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1239,6 +1325,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1252,6 +1339,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1265,6 +1353,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1278,6 +1367,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
@@ -1298,6 +1388,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1311,6 +1402,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1324,6 +1416,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1337,6 +1430,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1350,6 +1444,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1363,6 +1458,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1376,6 +1472,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1389,6 +1486,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1402,6 +1500,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1415,6 +1514,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1428,6 +1528,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1441,6 +1542,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1454,6 +1556,7 @@
 			"DamageFromBow": 4000,
 			"DamageFromCrossbow": 10000,
 			"DamageFromSling": 3000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
 			"MeleeDamageVs":
 			{
@@ -1472,6 +1575,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1485,6 +1589,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 100,
 			"MeleeDamageVs":
 			{
@@ -1502,6 +1607,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1515,6 +1621,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1528,6 +1635,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1541,6 +1649,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1554,6 +1663,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
@@ -1575,6 +1685,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1588,6 +1699,7 @@
 			"DamageFromBow": 50,
 			"DamageFromCrossbow": 50,
 			"DamageFromSling": 50,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1601,6 +1713,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1614,6 +1727,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1627,6 +1741,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1640,6 +1755,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1653,6 +1769,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1666,6 +1783,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1679,6 +1797,7 @@
 			"DamageFromBow": 150000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 50000,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1692,6 +1811,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1705,6 +1825,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
+			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
 			"MeleeDamageVs":
 			{
@@ -1718,7 +1839,12 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
-			"MeleeDamage": 0,
+			"CanMeleeDamage": false,
+			"MeleeDamage": 2,
+			"MeleeDamageVs":
+			{
+				"Unknown50": 0,
+		},
 		},
 		"Unknown79":
 		{
@@ -1727,8 +1853,13 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
-			"MeleeDamage": 0,
+			"CanMeleeDamage": false,
+			"MeleeDamage": 2,
+			"MeleeDamageVs":
+			{
+				"Unknown50": 0,
 		},
+	},
 	},
 	"Other":
 	[
@@ -1739,22 +1870,44 @@
 		{ "Description": "Pikeman cost",								"Address": "0x6B92B0", "Size": 4, "Value": 30 },
 		{ "Description": "Swordsman cost",								"Address": "0x6B92B8", "Size": 4, "Value": 40 },
 		{ "Description": "Knight cost",									"Address": "0x6B92BC", "Size": 4, "Value": 50 },
-		{ "Description": "ArabArcher display cost",						"Address": "0x6B92CC", "Size": 4, "Value": 60 },
-		{ "Description": "ArabArcher offset cost",						"Address": "0x12F06D", "Size": 1, "Value": 246 },
-		{ "Description": "Slave display cost",							"Address": "0x6B92D0", "Size": 4, "Value": 5 },
-		{ "Description": "Slave offset cost",							"Address": "0x12F077", "Size": 1, "Value": 190 },
-		{ "Description": "Slinger display cost",						"Address": "0x6B92D4", "Size": 4, "Value": 15 },
-		{ "Description": "Slinger offset cost",							"Address": "0x12F081", "Size": 1, "Value": 199 },
-		{ "Description": "Assassin display cost",						"Address": "0x6B92D8", "Size": 4, "Value": 60 },
-		{ "Description": "Assassin offset cost",						"Address": "0x12F08B", "Size": 1, "Value": 243 },
-		{ "Description": "HorseArcher display cost",					"Address": "0x6B92DC", "Size": 4, "Value": 80 },
-		{ "Description": "HorseArcher offset cost",						"Address": "0x12F095", "Size": 1, "Value": 6 },
-		{ "Description": "ArabSwordsman display cost",					"Address": "0x6B92E0", "Size": 4, "Value": 80 },
-		{ "Description": "ArabSwordsman offset cost",					"Address": "0x12F09F", "Size": 1, "Value": 5 },
-		{ "Description": "Firethrower display cost",					"Address": "0x6B92E4", "Size": 4, "Value": 100 },
-		{ "Description": "Tunneler & Engineer display cost",			"Address": "0x0F601B", "Size": 1, "Value": 30 },
-		{ "Description": "Tunneler offset cost",						"Address": "0x12F04F", "Size": 1, "Value": 25 },
-		{ "Description": "Ladderman display cost",						"Address": "0x0F6022", "Size": 1, "Value": 20 },
-		{ "Description": "Ladderman offset cost",						"Address": "0x12F059", "Size": 1, "Value": 247 },
+		{ "Description": "ArabArcher cost (display)",					"Address": "0x6B92CC", "Size": 4, "Value": 60 },
+		{ "Description": "ArabArcher cost (offset)",					"Address": "0x12F06D", "Size": 1, "Value": 246 },
+		{ "Description": "Slave cost (display)",						"Address": "0x6B92D0", "Size": 4, "Value": 5 },
+		{ "Description": "Slave cost (offset)",							"Address": "0x12F077", "Size": 1, "Value": 190 },
+		{ "Description": "Slinger cost (display)",						"Address": "0x6B92D4", "Size": 4, "Value": 15 },
+		{ "Description": "Slinger cost (offset)",						"Address": "0x12F081", "Size": 1, "Value": 199 },
+		{ "Description": "Assassin cost (display)",						"Address": "0x6B92D8", "Size": 4, "Value": 60 },
+		{ "Description": "Assassin cost (offset)",						"Address": "0x12F08B", "Size": 1, "Value": 243 },
+		{ "Description": "HorseArcher cost (display)",					"Address": "0x6B92DC", "Size": 4, "Value": 80 },
+		{ "Description": "HorseArcher cost (offset)",					"Address": "0x12F095", "Size": 1, "Value": 6 },
+		{ "Description": "ArabSwordsman cost (display)",				"Address": "0x6B92E0", "Size": 4, "Value": 80 },
+		{ "Description": "ArabSwordsman cost (offset)",					"Address": "0x12F09F", "Size": 1, "Value": 5 },
+		{ "Description": "Firethrower cost (display)",					"Address": "0x6B92E4", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower cost (offset)",					"Address": "0x12F0AD", "Size": 1, "Value": 24 },
+		{ "Description": "Engineer and Tunneler cost (display)",		"Address": "0x0F601B", "Size": 1, "Value": 30 },
+		{ "Description": "Ladderman cost (display)",					"Address": "0x0F6022", "Size": 1, "Value": 20 },
+		{ "Description": "Ladderman cost (offset)",						"Address": "0x12F059", "Size": 1, "Value": 247 },
+		{ "Description": "Tunneler cost (offset)",						"Address": "0x12F04F", "Size": 1, "Value": 25 },
+		{ "Description": "Monk cost (display)",							"Address": "0x0F6029", "Size": 1, "Value": 20 },
+		{ "Description": "Monk cost (offset)",							"Address": "0x12F063", "Size": 1, "Value": 239 },
+		
+		{ "Description": "Archer range",								"Address": "0x1B635C", "Size": 4, "Value": 40 },
+		{ "Description": "Catapult range",								"Address": "0x1B6360", "Size": 4, "Value": 55 },
+		{ "Description": "Trebuchet range",								"Address": "0x1B6364", "Size": 4, "Value": 65 },
+		{ "Description": "Mangonel range",								"Address": "0x1B6368", "Size": 4, "Value": 55 },
+		{ "Description": "Crossbowman range",							"Address": "0x1B6374", "Size": 4, "Value": 40 },
+		{ "Description": "TowerBallista range",							"Address": "0x1B63A8", "Size": 4, "Value": 65 },
+		{ "Description": "Cow range",									"Address": "0x1B63B4", "Size": 4, "Value": 55 },
+		{ "Description": "______ range",								"Address": "0x1B63B8", "Size": 4, "Value": 40 },
+		{ "Description": "______ range",								"Address": "0x1B63BC", "Size": 4, "Value": 40 },
+		{ "Description": "Slinger range",								"Address": "0x1B63DC", "Size": 4, "Value": 20 },
+		{ "Description": "Firethrower range",							"Address": "0x1B63E0", "Size": 4, "Value": 10 },
+		{ "Description": "______ range",								"Address": "0x1B63E4", "Size": 4, "Value": 20 },
+		{ "Description": "______ range",								"Address": "0x1B63E8", "Size": 4, "Value": 10 },
+		{ "Description": "FireBallista range",							"Address": "0x1B63EC", "Size": 4, "Value": 40 },
+		
+		
+		{ "Description": "Skirmish delivery % bonus",					"Address": "0x1311D4", "Size": 1, "Value": 50 },
+		
 	]
 }
