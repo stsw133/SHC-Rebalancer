@@ -6,7 +6,7 @@
 		{ "Description": "Buildings Housing",							"Address": "0x1BA438", "Size": 1 },
 		{ "Description": "Buildings Cost",								"Address": "0x1C21D0", "Size": 4 },
 		
-		{ "Description": "Resources Buy",								"Address": "0x217350", "Size": 4 },
+		{ "Description": "Resources Buy",								"Address": "0x2171C0", "Size": 4 },
 		{ "Description": "Resources Sell",								"Address": "0x217228", "Size": 4 },
 		
 		{ "Description": "Units Speed",									"Address": "0x74E5A0", "Size": 4 },
@@ -22,96 +22,115 @@
 		"Barracks":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [0, 10, 0, 0, 0],
 		},
 		"MercenaryPost":
 		{
 			"Health": 200,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Armory":
 		{
-			"Health": 300,
+			"Health": 200,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"LookoutTower":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [0, 15, 0, 0, 0],
 		},
 		"PerimeterTurret":
 		{
 			"Health": 1000,
+			"Housing": 0,
 			"Cost": [0, 10, 0, 0, 0],
 		},
 		"DefenseTurret":
 		{
 			"Health": 1750,
+			"Housing": 0,
 			"Cost": [0, 20, 0, 0, 0],
 		},
 		"SquareTower":
 		{
 			"Health": 2000,
+			"Housing": 0,
 			"Cost": [0, 40, 0, 0, 0],
 		},
 		"RoundTower":
 		{
 			"Health": 3000,
+			"Housing": 0,
 			"Cost": [0, 50, 0, 0, 0],
 		},
 		"EngineersGuild":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"TunnelersGuild":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"Stables":
 		{
-			"Health": 600,
-			"Cost": [20, 0, 0, 0, 400],
+			"Health": 400,
+			"Housing": 0,
+			"Cost": [20, 0, 0, 0, 200],
 		},
 		"OilSmelter":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [0, 0, 5, 0, 0],
 		},
 		"SmallGatehouse":
 		{
 			"Health": 1000,
+			"Housing": 0,
 			"Cost": [0, 10, 0, 0, 0],
 		},
 		"LargeGatehouse":
 		{
 			"Health": 3000,
+			"Housing": 0,
 			"Cost": [0, 30, 0, 0, 0],
 		},
 		"Drawbridge":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"CagedWarDogs":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 100],
 		},
 		"PitchDitch":
 		{
 			"Health": 0,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 1, 0],
 		},
 		"KillingPits":
 		{
 			"Health": 0,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"BrazierMoatFlags":
 		{
 			"Health": 0,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"Keep1":
@@ -147,71 +166,85 @@
 		"EuropOutpost":
 		{
 			"Health": 1500,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"ArabOutpost":
 		{
 			"Health": 1500,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"Stockpile":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"WoodcuttersHut":
 		{
 			"Health": 50,
+			"Housing": 0,
 			"Cost": [3, 0, 0, 0, 0],
 		},
 		"Quarry":
 		{
 			"Health": 200,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"OxTether":
 		{
 			"Health": 50,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"IronMine":
 		{
 			"Health": 200,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"PitchRig":
 		{
 			"Health": 200,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"Marketplace":
 		{
 			"Health": 50,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"HuntersHut":
 		{
 			"Health": 50,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"DairyFarm":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"AppleOrchard":
 		{
 			"Health": 50,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"WheatFarm":
 		{
 			"Health": 150,
+			"Housing": 0,
 			"Cost": [15, 0, 0, 0, 0],
 		},
 		"HopFarm":
 		{
 			"Health": 150,
+			"Housing": 0,
 			"Cost": [15, 0, 0, 0, 0],
 		},
 		"Hovel":
@@ -223,225 +256,263 @@
 		"Chapel":
 		{
 			"Health": 400,
+			"Housing": 0,
 			"Cost": [0, 10, 0, 0, 50],
 		},
 		"Church":
 		{
 			"Health": 1200,
+			"Housing": 0,
 			"Cost": [0, 20, 0, 0, 250],
 		},
 		"Cathedral":
 		{
 			"Health": 2000,
+			"Housing": 0,
 			"Cost": [0, 40, 0, 0, 500],
 		},
 		"Apothecary":
 		{
 			"Health": 400,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 200],
 		},
 		"Well":
 		{
 			"Health": 150,
-			"Cost": [0, 2, 0, 0, 0],
+			"Housing": 0,
+			"Cost": [0, 3, 0, 0, 0],
 		},
 		"WaterPot":
 		{
-			"Health": 500,
-			"Cost": [0, 0, 0, 0, 60],
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 100],
 		},
 		"Gallows":
 		{
-			"Health": 75,
+			"Health": 40,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Cesspit":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 40],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Stocks":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 45],
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"BurningStake":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 45],
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Dungeon":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 45],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"StretchingRack":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 45],
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Gibbet":
 		{
-			"Health": 75,
+			"Health": 40,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 50],
 		},
 		"ChoppingBlock":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 45],
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"DunkingStool":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 45],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Maypole":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 25],
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"DancingBear":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 25],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Garden":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 30],
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Statue":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 30],
+			"Health": 40,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Shrine":
 		{
-			"Health": 75,
-			"Cost": [0, 0, 0, 0, 30],
+			"Health": 40,
+			"Housing": 0,
+			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Fletcher":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 100],
 		},
 		"Poleturner":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"Blacksmith":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 200],
 		},
 		"Tanner":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"Armourer":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 200],
 		},
 		"Granary":
 		{
-			"Health": 300,
+			"Health": 200,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"Bakery":
 		{
-			"Health": 100,
+			"Health": 200,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Brewery":
 		{
-			"Health": 100,
+			"Health": 200,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Mill":
 		{
 			"Health": 200,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"Inn":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 100],
 		},
 		"Catapult":
 		{
-			"Health": 200,
-			"Cost": [0, 10, 0, 0, 150],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [10, 10, 0, 0, 100],
 		},
 		"Trebuchet":
 		{
-			"Health": 200,
-			"Cost": [0, 10, 0, 0, 200],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [15, 10, 0, 0, 150],
 		},
 		"SiegeTower":
 		{
-			"Health": 200,
-			"Cost": [0, 0, 0, 0, 200],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [20, 0, 0, 0, 200],
 		},
 		"BatteringRam":
 		{
-			"Health": 200,
-			"Cost": [0, 0, 0, 0, 200],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [20, 0, 0, 0, 200],
 		},
 		"Shield":
 		{
-			"Health": 200,
-			"Cost": [0, 0, 0, 0, 50],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [5, 0, 0, 0, 50],
 		},
 		"FireBallista":
 		{
-			"Health": 200,
-			"Cost": [0, 0, 0, 0, 150],
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [10, 0, 0, 0, 100],
 		},
 		"TowerBallista":
 		{
 			"Health": 100,
-			"Cost": [0, 0, 0, 0, 100],
+			"Housing": 0,
+			"Cost": [10, 0, 0, 0, 100],
 		},
 		"Mangonel":
 		{
 			"Health": 100,
-			"Cost": [0, 0, 0, 0, 100],
+			"Housing": 0,
+			"Cost": [10, 0, 0, 0, 100],
 		},
 	},
 	"Resources":
 	{
 		"Wood":
 		{
-			"Buy": 20,
+			"Buy": 30,
 			"Sell": 5,
 		},
 		"Hop":
 		{
-			"Buy": 100,
-			"Sell": 20,
+			"Buy": 90,
+			"Sell": 30,
 		},
 		"Stone":
 		{
 			"Buy": 60,
-			"Sell": 15,
+			"Sell": 20,
 		},
 		"Iron":
 		{
-			"Buy": 200,
+			"Buy": 150,
 			"Sell": 50,
 		},
 		"Pitch":
 		{
-			"Buy": 120,
-			"Sell": 30,
+			"Buy": 150,
+			"Sell": 50,
 		},
 		"Wheat":
 		{
-			"Buy": 100,
-			"Sell": 20,
+			"Buy": 90,
+			"Sell": 30,
 		},
 		"Bread":
 		{
@@ -466,12 +537,12 @@
 		"Beer":
 		{
 			"Buy": 150,
-			"Sell": 30,
+			"Sell": 50,
 		},
 		"Flour":
 		{
 			"Buy": 150,
-			"Sell": 30,
+			"Sell": 50,
 		},
 		"Bow":
 		{
@@ -480,8 +551,8 @@
 		},
 		"Crossbow":
 		{
-			"Buy": 300,
-			"Sell": 60,
+			"Buy": 250,
+			"Sell": 50,
 		},
 		"Spear":
 		{
@@ -521,21 +592,14 @@
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 15000,
+			"DamageFromCrossbow": 10000,
 			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 20,
-				"Slinger": 20,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slinger": 15,
 			},
 		},
 		"Spearman":
@@ -544,27 +608,20 @@
 			"Health": 10000,
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 9999,
-			"DamageFromSling": 1800,
+			"DamageFromSling": 1200,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 20,
+			"MeleeDamage": 25,
 			"MeleeDamageVs":
 			{
 				"Ladderman": 100,
-				"Trebuchet": 6,
-				"Unknown50": 0,
-				"Unknown54": 2,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 40,
-				"Slinger": 30,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slave": 50,
+				"Slinger": 40,
 			},
 		},
 		"Maceman":
 		{
 			"Speed": 1,
-			"Health": 15000,
+			"Health": 20000,
 			"DamageFromBow": 1000,
 			"DamageFromCrossbow": 5000,
 			"DamageFromSling": 500,
@@ -572,17 +629,18 @@
 			"MeleeDamage": 75,
 			"MeleeDamageVs":
 			{
-				"Unknown00": 20,
 				"Swordsman": 25,
 				"Knight": 25,
-				"Trebuchet": 20,
-				"Unknown50": 0,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 150,
-				"Slinger": 120,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slinger": 125,
+				"Catapult": 150,
+				"Trebuchet": 150,
+				"SiegeTower": 150,
+				"BatteringRam": 150,
+				"Shield": 150,
+				"FireBallista": 150,
+				"TowerBallista": 150,
+				"Mangonel": 150,
 			},
 		},
 		"Crossbowman":
@@ -590,94 +648,64 @@
 			"Speed": 2,
 			"Health": 15000,
 			"DamageFromBow": 1500,
-			"DamageFromCrossbow": 5000,
+			"DamageFromCrossbow": 7500,
 			"DamageFromSling": 750,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 20,
-				"Slinger": 20,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slinger": 15,
 			},
 		},
 		"Pikeman":
 		{
 			"Speed": 2,
-			"Health": 50000,
+			"Health": 60000,
 			"DamageFromBow": 1000,
 			"DamageFromCrossbow": 3000,
 			"DamageFromSling": 500,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 20,
+			"MeleeDamage": 25,
 			"MeleeDamageVs":
 			{
 				"Ladderman": 100,
-				"Trebuchet": 12,
-				"Unknown50": 0,
-				"Unknown54": 2,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 40,
+				"Slave": 50,
 				"Slinger": 40,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Swordsman":
 		{
 			"Speed": 3,
-			"Health": 25000,
-			"DamageFromBow": 150,
-			"DamageFromCrossbow": 2200,
+			"Health": 30000,
+			"DamageFromBow": 200,
+			"DamageFromCrossbow": 2500,
 			"DamageFromSling": 150,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
 			"MeleeDamageVs":
 			{
-				"Unknown00": 20,
 				"Swordsman": 50,
 				"Knight": 50,
-				"Trebuchet": 40,
-				"Unknown50": 0,
-				"Unknown54": 10,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 200,
 				"Slinger": 150,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Knight":
 		{
 			"Speed": 1,
 			"Health": 20000,
-			"DamageFromBow": 150,
+			"DamageFromBow": 200,
 			"DamageFromCrossbow": 2500,
 			"DamageFromSling": 150,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 80,
+			"MeleeDamage": 100,
 			"MeleeDamageVs":
 			{
-				"Unknown00": 20,
 				"Swordsman": 50,
 				"Knight": 50,
-				"Trebuchet": 30,
-				"Unknown50": 0,
-				"Unknown54": 8,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 160,
-				"Slinger": 120,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slave": 200,
+				"Slinger": 150,
 			},
 		},
 		"ArabArcher":
@@ -686,77 +714,69 @@
 			"Health": 12000,
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 500,
+			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
-				"EuropArcher": 15,
-				"Crossbowman": 15,
-				"Spearman": 15,
-				"Pikeman": 15,
-				"Maceman": 15,
-				"Swordsman": 15,
-				"Knight": 15,
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"ArabArcher": 20,
-				"Slave": 30,
-				"Slinger": 30,
-				"Assassin": 20,
-				"HorseArcher": 20,
-				"ArabSwordsman": 20,
-				"Firethrower": 20,
-				"FireBallista": 20,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slave": 20,
+				"Slinger": 15,
 			},
 		},
 		"Slave":
 		{
 			"Speed": 1,
-			"Health": 6000,
-			"DamageFromBow": 7000,
-			"DamageFromCrossbow": 6000,
-			"DamageFromSling": 4000,
+			"Health": 5000,
+			"DamageFromBow": 6000,
+			"DamageFromCrossbow": 5000,
+			"DamageFromSling": 3000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
+				"EuropArcher": 5,
+				"Spearman": 5,
+				"Maceman": 5,
+				"Crossbowman": 5,
+				"Pikeman": 5,
+				"Swordsman": 5,
+				"Knight": 5,
+				"ArabArcher": 5,
 				"Slave": 20,
-				"Slinger": 20,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slinger": 15,
+				"Assassin": 5,
+				"HorseArcher": 5,
+				"ArabSwordsman": 5,
+				"Firethrower": 5,
+				"Engineer": 5,
+				"Ladderman": 5,
+				"Tunneler": 5,
+				"Monk": 5,
+				"WarDog": 5,
+				"Lord": 5,
+				"Catapult": 5,
+				"Trebuchet": 5,
+				"SiegeTower": 5,
+				"BatteringRam": 5,
+				"Shield": 5,
+				"FireBallista": 5,
+				"TowerBallista": 5,
+				"Mangonel": 5,
 			},
 		},
 		"Slinger":
 		{
 			"Speed": 1,
-			"Health": 9000,
-			"DamageFromBow": 4000,
-			"DamageFromCrossbow": 8000,
-			"DamageFromSling": 3000,
+			"Health": 7500,
+			"DamageFromBow": 3000,
+			"DamageFromCrossbow": 5000,
+			"DamageFromSling": 1800,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 20,
+			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 25,
-				"Slinger": 25,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slave": 20,
+				"Slinger": 15,
 			},
 		},
 		"Assassin":
@@ -764,43 +784,51 @@
 			"Speed": 1,
 			"Health": 15000,
 			"DamageFromBow": 1500,
-			"DamageFromCrossbow": 8000,
-			"DamageFromSling": 500,
+			"DamageFromCrossbow": 7500,
+			"DamageFromSling": 750,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 80,
+			"MeleeDamage": 150,
 			"MeleeDamageVs":
 			{
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 250,
+				"EuropArcher": 125,
+				"Spearman": 100,
+				"Maceman": 75,
+				"Crossbowman": 125,
+				"Pikeman": 50,
+				"Swordsman": 50,
+				"Knight": 50,
+				"ArabArcher": 125,
+				"Slave": 300,
 				"Slinger": 250,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Assassin": 75,
+				"HorseArcher": 125,
+				"ArabSwordsman": 50,
+				"Monk": 100,
+				"WarDog": 100,
+				"Lord": 50,
+				"Catapult": 75,
+				"Trebuchet": 75,
+				"SiegeTower": 75,
+				"BatteringRam": 75,
+				"Shield": 75,
+				"FireBallista": 75,
+				"TowerBallista": 75,
+				"Mangonel": 75,
 			},
 		},
 		"HorseArcher":
 		{
 			"Speed": 1,
 			"Health": 10000,
-			"DamageFromBow": 1250,
+			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
-			"DamageFromSling": 500,
+			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 20,
+			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 25,
-				"Slinger": 25,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slave": 20,
+				"Slinger": 15,
 			},
 		},
 		"ArabSwordsman":
@@ -814,88 +842,60 @@
 			"MeleeDamage": 100,
 			"MeleeDamageVs":
 			{
-				"Unknown00": 20,
 				"Swordsman": 50,
 				"Knight": 50,
-				"Trebuchet": 40,
-				"Unknown50": 0,
-				"Unknown54": 10,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 200,
 				"Slinger": 150,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Firethrower":
 		{
 			"Speed": 2,
-			"Health": 7000,
-			"DamageFromBow": 1250,
-			"DamageFromCrossbow": 8000,
-			"DamageFromSling": 400,
+			"Health": 10000,
+			"DamageFromBow": 2000,
+			"DamageFromCrossbow": 10000,
+			"DamageFromSling": 1200,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 15,
+			"MeleeDamage": 10,
 			"MeleeDamageVs":
 			{
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 25,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slave": 20,
+				"Slinger": 15,
 			},
 		},
 		"Engineer":
 		{
 			"Speed": 1,
-			"Health": 5000,
+			"Health": 10000,
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 2000,
+			"DamageFromSling": 1200,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Ladderman":
 		{
 			"Speed": 1,
 			"Health": 5000,
-			"DamageFromBow": 420,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 1000,
+			"DamageFromSling": 500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Tunneler":
 		{
 			"Speed": 1,
 			"Health": 10000,
-			"DamageFromBow": 5000,
-			"DamageFromCrossbow": 15000,
-			"DamageFromSling": 5000,
+			"DamageFromBow": 2000,
+			"DamageFromCrossbow": 10000,
+			"DamageFromSling": 1200,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 25,
+			"MeleeDamage": 20,
 			"MeleeDamageVs":
 			{
-				"Unknown50": 0,
-				"Unknown54": 2,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 40,
 				"Slinger": 30,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Monk":
@@ -903,181 +903,121 @@
 			"Speed": 2,
 			"Health": 15000,
 			"DamageFromBow": 4000,
-			"DamageFromCrossbow": 7000,
+			"DamageFromCrossbow": 6000,
 			"DamageFromSling": 500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50,
 			"MeleeDamageVs":
 			{
-				"Unknown50": 0,
-				"Unknown54": 5,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 80,
-				"Slinger": 80,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slave": 100,
+				"Slinger": 75,
 			},
 		},
 		"WarDog":
 		{
 			"Speed": 2,
-			"Health": 6000,
-			"DamageFromBow": 4000,
+			"Health": 7500,
+			"DamageFromBow": 5000,
 			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 2000,
+			"DamageFromSling": 3000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
-				"Unknown54": 5,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
-		},
 		"Lord":
 		{
 			"Speed": 2,
 			"Health": 150000,
-			"DamageFromBow": 100,
+			"DamageFromBow": 75,
 			"DamageFromCrossbow": 150,
-			"DamageFromSling": 100,
+			"DamageFromSling": 50,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 150,
 			"MeleeDamageVs":
 			{
-				"Unknown50": 0,
-				"Unknown54": 10,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 200,
-				"Slinger": 200,
-				"Unknown78": 2,
-				"Unknown79": 2,
+				"Slave": 300,
+				"Slinger": 225,
 			},
 		},
 		"Catapult":
 		{
 			"Speed": 6,
-			"Health": 10000,
-			"DamageFromBow": 300,
-			"DamageFromCrossbow": 1500,
-			"DamageFromSling": 200,
+			"Health": 20000,
+			"DamageFromBow": 400,
+			"DamageFromCrossbow": 1000,
+			"DamageFromSling": 250,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Trebuchet":
 		{
 			"Speed": 1,
-			"Health": 12000,
-			"DamageFromBow": 200,
+			"Health": 60000,
+			"DamageFromBow": 400,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 150,
+			"DamageFromSling": 250,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"SiegeTower":
 		{
-			"Speed": 3,
+			"Speed": 4,
 			"Health": 240000,
-			"DamageFromBow": 3000,
-			"DamageFromCrossbow": 8000,
-			"DamageFromSling": 2000,
+			"DamageFromBow": 400,
+			"DamageFromCrossbow": 1000,
+			"DamageFromSling": 250,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"BatteringRam":
 		{
-			"Speed": 3,
-			"Health": 150000,
-			"DamageFromBow": 3000,
-			"DamageFromCrossbow": 8000,
-			"DamageFromSling": 2000,
+			"Speed": 4,
+			"Health": 240000,
+			"DamageFromBow": 400,
+			"DamageFromCrossbow": 1000,
+			"DamageFromSling": 250,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Shield":
 		{
 			"Speed": 4,
 			"Health": 10000,
-			"DamageFromBow": 50,
-			"DamageFromCrossbow": 150,
-			"DamageFromSling": 10,
+			"DamageFromBow": 80,
+			"DamageFromCrossbow": 200,
+			"DamageFromSling": 50,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"FireBallista":
 		{
 			"Speed": 5,
-			"Health": 10000,
-			"DamageFromBow": 500,
-			"DamageFromCrossbow": 500,
-			"DamageFromSling": 100,
+			"Health": 20000,
+			"DamageFromBow": 400,
+			"DamageFromCrossbow": 1000,
+			"DamageFromSling": 250,
 			"CanMeleeDamage": false,
-			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Trebuchet": 2,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Slave": 20,
-				"Unknown78": 2,
-				"Unknown79": 2,
+			"MeleeDamage": 2,
 			},
-		},
 		"TowerBallista":
 		{
 			"Speed": 1,
-			"Health": 10000,
+			"Health": 20000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 3000,
-			"DamageFromSling": 1000,
+			"DamageFromCrossbow": 5000,
+			"DamageFromSling": 1250,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Mangonel":
 		{
 			"Speed": 1,
-			"Health": 10000,
-			"DamageFromBow": 1200,
-			"DamageFromCrossbow": 1500,
-			"DamageFromSling": 1000,
+			"Health": 20000,
+			"DamageFromBow": 2000,
+			"DamageFromCrossbow": 5000,
+			"DamageFromSling": 1250,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown00":
 		{
 			"Speed": 1,
@@ -1087,11 +1027,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Peasant":
 		{
 			"Speed": 1,
@@ -1101,11 +1037,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown02":
 		{
 			"Speed": 1,
@@ -1115,30 +1047,20 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Woodcutter":
 		{
 			"Speed": 2,
-			"Health": 10000,
+			"Health": 7500,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 20,
+			"MeleeDamage": 15,
 			"MeleeDamageVs":
 			{
-				"Unknown50": 0,
-				"Unknown54": 2,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 40,
 				"Slinger": 30,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Fletcher":
@@ -1150,11 +1072,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Hunter":
 		{
 			"Speed": 1,
@@ -1167,57 +1085,39 @@
 			"MeleeDamageVs":
 			{
 				"Lion": 20,
-				"Unknown50": 0,
-				"Unknown54": 1,
 				"WarDog": 20,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 20,
 				"Slinger": 15,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Quarryman":
 		{
 			"Speed": 2,
-			"Health": 10000,
+			"Health": 7500,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 20,
+			"MeleeDamage": 15,
 			"MeleeDamageVs":
 			{
-				"Unknown50": 0,
-				"Unknown54": 2,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 40,
 				"Slinger": 30,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Goadsman":
 		{
 			"Speed": 2,
-			"Health": 10000,
+			"Health": 7500,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
-			"MeleeDamage": 20,
+			"MeleeDamage": 15,
 			"MeleeDamageVs":
 			{
-				"Unknown50": 0,
-				"Unknown54": 2,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 40,
 				"Slinger": 30,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Ox":
@@ -1229,11 +1129,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Pitchman":
 		{
 			"Speed": 1,
@@ -1243,11 +1139,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"WheatFarmer":
 		{
 			"Speed": 1,
@@ -1257,11 +1149,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"HopFarmer":
 		{
 			"Speed": 1,
@@ -1271,11 +1159,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Orchardman":
 		{
 			"Speed": 1,
@@ -1285,11 +1169,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Dairyman":
 		{
 			"Speed": 1,
@@ -1299,11 +1179,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Miller":
 		{
 			"Speed": 1,
@@ -1313,11 +1189,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Baker":
 		{
 			"Speed": 2,
@@ -1327,25 +1199,17 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Brewer":
 		{
-			"Speed": 3,
+			"Speed": 2,
 			"Health": 2500,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Poleturner":
 		{
 			"Speed": 3,
@@ -1355,30 +1219,20 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Blacksmith":
 		{
 			"Speed": 3,
-			"Health": 10000,
+			"Health": 7500,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 20,
+			"MeleeDamage": 15,
 			"MeleeDamageVs":
 			{
-				"Unknown50": 0,
-				"Unknown54": 2,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 30,
 				"Slinger": 25,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Armourer":
@@ -1390,11 +1244,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Tanner":
 		{
 			"Speed": 3,
@@ -1404,11 +1254,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Miner":
 		{
 			"Speed": 2,
@@ -1418,11 +1264,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"IronCarrier":
 		{
 			"Speed": 2,
@@ -1432,11 +1274,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Priest":
 		{
 			"Speed": 2,
@@ -1446,11 +1284,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Healer":
 		{
 			"Speed": 1,
@@ -1460,11 +1294,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Drunkard":
 		{
 			"Speed": 5,
@@ -1474,11 +1304,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Innkeeper":
 		{
 			"Speed": 3,
@@ -1488,11 +1314,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown38":
 		{
 			"Speed": 1,
@@ -1502,12 +1324,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
-		"Unknown42":
+		"Merchant":
 		{
 			"Speed": 2,
 			"Health": 2500,
@@ -1516,12 +1334,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
-		"Unknown43":
+		"TradingHorse":
 		{
 			"Speed": 2,
 			"Health": 2500,
@@ -1530,11 +1344,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Deer":
 		{
 			"Speed": 1,
@@ -1544,11 +1354,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Lion":
 		{
 			"Speed": 2,
@@ -1558,30 +1364,17 @@
 			"DamageFromSling": 3000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
-				"Unknown54": 10,
-				"Unknown68": 2,
-				"Unknown69": 2,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
-		},
 		"Rabbit":
 		{
-			"Speed": 2,
+			"Speed": 1,
 			"Health": 1000,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Camel":
 		{
 			"Speed": 1,
@@ -1590,16 +1383,8 @@
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
-			"MeleeDamage": 100,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
-				"Unknown54": 10,
-				"Unknown68": 2,
-				"Unknown78": 2,
-				"Unknown79": 2,
+			"MeleeDamage": 2,
 			},
-		},
 		"Unknown48":
 		{
 			"Speed": 1,
@@ -1609,11 +1394,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown49":
 		{
 			"Speed": 1,
@@ -1623,11 +1404,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown50":
 		{
 			"Speed": 1,
@@ -1637,11 +1414,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Cow":
 		{
 			"Speed": 3,
@@ -1651,15 +1424,11 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"HunterDog":
 		{
 			"Speed": 1,
-			"Health": 3000,
+			"Health": 1500,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
@@ -1668,14 +1437,8 @@
 			"MeleeDamageVs":
 			{
 				"Rabbit": 50,
-				"Unknown50": 0,
-				"Unknown54": 1,
-				"Unknown68": 2,
-				"Unknown69": 2,
 				"Slave": 20,
 				"Slinger": 15,
-				"Unknown78": 2,
-				"Unknown79": 2,
 			},
 		},
 		"Waterboy":
@@ -1687,11 +1450,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown54":
 		{
 			"Speed": 1,
@@ -1701,11 +1460,7 @@
 			"DamageFromSling": 50,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Lady":
 		{
 			"Speed": 5,
@@ -1715,11 +1470,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Jester":
 		{
 			"Speed": 1,
@@ -1729,53 +1480,37 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Chicken":
 		{
 			"Speed": 1,
+			"Health": 1000,
+			"DamageFromBow": 15000,
+			"DamageFromCrossbow": 15000,
+			"DamageFromSling": 5000,
+			"CanMeleeDamage": false,
+			"MeleeDamage": 2,
+			},
+		"Mother":
+		{
+			"Speed": 2,
 			"Health": 2500,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
-		"Unknown63":
+		"Child":
 		{
 			"Speed": 2,
-			"Health": 60000,
+			"Health": 1500,
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
-		"Unknown64":
-		{
-			"Speed": 2,
-			"Health": 60000,
-			"DamageFromBow": 15000,
-			"DamageFromCrossbow": 15000,
-			"DamageFromSling": 5000,
-			"CanMeleeDamage": false,
-			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
-			},
-		},
 		"Unknown65":
 		{
 			"Speed": 2,
@@ -1785,11 +1520,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"FireEater":
 		{
 			"Speed": 2,
@@ -1799,11 +1530,7 @@
 			"DamageFromSling": 50000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown68":
 		{
 			"Speed": 1,
@@ -1813,11 +1540,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown69":
 		{
 			"Speed": 1,
@@ -1827,11 +1550,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown78":
 		{
 			"Speed": 1,
@@ -1841,11 +1560,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
-		},
 		"Unknown79":
 		{
 			"Speed": 1,
@@ -1855,17 +1570,44 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			"MeleeDamageVs":
-			{
-				"Unknown50": 0,
 			},
 		},
-	},
 	"Other":
 	[
-		{ "Description": "EuropArcher cost",							"Address": "0x6B9114", "Size": 4, "Value": 10 },
+		{ "Description": "Skirmish delivery % bonus",					"Address": "0x130DB4", "Size": 1, "Value": 50 },
+		
+		
+		{ "Description": "Iron Mine pickup wait",						"Address": "0x166136", "Size": 1, "Value": [131, 184, 108, 134, 249, 0, 1, 15, 158, 193, 144] },
+		{ "Description": "Iron Mine pickup replenish",					"Address": "0x166304", "Size": 1, "Value": 254 },
+		{ "Description": "Iron Mine skirmish bonus",					"Address": "0x166306", "Size": 1, "Value": 1 },
+		{ "Description": "Iron Mine delivery",							"Address": "0x16630E", "Size": 1, "Value": 2 },
+		
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x03EC12", "Size": 1, "Value": 19 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x03EC1B", "Size": 1, "Value": 39 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x03EC27", "Size": 1, "Value": 59 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x03EC35", "Size": 1, "Value": 79 },
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x03FF9F", "Size": 1, "Value": 19 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x03FFA8", "Size": 1, "Value": 39 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x03FFB4", "Size": 1, "Value": 59 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x03FFC2", "Size": 1, "Value": 79 },
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x040001", "Size": 1, "Value": 19 },
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x040008", "Size": 1, "Value": 20 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x040010", "Size": 1, "Value": 39 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x040017", "Size": 1, "Value": 40 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x04001F", "Size": 1, "Value": 59 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x040026", "Size": 1, "Value": 60 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x04002E", "Size": 1, "Value": 79 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x040035", "Size": 1, "Value": 80 },
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x05BB32", "Size": 1, "Value": 19 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x05BB3B", "Size": 1, "Value": 39 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x05BB47", "Size": 1, "Value": 59 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x05BB55", "Size": 1, "Value": 79 },
+		
+		
+		
+		{ "Description": "EuropArcher cost",							"Address": "0x6B9114", "Size": 4, "Value": 15 },
 		{ "Description": "Spearman cost",								"Address": "0x6B911C", "Size": 4, "Value": 10 },
-		{ "Description": "Maceman cost",								"Address": "0x6B9124", "Size": 4, "Value": 30 },
+		{ "Description": "Maceman cost",								"Address": "0x6B9124", "Size": 4, "Value": 20 },
 		{ "Description": "Crossbowman cost",							"Address": "0x6B9118", "Size": 4, "Value": 30 },
 		{ "Description": "Pikeman cost",								"Address": "0x6B9120", "Size": 4, "Value": 30 },
 		{ "Description": "Swordsman cost",								"Address": "0x6B9128", "Size": 4, "Value": 40 },
@@ -1874,8 +1616,8 @@
 		{ "Description": "ArabArcher cost (offset)",					"Address": "0x12EC4D", "Size": 1, "Value": 246 },
 		{ "Description": "Slave cost (display)",						"Address": "0x6B9140", "Size": 4, "Value": 5 },
 		{ "Description": "Slave cost (offset)",							"Address": "0x12EC57", "Size": 1, "Value": 190 },
-		{ "Description": "Slinger cost (display)",						"Address": "0x6B9144", "Size": 4, "Value": 15 },
-		{ "Description": "Slinger cost (offset)",						"Address": "0x12EC61", "Size": 1, "Value": 199 },
+		{ "Description": "Slinger cost (display)",						"Address": "0x6B9144", "Size": 4, "Value": 10 },
+		{ "Description": "Slinger cost (offset)",						"Address": "0x12EC61", "Size": 1, "Value": 194 },
 		{ "Description": "Assassin cost (display)",						"Address": "0x6B9148", "Size": 4, "Value": 60 },
 		{ "Description": "Assassin cost (offset)",						"Address": "0x12EC6B", "Size": 1, "Value": 243 },
 		{ "Description": "HorseArcher cost (display)",					"Address": "0x6B914C", "Size": 4, "Value": 80 },
@@ -1892,17 +1634,17 @@
 		{ "Description": "Monk cost (offset)",							"Address": "0x12EC43", "Size": 1, "Value": 239 },
 		
 		{ "Description": "Archer range",								"Address": "0x1B635C", "Size": 4, "Value": 40 },
-		{ "Description": "Catapult range",								"Address": "0x1B6360", "Size": 4, "Value": 55 },
-		{ "Description": "Trebuchet range",								"Address": "0x1B6364", "Size": 4, "Value": 65 },
-		{ "Description": "Mangonel range",								"Address": "0x1B6368", "Size": 4, "Value": 55 },
+		{ "Description": "Catapult range",								"Address": "0x1B6360", "Size": 4, "Value": 56 },
+		{ "Description": "Trebuchet range",								"Address": "0x1B6364", "Size": 4, "Value": 64 },
+		{ "Description": "Mangonel range",								"Address": "0x1B6368", "Size": 4, "Value": 56 },
 		{ "Description": "Crossbowman range",							"Address": "0x1B6374", "Size": 4, "Value": 40 },
-		{ "Description": "TowerBallista range",							"Address": "0x1B63A8", "Size": 4, "Value": 65 },
-		{ "Description": "Cow range",									"Address": "0x1B63B4", "Size": 4, "Value": 55 },
+		{ "Description": "TowerBallista range",							"Address": "0x1B63A8", "Size": 4, "Value": 64 },
+		{ "Description": "Cow range",									"Address": "0x1B63B4", "Size": 4, "Value": 56 },
 		{ "Description": "______ range",								"Address": "0x1B63B8", "Size": 4, "Value": 40 },
 		{ "Description": "______ range",								"Address": "0x1B63BC", "Size": 4, "Value": 40 },
-		{ "Description": "Slinger range",								"Address": "0x1B63DC", "Size": 4, "Value": 20 },
+		{ "Description": "Slinger range",								"Address": "0x1B63DC", "Size": 4, "Value": 24 },
 		{ "Description": "Firethrower range",							"Address": "0x1B63E0", "Size": 4, "Value": 10 },
-		{ "Description": "______ range",								"Address": "0x1B63E4", "Size": 4, "Value": 20 },
+		{ "Description": "______ range",								"Address": "0x1B63E4", "Size": 4, "Value": 24 },
 		{ "Description": "______ range",								"Address": "0x1B63E8", "Size": 4, "Value": 10 },
 		{ "Description": "FireBallista range",							"Address": "0x1B63EC", "Size": 4, "Value": 40 },
 		

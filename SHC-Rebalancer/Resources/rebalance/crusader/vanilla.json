@@ -22,96 +22,115 @@
 		"Barracks":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [0, 15, 0, 0, 0],
 		},
 		"MercenaryPost":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Armory":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"LookoutTower":
 		{
 			"Health": 250,
+			"Housing": 0,
 			"Cost": [0, 10, 0, 0, 0],
 		},
 		"PerimeterTurret":
 		{
 			"Health": 1000,
+			"Housing": 0,
 			"Cost": [0, 10, 0, 0, 0],
 		},
 		"DefenseTurret":
 		{
 			"Health": 1200,
+			"Housing": 0,
 			"Cost": [0, 15, 0, 0, 0],
 		},
 		"SquareTower":
 		{
 			"Health": 1600,
+			"Housing": 0,
 			"Cost": [0, 35, 0, 0, 0],
 		},
 		"RoundTower":
 		{
 			"Health": 2000,
+			"Housing": 0,
 			"Cost": [0, 40, 0, 0, 0],
 		},
 		"EngineersGuild":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"TunnelersGuild":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"Stables":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 400],
 		},
 		"OilSmelter":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [0, 0, 10, 0, 100],
 		},
 		"SmallGatehouse":
 		{
 			"Health": 1000,
+			"Housing": 0,
 			"Cost": [0, 10, 0, 0, 0],
 		},
 		"LargeGatehouse":
 		{
 			"Health": 2000,
+			"Housing": 0,
 			"Cost": [0, 20, 0, 0, 0],
 		},
 		"Drawbridge":
 		{
 			"Health": 0,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"CagedWarDogs":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"PitchDitch":
 		{
 			"Health": 0,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 1, 0],
 		},
 		"KillingPits":
 		{
 			"Health": 0,
+			"Housing": 0,
 			"Cost": [6, 0, 0, 0, 0],
 		},
 		"BrazierMoatFlags":
 		{
 			"Health": 0,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"Keep1":
@@ -147,71 +166,85 @@
 		"EuropOutpost":
 		{
 			"Health": 1500,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"ArabOutpost":
 		{
 			"Health": 1500,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"Stockpile":
 		{
 			"Health": 500,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 0],
 		},
 		"WoodcuttersHut":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [3, 0, 0, 0, 0],
 		},
 		"Quarry":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"OxTether":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"IronMine":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"PitchRig":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"Marketplace":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"HuntersHut":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"DairyFarm":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"AppleOrchard":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"WheatFarm":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [15, 0, 0, 0, 0],
 		},
 		"HopFarm":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [15, 0, 0, 0, 0],
 		},
 		"Hovel":
@@ -223,191 +256,229 @@
 		"Chapel":
 		{
 			"Health": 400,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 250],
 		},
 		"Church":
 		{
 			"Health": 800,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 500],
 		},
 		"Cathedral":
 		{
 			"Health": 1200,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 1000],
 		},
 		"Apothecary":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 150],
 		},
 		"Well":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 30],
 		},
 		"WaterPot":
 		{
 			"Health": 200,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 60],
 		},
 		"Gallows":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Cesspit":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 40],
 		},
 		"Stocks":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 45],
 		},
 		"BurningStake":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 45],
 		},
 		"Dungeon":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 40],
 		},
 		"StretchingRack":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 45],
 		},
 		"Gibbet":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 50],
 		},
 		"ChoppingBlock":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 45],
 		},
 		"DunkingStool":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 40],
 		},
 		"Maypole":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 25],
 		},
 		"DancingBear":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 20],
 		},
 		"Garden":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 30],
 		},
 		"Statue":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 30],
 		},
 		"Shrine":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 30],
 		},
 		"Fletcher":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 100],
 		},
 		"Poleturner":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"Blacksmith":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 200],
 		},
 		"Tanner":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 100],
 		},
 		"Armourer":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 100],
 		},
 		"Granary":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"Bakery":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Brewery":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [10, 0, 0, 0, 0],
 		},
 		"Mill":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 0],
 		},
 		"Inn":
 		{
 			"Health": 300,
+			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 100],
 		},
 		"Catapult":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 150],
 		},
 		"Trebuchet":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 150],
 		},
 		"SiegeTower":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 150],
 		},
 		"BatteringRam":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 150],
 		},
 		"Shield":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 5],
 		},
 		"FireBallista":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 150],
 		},
 		"TowerBallista":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 50],
 		},
 		"Mangonel":
 		{
 			"Health": 100,
+			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 50],
 		},
 	},
@@ -1507,7 +1578,7 @@
 				"Unknown50": 0,
 			},
 		},
-		"Unknown42":
+		"Merchant":
 		{
 			"Speed": 2,
 			"Health": 2500,
@@ -1521,7 +1592,7 @@
 				"Unknown50": 0,
 			},
 		},
-		"Unknown43":
+		"TradingHorse":
 		{
 			"Speed": 2,
 			"Health": 2500,
@@ -1748,7 +1819,7 @@
 				"Unknown50": 0,
 			},
 		},
-		"Unknown63":
+		"Mother":
 		{
 			"Speed": 2,
 			"Health": 60000,
@@ -1762,7 +1833,7 @@
 				"Unknown50": 0,
 			},
 		},
-		"Unknown64":
+		"Child":
 		{
 			"Speed": 2,
 			"Health": 60000,
@@ -1863,6 +1934,41 @@
 	},
 	"Other":
 	[
+		{ "Description": "Skirmish delivery % bonus",					"Address": "0x130DB4", "Size": 1, "Value": 50 },
+		
+		
+		
+		
+		{ "Description": "Iron Mine pickup wait",						"Address": "0x166136", "Size": 1, "Value": [51, 201, 57, 136, 108, 134, 249, 0, 15, 148, 193] },
+		{ "Description": "Iron Mine pickup replenish",					"Address": "0x166304", "Size": 1, "Value": 255 },
+		{ "Description": "Iron Mine skirmish bonus",					"Address": "0x166306", "Size": 1, "Value": 1 },
+		{ "Description": "Iron Mine delivery",							"Address": "0x16630E", "Size": 1, "Value": 1 },
+		
+		
+		
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x03EC12", "Size": 1, "Value": 24 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x03EC1B", "Size": 1, "Value": 49 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x03EC27", "Size": 1, "Value": 74 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x03EC35", "Size": 1, "Value": 94 },
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x03FF9F", "Size": 1, "Value": 24 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x03FFA8", "Size": 1, "Value": 49 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x03FFB4", "Size": 1, "Value": 74 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x03FFC2", "Size": 1, "Value": 94 },
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x040001", "Size": 1, "Value": 24 },
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x040008", "Size": 1, "Value": 25 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x040010", "Size": 1, "Value": 49 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x040017", "Size": 1, "Value": 50 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x04001F", "Size": 1, "Value": 74 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x040026", "Size": 1, "Value": 75 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x04002E", "Size": 1, "Value": 95 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x040035", "Size": 1, "Value": 100 },
+		{ "Description": "Religion bonus threshold 1",					"Address": "0x05BB32", "Size": 1, "Value": 24 },
+		{ "Description": "Religion bonus threshold 2",					"Address": "0x05BB3B", "Size": 1, "Value": 49 },
+		{ "Description": "Religion bonus threshold 3",					"Address": "0x05BB47", "Size": 1, "Value": 74 },
+		{ "Description": "Religion bonus threshold 4",					"Address": "0x05BB55", "Size": 1, "Value": 94 },
+		
+		
+		
 		{ "Description": "EuropArcher cost",							"Address": "0x6B9114", "Size": 4, "Value": 12 },
 		{ "Description": "Spearman cost",								"Address": "0x6B911C", "Size": 4, "Value": 8 },
 		{ "Description": "Maceman cost",								"Address": "0x6B9124", "Size": 4, "Value": 20 },
