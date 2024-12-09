@@ -77,13 +77,13 @@
 		{
 			"Health": 300,
 			"Housing": 0,
-			"Cost": [10, 0, 0, 0, 100],
+			"Cost": [0, 5, 0, 0, 50],
 		},
 		"Stables":
 		{
-			"Health": 400,
+			"Health": 500,
 			"Housing": 0,
-			"Cost": [20, 0, 0, 0, 200],
+			"Cost": [20, 0, 0, 0, 300],
 		},
 		"OilSmelter":
 		{
@@ -126,12 +126,6 @@
 			"Health": 0,
 			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
-		},
-		"BrazierMoatFlags":
-		{
-			"Health": 0,
-			"Housing": 0,
-			"Cost": [0, 0, 0, 0, 0],
 		},
 		"Keep1":
 		{
@@ -189,9 +183,9 @@
 		},
 		"Quarry":
 		{
-			"Health": 200,
+			"Health": 250,
 			"Housing": 0,
-			"Cost": [20, 0, 0, 0, 0],
+			"Cost": [25, 0, 0, 0, 0],
 		},
 		"OxTether":
 		{
@@ -207,9 +201,9 @@
 		},
 		"PitchRig":
 		{
-			"Health": 200,
+			"Health": 150,
 			"Housing": 0,
-			"Cost": [20, 0, 0, 0, 0],
+			"Cost": [15, 0, 0, 0, 0],
 		},
 		"Marketplace":
 		{
@@ -241,7 +235,7 @@
 			"Housing": 0,
 			"Cost": [15, 0, 0, 0, 0],
 		},
-		"HopFarm":
+		"HopsFarm":
 		{
 			"Health": 150,
 			"Housing": 0,
@@ -250,7 +244,7 @@
 		"Hovel":
 		{
 			"Health": 50,
-			"Housing": 10,
+			"Housing": 8,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"Chapel":
@@ -285,7 +279,7 @@
 		},
 		"WaterPot":
 		{
-			"Health": 300,
+			"Health": 200,
 			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 100],
 		},
@@ -355,7 +349,7 @@
 			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 50],
 		},
-		"Garden":
+		"Gardens":
 		{
 			"Health": 60,
 			"Housing": 0,
@@ -457,7 +451,7 @@
 			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 200],
 		},
-		"Shield":
+		"PortableShield":
 		{
 			"Health": 100,
 			"Housing": 0,
@@ -467,7 +461,7 @@
 		{
 			"Health": 100,
 			"Housing": 0,
-			"Cost": [10, 0, 0, 0, 100],
+			"Cost": [10, 0, 0, 2, 120],
 		},
 		"TowerBallista":
 		{
@@ -486,7 +480,7 @@
 	{
 		"Wood":
 		{
-			"Buy": 30,
+			"Buy": 20,
 			"Sell": 5,
 		},
 		"Hop":
@@ -592,30 +586,23 @@
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
+			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Spearman":
 		{
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 9999,
-			"DamageFromSling": 1200,
+			"DamageFromCrossbow": 8000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 25,
 			"MeleeDamageVs":
 			{
 				"Ladderman": 100,
-				"Slave": 50,
-				"Slinger": 40,
 			},
 		},
 		"Maceman":
@@ -629,15 +616,13 @@
 			"MeleeDamage": 75,
 			"MeleeDamageVs":
 			{
-				"Swordsman": 25,
-				"Knight": 25,
-				"Slave": 150,
-				"Slinger": 125,
+				"Swordsman": 50,
+				"Knight": 50,
 				"Catapult": 150,
 				"Trebuchet": 150,
 				"SiegeTower": 150,
 				"BatteringRam": 150,
-				"Shield": 150,
+				"PortableShield": 150,
 				"FireBallista": 150,
 				"TowerBallista": 150,
 				"Mangonel": 150,
@@ -648,15 +633,10 @@
 			"Speed": 2,
 			"Health": 15000,
 			"DamageFromBow": 1500,
-			"DamageFromCrossbow": 7500,
+			"DamageFromCrossbow": 6000,
 			"DamageFromSling": 750,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Pikeman":
 		{
@@ -670,8 +650,6 @@
 			"MeleeDamageVs":
 			{
 				"Ladderman": 100,
-				"Slave": 50,
-				"Slinger": 40,
 			},
 		},
 		"Swordsman":
@@ -687,14 +665,13 @@
 			{
 				"Swordsman": 50,
 				"Knight": 50,
-				"Slave": 200,
-				"Slinger": 150,
+				"ArabSwordsman": 75,
 			},
 		},
 		"Knight":
 		{
 			"Speed": 1,
-			"Health": 20000,
+			"Health": 25000,
 			"DamageFromBow": 200,
 			"DamageFromCrossbow": 2500,
 			"DamageFromSling": 150,
@@ -704,8 +681,7 @@
 			{
 				"Swordsman": 50,
 				"Knight": 50,
-				"Slave": 200,
-				"Slinger": 150,
+				"ArabSwordsman": 75,
 			},
 		},
 		"ArabArcher":
@@ -713,23 +689,18 @@
 			"Speed": 1,
 			"Health": 12000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
+			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Slave":
 		{
 			"Speed": 1,
-			"Health": 5000,
-			"DamageFromBow": 6000,
-			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 3000,
+			"Health": 6000,
+			"DamageFromBow": 2000,
+			"DamageFromCrossbow": 4000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
@@ -742,8 +713,8 @@
 				"Swordsman": 5,
 				"Knight": 5,
 				"ArabArcher": 5,
-				"Slave": 20,
-				"Slinger": 15,
+				"Slave": 5,
+				"Slinger": 5,
 				"Assassin": 5,
 				"HorseArcher": 5,
 				"ArabSwordsman": 5,
@@ -758,7 +729,7 @@
 				"Trebuchet": 5,
 				"SiegeTower": 5,
 				"BatteringRam": 5,
-				"Shield": 5,
+				"PortableShield": 5,
 				"FireBallista": 5,
 				"TowerBallista": 5,
 				"Mangonel": 5,
@@ -767,17 +738,12 @@
 		"Slinger":
 		{
 			"Speed": 1,
-			"Health": 7500,
-			"DamageFromBow": 3000,
-			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 1800,
+			"Health": 8000,
+			"DamageFromBow": 2000,
+			"DamageFromCrossbow": 6000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Assassin":
 		{
@@ -799,7 +765,7 @@
 				"Knight": 50,
 				"ArabArcher": 125,
 				"Slave": 300,
-				"Slinger": 250,
+				"Slinger": 200,
 				"Assassin": 75,
 				"HorseArcher": 125,
 				"ArabSwordsman": 50,
@@ -810,7 +776,7 @@
 				"Trebuchet": 75,
 				"SiegeTower": 75,
 				"BatteringRam": 75,
-				"Shield": 75,
+				"PortableShield": 75,
 				"FireBallista": 75,
 				"TowerBallista": 75,
 				"Mangonel": 75,
@@ -825,11 +791,6 @@
 			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"ArabSwordsman":
 		{
@@ -844,8 +805,7 @@
 			{
 				"Swordsman": 50,
 				"Knight": 50,
-				"Slave": 200,
-				"Slinger": 150,
+				"ArabSwordsman": 75,
 			},
 		},
 		"Firethrower":
@@ -853,50 +813,40 @@
 			"Speed": 2,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 1200,
+			"DamageFromCrossbow": 8000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Engineer":
 		{
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 1200,
+			"DamageFromCrossbow": 8000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Ladderman":
 		{
 			"Speed": 1,
-			"Health": 5000,
+			"Health": 7500,
 			"DamageFromBow": 500,
-			"DamageFromCrossbow": 1000,
+			"DamageFromCrossbow": 1250,
 			"DamageFromSling": 500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Tunneler":
 		{
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 1200,
+			"DamageFromCrossbow": 8000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
-			"MeleeDamageVs":
-			{
-				"Slave": 40,
-				"Slinger": 30,
-			},
 		},
 		"Monk":
 		{
@@ -907,11 +857,6 @@
 			"DamageFromSling": 500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50,
-			"MeleeDamageVs":
-			{
-				"Slave": 100,
-				"Slinger": 75,
-			},
 		},
 		"WarDog":
 		{
@@ -922,7 +867,7 @@
 			"DamageFromSling": 3000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50,
-			},
+		},
 		"Lord":
 		{
 			"Speed": 2,
@@ -932,92 +877,87 @@
 			"DamageFromSling": 50,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 150,
-			"MeleeDamageVs":
-			{
-				"Slave": 300,
-				"Slinger": 225,
-			},
 		},
 		"Catapult":
 		{
 			"Speed": 6,
 			"Health": 20000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Trebuchet":
 		{
 			"Speed": 1,
 			"Health": 60000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"SiegeTower":
 		{
 			"Speed": 4,
 			"Health": 240000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"BatteringRam":
 		{
 			"Speed": 4,
 			"Health": 240000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Shield":
+		},
+		"PortableShield":
 		{
 			"Speed": 4,
 			"Health": 10000,
-			"DamageFromBow": 80,
+			"DamageFromBow": 100,
 			"DamageFromCrossbow": 200,
-			"DamageFromSling": 50,
+			"DamageFromSling": 60,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"FireBallista":
 		{
 			"Speed": 5,
 			"Health": 20000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"TowerBallista":
 		{
 			"Speed": 1,
 			"Health": 20000,
-			"DamageFromBow": 2000,
+			"DamageFromBow": 2500,
 			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 1250,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Mangonel":
 		{
 			"Speed": 1,
 			"Health": 20000,
-			"DamageFromBow": 2000,
+			"DamageFromBow": 2500,
 			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 1250,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown00":
 		{
 			"Speed": 1,
@@ -1027,7 +967,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Peasant":
 		{
 			"Speed": 1,
@@ -1037,8 +977,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown02":
+		},
+		"BurningMan":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1047,7 +987,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Woodcutter":
 		{
 			"Speed": 2,
@@ -1057,11 +997,6 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15,
-			"MeleeDamageVs":
-			{
-				"Slave": 40,
-				"Slinger": 30,
-			},
 		},
 		"Fletcher":
 		{
@@ -1072,7 +1007,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Hunter":
 		{
 			"Speed": 1,
@@ -1086,8 +1021,6 @@
 			{
 				"Lion": 20,
 				"WarDog": 20,
-				"Slave": 20,
-				"Slinger": 15,
 			},
 		},
 		"Quarryman":
@@ -1099,11 +1032,6 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15,
-			"MeleeDamageVs":
-			{
-				"Slave": 40,
-				"Slinger": 30,
-			},
 		},
 		"Goadsman":
 		{
@@ -1114,11 +1042,6 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 15,
-			"MeleeDamageVs":
-			{
-				"Slave": 40,
-				"Slinger": 30,
-			},
 		},
 		"Ox":
 		{
@@ -1129,7 +1052,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Pitchman":
 		{
 			"Speed": 1,
@@ -1139,7 +1062,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"WheatFarmer":
 		{
 			"Speed": 1,
@@ -1149,8 +1072,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"HopFarmer":
+		},
+		"HopsFarmer":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1159,7 +1082,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Orchardman":
 		{
 			"Speed": 1,
@@ -1169,7 +1092,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Dairyman":
 		{
 			"Speed": 1,
@@ -1179,7 +1102,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Miller":
 		{
 			"Speed": 1,
@@ -1189,7 +1112,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Baker":
 		{
 			"Speed": 2,
@@ -1199,7 +1122,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Brewer":
 		{
 			"Speed": 2,
@@ -1209,7 +1132,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Poleturner":
 		{
 			"Speed": 3,
@@ -1219,7 +1142,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Blacksmith":
 		{
 			"Speed": 3,
@@ -1229,11 +1152,6 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15,
-			"MeleeDamageVs":
-			{
-				"Slave": 30,
-				"Slinger": 25,
-			},
 		},
 		"Armourer":
 		{
@@ -1244,7 +1162,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Tanner":
 		{
 			"Speed": 3,
@@ -1254,7 +1172,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 2,
-			},
+		},
 		"Miner":
 		{
 			"Speed": 2,
@@ -1264,7 +1182,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"IronCarrier":
 		{
 			"Speed": 2,
@@ -1274,7 +1192,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Priest":
 		{
 			"Speed": 2,
@@ -1284,7 +1202,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Healer":
 		{
 			"Speed": 1,
@@ -1294,7 +1212,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Drunkard":
 		{
 			"Speed": 5,
@@ -1304,7 +1222,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Innkeeper":
 		{
 			"Speed": 3,
@@ -1314,7 +1232,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown38":
 		{
 			"Speed": 1,
@@ -1324,7 +1242,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Merchant":
 		{
 			"Speed": 2,
@@ -1334,7 +1252,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"TradingHorse":
 		{
 			"Speed": 2,
@@ -1344,7 +1262,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Deer":
 		{
 			"Speed": 1,
@@ -1354,7 +1272,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Lion":
 		{
 			"Speed": 2,
@@ -1364,7 +1282,7 @@
 			"DamageFromSling": 3000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
-			},
+		},
 		"Rabbit":
 		{
 			"Speed": 1,
@@ -1374,7 +1292,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Camel":
 		{
 			"Speed": 1,
@@ -1384,8 +1302,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown48":
+		},
+		"Crow":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1394,8 +1312,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown49":
+		},
+		"Seagull":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1404,7 +1322,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown50":
 		{
 			"Speed": 1,
@@ -1414,7 +1332,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Cow":
 		{
 			"Speed": 3,
@@ -1424,7 +1342,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"HunterDog":
 		{
 			"Speed": 1,
@@ -1437,8 +1355,6 @@
 			"MeleeDamageVs":
 			{
 				"Rabbit": 50,
-				"Slave": 20,
-				"Slinger": 15,
 			},
 		},
 		"Waterboy":
@@ -1450,8 +1366,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown54":
+		},
+		"Ghost":
 		{
 			"Speed": 1,
 			"Health": 500000,
@@ -1460,7 +1376,7 @@
 			"DamageFromSling": 50,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Lady":
 		{
 			"Speed": 5,
@@ -1470,7 +1386,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Jester":
 		{
 			"Speed": 1,
@@ -1480,7 +1396,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Chicken":
 		{
 			"Speed": 1,
@@ -1490,7 +1406,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Mother":
 		{
 			"Speed": 2,
@@ -1500,7 +1416,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Child":
 		{
 			"Speed": 2,
@@ -1510,8 +1426,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown65":
+		},
+		"Juggler":
 		{
 			"Speed": 2,
 			"Health": 2500,
@@ -1520,7 +1436,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"FireEater":
 		{
 			"Speed": 2,
@@ -1530,8 +1446,8 @@
 			"DamageFromSling": 50000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown68":
+		},
+		"BurningBigAnimal":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1540,8 +1456,8 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown69":
+		},
+		"BurningSmallAnimal":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1550,7 +1466,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown78":
 		{
 			"Speed": 1,
@@ -1576,11 +1492,14 @@
 	[
 		{ "Description": "Skirmish delivery % bonus",					"Address": "0x1311D4", "Size": 1, "Value": 50 },
 		
+		{ "Description": "Cheese delivery",								"Address": "0x154D44", "Size": 1, "Value": 4 },
 		
 		{ "Description": "Iron Mine pickup wait",						"Address": "0x166556", "Size": 1, "Value": [131, 184, 236, 138, 249, 0, 1, 15, 158, 193, 144] },
 		{ "Description": "Iron Mine pickup replenish",					"Address": "0x166724", "Size": 1, "Value": 254 },
 		{ "Description": "Iron Mine skirmish bonus",					"Address": "0x166726", "Size": 1, "Value": 1 },
 		{ "Description": "Iron Mine delivery",							"Address": "0x16672E", "Size": 1, "Value": 2 },
+		
+		{ "Description": "Fear factor combat bonus",					"Address": "0x0045D8", "Size": 1, "Value": [75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125] },
 		
 		{ "Description": "Religion bonus threshold 1",					"Address": "0x03EE52", "Size": 1, "Value": 19 },
 		{ "Description": "Religion bonus threshold 2",					"Address": "0x03EE5B", "Size": 1, "Value": 39 },
@@ -1603,21 +1522,22 @@
 		{ "Description": "Religion bonus threshold 3",					"Address": "0x05BD77", "Size": 1, "Value": 59 },
 		{ "Description": "Religion bonus threshold 4",					"Address": "0x05BD85", "Size": 1, "Value": 79 },
 		
-		
+		{ "Description": "Tax % bonus threshold 1",						"Address": "0x059326", "Size": 4, "Value": 150 },
+		{ "Description": "Tax % bonus threshold 5",						"Address": "0x0592FA", "Size": 4, "Value": 250 },
 		
 		{ "Description": "EuropArcher cost",							"Address": "0x6B92A4", "Size": 4, "Value": 15 },
 		{ "Description": "Spearman cost",								"Address": "0x6B92AC", "Size": 4, "Value": 10 },
 		{ "Description": "Maceman cost",								"Address": "0x6B92B4", "Size": 4, "Value": 20 },
 		{ "Description": "Crossbowman cost",							"Address": "0x6B92A8", "Size": 4, "Value": 30 },
 		{ "Description": "Pikeman cost",								"Address": "0x6B92B0", "Size": 4, "Value": 30 },
-		{ "Description": "Swordsman cost",								"Address": "0x6B92B8", "Size": 4, "Value": 40 },
-		{ "Description": "Knight cost",									"Address": "0x6B92BC", "Size": 4, "Value": 50 },
+		{ "Description": "Swordsman cost",								"Address": "0x6B92B8", "Size": 4, "Value": 60 },
+		{ "Description": "Knight cost",									"Address": "0x6B92BC", "Size": 4, "Value": 100 },
 		{ "Description": "ArabArcher cost (display)",					"Address": "0x6B92CC", "Size": 4, "Value": 60 },
 		{ "Description": "ArabArcher cost (offset)",					"Address": "0x12F06D", "Size": 1, "Value": 246 },
-		{ "Description": "Slave cost (display)",						"Address": "0x6B92D0", "Size": 4, "Value": 5 },
-		{ "Description": "Slave cost (offset)",							"Address": "0x12F077", "Size": 1, "Value": 190 },
-		{ "Description": "Slinger cost (display)",						"Address": "0x6B92D4", "Size": 4, "Value": 10 },
-		{ "Description": "Slinger cost (offset)",						"Address": "0x12F081", "Size": 1, "Value": 194 },
+		{ "Description": "Slave cost (display)",						"Address": "0x6B92D0", "Size": 4, "Value": 10 },
+		{ "Description": "Slave cost (offset)",							"Address": "0x12F077", "Size": 1, "Value": 195 },
+		{ "Description": "Slinger cost (display)",						"Address": "0x6B92D4", "Size": 4, "Value": 20 },
+		{ "Description": "Slinger cost (offset)",						"Address": "0x12F081", "Size": 1, "Value": 204 },
 		{ "Description": "Assassin cost (display)",						"Address": "0x6B92D8", "Size": 4, "Value": 60 },
 		{ "Description": "Assassin cost (offset)",						"Address": "0x12F08B", "Size": 1, "Value": 243 },
 		{ "Description": "HorseArcher cost (display)",					"Address": "0x6B92DC", "Size": 4, "Value": 80 },
@@ -1634,22 +1554,136 @@
 		{ "Description": "Monk cost (offset)",							"Address": "0x12F063", "Size": 1, "Value": 239 },
 		
 		{ "Description": "Archer range",								"Address": "0x1B635C", "Size": 4, "Value": 40 },
-		{ "Description": "Catapult range",								"Address": "0x1B6360", "Size": 4, "Value": 56 },
-		{ "Description": "Trebuchet range",								"Address": "0x1B6364", "Size": 4, "Value": 64 },
-		{ "Description": "Mangonel range",								"Address": "0x1B6368", "Size": 4, "Value": 56 },
+		{ "Description": "Catapult range",								"Address": "0x1B6360", "Size": 4, "Value": 50 },
+		{ "Description": "Trebuchet range",								"Address": "0x1B6364", "Size": 4, "Value": 60 },
+		{ "Description": "Mangonel range",								"Address": "0x1B6368", "Size": 4, "Value": 50 },
 		{ "Description": "Crossbowman range",							"Address": "0x1B6374", "Size": 4, "Value": 40 },
-		{ "Description": "TowerBallista range",							"Address": "0x1B63A8", "Size": 4, "Value": 64 },
-		{ "Description": "Cow range",									"Address": "0x1B63B4", "Size": 4, "Value": 56 },
+		{ "Description": "TowerBallista range",							"Address": "0x1B63A8", "Size": 4, "Value": 60 },
+		{ "Description": "Cow range",									"Address": "0x1B63B4", "Size": 4, "Value": 50 },
 		{ "Description": "______ range",								"Address": "0x1B63B8", "Size": 4, "Value": 40 },
 		{ "Description": "______ range",								"Address": "0x1B63BC", "Size": 4, "Value": 40 },
-		{ "Description": "Slinger range",								"Address": "0x1B63DC", "Size": 4, "Value": 24 },
+		{ "Description": "Slinger range",								"Address": "0x1B63DC", "Size": 4, "Value": 22 },
 		{ "Description": "Firethrower range",							"Address": "0x1B63E0", "Size": 4, "Value": 10 },
-		{ "Description": "______ range",								"Address": "0x1B63E4", "Size": 4, "Value": 24 },
+		{ "Description": "______ range",								"Address": "0x1B63E4", "Size": 4, "Value": 22 },
 		{ "Description": "______ range",								"Address": "0x1B63E8", "Size": 4, "Value": 10 },
 		{ "Description": "FireBallista range",							"Address": "0x1B63EC", "Size": 4, "Value": 40 },
 		
+		{ "Description": "Shooters control range 1",					"Address": "0x03595E", "Size": 4, "Value": 1600 },
+		{ "Description": "Shooters control range 2",					"Address": "0x035E2D", "Size": 4, "Value": 1600 },
+		{ "Description": "Shooters control range 3",					"Address": "0x03633A", "Size": 4, "Value": 1600 },
+		{ "Description": "Shooters control range 4",					"Address": "0x0369B3", "Size": 4, "Value": 1600 },
+		{ "Description": "Shooters control range 5",					"Address": "0x036ABA", "Size": 4, "Value": 1600 },
 		
-		{ "Description": "Skirmish delivery % bonus",					"Address": "0x1311D4", "Size": 1, "Value": 50 },
+		{ "Description": "Slinger control range 1",						"Address": "0x035968", "Size": 4, "Value": 484 },
+		{ "Description": "Slinger control range 2",						"Address": "0x035EAA", "Size": 4, "Value": 484 },
+		{ "Description": "Slinger control range 3",						"Address": "0x036344", "Size": 4, "Value": 484 },
+		{ "Description": "Slinger control range 4",						"Address": "0x0369BA", "Size": 4, "Value": 484 },
+		{ "Description": "Slinger control range 5",						"Address": "0x036AC1", "Size": 4, "Value": 484 },
 		
+		{ "Description": "Firethrower control range 1",					"Address": "0x035972", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower control range 2",					"Address": "0x035ED0", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower control range 3",					"Address": "0x03634E", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower control range 4",					"Address": "0x0369C1", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower control range 5",					"Address": "0x036AC8", "Size": 4, "Value": 100 },
+		
+		{ "Description": "Catapult control range 1",					"Address": "0x03597C", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 2",					"Address": "0x035EE9", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 3",					"Address": "0x036358", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 4",					"Address": "0x036728", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 5",					"Address": "0x0368AA", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 6",					"Address": "0x0369C8", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 7",					"Address": "0x036ACF", "Size": 4, "Value": 2500 },
+		
+		{ "Description": "Trebuchet control range 1",					"Address": "0x035986", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 2",					"Address": "0x035EF3", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 3",					"Address": "0x036362", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 4",					"Address": "0x03672F", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 5",					"Address": "0x0368B1", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 6",					"Address": "0x0369CF", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 7",					"Address": "0x036AD6", "Size": 4, "Value": 3600 },
+		
+		{ "Description": "Mangonel control range 1",					"Address": "0x03598D", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 2",					"Address": "0x035EFD", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 3",					"Address": "0x03636C", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 4",					"Address": "0x036736", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 5",					"Address": "0x0368B8", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 6",					"Address": "0x0369D6", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 7",					"Address": "0x036ADD", "Size": 4, "Value": 2500 },
+		
+		{ "Description": "TowerBallista control range 2",				"Address": "0x035F14", "Size": 4, "Value": 3600 },
+		
+		{ "Description": "FireBallista control range 2",				"Address": "0x035F3B", "Size": 4, "Value": 1600 },
+		
+		{ "Description": "______ control range _",						"Address": "0x035A05", "Size": 4, "Value": 1600 },
+		{ "Description": "______ control range _",						"Address": "0x035F85", "Size": 4, "Value": 1600 },
+		{ "Description": "______ control range _",						"Address": "0x0363E4", "Size": 4, "Value": 1600 },
+		{ "Description": "______ control range _",						"Address": "0x03676E", "Size": 4, "Value": 1600 },
+		{ "Description": "______ control range _",						"Address": "0x0368EB", "Size": 4, "Value": 1600 },
+		
+		
+		
+		{ "Description": "EuropArcher damage to towers (offset)",		"Address": "0x15B5DB", "Size": 1, "Value": 253 },
+		{ "Description": "EuropArcher damage to buildings",				"Address": "0x15B5DE", "Size": 1, "Value": 4 },
+		{ "Description": "Spearman damage to walls",					"Address": "0x15E7C4", "Size": 4, "Value": 4 },
+		{ "Description": "Spearman damage to towers (offset)",			"Address": "0x15E7EE", "Size": 1, "Value": 251 },
+		{ "Description": "Spearman damage to buildings",				"Address": "0x15E7F1", "Size": 1, "Value": 8 },
+		{ "Description": "Maceman damage to walls",						"Address": "0x1612A0", "Size": 4, "Value": 6 },
+		{ "Description": "Maceman damage to towers (offset)",			"Address": "0x1612D4", "Size": 1, "Value": 225 },
+		{ "Description": "Maceman damage to buildings",					"Address": "0x1612D7", "Size": 1, "Value": 35 },
+		{ "Description": "Pikeman damage to walls",						"Address": "0x15FC85", "Size": 4, "Value": 6 },
+		{ "Description": "Pikeman damage to towers (offset)",			"Address": "0x15FCC2", "Size": 1, "Value": 240 },
+		{ "Description": "Pikeman damage to buildings",					"Address": "0x15FCC5", "Size": 1, "Value": 20 },
+		{ "Description": "Swordsman damage to towers (offset)",			"Address": "0x16250B", "Size": 1, "Value": 192 },
+		{ "Description": "Swordsman damage to buildings",				"Address": "0x16250E", "Size": 1, "Value": 70 },
+		{ "Description": "Knight damage to towers (offset)",			"Address": "0x1633FA", "Size": 1, "Value": 192 },
+		{ "Description": "Knight damage to buildings",					"Address": "0x1633FD", "Size": 1, "Value": 70 },
+		{ "Description": "ArabArcher damage to towers (offset)",		"Address": "0x170F83", "Size": 1, "Value": 253 },
+		{ "Description": "ArabArcher damage to buildings",				"Address": "0x170F86", "Size": 1, "Value": 4 },
+		{ "Description": "Slave damage to buildings",					"Address": "0x1727BD", "Size": 1, "Value": 8 },
+		{ "Description": "Slinger damage to towers (offset)",			"Address": "0x173919", "Size": 1, "Value": 253 },
+		{ "Description": "Slinger damage to buildings",					"Address": "0x17391C", "Size": 1, "Value": 4 },
+		{ "Description": "Assassin damage to walls",					"Address": "0x174EBA", "Size": 4, "Value": 10 },
+		{ "Description": "Assassin damage to towers (offset)",			"Address": "0x174EF4", "Size": 1, "Value": 192 },
+		{ "Description": "Assassin damage to buildings",				"Address": "0x174EF7", "Size": 1, "Value": 70 },
+		{ "Description": "HorseArcher damage to towers (offset)",		"Address": "0x17B604", "Size": 1, "Value": 253 },
+		{ "Description": "HorseArcher damage to buildings",				"Address": "0x17B607", "Size": 1, "Value": 4 },
+		{ "Description": "ArabSwordsman damage to towers (offset)",		"Address": "0x17654D", "Size": 1, "Value": 192 },
+		{ "Description": "ArabSwordsman damage to buildings",			"Address": "0x176550", "Size": 1, "Value": 70 },
+		{ "Description": "Firethrower damage to towers (offset)",		"Address": "0x177439", "Size": 1, "Value": 253 },
+		{ "Description": "Firethrower damage to buildings",				"Address": "0x17743C", "Size": 1, "Value": 4 },
+		{ "Description": "Monk damage to walls",						"Address": "0x167F7C", "Size": 4, "Value": 4 },
+		{ "Description": "Tunneler damage to walls",					"Address": "0x14F6FF", "Size": 4, "Value": 6 },
+		{ "Description": "Tunneler damage to towers (offset)",			"Address": "0x14F73A", "Size": 1, "Value": 240 },
+		{ "Description": "Tunneler damage to buildings",				"Address": "0x14F73D", "Size": 1, "Value": 20 },
+		{ "Description": "Lord damage to towers (offset)",				"Address": "0x16DAE1", "Size": 1, "Value": 192 },
+		{ "Description": "Lord damage to buildings",					"Address": "0x16DAE4", "Size": 1, "Value": 70 },
+		
+		{ "Description": "Catapult stone reload amount",				"Address": "0x06616A", "Size": 1, "Value": 10 },
+		{ "Description": "Default max. ammunition amount",				"Address": "0x066220", "Size": 1, "Value": 10 },
+		{ "Description": "Catapult damage to buildings",				"Address": "0x007CF5", "Size": 4, "Value": 60 },
+		{ "Description": "Catapult collateral damage",					"Address": "0x007AA6", "Size": 4, "Value": 30 },
+		{ "Description": "Trebuchet damage to buildings",				"Address": "0x007CE5", "Size": 4, "Value": 120 },
+		{ "Description": "Trebuchet collateral damage penalty",			"Address": "0x007CEB", "Size": 1, "Value": 196 },
+		{ "Description": "Catapult and Trebuchet initial stone",		"Address": "0x13EA05", "Size": 2, "Value": 10 },
+		{ "Description": "Battering ram damage to buildings",			"Address": "0x14666D", "Size": 1, "Value": 100 },
+		
+		{ "Description": "Ballistas damage to PortableShield",			"Address": "0x1322DF", "Size": 4, "Value": 1000 },
+		{ "Description": "Ballistas damage to TowerBallista",			"Address": "0x1322EC", "Size": 4, "Value": 2000 },
+		{ "Description": "Ballistas damage to FireBallista",			"Address": "0x1322F9", "Size": 4, "Value": 5000 },
+		{ "Description": "Ballistas damage to Mangonel",				"Address": "0x132306", "Size": 4, "Value": 2000 },
+		{ "Description": "Ballistas damage to Catapult",				"Address": "0x132313", "Size": 4, "Value": 5000 },
+		{ "Description": "Ballistas damage to Trebuchet",				"Address": "0x132320", "Size": 4, "Value": 10000 },
+		{ "Description": "Ballistas damage to BatteringRam",			"Address": "0x13232D", "Size": 4, "Value": 20000 },
+		{ "Description": "Ballistas damage to SiegeTower",				"Address": "0x132344", "Size": 4, "Value": 20000 },
+		{ "Description": "Ballistas damage to everything else",			"Address": "0x13233E", "Size": 4, "Value": -10000 },
+		
+		{ "Description": "Mangonel damage to Catapult",					"Address": "0x132276", "Size": 4, "Value": 10000 },
+		{ "Description": "Mangonel damage to Trebuchet",				"Address": "0x132286", "Size": 4, "Value": 10000 },
+		{ "Description": "Mangonel damage to SiegeTower",				"Address": "0x1322B0", "Size": 4, "Value": 20000 },
+		{ "Description": "Mangonel damage to BatteringRam",				"Address": "0x132296", "Size": 4, "Value": 20000 },
+		{ "Description": "Mangonel damage to PortableShield",			"Address": "0x132236", "Size": 4, "Value": 2000 },
+		{ "Description": "Mangonel damage to FireBallista",				"Address": "0x132256", "Size": 4, "Value": 10000 },
+		{ "Description": "Mangonel damage to Mangonel",					"Address": "0x132266", "Size": 4, "Value": 1000 },
+		{ "Description": "Mangonel damage to TowerBallista",			"Address": "0x132246", "Size": 4, "Value": 1000 },
 	]
 }

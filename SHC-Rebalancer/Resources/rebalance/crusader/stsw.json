@@ -9,6 +9,9 @@
 		{ "Description": "Resources Buy",								"Address": "0x2171C0", "Size": 4 },
 		{ "Description": "Resources Sell",								"Address": "0x217228", "Size": 4 },
 		
+		{ "Description": "SkirmishTrail MapNameOffset",					"Address": "0x400000", "Size": 1 },
+		{ "Description": "SkirmishTrail Mission",						"Address": "0x73EC48", "Size": 4 },
+		
 		{ "Description": "Units Speed",									"Address": "0x74E5A0", "Size": 4 },
 		{ "Description": "Units Health",								"Address": "0x74E960", "Size": 4 },
 		{ "Description": "Units DamageFromBow",							"Address": "0x74EAA0", "Size": 4 },
@@ -77,13 +80,13 @@
 		{
 			"Health": 300,
 			"Housing": 0,
-			"Cost": [10, 0, 0, 0, 100],
+			"Cost": [0, 5, 0, 0, 50],
 		},
 		"Stables":
 		{
-			"Health": 400,
+			"Health": 500,
 			"Housing": 0,
-			"Cost": [20, 0, 0, 0, 200],
+			"Cost": [20, 0, 0, 0, 300],
 		},
 		"OilSmelter":
 		{
@@ -126,12 +129,6 @@
 			"Health": 0,
 			"Housing": 0,
 			"Cost": [5, 0, 0, 0, 0],
-		},
-		"BrazierMoatFlags":
-		{
-			"Health": 0,
-			"Housing": 0,
-			"Cost": [0, 0, 0, 0, 0],
 		},
 		"Keep1":
 		{
@@ -189,9 +186,9 @@
 		},
 		"Quarry":
 		{
-			"Health": 200,
+			"Health": 250,
 			"Housing": 0,
-			"Cost": [20, 0, 0, 0, 0],
+			"Cost": [25, 0, 0, 0, 0],
 		},
 		"OxTether":
 		{
@@ -207,9 +204,9 @@
 		},
 		"PitchRig":
 		{
-			"Health": 200,
+			"Health": 150,
 			"Housing": 0,
-			"Cost": [20, 0, 0, 0, 0],
+			"Cost": [15, 0, 0, 0, 0],
 		},
 		"Marketplace":
 		{
@@ -241,7 +238,7 @@
 			"Housing": 0,
 			"Cost": [15, 0, 0, 0, 0],
 		},
-		"HopFarm":
+		"HopsFarm":
 		{
 			"Health": 150,
 			"Housing": 0,
@@ -250,7 +247,7 @@
 		"Hovel":
 		{
 			"Health": 50,
-			"Housing": 10,
+			"Housing": 8,
 			"Cost": [5, 0, 0, 0, 0],
 		},
 		"Chapel":
@@ -285,7 +282,7 @@
 		},
 		"WaterPot":
 		{
-			"Health": 300,
+			"Health": 200,
 			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 100],
 		},
@@ -355,7 +352,7 @@
 			"Housing": 0,
 			"Cost": [0, 0, 0, 0, 50],
 		},
-		"Garden":
+		"Gardens":
 		{
 			"Health": 60,
 			"Housing": 0,
@@ -457,7 +454,7 @@
 			"Housing": 0,
 			"Cost": [20, 0, 0, 0, 200],
 		},
-		"Shield":
+		"PortableShield":
 		{
 			"Health": 100,
 			"Housing": 0,
@@ -467,7 +464,7 @@
 		{
 			"Health": 100,
 			"Housing": 0,
-			"Cost": [10, 0, 0, 0, 100],
+			"Cost": [10, 0, 0, 2, 120],
 		},
 		"TowerBallista":
 		{
@@ -486,7 +483,7 @@
 	{
 		"Wood":
 		{
-			"Buy": 30,
+			"Buy": 20,
 			"Sell": 5,
 		},
 		"Hop":
@@ -585,6 +582,889 @@
 			"Sell": 60,
 		},
 	},
+	"SkirmishTrail":
+	{
+		"1":
+		{
+			"MapNameAddress": "0x1A61A0",
+			"MapName": "A New Land",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 7],
+			"Locations": [1, 4],
+			"Teams": [],
+			"AIVs": [2, 3, 4, 0, 1, 2, 3, 4],
+		},
+		"2":
+		{
+			"MapNameAddress": "0x1A5C28",
+			"MapName": "Watering Holes",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 6],
+			"Locations": [5, 1],
+			"Teams": [],
+			"AIVs": [6, 7, 4, 3, 5, 2, 0, 2],
+		},
+		"3":
+		{
+			"MapNameAddress": "0x1AAC54",
+			"MapName": "The river",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 8, 6, 6],
+			"Locations": [7, 8, 5, 1],
+			"Teams": [1, 1, 2, 2],
+			"AIVs": [7, 0, 1, 0, 1, 0, 3, 2],
+		},
+		"4":
+		{
+			"MapNameAddress": "0x1AAC44",
+			"MapName": "In the shadow",
+			"Difficulty": 4,
+			"Type": "normal",
+			"AIs": [0, 3],
+			"Locations": [1, 3],
+			"Teams": [],
+			"AIVs": [4, 1, 5, 3, 2, 7, 6, 3],
+		},
+		"5":
+		{
+			"MapNameAddress": "0x1AAC34",
+			"MapName": "Oasis struggle",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 2, 2, 2],
+			"Locations": [2, 1, 5, 3],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [5, 4, 3, 3, 5, 3, 1, 1],
+		},
+		"6":
+		{
+			"MapNameAddress": "0x1A5C70",
+			"MapName": "The Dunes",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 8, 4],
+			"Locations": [2, 3, 4],
+			"Teams": [1, 1],
+			"AIVs": [7, 6, 0, 4, 2, 4, 1, 5],
+		},
+		"7":
+		{
+			"MapNameAddress": "0x1A5D78",
+			"MapName": "Tyre",
+			"Difficulty": 4,
+			"Type": "normal",
+			"AIs": [0, 6, 6],
+			"Locations": [2, 4, 5],
+			"Teams": [0, 1, 1],
+			"AIVs": [1, 3, 4, 5, 2, 3, 4, 6],
+		},
+		"8":
+		{
+			"MapNameAddress": "0x1AAC24",
+			"MapName": "The Bulls eye",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 1, 1, 1, 1],
+			"Locations": [1, 5, 6, 4, 8],
+			"Teams": [0, 1, 1, 1, 1],
+			"AIVs": [0, 1, 0, 2, 4, 1, 4, 1],
+		},
+		"9":
+		{
+			"MapNameAddress": "0x1A601C",
+			"MapName": "Green Haven",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 5],
+			"Locations": [1, 6],
+			"Teams": [],
+			"AIVs": [7, 6, 2, 2, 1, 4, 1, 3],
+		},
+		"10":
+		{
+			"MapNameAddress": "0x1AAC10",
+			"MapName": "The forest oasis",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 1, 5, 7],
+			"Locations": [1, 3, 2, 4],
+			"Teams": [1, 1, 2, 2],
+			"AIVs": [0, 2, 5, 2, 1, 3, 5, 2],
+		},
+		"11":
+		{
+			"MapNameAddress": "0x1A5D5C",
+			"MapName": "The Valley",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 3, 3, 3],
+			"Locations": [4, 7, 3, 5],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [0, 1, 3, 5, 1, 6, 4, 1],
+		},
+		"12":
+		{
+			"MapNameAddress": "0x1AABFC",
+			"MapName": "Height advantage",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 8],
+			"Locations": [2, 1],
+			"Teams": [],
+			"AIVs": [6, 7, 3, 4, 5, 3, 2, 2],
+		},
+		"13":
+		{
+			"MapNameAddress": "0x1AABE8",
+			"MapName": "Land of the cactus",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 6, 6],
+			"Locations": [2, 1, 3],
+			"Teams": [0, 1, 1],
+			"AIVs": [0, 4, 4, 4, 0, 5, 2, 3],
+		},
+		"14":
+		{
+			"MapNameAddress": "0x1AABD4",
+			"MapName": "Close encounters",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 3, 5, 6, 7],
+			"Locations": [6, 2, 1, 7, 5],
+			"Teams": [1, 1, 2, 2, 2],
+			"AIVs": [2, 3, 4, 5, 0, 3, 6, 4],
+		},
+		"15":
+		{
+			"MapNameAddress": "0x1A6170",
+			"MapName": "Armenia",
+			"Difficulty": 4,
+			"Type": "crusade",
+			"AIs": [0, 8],
+			"Locations": [2, 1],
+			"Teams": [],
+			"AIVs": [7, 6, 5, 0, 1, 3, 5, 0],
+		},
+		"16":
+		{
+			"MapNameAddress": "0x1AABC4",
+			"MapName": "A friend indeed",
+			"Difficulty": 4,
+			"Type": "normal",
+			"AIs": [0, 5, 5],
+			"Locations": [2, 6, 4],
+			"Teams": [0, 1, 1],
+			"AIVs": [2, 6, 5, 4, 1, 0, 2, 3],
+		},
+		"17":
+		{
+			"MapNameAddress": "0x1A5E34",
+			"MapName": "Piggy in the middle",
+			"Difficulty": 5,
+			"Type": "crusade",
+			"AIs": [0, 7, 7, 7],
+			"Locations": [1, 2, 3, 4],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [3, 5, 0, 7, 6, 6, 5, 3],
+		},
+		"18":
+		{
+			"MapNameAddress": "0x1A5CC8",
+			"MapName": "The Guardians",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 2, 2, 2, 2, 2],
+			"Locations": [2, 4, 7, 6, 5, 3],
+			"Teams": [0, 1, 1, 1, 1, 1],
+			"AIVs": [0, 2, 4, 0, 2, 3, 1, 5],
+		},
+		"19":
+		{
+			"MapNameAddress": "0x1A5D70",
+			"MapName": "Tripoli",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 4],
+			"Locations": [2, 3],
+			"Teams": [],
+			"AIVs": [7, 0, 2, 3, 5, 2, 3, 3],
+		},
+		"20":
+		{
+			"MapNameAddress": "0x1AABB8",
+			"MapName": "A new land",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 8, 6, 6, 6],
+			"Locations": [1, 5, 3, 4, 2],
+			"Teams": [1, 1, 2, 2, 2],
+			"AIVs": [0, 2, 0, 5, 4, 2, 0, 5],
+		},
+		"21":
+		{
+			"MapNameAddress": "0x1AABA4",
+			"MapName": "Desert island blues",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 1, 3, 3, 3, 8],
+			"Locations": [1, 4, 6, 7, 2, 5],
+			"Teams": [0, 1, 1, 1, 1, 0],
+			"AIVs": [0, 1, 6, 5, 2, 3, 4, 5],
+		},
+		"22":
+		{
+			"MapNameAddress": "0x1A5F2C",
+			"MapName": "Its just not fair",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 6],
+			"Locations": [1, 2],
+			"Teams": [],
+			"AIVs": [2, 0, 3, 4, 0, 2, 3, 1],
+		},
+		"23":
+		{
+			"MapNameAddress": "0x1AAB94",
+			"MapName": "Hilltop hideout",
+			"Difficulty": 4,
+			"Type": "crusade",
+			"AIs": [0, 1, 1, 1, 1, 1],
+			"Locations": [1, 2, 3, 4, 5, 6],
+			"Teams": [0, 1, 1, 1, 1, 1],
+			"AIVs": [7, 6, 5, 3, 0, 1, 4, 3],
+		},
+		"24":
+		{
+			"MapNameAddress": "0x1AAB88",
+			"MapName": "The dunes",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 7, 7, 7, 7],
+			"Locations": [3, 2, 5, 4, 1],
+			"Teams": [0, 1, 1, 1, 1],
+			"AIVs": [0, 3, 4, 6, 2, 3, 5, 3],
+		},
+		"25":
+		{
+			"MapNameAddress": "0x1AAC24",
+			"MapName": "The Bulls eye",
+			"Difficulty": 4,
+			"Type": "normal",
+			"AIs": [0, 1, 2, 3, 4],
+			"Locations": [5, 7, 1, 4, 8],
+			"Teams": [0, 1, 1, 1, 1, 2],
+			"AIVs": [2, 3, 2, 4, 6, 2, 3, 4],
+		},
+		"26":
+		{
+			"MapNameAddress": "0x1AAB78",
+			"MapName": "The last stand",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 2, 6, 6, 7],
+			"Locations": [8, 7, 1, 6, 5],
+			"Teams": [1, 1, 2, 2, 2],
+			"AIVs": [7, 2, 3, 5, 0, 2, 3, 4],
+		},
+		"27":
+		{
+			"MapNameAddress": "0x1AAB68",
+			"MapName": "In the canyons",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 7, 2, 3, 5],
+			"Locations": [4, 3, 5, 2, 1],
+			"Teams": [1, 0, 1, 1, 0],
+			"AIVs": [4, 3, 5, 0, 0, 2, 3, 3],
+		},
+		"28":
+		{
+			"MapNameAddress": "0x1AAC44",
+			"MapName": "In the shadow",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 3, 3],
+			"Locations": [3, 1, 2],
+			"Teams": [0, 1, 1],
+			"AIVs": [3, 1, 0, 4, 3, 2, 6, 3],
+		},
+		"29":
+		{
+			"MapNameAddress": "0x1AAC54",
+			"MapName": "The river",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 1, 1, 1, 1, 3, 7],
+			"Locations": [5, 4, 8, 2, 6, 3, 1],
+			"Teams": [0, 1, 1, 1, 1, 1, 0],
+			"AIVs": [7, 2, 1, 5, 3, 3, 4, 5],
+		},
+		"30":
+		{
+			"MapNameAddress": "0x1AAB54",
+			"MapName": "Upwards alliance",
+			"Difficulty": 5,
+			"Type": "crusade",
+			"AIs": [0, 8, 5, 7],
+			"Locations": [3, 4, 1, 2],
+			"Teams": [1, 1, 2, 2],
+			"AIVs": [3, 1, 4, 5, 2, 1, 0, 2],
+		},
+		"31":
+		{
+			"MapNameAddress": "0x1AAB78",
+			"MapName": "The last stand",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 4, 4, 4],
+			"Locations": [1, 8, 6, 4],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [2, 7, 4, 3, 1, 0, 2, 6],
+		},
+		"32":
+		{
+			"MapNameAddress": "0x1AAB44",
+			"MapName": "Marshy mayhem",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 7, 7, 5, 6, 6],
+			"Locations": [5, 8, 7, 4, 2, 3],
+			"Teams": [],
+			"AIVs": [6, 7, 3, 1, 5, 1, 3, 0],
+		},
+		"33":
+		{
+			"MapNameAddress": "0x1AAC34",
+			"MapName": "Oasis struggle",
+			"Difficulty": 5,
+			"Type": "crusade",
+			"AIs": [0, 8, 8],
+			"Locations": [6, 1, 2],
+			"Teams": [0, 1, 1],
+			"AIVs": [7, 0, 1, 3, 0, 1, 3, 4],
+		},
+		"34":
+		{
+			"MapNameAddress": "0x1A601C",
+			"MapName": "Green Haven",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 2, 6, 1, 3, 7],
+			"Locations": [7, 1, 4, 6, 5, 8],
+			"Teams": [],
+			"AIVs": [1, 2, 5, 4, 0, 2, 6, 2],
+		},
+		"35":
+		{
+			"MapNameAddress": "0x1A5CC8",
+			"MapName": "The Guardians",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 4, 4],
+			"Locations": [2, 8, 7],
+			"Teams": [0, 1, 1],
+			"AIVs": [6, 5, 7, 5, 4, 0, 3, 2],
+		},
+		"36":
+		{
+			"MapNameAddress": "0x1AAB38",
+			"MapName": "The valley",
+			"Difficulty": 4,
+			"Type": "crusade",
+			"AIs": [0, 3, 2, 2, 8, 8],
+			"Locations": [7, 1, 5, 8, 6, 4],
+			"Teams": [1, 1, 2, 2, 2, 2],
+			"AIVs": [3, 3, 3, 2, 3, 6, 2, 3],
+		},
+		"37":
+		{
+			"MapNameAddress": "0x1AAC24",
+			"MapName": "The Bulls eye",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 6, 6, 6],
+			"Locations": [6, 4, 8, 2],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [3, 6, 2, 1, 3, 0, 5, 3],
+		},
+		"38":
+		{
+			"MapNameAddress": "0x1AAB2C",
+			"MapName": "No escape",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 5, 5, 5],
+			"Locations": [2, 8, 5, 4],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [7, 4, 5, 2, 0, 6, 1, 0],
+		},
+		"39":
+		{
+			"MapNameAddress": "0x1AAB94",
+			"MapName": "Hilltop hideout",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 8, 8, 4],
+			"Locations": [1, 2, 5, 3],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [1, 2, 5, 0, 4, 0, 6, 2],
+		},
+		"40":
+		{
+			"MapNameAddress": "0x1A5C70",
+			"MapName": "The Dunes",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 8, 3, 3, 3, 3],
+			"Locations": [2, 3, 1, 4, 6, 5, 0, 0],
+			"Teams": [1, 1, 2, 2, 2, 2],
+			"AIVs": [3, 4, 0, 5, 2, 0, 5, 4],
+		},
+		"41":
+		{
+			"MapNameAddress": "0x1AAB54",
+			"MapName": "Upwards alliance",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 8, 6, 6],
+			"Locations": [2, 1, 4, 3],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [6, 1, 3, 0, 5, 2, 1, 3],
+		},
+		"42":
+		{
+			"MapNameAddress": "0x1A5C28",
+			"MapName": "Watering Holes",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 5, 8, 8, 8],
+			"Locations": [4, 3, 2, 1, 5],
+			"Teams": [1, 1, 2, 2, 2],
+			"AIVs": [7, 0, 1, 3, 0, 4, 1, 2],
+		},
+		"43":
+		{
+			"MapNameAddress": "0x1AAC54",
+			"MapName": "The river",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 1, 1, 1, 1, 1, 1, 1],
+			"Locations": [4, 2, 3, 1, 5, 6, 7, 8],
+			"Teams": [0, 1, 1, 1, 1, 1, 1, 1],
+			"AIVs": [4, 1, 0, 2, 3, 5, 4, 6],
+		},
+		"44":
+		{
+			"MapNameAddress": "0x1A5CC8",
+			"MapName": "The Guardians",
+			"Difficulty": 2,
+			"Type": "crusade",
+			"AIs": [0, 3, 3, 2, 2, 1, 1],
+			"Locations": [2, 5, 1, 4, 7, 6, 8],
+			"Teams": [0, 1, 1, 1, 1, 1, 1],
+			"AIVs": [0, 3, 5, 0, 1, 2, 1, 2],
+		},
+		"45":
+		{
+			"MapNameAddress": "0x1AAB18",
+			"MapName": "Hell on the hill",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 7, 7, 7, 7],
+			"Locations": [6, 1, 2, 3, 4],
+			"Teams": [0, 1, 1, 1, 1],
+			"AIVs": [1, 4, 3, 0, 5, 1, 3, 2],
+		},
+		"46":
+		{
+			"MapNameAddress": "0x1AAB44",
+			"MapName": "Marshy mayhem",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 8, 1, 2, 5, 7, 3],
+			"Locations": [8, 3, 7, 5, 2, 1, 4],
+			"Teams": [0, 1, 1, 1, 1, 1, 1],
+			"AIVs": [6, 1, 3, 0, 5, 0, 2, 3],
+		},
+		"47":
+		{
+			"MapNameAddress": "0x1AAB08",
+			"MapName": "The great lake",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 8, 7, 7, 5, 5],
+			"Locations": [2, 4, 5, 6, 3, 1],
+			"Teams": [1, 1, 2, 2, 2, 2],
+			"AIVs": [7, 4, 5, 1, 2, 0, 4, 5],
+		},
+		"48":
+		{
+			"MapNameAddress": "0x1AAAF8",
+			"MapName": "Crusader demo",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 6, 8, 8, 3],
+			"Locations": [4, 5, 3, 1, 2],
+			"Teams": [0, 1, 1, 1, 1],
+			"AIVs": [3, 4, 5, 7, 0, 4, 2, 1],
+		},
+		"49":
+		{
+			"MapNameAddress": "0x1AABD4",
+			"MapName": "Close encounters",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 6, 7, 8, 8, 8, 3, 3],
+			"Locations": [5, 1, 3, 2, 6, 4, 7, 8],
+			"Teams": [1, 1, 1, 2, 2, 2, 2, 2],
+			"AIVs": [2, 0, 5, 1, 0, 6, 1, 3],
+		},
+		"50":
+		{
+			"MapNameAddress": "0x1AABA4",
+			"MapName": "Desert island blues",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 6, 7, 8, 5, 3, 4, 1],
+			"Locations": [5, 6, 2, 4, 3, 8, 7, 1],
+			"Teams": [0, 1, 1, 1, 1, 1, 1, 1],
+			"AIVs": [1, 2, 0, 5, 0, 1, 2, 0],
+		},
+		"51":
+		{
+			"MapNameAddress": "0x1A5DA4",
+			"MapName": "Strati",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 12],
+			"Locations": [1, 2],
+			"Teams": [],
+			"AIVs": [2, 3, 4, 0, 1, 2, 3, 4],
+		},
+		"52":
+		{
+			"MapNameAddress": "0x1A60BC",
+			"MapName": "Caesarea Swampland",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 15],
+			"Locations": [2, 1],
+			"Teams": [],
+			"AIVs": [6, 7, 4, 3, 5, 2, 0, 2],
+		},
+		"53":
+		{
+			"MapNameAddress": "0x1A5D68",
+			"MapName": "Thasos",
+			"Difficulty": 2,
+			"Type": "normal",
+			"AIs": [0, 16],
+			"Locations": [3, 4],
+			"Teams": [],
+			"AIVs": [7, 0, 1, 0, 1, 0, 3, 2],
+		},
+		"54":
+		{
+			"MapNameAddress": "0x1A5C68",
+			"MapName": "Tilos",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 11],
+			"Locations": [4, 7],
+			"Teams": [],
+			"AIVs": [4, 1, 5, 3, 2, 7, 6, 3],
+		},
+		"55":
+		{
+			"MapNameAddress": "0x1A5DE4",
+			"MapName": "Reed Sea",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 15, 15],
+			"Locations": [5, 1, 6],
+			"Teams": [0, 1, 1],
+			"AIVs": [5, 4, 3, 3, 5, 3, 1, 1],
+		},
+		"56":
+		{
+			"MapNameAddress": "0x1A5F98",
+			"MapName": "Hidden Crater",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 16, 16],
+			"Locations": [5, 4, 2],
+			"Teams": [0, 1, 1],
+			"AIVs": [0, 1, 3, 5, 1, 6, 4, 1],
+		},
+		"57":
+		{
+			"MapNameAddress": "0x1A5D18",
+			"MapName": "Trapesac Island",
+			"Difficulty": 4,
+			"Type": "normal",
+			"AIs": [0, 16, 16, 12],
+			"Locations": [6, 1, 3, 5],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [7, 5, 2, 2, 2, 4, 1, 5],
+		},
+		"58":
+		{
+			"MapNameAddress": "0x1A6164",
+			"MapName": "Arnon River",
+			"Difficulty": 4,
+			"Type": "normal",
+			"AIs": [0, 12, 12, 15, 11],
+			"Locations": [1, 6, 5, 2, 4],
+			"Teams": [1, 2, 2, 1, 2],
+			"AIVs": [1, 3, 4, 5, 2, 3, 4, 6],
+		},
+		"59":
+		{
+			"MapNameAddress": "0x1A6034",
+			"MapName": "Flood Plains of Jordan",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 15, 16],
+			"Locations": [3, 4, 2],
+			"Teams": [0, 1, 1],
+			"AIVs": [0, 1, 7, 2, 4, 1, 4, 1],
+		},
+		"60":
+		{
+			"MapNameAddress": "0x1A5FBC",
+			"MapName": "Halys River",
+			"Difficulty": 3,
+			"Type": "normal",
+			"AIs": [0, 12, 12],
+			"Locations": [1, 3, 4],
+			"Teams": [0, 1, 1],
+			"AIVs": [7, 6, 2, 2, 1, 4, 1, 3],
+		},
+		"61":
+		{
+			"MapNameAddress": "0x1A6064",
+			"MapName": "Dunes of Nicaea",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 13],
+			"Locations": [6, 2],
+			"Teams": [],
+			"AIVs": [0, 2, 5, 2, 1, 3, 5, 2],
+		},
+		"62":
+		{
+			"MapNameAddress": "0x1A5E24",
+			"MapName": "Pig in a Poke",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 12, 12, 11],
+			"Locations": [1, 5, 4, 3],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [2, 3, 2, 4, 2, 3, 6, 4],
+		},
+		"63":
+		{
+			"MapNameAddress": "0x1A6074",
+			"MapName": "Drawn and Quartered",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 12, 13, 16],
+			"Locations": [2, 6, 7, 3],
+			"Teams": [2, 1, 1, 2],
+			"AIVs": [6, 7, 3, 4, 5, 3, 2, 2],
+		},
+		"64":
+		{
+			"MapNameAddress": "0x1A5C18",
+			"MapName": "Wall of Iron",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 11, 13, 12, 16, 15],
+			"Locations": [5, 3, 2, 4, 6, 7, 0, 0],
+			"Teams": [2, 1, 1, 1, 2, 2],
+			"AIVs": [0, 4, 4, 4, 0, 5, 2, 3],
+		},
+		"65":
+		{
+			"MapNameAddress": "0x1A5DC4",
+			"MapName": "Rock Face",
+			"Difficulty": 4,
+			"Type": "normal",
+			"AIs": [0, 16, 12, 11, 12],
+			"Locations": [5, 3, 2, 4, 1],
+			"Teams": [1, 1, 2, 2, 2],
+			"AIVs": [7, 1, 0, 0, 0, 1, 3, 5],
+		},
+		"66":
+		{
+			"MapNameAddress": "0x1A5DD0",
+			"MapName": "Region of Corinth",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 12],
+			"Locations": [1, 3],
+			"Teams": [],
+			"AIVs": [7, 2, 2, 3, 5, 2, 3, 3],
+		},
+		"67":
+		{
+			"MapNameAddress": "0x1A6104",
+			"MapName": "Crete Peninsula",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 11, 15, 12, 16, 14],
+			"Locations": [6, 3, 2, 4, 1, 5],
+			"Teams": [1, 2, 2, 2, 2, 1],
+			"AIVs": [2, 6, 5, 2, 1, 0, 2, 3],
+		},
+		"68":
+		{
+			"MapNameAddress": "0x1A5C58",
+			"MapName": "Two in a bed",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 11, 13, 14, 14, 12],
+			"Locations": [2, 5, 6, 3, 7, 1],
+			"Teams": [1, 2, 2, 2, 2, 1],
+			"AIVs": [3, 5, 0, 2, 3, 2, 5, 3],
+		},
+		"69":
+		{
+			"MapNameAddress": "0x1A5EB4",
+			"MapName": "Lake Qaddas",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 16, 10, 12, 13, 14],
+			"Locations": [1, 5, 6, 3, 4, 2],
+			"Teams": [0, 1, 1, 1, 1, 1],
+			"AIVs": [0, 2, 4, 0, 2, 3, 1, 5],
+		},
+		"70":
+		{
+			"MapNameAddress": "0x1A600C",
+			"MapName": "Great Euphrates",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 10, 8, 6, 12, 11, 14],
+			"Locations": [3, 1, 2, 5, 6, 7, 8],
+			"Teams": [1, 1, 1, 2, 2, 2, 2],
+			"AIVs": [0, 0, 7, 0, 2, 0, 4, 5],
+		},
+		"71":
+		{
+			"MapNameAddress": "0x1A5EA0",
+			"MapName": "Litani and Jordan",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 11, 13, 9, 13],
+			"Locations": [5, 1, 4, 3, 2],
+			"Teams": [1, 1, 2, 2, 2],
+			"AIVs": [0, 5, 6, 3, 3, 2, 0, 5],
+		},
+		"72":
+		{
+			"MapNameAddress": "0x1A613C",
+			"MapName": "Broken Dune",
+			"Difficulty": 5,
+			"Type": "normal",
+			"AIs": [0, 9, 3, 12, 13],
+			"Locations": [1, 4, 2, 3, 5],
+			"Teams": [1, 1, 2, 2, 2],
+			"AIVs": [2, 3, 6, 3, 4, 2, 3, 1],
+		},
+		"73":
+		{
+			"MapNameAddress": "0x1A5ED0",
+			"MapName": "Lacus Magnus",
+			"Difficulty": 3,
+			"Type": "deathmatch",
+			"AIs": [0, 11, 3, 2, 13, 16],
+			"Locations": [5, 2, 4, 6, 3, 1],
+			"Teams": [1, 2, 2, 2, 2, 1],
+			"AIVs": [7, 6, 5, 6, 1, 5, 4, 3],
+		},
+		"74":
+		{
+			"MapNameAddress": "0x1A609C",
+			"MapName": "Craggy Cliffs",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 11, 11, 13, 12, 6, 3, 2],
+			"Locations": [2, 5, 7, 8, 4, 6, 3, 1],
+			"Teams": [1, 2, 2, 2, 2, 2, 1, 1],
+			"AIVs": [0, 5, 5, 4, 2, 4, 0, 4],
+		},
+		"75":
+		{
+			"MapNameAddress": "0x1A6064",
+			"MapName": "Dunes of Nicaea",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 13, 11],
+			"Locations": [6, 2, 5],
+			"Teams": [0, 1, 1],
+			"AIVs": [7, 0, 5, 2, 1, 4, 1, 3],
+		},
+		"76":
+		{
+			"MapNameAddress": "0x1A5E10",
+			"MapName": "Province of Bodrum",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 11, 13, 13, 13, 4],
+			"Locations": [2, 4, 7, 1, 6, 3],
+			"Teams": [1, 2, 2, 2, 2, 1],
+			"AIVs": [4, 0, 5, 6, 1, 2, 3, 3],
+		},
+		"77":
+		{
+			"MapNameAddress": "0x1A5FBC",
+			"MapName": "Halys River",
+			"Difficulty": 4,
+			"Type": "normal",
+			"AIs": [0, 12, 12, 12],
+			"Locations": [1, 3, 4, 2],
+			"Teams": [0, 1, 1, 1],
+			"AIVs": [7, 6, 2, 4, 1, 4, 1, 3],
+		},
+		"78":
+		{
+			"MapNameAddress": "0x1A5EC0",
+			"MapName": "Lakes of Konya",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 13, 11, 12, 5, 3, 6],
+			"Locations": [3, 2, 7, 4, 5, 1, 6],
+			"Teams": [0, 1, 1, 1, 2, 1, 1],
+			"AIVs": [3, 5, 0, 3, 2, 0, 1, 3],
+		},
+		"79":
+		{
+			"MapNameAddress": "0x1A60AC",
+			"MapName": "Coconut Twist",
+			"Difficulty": 4,
+			"Type": "deathmatch",
+			"AIs": [0, 12, 12, 12, 13, 11, 9],
+			"Locations": [3, 6, 1, 7, 2, 4, 5],
+			"Teams": [1, 2, 2, 2, 2, 2, 1],
+			"AIVs": [7, 5, 0, 3, 3, 0, 1, 5],
+		},
+		"80":
+		{
+			"MapNameAddress": "0x1A5E6C",
+			"MapName": "Melos",
+			"Difficulty": 5,
+			"Type": "deathmatch",
+			"AIs": [0, 13, 4, 12, 8, 6, 11],
+			"Locations": [1, 3, 6, 2, 7, 5, 4],
+			"Teams": [0, 1, 1, 1, 1, 1, 1],
+			"AIVs": [1, 1, 5, 3, 0, 4, 6, 0],
+		},
+	},
 	"Units":
 	{
 		"EuropArcher":
@@ -592,30 +1472,23 @@
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
+			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Spearman":
 		{
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 9999,
-			"DamageFromSling": 1200,
+			"DamageFromCrossbow": 8000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 25,
 			"MeleeDamageVs":
 			{
 				"Ladderman": 100,
-				"Slave": 50,
-				"Slinger": 40,
 			},
 		},
 		"Maceman":
@@ -629,15 +1502,13 @@
 			"MeleeDamage": 75,
 			"MeleeDamageVs":
 			{
-				"Swordsman": 25,
-				"Knight": 25,
-				"Slave": 150,
-				"Slinger": 125,
+				"Swordsman": 50,
+				"Knight": 50,
 				"Catapult": 150,
 				"Trebuchet": 150,
 				"SiegeTower": 150,
 				"BatteringRam": 150,
-				"Shield": 150,
+				"PortableShield": 150,
 				"FireBallista": 150,
 				"TowerBallista": 150,
 				"Mangonel": 150,
@@ -648,15 +1519,10 @@
 			"Speed": 2,
 			"Health": 15000,
 			"DamageFromBow": 1500,
-			"DamageFromCrossbow": 7500,
+			"DamageFromCrossbow": 6000,
 			"DamageFromSling": 750,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Pikeman":
 		{
@@ -670,8 +1536,6 @@
 			"MeleeDamageVs":
 			{
 				"Ladderman": 100,
-				"Slave": 50,
-				"Slinger": 40,
 			},
 		},
 		"Swordsman":
@@ -687,14 +1551,13 @@
 			{
 				"Swordsman": 50,
 				"Knight": 50,
-				"Slave": 200,
-				"Slinger": 150,
+				"ArabSwordsman": 75,
 			},
 		},
 		"Knight":
 		{
 			"Speed": 1,
-			"Health": 20000,
+			"Health": 25000,
 			"DamageFromBow": 200,
 			"DamageFromCrossbow": 2500,
 			"DamageFromSling": 150,
@@ -704,8 +1567,7 @@
 			{
 				"Swordsman": 50,
 				"Knight": 50,
-				"Slave": 200,
-				"Slinger": 150,
+				"ArabSwordsman": 75,
 			},
 		},
 		"ArabArcher":
@@ -713,23 +1575,18 @@
 			"Speed": 1,
 			"Health": 12000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
+			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Slave":
 		{
 			"Speed": 1,
-			"Health": 5000,
-			"DamageFromBow": 6000,
-			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 3000,
+			"Health": 6000,
+			"DamageFromBow": 2000,
+			"DamageFromCrossbow": 4000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageVs":
@@ -742,8 +1599,8 @@
 				"Swordsman": 5,
 				"Knight": 5,
 				"ArabArcher": 5,
-				"Slave": 20,
-				"Slinger": 15,
+				"Slave": 5,
+				"Slinger": 5,
 				"Assassin": 5,
 				"HorseArcher": 5,
 				"ArabSwordsman": 5,
@@ -758,7 +1615,7 @@
 				"Trebuchet": 5,
 				"SiegeTower": 5,
 				"BatteringRam": 5,
-				"Shield": 5,
+				"PortableShield": 5,
 				"FireBallista": 5,
 				"TowerBallista": 5,
 				"Mangonel": 5,
@@ -767,17 +1624,12 @@
 		"Slinger":
 		{
 			"Speed": 1,
-			"Health": 7500,
-			"DamageFromBow": 3000,
-			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 1800,
+			"Health": 8000,
+			"DamageFromBow": 2000,
+			"DamageFromCrossbow": 6000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Assassin":
 		{
@@ -799,7 +1651,7 @@
 				"Knight": 50,
 				"ArabArcher": 125,
 				"Slave": 300,
-				"Slinger": 250,
+				"Slinger": 200,
 				"Assassin": 75,
 				"HorseArcher": 125,
 				"ArabSwordsman": 50,
@@ -810,7 +1662,7 @@
 				"Trebuchet": 75,
 				"SiegeTower": 75,
 				"BatteringRam": 75,
-				"Shield": 75,
+				"PortableShield": 75,
 				"FireBallista": 75,
 				"TowerBallista": 75,
 				"Mangonel": 75,
@@ -825,11 +1677,6 @@
 			"DamageFromSling": 1000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"ArabSwordsman":
 		{
@@ -844,8 +1691,7 @@
 			{
 				"Swordsman": 50,
 				"Knight": 50,
-				"Slave": 200,
-				"Slinger": 150,
+				"ArabSwordsman": 75,
 			},
 		},
 		"Firethrower":
@@ -853,50 +1699,40 @@
 			"Speed": 2,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 1200,
+			"DamageFromCrossbow": 8000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
-			"MeleeDamageVs":
-			{
-				"Slave": 20,
-				"Slinger": 15,
-			},
 		},
 		"Engineer":
 		{
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 1200,
+			"DamageFromCrossbow": 8000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Ladderman":
 		{
 			"Speed": 1,
-			"Health": 5000,
+			"Health": 7500,
 			"DamageFromBow": 500,
-			"DamageFromCrossbow": 1000,
+			"DamageFromCrossbow": 1250,
 			"DamageFromSling": 500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Tunneler":
 		{
 			"Speed": 1,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 10000,
-			"DamageFromSling": 1200,
+			"DamageFromCrossbow": 8000,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 20,
-			"MeleeDamageVs":
-			{
-				"Slave": 40,
-				"Slinger": 30,
-			},
 		},
 		"Monk":
 		{
@@ -907,11 +1743,6 @@
 			"DamageFromSling": 500,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50,
-			"MeleeDamageVs":
-			{
-				"Slave": 100,
-				"Slinger": 75,
-			},
 		},
 		"WarDog":
 		{
@@ -922,7 +1753,7 @@
 			"DamageFromSling": 3000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50,
-			},
+		},
 		"Lord":
 		{
 			"Speed": 2,
@@ -932,92 +1763,87 @@
 			"DamageFromSling": 50,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 150,
-			"MeleeDamageVs":
-			{
-				"Slave": 300,
-				"Slinger": 225,
-			},
 		},
 		"Catapult":
 		{
 			"Speed": 6,
 			"Health": 20000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Trebuchet":
 		{
 			"Speed": 1,
 			"Health": 60000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"SiegeTower":
 		{
 			"Speed": 4,
 			"Health": 240000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"BatteringRam":
 		{
 			"Speed": 4,
 			"Health": 240000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Shield":
+		},
+		"PortableShield":
 		{
 			"Speed": 4,
 			"Health": 10000,
-			"DamageFromBow": 80,
+			"DamageFromBow": 100,
 			"DamageFromCrossbow": 200,
-			"DamageFromSling": 50,
+			"DamageFromSling": 60,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"FireBallista":
 		{
 			"Speed": 5,
 			"Health": 20000,
-			"DamageFromBow": 400,
+			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 250,
+			"DamageFromSling": 300,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"TowerBallista":
 		{
 			"Speed": 1,
 			"Health": 20000,
-			"DamageFromBow": 2000,
+			"DamageFromBow": 2500,
 			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 1250,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Mangonel":
 		{
 			"Speed": 1,
 			"Health": 20000,
-			"DamageFromBow": 2000,
+			"DamageFromBow": 2500,
 			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 1250,
+			"DamageFromSling": 1500,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown00":
 		{
 			"Speed": 1,
@@ -1027,7 +1853,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Peasant":
 		{
 			"Speed": 1,
@@ -1037,8 +1863,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown02":
+		},
+		"BurningMan":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1047,7 +1873,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Woodcutter":
 		{
 			"Speed": 2,
@@ -1057,11 +1883,6 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15,
-			"MeleeDamageVs":
-			{
-				"Slave": 40,
-				"Slinger": 30,
-			},
 		},
 		"Fletcher":
 		{
@@ -1072,7 +1893,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Hunter":
 		{
 			"Speed": 1,
@@ -1086,8 +1907,6 @@
 			{
 				"Lion": 20,
 				"WarDog": 20,
-				"Slave": 20,
-				"Slinger": 15,
 			},
 		},
 		"Quarryman":
@@ -1099,11 +1918,6 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15,
-			"MeleeDamageVs":
-			{
-				"Slave": 40,
-				"Slinger": 30,
-			},
 		},
 		"Goadsman":
 		{
@@ -1114,11 +1928,6 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 15,
-			"MeleeDamageVs":
-			{
-				"Slave": 40,
-				"Slinger": 30,
-			},
 		},
 		"Ox":
 		{
@@ -1129,7 +1938,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Pitchman":
 		{
 			"Speed": 1,
@@ -1139,7 +1948,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"WheatFarmer":
 		{
 			"Speed": 1,
@@ -1149,8 +1958,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"HopFarmer":
+		},
+		"HopsFarmer":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1159,7 +1968,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Orchardman":
 		{
 			"Speed": 1,
@@ -1169,7 +1978,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Dairyman":
 		{
 			"Speed": 1,
@@ -1179,7 +1988,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Miller":
 		{
 			"Speed": 1,
@@ -1189,7 +1998,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Baker":
 		{
 			"Speed": 2,
@@ -1199,7 +2008,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Brewer":
 		{
 			"Speed": 2,
@@ -1209,7 +2018,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Poleturner":
 		{
 			"Speed": 3,
@@ -1219,7 +2028,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Blacksmith":
 		{
 			"Speed": 3,
@@ -1229,11 +2038,6 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15,
-			"MeleeDamageVs":
-			{
-				"Slave": 30,
-				"Slinger": 25,
-			},
 		},
 		"Armourer":
 		{
@@ -1244,7 +2048,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Tanner":
 		{
 			"Speed": 3,
@@ -1254,7 +2058,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 2,
-			},
+		},
 		"Miner":
 		{
 			"Speed": 2,
@@ -1264,7 +2068,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"IronCarrier":
 		{
 			"Speed": 2,
@@ -1274,7 +2078,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Priest":
 		{
 			"Speed": 2,
@@ -1284,7 +2088,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Healer":
 		{
 			"Speed": 1,
@@ -1294,7 +2098,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Drunkard":
 		{
 			"Speed": 5,
@@ -1304,7 +2108,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Innkeeper":
 		{
 			"Speed": 3,
@@ -1314,7 +2118,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown38":
 		{
 			"Speed": 1,
@@ -1324,7 +2128,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Merchant":
 		{
 			"Speed": 2,
@@ -1334,7 +2138,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"TradingHorse":
 		{
 			"Speed": 2,
@@ -1344,7 +2148,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Deer":
 		{
 			"Speed": 1,
@@ -1354,7 +2158,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Lion":
 		{
 			"Speed": 2,
@@ -1364,7 +2168,7 @@
 			"DamageFromSling": 3000,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
-			},
+		},
 		"Rabbit":
 		{
 			"Speed": 1,
@@ -1374,7 +2178,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Camel":
 		{
 			"Speed": 1,
@@ -1384,8 +2188,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown48":
+		},
+		"Crow":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1394,8 +2198,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown49":
+		},
+		"Seagull":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1404,7 +2208,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown50":
 		{
 			"Speed": 1,
@@ -1414,7 +2218,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Cow":
 		{
 			"Speed": 3,
@@ -1424,7 +2228,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"HunterDog":
 		{
 			"Speed": 1,
@@ -1437,8 +2241,6 @@
 			"MeleeDamageVs":
 			{
 				"Rabbit": 50,
-				"Slave": 20,
-				"Slinger": 15,
 			},
 		},
 		"Waterboy":
@@ -1450,8 +2252,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown54":
+		},
+		"Ghost":
 		{
 			"Speed": 1,
 			"Health": 500000,
@@ -1460,7 +2262,7 @@
 			"DamageFromSling": 50,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Lady":
 		{
 			"Speed": 5,
@@ -1470,7 +2272,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Jester":
 		{
 			"Speed": 1,
@@ -1480,7 +2282,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Chicken":
 		{
 			"Speed": 1,
@@ -1490,7 +2292,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Mother":
 		{
 			"Speed": 2,
@@ -1500,7 +2302,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Child":
 		{
 			"Speed": 2,
@@ -1510,8 +2312,8 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown65":
+		},
+		"Juggler":
 		{
 			"Speed": 2,
 			"Health": 2500,
@@ -1520,7 +2322,7 @@
 			"DamageFromSling": 5000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"FireEater":
 		{
 			"Speed": 2,
@@ -1530,8 +2332,8 @@
 			"DamageFromSling": 50000,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown68":
+		},
+		"BurningBigAnimal":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1540,8 +2342,8 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
-		"Unknown69":
+		},
+		"BurningSmallAnimal":
 		{
 			"Speed": 1,
 			"Health": 2500,
@@ -1550,7 +2352,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown78":
 		{
 			"Speed": 1,
@@ -1560,7 +2362,7 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
+		},
 		"Unknown79":
 		{
 			"Speed": 1,
@@ -1570,17 +2372,20 @@
 			"DamageFromSling": 0,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2,
-			},
 		},
+	},
 	"Other":
 	[
 		{ "Description": "Skirmish delivery % bonus",					"Address": "0x130DB4", "Size": 1, "Value": 50 },
 		
+		{ "Description": "Cheese delivery",								"Address": "0x154924", "Size": 1, "Value": 4 },
 		
 		{ "Description": "Iron Mine pickup wait",						"Address": "0x166136", "Size": 1, "Value": [131, 184, 108, 134, 249, 0, 1, 15, 158, 193, 144] },
 		{ "Description": "Iron Mine pickup replenish",					"Address": "0x166304", "Size": 1, "Value": 254 },
 		{ "Description": "Iron Mine skirmish bonus",					"Address": "0x166306", "Size": 1, "Value": 1 },
 		{ "Description": "Iron Mine delivery",							"Address": "0x16630E", "Size": 1, "Value": 2 },
+		
+		
 		
 		{ "Description": "Religion bonus threshold 1",					"Address": "0x03EC12", "Size": 1, "Value": 19 },
 		{ "Description": "Religion bonus threshold 2",					"Address": "0x03EC1B", "Size": 1, "Value": 39 },
@@ -1603,21 +2408,22 @@
 		{ "Description": "Religion bonus threshold 3",					"Address": "0x05BB47", "Size": 1, "Value": 59 },
 		{ "Description": "Religion bonus threshold 4",					"Address": "0x05BB55", "Size": 1, "Value": 79 },
 		
-		
+		{ "Description": "Tax % bonus threshold 1",						"Address": "0x0590F6", "Size": 4, "Value": 150 },
+		{ "Description": "Tax % bonus threshold 5",						"Address": "0x0590CA", "Size": 4, "Value": 250 },
 		
 		{ "Description": "EuropArcher cost",							"Address": "0x6B9114", "Size": 4, "Value": 15 },
 		{ "Description": "Spearman cost",								"Address": "0x6B911C", "Size": 4, "Value": 10 },
 		{ "Description": "Maceman cost",								"Address": "0x6B9124", "Size": 4, "Value": 20 },
 		{ "Description": "Crossbowman cost",							"Address": "0x6B9118", "Size": 4, "Value": 30 },
 		{ "Description": "Pikeman cost",								"Address": "0x6B9120", "Size": 4, "Value": 30 },
-		{ "Description": "Swordsman cost",								"Address": "0x6B9128", "Size": 4, "Value": 40 },
-		{ "Description": "Knight cost",									"Address": "0x6B912C", "Size": 4, "Value": 50 },
+		{ "Description": "Swordsman cost",								"Address": "0x6B9128", "Size": 4, "Value": 60 },
+		{ "Description": "Knight cost",									"Address": "0x6B912C", "Size": 4, "Value": 100 },
 		{ "Description": "ArabArcher cost (display)",					"Address": "0x6B913C", "Size": 4, "Value": 60 },
 		{ "Description": "ArabArcher cost (offset)",					"Address": "0x12EC4D", "Size": 1, "Value": 246 },
-		{ "Description": "Slave cost (display)",						"Address": "0x6B9140", "Size": 4, "Value": 5 },
-		{ "Description": "Slave cost (offset)",							"Address": "0x12EC57", "Size": 1, "Value": 190 },
-		{ "Description": "Slinger cost (display)",						"Address": "0x6B9144", "Size": 4, "Value": 10 },
-		{ "Description": "Slinger cost (offset)",						"Address": "0x12EC61", "Size": 1, "Value": 194 },
+		{ "Description": "Slave cost (display)",						"Address": "0x6B9140", "Size": 4, "Value": 10 },
+		{ "Description": "Slave cost (offset)",							"Address": "0x12EC57", "Size": 1, "Value": 195 },
+		{ "Description": "Slinger cost (display)",						"Address": "0x6B9144", "Size": 4, "Value": 20 },
+		{ "Description": "Slinger cost (offset)",						"Address": "0x12EC61", "Size": 1, "Value": 204 },
 		{ "Description": "Assassin cost (display)",						"Address": "0x6B9148", "Size": 4, "Value": 60 },
 		{ "Description": "Assassin cost (offset)",						"Address": "0x12EC6B", "Size": 1, "Value": 243 },
 		{ "Description": "HorseArcher cost (display)",					"Address": "0x6B914C", "Size": 4, "Value": 80 },
@@ -1634,21 +2440,70 @@
 		{ "Description": "Monk cost (offset)",							"Address": "0x12EC43", "Size": 1, "Value": 239 },
 		
 		{ "Description": "Archer range",								"Address": "0x1B635C", "Size": 4, "Value": 40 },
-		{ "Description": "Catapult range",								"Address": "0x1B6360", "Size": 4, "Value": 56 },
-		{ "Description": "Trebuchet range",								"Address": "0x1B6364", "Size": 4, "Value": 64 },
-		{ "Description": "Mangonel range",								"Address": "0x1B6368", "Size": 4, "Value": 56 },
+		{ "Description": "Catapult range",								"Address": "0x1B6360", "Size": 4, "Value": 50 },
+		{ "Description": "Trebuchet range",								"Address": "0x1B6364", "Size": 4, "Value": 60 },
+		{ "Description": "Mangonel range",								"Address": "0x1B6368", "Size": 4, "Value": 50 },
 		{ "Description": "Crossbowman range",							"Address": "0x1B6374", "Size": 4, "Value": 40 },
-		{ "Description": "TowerBallista range",							"Address": "0x1B63A8", "Size": 4, "Value": 64 },
-		{ "Description": "Cow range",									"Address": "0x1B63B4", "Size": 4, "Value": 56 },
+		{ "Description": "TowerBallista range",							"Address": "0x1B63A8", "Size": 4, "Value": 60 },
+		{ "Description": "Cow range",									"Address": "0x1B63B4", "Size": 4, "Value": 50 },
 		{ "Description": "______ range",								"Address": "0x1B63B8", "Size": 4, "Value": 40 },
 		{ "Description": "______ range",								"Address": "0x1B63BC", "Size": 4, "Value": 40 },
-		{ "Description": "Slinger range",								"Address": "0x1B63DC", "Size": 4, "Value": 24 },
+		{ "Description": "Slinger range",								"Address": "0x1B63DC", "Size": 4, "Value": 22 },
 		{ "Description": "Firethrower range",							"Address": "0x1B63E0", "Size": 4, "Value": 10 },
-		{ "Description": "______ range",								"Address": "0x1B63E4", "Size": 4, "Value": 24 },
+		{ "Description": "______ range",								"Address": "0x1B63E4", "Size": 4, "Value": 22 },
 		{ "Description": "______ range",								"Address": "0x1B63E8", "Size": 4, "Value": 10 },
 		{ "Description": "FireBallista range",							"Address": "0x1B63EC", "Size": 4, "Value": 40 },
 		
-		{ "Description": "Skirmish delivery % bonus",					"Address": "0x130DB4", "Size": 1, "Value": 50 },
+		{ "Description": "Shooters control range 1",					"Address": "0x03571E", "Size": 4, "Value": 1600 },
+		{ "Description": "Shooters control range 2",					"Address": "0x035BED", "Size": 4, "Value": 1600 },
+		{ "Description": "Shooters control range 3",					"Address": "0x0360FA", "Size": 4, "Value": 1600 },
+		{ "Description": "Shooters control range 4",					"Address": "0x036773", "Size": 4, "Value": 1600 },
+		{ "Description": "Shooters control range 5",					"Address": "0x03687A", "Size": 4, "Value": 1600 },
 		
+		{ "Description": "Slinger control range 1",						"Address": "0x035728", "Size": 4, "Value": 484 },
+		{ "Description": "Slinger control range 2",						"Address": "0x035C6A", "Size": 4, "Value": 484 },
+		{ "Description": "Slinger control range 3",						"Address": "0x036104", "Size": 4, "Value": 484 },
+		{ "Description": "Slinger control range 4",						"Address": "0x03677A", "Size": 4, "Value": 484 },
+		{ "Description": "Slinger control range 5",						"Address": "0x036881", "Size": 4, "Value": 484 },
+		
+		{ "Description": "Firethrower control range 1",					"Address": "0x035732", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower control range 2",					"Address": "0x035C90", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower control range 3",					"Address": "0x03610E", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower control range 4",					"Address": "0x036781", "Size": 4, "Value": 100 },
+		{ "Description": "Firethrower control range 5",					"Address": "0x036888", "Size": 4, "Value": 100 },
+		
+		{ "Description": "Catapult control range 1",					"Address": "0x03573C", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 2",					"Address": "0x035CA9", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 3",					"Address": "0x036118", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 4",					"Address": "0x0364E8", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 5",					"Address": "0x03666A", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 6",					"Address": "0x036788", "Size": 4, "Value": 2500 },
+		{ "Description": "Catapult control range 7",					"Address": "0x03688F", "Size": 4, "Value": 2500 },
+		
+		{ "Description": "Trebuchet control range 1",					"Address": "0x035746", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 2",					"Address": "0x035CB3", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 3",					"Address": "0x036122", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 4",					"Address": "0x0364EF", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 5",					"Address": "0x036671", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 6",					"Address": "0x03678F", "Size": 4, "Value": 3600 },
+		{ "Description": "Trebuchet control range 7",					"Address": "0x036896", "Size": 4, "Value": 3600 },
+		
+		{ "Description": "Mangonel control range 1",					"Address": "0x03574D", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 2",					"Address": "0x035CBD", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 3",					"Address": "0x03612C", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 4",					"Address": "0x0364F6", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 5",					"Address": "0x036678", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 6",					"Address": "0x036796", "Size": 4, "Value": 2500 },
+		{ "Description": "Mangonel control range 7",					"Address": "0x03689D", "Size": 4, "Value": 2500 },
+		
+		{ "Description": "TowerBallista control range 2",				"Address": "0x035CD4", "Size": 4, "Value": 3600 },
+		
+		{ "Description": "FireBallista control range 2",				"Address": "0x035CFB", "Size": 4, "Value": 1600 },
+		
+		{ "Description": "______ control range _",						"Address": "0x0357C5", "Size": 4, "Value": 1600 },
+		{ "Description": "______ control range _",						"Address": "0x035D45", "Size": 4, "Value": 1600 },
+		{ "Description": "______ control range _",						"Address": "0x0361A4", "Size": 4, "Value": 1600 },
+		{ "Description": "______ control range _",						"Address": "0x03652E", "Size": 4, "Value": 1600 },
+		{ "Description": "______ control range _",						"Address": "0x0366AB", "Size": 4, "Value": 1600 },
 	]
 }

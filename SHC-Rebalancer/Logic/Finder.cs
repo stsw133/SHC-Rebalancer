@@ -43,7 +43,16 @@ public static class Finder
     private static HashSet<int> GetConfigAddresses(string configPath)
     {
         var json = File.ReadAllText(configPath);
-        var configData = JsonSerializer.Deserialize<ConfigDataModel>(json, new JsonSerializerOptions { AllowTrailingCommas = true, PropertyNameCaseInsensitive = false })!;
+        var options = new JsonSerializerOptions
+        {
+            AllowTrailingCommas = true,
+            PropertyNameCaseInsensitive = true
+        };
+        options.Converters.Add(new JsonStringEnumConverter<SkirmishType>());
+        var configData = JsonSerializer.Deserialize<ConfigDataModel>(json, options);
+
+        ArgumentNullException.ThrowIfNull(configData);
+
         return new HashSet<int>(configData.BaseAddresses.Concat(configData.Other).Select(x => Convert.ToInt32(x.Address, 16)));
     }
 

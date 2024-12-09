@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Text;
 using System.Text.Json;
 
 namespace SHC_Rebalancer;
@@ -15,7 +16,15 @@ internal class Rebalancer
             return;
 
         var json = File.ReadAllText(configPath);
-        var configData = JsonSerializer.Deserialize<ConfigDataModel>(json, new JsonSerializerOptions { AllowTrailingCommas = true, PropertyNameCaseInsensitive = false })!;
+        var options = new JsonSerializerOptions
+        {
+            AllowTrailingCommas = true,
+            PropertyNameCaseInsensitive = true
+        };
+        options.Converters.Add(new JsonStringEnumConverter<SkirmishType>());
+        var configData = JsonSerializer.Deserialize<ConfigDataModel>(json, options);
+
+        ArgumentNullException.ThrowIfNull(configData);
 
         using (_fs = new FileStream(exePath, FileMode.Open, FileAccess.ReadWrite))
         using (_reader = new BinaryReader(_fs))
@@ -25,6 +34,7 @@ internal class Rebalancer
 
             ProcessValues(configData.Buildings, baseAddresses);
             ProcessValues(configData.Resources, baseAddresses);
+            ProcessValues(configData.SkirmishTrail, baseAddresses);
             ProcessValues(configData.Units, baseAddresses);
             ProcessOtherAddress(configData.Other);
         }
@@ -39,6 +49,8 @@ internal class Rebalancer
                 ProcessBuildingValues(baseAddresses, item.Key, building);
             else if (item.Value is ResourceDataModel resource)
                 ProcessResourceValues(baseAddresses, item.Key, resource);
+            else if (item.Value is SkirmishMissionDataModel skirmishMission)
+                ProcessSkirmishMissionValues(baseAddresses, item.Key, skirmishMission);
             else if (item.Value is UnitDataModel unit)
                 ProcessUnitValues(baseAddresses, item.Key, unit);
         }
@@ -84,6 +96,32 @@ internal class Rebalancer
         }
     }
 
+    /// ProcessSkirmishMissionValues
+    private static void ProcessSkirmishMissionValues(Dictionary<string, AddressModel> baseAddresses, string key, SkirmishMissionDataModel mission)
+    {
+        if (baseAddresses.TryGetValue("SkirmishTrail Mission", out var baseAddress))
+        {
+            var i = Convert.ToInt32(key) - 1;
+            var address = Convert.ToInt32(baseAddress.Address, 16) + (i * 144);
+
+            if (!string.IsNullOrWhiteSpace(mission.MapNameAddress) && !string.IsNullOrWhiteSpace(mission.MapName))
+            {
+                if (baseAddresses.TryGetValue("SkirmishTrail MapNameOffset", out var mapNameOffset))
+                {
+                    WriteIfDifferent(address + 0, Convert.ToInt32(mission.MapNameAddress, 16) + Convert.ToInt32(mapNameOffset.Address, 16), baseAddress.Size, $"Mission {i + 1}, MapNameOffset");
+                    WriteIfDifferent(Convert.ToInt32(mission.MapNameAddress, 16), ConvertStringToBytesWithAutoPadding(mission.MapName, 4), mapNameOffset.Size, $"Mission {i + 1}, MapName");
+                }
+            }
+            WriteIfDifferent(address + 4, mission.Difficulty, baseAddress.Size, $"Mission {i + 1}, Difficulty");
+            WriteIfDifferent(address + 8, (int?)mission.Type, baseAddress.Size, $"Mission {i + 1}, Type");
+            WriteIfDifferent(address + 12, mission.AIs?.Length, baseAddress.Size, $"Mission {i + 1}, NumberOfPlayers");
+            WriteIfDifferent(address + 16, mission.AIs?.Concat(Enumerable.Repeat(0, 8 - mission.AIs.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, AIs");
+            WriteIfDifferent(address + 48, mission.Locations?.Concat(Enumerable.Repeat(0, 8 - mission.Locations.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, Locations");
+            WriteIfDifferent(address + 80, mission.Teams?.Concat(Enumerable.Repeat(0, 8 - mission.Teams.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, Teams");
+            WriteIfDifferent(address + 112, mission.AIVs?.Concat(Enumerable.Repeat(0, 8 - mission.AIVs.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, AIVs");
+        }
+    }
+    
     /// ProcessUnitValues
     private static void ProcessUnitValues(Dictionary<string, AddressModel> baseAddresses, string key, UnitDataModel unit)
     {
@@ -204,6 +242,9 @@ internal class Rebalancer
     /// WriteIfDifferent
     private static void WriteIfDifferent<T>(int address, T newValue, int size, string? description)
     {
+        if (newValue == null)
+            return;
+
         _fs!.Seek(address, SeekOrigin.Begin);
 
         T oldValue = newValue switch
@@ -259,4 +300,22 @@ internal class Rebalancer
         int[] intArray => string.Join(", ", intArray),
         _ => value?.ToString() ?? string.Empty
     };
+
+    /// ConvertStringToBytesWithAutoPadding
+    private static byte[] ConvertStringToBytesWithAutoPadding(string input, int alignment)
+    {
+        ArgumentNullException.ThrowIfNull(input);
+        if (alignment <= 0)
+            throw new ArgumentOutOfRangeException(nameof(alignment), "Alignment must be greater than 0.");
+
+        var stringBytes = Encoding.ASCII.GetBytes(input);
+
+        var requiredLength = stringBytes.Length + 1;
+        var totalLength = ((requiredLength + alignment - 1) / alignment) * alignment;
+
+        var result = new byte[totalLength];
+        Array.Copy(stringBytes, result, stringBytes.Length);
+
+        return result;
+    }
 }
