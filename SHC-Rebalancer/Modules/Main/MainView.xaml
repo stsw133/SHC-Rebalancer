@@ -6,162 +6,234 @@
              xmlns:local="clr-namespace:SHC_Rebalancer"
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Resources/background.jpg" Opacity="0.2"/>
+    </UserControl.Background>
 
     <DockPanel>
-        <DockPanel DockPanel.Dock="Bottom" Margin="3">
-            <se:StswSubButton Command="{Binding ConfigFolderOpenCommand}"
-                              IconData="{x:Static se:StswIcons.FolderOpen}"
-                              IconFill="{DynamicResource StswColor.Structure}"
-                              ToolTip="Open a directory that contains all rebalance config files for all Stronghold games."/>
-            <se:StswSubButton Command="{Binding UninstallCommand}"
-                              IconData="{x:Static se:StswIcons.TrashCan}"
-                              IconFill="{DynamicResource StswColor.Negative}"
-                              ToolTip="Restore original Stronghold games executable files."/>
-            <se:StswSubButton Command="{Binding InstallCommand}"
-                              IconData="{x:Static se:StswIcons.Play}"
-                              IconFill="{DynamicResource StswColor.Positive}"
-                              ToolTip="Inject new values from selected rebalance config files into selected Stronghold games."/>
-
-            <se:StswProgressBar IsIndeterminate="True" State="{Binding InstallState}"/>
-        </DockPanel>
-
-        <se:StswTabControl BorderThickness="0 1 0 0">
+        <!-- buttons panel -->
+        <se:StswDirectionView DockPanel.Dock="Bottom" Background="{DynamicResource StswWindow.Static.Background}" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
+            <UniformGrid HorizontalAlignment="Center" Rows="1">
+                <se:StswButton Command="{Binding InstallCommand}" Margin="3" Padding="10 3">
+                    <se:StswLabel Content="Install" IconData="{x:Static se:StswIcons.Play}" IconFill="{DynamicResource StswColor.Positive}"/>
+                </se:StswButton>
+                <se:StswButton Command="{Binding UninstallCommand}" Margin="3" Padding="10 3">
+                    <se:StswLabel Content="Uninstall" IconData="{x:Static se:StswIcons.TrashCan}" IconFill="{DynamicResource StswColor.Negative}"/>
+                </se:StswButton>
+            </UniformGrid>
+        </se:StswDirectionView>
+        <se:StswSeparator DockPanel.Dock="Bottom" Orientation="Horizontal"/>
+        <!-- rebalancer configuration -->
+        <se:StswTabControl AreTabsVisible="True" Background="Transparent" BorderThickness="0 1 0 0">
+            <!-- main -->
             <se:StswTabItem>
                 <se:StswTabItem.Header>
-                    <se:StswLabel Content="Rebalancer" IconData="{x:Static se:StswIcons.Sync}"/>
+                    <se:StswLabel Content="Main" IconData="{x:Static se:StswIcons.Cog}"/>
                 </se:StswTabItem.Header>
 
                 <se:StswScrollView>
-                    <StackPanel Margin="3" Orientation="Vertical">
-                        <se:StswLabel Content="Stronghold:" FontWeight="Bold" Margin="3 0"/>
-                        <se:StswPathPicker Filter="Stronghold|*.exe"
-                                           Margin="3"
-                                           Placeholder="Please select Stronghold .exe path..."
-                                           SelectedPath="{Binding StrongholdPath, Source={x:Static local:Settings.Default}}"/>
-                        <se:StswComboBox ItemsSource="{Binding Configs[Stronghold]}"
-                                         Margin="3"
-                                         Placeholder="Please select config to apply..."
-                                         SelectedItem="{Binding StrongholdConfig, Source={x:Static local:Settings.Default}}"
-                                         Visibility="{Binding StrongholdPath, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=!}">
-                            <se:StswComboBox.SubControls>
-                                <se:StswSubButton Command="{Binding EditConfigCommand}"
-                                                  CommandParameter="{x:Static local:StrongholdType.Stronghold}"
-                                                  IconData="{x:Static se:StswIcons.Pencil}"
-                                                  IsEnabled="{Binding StrongholdConfig, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=!}"/>
-                            </se:StswComboBox.SubControls>
-                        </se:StswComboBox>
-
-                        <se:StswLabel Content="Stronghold Crusader:" FontWeight="Bold" Margin="3 15 3 0"/>
+                    <StackPanel>
+                        <se:StswLabel Content="Stronghold Crusader:" FontWeight="Bold" Margin="3 6 3 0"/>
                         <se:StswPathPicker Filter="Stronghold Crusader|*.exe"
                                            Margin="3"
                                            Placeholder="Please select Stronghold Crusader .exe path..."
                                            SelectedPath="{Binding CrusaderPath, Source={x:Static local:Settings.Default}}"/>
-                        <se:StswComboBox ItemsSource="{Binding Configs[Crusader]}"
-                                         Margin="3"
-                                         Placeholder="Please select config to apply..."
-                                         SelectedItem="{Binding CrusaderConfig, Source={x:Static local:Settings.Default}}"
-                                         Visibility="{Binding CrusaderPath, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=!}">
-                            <se:StswComboBox.SubControls>
-                                <se:StswSubButton Command="{Binding EditConfigCommand}"
-                                                  CommandParameter="{x:Static local:StrongholdType.Crusader}"
-                                                  IconData="{x:Static se:StswIcons.Pencil}"
-                                                  IsEnabled="{Binding CrusaderConfig, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=!}"/>
-                            </se:StswComboBox.SubControls>
-                        </se:StswComboBox>
 
-                        <se:StswLabel Content="Stronghold Crusader Extreme:" FontWeight="Bold" Margin="3 15 3 0"/>
+                        <se:StswLabel Content="Stronghold Crusader Extreme:" FontWeight="Bold" Margin="3 6 3 0"/>
                         <se:StswPathPicker Filter="Stronghold Crusader Extreme|*.exe"
                                            Margin="3"
                                            Placeholder="Please select Stronghold Crusader Extreme .exe path..."
                                            SelectedPath="{Binding ExtremePath, Source={x:Static local:Settings.Default}}"/>
-                        <se:StswComboBox ItemsSource="{Binding Configs[Extreme]}"
+
+                        <se:StswLabel Content="Rebalance configs:" FontWeight="Bold" Margin="3 6 3 0"/>
+                        <se:StswComboBox DisplayMemberPath="Key"
+                                         IsEditable="True"
+                                         ItemsSource="{Binding Source={x:Static local:Storage.Rebalances}}"
                                          Margin="3"
-                                         Placeholder="Please select config to apply..."
-                                         SelectedItem="{Binding ExtremeConfig, Source={x:Static local:Settings.Default}}"
-                                         Visibility="{Binding ExtremePath, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=!}">
+                                         Placeholder="Please select rebalance config to apply..."
+                                         SelectedValue="{Binding SelectedRebalance}"
+                                         SelectedValuePath="Value"
+                                         Text="{Binding RebalanceName, Source={x:Static local:Settings.Default}}">
                             <se:StswComboBox.SubControls>
-                                <se:StswSubButton Command="{Binding EditConfigCommand}"
-                                                  CommandParameter="{x:Static local:StrongholdType.Extreme}"
+                                <se:StswSubButton Command="{Binding ReloadRebalancesCommand}"
+                                                  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}"
+                                                  IconData="{x:Static se:StswIcons.Refresh}"
+                                                  IconFill="{DynamicResource StswColor.Neutral}"
+                                                  Padding="0 0 3 0"/>
+                                <se:StswSubButton Command="{Binding EditRebalanceCommand}"
+                                                  CommandParameter="{Binding Text, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}"
                                                   IconData="{x:Static se:StswIcons.Pencil}"
-                                                  IsEnabled="{Binding ExtremeConfig, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=!}"/>
+                                                  IconFill="{DynamicResource StswColor.Positive}"
+                                                  Padding="0 0 3 0"/>
+                                <se:StswSubButton Command="{Binding RemoveRebalanceCommand}"
+                                                  CommandParameter="{Binding Text, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}"
+                                                  IconData="{x:Static se:StswIcons.TrashCan}"
+                                                  IconFill="{DynamicResource StswColor.Negative}"
+                                                  Padding="0 0 3 0"/>
                             </se:StswComboBox.SubControls>
                         </se:StswComboBox>
                     </StackPanel>
                 </se:StswScrollView>
             </se:StswTabItem>
+            <!-- bugfixes -->
+            <se:StswTabItem Visibility="Collapsed">
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Bugfixes" IconData="{x:Static se:StswIcons.Tools}"/>
+                </se:StswTabItem.Header>
 
+
+            </se:StswTabItem>
+            <!-- ai -->
+            <se:StswTabItem Visibility="Collapsed">
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="AI" IconData="{x:Static se:StswIcons.Alien}"/>
+                </se:StswTabItem.Header>
+
+
+            </se:StswTabItem>
+            <!-- starting goods -->
+            <se:StswTabItem Visibility="Collapsed">
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Starting goods" IconData="{x:Static se:StswIcons.ContainStart}"/>
+                </se:StswTabItem.Header>
+
+
+            </se:StswTabItem>
+            <!-- buildings -->
             <se:StswTabItem>
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Buildings" IconData="{x:Static se:StswIcons.Castle}"/>
+                </se:StswTabItem.Header>
+
+                <se:StswDataGrid Background="#3777"
+                                 CanUserAddRows="False"
+                                 CanUserDeleteRows="False"
+                                 ItemsSource="{Binding SelectedRebalance.BuildingsView}"
+                                 Margin="5">
+                    <se:StswDataGrid.Columns>
+                        <DataGridTemplateColumn SortMemberPath="Key">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="48" MaxWidth="48" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" FontWeight="Bold" IsReadOnly="True">
+                            <DataGridTextColumn.Header>
+                                <se:StswLabel Content="Name"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[0]}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Wood cost" IconSource="/Resources/resources/Wood.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[1]}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Stone cost" IconSource="/Resources/resources/Stone.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[2]}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Iron cost" IconSource="/Resources/resources/Iron.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[3]}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Pitch cost" IconSource="/Resources/resources/Pitch.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[4]}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Gold cost" IconSource="/Resources/resources/Gold.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Health}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Health" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Housing}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Housing" IconData="{x:Static se:StswIcons.Home}" IconFill="{DynamicResource StswDialog.None.Background}"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                    </se:StswDataGrid.Columns>
+                </se:StswDataGrid>
+            </se:StswTabItem>
+            <!-- resources -->
+            <se:StswTabItem>
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Resources" IconData="{x:Static se:StswIcons.PackageVariant}"/>
+                </se:StswTabItem.Header>
+
+                <se:StswDataGrid Background="#3777"
+                                 CanUserAddRows="False"
+                                 CanUserDeleteRows="False"
+                                 ItemsSource="{Binding SelectedRebalance.ResourcesView}"
+                                 Margin="5">
+                    <se:StswDataGrid.Columns>
+                        <DataGridTemplateColumn SortMemberPath="Key">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="24" MaxWidth="24" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" FontWeight="Bold" IsReadOnly="True">
+                            <DataGridTextColumn.Header>
+                                <se:StswLabel Content="Name"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Buy}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Buy value" IconSource="/Resources/resources/Gold.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Sell}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Sell value" IconSource="/Resources/resources/Gold.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding SellRatio, StringFormat=0%, Mode=OneWay}" IsReadOnly="True">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Sell ratio" IconData="{x:Static se:StswIcons.Percent}" IconFill="{DynamicResource StswDialog.None.Background}"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                    </se:StswDataGrid.Columns>
+                </se:StswDataGrid>
+            </se:StswTabItem>
+            <!-- units -->
+            <se:StswTabItem Visibility="Collapsed">
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Units" IconData="{x:Static se:StswIcons.AccountGroup}"/>
+                </se:StswTabItem.Header>
+
+
+            </se:StswTabItem>
+            <!-- skirmish trail -->
+            <se:StswTabItem Visibility="Collapsed">
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Skirmish trail" IconData="{x:Static se:StswIcons.Map}"/>
+                </se:StswTabItem.Header>
+
+
+            </se:StswTabItem>
+            <!-- other -->
+            <se:StswTabItem Visibility="Collapsed">
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Other" IconData="{x:Static se:StswIcons.ProgressQuestion}"/>
+                </se:StswTabItem.Header>
+
+
+            </se:StswTabItem>
+            <!-- finder -->
+            <se:StswTabItem Visibility="Collapsed">
                 <se:StswTabItem.Header>
                     <se:StswLabel Content="Finder" IconData="{x:Static se:StswIcons.Magnify}"/>
                 </se:StswTabItem.Header>
 
-                <DockPanel Margin="-3">
-                    <se:StswDataGrid BorderThickness="0 0 1 0"
-                                     IsReadOnly="True"
-                                     ItemsSource="{Binding FinderResults}"
-                                     SelectionUnit="Cell"
-                                     Width="200">
 
-                        <se:StswDataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Address}" FontSize="11" Header="Address" Width="*"/>
-                            <se:StswDataGridDecimalColumn Binding="{Binding Value}" FontSize="11" Header="Value" Width="*"/>
-                        </se:StswDataGrid.Columns>
-
-                        <se:StswDataGrid.CellStyle>
-                            <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource StswDataGridCellStyle}">
-                                <Setter Property="Margin" Value="-0.5"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsInConfigFile}" Value="True">
-                                        <Setter Property="Background" Value="{DynamicResource StswDialog.Warning.Subground}"/>
-                                    </DataTrigger>
-                                    <MultiDataTrigger>
-                                        <MultiDataTrigger.Conditions>
-                                            <Condition Binding="{Binding IsInConfigFile}" Value="True"/>
-                                            <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="True"/>
-                                        </MultiDataTrigger.Conditions>
-                                        <Setter Property="Background" Value="{DynamicResource StswDialog.Warning.Border}"/>
-                                    </MultiDataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </se:StswDataGrid.CellStyle>
-                    </se:StswDataGrid>
-
-                    <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
-                        <se:StswLabel Content="Game type:"/>
-                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:StrongholdType}"
-                                         Margin="3"
-                                         Placeholder="Select Stronghold game to search through..."
-                                         SelectedValue="{Binding FinderFilterType}"/>
-
-                        <se:StswLabel Content="Size:"/>
-                        <StackPanel Margin="3" Orientation="Horizontal">
-                            <se:StswRadioBox Content="byte"
-                                             IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=1}"
-                                             Margin="0 0 3 0"/>
-                            <se:StswRadioBox Content="int"
-                                             IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=4}"
-                                             Margin="0 0 3 0"/>
-                        </StackPanel>
-
-                        <se:StswLabel Content="Address:"/>
-                        <DockPanel IsEnabled="{Binding FinderFilterType, Converter={x:Static se:StswNotNullConverter.Instance}}">
-                            <se:StswDecimalBox DockPanel.Dock="Right"
-                                               Margin="3"
-                                               Placeholder="Skip bytes..."
-                                               Value="{Binding FinderFilterSkips}"
-                                               Width="100"/>
-                            <se:StswTextBox Margin="3"
-                                            Placeholder="Initial address to find..."
-                                            Text="{Binding FinderFilterAddress}"/>
-                        </DockPanel>
-
-                        <se:StswLabel Content="Values:"/>
-                        <se:StswTextBox IsEnabled="{Binding FinderFilterType, Converter={x:Static se:StswNotNullConverter.Instance}}"
-                                        Margin="3"
-                                        Placeholder="Sequence of values to find... (separated by commas)"
-                                        Text="{Binding FinderFilterValues}"/>
-                    </se:StswLabelPanel>
-                </DockPanel>
             </se:StswTabItem>
         </se:StswTabControl>
     </DockPanel>

@@ -3,4 +3,13 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:local="clr-namespace:SHC_Rebalancer"
             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
-            StartupUri="Modules/MainWindow.xaml"/>
+            StartupUri="Modules/MainWindow.xaml"
+            DispatcherUnhandledException="Application_DispatcherUnhandledException">
+    <se:StswApp.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/StswExpress;component/StswResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </se:StswApp.Resources>
+</se:StswApp>

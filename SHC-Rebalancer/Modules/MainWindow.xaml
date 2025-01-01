@@ -5,7 +5,8 @@
                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                xmlns:local="clr-namespace:SHC_Rebalancer"
                xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
-               mc:Ignorable="d" Height="450" Width="750" WindowStartupLocation="CenterScreen"
-               Title="SHC Rebalancer" Icon="/Resources/icon.ico">
+               mc:Ignorable="d" Height="600" Width="1000" WindowStartupLocation="CenterScreen"
+               Title="{x:Static se:StswFn.AppNameAndVersion}" Icon="/Resources/icon.ico">
+
     <local:MainContext/>
 </se:StswWindow>

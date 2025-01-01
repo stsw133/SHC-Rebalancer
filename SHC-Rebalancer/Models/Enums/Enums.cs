@@ -1,10 +1,24 @@
 ﻿namespace SHC_Rebalancer;
 
-public enum StrongholdType
+public enum AI
 {
-    Stronghold,
-    Crusader,
-    Extreme,
+    Player,
+    Rat,
+    Snake,
+    Pig,
+    Wolf,
+    Saladin,
+    Caliph,
+    Sultan,
+    Richard,
+    Frederick,
+    Phillip,
+    Wazir,
+    Emir,
+    Nizar,
+    Sheriff,
+    Marshal,
+    Abbot,
 }
 
 public enum Building
@@ -119,6 +133,12 @@ public enum Building
     ArabOutpost,
     Unknown108,
     Unknown109,
+}
+
+public enum GameVersion
+{
+    Crusader,
+    Extreme,
 }
 
 public enum Resource

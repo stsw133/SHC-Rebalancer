@@ -2,22 +2,287 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <RootNamespace>SHC_Rebalancer</RootNamespace>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+	<RootNamespace>SHC_Rebalancer</RootNamespace>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+	<ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
-    <Version>0.1.0</Version>
+    <Company>stsw</Company>
+    <PackageIcon>icon.ico</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\icon.ico" />
+    <Compile Remove="Controls\**" />
+    <Compile Remove="Logic\Validation\**" />
+    <Compile Remove="Modules\_base\**" />
+    <Compile Remove="Modules\_shared\**" />
+    <EmbeddedResource Remove="Controls\**" />
+    <EmbeddedResource Remove="Logic\Validation\**" />
+    <EmbeddedResource Remove="Modules\_base\**" />
+    <EmbeddedResource Remove="Modules\_shared\**" />
+    <None Remove="Controls\**" />
+    <None Remove="Logic\Validation\**" />
+    <None Remove="Modules\_base\**" />
+    <None Remove="Modules\_shared\**" />
+    <Page Remove="Controls\**" />
+    <Page Remove="Logic\Validation\**" />
+    <Page Remove="Modules\_base\**" />
+    <Page Remove="Modules\_shared\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="StswExpress" Version="0.13.1" />
+    <None Remove="Resources\ai\Image494.png" />
+    <None Remove="Resources\ai\Image496.png" />
+    <None Remove="Resources\ai\Image498.png" />
+    <None Remove="Resources\ai\Image500.png" />
+    <None Remove="Resources\ai\Image684.png" />
+    <None Remove="Resources\ai\Image687.png" />
+    <None Remove="Resources\ai\Image690.png" />
+    <None Remove="Resources\ai\Image701.png" />
+    <None Remove="Resources\ai\Image702.png" />
+    <None Remove="Resources\ai\Image703.png" />
+    <None Remove="Resources\ai\Image704.png" />
+    <None Remove="Resources\ai\Image705.png" />
+    <None Remove="Resources\ai\Image706.png" />
+    <None Remove="Resources\ai\Image707.png" />
+    <None Remove="Resources\ai\Image708.png" />
+    <None Remove="Resources\ai\Image709.png" />
+    <None Remove="Resources\ai\Image710.png" />
+    <None Remove="Resources\ai\Image711.png" />
+    <None Remove="Resources\ai\Image712.png" />
+    <None Remove="Resources\ai\Image713.png" />
+    <None Remove="Resources\ai\Image714.png" />
+    <None Remove="Resources\ai\Image715.png" />
+    <None Remove="Resources\ai\Image716.png" />
+    <None Remove="Resources\ai\Image717.png" />
+    <None Remove="Resources\ai\Image718.png" />
+    <None Remove="Resources\ai\Image719.png" />
+    <None Remove="Resources\ai\Image720.png" />
+    <None Remove="Resources\ai\Image721.png" />
+    <None Remove="Resources\ai\Image722.png" />
+    <None Remove="Resources\ai\Image723.png" />
+    <None Remove="Resources\ai\Image724.png" />
+    <None Remove="Resources\ai\Image725.png" />
+    <None Remove="Resources\ai\Image726.png" />
+    <None Remove="Resources\background.jpg" />
+    <None Remove="Resources\buildings\EngineersGuild.png" />
+    <None Remove="Resources\buildings\Stables.png" />
+    <None Remove="Resources\buildings\TunnelersGuild.png" />
+    <None Remove="Resources\rebalance\base\crusader.json" />
+    <None Remove="Resources\rebalance\base\extreme.json" />
+    <None Remove="Resources\rebalance\stsw.json" />
+    <None Remove="Resources\rebalance\vanilla.json" />
+    <None Remove="Resources\resources\apple.png" />
+    <None Remove="Resources\resources\armor.png" />
+    <None Remove="Resources\resources\beer.png" />
+    <None Remove="Resources\resources\bow.png" />
+    <None Remove="Resources\resources\bread.png" />
+    <None Remove="Resources\resources\cheese.png" />
+    <None Remove="Resources\resources\crossbow.png" />
+    <None Remove="Resources\resources\flour.png" />
+    <None Remove="Resources\resources\gold.png" />
+    <None Remove="Resources\resources\hop.png" />
+    <None Remove="Resources\resources\iron.png" />
+    <None Remove="Resources\resources\leather.png" />
+    <None Remove="Resources\resources\mace.png" />
+    <None Remove="Resources\resources\meat.png" />
+    <None Remove="Resources\resources\pike.png" />
+    <None Remove="Resources\resources\pitch.png" />
+    <None Remove="Resources\resources\spear.png" />
+    <None Remove="Resources\resources\stone.png" />
+    <None Remove="Resources\resources\sword.png" />
+    <None Remove="Resources\resources\wheat.png" />
+    <None Remove="Resources\resources\wood.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rebalance\base\crusader.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\rebalance\base\extreme.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\rebalance\stsw.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\rebalance\vanilla.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StswExpress" Version="0.14.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\ai\Image494.png" />
+    <Resource Include="Resources\ai\Image496.png" />
+    <Resource Include="Resources\ai\Image498.png" />
+    <Resource Include="Resources\ai\Image500.png" />
+    <Resource Include="Resources\ai\Image684.png" />
+    <Resource Include="Resources\ai\Image687.png" />
+    <Resource Include="Resources\ai\Image690.png" />
+    <Resource Include="Resources\ai\Image701.png" />
+    <Resource Include="Resources\ai\Image702.png" />
+    <Resource Include="Resources\ai\Image703.png" />
+    <Resource Include="Resources\ai\Image704.png" />
+    <Resource Include="Resources\ai\Image705.png" />
+    <Resource Include="Resources\ai\Image706.png" />
+    <Resource Include="Resources\ai\Image707.png" />
+    <Resource Include="Resources\ai\Image708.png" />
+    <Resource Include="Resources\ai\Image709.png" />
+    <Resource Include="Resources\ai\Image710.png" />
+    <Resource Include="Resources\ai\Image711.png" />
+    <Resource Include="Resources\ai\Image712.png" />
+    <Resource Include="Resources\ai\Image713.png" />
+    <Resource Include="Resources\ai\Image714.png" />
+    <Resource Include="Resources\ai\Image715.png" />
+    <Resource Include="Resources\ai\Image716.png" />
+    <Resource Include="Resources\ai\Image717.png" />
+    <Resource Include="Resources\ai\Image718.png" />
+    <Resource Include="Resources\ai\Image719.png" />
+    <Resource Include="Resources\ai\Image720.png" />
+    <Resource Include="Resources\ai\Image721.png" />
+    <Resource Include="Resources\ai\Image722.png" />
+    <Resource Include="Resources\ai\Image723.png" />
+    <Resource Include="Resources\ai\Image724.png" />
+    <Resource Include="Resources\ai\Image725.png" />
+    <Resource Include="Resources\ai\Image726.png" />
+    <Resource Include="Resources\background.jpg" />
+    <Resource Include="Resources\buildings\Armory.png" />
+    <Resource Include="Resources\buildings\EngineersGuild.png" />
+    <Resource Include="Resources\buildings\HopsFarm.png" />
+    <Resource Include="Resources\buildings\WheatFarm.png" />
+    <Resource Include="Resources\buildings\AppleOrchard.png" />
+    <Resource Include="Resources\buildings\DairyFarm.png" />
+    <Resource Include="Resources\buildings\Poleturner.png" />
+    <Resource Include="Resources\buildings\Armourer.png" />
+    <Resource Include="Resources\buildings\Tanner.png" />
+    <Resource Include="Resources\buildings\Blacksmith.png" />
+    <Resource Include="Resources\buildings\Fletcher.png" />
+    <Resource Include="Resources\buildings\Chapel.png" />
+    <Resource Include="Resources\buildings\Church.png" />
+    <Resource Include="Resources\buildings\HighCrenels.png" />
+    <Resource Include="Resources\buildings\Cathedral.png" />
+    <Resource Include="Resources\buildings\Garden1.png" />
+    <Resource Include="Resources\buildings\Garden2.png" />
+    <Resource Include="Resources\buildings\Gardens.png" />
+    <Resource Include="Resources\buildings\MayPole.png" />
+    <Resource Include="Resources\buildings\Gallows.png" />
+    <Resource Include="Resources\buildings\RoundTower.png" />
+    <Resource Include="Resources\buildings\OilSmelter.png" />
+    <Resource Include="Resources\buildings\Mangonel.png" />
+    <Resource Include="Resources\buildings\Catapult.png" />
+    <Resource Include="Resources\buildings\LowWalls.png" />
+    <Resource Include="Resources\buildings\Trebuchet.png" />
+    <Resource Include="Resources\buildings\TowerBallista.png" />
+    <Resource Include="Resources\buildings\Apothecary.png" />
+    <Resource Include="Resources\buildings\KillingPits.png" />
+    <Resource Include="Resources\buildings\Drawbridge.png" />
+    <Resource Include="Resources\buildings\Moat.png" />
+    <Resource Include="Resources\buildings\WaterPot.png" />
+    <Resource Include="Resources\buildings\PitchDitch.png" />
+    <Resource Include="Resources\buildings\Well.png" />
+    <Resource Include="Resources\buildings\HighWalls.png" />
+    <Resource Include="Resources\buildings\Brazier.png" />
+    <Resource Include="Resources\buildings\Stocks.png" />
+    <Resource Include="Resources\buildings\Gibbet.png" />
+    <Resource Include="Resources\buildings\BurningStake.png" />
+    <Resource Include="Resources\buildings\Cesspit.png" />
+    <Resource Include="Resources\buildings\Dungeon.png" />
+    <Resource Include="Resources\buildings\StretchingRack.png" />
+    <Resource Include="Resources\buildings\ChoppingBlock.png" />
+    <Resource Include="Resources\buildings\DunkingStool.png" />
+    <Resource Include="Resources\buildings\CagedWarDogs.png" />
+    <Resource Include="Resources\buildings\Stairs.png" />
+    <Resource Include="Resources\buildings\Statue.png" />
+    <Resource Include="Resources\buildings\Statue2.png" />
+    <Resource Include="Resources\buildings\Statue3.png" />
+    <Resource Include="Resources\buildings\Statue4.png" />
+    <Resource Include="Resources\buildings\Statue5.png" />
+    <Resource Include="Resources\buildings\Shrine.png" />
+    <Resource Include="Resources\buildings\Shrine2.png" />
+    <Resource Include="Resources\buildings\DancingBear.png" />
+    <Resource Include="Resources\buildings\LookoutTower.png" />
+    <Resource Include="Resources\buildings\HuntersHut.png" />
+    <Resource Include="Resources\buildings\Granary.png" />
+    <Resource Include="Resources\buildings\Mill.png" />
+    <Resource Include="Resources\buildings\Bakery.png" />
+    <Resource Include="Resources\buildings\Brewery.png" />
+    <Resource Include="Resources\buildings\Inn.png" />
+    <Resource Include="Resources\buildings\Marketplace.png" />
+    <Resource Include="Resources\buildings\WoodcuttersHut.png" />
+    <Resource Include="Resources\buildings\Stockpile.png" />
+    <Resource Include="Resources\buildings\Quarry.png" />
+    <Resource Include="Resources\buildings\OxTether.png" />
+    <Resource Include="Resources\buildings\PitchRig.png" />
+    <Resource Include="Resources\buildings\IronMine.png" />
+    <Resource Include="Resources\buildings\Hovel.png" />
+    <Resource Include="Resources\buildings\Keep1.png" />
+    <Resource Include="Resources\buildings\Keep2.png" />
+    <Resource Include="Resources\buildings\Keep3.png" />
+    <Resource Include="Resources\buildings\PerimeterTurret.png" />
+    <Resource Include="Resources\buildings\DefenseTurret.png" />
+    <Resource Include="Resources\buildings\SquareTower.png" />
+    <Resource Include="Resources\buildings\Flag.png" />
+    <Resource Include="Resources\buildings\Flag2.png" />
+    <Resource Include="Resources\buildings\Flag3.png" />
+    <Resource Include="Resources\buildings\Flag4.png" />
+    <Resource Include="Resources\buildings\LargeGatehouse.png" />
+    <Resource Include="Resources\buildings\SmallGatehouse.png" />
+    <Resource Include="Resources\buildings\MercenaryPost.png" />
+    <Resource Include="Resources\buildings\Barracks.png" />
+    <Resource Include="Resources\buildings\Stables.png" />
+    <Resource Include="Resources\buildings\TunnelersGuild.png" />
+    <Resource Include="Resources\icon.ico" />
+    <Resource Include="Resources\resources\Apple.png" />
+    <Resource Include="Resources\resources\Armor.png" />
+    <Resource Include="Resources\resources\Beer.png" />
+    <Resource Include="Resources\resources\Bow.png" />
+    <Resource Include="Resources\resources\Bread.png" />
+    <Resource Include="Resources\resources\Cheese.png" />
+    <Resource Include="Resources\resources\Crossbow.png" />
+    <Resource Include="Resources\resources\Flour.png" />
+    <Resource Include="Resources\resources\Gold.png" />
+    <Resource Include="Resources\resources\Hop.png" />
+    <Resource Include="Resources\resources\Iron.png" />
+    <Resource Include="Resources\resources\Leather.png" />
+    <Resource Include="Resources\resources\Mace.png" />
+    <Resource Include="Resources\resources\meat.png" />
+    <Resource Include="Resources\resources\Pike.png" />
+    <Resource Include="Resources\resources\Pitch.png" />
+    <Resource Include="Resources\resources\Spear.png" />
+    <Resource Include="Resources\resources\Stone.png" />
+    <Resource Include="Resources\resources\Sword.png" />
+    <Resource Include="Resources\resources\Wheat.png" />
+    <Resource Include="Resources\resources\Wood.png" />
+    <Resource Include="Resources\units\EuropArcher.png" />
+    <Resource Include="Resources\units\EngineerWithOil.png" />
+    <Resource Include="Resources\units\Monk.png" />
+    <Resource Include="Resources\units\Catapult.png" />
+    <Resource Include="Resources\units\Trebuchet.png" />
+    <Resource Include="Resources\units\BatteringRam.png" />
+    <Resource Include="Resources\units\SiegeTower.png" />
+    <Resource Include="Resources\units\PortableShield.png" />
+    <Resource Include="Resources\units\Tunneler.png" />
+    <Resource Include="Resources\units\ArabArcher.png" />
+    <Resource Include="Resources\units\Slave.png" />
+    <Resource Include="Resources\units\Spearman.png" />
+    <Resource Include="Resources\units\Slinger.png" />
+    <Resource Include="Resources\units\Assassin.png" />
+    <Resource Include="Resources\units\HorseArcher.png" />
+    <Resource Include="Resources\units\ArabSwordsman.png" />
+    <Resource Include="Resources\units\Firethrower.png" />
+    <Resource Include="Resources\units\FireBallista.png" />
+    <Resource Include="Resources\units\Pikeman.png" />
+    <Resource Include="Resources\units\Maceman.png" />
+    <Resource Include="Resources\units\Crossbowman.png" />
+    <Resource Include="Resources\units\Swordsman.png" />
+    <Resource Include="Resources\units\Knight.png" />
+    <Resource Include="Resources\units\Ladderman.png" />
+    <Resource Include="Resources\units\Engineer.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,20 +294,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resources\rebalance\extreme\stsw.json">
-      <CopyToOutputDirectory></CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\rebalance\extreme\vanilla.json">
-      <CopyToOutputDirectory></CopyToOutputDirectory>
+    <None Update="Resources\icon.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
     <None Update="Settings.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Resources\icon.ico" />
   </ItemGroup>
 
 </Project>

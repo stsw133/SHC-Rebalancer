@@ -2,22 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SHC_Rebalancer" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="StrongholdPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="StrongholdConfig" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="CrusaderPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="CrusaderConfig" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ExtremePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ExtremeConfig" Type="System.String" Scope="User">
+    <Setting Name="RebalanceName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

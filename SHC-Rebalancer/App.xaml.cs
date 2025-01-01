@@ -1,25 +1,26 @@
 ﻿global using StswExpress;
-using System.IO;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace SHC_Rebalancer;
+/// <summary>
+/// Interaction logic for App.xaml
+/// </summary>
 public partial class App : StswApp
 {
-    public readonly static string ConfigsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", "rebalance");
-    public static string GetConfigPath(StrongholdType type, string configName) => $"{ConfigsPath}\\{type}\\{configName}.json";
-
-    /// OnStartup
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
-        foreach (var name in Enum.GetNames(typeof(StrongholdType)))
-            Directory.CreateDirectory($"{ConfigsPath}\\{name.ToLower()}");
     }
 
-    /// OnExit
     protected override void OnExit(ExitEventArgs e)
     {
         base.OnExit(e);
         Settings.Default.Save();
+    }
+
+    private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+    {
+        StswLog.Write(StswInfoType.Error, e.Exception.ToString());
     }
 }
