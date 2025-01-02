@@ -5,14 +5,16 @@ using System.Windows.Controls;
 namespace SHC_Rebalancer;
 public class MainContext : StswObservableObject
 {
+    public StswAsyncCommand SaveChangesCommand { get; }
+    public StswCancellableAsyncCommand InstallCommand { get; }
+    public StswAsyncCommand UninstallCommand { get; }
     public StswCommand<object> ReloadRebalancesCommand { get; }
     public StswAsyncCommand<string> EditRebalanceCommand { get; }
     public StswAsyncCommand<string> RemoveRebalanceCommand { get; }
-    public StswCancellableAsyncCommand InstallCommand { get; }
-    public StswAsyncCommand UninstallCommand { get; }
 
     public MainContext()
     {
+        SaveChangesCommand = new(SaveChanges);
         InstallCommand = new(Install, () => InstallState != StswProgressState.Running);
         UninstallCommand = new(Uninstall, () => InstallState != StswProgressState.Running);
 
@@ -24,6 +26,70 @@ public class MainContext : StswObservableObject
     }
 
 
+
+    /// SaveChanges
+    public async Task SaveChanges()
+    {
+        try
+        {
+            foreach (var rebalance in Storage.Rebalances)
+            {
+                var filePath = Path.Combine(Storage.PathRebalances, rebalance.Key + ".json");
+                Storage.SaveJsonIntoFile(rebalance.Value, filePath);
+            }
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+    
+    /// Install
+    public async Task Install(CancellationToken token)
+    {
+        try
+        {
+            if (SelectedRebalance == null)
+                return;
+
+            InstallState = StswProgressState.Running;
+
+            var filePath = Path.Combine(Storage.PathRebalances, Storage.Rebalances.FirstOrDefault(x => x.Value == SelectedRebalance).Key + ".json");
+            Storage.SaveJsonIntoFile(SelectedRebalance, filePath);
+
+            Backup.Make(Settings.Default.CrusaderPath);
+            Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath, SelectedRebalance);
+
+            Backup.Make(Settings.Default.ExtremePath);
+            Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath, SelectedRebalance);
+
+            InstallState = StswProgressState.Finished;
+        }
+        catch (Exception ex)
+        {
+            InstallState = StswProgressState.Error;
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+
+    /// Uninstall
+    public async Task Uninstall()
+    {
+        try
+        {
+            InstallState = StswProgressState.Running;
+
+            Backup.Restore(Settings.Default.CrusaderPath);
+            Backup.Restore(Settings.Default.ExtremePath);
+
+            InstallState = StswProgressState.Finished;
+        }
+        catch (Exception ex)
+        {
+            InstallState = StswProgressState.Error;
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
 
     /// ReloadRebalances
     private void ReloadRebalances(object? parameter)
@@ -88,47 +154,6 @@ public class MainContext : StswObservableObject
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
-
-    /// Install
-    public async Task Install(CancellationToken token)
-    {
-        try
-        {
-            InstallState = StswProgressState.Running;
-
-            Backup.Make(Settings.Default.CrusaderPath);
-            Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath, SelectedRebalance);
-
-            Backup.Make(Settings.Default.ExtremePath);
-            Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath, SelectedRebalance);
-
-            InstallState = StswProgressState.Finished;
-        }
-        catch (Exception ex)
-        {
-            InstallState = StswProgressState.Error;
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
-
-    /// Uninstall
-    public async Task Uninstall()
-    {
-        try
-        {
-            InstallState = StswProgressState.Running;
-
-            Backup.Restore(Settings.Default.CrusaderPath);
-            Backup.Restore(Settings.Default.ExtremePath);
-
-            InstallState = StswProgressState.Finished;
-        }
-        catch (Exception ex)
-        {
-            InstallState = StswProgressState.Error;
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }

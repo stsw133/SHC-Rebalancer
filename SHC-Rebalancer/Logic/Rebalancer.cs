@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Text;
+using System.Text.Json;
 
 namespace SHC_Rebalancer;
 internal class Rebalancer
@@ -20,8 +21,10 @@ internal class Rebalancer
             foreach (var item in rebalance.ResourcesView)
                 ProcessResourceValues(gameVersion, item);
             //ProcessValues(gameVersion, rebalance.SkirmishTrail);
-            //ProcessValues(gameVersion, rebalance.Units);
-            //ProcessOtherAddress(gameVersion, rebalance.Other);
+            foreach (var item in rebalance.UnitsView)
+                ProcessUnitValues(gameVersion, item);
+            
+            ProcessOtherAddress(gameVersion, rebalance.Other);
         }
     }
 
@@ -29,21 +32,21 @@ internal class Rebalancer
     private static void ProcessBuildingValues(GameVersion gameVersion, BuildingModel model)
     {
         /// health
-        if (model.Health.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Health", out var aHealth))
+        if (model.Health.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Health", out var baseAddress))
         {
-            var address = GetAddress<Building>(aHealth, model.Key.ToString());
-            WriteIfDifferent(address, model.Health, aHealth.Size, $"{model.Key} Health");
+            var address = GetAddress<Building>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.Health, baseAddress.Size, $"{model.Key} Health");
         }
         /// housing
-        if (model.Housing.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Housing", out var aHousing))
+        if (model.Housing.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Housing", out baseAddress))
         {
-            var address = GetAddress<Building>(aHousing, model.Key.ToString(), 4);
-            WriteIfDifferent(address, model.Housing, aHousing.Size, $"{model.Key} Housing");
+            var address = GetAddress<Building>(baseAddress, model.Key.ToString(), 4);
+            WriteIfDifferent(address, model.Housing, baseAddress.Size, $"{model.Key} Housing");
         }
         /// cost
-        if (model.Cost != null && model.Cost.Length > 0 && Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Cost", out var aCost))
+        if (model.Cost?.Length > 0 && Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Cost", out baseAddress))
         {
-            var address = GetAddress<Building>(aCost, model.Key.ToString(), model.Cost.Length);
+            var address = GetAddress<Building>(baseAddress, model.Key.ToString(), model.Cost.Length);
             WriteIfDifferent(address, model.Cost, model.Cost.Length, $"{model.Key} Cost");
         }
     }
@@ -52,144 +55,141 @@ internal class Rebalancer
     private static void ProcessResourceValues(GameVersion gameVersion, ResourceModel model)
     {
         /// buy
-        if (model.Buy.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Resources Buy", out var aBuy))
+        if (model.Buy.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Resources Buy", out var baseAddress))
         {
-            var address = GetAddress<Resource>(aBuy, model.Key.ToString());
-            WriteIfDifferent(address, model.Buy, aBuy.Size, $"{model.Key} Buy");
+            var address = GetAddress<Resource>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.Buy, baseAddress.Size, $"{model.Key} Buy");
         }
         /// sell
-        if (model.Sell.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Resources Sell", out var aSell))
+        if (model.Sell.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Resources Sell", out baseAddress))
         {
-            var address = GetAddress<Resource>(aSell, model.Key.ToString());
-            WriteIfDifferent(address, model.Sell, aSell.Size, $"{model.Key} Sell");
+            var address = GetAddress<Resource>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.Sell, baseAddress.Size, $"{model.Key} Sell");
         }
     }
-    /*
+    
     /// ProcessSkirmishMissionValues
     private static void ProcessSkirmishMissionValues(GameVersion gameVersion, string key, SkirmishMissionModel mission)
     {
-        if (baseAddresses.TryGetValue("SkirmishTrail Mission", out var aMission))
+        if (Storage.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Mission", out var baseAddress))
         {
             var i = Convert.ToInt32(key) - 1;
-            var address = Convert.ToInt32(aMission.Address, 16) + (i * 144);
+            var address = Convert.ToInt32(baseAddress.Address, 16) + (i * 144);
 
             if (!string.IsNullOrWhiteSpace(mission.MapNameAddress) && !string.IsNullOrWhiteSpace(mission.MapName))
             {
-                if (baseAddresses.TryGetValue("SkirmishTrail MapNameOffset", out var mapNameOffset))
+                if (Storage.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail MapNameOffset", out var mapNameOffset))
                 {
-                    WriteIfDifferent(address + 0, Convert.ToInt32(mission.MapNameAddress, 16) + Convert.ToInt32(mapNameOffset.Address, 16), aMission.Size, $"Mission {i + 1}, MapNameOffset");
+                    WriteIfDifferent(address + 0, Convert.ToInt32(mission.MapNameAddress, 16) + Convert.ToInt32(mapNameOffset.Address, 16), baseAddress.Size, $"Mission {i + 1}, MapNameOffset");
                     WriteIfDifferent(Convert.ToInt32(mission.MapNameAddress, 16), ConvertStringToBytesWithAutoPadding(mission.MapName, 4), mapNameOffset.Size, $"Mission {i + 1}, MapName");
                 }
             }
-            WriteIfDifferent(address + 4, mission.Difficulty, aMission.Size, $"Mission {i + 1}, Difficulty");
-            WriteIfDifferent(address + 8, (int?)mission.Type, aMission.Size, $"Mission {i + 1}, Type");
-            WriteIfDifferent(address + 12, mission.AIs?.Length, aMission.Size, $"Mission {i + 1}, NumberOfPlayers");
-            WriteIfDifferent(address + 16, mission.AIs?.Concat(Enumerable.Repeat(0, 8 - mission.AIs.Length))?.ToArray(), aMission.Size, $"Mission {i + 1}, AIs");
-            WriteIfDifferent(address + 48, mission.Locations?.Concat(Enumerable.Repeat(0, 8 - mission.Locations.Length))?.ToArray(), aMission.Size, $"Mission {i + 1}, Locations");
-            WriteIfDifferent(address + 80, mission.Teams?.Concat(Enumerable.Repeat(0, 8 - mission.Teams.Length))?.ToArray(), aMission.Size, $"Mission {i + 1}, Teams");
-            WriteIfDifferent(address + 112, mission.AIVs?.Concat(Enumerable.Repeat(0, 8 - mission.AIVs.Length))?.ToArray(), aMission.Size, $"Mission {i + 1}, AIVs");
+            WriteIfDifferent(address + 4, mission.Difficulty, baseAddress.Size, $"Mission {i + 1}, Difficulty");
+            WriteIfDifferent(address + 8, (int?)mission.Type, baseAddress.Size, $"Mission {i + 1}, Type");
+            WriteIfDifferent(address + 12, mission.AIs?.Length, baseAddress.Size, $"Mission {i + 1}, NumberOfPlayers");
+            WriteIfDifferent(address + 16, mission.AIs?.Concat(Enumerable.Repeat(0, 8 - mission.AIs.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, AIs");
+            WriteIfDifferent(address + 48, mission.Locations?.Concat(Enumerable.Repeat(0, 8 - mission.Locations.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, Locations");
+            WriteIfDifferent(address + 80, mission.Teams?.Concat(Enumerable.Repeat(0, 8 - mission.Teams.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, Teams");
+            WriteIfDifferent(address + 112, mission.AIVs?.Concat(Enumerable.Repeat(0, 8 - mission.AIVs.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, AIVs");
         }
     }
     
     /// ProcessUnitValues
-    private static void ProcessUnitValues(GameVersion gameVersion, string key, UnitModel unit)
+    private static void ProcessUnitValues(GameVersion gameVersion, UnitModel model)
     {
         /// speed
-        if (unit.Speed.HasValue && Storage.BaseAddresses.TryGetValue("Units Speed", out var aSpeed))
+        if (model.Speed.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units Speed", out var baseAddress))
         {
-            var address = GetAddress<Unit>(aSpeed, key);
-            WriteIfDifferent(address, unit.Speed, aSpeed.Size, $"{key} Speed");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.Speed, baseAddress.Size, $"{model.Key} Speed");
         }
         /// canGoOnWall
-        if (unit.CanGoOnWall.HasValue && baseAddresses.TryGetValue("Units CanGoOnWall", out var aCanGoOnWall))
+        if (model.CanGoOnWall.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units CanGoOnWall", out baseAddress))
         {
-            var address = GetAddress<Unit>(aCanGoOnWall, key);
-            WriteIfDifferent(address, unit.CanGoOnWall.Value ? 1 : 0, aCanGoOnWall.Size, $"{key} CanGoOnWall");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.CanGoOnWall.Value ? 1 : 0, baseAddress.Size, $"{model.Key} CanGoOnWall");
         }
         /// canBeMoved
-        if (unit.CanBeMoved.HasValue && baseAddresses.TryGetValue("Units CanBeMoved", out var aCanBeMoved))
+        if (model.CanBeMoved.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units CanBeMoved", out baseAddress))
         {
-            var address = GetAddress<Unit>(aCanBeMoved, key);
-            WriteIfDifferent(address, unit.CanBeMoved.Value ? 1 : 0, aCanBeMoved.Size, $"{key} CanBeMoved");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.CanBeMoved.Value ? 1 : 0, baseAddress.Size, $"{model.Key} CanBeMoved");
         }
         /// health
-        if (unit.Health.HasValue && baseAddresses.TryGetValue("Units Health", out var aHealth))
+        if (model.Health.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units Health", out baseAddress))
         {
-            var address = GetAddress<Unit>(aHealth, key);
-            WriteIfDifferent(address, unit.Health, aHealth.Size, $"{key} Health");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.Health, baseAddress.Size, $"{model.Key} Health");
         }
         /// damageFromBow
-        if (unit.DamageFromBow.HasValue && baseAddresses.TryGetValue("Units DamageFromBow", out var aDamageFromBow))
+        if (model.DamageFromBow.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromBow", out baseAddress))
         {
-            var address = GetAddress<Unit>(aDamageFromBow, key);
-            WriteIfDifferent(address, unit.DamageFromBow, aDamageFromBow.Size, $"{key} DamageFromBow");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.DamageFromBow, baseAddress.Size, $"{model.Key} DamageFromBow");
         }
         /// damageFromSling
-        if (unit.DamageFromSling.HasValue && baseAddresses.TryGetValue("Units DamageFromSling", out var aDamageFromSling))
+        if (model.DamageFromSling.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromSling", out baseAddress))
         {
-            var address = GetAddress<Unit>(aDamageFromSling, key);
-            WriteIfDifferent(address, unit.DamageFromSling, aDamageFromSling.Size, $"{key} DamageFromSling");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.DamageFromSling, baseAddress.Size, $"{model.Key} DamageFromSling");
         }
         /// damageFromCrossbow
-        if (unit.DamageFromCrossbow.HasValue && baseAddresses.TryGetValue("Units DamageFromCrossbow", out var aDamageFromCrossbow))
+        if (model.DamageFromCrossbow.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromCrossbow", out baseAddress))
         {
-            var address = GetAddress<Unit>(aDamageFromCrossbow, key);
-            WriteIfDifferent(address, unit.DamageFromCrossbow, aDamageFromCrossbow.Size, $"{key} DamageFromCrossbow");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.DamageFromCrossbow, baseAddress.Size, $"{model.Key} DamageFromCrossbow");
         }
         /// canMeleeDamage
-        if (unit.CanMeleeDamage.HasValue && baseAddresses.TryGetValue("Units CanMeleeDamage", out var aCanMeleeDamage))
+        if (model.CanMeleeDamage.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units CanMeleeDamage", out baseAddress))
         {
-            var address = GetAddress<Unit>(aCanMeleeDamage, key);
-            WriteIfDifferent(address, unit.CanMeleeDamage.Value ? 1 : 0, aCanMeleeDamage.Size, $"{key} CanMeleeDamage");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.CanMeleeDamage.Value ? 1 : 0, baseAddress.Size, $"{model.Key} CanMeleeDamage");
         }
         /// meleeDamage
-        var opponents = Enum.GetNames(typeof(Unit));
-
-        if (unit.MeleeDamage.HasValue && baseAddresses.TryGetValue("Units MeleeDamage", out var aMeleeDamage))
+        if (model.MeleeDamage.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Units MeleeDamage", out baseAddress))
         {
+            var opponents = Enum.GetValues<Unit>();
             for (var i = 0; i < opponents.Length; i++)
             {
-                if (unit.MeleeDamageVs.ContainsKey(opponents[i]) || opponents[i].StartsWith("Unknown"))
+                if (model.MeleeDamageVs.ContainsKey(opponents[i]) || opponents[i].ToString().StartsWith("Unknown"))
                     continue;
 
-                var address = GetAddress<Unit>(aMeleeDamage, key, opponents.Length) + (i * aMeleeDamage.Size);
-                WriteIfDifferent(address, unit.MeleeDamage, aMeleeDamage.Size, $"{key} MeleeDamage vs {(Unit)i}");
+                var address = GetAddress<Unit>(baseAddress, model.Key.ToString(), opponents.Length) + (i * baseAddress.Size);
+                WriteIfDifferent(address, model.MeleeDamage, baseAddress.Size, $"{model.Key} MeleeDamage vs {(Unit)i}");
             }
         }
         /// meleeDamageVs
-
-        if (baseAddresses.TryGetValue("Units MeleeDamage", out aMeleeDamage))
+        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units MeleeDamage", out baseAddress))
         {
-            foreach (var meleeDamageVs in unit.MeleeDamageVs)
+            foreach (var meleeDamageVs in model.MeleeDamageVs)
             {
-                var i = (int)Enum.Parse(typeof(Unit), meleeDamageVs.Key);
-
-                var address = GetAddress<Unit>(aMeleeDamage, key, opponents.Length) + (i * aMeleeDamage.Size);
-                WriteIfDifferent(address, meleeDamageVs.Value, aMeleeDamage.Size, $"{key} MeleeDamage vs {meleeDamageVs.Key}");
+                var address = GetAddress<Unit>(baseAddress, model.Key.ToString(), Enum.GetValues<Unit>().Length) + ((int)meleeDamageVs.Key * baseAddress.Size);
+                WriteIfDifferent(address, meleeDamageVs.Value, baseAddress.Size, $"{model.Key} MeleeDamage vs {meleeDamageVs.Key}");
             }
         }
         /// canClimbLadder
-        if (unit.CanClimbLadder.HasValue
-         && baseAddresses.TryGetValue("Units CanClimbLadder", out var aCanClimbLadder)
-         && baseAddresses.TryGetValue("Units FocusClimbLadder", out var aFocusClimbLadder))
+        if (model.CanClimbLadder.HasValue
+         && Storage.BaseAddresses[gameVersion].TryGetValue("Units CanClimbLadder", out baseAddress)
+         && Storage.BaseAddresses[gameVersion].TryGetValue("Units FocusClimbLadder", out var baseAddress2))
         {
-            var address = GetAddress<Unit>(aCanClimbLadder, key);
-            WriteIfDifferent(address, unit.CanClimbLadder.Value ? 1 : 0, aCanClimbLadder.Size, $"{key} CanClimbLadder");
-            address = GetAddress<Unit>(aFocusClimbLadder, key);
-            WriteIfDifferent(address, unit.CanClimbLadder.Value ? 1 : 0, aFocusClimbLadder.Size, $"{key} FocusClimbLadder");
+            var address = GetAddress<Unit>(baseAddress, model.Key.ToString());
+            WriteIfDifferent(address, model.CanClimbLadder.Value ? 1 : 0, baseAddress.Size, $"{model.Key} CanClimbLadder");
+
+            address = GetAddress<Unit>(baseAddress2, model.Key.ToString());
+            WriteIfDifferent(address, model.CanClimbLadder.Value ? 1 : 0, baseAddress2.Size, $"{model.Key} FocusClimbLadder");
         }
     }
-    */
+    
     /// ProcessOtherAddress
-    /*
-    private static void ProcessOtherAddress(IEnumerable<BaseAddressModel> items)
+    private static void ProcessOtherAddress(GameVersion gameVersion, IEnumerable<BaseValueModel> items)
     {
         foreach (var item in items)
         {
-            if (string.IsNullOrWhiteSpace(item.Address))
-                continue;
+            Storage.BaseAddresses[gameVersion].TryGetValue(item.Key, out var baseAddress);
 
-            var address = Convert.ToInt32(item.Address, 16);
+            var address = Convert.ToInt32(item.Address ?? baseAddress?.Address, 16);
+            if (address == default)
+                continue;
 
             if (item.Value is JsonElement jsonValue)
             {
@@ -198,25 +198,24 @@ internal class Rebalancer
                     if (item.Size == 1)
                     {
                         var newValue = jsonValue.EnumerateArray().Select(x => x.GetByte()).ToArray();
-                        WriteIfDifferent(address, newValue, item.Size, item.Description);
+                        WriteIfDifferent(address, newValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description);
                     }
                     else if (item.Size == 4)
                     {
                         var newValue = jsonValue.EnumerateArray().Select(x => x.GetInt32()).ToArray();
-                        WriteIfDifferent(address, newValue, item.Size, item.Description);
+                        WriteIfDifferent(address, newValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description);
                     }
                 }
                 else if (jsonValue.ValueKind == JsonValueKind.Number && jsonValue.TryGetInt32(out int intValue))
                 {
                     if (item.Size == 1)
-                        WriteIfDifferent(address, (byte)intValue, item.Size, item.Description);
+                        WriteIfDifferent(address, (byte)intValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description);
                     else if (item.Size == 4)
-                        WriteIfDifferent(address, intValue, item.Size, item.Description);
+                        WriteIfDifferent(address, intValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description);
                 }
             }
         }
     }
-    */
 
     /// GetAddress
     private static int GetAddress<T>(BaseAddressModel baseAddress, string key, int skipBy = 1) where T : Enum

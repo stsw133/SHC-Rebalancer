@@ -14,6 +14,9 @@
         <!-- buttons panel -->
         <se:StswDirectionView DockPanel.Dock="Bottom" Background="{DynamicResource StswWindow.Static.Background}" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
             <UniformGrid HorizontalAlignment="Center" Rows="1">
+                <se:StswButton Command="{Binding SaveChangesCommand}" Margin="3" Padding="10 3">
+                    <se:StswLabel Content="Save changes" IconData="{x:Static se:StswIcons.ContentSave}" IconFill="{DynamicResource StswColor.Modify}"/>
+                </se:StswButton>
                 <se:StswButton Command="{Binding InstallCommand}" Margin="3" Padding="10 3">
                     <se:StswLabel Content="Install" IconData="{x:Static se:StswIcons.Play}" IconFill="{DynamicResource StswColor.Positive}"/>
                 </se:StswButton>
@@ -108,6 +111,7 @@
                 <se:StswDataGrid Background="#3777"
                                  CanUserAddRows="False"
                                  CanUserDeleteRows="False"
+                                 FrozenColumnCount="2"
                                  ItemsSource="{Binding SelectedRebalance.BuildingsView}"
                                  Margin="5">
                     <se:StswDataGrid.Columns>
@@ -170,6 +174,7 @@
                 <se:StswDataGrid Background="#3777"
                                  CanUserAddRows="False"
                                  CanUserDeleteRows="False"
+                                 FrozenColumnCount="2"
                                  ItemsSource="{Binding SelectedRebalance.ResourcesView}"
                                  Margin="5">
                     <se:StswDataGrid.Columns>
@@ -204,12 +209,105 @@
                 </se:StswDataGrid>
             </se:StswTabItem>
             <!-- units -->
-            <se:StswTabItem Visibility="Collapsed">
+            <se:StswTabItem>
                 <se:StswTabItem.Header>
                     <se:StswLabel Content="Units" IconData="{x:Static se:StswIcons.AccountGroup}"/>
                 </se:StswTabItem.Header>
 
-
+                <se:StswDataGrid Background="#3777"
+                                 CanUserAddRows="False"
+                                 CanUserDeleteRows="False"
+                                 FrozenColumnCount="2"
+                                 ItemsSource="{Binding SelectedRebalance.UnitsView}"
+                                 Margin="5">
+                    <se:StswDataGrid.Columns>
+                        <DataGridTemplateColumn SortMemberPath="Key">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image MaxHeight="36" MaxWidth="36" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" FontWeight="Bold" IsReadOnly="True">
+                            <DataGridTextColumn.Header>
+                                <se:StswLabel Content="Name"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Health}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Health" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding DamageFromBow}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Damage from bow" IconSource="/Resources/units/EuropArcher.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding DamageFromCrossbow}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Damage from crossbow" IconSource="/Resources/units/Crossbowman.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding DamageFromSling}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Damage from sling" IconSource="/Resources/units/Slinger.png"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Speed}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Speed" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Success.Background}"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding MeleeDamage}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Melee damage" IconData="{x:Static se:StswIcons.SwordCross}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridCheckColumn Binding="{Binding CanMeleeDamage}">
+                            <se:StswDataGridCheckColumn.Header>
+                                <se:StswLabel Content="Can melee damage" IconData="{x:Static se:StswIcons.Sword}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                            </se:StswDataGridCheckColumn.Header>
+                        </se:StswDataGridCheckColumn>
+                        <se:StswDataGridCheckColumn Binding="{Binding CanClimbLadder}">
+                            <se:StswDataGridCheckColumn.Header>
+                                <se:StswLabel Content="Can climb ladder" IconData="{x:Static se:StswIcons.Ladder}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                            </se:StswDataGridCheckColumn.Header>
+                        </se:StswDataGridCheckColumn>
+                        <se:StswDataGridCheckColumn Binding="{Binding CanGoOnWall}">
+                            <se:StswDataGridCheckColumn.Header>
+                                <se:StswLabel Content="Can go on wall" IconData="{x:Static se:StswIcons.Wall}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                            </se:StswDataGridCheckColumn.Header>
+                        </se:StswDataGridCheckColumn>
+                        <se:StswDataGridCheckColumn Binding="{Binding CanBeMoved}">
+                            <se:StswDataGridCheckColumn.Header>
+                                <se:StswLabel Content="Can be moved" IconData="{x:Static se:StswIcons.CursorMove}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                            </se:StswDataGridCheckColumn.Header>
+                        </se:StswDataGridCheckColumn>
+                    </se:StswDataGrid.Columns>
+<!--
+                    <se:StswDataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            <se:StswDataGrid CanUserAddRows="False"
+                                             CanUserDeleteRows="False"
+                                             FrozenColumnCount="1"
+                                             ItemsSource="{Binding MeleeDamageVs}">
+                                <DataGridTemplateColumn SortMemberPath="Key">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image MaxHeight="36" MaxWidth="36" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <se:StswDataGridDecimalColumn Binding="{Binding Value}">
+                                    <se:StswDataGridDecimalColumn.Header>
+                                        <se:StswLabel Content="Damage" IconData="{x:Static se:StswIcons.SwordCross}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                                    </se:StswDataGridDecimalColumn.Header>
+                                </se:StswDataGridDecimalColumn>
+                            </se:StswDataGrid>
+                        </DataTemplate>
+                    </se:StswDataGrid.RowDetailsTemplate>
+-->
+                </se:StswDataGrid>
             </se:StswTabItem>
             <!-- skirmish trail -->
             <se:StswTabItem Visibility="Collapsed">

@@ -1,5 +1,8 @@
-﻿using System.IO;
+﻿using System.Collections;
+using System.IO;
 using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
 
 namespace SHC_Rebalancer;
 public static class Storage
@@ -52,10 +55,12 @@ public static class Storage
         var jsonSerializerOptions = new JsonSerializerOptions
         {
             AllowTrailingCommas = true,
-            PropertyNameCaseInsensitive = true
+            PropertyNameCaseInsensitive = true,
+            Converters = {
+                new JsonStringEnumConverter<SkirmishType>(),
+            }
         };
         var options = jsonSerializerOptions;
-        jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<SkirmishType>());
 
         return JsonSerializer.Deserialize<T>(json, options);
     }
@@ -65,12 +70,28 @@ public static class Storage
     {
         var jsonSerializerOptions = new JsonSerializerOptions
         {
-            WriteIndented = true
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            WriteIndented = true,
+            TypeInfoResolver = new DefaultJsonTypeInfoResolver
+            {
+                Modifiers = { DefaultValueModifier }
+            },
+            Converters = {
+                new JsonStringEnumConverter<SkirmishType>(),
+                new SingleLineArrayConverterFactory()
+            }
         };
         var options = jsonSerializerOptions;
-        jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<SkirmishType>());
         var json = JsonSerializer.Serialize(obj, options);
 
         File.WriteAllText(filePath, json);
+    }
+
+    /// DefaultValueModifier
+    private static void DefaultValueModifier(JsonTypeInfo type_info)
+    {
+        foreach (var property in type_info.Properties)
+            if (typeof(ICollection).IsAssignableFrom(property.PropertyType))
+                property.ShouldSerialize = (_, val) => val is ICollection collection && collection.Count > 0;
     }
 }

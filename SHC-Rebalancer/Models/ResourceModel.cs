@@ -1,7 +1,12 @@
-﻿namespace SHC_Rebalancer;
+﻿using System.Text.Json.Serialization;
+
+namespace SHC_Rebalancer;
 public class ResourceModel : StswObservableObject
 {
+    [JsonIgnore]
     public Resource Key { get; set; }
+
+    [JsonIgnore]
     public string Name => Key.ToString();
 
     public int? Buy
@@ -18,5 +23,6 @@ public class ResourceModel : StswObservableObject
     }
     public int? _sell;
 
+    [JsonIgnore]
     public decimal? SellRatio => 1.0m * Sell / Buy;
 }

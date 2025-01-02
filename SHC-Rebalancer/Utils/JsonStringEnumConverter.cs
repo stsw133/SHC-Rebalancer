@@ -4,6 +4,7 @@ using System.Text.Json;
 namespace SHC_Rebalancer;
 public class JsonStringEnumConverter<T> : JsonConverter<T> where T : struct, Enum
 {
+    /// Read
     public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType == JsonTokenType.String)
@@ -18,6 +19,7 @@ public class JsonStringEnumConverter<T> : JsonConverter<T> where T : struct, Enu
         throw new JsonException($"Unexpected token {reader.TokenType} when parsing enum.");
     }
 
+    /// Write
     public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
     {
         writer.WriteStringValue(value.ToString());
