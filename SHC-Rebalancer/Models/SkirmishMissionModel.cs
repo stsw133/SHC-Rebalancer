@@ -18,7 +18,7 @@ public class SkirmishMissionModel
 
     public int[]? Locations { get; set; } = [];
 
-    public int[]? Teams { get; set; } = [];
+    public SkirmishTeam[]? Teams { get; set; } = [];
 
     public int[]? AIVs { get; set; } = [];
 }

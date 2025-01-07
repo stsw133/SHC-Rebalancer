@@ -25,7 +25,7 @@ internal class Rebalancer
             foreach (var item in rebalance.UnitsView)
                 ProcessUnitValues(gameVersion, item);
             
-            ProcessOtherAddress(gameVersion, rebalance.Other.Where(x => x.Version.In(null, gameVersion)));
+            ProcessOtherValues(gameVersion, rebalance.Other.Where(x => x.Version.In(null, gameVersion)));
         }
     }
 
@@ -41,7 +41,7 @@ internal class Rebalancer
         /// housing
         if (model.Housing.HasValue && Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Housing", out baseAddress))
         {
-            var address = GetAddress<Building>(baseAddress, model.Key.ToString(), 4);
+            var address = GetAddress<Building>(baseAddress, model.Key.ToString());
             WriteIfDifferent(address, model.Housing, baseAddress.Size, $"{model.Key} Housing");
         }
         /// cost
@@ -93,7 +93,7 @@ internal class Rebalancer
             WriteIfDifferent(address + 12, model.AIs?.Length, baseAddress.Size, $"Mission {model.Key}, NumberOfPlayers");
             WriteIfDifferent(address + 16, model.AIs?.Select(x => (int)x)?.Concat(Enumerable.Repeat(0, 8 - model.AIs.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, AIs");
             WriteIfDifferent(address + 48, model.Locations?.Concat(Enumerable.Repeat(0, 8 - model.Locations.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Locations");
-            WriteIfDifferent(address + 80, model.Teams?.Concat(Enumerable.Repeat(0, 8 - model.Teams.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Teams");
+            WriteIfDifferent(address + 80, model.Teams?.Select(x => (int)x)?.Concat(Enumerable.Repeat(0, 8 - model.Teams.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Teams");
             WriteIfDifferent(address + 112, model.AIVs?.Concat(Enumerable.Repeat(0, 8 - model.AIVs.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, AIVs");
         }
     }
@@ -183,9 +183,9 @@ internal class Rebalancer
             WriteIfDifferent(address, model.CanClimbLadder.Value ? 1 : 0, baseAddress2.Size, $"{model.Key} FocusClimbLadder");
         }
     }
-    
-    /// ProcessOtherAddress
-    private static void ProcessOtherAddress(GameVersion gameVersion, IEnumerable<BaseValueModel> items)
+
+    /// ProcessOtherValues
+    private static void ProcessOtherValues(GameVersion gameVersion, IEnumerable<BaseValueModel> items)
     {
         foreach (var item in items)
         {

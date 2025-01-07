@@ -18,8 +18,10 @@ public class EnumToImageSourceConverter : MarkupExtension, IValueConverter
 
         var basePath = value.GetType().Name switch
         {
-            nameof(Resource) => "/Resources/resources/",
+            nameof(AI) => "/Resources/ai/",
             nameof(Building) => "/Resources/buildings/",
+            nameof(Resource) => "/Resources/resources/",
+            nameof(SkirmishTeam) => "/Resources/teams/",
             nameof(Unit) => "/Resources/units/",
             _ => throw new NotImplementedException()
         };

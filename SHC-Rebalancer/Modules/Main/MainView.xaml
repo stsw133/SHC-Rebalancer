@@ -356,26 +356,98 @@
                                 </x:Array>
                             </se:StswDataGridComboColumn.ItemsSource>
                         </se:StswDataGridComboColumn>
-                        <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:SkirmishType}" SelectedValueBinding="{Binding Type}">
+                        <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:SkirmishMode}" SelectedValueBinding="{Binding Type}">
                             <se:StswDataGridComboColumn.Header>
                                 <se:StswLabel Content="Type" IconData="{x:Static se:StswIcons.SwordCross}"/>
                             </se:StswDataGridComboColumn.Header>
                         </se:StswDataGridComboColumn>
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Players"/>
+                                <se:StswLabel Content="AIs"/>
                             </DataGridTemplateColumn.Header>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel DataContext="{Binding AIs}">
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [0]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [1]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [2]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [3]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [4]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [5]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [6]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [7]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <StackPanel DataContext="{Binding AIs}" Orientation="Horizontal">
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [0]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Red.png" Stretch="None"/>
+                                            </se:StswComboBox.Background>
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [1]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Orange.png" Stretch="None"/>
+                                            </se:StswComboBox.Background>
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [2]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Yellow.png" Stretch="None"/>
+                                            </se:StswComboBox.Background>
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [3]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Blue.png" Stretch="None"/>
+                                            </se:StswComboBox.Background>
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [4]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Gray.png" Stretch="None"/>
+                                            </se:StswComboBox.Background>
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [5]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Purple.png" Stretch="None"/>
+                                            </se:StswComboBox.Background>
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [6]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Cyan.png" Stretch="None"/>
+                                            </se:StswComboBox.Background>
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="36" Width="36"  Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [7]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Green.png" Stretch="None"/>
+                                            </se:StswComboBox.Background>
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -386,15 +458,15 @@
                             </DataGridTemplateColumn.Header>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel DataContext="{Binding Locations}">
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [0]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [1]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [2]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [3]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [4]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [5]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [6]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [7]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <StackPanel DataContext="{Binding Locations}" Orientation="Horizontal">
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [0]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [1]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [2]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [3]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [4]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [5]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [6]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [7]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -405,15 +477,63 @@
                             </DataGridTemplateColumn.Header>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel DataContext="{Binding Teams}">
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [0]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [1]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [2]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [3]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [4]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [5]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [6]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [7]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <StackPanel DataContext="{Binding Teams}" Orientation="Horizontal">
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [0]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [1]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [2]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [3]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [4]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [5]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [6]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [7]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
+                                            <se:StswComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
+                                                </DataTemplate>
+                                            </se:StswComboBox.ItemTemplate>
+                                        </se:StswComboBox>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -424,15 +544,15 @@
                             </DataGridTemplateColumn.Header>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel DataContext="{Binding AIVs}">
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [0]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [1]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [2]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [3]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [4]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [5]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [6]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [7]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <StackPanel DataContext="{Binding AIVs}" Orientation="Horizontal">
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [0]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [1]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [2]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [3]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [4]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [5]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [6]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [7]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

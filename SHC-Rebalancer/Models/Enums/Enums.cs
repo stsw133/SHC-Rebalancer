@@ -2,7 +2,7 @@
 
 public enum AI
 {
-    Player,
+    None,
     Rat,
     Snake,
     Pig,
@@ -176,6 +176,15 @@ public enum SkirmishMode
     Normal = 1,
     Crusade = 2,
     Deathmatch = 3,
+}
+
+public enum SkirmishTeam
+{
+    None = 0,
+    Team1 = 1,
+    Team2 = 2,
+    Team3 = 3,
+    Team4 = 4,
 }
 
 public enum Unit

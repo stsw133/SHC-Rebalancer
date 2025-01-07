@@ -94,7 +94,7 @@ public static class Finder
             {
                 Address = address.ToString("X8"),
                 Value = value,
-                IsInConfigFile = Storage.BaseAddresses[gameVersion].Any(x => address.Between(Convert.ToInt32(x.Value.Address), Convert.ToInt32(x.Value.EndAddress ?? x.Value.Address)))
+                IsInConfigFile = Storage.BaseAddresses[gameVersion].Any(x => address.Between(Convert.ToInt32(x.Value.Address, 16), Convert.ToInt32(x.Value.EndAddress ?? x.Value.Address, 16)))
             });
 
             if (filterSkips != 0)

@@ -1,25 +1,29 @@
 [
-	{ "Key": "Buildings Health",							"Address": "0x1BA218", "Size": 4 },
-	{ "Key": "Buildings Housing",							"Address": "0x1BA438", "Size": 1 },
-	{ "Key": "Buildings Cost",								"Address": "0x1C21D0", "Size": 4 },
+	{ "Key": "Buildings Health",							"Address": "0x1BA218", "EndAddress": "0x1BA3CF", "Size": 4 },
+	{ "Key": "Buildings Housing",							"Address": "0x1BA438", "EndAddress": "0x1BA5EF", "Size": 4 },
+	{ "Key": "Buildings Cost",								"Address": "0x1C21D0", "EndAddress": "0x1C2A57", "Size": 4 },
 	
-	{ "Key": "Resources Buy",								"Address": "0x217350", "Size": 4 },
-	{ "Key": "Resources Sell",								"Address": "0x2173B8", "Size": 4 },
+	{ "Key": "Fix DestroyingUnavailableBuildings",			"Address": "0x0242D3", "Size": 1 },
+	{ "Key": "Fix InfiniteOxTetherSpam",					"Address": "0x0F032A", "EndAddress": "0x0F032B", "Size": 1 },
+	{ "Key": "Fix LimitForTowerMachines",					"Address": "0x0D2452", "Size": 1 },
 	
-	{ "Key": "Units Speed",									"Address": "0x74E730", "Size": 4 },
-	{ "Key": "Units CanGoOnWall",							"Address": "0x74E870", "Size": 4 },
-	{ "Key": "Units CanBeMoved",							"Address": "0x74E9B0", "Size": 4 },
-	{ "Key": "Units Health",								"Address": "0x74EAF0", "Size": 4 },
-	{ "Key": "Units DamageFromBow",							"Address": "0x74EC30", "Size": 4 },
-	{ "Key": "Units DamageFromSling",						"Address": "0x74ED70", "Size": 4 },
-	{ "Key": "Units DamageFromCrossbow",					"Address": "0x74EEB0", "Size": 4 },
-	{ "Key": "Units MeleeDamage",							"Address": "0x74EFF0", "Size": 4 },
-	{ "Key": "Units FocusClimbLadder",						"Address": "0x755490", "Size": 4 },
-	{ "Key": "Units CanMeleeDamage",						"Address": "0x755C10", "Size": 4 },
-	{ "Key": "Units CanClimbLadder",						"Address": "0x755FD0", "Size": 4 },
+	{ "Key": "Resources Buy",								"Address": "0x217350", "EndAddress": "0x2173B7", "Size": 4 },
+	{ "Key": "Resources Sell",								"Address": "0x2173B8", "EndAddress": "0x21741F", "Size": 4 },
 	
 	
 	
+	
+	{ "Key": "Units Speed",									"Address": "0x74E730", "EndAddress": "0x74E86F", "Size": 4 },
+	{ "Key": "Units CanGoOnWall",							"Address": "0x74E870", "EndAddress": "0x74E9AF", "Size": 4 },
+	{ "Key": "Units CanBeMoved",							"Address": "0x74E9B0", "EndAddress": "0x74EAEF", "Size": 4 },
+	{ "Key": "Units Health",								"Address": "0x74EAF0", "EndAddress": "0x74EC2F", "Size": 4 },
+	{ "Key": "Units DamageFromBow",							"Address": "0x74EC30", "EndAddress": "0x74ED6F", "Size": 4 },
+	{ "Key": "Units DamageFromSling",						"Address": "0x74ED70", "EndAddress": "0x74EEAF", "Size": 4 },
+	{ "Key": "Units DamageFromCrossbow",					"Address": "0x74EEB0", "EndAddress": "0x74EFEF", "Size": 4 },
+	{ "Key": "Units MeleeDamage",							"Address": "0x74EFF0", "EndAddress": "0x7508F3", "Size": 4 },
+	{ "Key": "Units FocusClimbLadder",						"Address": "0x755490", "EndAddress": "0x7555CF", "Size": 4 },
+	{ "Key": "Units CanMeleeDamage",						"Address": "0x755C10", "EndAddress": "0x755D4F", "Size": 4 },
+	{ "Key": "Units CanClimbLadder",						"Address": "0x755FD0", "EndAddress": "0x75610F", "Size": 4 },
 	
 	{ "Key": "Skirmish delivery % bonus",					"Address": "0x1311D4", "Size": 1 },
 	
@@ -51,8 +55,8 @@
 	{ "Key": "Religion bonus threshold E3",					"Address": "0x05BD77", "Size": 1 },
 	{ "Key": "Religion bonus threshold E4",					"Address": "0x05BD85", "Size": 1 },
 	
-	{ "Key": "Tax % bonus threshold 1",						"Address": "0x059326", "Size": 4 },
-	{ "Key": "Tax % bonus threshold 5",						"Address": "0x0592FA", "Size": 4 },
+	{ "Key": "Tax % bonus threshold 1",						"Address": "0x059326", "EndAddress": "0x059329", "Size": 4 },
+	{ "Key": "Tax % bonus threshold 5",						"Address": "0x0592FA", "EndAddress": "0x0592FD", "Size": 4 },
 	
 	{ "Key": "EuropArcher cost",							"Address": "0x6B92A4", "Size": 4 },
 	{ "Key": "Spearman cost",								"Address": "0x6B92AC", "Size": 4 },
