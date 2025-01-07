@@ -18,5 +18,8 @@ public class RebalanceModel
     public ObservableCollection<ResourceModel> ResourcesView => new(Resources.Select(x => { x.Value.Key = x.Key; return x.Value; }));
 
     [JsonIgnore]
+    public ObservableCollection<SkirmishMissionModel> SkirmishTrailView => new(SkirmishTrail.Select(x => { x.Value.Key = x.Key; return x.Value; }));
+
+    [JsonIgnore]
     public ObservableCollection<UnitModel> UnitsView => new(Units.Select(x => { x.Value.Key = x.Key; return x.Value; }));
 }

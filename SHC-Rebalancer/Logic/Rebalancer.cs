@@ -20,7 +20,8 @@ internal class Rebalancer
                 ProcessBuildingValues(gameVersion, item);
             foreach (var item in rebalance.ResourcesView)
                 ProcessResourceValues(gameVersion, item);
-            //ProcessValues(gameVersion, rebalance.SkirmishTrail);
+            foreach (var item in rebalance.SkirmishTrailView)
+                ProcessSkirmishMissionValues(gameVersion, item);
             foreach (var item in rebalance.UnitsView)
                 ProcessUnitValues(gameVersion, item);
             
@@ -69,28 +70,31 @@ internal class Rebalancer
     }
     
     /// ProcessSkirmishMissionValues
-    private static void ProcessSkirmishMissionValues(GameVersion gameVersion, string key, SkirmishMissionModel mission)
+    private static void ProcessSkirmishMissionValues(GameVersion gameVersion, SkirmishMissionModel model)
     {
+        if (!model.Key.Between(1, 80))
+            return;
+
         if (Storage.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Mission", out var baseAddress))
         {
-            var i = Convert.ToInt32(key) - 1;
+            var i = Convert.ToInt32(model.Key) - 1;
             var address = Convert.ToInt32(baseAddress.Address, 16) + (i * 144);
 
-            if (!string.IsNullOrWhiteSpace(mission.MapNameAddress) && !string.IsNullOrWhiteSpace(mission.MapName))
+            if (!string.IsNullOrWhiteSpace(model.MapNameAddress) && !string.IsNullOrWhiteSpace(model.MapName))
             {
                 if (Storage.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail MapNameOffset", out var mapNameOffset))
                 {
-                    WriteIfDifferent(address + 0, Convert.ToInt32(mission.MapNameAddress, 16) + Convert.ToInt32(mapNameOffset.Address, 16), baseAddress.Size, $"Mission {i + 1}, MapNameOffset");
-                    WriteIfDifferent(Convert.ToInt32(mission.MapNameAddress, 16), ConvertStringToBytesWithAutoPadding(mission.MapName, 4), mapNameOffset.Size, $"Mission {i + 1}, MapName");
+                    WriteIfDifferent(address + 0, Convert.ToInt32(model.MapNameAddress, 16) + Convert.ToInt32(mapNameOffset.Address, 16), baseAddress.Size, $"Mission {model.Key}, MapNameOffset");
+                    WriteIfDifferent(Convert.ToInt32(model.MapNameAddress, 16), ConvertStringToBytesWithAutoPadding(model.MapName, 4), mapNameOffset.Size, $"Mission {model.Key}, MapName");
                 }
             }
-            WriteIfDifferent(address + 4, mission.Difficulty, baseAddress.Size, $"Mission {i + 1}, Difficulty");
-            WriteIfDifferent(address + 8, (int?)mission.Type, baseAddress.Size, $"Mission {i + 1}, Type");
-            WriteIfDifferent(address + 12, mission.AIs?.Length, baseAddress.Size, $"Mission {i + 1}, NumberOfPlayers");
-            WriteIfDifferent(address + 16, mission.AIs?.Concat(Enumerable.Repeat(0, 8 - mission.AIs.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, AIs");
-            WriteIfDifferent(address + 48, mission.Locations?.Concat(Enumerable.Repeat(0, 8 - mission.Locations.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, Locations");
-            WriteIfDifferent(address + 80, mission.Teams?.Concat(Enumerable.Repeat(0, 8 - mission.Teams.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, Teams");
-            WriteIfDifferent(address + 112, mission.AIVs?.Concat(Enumerable.Repeat(0, 8 - mission.AIVs.Length))?.ToArray(), baseAddress.Size, $"Mission {i + 1}, AIVs");
+            WriteIfDifferent(address + 4, model.Difficulty, baseAddress.Size, $"Mission {model.Key}, Difficulty");
+            WriteIfDifferent(address + 8, (int?)model.Type, baseAddress.Size, $"Mission {model.Key}, Type");
+            WriteIfDifferent(address + 12, model.AIs?.Length, baseAddress.Size, $"Mission {model.Key}, NumberOfPlayers");
+            WriteIfDifferent(address + 16, model.AIs?.Select(x => (int)x)?.Concat(Enumerable.Repeat(0, 8 - model.AIs.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, AIs");
+            WriteIfDifferent(address + 48, model.Locations?.Concat(Enumerable.Repeat(0, 8 - model.Locations.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Locations");
+            WriteIfDifferent(address + 80, model.Teams?.Concat(Enumerable.Repeat(0, 8 - model.Teams.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Teams");
+            WriteIfDifferent(address + 112, model.AIVs?.Concat(Enumerable.Repeat(0, 8 - model.AIVs.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, AIVs");
         }
     }
     

@@ -48,7 +48,7 @@
                                            Placeholder="Please select Stronghold Crusader Extreme .exe path..."
                                            SelectedPath="{Binding ExtremePath, Source={x:Static local:Settings.Default}}"/>
 
-                        <se:StswLabel Content="Rebalance configs:" FontWeight="Bold" Margin="3 6 3 0"/>
+                        <se:StswLabel Content="Selected rebalance config to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
                         <se:StswComboBox DisplayMemberPath="Key"
                                          IsEditable="True"
                                          ItemsSource="{Binding Source={x:Static local:Storage.Rebalances}}"
@@ -112,6 +112,7 @@
                                  CanUserAddRows="False"
                                  CanUserDeleteRows="False"
                                  FrozenColumnCount="2"
+                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.BuildingsView}"
                                  Margin="5">
                     <se:StswDataGrid.Columns>
@@ -175,6 +176,7 @@
                                  CanUserAddRows="False"
                                  CanUserDeleteRows="False"
                                  FrozenColumnCount="2"
+                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.ResourcesView}"
                                  Margin="5">
                     <se:StswDataGrid.Columns>
@@ -218,6 +220,7 @@
                                  CanUserAddRows="False"
                                  CanUserDeleteRows="False"
                                  FrozenColumnCount="2"
+                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.UnitsView}"
                                  Margin="5">
                     <se:StswDataGrid.Columns>
@@ -290,6 +293,7 @@
                             <se:StswDataGrid CanUserAddRows="False"
                                              CanUserDeleteRows="False"
                                              FrozenColumnCount="1"
+                                             IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                              ItemsSource="{Binding MeleeDamageVs}">
                                 <DataGridTemplateColumn SortMemberPath="Key">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -310,12 +314,131 @@
                 </se:StswDataGrid>
             </se:StswTabItem>
             <!-- skirmish trail -->
-            <se:StswTabItem Visibility="Collapsed">
+            <se:StswTabItem>
                 <se:StswTabItem.Header>
                     <se:StswLabel Content="Skirmish trail" IconData="{x:Static se:StswIcons.Map}"/>
                 </se:StswTabItem.Header>
 
-
+                <se:StswDataGrid Background="#3777"
+                                 CanUserAddRows="False"
+                                 CanUserDeleteRows="False"
+                                 FrozenColumnCount="1"
+                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
+                                 ItemsSource="{Binding SelectedRebalance.SkirmishTrailView}"
+                                 Margin="5">
+                    <se:StswDataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
+                            <DataGridTextColumn.Header>
+                                <se:StswLabel Content="Mission №"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <se:StswDataGridTextColumn Binding="{Binding MapNameAddress}">
+                            <se:StswDataGridTextColumn.Header>
+                                <se:StswLabel Content="Map name address" IconData="{x:Static se:StswIcons.MapMarker}"/>
+                            </se:StswDataGridTextColumn.Header>
+                        </se:StswDataGridTextColumn>
+                        <se:StswDataGridTextColumn Binding="{Binding MapName}">
+                            <se:StswDataGridTextColumn.Header>
+                                <se:StswLabel Content="Map name" IconData="{x:Static se:StswIcons.Map}"/>
+                            </se:StswDataGridTextColumn.Header>
+                        </se:StswDataGridTextColumn>
+                        <se:StswDataGridComboColumn SelectedValueBinding="{Binding Difficulty}">
+                            <se:StswDataGridComboColumn.Header>
+                                <se:StswLabel Content="Difficulty" IconData="{x:Static se:StswIcons.DecimalIncrease}"/>
+                            </se:StswDataGridComboColumn.Header>
+                            <se:StswDataGridComboColumn.ItemsSource>
+                                <x:Array Type="{x:Type sys:Int32}" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                    <sys:Int32>1</sys:Int32>
+                                    <sys:Int32>2</sys:Int32>
+                                    <sys:Int32>3</sys:Int32>
+                                    <sys:Int32>4</sys:Int32>
+                                    <sys:Int32>5</sys:Int32>
+                                </x:Array>
+                            </se:StswDataGridComboColumn.ItemsSource>
+                        </se:StswDataGridComboColumn>
+                        <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:SkirmishType}" SelectedValueBinding="{Binding Type}">
+                            <se:StswDataGridComboColumn.Header>
+                                <se:StswLabel Content="Type" IconData="{x:Static se:StswIcons.SwordCross}"/>
+                            </se:StswDataGridComboColumn.Header>
+                        </se:StswDataGridComboColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.Header>
+                                <se:StswLabel Content="Players"/>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel DataContext="{Binding AIs}">
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [0]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [1]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [2]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [3]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [4]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [5]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [6]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" SelectedValue="{Binding [7]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.Header>
+                                <se:StswLabel Content="Locations"/>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel DataContext="{Binding Locations}">
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [0]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [1]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [2]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [3]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [4]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [5]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [6]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [7]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.Header>
+                                <se:StswLabel Content="Teams"/>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel DataContext="{Binding Teams}">
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [0]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [1]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [2]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [3]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [4]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [5]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [6]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=5}" SelectedValue="{Binding [7]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.Header>
+                                <se:StswLabel Content="AIVs"/>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel DataContext="{Binding AIVs}">
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [0]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [1]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [2]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [3]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [4]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [5]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [6]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [7]}" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </se:StswDataGrid.Columns>
+                </se:StswDataGrid>
             </se:StswTabItem>
             <!-- other -->
             <se:StswTabItem>
@@ -325,6 +448,7 @@
 
                 <se:StswDataGrid Background="#3777"
                                  FrozenColumnCount="2"
+                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.Other}"
                                  Margin="5">
                     <se:StswDataGrid.Columns>
@@ -362,12 +486,78 @@
                 </se:StswDataGrid>
             </se:StswTabItem>
             <!-- finder -->
-            <se:StswTabItem Visibility="Collapsed">
+            <se:StswTabItem>
                 <se:StswTabItem.Header>
                     <se:StswLabel Content="Finder" IconData="{x:Static se:StswIcons.Magnify}"/>
                 </se:StswTabItem.Header>
 
+                <DockPanel Margin="-3">
+                    <se:StswDataGrid BorderThickness="0 0 1 0"
+                                     IsReadOnly="True"
+                                     ItemsSource="{Binding FinderResults}"
+                                     SelectionUnit="Cell"
+                                     Width="200">
 
+                        <se:StswDataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Address}" FontSize="11" Header="Address" Width="*"/>
+                            <se:StswDataGridDecimalColumn Binding="{Binding Value}" FontSize="11" Header="Value" Width="*"/>
+                        </se:StswDataGrid.Columns>
+
+                        <se:StswDataGrid.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource StswDataGridCellStyle}">
+                                <Setter Property="Margin" Value="-0.5"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsInConfigFile}" Value="True">
+                                        <Setter Property="Background" Value="{DynamicResource StswDialog.Warning.Subground}"/>
+                                    </DataTrigger>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding IsInConfigFile}" Value="True"/>
+                                            <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Background" Value="{DynamicResource StswDialog.Warning.Border}"/>
+                                    </MultiDataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </se:StswDataGrid.CellStyle>
+                    </se:StswDataGrid>
+
+                    <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
+                        <se:StswLabel Content="Game type:"/>
+                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:GameVersion}"
+                                         Margin="3"
+                                         Placeholder="Select Stronghold game to search through..."
+                                         SelectedValue="{Binding FinderFilterType}"/>
+
+                        <se:StswLabel Content="Size:"/>
+                        <StackPanel Margin="3" Orientation="Horizontal">
+                            <se:StswRadioBox Content="byte"
+                                             IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=1}"
+                                             Margin="0 0 3 0"/>
+                            <se:StswRadioBox Content="int"
+                                             IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=4}"
+                                             Margin="0 0 3 0"/>
+                        </StackPanel>
+
+                        <se:StswLabel Content="Address:"/>
+                        <DockPanel IsEnabled="{Binding FinderFilterType, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                            <se:StswIntegerBox DockPanel.Dock="Right"
+                                               Margin="3"
+                                               Placeholder="Skip bytes..."
+                                               Value="{Binding FinderFilterSkips}"
+                                               Width="100"/>
+                            <se:StswTextBox Margin="3"
+                                            Placeholder="Initial address to find..."
+                                            Text="{Binding FinderFilterAddress}"/>
+                        </DockPanel>
+
+                        <se:StswLabel Content="Values:"/>
+                        <se:StswTextBox IsEnabled="{Binding FinderFilterType, Converter={x:Static se:StswNotNullConverter.Instance}}"
+                                        Margin="3"
+                                        Placeholder="Sequence of values to find... (separated by commas)"
+                                        Text="{Binding FinderFilterValues}"/>
+                    </se:StswLabelPanel>
+                </DockPanel>
             </se:StswTabItem>
         </se:StswTabControl>
     </DockPanel>
