@@ -7,7 +7,7 @@ public class SkirmishMissionModel
 
     public int? Difficulty { get; set; }
 
-    public SkirmishType? Type { get; set; }
+    public SkirmishMode? Type { get; set; }
 
     public int[]? AIs { get; set; }
 

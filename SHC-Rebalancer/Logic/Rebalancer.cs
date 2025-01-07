@@ -24,7 +24,7 @@ internal class Rebalancer
             foreach (var item in rebalance.UnitsView)
                 ProcessUnitValues(gameVersion, item);
             
-            ProcessOtherAddress(gameVersion, rebalance.Other);
+            ProcessOtherAddress(gameVersion, rebalance.Other.Where(x => x.Version.In(null, gameVersion)));
         }
     }
 

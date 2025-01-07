@@ -57,7 +57,7 @@ public static class Storage
             AllowTrailingCommas = true,
             PropertyNameCaseInsensitive = true,
             Converters = {
-                new JsonStringEnumConverter<SkirmishType>(),
+                new JsonStringEnumConverter<SkirmishMode>(),
             }
         };
         var options = jsonSerializerOptions;
@@ -77,7 +77,7 @@ public static class Storage
                 Modifiers = { DefaultValueModifier }
             },
             Converters = {
-                new JsonStringEnumConverter<SkirmishType>(),
+                new JsonStringEnumConverter<SkirmishMode>(),
                 new SingleLineArrayConverterFactory()
             }
         };

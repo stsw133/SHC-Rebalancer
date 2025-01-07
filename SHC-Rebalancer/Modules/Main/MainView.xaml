@@ -118,7 +118,7 @@
                         <DataGridTemplateColumn SortMemberPath="Key">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image MaxHeight="48" MaxWidth="48" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}"/>
+                                    <Image MaxHeight="48" MaxWidth="48" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -181,7 +181,7 @@
                         <DataGridTemplateColumn SortMemberPath="Key">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image MaxHeight="24" MaxWidth="24" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}"/>
+                                    <Image MaxHeight="24" MaxWidth="24" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -224,7 +224,7 @@
                         <DataGridTemplateColumn SortMemberPath="Key">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image MaxHeight="36" MaxWidth="36" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}"/>
+                                    <Image MaxHeight="36" MaxWidth="36" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -318,12 +318,48 @@
 
             </se:StswTabItem>
             <!-- other -->
-            <se:StswTabItem Visibility="Collapsed">
+            <se:StswTabItem>
                 <se:StswTabItem.Header>
                     <se:StswLabel Content="Other" IconData="{x:Static se:StswIcons.ProgressQuestion}"/>
                 </se:StswTabItem.Header>
 
-
+                <se:StswDataGrid Background="#3777"
+                                 FrozenColumnCount="2"
+                                 ItemsSource="{Binding SelectedRebalance.Other}"
+                                 Margin="5">
+                    <se:StswDataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
+                            <DataGridTextColumn.Header>
+                                <se:StswLabel Content="Key"/>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        <se:StswDataGridTextColumn Binding="{Binding Address}">
+                            <se:StswDataGridTextColumn.Header>
+                                <se:StswLabel Content="Address"/>
+                            </se:StswDataGridTextColumn.Header>
+                        </se:StswDataGridTextColumn>
+                        <se:StswDataGridDecimalColumn Binding="{Binding Size}">
+                            <se:StswDataGridDecimalColumn.Header>
+                                <se:StswLabel Content="Size"/>
+                            </se:StswDataGridDecimalColumn.Header>
+                        </se:StswDataGridDecimalColumn>
+                        <se:StswDataGridTextColumn Binding="{Binding Value}">
+                            <se:StswDataGridTextColumn.Header>
+                                <se:StswLabel Content="Value"/>
+                            </se:StswDataGridTextColumn.Header>
+                        </se:StswDataGridTextColumn>
+                        <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:GameVersion}" SelectedValueBinding="{Binding Version}">
+                            <se:StswDataGridComboColumn.Header>
+                                <se:StswLabel Content="Version"/>
+                            </se:StswDataGridComboColumn.Header>
+                        </se:StswDataGridComboColumn>
+                        <se:StswDataGridTextColumn Binding="{Binding Description}">
+                            <se:StswDataGridTextColumn.Header>
+                                <se:StswLabel Content="Description"/>
+                            </se:StswDataGridTextColumn.Header>
+                        </se:StswDataGridTextColumn>
+                    </se:StswDataGrid.Columns>
+                </se:StswDataGrid>
             </se:StswTabItem>
             <!-- finder -->
             <se:StswTabItem Visibility="Collapsed">

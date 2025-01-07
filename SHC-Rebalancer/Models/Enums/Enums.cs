@@ -171,7 +171,7 @@ public enum Resource
     Unknown25,
 }
 
-public enum SkirmishType
+public enum SkirmishMode
 {
     Normal = 1,
     Crusade = 2,

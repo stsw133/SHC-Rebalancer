@@ -128,18 +128,6 @@
 			"Housing": 12,
 			"Cost": [0, 0, 0, 0, 0],
 		},
-		"Keep4":
-		{
-			"Health": 0,
-			"Housing": 14,
-			"Cost": [0, 0, 0, 0, 0],
-		},
-		"Keep5":
-		{
-			"Health": 0,
-			"Housing": 16,
-			"Cost": [0, 0, 0, 0, 0],
-		},
 		"EuropOutpost":
 		{
 			"Health": 1500,
