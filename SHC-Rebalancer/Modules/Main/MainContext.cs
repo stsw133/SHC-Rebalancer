@@ -9,9 +9,11 @@ public class MainContext : StswObservableObject
     public StswAsyncCommand SaveChangesCommand { get; }
     public StswCancellableAsyncCommand InstallCommand { get; }
     public StswAsyncCommand UninstallCommand { get; }
+
     public StswCommand<object> ReloadRebalancesCommand { get; }
     public StswAsyncCommand<string> EditRebalanceCommand { get; }
     public StswAsyncCommand<string> RemoveRebalanceCommand { get; }
+
     public StswAsyncCommand<GameVersion> FindCommand { get; }
 
     public MainContext()
@@ -29,8 +31,6 @@ public class MainContext : StswObservableObject
         Task.Run(() => ReloadRebalancesCommand.Execute());
     }
 
-
-
     /// SaveChanges
     public async Task SaveChanges()
     {
@@ -39,7 +39,7 @@ public class MainContext : StswObservableObject
             foreach (var rebalance in Storage.Rebalances)
             {
                 var filePath = Path.Combine(Storage.PathRebalances, rebalance.Key + ".json");
-                Storage.SaveJsonIntoFile(rebalance.Value, filePath);
+                Storage.SaveModelIntoFile(rebalance.Value, filePath);
             }
         }
         catch (Exception ex)
@@ -59,7 +59,7 @@ public class MainContext : StswObservableObject
             InstallState = StswProgressState.Running;
 
             var filePath = Path.Combine(Storage.PathRebalances, Storage.Rebalances.FirstOrDefault(x => x.Value == SelectedRebalance).Key + ".json");
-            Storage.SaveJsonIntoFile(SelectedRebalance, filePath);
+            Storage.SaveModelIntoFile(SelectedRebalance, filePath);
 
             Backup.Make(Settings.Default.CrusaderPath);
             Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath, SelectedRebalance);
@@ -135,6 +135,9 @@ public class MainContext : StswObservableObject
                     File.Copy(filePathVanilla, filePath);
                 else
                     File.Create(filePath);
+
+                Storage.Rebalances.TryAdd(parameter, Storage.LoadRebalance(parameter)!);
+                OnPropertyChanged(nameof(RebalancesView));
             }
             StswFn.OpenFile(filePath);
         }
@@ -161,6 +164,9 @@ public class MainContext : StswObservableObject
             var filePath = Path.Combine(Storage.PathRebalances, parameter + ".json");
             if (File.Exists(filePath) && await StswMessageDialog.Show($"Are you sure you want to remove '{parameter}' rebalance config?", "Confirmation", null, StswDialogButtons.YesNo, StswDialogImage.Question) == true)
                 File.Delete(filePath);
+
+            Storage.Rebalances.Remove(parameter);
+            OnPropertyChanged(nameof(RebalancesView));
         }
         catch (Exception ex)
         {
@@ -191,6 +197,9 @@ public class MainContext : StswObservableObject
     }
     private StswProgressState _installState;
 
+    /// Rebalances
+    public ObservableCollection<RebalanceModel> RebalancesView => new(Storage.Rebalances.Select(x => { x.Value.Key = x.Key; return x.Value; }).OrderBy(x => x.Key));
+
     /// SelectedRebalance
     public RebalanceModel? SelectedRebalance
     {
@@ -198,6 +207,8 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _selectedRebalance, value);
     }
     private RebalanceModel? _selectedRebalance;
+
+
 
     /// FinderFilterType
     public GameVersion? FinderFilterType

@@ -21,7 +21,7 @@ public static class Storage
         {
             var gameVersion = Enum.Parse<GameVersion>(Path.GetFileNameWithoutExtension(filePath), true);
 
-            var versionAddresses = ReadJsonIntoList<List<BaseAddressModel>>(filePath)?.ToDictionary(x => x.Key, x => x);
+            var versionAddresses = ReadJsonFileAsModel<List<BaseAddressModel>>(filePath)?.ToDictionary(x => x.Key, x => x);
             if (versionAddresses == null)
                 continue;
 
@@ -38,7 +38,7 @@ public static class Storage
 
         foreach (var filePath in Directory.GetFiles(PathRebalances, "*.json"))
         {
-            var rebalance = ReadJsonIntoList<RebalanceModel>(filePath);
+            var rebalance = ReadJsonFileAsModel<RebalanceModel>(filePath);
             if (rebalance == null)
                 continue;
 
@@ -48,8 +48,18 @@ public static class Storage
         Rebalances = rebalances;
     }
 
-    /// ReadJson
-    internal static T? ReadJsonIntoList<T>(string filePath)
+    /// LoadRebalance
+    internal static RebalanceModel? LoadRebalance(string name)
+    {
+        var filePath = Path.Combine(PathRebalances, name + ".json");
+        if (File.Exists(filePath))
+            return ReadJsonFileAsModel<RebalanceModel>(filePath)!;
+
+        return null;
+    }
+
+    /// ReadJsonFileAsModel
+    internal static T? ReadJsonFileAsModel<T>(string filePath)
     {
         var json = File.ReadAllText(filePath);
         var jsonSerializerOptions = new JsonSerializerOptions
@@ -65,8 +75,8 @@ public static class Storage
         return JsonSerializer.Deserialize<T>(json, options);
     }
 
-    /// SaveJson
-    internal static void SaveJsonIntoFile<T>(T obj, string filePath)
+    /// SaveModelIntoFile
+    internal static void SaveModelIntoFile<T>(T obj, string filePath)
     {
         var jsonSerializerOptions = new JsonSerializerOptions
         {

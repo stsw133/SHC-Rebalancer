@@ -51,11 +51,10 @@
                         <se:StswLabel Content="Selected rebalance config to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
                         <se:StswComboBox DisplayMemberPath="Key"
                                          IsEditable="True"
-                                         ItemsSource="{Binding Source={x:Static local:Storage.Rebalances}}"
+                                         ItemsSource="{Binding RebalancesView}"
                                          Margin="3"
                                          Placeholder="Please select rebalance config to apply..."
-                                         SelectedValue="{Binding SelectedRebalance}"
-                                         SelectedValuePath="Value"
+                                         SelectedItem="{Binding SelectedRebalance}"
                                          Text="{Binding RebalanceName, Source={x:Static local:Settings.Default}}">
                             <se:StswComboBox.SubControls>
                                 <se:StswSubButton Command="{Binding ReloadRebalancesCommand}"
