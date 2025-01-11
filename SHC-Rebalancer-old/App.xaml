@@ -1,6 +1,0 @@
-﻿<se:StswApp x:Class="SHC_Rebalancer_old.App"
-            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-            xmlns:local="clr-namespace:SHC_Rebalancer_old"
-            xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
-            StartupUri="Modules/MainWindow.xaml"/>

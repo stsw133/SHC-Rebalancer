@@ -57,6 +57,7 @@ public static class Storage
             AllowTrailingCommas = true,
             PropertyNameCaseInsensitive = true,
             Converters = {
+                new JsonStringEnumConverter<GameVersion>(),
                 new JsonStringEnumConverter<SkirmishMode>(),
             }
         };
@@ -77,6 +78,7 @@ public static class Storage
                 Modifiers = { DefaultValueModifier }
             },
             Converters = {
+                new JsonStringEnumConverter<GameVersion>(),
                 new JsonStringEnumConverter<SkirmishMode>(),
                 new SingleLineArrayConverterFactory()
             }

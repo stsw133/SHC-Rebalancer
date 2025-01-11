@@ -3,10 +3,6 @@
 	{ "Key": "Buildings Housing",							"Address": "0x1BA438", "EndAddress": "0x1BA5EF", "Size": 4 },
 	{ "Key": "Buildings Cost",								"Address": "0x1C21D0", "EndAddress": "0x1C2A57", "Size": 4 },
 	
-	{ "Key": "Fix DestroyingUnavailableBuildings",			"Address": "0x0242D3", "Size": 1 },
-	{ "Key": "Fix InfiniteOxTetherSpam",					"Address": "0x0F032A", "EndAddress": "0x0F032B", "Size": 1 },
-	{ "Key": "Fix LimitForTowerMachines",					"Address": "0x0D2452", "Size": 1 },
-	
 	{ "Key": "Resources Buy",								"Address": "0x217350", "EndAddress": "0x2173B7", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x2173B8", "EndAddress": "0x21741F", "Size": 4 },
 	

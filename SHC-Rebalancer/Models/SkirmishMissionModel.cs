@@ -14,6 +14,8 @@ public class SkirmishMissionModel
 
     public SkirmishMode? Type { get; set; }
 
+    public int? NumberOfPlayers { get; set; }
+
     public AI[]? AIs { get; set; } = [];
 
     public int[]? Locations { get; set; } = [];

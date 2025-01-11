@@ -8,5 +8,7 @@
                mc:Ignorable="d" Height="600" Width="1000" WindowStartupLocation="CenterScreen"
                Title="{x:Static se:StswFn.AppNameAndVersion}" Icon="/Resources/icon.ico">
 
-    <local:MainContext/>
+    <se:StswContentDialog Identifier="MainContentDialog">
+        <local:MainContext/>
+    </se:StswContentDialog>
 </se:StswWindow>

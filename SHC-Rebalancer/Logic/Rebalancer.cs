@@ -90,7 +90,7 @@ internal class Rebalancer
             }
             WriteIfDifferent(address + 4, model.Difficulty, baseAddress.Size, $"Mission {model.Key}, Difficulty");
             WriteIfDifferent(address + 8, (int?)model.Type, baseAddress.Size, $"Mission {model.Key}, Type");
-            WriteIfDifferent(address + 12, model.AIs?.Length, baseAddress.Size, $"Mission {model.Key}, NumberOfPlayers");
+            WriteIfDifferent(address + 12, model.NumberOfPlayers, baseAddress.Size, $"Mission {model.Key}, NumberOfPlayers");
             WriteIfDifferent(address + 16, model.AIs?.Select(x => (int)x)?.Concat(Enumerable.Repeat(0, 8 - model.AIs.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, AIs");
             WriteIfDifferent(address + 48, model.Locations?.Concat(Enumerable.Repeat(0, 8 - model.Locations.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Locations");
             WriteIfDifferent(address + 80, model.Teams?.Select(x => (int)x)?.Concat(Enumerable.Repeat(0, 8 - model.Teams.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Teams");
@@ -202,20 +202,20 @@ internal class Rebalancer
                     if (item.Size == 1)
                     {
                         var newValue = jsonValue.EnumerateArray().Select(x => x.GetByte()).ToArray();
-                        WriteIfDifferent(address, newValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description);
+                        WriteIfDifferent(address, newValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
                     }
                     else if (item.Size == 4)
                     {
                         var newValue = jsonValue.EnumerateArray().Select(x => x.GetInt32()).ToArray();
-                        WriteIfDifferent(address, newValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description);
+                        WriteIfDifferent(address, newValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
                     }
                 }
                 else if (jsonValue.ValueKind == JsonValueKind.Number && jsonValue.TryGetInt32(out int intValue))
                 {
                     if (item.Size == 1)
-                        WriteIfDifferent(address, (byte)intValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description);
+                        WriteIfDifferent(address, (byte)intValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
                     else if (item.Size == 4)
-                        WriteIfDifferent(address, intValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description);
+                        WriteIfDifferent(address, intValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
                 }
             }
         }

@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="SHC_Rebalancer.NewConfigView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:NewConfigContext}">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Resources/background.jpg" Opacity="0.2"/>
+    </UserControl.Background>
+
+    <se:StswGroupBox MaxHeight="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"
+                     MaxWidth="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"
+                     Padding="0">
+        <se:StswGroupBox.Header>
+            <DockPanel Margin="3">
+                <se:StswSubButton DockPanel.Dock="Right"
+                                  Command="{x:Static se:StswCommands.CloseDialog}"
+                                  CommandParameter="{Binding Identifier, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}"
+                                  IconData="{x:Static se:StswIcons.CloseBox}"
+                                  IconFill="{DynamicResource StswColor.Negative}"/>
+                <se:StswLabel>
+                    <se:StswLabel.Style>
+                        <Style TargetType="{x:Type se:StswLabel}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEditing}" Value="False">
+                                    <Setter Property="Content" Value="Creating new rebalance config"/>
+                                    <Setter Property="IconData" Value="{x:Static se:StswIcons.Plus}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsEditing}" Value="True">
+                                    <Setter Property="Content" Value="Renaming selected rebalance config"/>
+                                    <Setter Property="IconData" Value="{x:Static se:StswIcons.Rename}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </se:StswLabel.Style>
+                </se:StswLabel>
+            </DockPanel>
+        </se:StswGroupBox.Header>
+        
+        <DockPanel>
+            <se:StswDirectionView DockPanel.Dock="Bottom" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
+                <UniformGrid HorizontalAlignment="Center" Rows="1">
+                    <se:StswButton Command="{Binding SaveChangesCommand}" Margin="3" Padding="10 3">
+                        <se:StswLabel Content="Save changes" IconData="{x:Static se:StswIcons.ContentSave}" IconFill="{DynamicResource StswColor.Modify}"/>
+                    </se:StswButton>
+                </UniformGrid>
+            </se:StswDirectionView>
+            <se:StswSeparator DockPanel.Dock="Bottom" Orientation="Horizontal"/>
+            <!-- data -->
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
+                <se:StswLabel Content="Based on:" FontWeight="Bold" Margin="3 6 3 0" Visibility="{Binding IsEditing, Converter={x:Static se:StswBoolConverter.Instance}, ConverterParameter=!}"/>
+                <se:StswComboBox DisplayMemberPath="Key"
+                                 ItemsSource="{Binding Source={x:Static local:Storage.Rebalances}}"
+                                 Margin="3"
+                                 Placeholder="Please select rebalance config to base on..."
+                                 SelectedValue="{Binding BasedOn}"
+                                 SelectedValuePath="Key"
+                                 Visibility="{Binding IsEditing, Converter={x:Static se:StswBoolConverter.Instance}, ConverterParameter=!}"/>
+
+                <se:StswLabel Content="Name:" FontWeight="Bold" Margin="3 6 3 0"/>
+                <se:StswTextBox Margin="3"
+                                Placeholder="Fill the new name for rebalance config..."
+                                Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </DockPanel>
+    </se:StswGroupBox>
+</UserControl>

@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
-using System.Windows.Controls;
 
 namespace SHC_Rebalancer;
 public class MainContext : StswObservableObject
@@ -9,9 +8,13 @@ public class MainContext : StswObservableObject
     public StswAsyncCommand SaveChangesCommand { get; }
     public StswCancellableAsyncCommand InstallCommand { get; }
     public StswAsyncCommand UninstallCommand { get; }
-    public StswCommand<object> ReloadRebalancesCommand { get; }
-    public StswAsyncCommand<string> EditRebalanceCommand { get; }
-    public StswAsyncCommand<string> RemoveRebalanceCommand { get; }
+
+    public StswCommand<object?> ReloadRebalancesCommand { get; }
+    public StswAsyncCommand AddRebalanceCommand { get; }
+    public StswAsyncCommand RenameRebalanceCommand { get; }
+    public StswAsyncCommand OpenRebalanceCommand { get; }
+    public StswAsyncCommand RemoveRebalanceCommand { get; }
+
     public StswAsyncCommand<GameVersion> FindCommand { get; }
 
     public MainContext()
@@ -21,8 +24,10 @@ public class MainContext : StswObservableObject
         UninstallCommand = new(Uninstall, () => InstallState != StswProgressState.Running);
 
         ReloadRebalancesCommand = new(ReloadRebalances);
-        EditRebalanceCommand = new(EditRebalance);
-        RemoveRebalanceCommand = new(RemoveRebalance, () => Settings.Default.RebalanceName != "vanilla");
+        AddRebalanceCommand = new(AddRebalance);
+        RenameRebalanceCommand = new(RenameRebalance, () => !Settings.Default.RebalanceName.In(null, "vanilla"));
+        OpenRebalanceCommand = new(OpenRebalance, () => Settings.Default.RebalanceName != null);
+        RemoveRebalanceCommand = new(RemoveRebalance, () => !Settings.Default.RebalanceName.In(null, "vanilla"));
 
         FindCommand = new(Find);
 
@@ -53,19 +58,19 @@ public class MainContext : StswObservableObject
     {
         try
         {
-            if (SelectedRebalance == null)
+            if (Storage.Rebalances[Settings.Default.RebalanceName] == null)
                 return;
 
             InstallState = StswProgressState.Running;
 
-            var filePath = Path.Combine(Storage.PathRebalances, Storage.Rebalances.FirstOrDefault(x => x.Value == SelectedRebalance).Key + ".json");
-            Storage.SaveJsonIntoFile(SelectedRebalance, filePath);
+            var filePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
+            Storage.SaveJsonIntoFile(Storage.Rebalances[Settings.Default.RebalanceName], filePath);
 
             Backup.Make(Settings.Default.CrusaderPath);
-            Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath, SelectedRebalance);
+            Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath, Storage.Rebalances[Settings.Default.RebalanceName]);
 
             Backup.Make(Settings.Default.ExtremePath);
-            Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath, SelectedRebalance);
+            Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath, Storage.Rebalances[Settings.Default.RebalanceName]);
 
             InstallState = StswProgressState.Finished;
         }
@@ -100,18 +105,16 @@ public class MainContext : StswObservableObject
     {
         try
         {
-            var currentRebalanceName = Settings.Default.RebalanceName;
+            var selectedRebalance = Settings.Default.RebalanceName;
 
             Storage.LoadBaseAddresses();
             Storage.LoadRebalances();
+            OnPropertyChanged(nameof(Rebalances));
 
-            if (parameter is ComboBox comboBox)
-                comboBox.ItemsSource = Storage.Rebalances;
-
-            if (Storage.Rebalances.TryGetValue(currentRebalanceName, out var value))
-                SelectedRebalance = value;
+            if (Storage.Rebalances.ContainsKey(selectedRebalance))
+                Settings.Default.RebalanceName = selectedRebalance;
             else if (Storage.Rebalances.Count > 0)
-                SelectedRebalance = Storage.Rebalances.First().Value;
+                Settings.Default.RebalanceName = Storage.Rebalances.First().Key;
         }
         catch (Exception ex)
         {
@@ -119,23 +122,54 @@ public class MainContext : StswObservableObject
         }
     }
     
-    /// EditRebalance
-    private async Task EditRebalance(string? parameter)
+    /// AddRebalance
+    private async Task AddRebalance()
     {
         try
         {
-            if (string.IsNullOrWhiteSpace(parameter))
-                return;
+            await StswContentDialog.Show(new NewConfigContext(), "MainContentDialog");
 
-            var filePath = Path.Combine(Storage.PathRebalances, parameter + ".json");
+            var selectedRebalance = Settings.Default.RebalanceName;
+            OnPropertyChanged(nameof(Rebalances));
+
+            if (Storage.Rebalances.ContainsKey(selectedRebalance))
+                Settings.Default.RebalanceName = selectedRebalance;
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+    
+    /// RenameRebalance
+    private async Task RenameRebalance()
+    {
+        try
+        {
+            await StswContentDialog.Show(new NewConfigContext(true), "MainContentDialog");
+
+            var selectedRebalance = Settings.Default.RebalanceName;
+            OnPropertyChanged(nameof(Rebalances));
+
+            if (Storage.Rebalances.ContainsKey(selectedRebalance))
+                Settings.Default.RebalanceName = selectedRebalance;
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+    
+    /// OpenRebalance
+    private async Task OpenRebalance()
+    {
+        try
+        {
+            var filePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
+
             if (!File.Exists(filePath))
-            {
-                var filePathVanilla = Path.Combine(Storage.PathRebalances, "vanilla.json");
-                if (File.Exists(filePathVanilla))
-                    File.Copy(filePathVanilla, filePath);
-                else
-                    File.Create(filePath);
-            }
+                throw new IOException("File for selected rebalance config does not exist!");
+            
             StswFn.OpenFile(filePath);
         }
         catch (Exception ex)
@@ -145,22 +179,23 @@ public class MainContext : StswObservableObject
     }
     
     /// RemoveRebalance
-    private async Task RemoveRebalance(string? parameter)
+    private async Task RemoveRebalance()
     {
         try
         {
-            if (string.IsNullOrWhiteSpace(parameter))
-                return;
-
-            if (parameter == "vanilla")
+            if (Settings.Default.RebalanceName == "vanilla")
             {
                 await StswMessageDialog.Show("`vanilla` rebalance config cannot be removed.", "Information", null, StswDialogButtons.OK, StswDialogImage.Information);
                 return;
             }
 
-            var filePath = Path.Combine(Storage.PathRebalances, parameter + ".json");
-            if (File.Exists(filePath) && await StswMessageDialog.Show($"Are you sure you want to remove '{parameter}' rebalance config?", "Confirmation", null, StswDialogButtons.YesNo, StswDialogImage.Question) == true)
+            var filePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
+            if (await StswMessageDialog.Show($"Are you sure you want to remove '{Settings.Default.RebalanceName}' rebalance config?", "Confirmation", null, StswDialogButtons.YesNo, StswDialogImage.Question) == true)
+            {
                 File.Delete(filePath);
+                Storage.Rebalances.Remove(Settings.Default.RebalanceName);
+                OnPropertyChanged(nameof(Rebalances));
+            }
         }
         catch (Exception ex)
         {
@@ -191,6 +226,9 @@ public class MainContext : StswObservableObject
     }
     private StswProgressState _installState;
 
+    /// Rebalances
+    public ObservableCollection<RebalanceModel> Rebalances => new(Storage.Rebalances.Select(x => { x.Value.Key = x.Key; return x.Value; }));
+
     /// SelectedRebalance
     public RebalanceModel? SelectedRebalance
     {
@@ -198,6 +236,8 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _selectedRebalance, value);
     }
     private RebalanceModel? _selectedRebalance;
+
+
 
     /// FinderFilterType
     public GameVersion? FinderFilterType

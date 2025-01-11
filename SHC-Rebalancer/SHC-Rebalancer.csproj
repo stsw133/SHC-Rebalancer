@@ -50,8 +50,12 @@
     <None Remove="Resources\ai\Image726.png" />
     <None Remove="Resources\background.jpg" />
     <None Remove="Resources\buildings\ArabOutpost.png" />
+    <None Remove="Resources\buildings\BatteringRam.png" />
     <None Remove="Resources\buildings\EngineersGuild.png" />
     <None Remove="Resources\buildings\EuropOutpost.png" />
+    <None Remove="Resources\buildings\FireBallista.png" />
+    <None Remove="Resources\buildings\PortableShield.png" />
+    <None Remove="Resources\buildings\SiegeTower.png" />
     <None Remove="Resources\buildings\Stables.png" />
     <None Remove="Resources\buildings\TunnelersGuild.png" />
     <None Remove="Resources\rebalance\base\crusader.json" />
@@ -148,6 +152,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\buildings\BatteringRam.png" />
+    <Resource Include="Resources\buildings\FireBallista.png" />
+    <Resource Include="Resources\buildings\PortableShield.png" />
+    <Resource Include="Resources\buildings\SiegeTower.png" />
     <Resource Include="Resources\teams\Team1.png" />
     <Resource Include="Resources\teams\Team2.png" />
     <Resource Include="Resources\teams\Team3.png" />

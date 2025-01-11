@@ -15,7 +15,7 @@
         <se:StswDirectionView DockPanel.Dock="Bottom" Background="{DynamicResource StswWindow.Static.Background}" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
             <UniformGrid HorizontalAlignment="Center" Rows="1">
                 <se:StswButton Command="{Binding SaveChangesCommand}" Margin="3" Padding="10 3">
-                    <se:StswLabel Content="Save changes" IconData="{x:Static se:StswIcons.ContentSave}" IconFill="{DynamicResource StswColor.Modify}"/>
+                    <se:StswLabel Content="Save all changes" IconData="{x:Static se:StswIcons.ContentSaveAll}" IconFill="{DynamicResource StswColor.Modify}"/>
                 </se:StswButton>
                 <se:StswButton Command="{Binding InstallCommand}" Margin="3" Padding="10 3">
                     <se:StswLabel Content="Install" IconData="{x:Static se:StswIcons.Play}" IconFill="{DynamicResource StswColor.Positive}"/>
@@ -35,7 +35,7 @@
                 </se:StswTabItem.Header>
 
                 <se:StswScrollView>
-                    <StackPanel>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
                         <se:StswLabel Content="Stronghold Crusader:" FontWeight="Bold" Margin="3 6 3 0"/>
                         <se:StswPathPicker Filter="Stronghold Crusader|*.exe"
                                            Margin="3"
@@ -50,29 +50,30 @@
 
                         <se:StswLabel Content="Selected rebalance config to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
                         <se:StswComboBox DisplayMemberPath="Key"
-                                         IsEditable="True"
-                                         ItemsSource="{Binding Source={x:Static local:Storage.Rebalances}}"
+                                         ItemsSource="{Binding Rebalances}"
                                          Margin="3"
                                          Placeholder="Please select rebalance config to apply..."
-                                         SelectedValue="{Binding SelectedRebalance}"
-                                         SelectedValuePath="Value"
-                                         Text="{Binding RebalanceName, Source={x:Static local:Settings.Default}}">
+                                         SelectedItem="{Binding SelectedRebalance, Mode=OneWayToSource}"
+                                         SelectedValue="{Binding RebalanceName, Source={x:Static local:Settings.Default}}"
+                                         SelectedValuePath="Key">
                             <se:StswComboBox.SubControls>
-                                <se:StswSubButton Command="{Binding ReloadRebalancesCommand}"
-                                                  CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}"
-                                                  IconData="{x:Static se:StswIcons.Refresh}"
-                                                  IconFill="{DynamicResource StswColor.Neutral}"
-                                                  Padding="0 0 3 0"/>
-                                <se:StswSubButton Command="{Binding EditRebalanceCommand}"
-                                                  CommandParameter="{Binding Text, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}"
-                                                  IconData="{x:Static se:StswIcons.Pencil}"
-                                                  IconFill="{DynamicResource StswColor.Positive}"
-                                                  Padding="0 0 3 0"/>
-                                <se:StswSubButton Command="{Binding RemoveRebalanceCommand}"
-                                                  CommandParameter="{Binding Text, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}"
-                                                  IconData="{x:Static se:StswIcons.TrashCan}"
-                                                  IconFill="{DynamicResource StswColor.Negative}"
-                                                  Padding="0 0 3 0"/>
+                                <se:StswSubDrop IconData="{x:Static se:StswIcons.Menu}" Margin="1">
+                                    <se:StswButton Command="{Binding ReloadRebalancesCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                                        <se:StswLabel Content="Reload rebalance configs" IconData="{x:Static se:StswIcons.Refresh}" IconFill="{DynamicResource StswColor.Neutral}"/>
+                                    </se:StswButton>
+                                    <se:StswButton Command="{Binding AddRebalanceCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                                        <se:StswLabel Content="Add new rebalance config" IconData="{x:Static se:StswIcons.Plus}" IconFill="{DynamicResource StswColor.Positive}"/>
+                                    </se:StswButton>
+                                    <se:StswButton Command="{Binding RenameRebalanceCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                                        <se:StswLabel Content="Rename selected rebalance config" IconData="{x:Static se:StswIcons.Rename}" IconFill="{DynamicResource StswColor.Positive}"/>
+                                    </se:StswButton>
+                                    <se:StswButton Command="{Binding OpenRebalanceCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                                        <se:StswLabel Content="Open selected rebalance file" IconData="{x:Static se:StswIcons.FileEdit}" IconFill="{DynamicResource StswColor.Positive}"/>
+                                    </se:StswButton>
+                                    <se:StswButton Command="{Binding RemoveRebalanceCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                                        <se:StswLabel Content="Remove selected rebalance config" IconData="{x:Static se:StswIcons.TrashCan}" IconFill="{DynamicResource StswColor.Negative}"/>
+                                    </se:StswButton>
+                                </se:StswSubDrop>
                             </se:StswComboBox.SubControls>
                         </se:StswComboBox>
                     </StackPanel>
