@@ -37,7 +37,6 @@ public class NewConfigContext : StswObservableObject
                 {
                     File.Move(selectedFilePath, filePath);
                     Storage.Rebalances.ChangeKey(Settings.Default.RebalanceName, Name);
-                    Storage.Rebalances[Name].Key = Name;
                     Settings.Default.RebalanceName = Name;
 
                     StswContentDialog.Close("MainContentDialog");
@@ -61,8 +60,7 @@ public class NewConfigContext : StswObservableObject
                 if (!File.Exists(filePath))
                 {
                     File.Copy(baseFilePath, filePath);
-                    Storage.Rebalances.TryAdd(Name, Storage.Rebalances[BasedOn]);
-                    Storage.Rebalances[Name].Key = Name;
+                    Storage.Rebalances.TryAdd(Name, Storage.ReadJsonFileAsModel<RebalanceModel>(filePath)!);
                     Settings.Default.RebalanceName = Name;
 
                     StswContentDialog.Close("MainContentDialog");

@@ -44,7 +44,7 @@ public class MainContext : StswObservableObject
             foreach (var rebalance in Storage.Rebalances)
             {
                 var filePath = Path.Combine(Storage.PathRebalances, rebalance.Key + ".json");
-                Storage.SaveJsonIntoFile(rebalance.Value, filePath);
+                Storage.SaveModelIntoFile(rebalance.Value, filePath);
             }
         }
         catch (Exception ex)
@@ -64,7 +64,7 @@ public class MainContext : StswObservableObject
             InstallState = StswProgressState.Running;
 
             var filePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
-            Storage.SaveJsonIntoFile(Storage.Rebalances[Settings.Default.RebalanceName], filePath);
+            Storage.SaveModelIntoFile(SelectedRebalance, filePath);
 
             Backup.Make(Settings.Default.CrusaderPath);
             Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath, Storage.Rebalances[Settings.Default.RebalanceName]);
