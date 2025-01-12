@@ -6,12 +6,10 @@
              xmlns:local="clr-namespace:SHC_Rebalancer"
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
-    <UserControl.Background>
-        <ImageBrush ImageSource="/Resources/background.jpg" Opacity="0.2"/>
-    </UserControl.Background>
 
     <DockPanel>
         <!-- buttons panel -->
+        <se:StswProgressBar DockPanel.Dock="Bottom" Margin="3" State="{Binding InstallState}" Value="{Binding InstallValue}"/>
         <se:StswDirectionView DockPanel.Dock="Bottom" Background="{DynamicResource StswWindow.Static.Background}" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
             <UniformGrid HorizontalAlignment="Center" Rows="1">
                 <se:StswButton Command="{Binding SaveChangesCommand}" Margin="3" Padding="10 3">
@@ -25,9 +23,12 @@
                 </se:StswButton>
             </UniformGrid>
         </se:StswDirectionView>
-        <se:StswSeparator DockPanel.Dock="Bottom" Orientation="Horizontal"/>
+        <se:StswSeparator DockPanel.Dock="Bottom" Margin="0 0 0 3" Orientation="Horizontal"/>
         <!-- rebalancer configuration -->
-        <se:StswTabControl AreTabsVisible="True" Background="Transparent" BorderThickness="0 1 0 0">
+        <se:StswTabControl AreTabsVisible="True" BorderThickness="0 1 0 0">
+            <se:StswTabControl.Background>
+                <ImageBrush ImageSource="/Resources/background.jpg" Opacity="0.2"/>
+            </se:StswTabControl.Background>
             <!-- main -->
             <se:StswTabItem>
                 <se:StswTabItem.Header>
@@ -115,7 +116,7 @@
                                  FrozenColumnCount="2"
                                  IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.BuildingsView}"
-                                 Margin="5">
+                                 Margin="3">
                     <se:StswDataGrid.Columns>
                         <DataGridTemplateColumn SortMemberPath="Key">
                             <DataGridTemplateColumn.CellTemplate>
@@ -124,46 +125,170 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Binding="{Binding Name}" FontWeight="Bold" IsReadOnly="True">
-                            <DataGridTextColumn.Header>
+                        <DataGridTemplateColumn SortMemberPath="Name" Width="100">
+                            <DataGridTemplateColumn.Header>
                                 <se:StswLabel Content="Name"/>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[0]}">
-                            <se:StswDataGridDecimalColumn.Header>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <se:StswLabel Content="{Binding Name}" FontWeight="Bold"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Cost[0]" Width="100">
+                            <DataGridTemplateColumn.Header>
                                 <se:StswLabel Content="Wood cost" IconSource="/Resources/resources/Wood.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[1]}">
-                            <se:StswDataGridDecimalColumn.Header>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <se:StswLabel IconSource="/Resources/resources/Wood.png">
+                                        <se:StswLabel.Style>
+                                            <Style TargetType="{x:Type se:StswLabel}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Cost[0]}" Value="0">
+                                                        <Setter Property="IconData" Value="M0 0"/>
+                                                        <Setter Property="Margin" Value="20 0 0 0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </se:StswLabel.Style>
+                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[0]}"/>
+                                    </se:StswLabel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Cost[1]" Width="100">
+                            <DataGridTemplateColumn.Header>
                                 <se:StswLabel Content="Stone cost" IconSource="/Resources/resources/Stone.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[2]}">
-                            <se:StswDataGridDecimalColumn.Header>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <se:StswLabel IconSource="/Resources/resources/Stone.png">
+                                        <se:StswLabel.Style>
+                                            <Style TargetType="{x:Type se:StswLabel}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Cost[1]}" Value="0">
+                                                        <Setter Property="IconData" Value="M0 0"/>
+                                                        <Setter Property="Margin" Value="20 0 0 0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </se:StswLabel.Style>
+                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[1]}"/>
+                                    </se:StswLabel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Cost[2]" Width="100">
+                            <DataGridTemplateColumn.Header>
                                 <se:StswLabel Content="Iron cost" IconSource="/Resources/resources/Iron.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[3]}">
-                            <se:StswDataGridDecimalColumn.Header>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <se:StswLabel IconSource="/Resources/resources/Iron.png">
+                                        <se:StswLabel.Style>
+                                            <Style TargetType="{x:Type se:StswLabel}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Cost[2]}" Value="0">
+                                                        <Setter Property="IconData" Value="M0 0"/>
+                                                        <Setter Property="Margin" Value="20 0 0 0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </se:StswLabel.Style>
+                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[2]}"/>
+                                    </se:StswLabel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Cost[3]" Width="100">
+                            <DataGridTemplateColumn.Header>
                                 <se:StswLabel Content="Pitch cost" IconSource="/Resources/resources/Pitch.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Cost[4]}">
-                            <se:StswDataGridDecimalColumn.Header>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <se:StswLabel IconSource="/Resources/resources/Pitch.png">
+                                        <se:StswLabel.Style>
+                                            <Style TargetType="{x:Type se:StswLabel}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Cost[3]}" Value="0">
+                                                        <Setter Property="IconData" Value="M0 0"/>
+                                                        <Setter Property="Margin" Value="20 0 0 0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </se:StswLabel.Style>
+                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[3]}"/>
+                                    </se:StswLabel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Cost[4]" Width="100">
+                            <DataGridTemplateColumn.Header>
                                 <se:StswLabel Content="Gold cost" IconSource="/Resources/resources/Gold.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Health}">
-                            <se:StswDataGridDecimalColumn.Header>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <se:StswLabel IconSource="/Resources/resources/Gold.png">
+                                        <se:StswLabel.Style>
+                                            <Style TargetType="{x:Type se:StswLabel}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Cost[4]}" Value="0">
+                                                        <Setter Property="IconData" Value="M0 0"/>
+                                                        <Setter Property="Margin" Value="20 0 0 0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </se:StswLabel.Style>
+                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[4]}"/>
+                                    </se:StswLabel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Health" Width="100">
+                            <DataGridTemplateColumn.Header>
                                 <se:StswLabel Content="Health" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Housing}">
-                            <se:StswDataGridDecimalColumn.Header>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <se:StswLabel IconFill="{DynamicResource StswDialog.Error.Background}">
+                                        <se:StswLabel.Style>
+                                            <Style TargetType="{x:Type se:StswLabel}">
+                                                <Setter Property="IconData" Value="{x:Static se:StswIcons.Heart}"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Health}" Value="0">
+                                                        <Setter Property="IconData" Value="M0 0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </se:StswLabel.Style>
+                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Health}"/>
+                                    </se:StswLabel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Housing" Width="100">
+                            <DataGridTemplateColumn.Header>
                                 <se:StswLabel Content="Housing" IconData="{x:Static se:StswIcons.Home}" IconFill="{DynamicResource StswDialog.None.Background}"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <se:StswLabel IconFill="{DynamicResource StswDialog.None.Background}">
+                                        <se:StswLabel.Style>
+                                            <Style TargetType="{x:Type se:StswLabel}">
+                                                <Setter Property="IconData" Value="{x:Static se:StswIcons.Home}"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Housing}" Value="0">
+                                                        <Setter Property="IconData" Value="M0 0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </se:StswLabel.Style>
+                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Housing}"/>
+                                    </se:StswLabel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </se:StswDataGrid.Columns>
                 </se:StswDataGrid>
             </se:StswTabItem>
@@ -179,7 +304,7 @@
                                  FrozenColumnCount="2"
                                  IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.ResourcesView}"
-                                 Margin="5">
+                                 Margin="3">
                     <se:StswDataGrid.Columns>
                         <DataGridTemplateColumn SortMemberPath="Key">
                             <DataGridTemplateColumn.CellTemplate>
@@ -203,11 +328,6 @@
                                 <se:StswLabel Content="Sell value" IconSource="/Resources/resources/Gold.png"/>
                             </se:StswDataGridDecimalColumn.Header>
                         </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding SellRatio, StringFormat=0%, Mode=OneWay}" IsReadOnly="True">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Sell ratio" IconData="{x:Static se:StswIcons.Percent}" IconFill="{DynamicResource StswDialog.None.Background}"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
                     </se:StswDataGrid.Columns>
                 </se:StswDataGrid>
             </se:StswTabItem>
@@ -223,7 +343,7 @@
                                  FrozenColumnCount="2"
                                  IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.UnitsView}"
-                                 Margin="5">
+                                 Margin="3">
                     <se:StswDataGrid.Columns>
                         <DataGridTemplateColumn SortMemberPath="Key">
                             <DataGridTemplateColumn.CellTemplate>
@@ -326,7 +446,7 @@
                                  FrozenColumnCount="1"
                                  IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.SkirmishTrailView}"
-                                 Margin="5">
+                                 Margin="3">
                     <se:StswDataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
                             <DataGridTextColumn.Header>
@@ -571,7 +691,7 @@
                                  FrozenColumnCount="2"
                                  IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
                                  ItemsSource="{Binding SelectedRebalance.Other}"
-                                 Margin="5">
+                                 Margin="3">
                     <se:StswDataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
                             <DataGridTextColumn.Header>
@@ -612,73 +732,7 @@
                     <se:StswLabel Content="Finder" IconData="{x:Static se:StswIcons.Magnify}"/>
                 </se:StswTabItem.Header>
 
-                <DockPanel Margin="-3">
-                    <se:StswDataGrid BorderThickness="0 0 1 0"
-                                     IsReadOnly="True"
-                                     ItemsSource="{Binding FinderResults}"
-                                     SelectionUnit="Cell"
-                                     Width="200">
-
-                        <se:StswDataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Address}" FontSize="11" Header="Address" Width="*"/>
-                            <se:StswDataGridDecimalColumn Binding="{Binding Value}" FontSize="11" Header="Value" Width="*"/>
-                        </se:StswDataGrid.Columns>
-
-                        <se:StswDataGrid.CellStyle>
-                            <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource StswDataGridCellStyle}">
-                                <Setter Property="Margin" Value="-0.5"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsInConfigFile}" Value="True">
-                                        <Setter Property="Background" Value="{DynamicResource StswDialog.Warning.Subground}"/>
-                                    </DataTrigger>
-                                    <MultiDataTrigger>
-                                        <MultiDataTrigger.Conditions>
-                                            <Condition Binding="{Binding IsInConfigFile}" Value="True"/>
-                                            <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="True"/>
-                                        </MultiDataTrigger.Conditions>
-                                        <Setter Property="Background" Value="{DynamicResource StswDialog.Warning.Border}"/>
-                                    </MultiDataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </se:StswDataGrid.CellStyle>
-                    </se:StswDataGrid>
-
-                    <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
-                        <se:StswLabel Content="Game type:"/>
-                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:GameVersion}"
-                                         Margin="3"
-                                         Placeholder="Select Stronghold game to search through..."
-                                         SelectedValue="{Binding FinderFilterType}"/>
-
-                        <se:StswLabel Content="Size:"/>
-                        <StackPanel Margin="3" Orientation="Horizontal">
-                            <se:StswRadioBox Content="byte"
-                                             IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=1}"
-                                             Margin="0 0 3 0"/>
-                            <se:StswRadioBox Content="int"
-                                             IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=4}"
-                                             Margin="0 0 3 0"/>
-                        </StackPanel>
-
-                        <se:StswLabel Content="Address:"/>
-                        <DockPanel IsEnabled="{Binding FinderFilterType, Converter={x:Static se:StswNotNullConverter.Instance}}">
-                            <se:StswIntegerBox DockPanel.Dock="Right"
-                                               Margin="3"
-                                               Placeholder="Skip bytes..."
-                                               Value="{Binding FinderFilterSkips}"
-                                               Width="100"/>
-                            <se:StswTextBox Margin="3"
-                                            Placeholder="Initial address to find..."
-                                            Text="{Binding FinderFilterAddress}"/>
-                        </DockPanel>
-
-                        <se:StswLabel Content="Values:"/>
-                        <se:StswTextBox IsEnabled="{Binding FinderFilterType, Converter={x:Static se:StswNotNullConverter.Instance}}"
-                                        Margin="3"
-                                        Placeholder="Sequence of values to find... (separated by commas)"
-                                        Text="{Binding FinderFilterValues}"/>
-                    </se:StswLabelPanel>
-                </DockPanel>
+                <local:FinderContext/>
             </se:StswTabItem>
         </se:StswTabControl>
     </DockPanel>

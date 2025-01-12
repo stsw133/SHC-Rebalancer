@@ -41,14 +41,24 @@ public class MainContext : StswObservableObject
     {
         try
         {
+            InstallValue = 0;
+            InstallState = StswProgressState.Running;
+
             foreach (var rebalance in Storage.Rebalances)
             {
                 var filePath = Path.Combine(Storage.PathRebalances, rebalance.Key + ".json");
                 Storage.SaveModelIntoFile(rebalance.Value, filePath);
+
+                await Task.Delay(1000 / Storage.Rebalances.Count);
+                InstallValue += 100 / Storage.Rebalances.Count;
             }
+
+            InstallState = StswProgressState.Finished;
+            InstallValue = 100;
         }
         catch (Exception ex)
         {
+            InstallState = StswProgressState.Error;
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
@@ -61,18 +71,28 @@ public class MainContext : StswObservableObject
             if (Storage.Rebalances[Settings.Default.RebalanceName] == null)
                 return;
 
+            InstallValue = 0;
             InstallState = StswProgressState.Running;
+
+            await Task.Delay(200);
 
             var filePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
             Storage.SaveModelIntoFile(SelectedRebalance, filePath);
 
+            InstallValue += 20;
+            await Task.Delay(400);
+
             Backup.Make(Settings.Default.CrusaderPath);
             Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath, Storage.Rebalances[Settings.Default.RebalanceName]);
+
+            InstallValue += 40;
+            await Task.Delay(400);
 
             Backup.Make(Settings.Default.ExtremePath);
             Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath, Storage.Rebalances[Settings.Default.RebalanceName]);
 
             InstallState = StswProgressState.Finished;
+            InstallValue = 100;
         }
         catch (Exception ex)
         {
@@ -86,12 +106,20 @@ public class MainContext : StswObservableObject
     {
         try
         {
+            InstallValue = 0;
             InstallState = StswProgressState.Running;
 
+            await Task.Delay(500);
+
             Backup.Restore(Settings.Default.CrusaderPath);
+
+            InstallValue += 50;
+            await Task.Delay(500);
+
             Backup.Restore(Settings.Default.ExtremePath);
 
             InstallState = StswProgressState.Finished;
+            InstallValue = 100;
         }
         catch (Exception ex)
         {
@@ -225,6 +253,14 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _installState, value);
     }
     private StswProgressState _installState;
+
+    /// InstallValue
+    public int InstallValue
+    {
+        get => _installValue;
+        set => SetProperty(ref _installValue, value);
+    }
+    private int _installValue;
 
     /// Rebalances
     public ObservableCollection<RebalanceModel> Rebalances => new(Storage.Rebalances.Select(x => { x.Value.Key = x.Key; return x.Value; }));

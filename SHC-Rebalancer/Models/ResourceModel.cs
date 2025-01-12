@@ -12,17 +12,14 @@ public class ResourceModel : StswObservableObject
     public int? Buy
     {
         get => _buy;
-        set => SetProperty(ref _buy, value, nameof(SellRatio));
+        set => SetProperty(ref _buy, value);
     }
     public int? _buy;
 
     public int? Sell
     {
         get => _sell;
-        set => SetProperty(ref _sell, value, nameof(SellRatio));
+        set => SetProperty(ref _sell, value);
     }
     public int? _sell;
-
-    [JsonIgnore]
-    public decimal? SellRatio => 1.0m * Sell / Buy;
 }

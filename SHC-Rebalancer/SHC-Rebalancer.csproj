@@ -381,4 +381,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="Modules\Finder\FinderView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>
