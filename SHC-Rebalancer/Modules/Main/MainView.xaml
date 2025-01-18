@@ -27,7 +27,7 @@
         <!-- rebalancer configuration -->
         <se:StswTabControl AreTabsVisible="True" BorderThickness="0 1 0 0">
             <se:StswTabControl.Background>
-                <ImageBrush ImageSource="/Resources/background.jpg" Opacity="0.2"/>
+                <ImageBrush ImageSource="/Images/background.jpg" Opacity="0.2"/>
             </se:StswTabControl.Background>
             <!-- main -->
             <se:StswTabItem>
@@ -49,34 +49,23 @@
                                            Placeholder="Please select Stronghold Crusader Extreme .exe path..."
                                            SelectedPath="{Binding ExtremePath, Source={x:Static local:Settings.Default}}"/>
 
-                        <se:StswLabel Content="Selected rebalance config to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
-                        <se:StswComboBox DisplayMemberPath="Key"
-                                         ItemsSource="{Binding Rebalances}"
-                                         Margin="3"
-                                         Placeholder="Please select rebalance config to apply..."
-                                         SelectedItem="{Binding SelectedRebalance, Mode=OneWayToSource}"
-                                         SelectedValue="{Binding RebalanceName, Source={x:Static local:Settings.Default}}"
-                                         SelectedValuePath="Key">
-                            <se:StswComboBox.SubControls>
-                                <se:StswSubDrop IconData="{x:Static se:StswIcons.Menu}" Margin="1">
-                                    <se:StswButton Command="{Binding ReloadRebalancesCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
-                                        <se:StswLabel Content="Reload rebalance configs" IconData="{x:Static se:StswIcons.Refresh}" IconFill="{DynamicResource StswColor.Neutral}"/>
-                                    </se:StswButton>
-                                    <se:StswButton Command="{Binding AddRebalanceCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
-                                        <se:StswLabel Content="Add new rebalance config" IconData="{x:Static se:StswIcons.Plus}" IconFill="{DynamicResource StswColor.Positive}"/>
-                                    </se:StswButton>
-                                    <se:StswButton Command="{Binding RenameRebalanceCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
-                                        <se:StswLabel Content="Rename selected rebalance config" IconData="{x:Static se:StswIcons.Rename}" IconFill="{DynamicResource StswColor.Positive}"/>
-                                    </se:StswButton>
-                                    <se:StswButton Command="{Binding OpenRebalanceCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
-                                        <se:StswLabel Content="Open selected rebalance file" IconData="{x:Static se:StswIcons.FileEdit}" IconFill="{DynamicResource StswColor.Positive}"/>
-                                    </se:StswButton>
-                                    <se:StswButton Command="{Binding RemoveRebalanceCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
-                                        <se:StswLabel Content="Remove selected rebalance config" IconData="{x:Static se:StswIcons.TrashCan}" IconFill="{DynamicResource StswColor.Negative}"/>
-                                    </se:StswButton>
-                                </se:StswSubDrop>
-                            </se:StswComboBox.SubControls>
-                        </se:StswComboBox>
+                        <se:StswLabel Content="Selected configs to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
+                        <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5">
+                            <se:StswLabelPanel DockPanel.Dock="Top" LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
+                                <se:StswLabel Content="AIC:"/>
+                                <local:ConfigBox ItemsSource="{Binding Configs_aic}" SelectedValue="{Binding ConfigName_aic, Source={x:Static local:Settings.Default}}" Type="AIC"/>
+                                <se:StswLabel Content="Buildings:"/>
+                                <local:ConfigBox ItemsSource="{Binding Configs_buildings}" SelectedValue="{Binding ConfigName_buildings, Source={x:Static local:Settings.Default}}" Type="Buildings"/>
+                                <se:StswLabel Content="Resources:"/>
+                                <local:ConfigBox ItemsSource="{Binding Configs_resources}" SelectedValue="{Binding ConfigName_resources, Source={x:Static local:Settings.Default}}" Type="Resources"/>
+                                <se:StswLabel Content="Skirmish trail:"/>
+                                <local:ConfigBox ItemsSource="{Binding Configs_skirmishtrail}" SelectedValue="{Binding ConfigName_skirmishtrail, Source={x:Static local:Settings.Default}}" Type="SkirmishTrail"/>
+                                <se:StswLabel Content="Units:"/>
+                                <local:ConfigBox ItemsSource="{Binding Configs_units}" SelectedValue="{Binding ConfigName_units, Source={x:Static local:Settings.Default}}" Type="Units"/>
+                                <se:StswLabel Content="Others:"/>
+                                <local:ConfigBox ItemsSource="{Binding Configs_others}" SelectedValue="{Binding ConfigName_others, Source={x:Static local:Settings.Default}}" Type="Others"/>
+                            </se:StswLabelPanel>
+                        </se:StswBorder>
                     </StackPanel>
                 </se:StswScrollView>
             </se:StswTabItem>
@@ -88,13 +77,13 @@
 
 
             </se:StswTabItem>
-            <!-- ai -->
-            <se:StswTabItem Visibility="Collapsed">
+            <!-- aic -->
+            <se:StswTabItem>
                 <se:StswTabItem.Header>
-                    <se:StswLabel Content="AI" IconData="{x:Static se:StswIcons.Alien}"/>
+                    <se:StswLabel Content="AIC" IconData="{x:Static se:StswIcons.Alien}"/>
                 </se:StswTabItem.Header>
 
-
+                <local:AicContext/>
             </se:StswTabItem>
             <!-- starting goods -->
             <se:StswTabItem Visibility="Collapsed">
@@ -110,187 +99,7 @@
                     <se:StswLabel Content="Buildings" IconData="{x:Static se:StswIcons.Castle}"/>
                 </se:StswTabItem.Header>
 
-                <se:StswDataGrid Background="#3777"
-                                 CanUserAddRows="False"
-                                 CanUserDeleteRows="False"
-                                 FrozenColumnCount="2"
-                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                                 ItemsSource="{Binding SelectedRebalance.BuildingsView}"
-                                 Margin="3">
-                    <se:StswDataGrid.Columns>
-                        <DataGridTemplateColumn SortMemberPath="Key">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image MaxHeight="48" MaxWidth="48" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn SortMemberPath="Name" Width="100">
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Name"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel Content="{Binding Name}" FontWeight="Bold"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn SortMemberPath="Cost[0]" Width="100">
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Wood cost" IconSource="/Resources/resources/Wood.png"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel IconSource="/Resources/resources/Wood.png">
-                                        <se:StswLabel.Style>
-                                            <Style TargetType="{x:Type se:StswLabel}">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Cost[0]}" Value="0">
-                                                        <Setter Property="IconData" Value="M0 0"/>
-                                                        <Setter Property="Margin" Value="20 0 0 0"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </se:StswLabel.Style>
-                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[0]}"/>
-                                    </se:StswLabel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn SortMemberPath="Cost[1]" Width="100">
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Stone cost" IconSource="/Resources/resources/Stone.png"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel IconSource="/Resources/resources/Stone.png">
-                                        <se:StswLabel.Style>
-                                            <Style TargetType="{x:Type se:StswLabel}">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Cost[1]}" Value="0">
-                                                        <Setter Property="IconData" Value="M0 0"/>
-                                                        <Setter Property="Margin" Value="20 0 0 0"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </se:StswLabel.Style>
-                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[1]}"/>
-                                    </se:StswLabel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn SortMemberPath="Cost[2]" Width="100">
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Iron cost" IconSource="/Resources/resources/Iron.png"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel IconSource="/Resources/resources/Iron.png">
-                                        <se:StswLabel.Style>
-                                            <Style TargetType="{x:Type se:StswLabel}">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Cost[2]}" Value="0">
-                                                        <Setter Property="IconData" Value="M0 0"/>
-                                                        <Setter Property="Margin" Value="20 0 0 0"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </se:StswLabel.Style>
-                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[2]}"/>
-                                    </se:StswLabel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn SortMemberPath="Cost[3]" Width="100">
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Pitch cost" IconSource="/Resources/resources/Pitch.png"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel IconSource="/Resources/resources/Pitch.png">
-                                        <se:StswLabel.Style>
-                                            <Style TargetType="{x:Type se:StswLabel}">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Cost[3]}" Value="0">
-                                                        <Setter Property="IconData" Value="M0 0"/>
-                                                        <Setter Property="Margin" Value="20 0 0 0"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </se:StswLabel.Style>
-                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[3]}"/>
-                                    </se:StswLabel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn SortMemberPath="Cost[4]" Width="100">
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Gold cost" IconSource="/Resources/resources/Gold.png"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel IconSource="/Resources/resources/Gold.png">
-                                        <se:StswLabel.Style>
-                                            <Style TargetType="{x:Type se:StswLabel}">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Cost[4]}" Value="0">
-                                                        <Setter Property="IconData" Value="M0 0"/>
-                                                        <Setter Property="Margin" Value="20 0 0 0"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </se:StswLabel.Style>
-                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Cost[4]}"/>
-                                    </se:StswLabel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn SortMemberPath="Health" Width="100">
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Health" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel IconFill="{DynamicResource StswDialog.Error.Background}">
-                                        <se:StswLabel.Style>
-                                            <Style TargetType="{x:Type se:StswLabel}">
-                                                <Setter Property="IconData" Value="{x:Static se:StswIcons.Heart}"/>
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Health}" Value="0">
-                                                        <Setter Property="IconData" Value="M0 0"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </se:StswLabel.Style>
-                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Health}"/>
-                                    </se:StswLabel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn SortMemberPath="Housing" Width="100">
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Housing" IconData="{x:Static se:StswIcons.Home}" IconFill="{DynamicResource StswDialog.None.Background}"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel IconFill="{DynamicResource StswDialog.None.Background}">
-                                        <se:StswLabel.Style>
-                                            <Style TargetType="{x:Type se:StswLabel}">
-                                                <Setter Property="IconData" Value="{x:Static se:StswIcons.Home}"/>
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Housing}" Value="0">
-                                                        <Setter Property="IconData" Value="M0 0"/>
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </se:StswLabel.Style>
-                                        <se:StswTextBox BorderBrush="Transparent" BorderThickness="1" Text="{Binding Housing}"/>
-                                    </se:StswLabel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </se:StswDataGrid.Columns>
-                </se:StswDataGrid>
+                <local:BuildingsContext/>
             </se:StswTabItem>
             <!-- resources -->
             <se:StswTabItem>
@@ -298,38 +107,7 @@
                     <se:StswLabel Content="Resources" IconData="{x:Static se:StswIcons.PackageVariant}"/>
                 </se:StswTabItem.Header>
 
-                <se:StswDataGrid Background="#3777"
-                                 CanUserAddRows="False"
-                                 CanUserDeleteRows="False"
-                                 FrozenColumnCount="2"
-                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                                 ItemsSource="{Binding SelectedRebalance.ResourcesView}"
-                                 Margin="3">
-                    <se:StswDataGrid.Columns>
-                        <DataGridTemplateColumn SortMemberPath="Key">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image MaxHeight="24" MaxWidth="24" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn Binding="{Binding Name}" FontWeight="Bold" IsReadOnly="True">
-                            <DataGridTextColumn.Header>
-                                <se:StswLabel Content="Name"/>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Buy}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Buy value" IconSource="/Resources/resources/Gold.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Sell}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Sell value" IconSource="/Resources/resources/Gold.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                    </se:StswDataGrid.Columns>
-                </se:StswDataGrid>
+                <local:ResourcesContext/>
             </se:StswTabItem>
             <!-- units -->
             <se:StswTabItem>
@@ -337,102 +115,7 @@
                     <se:StswLabel Content="Units" IconData="{x:Static se:StswIcons.AccountGroup}"/>
                 </se:StswTabItem.Header>
 
-                <se:StswDataGrid Background="#3777"
-                                 CanUserAddRows="False"
-                                 CanUserDeleteRows="False"
-                                 FrozenColumnCount="2"
-                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                                 ItemsSource="{Binding SelectedRebalance.UnitsView}"
-                                 Margin="3">
-                    <se:StswDataGrid.Columns>
-                        <DataGridTemplateColumn SortMemberPath="Key">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image MaxHeight="36" MaxWidth="36" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn Binding="{Binding Name}" FontWeight="Bold" IsReadOnly="True">
-                            <DataGridTextColumn.Header>
-                                <se:StswLabel Content="Name"/>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Health}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Health" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding DamageFromBow}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Damage from bow" IconSource="/Resources/units/EuropArcher.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding DamageFromCrossbow}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Damage from crossbow" IconSource="/Resources/units/Crossbowman.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding DamageFromSling}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Damage from sling" IconSource="/Resources/units/Slinger.png"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Speed}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Speed" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Success.Background}"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding MeleeDamage}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Melee damage" IconData="{x:Static se:StswIcons.SwordCross}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridCheckColumn Binding="{Binding CanMeleeDamage}">
-                            <se:StswDataGridCheckColumn.Header>
-                                <se:StswLabel Content="Can melee damage" IconData="{x:Static se:StswIcons.Sword}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            </se:StswDataGridCheckColumn.Header>
-                        </se:StswDataGridCheckColumn>
-                        <se:StswDataGridCheckColumn Binding="{Binding CanClimbLadder}">
-                            <se:StswDataGridCheckColumn.Header>
-                                <se:StswLabel Content="Can climb ladder" IconData="{x:Static se:StswIcons.Ladder}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            </se:StswDataGridCheckColumn.Header>
-                        </se:StswDataGridCheckColumn>
-                        <se:StswDataGridCheckColumn Binding="{Binding CanGoOnWall}">
-                            <se:StswDataGridCheckColumn.Header>
-                                <se:StswLabel Content="Can go on wall" IconData="{x:Static se:StswIcons.Wall}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            </se:StswDataGridCheckColumn.Header>
-                        </se:StswDataGridCheckColumn>
-                        <se:StswDataGridCheckColumn Binding="{Binding CanBeMoved}">
-                            <se:StswDataGridCheckColumn.Header>
-                                <se:StswLabel Content="Can be moved" IconData="{x:Static se:StswIcons.CursorMove}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            </se:StswDataGridCheckColumn.Header>
-                        </se:StswDataGridCheckColumn>
-                    </se:StswDataGrid.Columns>
-<!--
-                    <se:StswDataGrid.RowDetailsTemplate>
-                        <DataTemplate>
-                            <se:StswDataGrid CanUserAddRows="False"
-                                             CanUserDeleteRows="False"
-                                             FrozenColumnCount="1"
-                                             IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                                             ItemsSource="{Binding MeleeDamageVs}">
-                                <DataGridTemplateColumn SortMemberPath="Key">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Image MaxHeight="36" MaxWidth="36" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}"/>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
-                                <se:StswDataGridDecimalColumn Binding="{Binding Value}">
-                                    <se:StswDataGridDecimalColumn.Header>
-                                        <se:StswLabel Content="Damage" IconData="{x:Static se:StswIcons.SwordCross}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
-                                    </se:StswDataGridDecimalColumn.Header>
-                                </se:StswDataGridDecimalColumn>
-                            </se:StswDataGrid>
-                        </DataTemplate>
-                    </se:StswDataGrid.RowDetailsTemplate>
--->
-                </se:StswDataGrid>
+                <local:UnitsContext/>
             </se:StswTabItem>
             <!-- skirmish trail -->
             <se:StswTabItem>
@@ -440,246 +123,7 @@
                     <se:StswLabel Content="Skirmish trail" IconData="{x:Static se:StswIcons.Map}"/>
                 </se:StswTabItem.Header>
 
-                <se:StswDataGrid Background="#3777"
-                                 CanUserAddRows="False"
-                                 CanUserDeleteRows="False"
-                                 FrozenColumnCount="1"
-                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                                 ItemsSource="{Binding SelectedRebalance.SkirmishTrailView}"
-                                 Margin="3">
-                    <se:StswDataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
-                            <DataGridTextColumn.Header>
-                                <se:StswLabel Content="Mission №"/>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <se:StswDataGridTextColumn Binding="{Binding MapNameAddress}">
-                            <se:StswDataGridTextColumn.Header>
-                                <se:StswLabel Content="Map name address" IconData="{x:Static se:StswIcons.MapMarker}"/>
-                            </se:StswDataGridTextColumn.Header>
-                        </se:StswDataGridTextColumn>
-                        <se:StswDataGridTextColumn Binding="{Binding MapName}">
-                            <se:StswDataGridTextColumn.Header>
-                                <se:StswLabel Content="Map name" IconData="{x:Static se:StswIcons.Map}"/>
-                            </se:StswDataGridTextColumn.Header>
-                        </se:StswDataGridTextColumn>
-                        <se:StswDataGridComboColumn SelectedValueBinding="{Binding Difficulty}">
-                            <se:StswDataGridComboColumn.Header>
-                                <se:StswLabel Content="Difficulty" IconData="{x:Static se:StswIcons.DecimalIncrease}"/>
-                            </se:StswDataGridComboColumn.Header>
-                            <se:StswDataGridComboColumn.ItemsSource>
-                                <x:Array Type="{x:Type sys:Int32}" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                                    <sys:Int32>1</sys:Int32>
-                                    <sys:Int32>2</sys:Int32>
-                                    <sys:Int32>3</sys:Int32>
-                                    <sys:Int32>4</sys:Int32>
-                                    <sys:Int32>5</sys:Int32>
-                                </x:Array>
-                            </se:StswDataGridComboColumn.ItemsSource>
-                        </se:StswDataGridComboColumn>
-                        <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:SkirmishMode}" SelectedValueBinding="{Binding Type}">
-                            <se:StswDataGridComboColumn.Header>
-                                <se:StswLabel Content="Type" IconData="{x:Static se:StswIcons.SwordCross}"/>
-                            </se:StswDataGridComboColumn.Header>
-                        </se:StswDataGridComboColumn>
-                        <DataGridTemplateColumn>
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="AIs"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel DataContext="{Binding AIs}" Orientation="Horizontal">
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [0]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.Background>
-                                                <ImageBrush ImageSource="/Resources/colors/Red.png" Stretch="None"/>
-                                            </se:StswComboBox.Background>
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [1]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.Background>
-                                                <ImageBrush ImageSource="/Resources/colors/Orange.png" Stretch="None"/>
-                                            </se:StswComboBox.Background>
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [2]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.Background>
-                                                <ImageBrush ImageSource="/Resources/colors/Yellow.png" Stretch="None"/>
-                                            </se:StswComboBox.Background>
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [3]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.Background>
-                                                <ImageBrush ImageSource="/Resources/colors/Blue.png" Stretch="None"/>
-                                            </se:StswComboBox.Background>
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [4]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.Background>
-                                                <ImageBrush ImageSource="/Resources/colors/Gray.png" Stretch="None"/>
-                                            </se:StswComboBox.Background>
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [5]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.Background>
-                                                <ImageBrush ImageSource="/Resources/colors/Purple.png" Stretch="None"/>
-                                            </se:StswComboBox.Background>
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [6]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.Background>
-                                                <ImageBrush ImageSource="/Resources/colors/Cyan.png" Stretch="None"/>
-                                            </se:StswComboBox.Background>
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="36" Width="36"  Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:AI}" Padding="0" SelectedValue="{Binding [7]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.Background>
-                                                <ImageBrush ImageSource="/Resources/colors/Green.png" Stretch="None"/>
-                                            </se:StswComboBox.Background>
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="36" Width="36" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn>
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Locations"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel DataContext="{Binding Locations}" Orientation="Horizontal">
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [0]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [1]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [2]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [3]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [4]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [5]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [6]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" SelectedValue="{Binding [7]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn>
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="Teams"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel DataContext="{Binding Teams}" Orientation="Horizontal">
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [0]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [1]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [2]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [3]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [4]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [5]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [6]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" SelectedValue="{Binding [7]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Image Height="16" Width="14" Source="{Binding Value, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn>
-                            <DataGridTemplateColumn.Header>
-                                <se:StswLabel Content="AIVs"/>
-                            </DataGridTemplateColumn.Header>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel DataContext="{Binding AIVs}" Orientation="Horizontal">
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [0]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [1]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [2]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [3]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [4]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [5]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [6]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                        <se:StswComboBox ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" SelectedValue="{Binding [7]}" VerticalAlignment="Stretch" se:StswControl.IsBorderless="True" se:StswDropArrow.Visibility="Collapsed"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </se:StswDataGrid.Columns>
-                </se:StswDataGrid>
+                <local:SkirmishTrailContext/>
             </se:StswTabItem>
             <!-- other -->
             <se:StswTabItem>
@@ -687,44 +131,7 @@
                     <se:StswLabel Content="Other" IconData="{x:Static se:StswIcons.ProgressQuestion}"/>
                 </se:StswTabItem.Header>
 
-                <se:StswDataGrid Background="#3777"
-                                 FrozenColumnCount="2"
-                                 IsReadOnly="{Binding RebalanceName, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                                 ItemsSource="{Binding SelectedRebalance.Other}"
-                                 Margin="3">
-                    <se:StswDataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
-                            <DataGridTextColumn.Header>
-                                <se:StswLabel Content="Key"/>
-                            </DataGridTextColumn.Header>
-                        </DataGridTextColumn>
-                        <se:StswDataGridTextColumn Binding="{Binding Address}">
-                            <se:StswDataGridTextColumn.Header>
-                                <se:StswLabel Content="Address"/>
-                            </se:StswDataGridTextColumn.Header>
-                        </se:StswDataGridTextColumn>
-                        <se:StswDataGridDecimalColumn Binding="{Binding Size}">
-                            <se:StswDataGridDecimalColumn.Header>
-                                <se:StswLabel Content="Size"/>
-                            </se:StswDataGridDecimalColumn.Header>
-                        </se:StswDataGridDecimalColumn>
-                        <se:StswDataGridTextColumn Binding="{Binding Value}">
-                            <se:StswDataGridTextColumn.Header>
-                                <se:StswLabel Content="Value"/>
-                            </se:StswDataGridTextColumn.Header>
-                        </se:StswDataGridTextColumn>
-                        <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:GameVersion}" SelectedValueBinding="{Binding Version}">
-                            <se:StswDataGridComboColumn.Header>
-                                <se:StswLabel Content="Version"/>
-                            </se:StswDataGridComboColumn.Header>
-                        </se:StswDataGridComboColumn>
-                        <se:StswDataGridTextColumn Binding="{Binding Description}">
-                            <se:StswDataGridTextColumn.Header>
-                                <se:StswLabel Content="Description"/>
-                            </se:StswDataGridTextColumn.Header>
-                        </se:StswDataGridTextColumn>
-                    </se:StswDataGrid.Columns>
-                </se:StswDataGrid>
+                <local:OthersContext/>
             </se:StswTabItem>
             <!-- finder -->
             <se:StswTabItem>

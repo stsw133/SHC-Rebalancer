@@ -49,13 +49,73 @@ namespace SHC_Rebalancer {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string RebalanceName {
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_aic {
             get {
-                return ((string)(this["RebalanceName"]));
+                return ((string)(this["ConfigName_aic"]));
             }
             set {
-                this["RebalanceName"] = value;
+                this["ConfigName_aic"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_buildings {
+            get {
+                return ((string)(this["ConfigName_buildings"]));
+            }
+            set {
+                this["ConfigName_buildings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_resources {
+            get {
+                return ((string)(this["ConfigName_resources"]));
+            }
+            set {
+                this["ConfigName_resources"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_units {
+            get {
+                return ((string)(this["ConfigName_units"]));
+            }
+            set {
+                this["ConfigName_units"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_skirmishtrail {
+            get {
+                return ((string)(this["ConfigName_skirmishtrail"]));
+            }
+            set {
+                this["ConfigName_skirmishtrail"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_others {
+            get {
+                return ((string)(this["ConfigName_others"]));
+            }
+            set {
+                this["ConfigName_others"] = value;
             }
         }
     }

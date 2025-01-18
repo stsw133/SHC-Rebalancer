@@ -7,13 +7,20 @@ using System.Text.Json.Serialization.Metadata;
 namespace SHC_Rebalancer;
 public static class Storage
 {
-    public static string PathRebalances => Path.Combine(AppContext.BaseDirectory, "Resources/rebalance");
-    public static string PathBaseAddresses => Path.Combine(AppContext.BaseDirectory, "Resources/rebalance/base");
-    public static Dictionary<string, RebalanceModel> Rebalances { get; set; } = [];
+    static Storage()
+    {
+        BaseAddresses = LoadBaseAddresses();
+        Configs = LoadConfigs();
+    }
+
+    public static string PathBaseAddresses => Path.Combine(AppContext.BaseDirectory, "Resources", "base");
+    public static string PathConfigs => Path.Combine(AppContext.BaseDirectory, "Resources", "configs");
+
     public static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> BaseAddresses { get; set; } = [];
+    public static Dictionary<string, List<object>> Configs { get; set; } = [];
 
     /// LoadBaseAddresses
-    internal static void LoadBaseAddresses()
+    internal static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> LoadBaseAddresses()
     {
         var baseAddresses = new Dictionary<GameVersion, Dictionary<string, BaseAddressModel>>();
 
@@ -21,45 +28,69 @@ public static class Storage
         {
             var gameVersion = Enum.Parse<GameVersion>(Path.GetFileNameWithoutExtension(filePath), true);
 
-            var versionAddresses = ReadJsonFileAsModel<List<BaseAddressModel>>(filePath)?.ToDictionary(x => x.Key, x => x);
+            var versionAddresses = ReadJsonFileAsModel<List<BaseAddressModel>>(filePath, string.Empty)?.ToDictionary(x => x.Key, x => x);
             if (versionAddresses == null)
                 continue;
 
             baseAddresses.Add(gameVersion, versionAddresses);
         }
 
-        BaseAddresses = baseAddresses;
+        return baseAddresses;
     }
-    
-    /// LoadRebalances
-    internal static void LoadRebalances()
+
+    /// LoadConfigs
+    internal static Dictionary<string, List<object>> LoadConfigs(string? type = null)
     {
-        var rebalances = new Dictionary<string, RebalanceModel>();
+        var configs = new Dictionary<string, List<object>>();
 
-        foreach (var filePath in Directory.GetFiles(PathRebalances, "*.json"))
+        void GetConfig<T>(string t)
         {
-            var rebalance = ReadJsonFileAsModel<RebalanceModel>(filePath);
-            if (rebalance == null)
-                continue;
+            if (type == null || type == t)
+            {
+                configs.TryAdd(t, []);
+                foreach (var filePath in Directory.GetFiles(Path.Combine(PathConfigs, t), "*.json"))
+                {
+                    var config = ReadJsonFileAsModel<T>(filePath, t);
+                    if (config == null)
+                        continue;
 
-            rebalances.Add(Path.GetFileNameWithoutExtension(filePath), rebalance);
+                    var name = Path.GetFileNameWithoutExtension(filePath);
+                    config.GetType().GetProperty("Name")?.SetValue(config, name);
+
+                    configs[t].Add(config);
+                }
+            }
         }
 
-        Rebalances = rebalances;
+        GetConfig<AicConfigModel>("aic");
+        GetConfig<BuildingsConfigModel>("buildings");
+        GetConfig<ResourcesConfigModel>("resources");
+        GetConfig<SkirmishTrailConfigModel>("skirmishtrail");
+        GetConfig<UnitsConfigModel>("units");
+        GetConfig<OthersConfigModel>("others");
+
+        return configs;
     }
-
-    /// LoadRebalance
-    internal static RebalanceModel? LoadRebalance(string name)
+    
+    /// SaveConfigs
+    internal static void SaveConfigs()
     {
-        var filePath = Path.Combine(PathRebalances, name + ".json");
-        if (File.Exists(filePath))
-            return ReadJsonFileAsModel<RebalanceModel>(filePath)!;
-
-        return null;
+        foreach (var config in Configs["aic"].Cast<AicConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(PathConfigs, "aic", config.Name + ".json"), "aic");
+        foreach (var config in Configs["buildings"].Cast<BuildingsConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(PathConfigs, "buildings", config.Name + ".json"), "buildings");
+        foreach (var config in Configs["resources"].Cast<ResourcesConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(PathConfigs, "resources", config.Name + ".json"), "resources");
+        foreach (var config in Configs["skirmishtrail"].Cast<SkirmishTrailConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(PathConfigs, "skirmishtrail", config.Name + ".json"), "skirmishtrail");
+        foreach (var config in Configs["units"].Cast<UnitsConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(PathConfigs, "units", config.Name + ".json"), "units");
+        foreach (var config in Configs["others"].Cast<OthersConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(PathConfigs, "others", config.Name + ".json"), "others");
     }
 
     /// ReadJsonFileAsModel
-    internal static T? ReadJsonFileAsModel<T>(string filePath)
+    internal static T? ReadJsonFileAsModel<T>(string filePath, string type)
     {
         var json = File.ReadAllText(filePath);
         var jsonSerializerOptions = new JsonSerializerOptions
@@ -68,16 +99,24 @@ public static class Storage
             PropertyNameCaseInsensitive = true,
             Converters = {
                 new JsonStringEnumConverter<GameVersion>(),
+                new JsonStringEnumConverter<HarassingUnit>(),
                 new JsonStringEnumConverter<SkirmishMode>(),
+                new JsonStringEnumConverter<TargetChoice>(),
             }
         };
+        if (type == "aic")
+        {
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Building>());
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Resource>());
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
+        }
         var options = jsonSerializerOptions;
 
         return JsonSerializer.Deserialize<T>(json, options);
     }
 
     /// SaveModelIntoFile
-    internal static void SaveModelIntoFile<T>(T obj, string filePath)
+    internal static void SaveModelIntoFile<T>(T obj, string filePath, string type)
     {
         var jsonSerializerOptions = new JsonSerializerOptions
         {
@@ -89,10 +128,18 @@ public static class Storage
             },
             Converters = {
                 new JsonStringEnumConverter<GameVersion>(),
+                new JsonStringEnumConverter<HarassingUnit>(),
                 new JsonStringEnumConverter<SkirmishMode>(),
+                new JsonStringEnumConverter<TargetChoice>(),
                 new SingleLineArrayConverterFactory()
             }
         };
+        if (type == "aic")
+        {
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Building>());
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Resource>());
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
+        }
         var options = jsonSerializerOptions;
         var json = JsonSerializer.Serialize(obj, options);
 

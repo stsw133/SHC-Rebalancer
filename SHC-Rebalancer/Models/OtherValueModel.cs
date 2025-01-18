@@ -1,5 +1,5 @@
 ﻿namespace SHC_Rebalancer;
-public class BaseValueModel
+public class OtherValueModel
 {
     public string Key { get; set; } = string.Empty;
     public string? Description { get; set; }

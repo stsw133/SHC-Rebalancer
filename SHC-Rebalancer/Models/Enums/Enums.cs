@@ -23,7 +23,7 @@ public enum AI
 
 public enum Building
 {
-    BrazierMoatFlags,
+    None,
     Hovel,
     Unknown002,
     WoodcuttersHut,
@@ -54,8 +54,8 @@ public enum Building
     OilSmelter,
     Unknown029,
     WheatFarm,
-    HopsFarm,
-    AppleOrchard,
+    HopFarm,
+    AppleFarm,
     DairyFarm,
     Mill,
     Stables,
@@ -141,9 +141,16 @@ public enum GameVersion
     Extreme,
 }
 
+public enum HarassingUnit
+{
+    None,
+    Catapult = 190,
+    FireBallista = 358,
+}
+
 public enum Resource
 {
-    Unknown00,
+    None,
     Unknown01,
     Wood,
     Hop,
@@ -160,15 +167,16 @@ public enum Resource
     Beer,
     Unknown15,
     Flour,
-    Bow,
-    Crossbow,
-    Spear,
-    Pike,
-    Mace,
-    Sword,
+    Bows,
+    Crossbows,
+    Spears,
+    Pikes,
+    Maces,
+    Swords,
     Leather,
     Armor,
     Unknown25,
+    Both = -999,
 }
 
 public enum SkirmishMode
@@ -187,9 +195,17 @@ public enum SkirmishTeam
     Team4 = 4,
 }
 
+public enum TargetChoice
+{
+    Balanced = 1,
+    Closest = 2,
+    Gold = 3,
+    Player = 4
+}
+
 public enum Unit
 {
-    Unknown00,
+    None,
     Peasant,
     BurningMan,
     Woodcutter,

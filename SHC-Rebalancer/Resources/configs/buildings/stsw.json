@@ -1,0 +1,375 @@
+{
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"Values": {
+		"Barracks": {
+			"Health": 500,
+			"Housing": 0,
+			"Cost": [ 0, 10, 0, 0, 0 ]
+		},
+		"MercenaryPost": {
+			"Health": 200,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 0 ]
+		},
+		"Armory": {
+			"Health": 200,
+			"Housing": 0,
+			"Cost": [ 5, 0, 0, 0, 0 ]
+		},
+		"LookoutTower": {
+			"Health": 500,
+			"Housing": 0,
+			"Cost": [ 0, 15, 0, 0, 0 ]
+		},
+		"PerimeterTurret": {
+			"Health": 1000,
+			"Housing": 0,
+			"Cost": [ 0, 10, 0, 0, 0 ]
+		},
+		"DefenseTurret": {
+			"Health": 1750,
+			"Housing": 0,
+			"Cost": [ 0, 20, 0, 0, 0 ]
+		},
+		"SquareTower": {
+			"Health": 2000,
+			"Housing": 0,
+			"Cost": [ 0, 40, 0, 0, 0 ]
+		},
+		"RoundTower": {
+			"Health": 3000,
+			"Housing": 0,
+			"Cost": [ 0, 50, 0, 0, 0 ]
+		},
+		"EngineersGuild": {
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 100 ]
+		},
+		"TunnelersGuild": {
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [ 0, 5, 0, 0, 50 ]
+		},
+		"Stables": {
+			"Health": 400,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 200 ]
+		},
+		"OilSmelter": {
+			"Health": 500,
+			"Housing": 0,
+			"Cost": [ 0, 0, 5, 0, 0 ]
+		},
+		"SmallGatehouse": {
+			"Health": 1000,
+			"Housing": 0,
+			"Cost": [ 0, 10, 0, 0, 0 ]
+		},
+		"LargeGatehouse": {
+			"Health": 3000,
+			"Housing": 0,
+			"Cost": [ 0, 30, 0, 0, 0 ]
+		},
+		"Drawbridge": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 0 ]
+		},
+		"CagedWarDogs": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 100 ]
+		},
+		"PitchDitch": {
+			"Health": 0,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 1, 0 ]
+		},
+		"KillingPits": {
+			"Health": 0,
+			"Housing": 0,
+			"Cost": [ 5, 0, 0, 0, 0 ]
+		},
+		"Keep1": {
+			"Health": 0,
+			"Housing": 8,
+			"Cost": [ 0, 0, 0, 0, 0 ]
+		},
+		"Keep2": {
+			"Health": 0,
+			"Housing": 10,
+			"Cost": [ 0, 0, 0, 0, 0 ]
+		},
+		"Keep3": {
+			"Health": 0,
+			"Housing": 12,
+			"Cost": [ 0, 0, 0, 0, 0 ]
+		},
+		"EuropOutpost": {
+			"Health": 1500,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 0 ]
+		},
+		"ArabOutpost": {
+			"Health": 1500,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 0 ]
+		},
+		"Stockpile": {
+			"Health": 500,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 0 ]
+		},
+		"WoodcuttersHut": {
+			"Health": 50,
+			"Housing": 0,
+			"Cost": [ 3, 0, 0, 0, 0 ]
+		},
+		"Quarry": {
+			"Health": 250,
+			"Housing": 0,
+			"Cost": [ 25, 0, 0, 0, 0 ]
+		},
+		"OxTether": {
+			"Health": 50,
+			"Housing": 0,
+			"Cost": [ 5, 0, 0, 0, 0 ]
+		},
+		"IronMine": {
+			"Health": 200,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 0 ]
+		},
+		"PitchRig": {
+			"Health": 150,
+			"Housing": 0,
+			"Cost": [ 15, 0, 0, 0, 0 ]
+		},
+		"Marketplace": {
+			"Health": 50,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 0 ]
+		},
+		"HuntersHut": {
+			"Health": 50,
+			"Housing": 0,
+			"Cost": [ 5, 0, 0, 0, 0 ]
+		},
+		"DairyFarm": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 0 ]
+		},
+		"AppleFarm": {
+			"Health": 50,
+			"Housing": 0,
+			"Cost": [ 5, 0, 0, 0, 0 ]
+		},
+		"WheatFarm": {
+			"Health": 150,
+			"Housing": 0,
+			"Cost": [ 15, 0, 0, 0, 0 ]
+		},
+		"HopFarm": {
+			"Health": 150,
+			"Housing": 0,
+			"Cost": [ 15, 0, 0, 0, 0 ]
+		},
+		"Hovel": {
+			"Health": 50,
+			"Housing": 8,
+			"Cost": [ 5, 0, 0, 0, 0 ]
+		},
+		"Chapel": {
+			"Health": 400,
+			"Housing": 0,
+			"Cost": [ 0, 10, 0, 0, 50 ]
+		},
+		"Church": {
+			"Health": 1200,
+			"Housing": 0,
+			"Cost": [ 0, 20, 0, 0, 250 ]
+		},
+		"Cathedral": {
+			"Health": 2000,
+			"Housing": 0,
+			"Cost": [ 0, 40, 0, 0, 500 ]
+		},
+		"Apothecary": {
+			"Health": 400,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 200 ]
+		},
+		"Well": {
+			"Health": 150,
+			"Housing": 0,
+			"Cost": [ 0, 3, 0, 0, 0 ]
+		},
+		"WaterPot": {
+			"Health": 200,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 100 ]
+		},
+		"Gallows": {
+			"Health": 40,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Cesspit": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Stocks": {
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"BurningStake": {
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Dungeon": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"StretchingRack": {
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Gibbet": {
+			"Health": 40,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"ChoppingBlock": {
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"DunkingStool": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Maypole": {
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"DancingBear": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Gardens": {
+			"Health": 60,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Statue": {
+			"Health": 40,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Shrine": {
+			"Health": 40,
+			"Housing": 0,
+			"Cost": [ 0, 0, 0, 0, 50 ]
+		},
+		"Fletcher": {
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 100 ]
+		},
+		"Poleturner": {
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 100 ]
+		},
+		"Blacksmith": {
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 200 ]
+		},
+		"Tanner": {
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 100 ]
+		},
+		"Armourer": {
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 200 ]
+		},
+		"Granary": {
+			"Health": 200,
+			"Housing": 0,
+			"Cost": [ 5, 0, 0, 0, 0 ]
+		},
+		"Bakery": {
+			"Health": 200,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 0 ]
+		},
+		"Brewery": {
+			"Health": 200,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 0 ]
+		},
+		"Mill": {
+			"Health": 200,
+			"Housing": 0,
+			"Cost": [ 15, 0, 0, 0, 0 ]
+		},
+		"Inn": {
+			"Health": 300,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 100 ]
+		},
+		"Catapult": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 10, 10, 0, 0, 100 ]
+		},
+		"Trebuchet": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 15, 10, 0, 0, 150 ]
+		},
+		"SiegeTower": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 200 ]
+		},
+		"BatteringRam": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 20, 0, 0, 0, 200 ]
+		},
+		"PortableShield": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 5, 0, 0, 0, 50 ]
+		},
+		"FireBallista": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 2, 120 ]
+		},
+		"TowerBallista": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 100 ]
+		},
+		"Mangonel": {
+			"Health": 100,
+			"Housing": 0,
+			"Cost": [ 10, 0, 0, 0, 100 ]
+		}
+	}
+}

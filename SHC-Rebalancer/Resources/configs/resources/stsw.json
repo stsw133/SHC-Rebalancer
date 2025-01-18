@@ -1,0 +1,85 @@
+{
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"Values": {
+		"Wood": {
+			"Buy": 20,
+			"Sell": 5
+		},
+		"Hop": {
+			"Buy": 90,
+			"Sell": 30
+		},
+		"Stone": {
+			"Buy": 60,
+			"Sell": 20
+		},
+		"Iron": {
+			"Buy": 150,
+			"Sell": 50
+		},
+		"Pitch": {
+			"Buy": 150,
+			"Sell": 50
+		},
+		"Wheat": {
+			"Buy": 90,
+			"Sell": 30
+		},
+		"Bread": {
+			"Buy": 40,
+			"Sell": 10
+		},
+		"Cheese": {
+			"Buy": 40,
+			"Sell": 10
+		},
+		"Meat": {
+			"Buy": 40,
+			"Sell": 10
+		},
+		"Apple": {
+			"Buy": 40,
+			"Sell": 10
+		},
+		"Beer": {
+			"Buy": 150,
+			"Sell": 50
+		},
+		"Flour": {
+			"Buy": 150,
+			"Sell": 50
+		},
+		"Bows": {
+			"Buy": 150,
+			"Sell": 30
+		},
+		"Crossbows": {
+			"Buy": 250,
+			"Sell": 50
+		},
+		"Spears": {
+			"Buy": 100,
+			"Sell": 20
+		},
+		"Pikes": {
+			"Buy": 200,
+			"Sell": 40
+		},
+		"Maces": {
+			"Buy": 300,
+			"Sell": 60
+		},
+		"Swords": {
+			"Buy": 300,
+			"Sell": 60
+		},
+		"Leather": {
+			"Buy": 150,
+			"Sell": 30
+		},
+		"Armor": {
+			"Buy": 300,
+			"Sell": 60
+		}
+	}
+}

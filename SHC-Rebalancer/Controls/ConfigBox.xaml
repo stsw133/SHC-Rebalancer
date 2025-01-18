@@ -1,0 +1,40 @@
+﻿<se:StswComboBox x:Class="SHC_Rebalancer.ConfigBox"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                 xmlns:coll="clr-namespace:System.Collections.ObjectModel;assembly=System"
+                 xmlns:local="clr-namespace:SHC_Rebalancer"
+                 xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+                 mc:Ignorable="d">
+    <se:StswComboBox.Resources>
+        <x:Array x:Key="SubControls" Type="{x:Type se:IStswSubControl}">
+            <se:StswSubDrop IconData="{x:Static se:StswIcons.Menu}" Margin="1">
+                <se:StswButton Command="{Binding ReloadConfigsCommand, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                    <se:StswLabel Content="Reload configs" IconData="{x:Static se:StswIcons.Refresh}" IconFill="{DynamicResource StswColor.Neutral}"/>
+                </se:StswButton>
+                <se:StswButton Command="{Binding AddConfigCommand, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                    <se:StswLabel Content="Add new config" IconData="{x:Static se:StswIcons.Plus}" IconFill="{DynamicResource StswColor.Positive}"/>
+                </se:StswButton>
+                <se:StswButton Command="{Binding RenameConfigCommand, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                    <se:StswLabel Content="Rename selected config" IconData="{x:Static se:StswIcons.Rename}" IconFill="{DynamicResource StswColor.Positive}"/>
+                </se:StswButton>
+                <se:StswButton Command="{Binding OpenConfigCommand, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                    <se:StswLabel Content="Open selected file" IconData="{x:Static se:StswIcons.FileEdit}" IconFill="{DynamicResource StswColor.Positive}"/>
+                </se:StswButton>
+                <se:StswButton Command="{Binding RemoveConfigCommand, RelativeSource={RelativeSource AncestorType={x:Type se:StswComboBox}}}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                    <se:StswLabel Content="Remove selected config" IconData="{x:Static se:StswIcons.TrashCan}" IconFill="{DynamicResource StswColor.Negative}"/>
+                </se:StswButton>
+            </se:StswSubDrop>
+        </x:Array>
+    </se:StswComboBox.Resources>
+    
+    <se:StswComboBox.Style>
+        <Style TargetType="{x:Type se:StswComboBox}" BasedOn="{StaticResource {x:Type se:StswComboBox}}">
+            <Setter Property="DisplayMemberPath" Value="Name"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Placeholder" Value="Please select config to apply..."/>
+            <Setter Property="SelectedValuePath" Value="Name"/>
+        </Style>
+    </se:StswComboBox.Style>
+</se:StswComboBox>

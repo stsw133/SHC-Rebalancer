@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="SHC_Rebalancer.OthersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:OthersContext}">
+
+    <DockPanel>
+        <!-- configs -->
+        <se:StswLabel DockPanel.Dock="Top" Content="Selected config to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
+        <local:ConfigBox DockPanel.Dock="Top"
+                         ItemsSource="{Binding Configs_others}"
+                         SelectedItem="{Binding SelectedConfig, Mode=OneWayToSource}"
+                         SelectedValue="{Binding ConfigName_others, Mode=OneWay, Source={x:Static local:Settings.Default}}"
+                         Type="Others"/>
+        <!-- data -->
+        <se:StswDataGrid Background="#3777"
+                         CanUserAddRows="False"
+                         CanUserDeleteRows="False"
+                         FrozenColumnCount="1"
+                         IsReadOnly="{Binding ConfigName_others, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
+                         ItemsSource="{Binding SelectedConfig.Values}"
+                         Margin="3">
+            <se:StswDataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <se:StswLabel Content="Key"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <se:StswDataGridTextColumn Binding="{Binding Address}">
+                    <se:StswDataGridTextColumn.Header>
+                        <se:StswLabel Content="Address"/>
+                    </se:StswDataGridTextColumn.Header>
+                </se:StswDataGridTextColumn>
+                <se:StswDataGridDecimalColumn Binding="{Binding Size}">
+                    <se:StswDataGridDecimalColumn.Header>
+                        <se:StswLabel Content="Size"/>
+                    </se:StswDataGridDecimalColumn.Header>
+                </se:StswDataGridDecimalColumn>
+                <se:StswDataGridTextColumn Binding="{Binding Value}">
+                    <se:StswDataGridTextColumn.Header>
+                        <se:StswLabel Content="Value"/>
+                    </se:StswDataGridTextColumn.Header>
+                </se:StswDataGridTextColumn>
+                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:GameVersion}" SelectedValueBinding="{Binding Version}">
+                    <se:StswDataGridComboColumn.Header>
+                        <se:StswLabel Content="Version"/>
+                    </se:StswDataGridComboColumn.Header>
+                </se:StswDataGridComboColumn>
+                <se:StswDataGridTextColumn Binding="{Binding Description}">
+                    <se:StswDataGridTextColumn.Header>
+                        <se:StswLabel Content="Description"/>
+                    </se:StswDataGridTextColumn.Header>
+                </se:StswDataGridTextColumn>
+            </se:StswDataGrid.Columns>
+        </se:StswDataGrid>
+    </DockPanel>
+</UserControl>

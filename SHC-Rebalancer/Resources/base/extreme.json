@@ -1,4 +1,6 @@
 [
+	{ "Key": "AIC",											"Address": "0x7B66CC", "Size": 4 },
+	
 	{ "Key": "Buildings Health",							"Address": "0x1BA218", "EndAddress": "0x1BA3CF", "Size": 4 },
 	{ "Key": "Buildings Housing",							"Address": "0x1BA438", "EndAddress": "0x1BA5EF", "Size": 4 },
 	{ "Key": "Buildings Cost",								"Address": "0x1C21D0", "EndAddress": "0x1C2A57", "Size": 4 },

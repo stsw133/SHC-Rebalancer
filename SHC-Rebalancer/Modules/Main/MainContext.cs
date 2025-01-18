@@ -9,29 +9,11 @@ public class MainContext : StswObservableObject
     public StswCancellableAsyncCommand InstallCommand { get; }
     public StswAsyncCommand UninstallCommand { get; }
 
-    public StswCommand<object?> ReloadRebalancesCommand { get; }
-    public StswAsyncCommand AddRebalanceCommand { get; }
-    public StswAsyncCommand RenameRebalanceCommand { get; }
-    public StswAsyncCommand OpenRebalanceCommand { get; }
-    public StswAsyncCommand RemoveRebalanceCommand { get; }
-
-    public StswAsyncCommand<GameVersion> FindCommand { get; }
-
     public MainContext()
     {
         SaveChangesCommand = new(SaveChanges);
         InstallCommand = new(Install, () => InstallState != StswProgressState.Running);
         UninstallCommand = new(Uninstall, () => InstallState != StswProgressState.Running);
-
-        ReloadRebalancesCommand = new(ReloadRebalances);
-        AddRebalanceCommand = new(AddRebalance);
-        RenameRebalanceCommand = new(RenameRebalance, () => !Settings.Default.RebalanceName.In(null, "vanilla"));
-        OpenRebalanceCommand = new(OpenRebalance, () => Settings.Default.RebalanceName != null);
-        RemoveRebalanceCommand = new(RemoveRebalance, () => !Settings.Default.RebalanceName.In(null, "vanilla"));
-
-        FindCommand = new(Find);
-
-        Task.Run(() => ReloadRebalancesCommand.Execute());
     }
 
 
@@ -44,14 +26,8 @@ public class MainContext : StswObservableObject
             InstallValue = 0;
             InstallState = StswProgressState.Running;
 
-            foreach (var rebalance in Storage.Rebalances)
-            {
-                var filePath = Path.Combine(Storage.PathRebalances, rebalance.Key + ".json");
-                Storage.SaveModelIntoFile(rebalance.Value, filePath);
-
-                await Task.Delay(1000 / Storage.Rebalances.Count);
-                InstallValue += 100 / Storage.Rebalances.Count;
-            }
+            await Task.Delay(1000);
+            Storage.SaveConfigs();
 
             InstallState = StswProgressState.Finished;
             InstallValue = 100;
@@ -68,28 +44,23 @@ public class MainContext : StswObservableObject
     {
         try
         {
-            if (Storage.Rebalances[Settings.Default.RebalanceName] == null)
-                return;
-
             InstallValue = 0;
             InstallState = StswProgressState.Running;
 
             await Task.Delay(200);
-
-            var filePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
-            Storage.SaveModelIntoFile(SelectedRebalance, filePath);
+            Storage.SaveConfigs();
 
             InstallValue += 20;
             await Task.Delay(400);
 
             Backup.Make(Settings.Default.CrusaderPath);
-            Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath, Storage.Rebalances[Settings.Default.RebalanceName]);
+            Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath);
 
             InstallValue += 40;
             await Task.Delay(400);
 
             Backup.Make(Settings.Default.ExtremePath);
-            Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath, Storage.Rebalances[Settings.Default.RebalanceName]);
+            Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath);
 
             InstallState = StswProgressState.Finished;
             InstallValue = 100;
@@ -128,123 +99,15 @@ public class MainContext : StswObservableObject
         }
     }
 
-    /// ReloadRebalances
-    private void ReloadRebalances(object? parameter)
-    {
-        try
-        {
-            var selectedRebalance = Settings.Default.RebalanceName;
-
-            Storage.LoadBaseAddresses();
-            Storage.LoadRebalances();
-            OnPropertyChanged(nameof(Rebalances));
-
-            if (Storage.Rebalances.ContainsKey(selectedRebalance))
-                Settings.Default.RebalanceName = selectedRebalance;
-            else if (Storage.Rebalances.Count > 0)
-                Settings.Default.RebalanceName = Storage.Rebalances.First().Key;
-        }
-        catch (Exception ex)
-        {
-            StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
-    
-    /// AddRebalance
-    private async Task AddRebalance()
-    {
-        try
-        {
-            await StswContentDialog.Show(new NewConfigContext(), "MainContentDialog");
-
-            var selectedRebalance = Settings.Default.RebalanceName;
-            OnPropertyChanged(nameof(Rebalances));
-
-            if (Storage.Rebalances.ContainsKey(selectedRebalance))
-                Settings.Default.RebalanceName = selectedRebalance;
-        }
-        catch (Exception ex)
-        {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
-    
-    /// RenameRebalance
-    private async Task RenameRebalance()
-    {
-        try
-        {
-            await StswContentDialog.Show(new NewConfigContext(true), "MainContentDialog");
-
-            var selectedRebalance = Settings.Default.RebalanceName;
-            OnPropertyChanged(nameof(Rebalances));
-
-            if (Storage.Rebalances.ContainsKey(selectedRebalance))
-                Settings.Default.RebalanceName = selectedRebalance;
-        }
-        catch (Exception ex)
-        {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
-    
-    /// OpenRebalance
-    private async Task OpenRebalance()
-    {
-        try
-        {
-            var filePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
-
-            if (!File.Exists(filePath))
-                throw new IOException("File for selected rebalance config does not exist!");
-            
-            StswFn.OpenFile(filePath);
-        }
-        catch (Exception ex)
-        {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
-    
-    /// RemoveRebalance
-    private async Task RemoveRebalance()
-    {
-        try
-        {
-            if (Settings.Default.RebalanceName == "vanilla")
-            {
-                await StswMessageDialog.Show("`vanilla` rebalance config cannot be removed.", "Information", null, StswDialogButtons.OK, StswDialogImage.Information);
-                return;
-            }
-
-            var filePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
-            if (await StswMessageDialog.Show($"Are you sure you want to remove '{Settings.Default.RebalanceName}' rebalance config?", "Confirmation", null, StswDialogButtons.YesNo, StswDialogImage.Question) == true)
-            {
-                File.Delete(filePath);
-                Storage.Rebalances.Remove(Settings.Default.RebalanceName);
-                OnPropertyChanged(nameof(Rebalances));
-            }
-        }
-        catch (Exception ex)
-        {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
-
-    /// Find
-    public async Task Find(GameVersion type)
-    {
-        try
-        {
-            Finder.Find(FinderResults, type, FinderFilterSize, FinderFilterAddress, FinderFilterSkips, FinderFilterValues);
-        }
-        catch (Exception ex)
-        {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
 
 
+    /// Configs
+    public ObservableCollection<AicConfigModel> Configs_aic => new(Storage.Configs.ContainsKey("aic") == true ? Storage.Configs["aic"].Cast<AicConfigModel>() : []);
+    public ObservableCollection<BuildingsConfigModel> Configs_buildings => new(Storage.Configs.ContainsKey("buildings") == true ? Storage.Configs["buildings"].Cast<BuildingsConfigModel>() : []);
+    public ObservableCollection<ResourcesConfigModel> Configs_resources => new(Storage.Configs.ContainsKey("resources") == true ? Storage.Configs["resources"].Cast<ResourcesConfigModel>() : []);
+    public ObservableCollection<SkirmishTrailConfigModel> Configs_skirmishtrail => new(Storage.Configs.ContainsKey("skirmishtrail") == true ? Storage.Configs["skirmishtrail"].Cast<SkirmishTrailConfigModel>() : []);
+    public ObservableCollection<UnitsConfigModel> Configs_units => new(Storage.Configs.ContainsKey("units") == true ? Storage.Configs["units"].Cast<UnitsConfigModel>() : []);
+    public ObservableCollection<OthersConfigModel> Configs_others => new(Storage.Configs.ContainsKey("others") == true ? Storage.Configs["others"].Cast<OthersConfigModel>() : []);
 
     /// InstallState
     public StswProgressState InstallState
@@ -261,77 +124,4 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _installValue, value);
     }
     private int _installValue;
-
-    /// Rebalances
-    public ObservableCollection<RebalanceModel> Rebalances => new(Storage.Rebalances.Select(x => { x.Value.Key = x.Key; return x.Value; }));
-
-    /// SelectedRebalance
-    public RebalanceModel? SelectedRebalance
-    {
-        get => _selectedRebalance;
-        set => SetProperty(ref _selectedRebalance, value);
-    }
-    private RebalanceModel? _selectedRebalance;
-
-
-
-    /// FinderFilterType
-    public GameVersion? FinderFilterType
-    {
-        get => _finderFilterType;
-        set => SetProperty(ref _finderFilterType, value);
-    }
-    private GameVersion? _finderFilterType;
-
-    /// FinderFilterSize
-    public int FinderFilterSize
-    {
-        get => _finderFilterSize;
-        set => SetProperty(ref _finderFilterSize, value);
-    }
-    private int _finderFilterSize = 1;
-
-    /// FinderFilterAddress
-    public string? FinderFilterAddress
-    {
-        get => _finderFilterAddress;
-        set
-        {
-            SetProperty(ref _finderFilterAddress, value);
-            FindCommand.Execute(FinderFilterType);
-        }
-    }
-    private string? _finderFilterAddress;
-
-    /// FinderFilterSkips
-    public int FinderFilterSkips
-    {
-        get => _finderFilterSkips;
-        set
-        {
-            SetProperty(ref _finderFilterSkips, value);
-            FindCommand.Execute(FinderFilterType);
-        }
-    }
-    private int _finderFilterSkips = 0;
-
-    /// FinderFilterValues
-    public string? FinderFilterValues
-    {
-        get => _finderFilterValues;
-        set
-        {
-            SetProperty(ref _finderFilterValues, value);
-            FindCommand.Execute(FinderFilterType);
-        }
-    }
-    private string? _finderFilterValues;
-
-    /// FinderResults
-    public ObservableCollection<FinderDataModel> FinderResults
-    {
-        get => _finderResults;
-        set => SetProperty(ref _finderResults, value);
-    }
-    private ObservableCollection<FinderDataModel> _finderResults = [];
 }

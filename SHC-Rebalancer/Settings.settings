@@ -8,8 +8,23 @@
     <Setting Name="ExtremePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="RebalanceName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="ConfigName_aic" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
+    </Setting>
+    <Setting Name="ConfigName_buildings" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
+    </Setting>
+    <Setting Name="ConfigName_resources" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
+    </Setting>
+    <Setting Name="ConfigName_units" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
+    </Setting>
+    <Setting Name="ConfigName_skirmishtrail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
+    </Setting>
+    <Setting Name="ConfigName_others" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
     </Setting>
   </Settings>
 </SettingsFile>

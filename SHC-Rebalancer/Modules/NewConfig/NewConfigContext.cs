@@ -6,11 +6,11 @@ public class NewConfigContext : StswObservableObject
 {
     public StswAsyncCommand SaveChangesCommand { get; }
 
-    public NewConfigContext(bool isEditing = false)
+    public NewConfigContext(string type = "", string name = "")
     {
-        IsEditing = isEditing;
-        if (isEditing)
-            Name = Settings.Default.RebalanceName;
+        Type = type.ToLower();
+        Name = name;
+        IsEditing = !string.IsNullOrEmpty(name);
 
         SaveChangesCommand = new(SaveChanges, () => !string.IsNullOrEmpty(Name));
     }
@@ -22,46 +22,54 @@ public class NewConfigContext : StswObservableObject
     {
         try
         {
-            var filePath = Path.Combine(Storage.PathRebalances, Name + ".json");
-            
+            var filePath = Path.Combine(Storage.PathConfigs, Type, Name + ".json");
+
             if (IsEditing)
             {
-                if (Storage.Rebalances.ContainsKey(Name) && Name != Settings.Default.RebalanceName)
+                if (Storage.Configs[Type].Cast<IConfigModel>().Any(x => x.Name == Name) && Name != Settings.Default["ConfigName_" + Type].ToString())
                 {
                     await StswMessageDialog.Show("Selected name is already taken!", "Blockade", null, StswDialogButtons.OK, StswDialogImage.Blockade);
                     return;
                 }
 
-                var selectedFilePath = Path.Combine(Storage.PathRebalances, Settings.Default.RebalanceName + ".json");
-                if (File.Exists(selectedFilePath))
+                var selectedFilePath = Path.Combine(Storage.PathConfigs, Type, Settings.Default["ConfigName_" + Type].ToString() + ".json");
+                if (!File.Exists(selectedFilePath))
                 {
-                    File.Move(selectedFilePath, filePath);
-                    Storage.Rebalances.ChangeKey(Settings.Default.RebalanceName, Name);
-                    Settings.Default.RebalanceName = Name;
-
-                    StswContentDialog.Close("MainContentDialog");
+                    await StswMessageDialog.Show("Edited file does not exist!", "Error", null, StswDialogButtons.OK, StswDialogImage.Error);
+                    return;
                 }
+
+                File.Move(selectedFilePath, filePath);
+                Storage.Configs[Type].Cast<IConfigModel>().First(x => x.Name == Settings.Default["ConfigName_" + Type].ToString()!).Name = Name;
+                Settings.Default["ConfigName_" + Type] = Name;
+
+                StswContentDialog.Close("MainContentDialog");
             }
             else
             {
-                if (Storage.Rebalances.ContainsKey(Name))
+                if (Storage.Configs[Type].Cast<IConfigModel>().Any(x => x.Name == Name))
                 {
                     await StswMessageDialog.Show("Selected name is already taken!", "Blockade", null, StswDialogButtons.OK, StswDialogImage.Blockade);
                     return;
                 }
 
-                var baseFilePath = Path.Combine(Storage.PathRebalances, BasedOn + ".json");
+                var baseFilePath = Path.Combine(Storage.PathConfigs, Type, BasedOn + ".json");
                 if (!File.Exists(baseFilePath) && !IsEditing)
                 {
-                    await StswMessageDialog.Show("File for base rebalance does not exist!", "Error", null, StswDialogButtons.OK, StswDialogImage.Error);
+                    await StswMessageDialog.Show("File for base config does not exist!", "Error", null, StswDialogButtons.OK, StswDialogImage.Error);
                     return;
                 }
 
                 if (!File.Exists(filePath))
                 {
                     File.Copy(baseFilePath, filePath);
-                    Storage.Rebalances.TryAdd(Name, Storage.ReadJsonFileAsModel<RebalanceModel>(filePath)!);
-                    Settings.Default.RebalanceName = Name;
+                    if (!Storage.Configs[Type].Cast<IConfigModel>().Any(x => x.Name == Name))
+                    {
+                        var newConfig = Storage.ReadJsonFileAsModel<IConfigModel>(filePath, Type)!;
+                        newConfig.Name = Name;
+                        Storage.Configs[Type].Add(newConfig);
+                    }
+                    Settings.Default["ConfigName_" + Type] = Name;
 
                     StswContentDialog.Close("MainContentDialog");
                 }
@@ -75,13 +83,16 @@ public class NewConfigContext : StswObservableObject
 
 
 
-    /// BaseOnRebalanceName
+    /// BasedOn
     public string BasedOn
     {
         get => _basedOn;
         set => SetProperty(ref _basedOn, value);
     }
     private string _basedOn = "vanilla";
+
+    /// ConfigNames
+    public IEnumerable<string?> ConfigNames => Storage.Configs[Type].Select(x => x.GetPropertyValue("Name")?.ToString());
 
     /// IsEditing
     public bool IsEditing
@@ -98,4 +109,12 @@ public class NewConfigContext : StswObservableObject
         set => SetProperty(ref _name, value);
     }
     private string _name = string.Empty;
+
+    /// Type
+    public string Type
+    {
+        get => _type;
+        set => SetProperty(ref _type, value);
+    }
+    private string _type = string.Empty;
 }
