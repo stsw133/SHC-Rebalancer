@@ -9,12 +9,11 @@
 
     <DockPanel>
         <!-- configs -->
-        <se:StswLabel DockPanel.Dock="Top" Content="Selected config to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
+        <se:StswLabel DockPanel.Dock="Top" Content="Selected config:" FontWeight="Bold" Margin="3 6 3 0"/>
         <local:ConfigBox DockPanel.Dock="Top"
                          ItemsSource="{Binding Configs_buildings}"
                          SelectedItem="{Binding SelectedConfig, Mode=OneWayToSource}"
-                         SelectedValue="{Binding ConfigName_buildings, Mode=OneWay, Source={x:Static local:Settings.Default}}"
-                         Type="Buildings"/>
+                         SelectedValue="{Binding ConfigName_buildings, Mode=OneWay, Source={x:Static local:Settings.Default}}"/>
         <!-- data -->
         <se:StswDataGrid Background="#3777"
                          CanUserAddRows="False"

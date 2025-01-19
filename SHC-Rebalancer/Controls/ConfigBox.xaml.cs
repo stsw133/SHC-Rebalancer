@@ -23,8 +23,17 @@ public partial class ConfigBox : StswComboBox
         RenameConfigCommand = new(RenameConfig, () => Settings.Default[ConfigName]?.ToString() != null && Settings.Default[ConfigName]?.ToString() != "vanilla");
         OpenConfigCommand = new(OpenConfig, () => Settings.Default[ConfigName]?.ToString() != null);
         RemoveConfigCommand = new(RemoveConfig, () => Settings.Default[ConfigName]?.ToString() != null && Settings.Default[ConfigName]?.ToString() != "vanilla");
+    }
 
-        SubControls = new((IStswSubControl[])Resources["SubControls"]);
+    /// <summary>
+    /// 
+    /// </summary>
+    public override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+
+        if (!string.IsNullOrEmpty(Type))
+            SubControls = new((IStswSubControl[])Resources["SubControls"]);
     }
 
 

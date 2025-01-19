@@ -28,7 +28,7 @@ public static class Finder
     private static void FindPatternInFile(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, byte[] fileBytes, int filterSize, string filterValues)
     {
         var pattern = filterValues.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
-                                  .Select(x => filterSize == 1 ? (object)Convert.ToByte(x) : Convert.ToInt32(x))
+                                  .Select(x => x == "?" ? null : filterSize == 1 ? (object)Convert.ToByte(x) : Convert.ToInt32(x))
                                   .ToList();
 
         var stepSize = filterSize == 1 ? 1 : 4;
@@ -52,19 +52,22 @@ public static class Finder
     }
 
     /// IsPatternMatch
-    private static bool IsPatternMatch(byte[] fileBytes, int startIndex, List<object> pattern, int filterSize)
+    private static bool IsPatternMatch(byte[] fileBytes, int startIndex, List<object?> pattern, int filterSize)
     {
         for (var j = 0; j < pattern.Count; j++)
         {
+            if (pattern[j] == null)
+                continue;
+
             if (filterSize == 1)
             {
-                if ((byte)pattern[j] != fileBytes[startIndex + j])
+                if ((byte?)pattern[j] != fileBytes[startIndex + j])
                     return false;
             }
             else if (filterSize == 4)
             {
                 int value = BitConverter.ToInt32(fileBytes, startIndex + j * 4);
-                if ((int)pattern[j] != value)
+                if ((int?)pattern[j] != value)
                     return false;
             }
         }
