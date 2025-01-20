@@ -6,6 +6,516 @@
              xmlns:local="clr-namespace:SHC_Rebalancer"
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance local:AicContext}">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ConfigKeySelector" TargetType="{x:Type Control}">
+            <VirtualizingStackPanel MaxWidth="300">
+
+                <se:StswLabel Content="WallDecoration:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding WallDecoration}"/>
+
+                <se:StswCheckBox Content="Unknown001" FontWeight="Medium" IsChecked="{Binding Unknown001}" Margin="0 3 0 0"/>
+                <se:StswCheckBox Content="Unknown002" FontWeight="Medium" IsChecked="{Binding Unknown002}" Margin="0 3 0 0"/>
+                <se:StswCheckBox Content="Unknown003" FontWeight="Medium" IsChecked="{Binding Unknown003}" Margin="0 3 0 0"/>
+                <se:StswCheckBox Content="Unknown004" FontWeight="Medium" IsChecked="{Binding Unknown004}" Margin="0 3 0 0"/>
+                <se:StswCheckBox Content="Unknown005" FontWeight="Medium" IsChecked="{Binding Unknown005}" Margin="0 3 0 0"/>
+
+                <se:StswLabel Content="CriticalPopularity:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding CriticalPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
+                <se:StswSlider Minimum="0" Maximum="10000" IsSnapToTickEnabled="True" TickFrequency="100" Value="{Binding CriticalPopularity}"/>
+
+                <se:StswLabel Content="LowestPopularity:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding LowestPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
+                <se:StswSlider Minimum="0" Maximum="10000" IsSnapToTickEnabled="True" TickFrequency="100" Value="{Binding LowestPopularity}"/>
+
+                <se:StswLabel Content="HighestPopularity:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding HighestPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
+                <se:StswSlider Minimum="0" Maximum="10000" IsSnapToTickEnabled="True" TickFrequency="100" Value="{Binding HighestPopularity}"/>
+
+                <se:StswLabel Content="TaxesMin:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding TaxesMin, Mode=OneWay}"/>
+                <se:StswSlider Minimum="0" Maximum="11" IsSnapToTickEnabled="True" TickFrequency="1" Value="{Binding TaxesMin}"/>
+
+                <se:StswLabel Content="TaxesMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding TaxesMax, Mode=OneWay}"/>
+                <se:StswSlider Minimum="0" Maximum="11" IsSnapToTickEnabled="True" TickFrequency="1" Value="{Binding TaxesMax}"/>
+
+                <se:StswLabel Content="Unknown011:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Value="{Binding Unknown011}"/>
+
+                <se:StswLabel Content="Farm1:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm1}"/>
+
+                <se:StswLabel Content="Farm2:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm2}"/>
+
+                <se:StswLabel Content="Farm3:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm3}"/>
+
+                <se:StswLabel Content="Farm4:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm4}"/>
+
+                <se:StswLabel Content="Farm5:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm5}"/>
+
+                <se:StswLabel Content="Farm6:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm6}"/>
+
+                <se:StswLabel Content="Farm7:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm7}"/>
+
+                <se:StswLabel Content="Farm8:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm8}"/>
+
+                <se:StswLabel Content="PopulationPerFarm:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding PopulationPerFarm}"/>
+
+                <se:StswLabel Content="PopulationPerWoodcutter:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding PopulationPerWoodcutter}"/>
+
+                <se:StswLabel Content="PopulationPerQuarry:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding PopulationPerQuarry}"/>
+
+                <se:StswLabel Content="PopulationPerIronmine:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding PopulationPerIronmine}"/>
+
+                <se:StswLabel Content="PopulationPerPitchrig:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding PopulationPerPitchrig}"/>
+
+                <se:StswLabel Content="MaxQuarries:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding MaxQuarries}"/>
+
+                <se:StswLabel Content="MaxIronmines:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding MaxIronmines}"/>
+
+                <se:StswLabel Content="MaxWoodcutters:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding MaxWoodcutters}"/>
+
+                <se:StswLabel Content="MaxPitchrigs:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding MaxPitchrigs}"/>
+
+                <se:StswLabel Content="MaxFarms:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding MaxFarms}"/>
+
+                <se:StswLabel Content="BuildInterval:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding BuildInterval}"/>
+
+                <se:StswLabel Content="ResourceRebuildDelay:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding ResourceRebuildDelay}"/>
+
+                <se:StswLabel Content="MaxFood:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MaxFood}"/>
+
+                <se:StswLabel Content="MinimumApples:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MinimumApples}"/>
+
+                <se:StswLabel Content="MinimumCheese:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MinimumCheese}"/>
+
+                <se:StswLabel Content="MinimumBread:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MinimumBread}"/>
+
+                <se:StswLabel Content="MinimumWheat:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MinimumWheat}"/>
+
+                <se:StswLabel Content="MinimumHop:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MinimumHop}"/>
+
+                <se:StswLabel Content="TradeAmountFood:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding TradeAmountFood}"/>
+
+                <se:StswLabel Content="TradeAmountEquipment:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding TradeAmountEquipment}"/>
+
+                <se:StswLabel Content="AIRequestDelay:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AIRequestDelay}"/>
+
+                <se:StswLabel Content="MinimumGoodsRequiredAfterTrade:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding MinimumGoodsRequiredAfterTrade}"/>
+
+                <se:StswLabel Content="DoubleRationsFoodThreshold:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding DoubleRationsFoodThreshold}"/>
+
+                <se:StswLabel Content="MaxWood:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MaxWood}"/>
+
+                <se:StswLabel Content="MaxStone:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MaxStone}"/>
+
+                <se:StswLabel Content="MaxResourceOther:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MaxResourceOther}"/>
+
+                <se:StswLabel Content="MaxEquipment:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MaxEquipment}"/>
+
+                <se:StswLabel Content="MaxBeer:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="-1" Value="{Binding MaxBeer}"/>
+
+                <se:StswLabel Content="MaxResourceVariance:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding MaxResourceVariance}"/>
+
+                <se:StswLabel Content="RecruitGoldThreshold:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding RecruitGoldThreshold}"/>
+
+                <se:StswLabel Content="BlacksmithSetting:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding BlacksmithSetting}"/>
+
+                <se:StswLabel Content="FletcherSetting:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding FletcherSetting}"/>
+
+                <se:StswLabel Content="PoleturnerSetting:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding PoleturnerSetting}"/>
+
+                <se:StswLabel Content="SellResource01:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource01}"/>
+
+                <se:StswLabel Content="SellResource02:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource02}"/>
+
+                <se:StswLabel Content="SellResource03:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource03}"/>
+
+                <se:StswLabel Content="SellResource04:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource04}"/>
+
+                <se:StswLabel Content="SellResource05:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource05}"/>
+
+                <se:StswLabel Content="SellResource06:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource06}"/>
+
+                <se:StswLabel Content="SellResource07:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource07}"/>
+
+                <se:StswLabel Content="SellResource08:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource08}"/>
+
+                <se:StswLabel Content="SellResource09:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource09}"/>
+
+                <se:StswLabel Content="SellResource10:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource10}"/>
+
+                <se:StswLabel Content="SellResource11:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource11}"/>
+
+                <se:StswLabel Content="SellResource12:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource12}"/>
+
+                <se:StswLabel Content="SellResource13:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource13}"/>
+
+                <se:StswLabel Content="SellResource14:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource14}"/>
+
+                <se:StswLabel Content="SellResource15:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource15}"/>
+
+                <se:StswLabel Content="DefWallPatrolRallyTime:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding DefWallPatrolRallyTime}"/>
+
+                <se:StswLabel Content="DefWallPatrolGroups:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding DefWallPatrolGroups}"/>
+
+                <se:StswLabel Content="DefSiegeEngineGoldThreshold:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding DefSiegeEngineGoldThreshold}"/>
+
+                <se:StswLabel Content="DefSiegeEngineBuildDelay:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding DefSiegeEngineBuildDelay}"/>
+
+                <se:StswLabel Content="Unknown072:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Value="{Binding Unknown072}"/>
+
+                <se:StswLabel Content="Unknown073:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Value="{Binding Unknown073}"/>
+
+                <se:StswLabel Content="RecruitProbDefDefault:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbDefDefault}"/>
+
+                <se:StswLabel Content="RecruitProbDefWeak:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbDefWeak}"/>
+
+                <se:StswLabel Content="RecruitProbDefStrong:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbDefStrong}"/>
+
+                <se:StswLabel Content="RecruitProbRaidDefault:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbRaidDefault}"/>
+
+                <se:StswLabel Content="RecruitProbRaidWeak:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbRaidWeak}"/>
+
+                <se:StswLabel Content="RecruitProbRaidStrong:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbRaidStrong}"/>
+
+                <se:StswLabel Content="RecruitProbAttackDefault:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbAttackDefault}"/>
+
+                <se:StswLabel Content="RecruitProbAttackWeak:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbAttackWeak}"/>
+
+                <se:StswLabel Content="RecruitProbAttackStrong:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding RecruitProbAttackStrong}"/>
+
+                <se:StswLabel Content="SortieUnitRangedMin:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding SortieUnitRangedMin}"/>
+
+                <se:StswLabel Content="SortieUnitRanged:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SortieUnitRanged}"/>
+
+                <se:StswLabel Content="SortieUnitMeleeMin:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding SortieUnitMeleeMin}"/>
+
+                <se:StswLabel Content="SortieUnitMelee:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SortieUnitMelee}"/>
+
+                <se:StswLabel Content="DefDiggingUnitMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding DefDiggingUnitMax}"/>
+
+                <se:StswLabel Content="DefDiggingUnit:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefDiggingUnit}"/>
+
+                <se:StswLabel Content="RecruitInterval:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding RecruitInterval}"/>
+
+                <se:StswLabel Content="RecruitIntervalWeak:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding RecruitIntervalWeak}"/>
+
+                <se:StswLabel Content="RecruitIntervalStrong:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding RecruitIntervalStrong}"/>
+
+                <se:StswLabel Content="DefTotal:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding DefTotal}"/>
+
+                <se:StswLabel Content="OuterPatrolGroupsCount:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding OuterPatrolGroupsCount}"/>
+
+                <se:StswLabel Content="OuterPatrolGroupsMove:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding OuterPatrolGroupsMove}"/>
+
+                <se:StswLabel Content="OuterPatrolRallyDelay:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding OuterPatrolRallyDelay}"/>
+
+                <se:StswLabel Content="DefWalls:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding DefWalls}"/>
+
+                <se:StswLabel Content="DefUnit1:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit1}"/>
+
+                <se:StswLabel Content="DefUnit2:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit2}"/>
+
+                <se:StswLabel Content="DefUnit3:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit3}"/>
+
+                <se:StswLabel Content="DefUnit4:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit4}"/>
+
+                <se:StswLabel Content="DefUnit5:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit5}"/>
+
+                <se:StswLabel Content="DefUnit6:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit6}"/>
+
+                <se:StswLabel Content="DefUnit7:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit7}"/>
+
+                <se:StswLabel Content="DefUnit8:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit8}"/>
+
+                <se:StswLabel Content="RaidUnitsBase:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding RaidUnitsBase}"/>
+
+                <se:StswLabel Content="RaidUnitsRandom:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding RaidUnitsRandom}"/>
+
+                <se:StswLabel Content="RaidUnit1:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit1}"/>
+
+                <se:StswLabel Content="RaidUnit2:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit2}"/>
+
+                <se:StswLabel Content="RaidUnit3:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit3}"/>
+
+                <se:StswLabel Content="RaidUnit4:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit4}"/>
+
+                <se:StswLabel Content="RaidUnit5:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit5}"/>
+
+                <se:StswLabel Content="RaidUnit6:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit6}"/>
+
+                <se:StswLabel Content="RaidUnit7:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit7}"/>
+
+                <se:StswLabel Content="RaidUnit8:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit8}"/>
+
+                <se:StswLabel Content="HarassingSiegeEngine1:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine1}"/>
+
+                <se:StswLabel Content="HarassingSiegeEngine2:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine2}"/>
+
+                <se:StswLabel Content="HarassingSiegeEngine3:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine3}"/>
+
+                <se:StswLabel Content="HarassingSiegeEngine4:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine4}"/>
+
+                <se:StswLabel Content="HarassingSiegeEngine5:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine5}"/>
+
+                <se:StswLabel Content="HarassingSiegeEngine6:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine6}"/>
+
+                <se:StswLabel Content="HarassingSiegeEngine7:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine7}"/>
+
+                <se:StswLabel Content="HarassingSiegeEngine8:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine8}"/>
+
+                <se:StswLabel Content="HarassingSiegeEnginesMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding HarassingSiegeEnginesMax}"/>
+
+                <se:StswLabel Content="RaidRetargetDelay:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding RaidRetargetDelay}"/>
+
+                <se:StswLabel Content="AttForceBase:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttForceBase}"/>
+
+                <se:StswLabel Content="AttForceRandom:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttForceRandom}"/>
+
+                <se:StswLabel Content="AttForceSupportAllyThreshold:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttForceSupportAllyThreshold}"/>
+
+                <se:StswLabel Content="AttForceRallyPercentage:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttForceRallyPercentage}"/>
+
+                <se:StswLabel Content="Unknown129:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Value="{Binding Unknown129}"/>
+
+                <se:StswLabel Content="AttAssaultDelay:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttAssaultDelay}"/>
+
+                <se:StswLabel Content="AttUnitPatrolRecommandDelay:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitPatrolRecommandDelay}"/>
+
+                <se:StswLabel Content="Unknown132:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Value="{Binding Unknown132}"/>
+
+                <se:StswLabel Content="SiegeEngine1:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine1}"/>
+
+                <se:StswLabel Content="SiegeEngine2:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine2}"/>
+
+                <se:StswLabel Content="SiegeEngine3:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine3}"/>
+
+                <se:StswLabel Content="SiegeEngine4:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine4}"/>
+
+                <se:StswLabel Content="SiegeEngine5:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine5}"/>
+
+                <se:StswLabel Content="SiegeEngine6:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine6}"/>
+
+                <se:StswLabel Content="SiegeEngine7:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine7}"/>
+
+                <se:StswLabel Content="SiegeEngine8:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine8}"/>
+
+                <se:StswLabel Content="CowThrowInterval:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding CowThrowInterval}"/>
+
+                <se:StswLabel Content="Unknown142:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Value="{Binding Unknown142}"/>
+
+                <se:StswLabel Content="AttMaxEngineers:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttMaxEngineers}"/>
+
+                <se:StswLabel Content="AttDiggingUnit:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttDiggingUnit}"/>
+
+                <se:StswLabel Content="AttDiggingUnitMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttDiggingUnitMax}"/>
+
+                <se:StswLabel Content="AttUnitVanguard:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitVanguard}"/>
+
+                <se:StswLabel Content="AttUnitVanguardMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitVanguardMax}"/>
+
+                <se:StswLabel Content="AttMaxAssassins:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttMaxAssassins}"/>
+
+                <se:StswLabel Content="AttMaxLaddermen:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttMaxLaddermen}"/>
+
+                <se:StswLabel Content="AttMaxTunnelers:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttMaxTunnelers}"/>
+
+                <se:StswLabel Content="AttUnitPatrol:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitPatrol}"/>
+
+                <se:StswLabel Content="AttUnitPatrolMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitPatrolMax}"/>
+
+                <se:StswLabel Content="AttUnitPatrolGroupsCount:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitPatrolGroupsCount}"/>
+
+                <se:StswLabel Content="AttUnitBackup:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitBackup}"/>
+
+                <se:StswLabel Content="AttUnitBackupMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitBackupMax}"/>
+
+                <se:StswLabel Content="AttUnitBackupGroupsCount:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitBackupGroupsCount}"/>
+
+                <se:StswLabel Content="AttUnitEngage:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitEngage}"/>
+
+                <se:StswLabel Content="AttUnitEngageMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitEngageMax}"/>
+
+                <se:StswLabel Content="AttUnitSiegeDef:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitSiegeDef}"/>
+
+                <se:StswLabel Content="AttUnitSiegeDefMax:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitSiegeDefMax}"/>
+
+                <se:StswLabel Content="AttUnitSiegeDefGroupsCount:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttUnitSiegeDefGroupsCount}"/>
+
+                <se:StswLabel Content="AttUnitMain1:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitMain1}"/>
+
+                <se:StswLabel Content="AttUnitMain2:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitMain2}"/>
+
+                <se:StswLabel Content="AttUnitMain3:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitMain3}"/>
+
+                <se:StswLabel Content="AttUnitMain4:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitMain4}"/>
+
+                <se:StswLabel Content="AttMaxDefault:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttMaxDefault}"/>
+
+                <se:StswLabel Content="AttMainGroupsCount:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswIntegerBox Minimum="0" Value="{Binding AttMainGroupsCount}"/>
+
+                <se:StswLabel Content="TargetChoice:" FontWeight="Medium" Margin="0 3 0 0"/>
+                <se:StswComboBox ItemsSource="{se:StswEnumToList local:TargetChoice}" SelectedValue="{Binding TargetChoice}"/>
+
+            </VirtualizingStackPanel>
+        </ControlTemplate>
+    </UserControl.Resources>
 
     <DockPanel>
         <!-- configs -->
@@ -14,202 +524,37 @@
                          ItemsSource="{Binding Configs_aic}"
                          SelectedItem="{Binding SelectedConfig, Mode=OneWayToSource}"
                          SelectedValue="{Binding ConfigName_aic, Mode=OneWay, Source={x:Static local:Settings.Default}}"/>
+        <!-- selector -->
+        <se:StswLabel DockPanel.Dock="Top" Content="COMPARE &amp; EDIT:" FontWeight="Heavy" HorizontalAlignment="Center"/>
+        <UniformGrid DockPanel.Dock="Top" Rows="1">
+            <se:StswSegment DockPanel.Dock="Top" ItemsSource="{Binding SelectedConfig.Values}" Margin="3" SelectedItem="{Binding SelectedPair1}">
+                <se:StswSegment.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                            <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis" MaxWidth="32"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </se:StswSegment.ItemTemplate>
+            </se:StswSegment>
+
+            <se:StswSegment DockPanel.Dock="Top" ItemsSource="{Binding SelectedConfig.Values}" Margin="3" SelectedItem="{Binding SelectedPair2}">
+                <se:StswSegment.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                            <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis" MaxWidth="32"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </se:StswSegment.ItemTemplate>
+            </se:StswSegment>
+        </UniformGrid>
         <!-- data -->
-        <se:StswDataGrid Background="#3777"
-                         CanUserAddRows="False"
-                         CanUserDeleteRows="False"
-                         FrozenColumnCount="2"
-                         IsReadOnly="{Binding ConfigName_aic, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                         ItemsSource="{Binding SelectedConfig.View}"
-                         Margin="3">
-            <se:StswDataGrid.Columns>
-                <DataGridTemplateColumn SortMemberPath="Key">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image MaxHeight="32" MaxWidth="32" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn SortMemberPath="Name" Width="100">
-                    <DataGridTemplateColumn.Header>
-                        <se:StswLabel Content="Name"/>
-                    </DataGridTemplateColumn.Header>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <se:StswLabel Content="{Binding Key}" FontWeight="Bold"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <se:StswDataGridTextColumn Binding="{Binding WallDecoration}" Header="WallDecoration"/>
-                <se:StswDataGridCheckColumn Binding="{Binding Unknown001}" Header="Unknown01"/>
-                <se:StswDataGridCheckColumn Binding="{Binding Unknown002}" Header="Unknown02"/>
-                <se:StswDataGridCheckColumn Binding="{Binding Unknown003}" Header="Unknown03"/>
-                <se:StswDataGridCheckColumn Binding="{Binding Unknown004}" Header="Unknown04"/>
-                <se:StswDataGridCheckColumn Binding="{Binding Unknown005}" Header="Unknown05"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding CriticalPopularity}" Header="CriticalPopularity"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding LowestPopularity}" Header="LowestPopularity"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding HighestPopularity}" Header="HighestPopularity"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding TaxesMin}" Header="TaxesMin"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding TaxesMax}" Header="TaxesMax"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding Unknown011}" Header="Unknown011"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Building}" SelectedValueBinding="{Binding Farm1}" Header="Farm1"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Building}" SelectedValueBinding="{Binding Farm2}" Header="Farm2"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Building}" SelectedValueBinding="{Binding Farm3}" Header="Farm3"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Building}" SelectedValueBinding="{Binding Farm4}" Header="Farm4"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Building}" SelectedValueBinding="{Binding Farm5}" Header="Farm5"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Building}" SelectedValueBinding="{Binding Farm6}" Header="Farm6"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Building}" SelectedValueBinding="{Binding Farm7}" Header="Farm7"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Building}" SelectedValueBinding="{Binding Farm8}" Header="Farm8"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding PopulationPerFarm}" Header="PopulationPerFarm"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding PopulationPerWoodcutter}" Header="PopulationPerWoodcutter"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding PopulationPerQuarry}" Header="PopulationPerQuarry"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding PopulationPerIronmine}" Header="PopulationPerIronmine"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding PopulationPerPitchrig}" Header="PopulationPerPitchrig"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxQuarries}" Header="MaxQuarries"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxIronmines}" Header="MaxIronmines"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxWoodcutters}" Header="MaxWoodcutters"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxPitchrigs}" Header="MaxPitchrigs"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxFarms}" Header="MaxFarms"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding BuildInterval}" Header="BuildInterval"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding ResourceRebuildDelay}" Header="ResourceRebuildDelay"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxFood}" Header="MaxFood"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MinimumApples}" Header="MinimumApples"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MinimumCheese}" Header="MinimumCheese"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MinimumBread}" Header="MinimumBread"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MinimumWheat}" Header="MinimumWheat"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MinimumHop}" Header="MinimumHop"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding TradeAmountFood}" Header="TradeAmountFood"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding TradeAmountEquipment}" Header="TradeAmountEquipment"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AIRequestDelay}" Header="AIRequestDelay"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MinimumGoodsRequiredAfterTrade}" Header="MinimumGoodsRequiredAfterTrade"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding DoubleRationsFoodThreshold}" Header="DoubleRationsFoodThreshold"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxWood}" Header="MaxWood"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxStone}" Header="MaxStone"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxResourceOther}" Header="MaxResourceOther"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxEquipment}" Header="MaxEquipment"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxBeer}" Header="MaxBeer"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding MaxResourceVariance}" Header="MaxResourceVariance"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitGoldThreshold}" Header="RecruitGoldThreshold"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding BlacksmithSetting}" Header="BlacksmithSetting"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding FletcherSetting}" Header="FletcherSetting"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding PoleturnerSetting}" Header="PoleturnerSetting"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource01}" Header="SellResource01"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource02}" Header="SellResource02"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource03}" Header="SellResource03"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource04}" Header="SellResource04"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource05}" Header="SellResource05"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource06}" Header="SellResource06"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource07}" Header="SellResource07"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource08}" Header="SellResource08"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource09}" Header="SellResource09"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource10}" Header="SellResource10"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource11}" Header="SellResource11"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource12}" Header="SellResource12"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource13}" Header="SellResource13"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource14}" Header="SellResource14"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Resource}" SelectedValueBinding="{Binding SellResource15}" Header="SellResource15"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding DefWallPatrolRallyTime}" Header="DefWallPatrolRallyTime"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding DefWallPatrolGroups}" Header="DefWallPatrolGroups"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding DefSiegeEngineGoldThreshold}" Header="DefSiegeEngineGoldThreshold"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding DefSiegeEngineBuildDelay}" Header="DefSiegeEngineBuildDelay"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding Unknown072}" Header="Unknown072"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding Unknown073}" Header="Unknown073"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbDefDefault}" Header="RecruitProbDefDefault"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbDefWeak}" Header="RecruitProbDefWeak"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbDefStrong}" Header="RecruitProbDefStrong"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbRaidDefault}" Header="RecruitProbRaidDefault"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbRaidWeak}" Header="RecruitProbRaidWeak"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbRaidStrong}" Header="RecruitProbRaidStrong"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbAttackDefault}" Header="RecruitProbAttackDefault"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbAttackWeak}" Header="RecruitProbAttackWeak"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitProbAttackStrong}" Header="RecruitProbAttackStrong"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding SortieUnitRangedMin}" Header="SortieUnitRangedMin"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SortieUnitRanged}" Header="SortieUnitRanged"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding SortieUnitMeleeMin}" Header="SortieUnitMeleeMin"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SortieUnitMelee}" Header="SortieUnitMelee"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding DefDiggingUnitMax}" Header="DefDiggingUnitMax"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefDiggingUnit}" Header="DefDiggingUnit"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitInterval}" Header="RecruitInterval"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitIntervalWeak}" Header="RecruitIntervalWeak"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RecruitIntervalStrong}" Header="RecruitIntervalStrong"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding DefTotal}" Header="DefTotal"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding OuterPatrolGroupsCount}" Header="OuterPatrolGroupsCount"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding OuterPatrolGroupsMove}" Header="OuterPatrolGroupsMove"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding OuterPatrolRallyDelay}" Header="OuterPatrolRallyDelay"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding DefWalls}" Header="DefWalls"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefUnit1}" Header="DefUnit1"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefUnit2}" Header="DefUnit2"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefUnit3}" Header="DefUnit3"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefUnit4}" Header="DefUnit4"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefUnit5}" Header="DefUnit5"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefUnit6}" Header="DefUnit6"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefUnit7}" Header="DefUnit7"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding DefUnit8}" Header="DefUnit8"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RaidUnitsBase}" Header="RaidUnitsBase"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RaidUnitsRandom}" Header="RaidUnitsRandom"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding RaidUnit1}" Header="RaidUnit1"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding RaidUnit2}" Header="RaidUnit2"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding RaidUnit3}" Header="RaidUnit3"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding RaidUnit4}" Header="RaidUnit4"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding RaidUnit5}" Header="RaidUnit5"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding RaidUnit6}" Header="RaidUnit6"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding RaidUnit7}" Header="RaidUnit7"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding RaidUnit8}" Header="RaidUnit8"/>
-                <se:StswDataGridTextColumn Binding="{Binding HarassingSiegeEngine1}" Header="HarassingSiegeEngine1"/>
-                <se:StswDataGridTextColumn Binding="{Binding HarassingSiegeEngine2}" Header="HarassingSiegeEngine2"/>
-                <se:StswDataGridTextColumn Binding="{Binding HarassingSiegeEngine3}" Header="HarassingSiegeEngine3"/>
-                <se:StswDataGridTextColumn Binding="{Binding HarassingSiegeEngine4}" Header="HarassingSiegeEngine4"/>
-                <se:StswDataGridTextColumn Binding="{Binding HarassingSiegeEngine5}" Header="HarassingSiegeEngine5"/>
-                <se:StswDataGridTextColumn Binding="{Binding HarassingSiegeEngine6}" Header="HarassingSiegeEngine6"/>
-                <se:StswDataGridTextColumn Binding="{Binding HarassingSiegeEngine7}" Header="HarassingSiegeEngine7"/>
-                <se:StswDataGridTextColumn Binding="{Binding HarassingSiegeEngine8}" Header="HarassingSiegeEngine8"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding HarassingSiegeEnginesMax}" Header="HarassingSiegeEnginesMax"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding RaidRetargetDelay}" Header="RaidRetargetDelay"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttForceBase}" Header="AttForceBase"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttForceRandom}" Header="AttForceRandom"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttForceSupportAllyThreshold}" Header="AttForceSupportAllyThreshold"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttForceRallyPercentage}" Header="AttForceRallyPercentage"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding Unknown129}" Header="Unknown129"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttAssaultDelay}" Header="AttAssaultDelay"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitPatrolRecommandDelay}" Header="AttUnitPatrolRecommandDelay"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding Unknown132}" Header="Unknown132"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SiegeEngine1}" Header="SiegeEngine1"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SiegeEngine2}" Header="SiegeEngine2"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SiegeEngine3}" Header="SiegeEngine3"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SiegeEngine4}" Header="SiegeEngine4"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SiegeEngine5}" Header="SiegeEngine5"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SiegeEngine6}" Header="SiegeEngine6"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SiegeEngine7}" Header="SiegeEngine7"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding SiegeEngine8}" Header="SiegeEngine8"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding CowThrowInterval}" Header="CowThrowInterval"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding Unknown142}" Header="Unknown142"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttMaxEngineers}" Header="AttMaxEngineers"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttDiggingUnit}" Header="AttDiggingUnit"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttDiggingUnitMax}" Header="AttDiggingUnitMax"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitVanguard}" Header="AttUnitVanguard"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitVanguardMax}" Header="AttUnitVanguardMax"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttMaxAssassins}" Header="AttMaxAssassins"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttMaxLaddermen}" Header="AttMaxLaddermen"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttMaxTunnelers}" Header="AttMaxTunnelers"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitPatrol}" Header="AttUnitPatrol"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitPatrolMax}" Header="AttUnitPatrolMax"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitPatrolGroupsCount}" Header="AttUnitPatrolGroupsCount"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitBackup}" Header="AttUnitBackup"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitBackupMax}" Header="AttUnitBackupMax"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitBackupGroupsCount}" Header="AttUnitBackupGroupsCount"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitEngage}" Header="AttUnitEngage"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitEngageMax}" Header="AttUnitEngageMax"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitSiegeDef}" Header="AttUnitSiegeDef"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitSiegeDefMax}" Header="AttUnitSiegeDefMax"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttUnitSiegeDefGroupsCount}" Header="AttUnitSiegeDefGroupsCount"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitMain1}" Header="AttUnitMain1"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitMain2}" Header="AttUnitMain2"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitMain3}" Header="AttUnitMain3"/>
-                <se:StswDataGridComboColumn ItemsSource="{se:StswEnumToList local:Unit}" SelectedValueBinding="{Binding AttUnitMain4}" Header="AttUnitMain4"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttMaxDefault}" Header="AttMaxDefault"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding AttMainGroupsCount}" Header="AttMainGroupsCount"/>
-                <se:StswDataGridTextColumn Binding="{Binding TargetChoice}" Header="TargetChoice"/>
-            </se:StswDataGrid.Columns>
-        </se:StswDataGrid>
+        <se:StswScrollView Background="#3777" Margin="3">
+            <UniformGrid Rows="1">
+                <Control DataContext="{Binding SelectedPair1.Value}" Template="{StaticResource ConfigKeySelector}"/>
+                <Control DataContext="{Binding SelectedPair2.Value}" Template="{StaticResource ConfigKeySelector}"/>
+            </UniformGrid>
+        </se:StswScrollView>
     </DockPanel>
 </UserControl>

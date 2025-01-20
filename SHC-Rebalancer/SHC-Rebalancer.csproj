@@ -16,16 +16,12 @@
   <ItemGroup>
     <Compile Remove="Logic\Validation\**" />
     <Compile Remove="Modules\_base\**" />
-    <Compile Remove="Modules\_shared\**" />
     <EmbeddedResource Remove="Logic\Validation\**" />
     <EmbeddedResource Remove="Modules\_base\**" />
-    <EmbeddedResource Remove="Modules\_shared\**" />
     <None Remove="Logic\Validation\**" />
     <None Remove="Modules\_base\**" />
-    <None Remove="Modules\_shared\**" />
     <Page Remove="Logic\Validation\**" />
     <Page Remove="Modules\_base\**" />
-    <Page Remove="Modules\_shared\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -218,9 +214,9 @@
     <Resource Include="Images\buildings\Armory.png" />
     <Resource Include="Images\buildings\EngineersGuild.png" />
     <Resource Include="Images\buildings\EuropOutpost.png" />
-    <Resource Include="Images\buildings\HopsFarm.png" />
+    <Resource Include="Images\buildings\HopFarm.png" />
     <Resource Include="Images\buildings\WheatFarm.png" />
-    <Resource Include="Images\buildings\AppleOrchard.png" />
+    <Resource Include="Images\buildings\AppleFarm.png" />
     <Resource Include="Images\buildings\DairyFarm.png" />
     <Resource Include="Images\buildings\Poleturner.png" />
     <Resource Include="Images\buildings\Armourer.png" />
