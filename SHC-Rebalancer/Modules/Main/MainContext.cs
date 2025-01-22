@@ -1,25 +1,49 @@
 ﻿using System.Collections.ObjectModel;
-using System.IO;
 using System.Reflection;
 
 namespace SHC_Rebalancer;
 public class MainContext : StswObservableObject
 {
-    public StswAsyncCommand SaveChangesCommand { get; }
+    public StswAsyncCommand ReloadAllCommand { get; }
+    public StswAsyncCommand SaveAllCommand { get; }
     public StswCancellableAsyncCommand InstallCommand { get; }
     public StswAsyncCommand UninstallCommand { get; }
 
     public MainContext()
     {
-        SaveChangesCommand = new(SaveChanges);
+        ReloadAllCommand = new(ReloadAll);
+        SaveAllCommand = new(SaveAll);
         InstallCommand = new(Install, () => InstallState != StswProgressState.Running);
         UninstallCommand = new(Uninstall, () => InstallState != StswProgressState.Running);
     }
 
 
 
-    /// SaveChanges
-    public async Task SaveChanges()
+    /// ReloadAll
+    public async Task ReloadAll()
+    {
+        try
+        {
+            InstallValue = 0;
+            InstallState = StswProgressState.Running;
+
+            await Task.Delay(1000);
+            Storage.BaseAddresses = Storage.LoadBaseAddresses();
+            Storage.Configs = Storage.LoadConfigs();
+            //TODO - refresh UI
+
+            InstallState = StswProgressState.Finished;
+            InstallValue = 100;
+        }
+        catch (Exception ex)
+        {
+            InstallState = StswProgressState.Error;
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+    
+    /// SaveAll
+    public async Task SaveAll()
     {
         try
         {

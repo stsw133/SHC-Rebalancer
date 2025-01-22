@@ -1002,9 +1002,9 @@
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
 			"Health": 2500,
-			"DamageFromBow": 150000,
-			"DamageFromCrossbow": 15000,
-			"DamageFromSling": 50000,
+			"DamageFromBow": 15000,
+			"DamageFromCrossbow": 1500,
+			"DamageFromSling": 5000,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2

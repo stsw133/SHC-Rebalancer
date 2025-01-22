@@ -179,6 +179,15 @@ public enum Resource
     Both = -999,
 }
 
+public enum SkirmishDifficulty
+{
+    VEasy = 1,
+    Easy = 2,
+    Medium = 3,
+    Hard = 4,
+    VHard = 5,
+}
+
 public enum SkirmishMode
 {
     Normal = 1,
@@ -197,9 +206,9 @@ public enum SkirmishTeam
 
 public enum TargetChoice
 {
+    Gold = 0,
     Balanced = 1,
     Closest = 2,
-    Gold = 3,
     Player = 4
 }
 

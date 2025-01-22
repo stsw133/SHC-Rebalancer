@@ -13,4 +13,12 @@ public class ResourcesContext : StswObservableObject
         set => SetProperty(ref _selectedConfig, value);
     }
     private ResourcesConfigModel? _selectedConfig;
+
+    /// SelectedPair
+    public KeyValuePair<Resource, ResourceModel>? SelectedPair
+    {
+        get => _selectedPair;
+        set => SetProperty(ref _selectedPair, value);
+    }
+    private KeyValuePair<Resource, ResourceModel>? _selectedPair;
 }

@@ -9,12 +9,15 @@
 
     <DockPanel>
         <se:StswDataGrid BorderThickness="1"
-                         IsReadOnly="True"
+                         CanUserAddRows="False"
+                         CanUserDeleteRows="False"
+                         IsReadOnly="{Binding IsEditModeEnabled, Converter={x:Static se:StswBoolConverter.Instance}, ConverterParameter=!}"
                          ItemsSource="{Binding FinderResults}"
                          SelectionUnit="Cell"
-                         Width="200">
+                         Width="200"
+                         CellEditEnding="{se:StswEventToCommand CommandBinding={Binding AddressValueChangedCommand}, PassEventArgsAsParameter=True}">
             <se:StswDataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Address}" FontSize="11" Header="Address" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Address}" FontSize="11" Header="Address" IsReadOnly="True" Width="*"/>
                 <se:StswDataGridDecimalColumn Binding="{Binding Value}" FontSize="11" Header="Value" Width="*"/>
             </se:StswDataGrid.Columns>
 
@@ -38,6 +41,10 @@
         </se:StswDataGrid>
 
         <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
+            <se:StswLabel Content="Edit mode:"/>
+            <se:StswToggleSwitch IsChecked="{Binding IsEditModeEnabled}"
+                                 Margin="3"/>
+
             <se:StswLabel Content="Game type:"/>
             <se:StswComboBox ItemsSource="{se:StswEnumToList local:GameVersion}"
                              Margin="3"

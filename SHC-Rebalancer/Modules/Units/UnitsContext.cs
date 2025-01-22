@@ -13,4 +13,12 @@ public class UnitsContext : StswObservableObject
         set => SetProperty(ref _selectedConfig, value);
     }
     private UnitsConfigModel? _selectedConfig;
+
+    /// SelectedPair
+    public KeyValuePair<Unit, UnitModel>? SelectedPair
+    {
+        get => _selectedPair;
+        set => SetProperty(ref _selectedPair, value);
+    }
+    private KeyValuePair<Unit, UnitModel>? _selectedPair;
 }

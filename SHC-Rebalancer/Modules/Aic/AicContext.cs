@@ -14,19 +14,11 @@ public class AicContext : StswObservableObject
     }
     private AicConfigModel? _selectedConfig;
 
-    /// SelectedPair1
-    public KeyValuePair<AI, AicModel>? SelectedPair1
+    /// SelectedPair
+    public KeyValuePair<AI, AicModel>? SelectedPair
     {
-        get => _selectedPair1;
-        set => SetProperty(ref _selectedPair1, value);
+        get => _selectedPair;
+        set => SetProperty(ref _selectedPair, value);
     }
-    private KeyValuePair<AI, AicModel>? _selectedPair1;
-
-    /// SelectedPair2
-    public KeyValuePair<AI, AicModel>? SelectedPair2
-    {
-        get => _selectedPair2;
-        set => SetProperty(ref _selectedPair2, value);
-    }
-    private KeyValuePair<AI, AicModel>? _selectedPair2;
+    private KeyValuePair<AI, AicModel>? _selectedPair;
 }

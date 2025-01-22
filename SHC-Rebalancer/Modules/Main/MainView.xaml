@@ -12,7 +12,10 @@
         <se:StswProgressBar DockPanel.Dock="Bottom" Margin="3" State="{Binding InstallState}" Value="{Binding InstallValue}"/>
         <se:StswDirectionView DockPanel.Dock="Bottom" Background="{DynamicResource StswWindow.Static.Background}" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
             <UniformGrid HorizontalAlignment="Center" Rows="1">
-                <se:StswButton Command="{Binding SaveChangesCommand}" Margin="3" Padding="10 3">
+                <se:StswButton Command="{Binding ReloadAllCommand}" Margin="3" Padding="10 3">
+                    <se:StswLabel Content="Reload all configs" IconData="{x:Static se:StswIcons.Reload}" IconFill="{DynamicResource StswColor.Neutral}"/>
+                </se:StswButton>
+                <se:StswButton Command="{Binding SaveAllCommand}" Margin="3" Padding="10 3">
                     <se:StswLabel Content="Save all changes" IconData="{x:Static se:StswIcons.ContentSaveAll}" IconFill="{DynamicResource StswColor.Modify}"/>
                 </se:StswButton>
                 <se:StswButton Command="{Binding InstallCommand}" Margin="3" Padding="10 3">

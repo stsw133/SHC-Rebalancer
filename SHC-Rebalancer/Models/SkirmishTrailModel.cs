@@ -8,7 +8,7 @@ public class SkirmishTrailModel
 
     public string? MapNameAddress { get; set; }
     public string? MapName { get; set; }
-    public int? Difficulty { get; set; }
+    public SkirmishDifficulty? Difficulty { get; set; }
     public SkirmishMode? Type { get; set; }
     public int? NumberOfPlayers { get; set; }
     public AI[]? AIs { get; set; } = [];

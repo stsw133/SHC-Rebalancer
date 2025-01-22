@@ -14,78 +14,59 @@
                          ItemsSource="{Binding Configs_units}"
                          SelectedItem="{Binding SelectedConfig, Mode=OneWayToSource}"
                          SelectedValue="{Binding ConfigName_units, Mode=OneWay, Source={x:Static local:Settings.Default}}"/>
+        <!-- selector -->
+        <se:StswSegment ItemsSource="{Binding SelectedConfig.Values}" Margin="3" Orientation="Vertical" SelectedItem="{Binding SelectedPair}">
+            <se:StswSegment.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                        <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                </DataTemplate>
+            </se:StswSegment.ItemTemplate>
+        </se:StswSegment>
         <!-- data -->
-        <se:StswDataGrid Background="#3777"
-                         CanUserAddRows="False"
-                         CanUserDeleteRows="False"
-                         FrozenColumnCount="2"
-                         IsReadOnly="{Binding ConfigName_units, Source={x:Static local:Settings.Default}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                         ItemsSource="{Binding SelectedConfig.View}"
-                         Margin="3">
-            <se:StswDataGrid.Columns>
-                <DataGridTemplateColumn SortMemberPath="Key">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image MaxHeight="36" MaxWidth="36" Source="{Binding Key, Converter={x:Static local:EnumToImageSourceConverter.Instance}}" StretchDirection="DownOnly"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Binding="{Binding Name}" FontWeight="Bold" IsReadOnly="True">
-                    <DataGridTextColumn.Header>
-                        <se:StswLabel Content="Name"/>
-                    </DataGridTextColumn.Header>
-                </DataGridTextColumn>
-                <se:StswDataGridDecimalColumn Binding="{Binding Health}">
-                    <se:StswDataGridDecimalColumn.Header>
-                        <se:StswLabel Content="Health" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
-                    </se:StswDataGridDecimalColumn.Header>
-                </se:StswDataGridDecimalColumn>
-                <se:StswDataGridDecimalColumn Binding="{Binding DamageFromBow}">
-                    <se:StswDataGridDecimalColumn.Header>
-                        <se:StswLabel Content="Damage from bow" IconSource="/Images/units/EuropArcher.png"/>
-                    </se:StswDataGridDecimalColumn.Header>
-                </se:StswDataGridDecimalColumn>
-                <se:StswDataGridDecimalColumn Binding="{Binding DamageFromCrossbow}">
-                    <se:StswDataGridDecimalColumn.Header>
-                        <se:StswLabel Content="Damage from crossbow" IconSource="/Images/units/Crossbowman.png"/>
-                    </se:StswDataGridDecimalColumn.Header>
-                </se:StswDataGridDecimalColumn>
-                <se:StswDataGridDecimalColumn Binding="{Binding DamageFromSling}">
-                    <se:StswDataGridDecimalColumn.Header>
-                        <se:StswLabel Content="Damage from sling" IconSource="/Images/units/Slinger.png"/>
-                    </se:StswDataGridDecimalColumn.Header>
-                </se:StswDataGridDecimalColumn>
-                <se:StswDataGridDecimalColumn Binding="{Binding Speed}">
-                    <se:StswDataGridDecimalColumn.Header>
-                        <se:StswLabel Content="Speed" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Success.Background}"/>
-                    </se:StswDataGridDecimalColumn.Header>
-                </se:StswDataGridDecimalColumn>
-                <se:StswDataGridDecimalColumn Binding="{Binding MeleeDamage}">
-                    <se:StswDataGridDecimalColumn.Header>
-                        <se:StswLabel Content="Melee damage" IconData="{x:Static se:StswIcons.SwordCross}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
-                    </se:StswDataGridDecimalColumn.Header>
-                </se:StswDataGridDecimalColumn>
-                <se:StswDataGridCheckColumn Binding="{Binding CanMeleeDamage}">
-                    <se:StswDataGridCheckColumn.Header>
-                        <se:StswLabel Content="Can melee damage" IconData="{x:Static se:StswIcons.Sword}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                    </se:StswDataGridCheckColumn.Header>
-                </se:StswDataGridCheckColumn>
-                <se:StswDataGridCheckColumn Binding="{Binding CanClimbLadder}">
-                    <se:StswDataGridCheckColumn.Header>
-                        <se:StswLabel Content="Can climb ladder" IconData="{x:Static se:StswIcons.Ladder}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                    </se:StswDataGridCheckColumn.Header>
-                </se:StswDataGridCheckColumn>
-                <se:StswDataGridCheckColumn Binding="{Binding CanGoOnWall}">
-                    <se:StswDataGridCheckColumn.Header>
-                        <se:StswLabel Content="Can go on wall" IconData="{x:Static se:StswIcons.Wall}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                    </se:StswDataGridCheckColumn.Header>
-                </se:StswDataGridCheckColumn>
-                <se:StswDataGridCheckColumn Binding="{Binding CanBeMoved}">
-                    <se:StswDataGridCheckColumn.Header>
-                        <se:StswLabel Content="Can be moved" IconData="{x:Static se:StswIcons.CursorMove}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                    </se:StswDataGridCheckColumn.Header>
-                </se:StswDataGridCheckColumn>
-            </se:StswDataGrid.Columns>
-        </se:StswDataGrid>
+        <se:StswScrollView IsEnabled="{Binding SelectedPair, Converter={x:Static se:StswNotNullConverter.Instance}}" Margin="3">
+            <se:StswLabelPanel DataContext="{Binding SelectedPair.Value}" LabelFontWeight="Medium" LabelHorizontalAlignment="Right" VerticalAlignment="Center" Width="300">
+
+                <se:StswLabel Content="Health:" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Health}"/>
+
+                <se:StswLabel Content="Damage from bow:" IconSource="/Images/units/EuropArcher.png"/>
+                <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DamageFromBow}"/>
+
+                <se:StswLabel Content="Damage from crossbow:" IconSource="/Images/units/Crossbowman.png"/>
+                <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DamageFromCrossbow}"/>
+
+                <se:StswLabel Content="Damage from sling:" IconSource="/Images/units/Slinger.png"/>
+                <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DamageFromSling}"/>
+
+                <se:StswLabel Content="Speed:" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Success.Background}"/>
+                <StackPanel Margin="3">
+                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Speed, Mode=OneWay}"/>
+                    <se:StswSlider Minimum="0" Maximum="10" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionStart="{Binding Value, RelativeSource={RelativeSource Self}}" SelectionEnd="10" TickFrequency="1" Value="{Binding Speed}">
+                        <se:StswSlider.LayoutTransform>
+                            <ScaleTransform ScaleX="-1"/>
+                        </se:StswSlider.LayoutTransform>
+                    </se:StswSlider>
+                </StackPanel>
+
+                <se:StswLabel Content="Melee damage:" IconData="{x:Static se:StswIcons.SwordCross}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MeleeDamage}"/>
+
+                <se:StswLabel Content="Can melee damage:" IconData="{x:Static se:StswIcons.Sword}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanMeleeDamage}"/>
+
+                <se:StswLabel Content="Can climb ladder:" IconData="{x:Static se:StswIcons.Ladder}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanClimbLadder}"/>
+
+                <se:StswLabel Content="Can go on wall:" IconData="{x:Static se:StswIcons.Wall}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanGoOnWall}"/>
+
+                <se:StswLabel Content="Can be moved:" IconData="{x:Static se:StswIcons.CursorMove}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanBeMoved}"/>
+
+            </se:StswLabelPanel>
+        </se:StswScrollView>
     </DockPanel>
 </UserControl>

@@ -14,13 +14,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Logic\Validation\**" />
+    <Compile Remove="Services\Validation\**" />
     <Compile Remove="Modules\_base\**" />
-    <EmbeddedResource Remove="Logic\Validation\**" />
+    <EmbeddedResource Remove="Services\Validation\**" />
     <EmbeddedResource Remove="Modules\_base\**" />
-    <None Remove="Logic\Validation\**" />
+    <None Remove="Services\Validation\**" />
     <None Remove="Modules\_base\**" />
-    <Page Remove="Logic\Validation\**" />
+    <Page Remove="Services\Validation\**" />
     <Page Remove="Modules\_base\**" />
   </ItemGroup>
 
@@ -40,6 +40,11 @@
     <None Remove="Images\ai\Image724.png" />
     <None Remove="Images\ai\Image725.png" />
     <None Remove="Images\ai\Image726.png" />
+    <None Remove="Images\skirmishdifficulties\Easy.png" />
+    <None Remove="Images\skirmishdifficulties\Hard.png" />
+    <None Remove="Images\skirmishdifficulties\Medium.png" />
+    <None Remove="Images\skirmishdifficulties\VEasy.png" />
+    <None Remove="Images\skirmishdifficulties\VHard.png" />
     <None Remove="Resources\background.jpg" />
     <None Remove="Images\buildings\ArabOutpost.png" />
     <None Remove="Images\buildings\BatteringRam.png" />
@@ -55,22 +60,16 @@
     <None Remove="Images\resources\apple.png" />
     <None Remove="Images\resources\armor.png" />
     <None Remove="Images\resources\beer.png" />
-    <None Remove="Images\resources\bow.png" />
     <None Remove="Images\resources\bread.png" />
     <None Remove="Images\resources\cheese.png" />
-    <None Remove="Images\resources\crossbow.png" />
     <None Remove="Images\resources\flour.png" />
     <None Remove="Images\resources\gold.png" />
     <None Remove="Images\resources\hop.png" />
     <None Remove="Images\resources\iron.png" />
     <None Remove="Images\resources\leather.png" />
-    <None Remove="Images\resources\mace.png" />
     <None Remove="Images\resources\meat.png" />
-    <None Remove="Images\resources\pike.png" />
     <None Remove="Images\resources\pitch.png" />
-    <None Remove="Images\resources\spear.png" />
     <None Remove="Images\resources\stone.png" />
-    <None Remove="Images\resources\sword.png" />
     <None Remove="Images\resources\wheat.png" />
     <None Remove="Images\resources\wood.png" />
     <None Remove="Images\units\Armourer.png" />
@@ -176,6 +175,11 @@
     <Resource Include="Images\buildings\FireBallista.png" />
     <Resource Include="Images\buildings\PortableShield.png" />
     <Resource Include="Images\buildings\SiegeTower.png" />
+    <Resource Include="Images\skirmishdifficulties\Easy.png" />
+    <Resource Include="Images\skirmishdifficulties\Hard.png" />
+    <Resource Include="Images\skirmishdifficulties\Medium.png" />
+    <Resource Include="Images\skirmishdifficulties\VEasy.png" />
+    <Resource Include="Images\skirmishdifficulties\VHard.png" />
     <Resource Include="Images\teams\Team1.png" />
     <Resource Include="Images\teams\Team2.png" />
     <Resource Include="Images\teams\Team3.png" />
@@ -290,22 +294,22 @@
     <Resource Include="Images\resources\Apple.png" />
     <Resource Include="Images\resources\Armor.png" />
     <Resource Include="Images\resources\Beer.png" />
-    <Resource Include="Images\resources\Bow.png" />
+    <Resource Include="Images\resources\Bows.png" />
     <Resource Include="Images\resources\Bread.png" />
     <Resource Include="Images\resources\Cheese.png" />
-    <Resource Include="Images\resources\Crossbow.png" />
+    <Resource Include="Images\resources\Crossbows.png" />
     <Resource Include="Images\resources\Flour.png" />
     <Resource Include="Images\resources\Gold.png" />
     <Resource Include="Images\resources\Hop.png" />
     <Resource Include="Images\resources\Iron.png" />
     <Resource Include="Images\resources\Leather.png" />
-    <Resource Include="Images\resources\Mace.png" />
-    <Resource Include="Images\resources\meat.png" />
-    <Resource Include="Images\resources\Pike.png" />
+    <Resource Include="Images\resources\Maces.png" />
+    <Resource Include="Images\resources\Meat.png" />
+    <Resource Include="Images\resources\Pikes.png" />
     <Resource Include="Images\resources\Pitch.png" />
-    <Resource Include="Images\resources\Spear.png" />
+    <Resource Include="Images\resources\Spears.png" />
     <Resource Include="Images\resources\Stone.png" />
-    <Resource Include="Images\resources\Sword.png" />
+    <Resource Include="Images\resources\Swords.png" />
     <Resource Include="Images\resources\Wheat.png" />
     <Resource Include="Images\resources\Wood.png" />
     <Resource Include="Images\units\Armourer.png" />

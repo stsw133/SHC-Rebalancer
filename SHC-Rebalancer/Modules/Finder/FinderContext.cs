@@ -1,28 +1,71 @@
 ﻿using System.Collections.ObjectModel;
+using System.IO;
 using System.Reflection;
+using System.Windows.Controls;
 
 namespace SHC_Rebalancer;
 public class FinderContext : StswObservableObject
 {
-    public StswAsyncCommand<GameVersion> FindCommand { get; }
+    public StswAsyncCommand FindCommand { get; }
+    public StswCommand<DataGridCellEditEndingEventArgs> AddressValueChangedCommand { get; }
 
     public FinderContext()
     {
         FindCommand = new(Find);
+        AddressValueChangedCommand = new(AddressValueChanged);
     }
 
 
 
     /// Find
-    public async Task Find(GameVersion type)
+    public async Task Find()
     {
         try
         {
-            Finder.Find(FinderResults, type, FinderFilterSize, FinderFilterAddress, FinderFilterSkips, FinderFilterValues);
+            if (FinderFilterType.HasValue)
+            {
+                Finder.Find(FinderResults, FinderFilterType.Value, FinderFilterSize, FinderFilterAddress, FinderFilterSkips, FinderFilterValues);
+                _finderResultsType = FinderFilterType.Value;
+                _finderResultsSize = FinderFilterSize;
+            }
         }
         catch (Exception ex)
         {
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+
+    /// AddressValueChanged
+    public void AddressValueChanged(DataGridCellEditEndingEventArgs? e)
+    {
+        try
+        {
+            if (e == null)
+                return;
+
+            if (e.Row.Item is FinderDataModel model && e.EditingElement is StswDecimalBox stsw)
+            {
+                var filePath = _finderResultsType == GameVersion.Extreme ? Settings.Default.ExtremePath : Settings.Default.CrusaderPath;
+
+                try
+                {
+                    using FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite);
+                    fs.Seek(Convert.ToInt32(model.Address, 16), SeekOrigin.Begin);
+
+                    if (_finderResultsSize == 4)
+                        fs.Write(BitConverter.GetBytes(Convert.ToInt32(stsw.Value)), 0, 4);
+                    else if (_finderResultsSize == 1)
+                        fs.WriteByte(Convert.ToByte(stsw.Value));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Wystąpił błąd: {ex.Message}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
 
@@ -87,4 +130,15 @@ public class FinderContext : StswObservableObject
         set => SetProperty(ref _finderResults, value);
     }
     private ObservableCollection<FinderDataModel> _finderResults = [];
+
+    private GameVersion _finderResultsType;
+    private int _finderResultsSize;
+
+    /// IsEditModeEnabled
+    public bool IsEditModeEnabled
+    {
+        get => _isEditModeEnabled;
+        set => SetProperty(ref _isEditModeEnabled, value);
+    }
+    private bool _isEditModeEnabled;
 }

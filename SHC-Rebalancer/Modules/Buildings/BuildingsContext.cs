@@ -13,4 +13,12 @@ public class BuildingsContext : StswObservableObject
         set => SetProperty(ref _selectedConfig, value);
     }
     private BuildingsConfigModel? _selectedConfig;
+
+    /// SelectedPair
+    public KeyValuePair<Building, BuildingModel>? SelectedPair
+    {
+        get => _selectedPair;
+        set => SetProperty(ref _selectedPair, value);
+    }
+    private KeyValuePair<Building, BuildingModel>? _selectedPair;
 }

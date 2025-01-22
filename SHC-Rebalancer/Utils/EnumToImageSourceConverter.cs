@@ -20,7 +20,10 @@ public class EnumToImageSourceConverter : MarkupExtension, IValueConverter
         {
             nameof(AI) => "/Images/ai/",
             nameof(Building) => "/Images/buildings/",
+            nameof(HarassingUnit) => "/Images/units/",
             nameof(Resource) => "/Images/resources/",
+            nameof(SkirmishDifficulty) => "/Images/skirmishdifficulties/",
+            nameof(SkirmishMode) => "/Images/skirmishmodes/",
             nameof(SkirmishTeam) => "/Images/teams/",
             nameof(Unit) => "/Images/units/",
             _ => throw new NotImplementedException()

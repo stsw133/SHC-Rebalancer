@@ -10,7 +10,6 @@ public class AicConfigModel : IConfigModel
 
     public string? Description { get; set; }
     public Dictionary<AI, AicModel> Values { get; set; } = [];
-    public ObservableCollection<AicModel> View => new(Values.Select(x => { x.Value.Key = x.Key; return x.Value; }));
 }
 
 public class BuildingsConfigModel : IConfigModel
@@ -20,7 +19,6 @@ public class BuildingsConfigModel : IConfigModel
 
     public string? Description { get; set; }
     public Dictionary<Building, BuildingModel> Values { get; set; } = [];
-    public ObservableCollection<BuildingModel> View => new(Values.Select(x => { x.Value.Key = x.Key; return x.Value; }));
 }
 
 public class OthersConfigModel : IConfigModel
@@ -39,7 +37,6 @@ public class ResourcesConfigModel : IConfigModel
 
     public string? Description { get; set; }
     public Dictionary<Resource, ResourceModel> Values { get; set; } = [];
-    public ObservableCollection<ResourceModel> View => new(Values.Select(x => { x.Value.Key = x.Key; return x.Value; }));
 }
 
 public class SkirmishTrailConfigModel : IConfigModel
@@ -49,7 +46,6 @@ public class SkirmishTrailConfigModel : IConfigModel
 
     public string? Description { get; set; }
     public Dictionary<int, SkirmishTrailModel> Values { get; set; } = [];
-    public ObservableCollection<SkirmishTrailModel> View => new(Values.Select(x => { x.Value.Key = x.Key; return x.Value; }));
 }
 
 public class UnitsConfigModel : IConfigModel
@@ -59,5 +55,4 @@ public class UnitsConfigModel : IConfigModel
 
     public string? Description { get; set; }
     public Dictionary<Unit, UnitModel> Values { get; set; } = [];
-    public ObservableCollection<UnitModel> View => new(Values.Select(x => { x.Value.Key = x.Key; return x.Value; }));
 }
