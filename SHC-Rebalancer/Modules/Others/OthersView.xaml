@@ -48,7 +48,7 @@
                         <se:StswLabel Content="Version"/>
                     </se:StswDataGridComboColumn.Header>
                 </se:StswDataGridComboColumn>
-                <se:StswDataGridTextColumn Binding="{Binding Description}">
+                <se:StswDataGridTextColumn Binding="{Binding Description}" Width="*">
                     <se:StswDataGridTextColumn.Header>
                         <se:StswLabel Content="Description"/>
                     </se:StswDataGridTextColumn.Header>

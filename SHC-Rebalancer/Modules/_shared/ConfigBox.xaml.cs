@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace SHC_Rebalancer;
 /// <summary>
@@ -36,7 +35,7 @@ public partial class ConfigBox : StswComboBox
         if (!string.IsNullOrEmpty(Type))
         {
             SubControls = new((IStswSubControl[])Resources["SubControls"]);
-            if (SubControls?[0] is FrameworkElement fe)
+            if (SubControls?[1] is FrameworkElement fe)
                 fe.DataContext = this;
         }
     }

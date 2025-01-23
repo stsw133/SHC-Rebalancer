@@ -4,6 +4,8 @@ using System.Reflection;
 namespace SHC_Rebalancer;
 public class MainContext : StswObservableObject
 {
+    public StswAsyncCommand AcceptTermsCommand { get; }
+    public StswCommand ExitAppCommand { get; }
     public StswAsyncCommand ReloadAllCommand { get; }
     public StswAsyncCommand SaveAllCommand { get; }
     public StswCancellableAsyncCommand InstallCommand { get; }
@@ -11,6 +13,8 @@ public class MainContext : StswObservableObject
 
     public MainContext()
     {
+        AcceptTermsCommand = new(AcceptTerms, () => Settings.Default.TermsAccepted);
+        ExitAppCommand = new(App.Current.Shutdown);
         ReloadAllCommand = new(ReloadAll);
         SaveAllCommand = new(SaveAll);
         InstallCommand = new(Install, () => InstallState != StswProgressState.Running);
@@ -18,6 +22,19 @@ public class MainContext : StswObservableObject
     }
 
 
+
+    /// AcceptTerms
+    public async Task AcceptTerms()
+    {
+        try
+        {
+            StswContentDialog.Close("TermsContentDialog");
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
 
     /// ReloadAll
     public async Task ReloadAll()
@@ -77,12 +94,14 @@ public class MainContext : StswObservableObject
             InstallValue += 20;
             await Task.Delay(400);
 
+            //Backup.Restore(Settings.Default.CrusaderPath);
             Backup.Make(Settings.Default.CrusaderPath);
             Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath);
 
             InstallValue += 40;
             await Task.Delay(400);
 
+            //Backup.Restore(Settings.Default.ExtremePath);
             Backup.Make(Settings.Default.ExtremePath);
             Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath);
 
@@ -148,4 +167,12 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _installValue, value);
     }
     private int _installValue;
+
+    /// IsTermsContentDialogOpen
+    public bool IsTermsContentDialogOpen
+    {
+        get => _isTermsContentDialogOpen;
+        set => SetProperty(ref _isTermsContentDialogOpen, value);
+    }
+    private bool _isTermsContentDialogOpen = !Settings.Default.TermsAccepted;
 }

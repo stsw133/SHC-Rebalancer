@@ -15,7 +15,7 @@ public static class Storage
 
     public static string PathBaseAddresses => Path.Combine(AppContext.BaseDirectory, "Resources", "base");
     public static string PathConfigs => Path.Combine(AppContext.BaseDirectory, "Resources", "configs");
-
+    
     public static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> BaseAddresses { get; set; } = [];
     public static Dictionary<string, List<object>> Configs { get; set; } = [];
 

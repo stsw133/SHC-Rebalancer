@@ -10,7 +10,6 @@
 	
 	
 	
-	
 	{ "Key": "Units Speed",									"Address": "0x74E730", "EndAddress": "0x74E86F", "Size": 4 },
 	{ "Key": "Units CanGoOnWall",							"Address": "0x74E870", "EndAddress": "0x74E9AF", "Size": 4 },
 	{ "Key": "Units CanBeMoved",							"Address": "0x74E9B0", "EndAddress": "0x74EAEF", "Size": 4 },

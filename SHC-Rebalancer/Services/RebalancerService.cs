@@ -116,7 +116,7 @@ internal class Rebalancer
                         WriteIfDifferent(Convert.ToInt32(model.Value.MapNameAddress, 16), ConvertStringToBytesWithAutoPadding(model.Value.MapName, 4), mapNameOffset.Size, $"Mission {model.Key}, MapName");
                     }
                 }
-                WriteIfDifferent(address + 4, model.Value.Difficulty, baseAddress.Size, $"Mission {model.Key}, Difficulty");
+                WriteIfDifferent(address + 4, (int?)model.Value.Difficulty, baseAddress.Size, $"Mission {model.Key}, Difficulty");
                 WriteIfDifferent(address + 8, (int?)model.Value.Type, baseAddress.Size, $"Mission {model.Key}, Type");
                 WriteIfDifferent(address + 12, model.Value.NumberOfPlayers, baseAddress.Size, $"Mission {model.Key}, NumberOfPlayers");
                 WriteIfDifferent(address + 16, model.Value.AIs?.Select(x => (int)x)?.Concat(Enumerable.Repeat(0, 8 - model.Value.AIs.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, AIs");
@@ -260,6 +260,11 @@ internal class Rebalancer
         if (address == default || newValue == null)
             return;
 
+        if (address + size > _fs!.Length)
+        {
+            Console.WriteLine($"Address {address:X} is out of bounds (File Length: {_fs.Length}). Extending file...");
+            _fs.SetLength(address + size);
+        }
         _fs!.Seek(address, SeekOrigin.Begin);
 
         T oldValue = newValue switch
@@ -270,6 +275,7 @@ internal class Rebalancer
             byte[] byteArray => (T)(object)_reader!.ReadBytes(byteArray.Length),
             int[] intArray => (T)(object)Enumerable.Range(0, intArray.Length).Select(_ => _reader!.ReadInt32()).ToArray(),
             _ when typeof(T).IsEnum || (typeof(T) == typeof(object) && newValue?.GetType().IsEnum == true) => (T)(object)_reader!.ReadInt32(),
+            _ when Nullable.GetUnderlyingType(typeof(T))?.IsEnum == true => (T)(object)_reader!.ReadInt32(),
             _ => throw new InvalidOperationException($"Unsupported type {typeof(T).Name}")
         };
 

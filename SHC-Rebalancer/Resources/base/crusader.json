@@ -8,7 +8,6 @@
 	{ "Key": "Resources Buy",								"Address": "0x2171C0", "EndAddress": "0x217227", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x217228", "EndAddress": "0x21728F", "Size": 4 },
 	
-	{ "Key": "SkirmishTrail MapNameOffset",					"Address": "0x400000", "Size": 1 },
 	{ "Key": "SkirmishTrail Missions",						"Address": "0x73EC48", "EndAddress": "0x741947", "Size": 4 },
 	
 	{ "Key": "Units Speed",									"Address": "0x74E5A0", "EndAddress": "0x74E6DF", "Size": 4 },

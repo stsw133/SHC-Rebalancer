@@ -118,5 +118,17 @@ namespace SHC_Rebalancer {
                 this["ConfigName_others"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TermsAccepted {
+            get {
+                return ((bool)(this["TermsAccepted"]));
+            }
+            set {
+                this["TermsAccepted"] = value;
+            }
+        }
     }
 }
