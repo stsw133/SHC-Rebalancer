@@ -8,20 +8,13 @@ public static class Finder
     /// Find
     public static void Find(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, int filterSize, string? filterAddress, int filterSkips, string? filterValues)
     {
-        var filePath = gameVersion switch
-        {
-            GameVersion.Crusader => Settings.Default.CrusaderPath,
-            GameVersion.Extreme => Settings.Default.ExtremePath,
-            _ => throw new NotSupportedException("Incorrect game version!")
-        };
-        
-        var fileBytes = File.ReadAllBytes(filePath);
+        var fileBytes = File.ReadAllBytes(Storage.ExePath[gameVersion]);
         finderData.Clear();
 
         if (!string.IsNullOrWhiteSpace(filterValues))
             FindPatternInFile(finderData, gameVersion, fileBytes, filterSize, filterValues);
         else if (!string.IsNullOrWhiteSpace(filterAddress))
-            FindAddresses(finderData, gameVersion, filePath, filterSize, filterAddress, filterSkips);
+            FindAddresses(finderData, gameVersion, Storage.ExePath[gameVersion], filterSize, filterAddress, filterSkips);
     }
 
     /// FindPatternInFile

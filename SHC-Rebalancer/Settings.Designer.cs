@@ -26,24 +26,24 @@ namespace SHC_Rebalancer {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string CrusaderPath {
+        public string GamePath {
             get {
-                return ((string)(this["CrusaderPath"]));
+                return ((string)(this["GamePath"]));
             }
             set {
-                this["CrusaderPath"] = value;
+                this["GamePath"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ExtremePath {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TermsAccepted {
             get {
-                return ((string)(this["ExtremePath"]));
+                return ((bool)(this["TermsAccepted"]));
             }
             set {
-                this["ExtremePath"] = value;
+                this["TermsAccepted"] = value;
             }
         }
         
@@ -121,13 +121,13 @@ namespace SHC_Rebalancer {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TermsAccepted {
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_aiv {
             get {
-                return ((bool)(this["TermsAccepted"]));
+                return ((string)(this["ConfigName_aiv"]));
             }
             set {
-                this["TermsAccepted"] = value;
+                this["ConfigName_aiv"] = value;
             }
         }
     }

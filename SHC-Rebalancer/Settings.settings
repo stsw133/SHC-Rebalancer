@@ -2,11 +2,11 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SHC_Rebalancer" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="CrusaderPath" Type="System.String" Scope="User">
+    <Setting Name="GamePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ExtremePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="TermsAccepted" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ConfigName_aic" Type="System.String" Scope="User">
       <Value Profile="(Default)">stsw</Value>
@@ -26,8 +26,8 @@
     <Setting Name="ConfigName_others" Type="System.String" Scope="User">
       <Value Profile="(Default)">stsw</Value>
     </Setting>
-    <Setting Name="TermsAccepted" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="ConfigName_aiv" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
     </Setting>
   </Settings>
 </SettingsFile>

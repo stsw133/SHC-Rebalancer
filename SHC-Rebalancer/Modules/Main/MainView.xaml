@@ -70,21 +70,17 @@
 
                     <se:StswScrollView>
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
-                            <se:StswLabel Content="Stronghold Crusader:" FontWeight="Bold" Margin="3 6 3 0"/>
-                            <se:StswPathPicker Filter="Stronghold Crusader|*.exe"
-                                           Margin="3"
-                                           Placeholder="Please select Stronghold Crusader .exe path..."
-                                           SelectedPath="{Binding CrusaderPath, Source={x:Static local:Settings.Default}}"/>
-
-                            <se:StswLabel Content="Stronghold Crusader Extreme:" FontWeight="Bold" Margin="3 6 3 0"/>
-                            <se:StswPathPicker Filter="Stronghold Crusader Extreme|*.exe"
-                                           Margin="3"
-                                           Placeholder="Please select Stronghold Crusader Extreme .exe path..."
-                                           SelectedPath="{Binding ExtremePath, Source={x:Static local:Settings.Default}}"/>
+                            <se:StswLabel Content="Stronghold Crusader path:" FontWeight="Bold" Margin="3 6 3 0"/>
+                            <se:StswPathPicker Margin="3"
+                                               Placeholder="Please select Stronghold Crusader path..."
+                                               SelectedPath="{Binding GamePath, Source={x:Static local:Settings.Default}}"
+                                               SelectionUnit="Directory"/>
 
                             <se:StswLabel Content="Selected configs to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
                             <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5">
                                 <se:StswLabelPanel DockPanel.Dock="Top" LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
+                                    <se:StswLabel Content="AIV:"/>
+                                    <local:ConfigBox ItemsSource="{Binding Configs_aiv}" SelectedValue="{Binding ConfigName_aiv, Source={x:Static local:Settings.Default}}" Type="AIV"/>
                                     <se:StswLabel Content="AIC:"/>
                                     <local:ConfigBox ItemsSource="{Binding Configs_aic}" SelectedValue="{Binding ConfigName_aic, Source={x:Static local:Settings.Default}}" Type="AIC"/>
                                     <se:StswLabel Content="Buildings:"/>

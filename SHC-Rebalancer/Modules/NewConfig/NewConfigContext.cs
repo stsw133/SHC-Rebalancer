@@ -22,7 +22,7 @@ public class NewConfigContext : StswObservableObject
     {
         try
         {
-            var filePath = Path.Combine(Storage.PathConfigs, Type, Name + ".json");
+            var filePath = Path.Combine(Storage.ConfigsPath, Type, Name + ".json");
 
             if (IsEditing)
             {
@@ -32,7 +32,7 @@ public class NewConfigContext : StswObservableObject
                     return;
                 }
 
-                var selectedFilePath = Path.Combine(Storage.PathConfigs, Type, Settings.Default["ConfigName_" + Type].ToString() + ".json");
+                var selectedFilePath = Path.Combine(Storage.ConfigsPath, Type, Settings.Default["ConfigName_" + Type].ToString() + ".json");
                 if (!File.Exists(selectedFilePath))
                 {
                     await StswMessageDialog.Show("Edited file does not exist!", "Error", null, StswDialogButtons.OK, StswDialogImage.Error);
@@ -53,7 +53,7 @@ public class NewConfigContext : StswObservableObject
                     return;
                 }
 
-                var baseFilePath = Path.Combine(Storage.PathConfigs, Type, BasedOn + ".json");
+                var baseFilePath = Path.Combine(Storage.ConfigsPath, Type, BasedOn + ".json");
                 if (!File.Exists(baseFilePath) && !IsEditing)
                 {
                     await StswMessageDialog.Show("File for base config does not exist!", "Error", null, StswDialogButtons.OK, StswDialogImage.Error);

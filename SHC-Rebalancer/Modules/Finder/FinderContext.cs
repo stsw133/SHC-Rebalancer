@@ -45,11 +45,9 @@ public class FinderContext : StswObservableObject
 
             if (e.Row.Item is FinderDataModel model && e.EditingElement is StswDecimalBox stsw)
             {
-                var filePath = _finderResultsType == GameVersion.Extreme ? Settings.Default.ExtremePath : Settings.Default.CrusaderPath;
-
                 try
                 {
-                    using FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite);
+                    using FileStream fs = new FileStream(Storage.ExePath[_finderResultsType], FileMode.Open, FileAccess.ReadWrite);
                     fs.Seek(Convert.ToInt32(model.Address, 16), SeekOrigin.Begin);
 
                     if (_finderResultsSize == 4)

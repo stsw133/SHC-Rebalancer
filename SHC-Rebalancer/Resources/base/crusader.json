@@ -1,5 +1,5 @@
 [
-	{ "Key": "AIC",											"Address": "0x81B6CA", "EndAddress": "0x8220CC", "Size": 4 },
+	{ "Key": "AIC",											"Address": "0x81B6B2", "EndAddress": "0x8220B4", "Size": 4 },
 	
 	{ "Key": "Buildings Health",							"Address": "0x1BA218", "EndAddress": "0x1BA3CF", "Size": 4 },
 	{ "Key": "Buildings Housing",							"Address": "0x1BA438", "EndAddress": "0x1BA5EF", "Size": 4 },

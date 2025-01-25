@@ -25,9 +25,7 @@ public partial class ConfigBox : StswComboBox
         RemoveConfigCommand = new(RemoveConfig, () => Settings.Default[ConfigName]?.ToString() != null && Settings.Default[ConfigName]?.ToString() != "vanilla");
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
+    /// OnApplyTemplate
     public override void OnApplyTemplate()
     {
         base.OnApplyTemplate();
@@ -35,7 +33,10 @@ public partial class ConfigBox : StswComboBox
         if (!string.IsNullOrEmpty(Type))
         {
             SubControls = new((IStswSubControl[])Resources["SubControls"]);
-            if (SubControls?[1] is FrameworkElement fe)
+
+            if (Type == "aiv")
+                SubControls?.RemoveAt(1);
+            else if (SubControls?[1] is FrameworkElement fe)
                 fe.DataContext = this;
         }
     }
@@ -106,7 +107,7 @@ public partial class ConfigBox : StswComboBox
     {
         try
         {
-            var filePath = Path.Combine(Storage.PathConfigs, Type, Settings.Default[ConfigName].ToString() + ".json");
+            var filePath = Path.Combine(Storage.ConfigsPath, Type, Settings.Default[ConfigName].ToString() + ".json");
 
             if (!File.Exists(filePath))
                 throw new IOException("File for selected config does not exist!");
@@ -130,7 +131,7 @@ public partial class ConfigBox : StswComboBox
                 return;
             }
 
-            var filePath = Path.Combine(Storage.PathConfigs, Type, Settings.Default[ConfigName] + ".json");
+            var filePath = Path.Combine(Storage.ConfigsPath, Type, Settings.Default[ConfigName] + ".json");
             if (await StswMessageDialog.Show($"Are you sure you want to remove '{Settings.Default[ConfigName]}' config?", "Confirmation", null, StswDialogButtons.YesNo, StswDialogImage.Question) == true)
             {
                 File.Delete(filePath);

@@ -1,0 +1,423 @@
+stsw AIV (should be played together with stsw AIC and stsw rebalance).
+Castles can be used for original skirmish campaigns, but in some cases AI may not have enough place for all buildings (at least they always have most important ones).
+
+Below is list of buildings for every AI.
+
+-Rat (#16 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-4x House
+	-2x Well
+	-2x Fletcher
+	-4x Poleturner
+	-4x Good stuff (+1 to popularity)
+	-2x Tower2
+	-2x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Low crenels
+	-Stairs
+	
+-Snake (#15 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Mercenary post
+	-1x Engineer guild
+	-5x House
+	-2x Well
+	-4x Fletcher
+	-4x Poleturner
+	-1x Tower3
+	-2x Tower2
+	-1x Tower1
+	-3x Small gatehouse
+	-High walls
+	-Low walls
+	-Stairs
+	-2x Drawbridge
+	-Moat
+	
+-Pig (#10 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-9x House
+	-1x Water pot
+	-2x Well
+	-3x Fletcher
+	-4x Blacksmith
+	-5x Tanner
+	-8x Bad stuff (-1 to popularity)
+	-4x Hunter post
+	-2x Tower4
+	-2x Tower2
+	-4x Small gatehouse
+	-High walls
+	-Low walls
+	-Stairs
+	-Killing pits
+	
+-Wolf (#1 in AI ranking):
+	-3x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-1x Oil smelter
+	-15x House
+	-1x Church
+	-1x Healers
+	-3x Water pot
+	-5x Fletcher
+	-2x Poleturner
+	-4x Blacksmith
+	-4x Tanner
+	-4x Armourer
+	-7x Brewery
+	-4x Inn
+	-38x Bad stuff (-4 to popularity)
+	-16x Tower4
+	-1x Large gatehouse
+	-6x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Low crenels
+	-Stairs
+	-5x Drawbridge
+	-Moat
+	-Killing pits
+	-Pitch
+	
+-Saladin (#2 in AI ranking):
+	-3x Stockpile
+	-1x Granary
+	-1x Trading post
+	-1x Mercenary post
+	-1x Engineer guild
+	-15x House
+	-1x Healers
+	-3x Water pot
+	-2x Mill
+	-16x Bakery
+	-7x Brewery
+	-4x Inn
+	-38x Good stuff (+4 to popularity)
+	-6x Tower5
+	-2x Tower1
+	-2x Large gatehouse
+	-High walls
+	-High crenels
+	-Stairs
+	-1x Drawbridge
+	-Moat
+	-Killing pits
+	
+-Caliph (#9 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Trading post
+	-1x Mercenary post
+	-1x Engineer guild
+	-1x Oil smelter
+	-9x House
+	-1x Water pot
+	-2x Well
+	-12x Bad stuff (-2 to popularity)
+	-2x Woodcutter hut
+	-8x Tower1
+	-3x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Stairs
+	-Killing pits
+	-Pitch
+	
+-Sultan (#14 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Trading post
+	-1x Mercenary post
+	-1x Engineer guild
+	-5x House
+	-1x Chapel
+	-1x Healers
+	-1x Water pot
+	-25x Good stuff (+5 to popularity)
+	-4x Tower1
+	-2x Small gatehouse
+	-High walls
+	-High crenels
+	-Stairs
+	
+-Richard (#5 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-1x Oil smelter
+	-12x House
+	-1x Church
+	-1x Healers
+	-2x Water pot
+	-1x Well
+	-3x Fletcher
+	-3x Poleturner
+	-3x Blacksmith
+	-6x Armourer
+	-2x Stables
+	-30x Good stuff (+4 to popularity)
+	-4x Tower5
+	-1x Large gatehouse
+	-2x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Stairs
+	-1x Drawbridge
+	-Moat
+	-Killing pits
+	
+-Frederick (#3 in AI ranking):
+	-3x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-1x Oil smelter
+	-14x House
+	-1x Church
+	-1x Healers
+	-2x Water pot
+	-2x Well
+	-4x Fletcher
+	-4x Tanner
+	-4x Blacksmith
+	-3x Armourer
+	-1x Poleturner
+	-2x Stables
+	-20x Good stuff (+2 to popularity)
+	-2x Tower5
+	-2x Tower4
+	-2x Tower3
+	-2x Tower2
+	-1x Large gatehouse
+	-5x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Low crenels
+	-Stairs
+	-1x Drawbridge
+	-Moat
+	-Killing pits
+	
+-Phillip (#7 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-11x House
+	-1x Cathedral
+	-1x Church
+	-1x Chapel
+	-1x Healers
+	-2x Water pot
+	-4x Fletcher
+	-4x Poleturner
+	-5x Armourer
+	-1x Blacksmith
+	-4x Stables
+	-23x Good stuff (+3 to popularity)
+	-2x Tower4
+	-2x Large gatehouse
+	-1x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Stairs
+	-2x Drawbridge
+	-Moat
+	-Killing pits
+	
+-Wazir (#4 in AI ranking):
+	-3x Stockpile
+	-1x Granary
+	-1x Trading post
+	-1x Mercenary post
+	-1x Engineer guild
+	-1x Oil smelter
+	-13x House
+	-2x Healers
+	-2x Water pot
+	-2x Well
+	-3x Windmill
+	-24x Bakery
+	-4x Tower5
+	-10x Tower1
+	-2x Large gatehouse
+	-High walls
+	-High crenels
+	-Stairs
+	-Moat
+	-Killing pits
+	-Pitch
+	
+-Emir (#6 in AI ranking):
+	-3x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Mercenary post
+	-1x Engineer guild
+	-1x Oil smelter
+	-12x House
+	-2x Water pot
+	-1x Well
+	-1x Windmill
+	-8x Bakery
+	-3x Fletcher
+	-2x Blacksmith
+	-2x Armourer
+	-5x Brewery
+	-3x Inn
+	-18x Good stuff (+2 to popularity)
+	-4x Tower5
+	-6x Tower1
+	-1x Large gatehouse
+	-2x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Low crenels
+	-Stairs
+	-Killing pits
+	
+-Nazir (#12 in AI ranking):
+	-3x Stockpile
+	-1x Granary
+	-1x Trading post
+	-1x Mercenary post
+	-1x Engineer guild
+	-1x Oil smelter
+	-7x House
+	-1x Water pot
+	-1x Well
+	-1x Windmill
+	-8x Bakery
+	-3x Brewery
+	-2x Inn
+	-25x Good stuff (+5 to popularity)
+	-2x Tower4
+	-2x Tower1
+	-4x Small gatehouse
+	-Low walls
+	-Stairs
+	-1x Drawbridge
+	-Moat
+	-Killing pits
+	-Pitch
+	
+-Sheriff (#8 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Mercenary post
+	-1x Engineer guild
+	-10x House
+	-2x Water pot
+	-3x Fletcher
+	-3x Poleturner
+	-3x Tanner
+	-3x Armourer
+	-3x Brewery
+	-2x Inn
+	-20x Bad stuff (-3 to popularity)
+	-2x Tower4
+	-2x Tower3
+	-2x Tower2
+	-3x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Stairs
+	-2x Dog cage
+	-Killing pits
+	-Pitch
+	
+-Marshal (#11 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-1x Tunneler guild
+	-8x House
+	-1x Water pot
+	-1x Well
+	-3x Fletcher
+	-1x Poleturner
+	-2x Blacksmith
+	-2x Armourer
+	-5x Brewery
+	-3x Inn
+	-6x Stables
+	-8x Good stuff (+1 to popularity)
+	-4x Tower3
+	-3x Small gatehouse
+	-High walls
+	-High crenels
+	-Stairs
+	-2x Drawbridge
+	-Moat
+	-Killing pits
+	
+-Abbot (#13 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-1x Oil smelter
+	-7x House
+	-1x Cathedral
+	-1x Church
+	-2x Chapel
+	-1x Water pot
+	-1x Mill
+	-8x Bakery
+	-4x Fletcher
+	-1x Blacksmith
+	-1x Armourer
+	-15x Good stuff (+3 to popularity)
+	-8x Tower2
+	-2x Large gatehouse
+	-High walls
+	-High crenels
+	-Stairs
+	-Moat
+	-Killing pits
+	-Pitch

@@ -5,36 +5,62 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace SHC_Rebalancer;
-internal class Rebalancer
+internal static class Rebalancer
 {
     private static FileStream? _fs;
     private static BinaryReader? _reader;
     private static BinaryWriter? _writer;
 
     /// Rebalance
-    internal static void Rebalance(GameVersion gameVersion, string exePath)
+    internal static void Rebalance()
     {
-        using (_fs = new FileStream(exePath, FileMode.Open, FileAccess.ReadWrite))
-        using (_reader = new BinaryReader(_fs))
-        using (_writer = new BinaryWriter(_fs))
+        foreach (var exePath in Storage.ExePath)
         {
-            if (Storage.Configs["aic"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_aic) is AicConfigModel aicConfig)
-                ProcessAicConfig(gameVersion, aicConfig);
-            
-            if (Storage.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_buildings) is BuildingsConfigModel buildingsConfig)
-                ProcessBuildingsConfig(gameVersion, buildingsConfig);
-            
-            if (Storage.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_resources) is ResourcesConfigModel resourcesConfig)
-                ProcessResourcesConfig(gameVersion, resourcesConfig);
+            if (!File.Exists(exePath.Value))
+                continue;
 
-            if (Storage.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_skirmishtrail) is SkirmishTrailConfigModel skirmishtrailModel)
-                ProcessSkirmishTrailConfig(gameVersion, skirmishtrailModel);
+            using (_fs = new FileStream(exePath.Value, FileMode.Open, FileAccess.ReadWrite))
+            using (_reader = new BinaryReader(_fs))
+            using (_writer = new BinaryWriter(_fs))
+            {
+                if (Storage.Configs["aic"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_aic) is AicConfigModel aicConfig)
+                    ProcessAicConfig(exePath.Key, aicConfig);
 
-            if (Storage.Configs["units"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_units) is UnitsConfigModel unitsConfig)
-                ProcessUnitsConfig(gameVersion, unitsConfig);
-            
-            if (Storage.Configs["others"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_others) is OthersConfigModel othersConfig)
-                ProcessOthersConfig(gameVersion, othersConfig);
+                if (Storage.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_buildings) is BuildingsConfigModel buildingsConfig)
+                    ProcessBuildingsConfig(exePath.Key, buildingsConfig);
+
+                if (Storage.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_resources) is ResourcesConfigModel resourcesConfig)
+                    ProcessResourcesConfig(exePath.Key, resourcesConfig);
+
+                if (Storage.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_skirmishtrail) is SkirmishTrailConfigModel skirmishtrailModel)
+                    ProcessSkirmishTrailConfig(exePath.Key, skirmishtrailModel);
+
+                if (Storage.Configs["units"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_units) is UnitsConfigModel unitsConfig)
+                    ProcessUnitsConfig(exePath.Key, unitsConfig);
+
+                if (Storage.Configs["others"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_others) is OthersConfigModel othersConfig)
+                    ProcessOthersConfig(exePath.Key, othersConfig);
+            }
+        }
+
+        if (Storage.Configs["aiv"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_aiv) is AivConfigModel aivConfig)
+            ProcessAivConfig(aivConfig);
+    }
+
+    /// ProcessAivConfig
+    private static void ProcessAivConfig(AivConfigModel config)
+    {
+        var sourceDirectory = Path.Combine(Storage.ConfigsPath, "aiv", config.Name);
+        if (!Directory.Exists(sourceDirectory))
+            throw new DirectoryNotFoundException($"AIV directory '{config.Name}' not found.");
+
+        Directory.CreateDirectory(Storage.AivPath);
+        foreach (var file in Directory.GetFiles(sourceDirectory))
+        {
+            var fileName = Path.GetFileName(file);
+            var destinationPath = Path.Combine(Storage.AivPath, fileName);
+
+            File.Copy(file, destinationPath, overwrite: true);
         }
     }
 
@@ -107,14 +133,8 @@ internal class Rebalancer
 
                 if (!string.IsNullOrWhiteSpace(model.Value.MapNameAddress) && !string.IsNullOrWhiteSpace(model.Value.MapName))
                 {
-                    if (Storage.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail MapNameOffset", out var mapNameOffset))
-                    {
-                        if (mapNameOffset == default)
-                            mapNameOffset = new() { Address = "0x400000", Size = 4 };
-
-                        WriteIfDifferent(address + 0, Convert.ToInt32(model.Value.MapNameAddress, 16) + Convert.ToInt32(mapNameOffset.Address, 16), baseAddress.Size, $"Mission {model.Key}, MapNameOffset");
-                        WriteIfDifferent(Convert.ToInt32(model.Value.MapNameAddress, 16), ConvertStringToBytesWithAutoPadding(model.Value.MapName, 4), mapNameOffset.Size, $"Mission {model.Key}, MapName");
-                    }
+                    WriteIfDifferent(address + 0, Convert.ToInt32(model.Value.MapNameAddress, 16) + 0x400000, baseAddress.Size, $"Mission {model.Key}, MapNameOffset");
+                    WriteIfDifferent(Convert.ToInt32(model.Value.MapNameAddress, 16), ConvertStringToBytesWithAutoPadding(model.Value.MapName, 4), 4, $"Mission {model.Key}, MapName");
                 }
                 WriteIfDifferent(address + 4, (int?)model.Value.Difficulty, baseAddress.Size, $"Mission {model.Key}, Difficulty");
                 WriteIfDifferent(address + 8, (int?)model.Value.Type, baseAddress.Size, $"Mission {model.Key}, Type");

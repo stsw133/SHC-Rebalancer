@@ -17,8 +17,8 @@ public class MainContext : StswObservableObject
         ExitAppCommand = new(App.Current.Shutdown);
         ReloadAllCommand = new(ReloadAll);
         SaveAllCommand = new(SaveAll);
-        InstallCommand = new(Install, () => InstallState != StswProgressState.Running);
-        UninstallCommand = new(Uninstall, () => InstallState != StswProgressState.Running);
+        InstallCommand = new(Install, CanEditExe);
+        UninstallCommand = new(Uninstall, CanEditExe);
     }
 
 
@@ -94,16 +94,12 @@ public class MainContext : StswObservableObject
             InstallValue += 20;
             await Task.Delay(400);
 
-            //Backup.Restore(Settings.Default.CrusaderPath);
-            Backup.Make(Settings.Default.CrusaderPath);
-            Rebalancer.Rebalance(GameVersion.Crusader, Settings.Default.CrusaderPath);
+            Backup.Restore();
+            Backup.Make();
+            Rebalancer.Rebalance();
 
             InstallValue += 40;
             await Task.Delay(400);
-
-            //Backup.Restore(Settings.Default.ExtremePath);
-            Backup.Make(Settings.Default.ExtremePath);
-            Rebalancer.Rebalance(GameVersion.Extreme, Settings.Default.ExtremePath);
 
             InstallState = StswProgressState.Finished;
             InstallValue = 100;
@@ -114,6 +110,7 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+    public bool CanEditExe() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(Settings.Default.GamePath);
 
     /// Uninstall
     public async Task Uninstall()
@@ -125,12 +122,10 @@ public class MainContext : StswObservableObject
 
             await Task.Delay(500);
 
-            Backup.Restore(Settings.Default.CrusaderPath);
+            Backup.Restore();
 
             InstallValue += 50;
             await Task.Delay(500);
-
-            Backup.Restore(Settings.Default.ExtremePath);
 
             InstallState = StswProgressState.Finished;
             InstallValue = 100;
@@ -145,6 +140,7 @@ public class MainContext : StswObservableObject
 
 
     /// Configs
+    public ObservableCollection<AivConfigModel> Configs_aiv => new(Storage.Configs.ContainsKey("aiv") == true ? Storage.Configs["aiv"].Cast<AivConfigModel>() : []);
     public ObservableCollection<AicConfigModel> Configs_aic => new(Storage.Configs.ContainsKey("aic") == true ? Storage.Configs["aic"].Cast<AicConfigModel>() : []);
     public ObservableCollection<BuildingsConfigModel> Configs_buildings => new(Storage.Configs.ContainsKey("buildings") == true ? Storage.Configs["buildings"].Cast<BuildingsConfigModel>() : []);
     public ObservableCollection<ResourcesConfigModel> Configs_resources => new(Storage.Configs.ContainsKey("resources") == true ? Storage.Configs["resources"].Cast<ResourcesConfigModel>() : []);

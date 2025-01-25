@@ -13,8 +13,14 @@ public static class Storage
         Configs = LoadConfigs();
     }
 
-    public static string PathBaseAddresses => Path.Combine(AppContext.BaseDirectory, "Resources", "base");
-    public static string PathConfigs => Path.Combine(AppContext.BaseDirectory, "Resources", "configs");
+    public static Dictionary<GameVersion, string> ExePath => new()
+    {
+        { GameVersion.Crusader, Path.Combine(Settings.Default.GamePath, "Stronghold Crusader.exe") },
+        { GameVersion.Extreme, Path.Combine(Settings.Default.GamePath, "Stronghold_Crusader_Extreme.exe") },
+    };
+    public static string AivPath => Path.Combine(Settings.Default.GamePath, "aiv");
+    public static string BaseAddressesPath => Path.Combine(AppContext.BaseDirectory, "Resources", "base");
+    public static string ConfigsPath => Path.Combine(AppContext.BaseDirectory, "Resources", "configs");
     
     public static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> BaseAddresses { get; set; } = [];
     public static Dictionary<string, List<object>> Configs { get; set; } = [];
@@ -24,7 +30,7 @@ public static class Storage
     {
         var baseAddresses = new Dictionary<GameVersion, Dictionary<string, BaseAddressModel>>();
 
-        foreach (var filePath in Directory.GetFiles(PathBaseAddresses, "*.json"))
+        foreach (var filePath in Directory.GetFiles(BaseAddressesPath, "*.json"))
         {
             var gameVersion = Enum.Parse<GameVersion>(Path.GetFileNameWithoutExtension(filePath), true);
 
@@ -48,7 +54,7 @@ public static class Storage
             if (type == null || type == t)
             {
                 configs.TryAdd(t, []);
-                foreach (var filePath in Directory.GetFiles(Path.Combine(PathConfigs, t), "*.json"))
+                foreach (var filePath in Directory.GetFiles(Path.Combine(ConfigsPath, t), "*.json"))
                 {
                     var config = ReadJsonFileAsModel<T>(filePath, t);
                     if (config == null)
@@ -68,6 +74,8 @@ public static class Storage
         GetConfig<SkirmishTrailConfigModel>("skirmishtrail");
         GetConfig<UnitsConfigModel>("units");
         GetConfig<OthersConfigModel>("others");
+        if (type == null || type == "aiv")
+            configs.TryAdd("aiv", Directory.GetDirectories(Path.Combine(ConfigsPath, "aiv")).Select(x => new AivConfigModel() { Name = Path.GetFileNameWithoutExtension(x) }).Cast<object>().ToList());
 
         return configs;
     }
@@ -76,17 +84,17 @@ public static class Storage
     internal static void SaveConfigs()
     {
         foreach (var config in Configs["aic"].Cast<AicConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(PathConfigs, "aic", config.Name + ".json"), "aic");
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "aic", config.Name + ".json"), "aic");
         foreach (var config in Configs["buildings"].Cast<BuildingsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(PathConfigs, "buildings", config.Name + ".json"), "buildings");
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "buildings", config.Name + ".json"), "buildings");
         foreach (var config in Configs["resources"].Cast<ResourcesConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(PathConfigs, "resources", config.Name + ".json"), "resources");
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "resources", config.Name + ".json"), "resources");
         foreach (var config in Configs["skirmishtrail"].Cast<SkirmishTrailConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(PathConfigs, "skirmishtrail", config.Name + ".json"), "skirmishtrail");
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "skirmishtrail", config.Name + ".json"), "skirmishtrail");
         foreach (var config in Configs["units"].Cast<UnitsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(PathConfigs, "units", config.Name + ".json"), "units");
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "units", config.Name + ".json"), "units");
         foreach (var config in Configs["others"].Cast<OthersConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(PathConfigs, "others", config.Name + ".json"), "others");
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "others", config.Name + ".json"), "others");
     }
 
     /// ReadJsonFileAsModel

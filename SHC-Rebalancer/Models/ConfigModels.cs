@@ -12,6 +12,14 @@ public class AicConfigModel : IConfigModel
     public Dictionary<AI, AicModel> Values { get; set; } = [];
 }
 
+public class AivConfigModel : IConfigModel
+{
+    [JsonIgnore]
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+}
+
 public class BuildingsConfigModel : IConfigModel
 {
     [JsonIgnore]
