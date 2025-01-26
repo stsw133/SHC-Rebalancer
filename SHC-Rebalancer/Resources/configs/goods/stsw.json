@@ -1,0 +1,93 @@
+﻿{
+	"Description": "This is the stsw resource configuration. Less resources and gold.",
+	"Values":
+	{
+		"Normal":
+		{
+			"Gold": {
+				"Human": [2000, 1600, 1200, 800, 400],
+				"AI": [2000, 2000, 2000, 2000, 2000]
+			},
+			"Resources": {
+				"Wood": 100,
+				"Hop": 0,
+				"Stone": 40,
+				"Iron": 0,
+				"Pitch": 0,
+				"Wheat": 0,
+				"Bread": 60,
+				"Cheese": 0,
+				"Meat": 0,
+				"Apple": 0,
+				"Beer": 0,
+				"Flour": 0,
+				"Bows": 0,
+				"Crossbows": 0,
+				"Spears": 0,
+				"Pikes": 0,
+				"Maces": 0,
+				"Swords": 0,
+				"Leather": 0,
+				"Armor": 0
+			}
+		},
+		"Crusade":
+		{
+			"Gold": {
+				"Human": [1000, 800, 600, 400, 200],
+				"AI": [1000, 1000, 1000, 1000, 1000]
+			},
+			"Resources": {
+				"Wood": 60,
+				"Hop": 0,
+				"Stone": 60,
+				"Iron": 0,
+				"Pitch": 0,
+				"Wheat": 0,
+				"Bread": 60,
+				"Cheese": 0,
+				"Meat": 0,
+				"Apple": 0,
+				"Beer": 0,
+				"Flour": 0,
+				"Bows": 0,
+				"Crossbows": 0,
+				"Spears": 0,
+				"Pikes": 0,
+				"Maces": 0,
+				"Swords": 0,
+				"Leather": 0,
+				"Armor": 0
+			}
+		},
+		"Deathmatch":
+		{
+			"Gold": {
+				"Human": [10000, 8000, 6000, 4000, 2000],
+				"AI": [10000, 20000, 30000, 40000, 50000]
+			},
+			"Resources": {
+				"Wood": 120,
+				"Hop": 0,
+				"Stone": 120,
+				"Iron": 20,
+				"Pitch": 20,
+				"Wheat": 0,
+				"Bread": 120,
+				"Cheese": 0,
+				"Meat": 0,
+				"Apple": 0,
+				"Beer": 0,
+				"Flour": 0,
+				"Bows": 0,
+				"Crossbows": 0,
+				"Spears": 0,
+				"Pikes": 0,
+				"Maces": 0,
+				"Swords": 0,
+				"Leather": 0,
+				"Armor": 0
+			}
+		}
+	}
+}

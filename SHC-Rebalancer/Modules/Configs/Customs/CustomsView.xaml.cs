@@ -2,11 +2,11 @@
 
 namespace SHC_Rebalancer;
 /// <summary>
-/// Interaction logic for OthersView.xaml
+/// Interaction logic for CustomsView.xaml
 /// </summary>
-public partial class OthersView : UserControl
+public partial class CustomsView : UserControl
 {
-    public OthersView()
+    public CustomsView()
     {
         InitializeComponent();
     }

@@ -23,10 +23,19 @@
     <Setting Name="ConfigName_skirmishtrail" Type="System.String" Scope="User">
       <Value Profile="(Default)">stsw</Value>
     </Setting>
-    <Setting Name="ConfigName_others" Type="System.String" Scope="User">
+    <Setting Name="ConfigName_customs" Type="System.String" Scope="User">
       <Value Profile="(Default)">stsw</Value>
     </Setting>
     <Setting Name="ConfigName_aiv" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
+    </Setting>
+    <Setting Name="IncludeUcp" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ConfigName_troops" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stsw</Value>
+    </Setting>
+    <Setting Name="ConfigName_goods" Type="System.String" Scope="User">
       <Value Profile="(Default)">stsw</Value>
     </Setting>
   </Settings>

@@ -243,7 +243,7 @@
                 <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding RecruitGoldThreshold}"/>
 
                 <se:StswLabel Content="BlacksmithSetting:"/>
-                <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding BlacksmithSetting}">
+                <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:BlacksmithSetting}" SelectedValue="{Binding BlacksmithSetting}">
                     <se:StswComboBox.ItemTemplate>
                         <DataTemplate>
                             <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -252,7 +252,7 @@
                 </se:StswComboBox>
 
                 <se:StswLabel Content="FletcherSetting:"/>
-                <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding FletcherSetting}">
+                <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:FletcherSetting}" SelectedValue="{Binding FletcherSetting}">
                     <se:StswComboBox.ItemTemplate>
                         <DataTemplate>
                             <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -261,7 +261,7 @@
                 </se:StswComboBox>
 
                 <se:StswLabel Content="PoleturnerSetting:"/>
-                <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding PoleturnerSetting}">
+                <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:PoleturnerSetting}" SelectedValue="{Binding PoleturnerSetting}">
                     <se:StswComboBox.ItemTemplate>
                         <DataTemplate>
                             <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>

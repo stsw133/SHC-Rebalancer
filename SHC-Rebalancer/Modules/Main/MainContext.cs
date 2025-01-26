@@ -6,19 +6,25 @@ public class MainContext : StswObservableObject
 {
     public StswAsyncCommand AcceptTermsCommand { get; }
     public StswCommand ExitAppCommand { get; }
+
     public StswAsyncCommand ReloadAllCommand { get; }
     public StswAsyncCommand SaveAllCommand { get; }
     public StswCancellableAsyncCommand InstallCommand { get; }
     public StswAsyncCommand UninstallCommand { get; }
 
+    public StswAsyncCommand ShowUcpExplanationCommand { get; }
+
     public MainContext()
     {
         AcceptTermsCommand = new(AcceptTerms, () => Settings.Default.TermsAccepted);
         ExitAppCommand = new(App.Current.Shutdown);
+
         ReloadAllCommand = new(ReloadAll);
         SaveAllCommand = new(SaveAll);
         InstallCommand = new(Install, CanEditExe);
         UninstallCommand = new(Uninstall, CanEditExe);
+
+        ShowUcpExplanationCommand = new(ShowUcpExplanation);
     }
 
 
@@ -46,8 +52,20 @@ public class MainContext : StswObservableObject
 
             await Task.Delay(1000);
             Storage.BaseAddresses = Storage.LoadBaseAddresses();
-            Storage.Configs = Storage.LoadConfigs();
-            //TODO - refresh UI
+
+            foreach (var config in Storage.Configs)
+            {
+                var type = config.Key.ToLower();
+                var selectedRebalance = Settings.Default["ConfigName_" + type].ToString()!;
+
+                Storage.Configs[type] = Storage.LoadConfigs(type)[type].Cast<object>().ToList();
+                OnPropertyChanged("Configs_" + type);
+
+                if (Storage.Configs[type].Any(x => x.GetPropertyValue("Name")?.ToString() == selectedRebalance))
+                    Settings.Default["ConfigName_" + type] = selectedRebalance;
+                else if (Storage.Configs[type].Count > 0)
+                    Settings.Default["ConfigName_" + type] = Storage.Configs[type].First().GetPropertyValue("Name");
+            }
 
             InstallState = StswProgressState.Finished;
             InstallValue = 100;
@@ -92,9 +110,10 @@ public class MainContext : StswObservableObject
             Storage.SaveConfigs();
 
             InstallValue += 20;
-            await Task.Delay(400);
+            if (!Settings.Default.IncludeUcp)
+                await Task.Delay(400);
 
-            Backup.Restore();
+            //Backup.Restore();
             Backup.Make();
             Rebalancer.Rebalance();
 
@@ -137,16 +156,31 @@ public class MainContext : StswObservableObject
         }
     }
 
+    /// ShowUcpExplanation
+    public async Task ShowUcpExplanation()
+    {
+        try
+        {
+            await StswContentDialog.Show(new UcpExplanationContext(), "InfoContentDialog");
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+
 
 
     /// Configs
-    public ObservableCollection<AivConfigModel> Configs_aiv => new(Storage.Configs.ContainsKey("aiv") == true ? Storage.Configs["aiv"].Cast<AivConfigModel>() : []);
     public ObservableCollection<AicConfigModel> Configs_aic => new(Storage.Configs.ContainsKey("aic") == true ? Storage.Configs["aic"].Cast<AicConfigModel>() : []);
+    public ObservableCollection<AivConfigModel> Configs_aiv => new(Storage.Configs.ContainsKey("aiv") == true ? Storage.Configs["aiv"].Cast<AivConfigModel>() : []);
     public ObservableCollection<BuildingsConfigModel> Configs_buildings => new(Storage.Configs.ContainsKey("buildings") == true ? Storage.Configs["buildings"].Cast<BuildingsConfigModel>() : []);
+    public ObservableCollection<GoodsConfigModel> Configs_goods => new(Storage.Configs.ContainsKey("goods") == true ? Storage.Configs["goods"].Cast<GoodsConfigModel>() : []);
     public ObservableCollection<ResourcesConfigModel> Configs_resources => new(Storage.Configs.ContainsKey("resources") == true ? Storage.Configs["resources"].Cast<ResourcesConfigModel>() : []);
     public ObservableCollection<SkirmishTrailConfigModel> Configs_skirmishtrail => new(Storage.Configs.ContainsKey("skirmishtrail") == true ? Storage.Configs["skirmishtrail"].Cast<SkirmishTrailConfigModel>() : []);
+    public ObservableCollection<TroopsConfigModel> Configs_troops => new(Storage.Configs.ContainsKey("troops") == true ? Storage.Configs["troops"].Cast<TroopsConfigModel>() : []);
     public ObservableCollection<UnitsConfigModel> Configs_units => new(Storage.Configs.ContainsKey("units") == true ? Storage.Configs["units"].Cast<UnitsConfigModel>() : []);
-    public ObservableCollection<OthersConfigModel> Configs_others => new(Storage.Configs.ContainsKey("others") == true ? Storage.Configs["others"].Cast<OthersConfigModel>() : []);
+    public ObservableCollection<CustomsConfigModel> Configs_customs => new(Storage.Configs.ContainsKey("customs") == true ? Storage.Configs["customs"].Cast<CustomsConfigModel>() : []);
 
     /// InstallState
     public StswProgressState InstallState

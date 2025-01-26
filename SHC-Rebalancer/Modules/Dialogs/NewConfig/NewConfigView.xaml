@@ -20,7 +20,7 @@
                                   CommandParameter="{Binding Identifier, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}"
                                   IconData="{x:Static se:StswIcons.CloseBox}"
                                   IconFill="{DynamicResource StswColor.Negative}"/>
-                <se:StswLabel>
+                <se:StswLabel FontWeight="Bold">
                     <se:StswLabel.Style>
                         <Style TargetType="{x:Type se:StswLabel}">
                             <Style.Triggers>

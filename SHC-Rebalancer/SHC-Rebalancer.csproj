@@ -377,10 +377,12 @@
     <None Remove="Resources\configs\aiv\vanilla\wolf6.aiv" />
     <None Remove="Resources\configs\aiv\vanilla\wolf7.aiv" />
     <None Remove="Resources\configs\aiv\vanilla\wolf8.aiv" />
-    <None Remove="UCP\ucp.cfg" />
-    <None Remove="UCP\UnofficialCrusaderPatch.dll" />
-    <None Remove="UCP\UnofficialCrusaderPatchCLI.exe" />
-    <None Remove="UCP\UnofficialCrusaderPatchGUI.exe" />
+    <None Remove="Resources\configs\goods\stsw.json" />
+    <None Remove="Resources\configs\goods\vanilla.json" />
+    <None Remove="Resources\configs\troops\stsw.json" />
+    <None Remove="Resources\configs\troops\vanilla.json" />
+    <None Remove="Resources\ucp\crusader.txt" />
+    <None Remove="Resources\ucp\extreme.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1173,10 +1175,10 @@
     <EmbeddedResource Include="Resources\configs\buildings\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\others\stsw.json">
+    <EmbeddedResource Include="Resources\configs\customs\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\others\vanilla.json">
+    <EmbeddedResource Include="Resources\configs\customs\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\configs\resources\stsw.json">
@@ -1197,17 +1199,11 @@
     <EmbeddedResource Include="Resources\configs\units\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCP\ucp.cfg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <EmbeddedResource Include="Resources\ucp\crusader.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCP\UnofficialCrusaderPatch.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCP\UnofficialCrusaderPatchCLI.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCP\UnofficialCrusaderPatchGUI.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <EmbeddedResource Include="Resources\ucp\extreme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
@@ -1429,6 +1425,18 @@
     <Resource Include="Images\units\WarDog.png" />
     <Resource Include="Images\units\Wolf.png" />
     <Resource Include="Images\units\Woodcutter.png" />
+    <EmbeddedResource Include="Resources\configs\troops\stsw.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\configs\troops\vanilla.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\configs\goods\stsw.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\configs\goods\vanilla.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -1457,7 +1465,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UCP\resources\aiv\" />
+    <Folder Include="Modules\Configs\Aiv\" />
+    <Folder Include="Modules\Configs\Goods\" />
+    <Folder Include="Modules\Configs\Troops\" />
   </ItemGroup>
 
 </Project>

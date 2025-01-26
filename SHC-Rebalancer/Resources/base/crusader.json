@@ -5,10 +5,17 @@
 	{ "Key": "Buildings Housing",							"Address": "0x1BA438", "EndAddress": "0x1BA5EF", "Size": 4 },
 	{ "Key": "Buildings Cost",								"Address": "0x1C21D0", "EndAddress": "0x1C2A57", "Size": 4 },
 	
+	{ "Key": "Goods Resources",								"Address": "0x2151FC", "EndAddress": "0x215327", "Size": 4 },
+	{ "Key": "Goods Gold",									"Address": "0x216680", "EndAddress": "0x2166F7", "Size": 4 },
+	
 	{ "Key": "Resources Buy",								"Address": "0x2171C0", "EndAddress": "0x217227", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x217228", "EndAddress": "0x21728F", "Size": 4 },
 	
 	{ "Key": "SkirmishTrail Missions",						"Address": "0x73EC48", "EndAddress": "0x741947", "Size": 4 },
+	
+	{ "Key": "Troops LordType",								"Address": "0x086AC0", "EndAddress": "0x086ACF", "Size": 1 },
+	{ "Key": "Troops LordStrength",							"Address": "0x73EB58", "EndAddress": "0x73EBD7", "Size": 4 },
+	{ "Key": "Troops",										"Address": "0x215448", "EndAddress": "0x216617", "Size": 4 },
 	
 	{ "Key": "Units Speed",									"Address": "0x74E5A0", "EndAddress": "0x74E6DF", "Size": 4 },
 	{ "Key": "Units CanGoOnWall",							"Address": "0x74E6E0", "EndAddress": "0x74E81F", "Size": 4 },

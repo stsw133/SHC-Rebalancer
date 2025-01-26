@@ -1,14 +1,21 @@
 [
-	{ "Key": "AIC",											"Address": "007B66B4", "EndAddress": "0x7BD0B6", "Size": 4 },
+	{ "Key": "AIC",											"Address": "0x7B66B4", "EndAddress": "0x7BD0B6", "Size": 4 },
 	
 	{ "Key": "Buildings Health",							"Address": "0x1BA218", "EndAddress": "0x1BA3CF", "Size": 4 },
 	{ "Key": "Buildings Housing",							"Address": "0x1BA438", "EndAddress": "0x1BA5EF", "Size": 4 },
 	{ "Key": "Buildings Cost",								"Address": "0x1C21D0", "EndAddress": "0x1C2A57", "Size": 4 },
 	
+	{ "Key": "Goods Resources",								"Address": "0x21538C", "EndAddress": "0x2154B7", "Size": 4 },
+	{ "Key": "Goods Gold",									"Address": "0x216810", "EndAddress": "0x216887", "Size": 4 },
+	
 	{ "Key": "Resources Buy",								"Address": "0x217350", "EndAddress": "0x2173B7", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x2173B8", "EndAddress": "0x21741F", "Size": 4 },
 	
 	
+	
+	{ "Key": "Troops LordType",								"Address": "0x086CF0", "EndAddress": "0x086CFF", "Size": 1 },
+	{ "Key": "Troops LordStrength",							"Address": "0x73ECE8", "EndAddress": "0x73ED67", "Size": 4 },
+	{ "Key": "Troops",										"Address": "0x2155D8", "EndAddress": "0x2167A7", "Size": 4 },
 	
 	{ "Key": "Units Speed",									"Address": "0x74E730", "EndAddress": "0x74E86F", "Size": 4 },
 	{ "Key": "Units CanGoOnWall",							"Address": "0x74E870", "EndAddress": "0x74E9AF", "Size": 4 },

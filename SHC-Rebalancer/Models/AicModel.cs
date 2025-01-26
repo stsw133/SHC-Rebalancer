@@ -1,10 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 
 namespace SHC_Rebalancer;
-public class AicModel(AI key)
+public class AicModel
 {
     [JsonIgnore]
-    public AI Key { get; set; } = key;
+    public AI Key { get; set; }
 
     [JsonIgnore]
     public string Name => Key.ToString();
@@ -59,9 +59,9 @@ public class AicModel(AI key)
     public int? MaxBeer { get; set; }
     public int? MaxResourceVariance { get; set; }
     public int? RecruitGoldThreshold { get; set; }
-    public Resource? BlacksmithSetting { get; set; }
-    public Resource? FletcherSetting { get; set; }
-    public Resource? PoleturnerSetting { get; set; }
+    public BlacksmithSetting? BlacksmithSetting { get; set; }
+    public FletcherSetting? FletcherSetting { get; set; }
+    public PoleturnerSetting? PoleturnerSetting { get; set; }
     public Resource? SellResource01 { get; set; }
     public Resource? SellResource02 { get; set; }
     public Resource? SellResource03 { get; set; }

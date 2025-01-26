@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="SHC_Rebalancer.UcpExplanationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UcpExplanationContext}">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Images/background.jpg" Opacity="0.2"/>
+    </UserControl.Background>
+
+    <se:StswGroupBox MaxHeight="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"
+                     MaxWidth="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"
+                     Padding="0">
+        <se:StswGroupBox.Header>
+            <DockPanel Margin="3">
+                <se:StswSubButton DockPanel.Dock="Right"
+                                  Command="{x:Static se:StswCommands.CloseDialog}"
+                                  CommandParameter="{Binding Identifier, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}"
+                                  IconData="{x:Static se:StswIcons.CloseBox}"
+                                  IconFill="{DynamicResource StswColor.Negative}"/>
+                <se:StswLabel Content="UCP option explanation" FontWeight="Bold" IconData="{x:Static se:StswIcons.HelpCircle}" IconFill="{DynamicResource StswColor.Neutral}"/>
+            </DockPanel>
+        </se:StswGroupBox.Header>
+
+        <se:StswScrollView>
+            <se:StswText Margin="5" TextAlignment="Justify" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Run Text="UCP: include compatible config" TextDecorations="Underline" FontWeight="Medium"/>
+                <Run Text="is an option that installs a package of specific (and subjectively most important)"/>
+                <Run Text="features from UnofficialCrusaderPatch 2.15 that cannot be configured in Rebalancer."/>
+                <Run Text="This allows the Rebalancer to work without requiring (but also without being compatible with) the UnofficialCrusaderPatch."/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="Disabling" FontWeight="Bold"/>
+                <Run Text="this option allows the Rebalancer to function independently of the UnofficialCrusaderPatch, but this may result in incompatibility with certain features in the Rebalancer, such as AIC"/>
+                <Run Text="(unless you manually change the base addresses)"/>
+                <Run Text=". Therefore, use this approach cautiously."/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="Enabling" FontWeight="Bold"/>
+                <Run Text="this option ensures that the Rebalancer operates independently of settings in the UnofficialCrusaderPatch"/>
+                <Run Text="(and will most likely require not using other modification programs and installing only on a clean, unmodified game .exe file)."/>
+                <Run Text="It will also include the following options migrated from the UnofficialCrusaderPatch:"/>
+                <Run Text="&#x0a; • Fix ladder climbing destination bug"/>
+                <Run Text="&#x0a; • Fire ballistae shoot monks and tunnelers"/>
+                <Run Text="&#x0a; • No demolishing of inaccessible buildings"/>
+                <Run Text="&#x0a; • Fix reinforcement of defense troops"/>
+                <Run Text="&#x0a; • Disable ox tether spam"/>
+                <Run Text="&#x0a; • Buy enough wood"/>
+                <Run Text="&#x0a; • No limit for siege engines on towers"/>
+                <Run Text="&#x0a; • No AI target change during sieges"/>
+                <Run Text="&#x0a; • Improved AI repairs"/>
+                <Run Text="&#x0a; • Fix AI not using laddermen if they are onclosed"/>
+                <Run Text="&#x0a; • Reset lord animation after destroying buildings"/>
+                <Run Text="&#x0a; • Fix apple farm worker getting blocked"/>
+                <Run Text="&#x0a; • Fix tanners getting all the same cow"/>
+                <Run Text="&#x0a; • Fix fletcher pathing"/>
+                <Run Text="&#x0a; • Fix AI's crusader archers not lightning pitch"/>
+                <Run Text="&#x0a; • Fix bakers despawning"/>
+                <Run Text="&#x0a; • Fix despawning of digging units"/>
+                <Run Text="&#x0a; • Let the AI build houses smarter (true:10 | true:10 | true)"/>
+                <Run Text="&#x0a; • Set AIs initial time until they recruit by the AIC parameters (30)"/>
+                <Run Text="&#x0a; • Increase of the attacking troops limit of the AIs (400)"/>
+                <Run Text="&#x0a; • Improve attack waves"/>
+                <Run Text="&#x0a; • Disable sleeping mode for lack of resources"/>
+                <Run Text="&#x0a; • Deactivate demolishing for money of the AI lords (true | true | true)"/>
+                <Run Text="&#x0a; • Increase of the rate of additional attack troops (false | true: 3)"/>
+                <Run Text="&#x0a; • Increased armor of laddermen against ranged units"/>
+                <Run Text="&#x0a; • Arabic Swordsmen destroy walls faster"/>
+                <Run Text="&#x0a; • Restore engineer arabiach speech"/>
+                <Run Text="&#x0a; • Spearmen run by default instead of walking"/>
+                <Run Text="&#x0a; • Extend fireproof duration of extinguished buildings (6000)"/>
+                <Run Text="&#x0a; • Remove the magic bar in Extreme"/>
+                <Run Text="&#x0a; • Change the color of player 1 (4)"/>
+                <Run Text="&#x0a; • WASD-Keys and quicksaves"/>
+                <Run Text="&#x0a; • Healer heals casualties"/>
+                <Run Text="&#x0a; • Free trader post"/>
+                <Run Text="&#x0a; • No siege tent deselection"/>
+                <Run Text="&#x0a; • Always show planned moat"/>
+                <Run Text="&#x0a; • Extended game speed limits"/>
+                <Run Text="&#x0a; • Fix armory/marketplace weapon orders to match"/>
+                <Run Text="&#x0a; • Check more often for available paths"/>
+                <Run Text="&#x0a; • Set default multiplaye speed (60)"/>
+                <Run Text="&#x0a; • Shrink apple orchard's build size"/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="It will not, however, include other features, including the following, which cannot yet be configured in the Rebalancer:"/>
+                <Run Text="&#x0a; • Set AI attack target"/>
+                <Run Text="&#x0a; • Increased recruitment speed"/>
+                <Run Text="&#x0a; • Override the Set-up Identity menu adding new features"/>
+                <Run Text="&#x0a; • Activate Spectator-mode"/>
+                <Run Text="&#x0a; • Strongholdify"/>
+                <Run Text="&#x0a; • Manipulate random number generator"/>
+                <Run Text="&#x0a; • Spawn siege engines in the center of their tent"/>
+                <Run Text="&#x0a; • Rotate player keeps same as AI's"/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="WARNING!" FontWeight="Bold"/>
+                <LineBreak/>
+                <Run Text="Use the compatibility option cautiously."/>
+                <Run Text="If you are not using the UnofficialCrusaderPatch or any other modification applications besides the Rebalancer, enable this option."/>
+                <Run Text="If you are using modification applications and want to retain their settings, disable this option but be cautious about compatibility issues,"/>
+                <Run Text="e.g., avoid enabling the 'AIC' option in the Rebalancer or potentially some other features or custom address changes (to be verified)."/>
+                <Run Text="Alternatively, change the base addresses in the 'Resources/base' directory before installing the Rebalancer."/>
+            </se:StswText>
+        </se:StswScrollView>
+    </se:StswGroupBox>
+</UserControl>

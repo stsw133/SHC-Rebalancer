@@ -1,10 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 
 namespace SHC_Rebalancer;
-public class BuildingModel(Building key)
+public class BuildingModel
 {
     [JsonIgnore]
-    public Building Key { get; set; } = key;
+    public Building Key { get; set; }
 
     [JsonIgnore]
     public string Name => Key.ToString();

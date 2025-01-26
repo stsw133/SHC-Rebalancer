@@ -21,6 +21,36 @@ public enum AI
     Abbot,
 }
 
+public enum AIForTroops
+{
+    None,
+    Rat,
+    Snake,
+    Pig,
+    Wolf,
+    Saladin,
+    Caliph,
+    Sultan,
+    Richard,
+    Frederick,
+    Phillip,
+    Wazir,
+    Emir,
+    Nizar,
+    Sheriff,
+    Marshal,
+    Abbot,
+    PlayerEurop,
+    PlayerArab,
+}
+
+public enum BlacksmithSetting
+{
+    Maces = 21,
+    Swords = 22,
+    Both = -999,
+}
+
 public enum Building
 {
     None,
@@ -135,6 +165,13 @@ public enum Building
     Unknown109,
 }
 
+public enum FletcherSetting
+{
+    Bows = 17,
+    Crossbows = 18,
+    Both = -999,
+}
+
 public enum GameVersion
 {
     Crusader,
@@ -146,6 +183,19 @@ public enum HarassingUnit
     None,
     Catapult = 190,
     FireBallista = 358,
+}
+
+public enum LordType
+{
+    Europ,
+    Arab,
+}
+
+public enum PoleturnerSetting
+{
+    Spears = 19,
+    Pikes = 20,
+    Both = -999,
 }
 
 public enum Resource
@@ -176,7 +226,6 @@ public enum Resource
     Leather,
     Armor,
     Unknown25,
-    Both = -999,
 }
 
 public enum SkirmishDifficulty
@@ -210,6 +259,30 @@ public enum TargetChoice
     Balanced = 1,
     Closest = 2,
     Player = 4
+}
+
+public enum Troop
+{
+    EuropArcher,
+    Crossbowman,
+    Spearman,
+    Pikeman,
+    Maceman,
+    Swordsman,
+    Knight,
+    Ladderman,
+    Engineer,
+    Monk,
+    ArabArcher,
+    Slave,
+    Slinger,
+    Assassin,
+    HorseArcher,
+    ArabSwordsman,
+    Firethrower,
+    FireBallista,
+    Unknown18,
+    Unknown19,
 }
 
 public enum Unit

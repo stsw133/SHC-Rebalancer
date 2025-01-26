@@ -14,16 +14,19 @@
                 <se:StswButton Command="{Binding ReloadConfigsCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
                     <se:StswLabel Content="Reload configs" IconData="{x:Static se:StswIcons.Refresh}" IconFill="{DynamicResource StswColor.Neutral}"/>
                 </se:StswButton>
-                <se:StswButton Command="{Binding AddConfigCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                <se:StswButton Command="{Binding AddConfigCommand}" HorizontalContentAlignment="Left" Tag="!aiv" se:StswControl.IsBorderless="True">
                     <se:StswLabel Content="Add new config" IconData="{x:Static se:StswIcons.Plus}" IconFill="{DynamicResource StswColor.Positive}"/>
                 </se:StswButton>
-                <se:StswButton Command="{Binding RenameConfigCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                <se:StswButton Command="{Binding RenameConfigCommand}" HorizontalContentAlignment="Left" Tag="!aiv" se:StswControl.IsBorderless="True">
                     <se:StswLabel Content="Rename selected config" IconData="{x:Static se:StswIcons.Rename}" IconFill="{DynamicResource StswColor.Positive}"/>
                 </se:StswButton>
-                <se:StswButton Command="{Binding OpenConfigCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                <se:StswButton Command="{Binding OpenConfigCommand}" HorizontalContentAlignment="Left" Tag="!aiv" se:StswControl.IsBorderless="True">
                     <se:StswLabel Content="Open selected file" IconData="{x:Static se:StswIcons.FileEdit}" IconFill="{DynamicResource StswColor.Positive}"/>
                 </se:StswButton>
-                <se:StswButton Command="{Binding RemoveConfigCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
+                <se:StswButton Command="{Binding OpenDirectoryCommand}" HorizontalContentAlignment="Left" Tag="aiv" se:StswControl.IsBorderless="True">
+                    <se:StswLabel Content="Open selected directory" IconData="{x:Static se:StswIcons.FolderOpen}" IconFill="{DynamicResource StswColor.Structure}"/>
+                </se:StswButton>
+                <se:StswButton Command="{Binding RemoveConfigCommand}" HorizontalContentAlignment="Left" Tag="!aiv" se:StswControl.IsBorderless="True">
                     <se:StswLabel Content="Remove selected config" IconData="{x:Static se:StswIcons.TrashCan}" IconFill="{DynamicResource StswColor.Negative}"/>
                 </se:StswButton>
             </se:StswSubDrop>
@@ -33,8 +36,9 @@
     <se:StswComboBox.Style>
         <Style TargetType="{x:Type se:StswComboBox}" BasedOn="{StaticResource {x:Type se:StswComboBox}}">
             <Setter Property="DisplayMemberPath" Value="Name"/>
+            <Setter Property="IsEditable" Value="True"/>
             <Setter Property="Margin" Value="3"/>
-            <Setter Property="Placeholder" Value="Please select config to apply..."/>
+            <Setter Property="Placeholder" Value="&lt;none&gt;"/>
             <Setter Property="SelectedValuePath" Value="Name"/>
         </Style>
     </se:StswComboBox.Style>

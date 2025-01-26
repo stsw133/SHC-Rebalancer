@@ -110,12 +110,12 @@ namespace SHC_Rebalancer {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
-        public string ConfigName_others {
+        public string ConfigName_customs {
             get {
-                return ((string)(this["ConfigName_others"]));
+                return ((string)(this["ConfigName_customs"]));
             }
             set {
-                this["ConfigName_others"] = value;
+                this["ConfigName_customs"] = value;
             }
         }
         
@@ -128,6 +128,42 @@ namespace SHC_Rebalancer {
             }
             set {
                 this["ConfigName_aiv"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IncludeUcp {
+            get {
+                return ((bool)(this["IncludeUcp"]));
+            }
+            set {
+                this["IncludeUcp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_troops {
+            get {
+                return ((string)(this["ConfigName_troops"]));
+            }
+            set {
+                this["ConfigName_troops"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("stsw")]
+        public string ConfigName_goods {
+            get {
+                return ((string)(this["ConfigName_goods"]));
+            }
+            set {
+                this["ConfigName_goods"] = value;
             }
         }
     }

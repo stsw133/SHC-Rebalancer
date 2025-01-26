@@ -21,7 +21,15 @@ public static class Finder
     private static void FindPatternInFile(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, byte[] fileBytes, int filterSize, string filterValues)
     {
         var pattern = filterValues.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
-                                  .Select(x => x == "?" ? null : filterSize == 1 ? (object)Convert.ToByte(x) : Convert.ToInt32(x))
+                                  .Select(x =>
+                                  {
+                                      if (x.StartsWith("'") && x.EndsWith("'") && x.Length == 3)
+                                          return (byte)x[1];
+                                      else if (x == "?")
+                                          return null;
+                                      else
+                                          return filterSize == 1 ? (object)Convert.ToByte(x) : Convert.ToInt32(x);
+                                  })
                                   .ToList();
 
         var stepSize = filterSize == 1 ? 1 : 4;

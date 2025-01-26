@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace SHC_Rebalancer;
 /// <summary>
@@ -12,6 +13,7 @@ public partial class ConfigBox : StswComboBox
     public StswAsyncCommand AddConfigCommand { get; }
     public StswAsyncCommand RenameConfigCommand { get; }
     public StswAsyncCommand OpenConfigCommand { get; }
+    public StswAsyncCommand OpenDirectoryCommand { get; }
     public StswAsyncCommand RemoveConfigCommand { get; }
 
     public ConfigBox()
@@ -22,6 +24,7 @@ public partial class ConfigBox : StswComboBox
         AddConfigCommand = new(AddConfig);
         RenameConfigCommand = new(RenameConfig, () => Settings.Default[ConfigName]?.ToString() != null && Settings.Default[ConfigName]?.ToString() != "vanilla");
         OpenConfigCommand = new(OpenConfig, () => Settings.Default[ConfigName]?.ToString() != null);
+        OpenDirectoryCommand = new(OpenDirectory, () => Settings.Default[ConfigName]?.ToString() != null);
         RemoveConfigCommand = new(RemoveConfig, () => Settings.Default[ConfigName]?.ToString() != null && Settings.Default[ConfigName]?.ToString() != "vanilla");
     }
 
@@ -34,10 +37,22 @@ public partial class ConfigBox : StswComboBox
         {
             SubControls = new((IStswSubControl[])Resources["SubControls"]);
 
-            if (Type == "aiv")
-                SubControls?.RemoveAt(1);
-            else if (SubControls?[1] is FrameworkElement fe)
-                fe.DataContext = this;
+            if (SubControls?[1] is ItemsControl menuButton)
+            {
+                menuButton.DataContext = this;
+
+                var buttons = menuButton.Items.Cast<StswButton>().ToList();
+                for (var i = menuButton.Items.Count - 1; i >= 0; i--)
+                {
+                    if (buttons[i].Tag == null)
+                        continue;
+
+                    if (Type == "aiv" && buttons[i].Tag.ToString() != "aiv")
+                        menuButton.Items.Remove(buttons[i]);
+                    else if (Type != "aiv" && buttons[i].Tag.ToString() == "aiv")
+                        menuButton.Items.Remove(buttons[i]);
+                }
+            }
         }
     }
 
@@ -113,6 +128,24 @@ public partial class ConfigBox : StswComboBox
                 throw new IOException("File for selected config does not exist!");
 
             StswFn.OpenFile(filePath);
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+    
+    /// OpenDirectory
+    private async Task OpenDirectory()
+    {
+        try
+        {
+            var directoryPath = Path.Combine(Storage.ConfigsPath, Type, Settings.Default[ConfigName].ToString() ?? string.Empty);
+
+            if (!Directory.Exists(directoryPath))
+                throw new IOException("Directory for selected config does not exist!");
+
+            StswFn.OpenFile(directoryPath);
         }
         catch (Exception ex)
         {

@@ -1,0 +1,382 @@
+﻿{
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"Values":
+	{
+		"Rat":
+		{
+			"Lord": {
+				"Strength": 0.5,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"Spearman": 24,
+				},
+				"Crusade": {
+					"EuropArcher": 80,
+					"Spearman": 120,
+				},
+				"Deathmatch": {
+					"Spearman": 24,
+				}
+			}
+		},
+		"Snake":
+		{
+			"Lord": {
+				"Strength": 0.7,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"EuropArcher": 12,
+					"Slinger": 12,
+				},
+				"Crusade": {
+					"EuropArcher": 80,
+					"Spearman": 80,
+					"Slinger": 80,
+				},
+				"Deathmatch": {
+					"EuropArcher": 12,
+					"Slinger": 12,
+				}
+			}
+		},
+		"Pig":
+		{
+			"Lord": {
+				"Strength": 1.0,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"Maceman": 24,
+				},
+				"Crusade": {
+					"Maceman": 80,
+					"Crossbowman": 40,
+				},
+				"Deathmatch": {
+					"Maceman": 24,
+				}
+			}
+		},
+		"Wolf":
+		{
+			"Lord": {
+				"Strength": 1.5,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"Crossbowman": 16,
+					"Swordsman": 8,
+				},
+				"Crusade": {
+					"EuropArcher": 40,
+					"Crossbowman": 20,
+					"Pikeman": 12,
+					"Swordsman": 20,
+				},
+				"Deathmatch": {
+					"Crossbowman": 16,
+					"Swordsman": 8,
+				}
+			}
+		},
+		"Saladin":
+		{
+			"Lord": {
+				"Strength": 1.4,
+				"Type": "Arab"
+			},
+			"Troops": {
+				"Normal": {
+					"ArabArcher": 16,
+					"ArabSwordsman": 8,
+				},
+				"Crusade": {
+					"ArabArcher": 100,
+					"ArabSwordsman": 20,
+				},
+				"Deathmatch": {
+					"ArabArcher": 16,
+					"ArabSwordsman": 8,
+				}
+			}
+		},
+		"Caliph":
+		{
+			"Lord": {
+				"Strength": 1.0,
+				"Type": "Arab"
+			},
+			"Troops": {
+				"Normal": {
+					"ArabArcher": 12,
+					"ArabSwordsman": 8,
+					"FireThrower": 4,
+				},
+				"Crusade": {
+					"ArabArcher": 100,
+					"ArabSwordsman": 16,
+					"FireThrower": 16,
+				},
+				"Deathmatch": {
+					"ArabArcher": 12,
+					"ArabSwordsman": 8,
+					"FireThrower": 4,
+				}
+			}
+		},
+		"Sultan":
+		{
+			"Lord": {
+				"Strength": 0.9,
+				"Type": "Arab"
+			},
+			"Troops": {
+				"Normal": {
+					"Slinger": 16,
+					"FireThrower": 8,
+				},
+				"Crusade": {
+					"Slinger": 112,
+					"ArabSwordsman": 40,
+					"FireThrower": 16,
+				},
+				"Deathmatch": {
+					"Slinger": 16,
+					"FireThrower": 8,
+				}
+			}
+		},
+		"Richard":
+		{
+			"Lord": {
+				"Strength": 1.4,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"EuropArcher": 12,
+					"Swordsman": 12,
+				},
+				"Crusade": {
+					"EuropArcher": 80,
+					"Swordsman": 20,
+					"Knight": 8,
+				},
+				"Deathmatch": {
+					"EuropArcher": 12,
+					"Swordsman": 12,
+				}
+			}
+		},
+		"Frederick":
+		{
+			"Lord": {
+				"Strength": 1.2,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"Crossbowman": 12,
+					"Swordsman": 12,
+				},
+				"Crusade": {
+					"EuropArcher": 40,
+					"Crossbowman": 40,
+					"Swordsman": 20,
+				},
+				"Deathmatch": {
+					"Crossbowman": 12,
+					"Swordsman": 12,
+				}
+			}
+		},
+		"Phillip":
+		{
+			"Lord": {
+				"Strength": 0.8,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"EuropArcher": 16,
+					"Knight": 8,
+				},
+				"Crusade": {
+					"EuropArcher": 60,
+					"Knight": 40,
+				},
+				"Deathmatch": {
+					"EuropArcher": 16,
+					"Knight": 8,
+				}
+			}
+		},
+		"Wazir":
+		{
+			"Lord": {
+				"Strength": 1.1,
+				"Type": "Arab"
+			},
+			"Troops": {
+				"Normal": {
+					"ArabArcher": 20,
+					"FireThrower": 4,
+				},
+				"Crusade": {
+					"ArabArcher": 100,
+					"ArabSwordsman": 12,
+					"FireThrower": 20,
+				},
+				"Deathmatch": {
+					"ArabArcher": 20,
+					"FireThrower": 4,
+				}
+			}
+		},
+		"Emir":
+		{
+			"Lord": {
+				"Strength": 1.0,
+				"Type": "Arab"
+			},
+			"Troops": {
+				"Normal": {
+					"EuropArcher": 8,
+					"ArabArcher": 8,
+					"ArabSwordsman": 8,
+				},
+				"Crusade": {
+					"EuropArcher": 64,
+					"ArabArcher": 32,
+					"ArabSwordsman": 16,
+				},
+				"Deathmatch": {
+					"EuropArcher": 8,
+					"ArabArcher": 8,
+					"ArabSwordsman": 8,
+				}
+			}
+		},
+		"Nizar":
+		{
+			"Lord": {
+				"Strength": 1.3,
+				"Type": "Arab"
+			},
+			"Troops": {
+				"Normal": {
+					"ArabArcher": 16,
+					"Assassin": 8,
+				},
+				"Crusade": {
+					"ArabArcher": 80,
+					"Assassin": 40,
+				},
+				"Deathmatch": {
+					"ArabArcher": 16,
+					"Assassin": 8,
+				}
+			}
+		},
+		"Sheriff":
+		{
+			"Lord": {
+				"Strength": 1.1,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"Crossbowman": 8,
+					"Pikeman": 12,
+					"FireThrower": 4,
+				},
+				"Crusade": {
+					"Crossbowman": 60,
+					"Pikeman": 60,
+					"FireThrower": 20,
+				},
+				"Deathmatch": {
+					"Crossbowman": 8,
+					"Pikeman": 12,
+					"FireThrower": 4,
+				}
+			}
+		},
+		"Marshal":
+		{
+			"Lord": {
+				"Strength": 1.1,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"EuropArcher": 16,
+					"Knight": 12,
+				},
+				"Crusade": {
+					"EuropArcher": 100,
+					"Knight": 40,
+				},
+				"Deathmatch": {
+					"EuropArcher": 16,
+					"Knight": 12,
+				}
+			}
+		},
+		"Abbot":
+		{
+			"Lord": {
+				"Strength": 1.2,
+				"Type": "Europ"
+			},
+			"Troops": {
+				"Normal": {
+					"Monk": 24,
+				},
+				"Crusade": {
+					"EuropArcher": 80,
+					"Monk": 48,
+				},
+				"Deathmatch": {
+					"Monk": 24,
+				}
+			}
+		},
+		"PlayerEurop":
+		{
+			"Troops": {
+				"Normal": { },
+				"Crusade": {
+					"EuropArcher": 30,
+					"Crossbowman": 12,
+					"Pikeman": 3,
+				},
+				"Deathmatch": {
+					"EuropArcher": 6,
+					"Pikeman": 3,
+				}
+			}
+		},
+		"PlayerArab":
+		{
+			"Troops": {
+				"Normal": { },
+				"Crusade": {
+					"ArabArcher": 25,
+					"ArabSwordsman": 12,
+					"FireThrower": 3,
+				},
+				"Deathmatch": {
+					"ArabArcher": 5,
+					"ArabSwordsman": 3,
+				}
+			}
+		},
+	}
+}

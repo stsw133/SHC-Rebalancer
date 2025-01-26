@@ -3,64 +3,65 @@ using System.Text.Json.Serialization;
 
 namespace SHC_Rebalancer;
 
-public class AicConfigModel : IConfigModel
+/// ConfigModel
+public class ConfigModel : IConfigModel
 {
     [JsonIgnore]
     public string Name { get; set; } = string.Empty;
 
     public string? Description { get; set; }
+}
+
+/// AicConfigModel
+public class AicConfigModel : ConfigModel
+{
     public Dictionary<AI, AicModel> Values { get; set; } = [];
 }
 
-public class AivConfigModel : IConfigModel
+/// AivConfigModel
+public class AivConfigModel : ConfigModel
 {
-    [JsonIgnore]
-    public string Name { get; set; } = string.Empty;
 
-    public string? Description { get; set; }
 }
 
-public class BuildingsConfigModel : IConfigModel
+/// BuildingsConfigModel
+public class BuildingsConfigModel : ConfigModel
 {
-    [JsonIgnore]
-    public string Name { get; set; } = string.Empty;
-
-    public string? Description { get; set; }
     public Dictionary<Building, BuildingModel> Values { get; set; } = [];
 }
 
-public class OthersConfigModel : IConfigModel
+/// ResourcesConfigModel
+public class ResourcesConfigModel : ConfigModel
 {
-    [JsonIgnore]
-    public string Name { get; set; } = string.Empty;
-
-    public string? Description { get; set; }
-    public ObservableCollection<OtherValueModel> Values { get; set; } = [];
-}
-
-public class ResourcesConfigModel : IConfigModel
-{
-    [JsonIgnore]
-    public string Name { get; set; } = string.Empty;
-
-    public string? Description { get; set; }
     public Dictionary<Resource, ResourceModel> Values { get; set; } = [];
 }
 
-public class SkirmishTrailConfigModel : IConfigModel
+/// ConfigModel
+public class GoodsConfigModel : ConfigModel
 {
-    [JsonIgnore]
-    public string Name { get; set; } = string.Empty;
+    public Dictionary<SkirmishMode, GoodsModel> Values { get; set; } = [];
+}
 
-    public string? Description { get; set; }
+/// SkirmishTrailConfigModel
+public class SkirmishTrailConfigModel : ConfigModel
+{
     public Dictionary<int, SkirmishTrailModel> Values { get; set; } = [];
 }
 
-public class UnitsConfigModel : IConfigModel
+/// TroopsConfigModel
+public class TroopsConfigModel : ConfigModel
 {
-    [JsonIgnore]
-    public string Name { get; set; } = string.Empty;
+    public Dictionary<AIForTroops, TroopsModel> Values { get; set; } = [];
+}
 
-    public string? Description { get; set; }
+/// UnitsConfigModel
+public class UnitsConfigModel : ConfigModel
+{
     public Dictionary<Unit, UnitModel> Values { get; set; } = [];
+}
+
+/// CustomsConfigModel
+public class CustomsConfigModel : ConfigModel
+{
+    public ObservableCollection<OtherValueModel> Values { get; set; } = [];
 }

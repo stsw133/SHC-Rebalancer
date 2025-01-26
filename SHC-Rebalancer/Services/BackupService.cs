@@ -67,11 +67,13 @@ public static class Backup
             }
         }
 
-        using (var zipArchive = ZipFile.Open(Path.Combine(Storage.AivPath, "aiv.zip.stsw_backup"), ZipArchiveMode.Create))
-        {
-            foreach (var file in filesToArchive)
-                zipArchive.CreateEntryFromFile(file, Path.GetFileName(file));
-        }
+        var backupPath = Path.Combine(Storage.AivPath, "aiv.zip.stsw_backup");
+        if (!File.Exists(backupPath))
+            using (var zipArchive = ZipFile.Open(backupPath, ZipArchiveMode.Create))
+            {
+                foreach (var file in filesToArchive)
+                    zipArchive.CreateEntryFromFile(file, Path.GetFileName(file));
+            }
     }
 
     /// RestoreZipForAIV
