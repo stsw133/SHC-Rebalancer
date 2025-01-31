@@ -1,6 +1,6 @@
 {
 	"Description": "This is the vanilla resource configuration.",
-	"Values":
+	"Goods":
 	{
 		"Normal":
 		{
@@ -18,7 +18,7 @@
 				"Bread": 60,
 				"Cheese": 0,
 				"Meat": 0,
-				"Apple": 0,
+				"Fruit": 0,
 				"Beer": 0,
 				"Flour": 0,
 				"Bows": 0,
@@ -47,7 +47,7 @@
 				"Bread": 60,
 				"Cheese": 0,
 				"Meat": 0,
-				"Apple": 0,
+				"Fruit": 0,
 				"Beer": 0,
 				"Flour": 0,
 				"Bows": 0,
@@ -76,7 +76,7 @@
 				"Bread": 200,
 				"Cheese": 0,
 				"Meat": 0,
-				"Apple": 0,
+				"Fruit": 0,
 				"Beer": 10,
 				"Flour": 0,
 				"Bows": 0,

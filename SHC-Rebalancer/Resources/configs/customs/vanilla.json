@@ -2,6 +2,15 @@
 	"Description": "Default config for Stronghold Crusader 1.41 UCP",
 	"Values":
 	[
+		{ "Key": "Spearman always run",							"Size": 1, "Value": [116, 19], "Address": "0x15E07E", "Version": "Crusader" },
+		{ "Key": "Spearman always run",							"Size": 1, "Value": [116, 19], "Address": "0x15E49E", "Version": "Extreme" },
+		
+		{ "Key": "Maceman always run",							"Size": 1, "Value": [116, 19], "Address": "0x160B7A", "Version": "Crusader" },
+		{ "Key": "Maceman always run",							"Size": 1, "Value": [116, 19], "Address": "0x160F9A", "Version": "Extreme" },
+		
+		{ "Key": "Monks always run",							"Size": 1, "Value": [116, 19], "Address": "0x1678D9", "Version": "Crusader" },
+		{ "Key": "Monks always run",							"Size": 1, "Value": [116, 19], "Address": "0x167CF9", "Version": "Extreme" },
+		
 		{ "Key": "Skirmish delivery % bonus",					"Size": 1, "Value": 50 },
 		
 		{ "Key": "Resources delivery Cheese",					"Size": 1, "Value": 3 },

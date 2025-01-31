@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -24,7 +25,7 @@ public static class Storage
     public static string UcpPath => Path.Combine(AppContext.BaseDirectory, "Resources", "ucp");
     
     public static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> BaseAddresses { get; set; } = [];
-    public static Dictionary<string, List<object>> Configs { get; set; } = [];
+    public static Dictionary<string, ObservableCollection<object>> Configs { get; set; } = [];
 
     /// LoadBaseAddresses
     internal static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> LoadBaseAddresses()
@@ -46,35 +47,37 @@ public static class Storage
     }
 
     /// LoadConfigs
-    internal static Dictionary<string, List<object>> LoadConfigs(string? type = null)
+    internal static Dictionary<string, ObservableCollection<object>> LoadConfigs(string? type = null, string? name = null)
     {
-        var configs = new Dictionary<string, List<object>>();
+        var configs = new Dictionary<string, ObservableCollection<object>>();
 
         void GetConfig<T>(string t)
         {
-            if (type == null || type == t)
+            if (type != null && type != t)
+                return;
+
+            var directoryPath = Path.Combine(ConfigsPath, t);
+            if (!Directory.Exists(directoryPath))
+                return;
+
+            configs.TryAdd(t, []);
+            foreach (var filePath in Directory.GetFiles(Path.Combine(ConfigsPath, t), "*.json"))
             {
-                var directoryPath = Path.Combine(ConfigsPath, t);
-                if (!Directory.Exists(directoryPath))
-                    return;
+                var fileName = Path.GetFileNameWithoutExtension(filePath);
+                if (!string.IsNullOrEmpty(name) && name != fileName)
+                    continue;
 
-                configs.TryAdd(t, []);
-                foreach (var filePath in Directory.GetFiles(Path.Combine(ConfigsPath, t), "*.json"))
-                {
-                    var config = ReadJsonFileAsModel<T>(filePath, t);
-                    if (config == null)
-                        continue;
+                var config = ReadJsonFileAsModel<T>(filePath, t);
+                if (config == null)
+                    continue;
 
-                    var name = Path.GetFileNameWithoutExtension(filePath);
-                    config.GetType().GetProperty("Name")?.SetValue(config, name);
-
-                    configs[t].Add(config);
-                }
+                config.GetType().GetProperty(nameof(ConfigModel.Name))?.SetValue(config, fileName);
+                configs[t].Add(config);
             }
         }
 
         if (type == null || type == "aiv")
-            configs.TryAdd("aiv", Directory.GetDirectories(Path.Combine(ConfigsPath, "aiv")).Select(x => new AivConfigModel() { Name = Path.GetFileNameWithoutExtension(x) }).Cast<object>().ToList());
+            configs.TryAdd("aiv", new(Directory.GetDirectories(Path.Combine(ConfigsPath, "aiv")).Select(x => new AivConfigModel() { Name = Path.GetFileNameWithoutExtension(x) }).Cast<object>()));
         GetConfig<AicConfigModel>("aic");
         GetConfig<BuildingsConfigModel>("buildings");
         GetConfig<GoodsConfigModel>("goods");
@@ -132,6 +135,10 @@ public static class Storage
             jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Resource>());
             jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
         }
+        else if (type == "buildings")
+        {
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
+        }
         if (!type.In("goods", "troops"))
         {
             jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<SkirmishMode>());
@@ -167,6 +174,10 @@ public static class Storage
         {
             jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Building>());
             jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Resource>());
+            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
+        }
+        else if (type == "buildings")
+        {
             jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
         }
         if (!type.In("goods", "troops"))

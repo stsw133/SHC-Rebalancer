@@ -58,7 +58,6 @@
     <None Remove="Images\buildings\TunnelersGuild.png" />
     <None Remove="Resources\base\crusader.json" />
     <None Remove="Resources\base\extreme.json" />
-    <None Remove="Images\resources\apple.png" />
     <None Remove="Images\resources\armor.png" />
     <None Remove="Images\resources\beer.png" />
     <None Remove="Images\resources\bread.png" />
@@ -1208,7 +1207,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="StswExpress" Version="0.14.1" />
+    <PackageReference Include="StswExpress" Version="0.15.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1332,7 +1331,7 @@
     <Resource Include="Images\buildings\Stables.png" />
     <Resource Include="Images\buildings\TunnelersGuild.png" />
     <Resource Include="Images\icon.ico" />
-    <Resource Include="Images\resources\Apple.png" />
+    <Resource Include="Images\resources\Fruit.png" />
     <Resource Include="Images\resources\Armor.png" />
     <Resource Include="Images\resources\Beer.png" />
     <Resource Include="Images\resources\Bows.png" />
@@ -1462,12 +1461,6 @@
     <Page Update="Modules\Finder\FinderView.xaml">
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Modules\Configs\Aiv\" />
-    <Folder Include="Modules\Configs\Goods\" />
-    <Folder Include="Modules\Configs\Troops\" />
   </ItemGroup>
 
 </Project>

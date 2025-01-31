@@ -1,6 +1,6 @@
 ﻿{
 	"Description": "This is the stsw resource configuration. Less resources and gold.",
-	"Values":
+	"Goods":
 	{
 		"Normal":
 		{
@@ -18,7 +18,7 @@
 				"Bread": 60,
 				"Cheese": 0,
 				"Meat": 0,
-				"Apple": 0,
+				"Fruit": 0,
 				"Beer": 0,
 				"Flour": 0,
 				"Bows": 0,
@@ -47,7 +47,7 @@
 				"Bread": 60,
 				"Cheese": 0,
 				"Meat": 0,
-				"Apple": 0,
+				"Fruit": 0,
 				"Beer": 0,
 				"Flour": 0,
 				"Bows": 0,
@@ -76,7 +76,7 @@
 				"Bread": 120,
 				"Cheese": 0,
 				"Meat": 0,
-				"Apple": 0,
+				"Fruit": 0,
 				"Beer": 0,
 				"Flour": 0,
 				"Bows": 0,

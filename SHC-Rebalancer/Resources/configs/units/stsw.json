@@ -1,6 +1,6 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
-	"Values": {
+	"Units": {
 		"EuropArcher": {
 			"Speed": 1,
 			"CanGoOnWall": true,
@@ -86,7 +86,7 @@
 			"Health": 30000,
 			"DamageFromBow": 200,
 			"DamageFromCrossbow": 2500,
-			"DamageFromSling": 150,
+			"DamageFromSling": 200,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
@@ -103,7 +103,7 @@
 			"Health": 25000,
 			"DamageFromBow": 200,
 			"DamageFromCrossbow": 2500,
-			"DamageFromSling": 150,
+			"DamageFromSling": 200,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
@@ -236,7 +236,7 @@
 			"Health": 22500,
 			"DamageFromBow": 300,
 			"DamageFromCrossbow": 3500,
-			"DamageFromSling": 200,
+			"DamageFromSling": 250,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
@@ -277,7 +277,7 @@
 			"Health": 7500,
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1250,
-			"DamageFromSling": 500,
+			"DamageFromSling": 750,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -301,13 +301,13 @@
 			"Health": 15000,
 			"DamageFromBow": 3000,
 			"DamageFromCrossbow": 6000,
-			"DamageFromSling": 500,
+			"DamageFromSling": 300,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50
 		},
 		"WarDog": {
-			"Speed": 2,
+			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 7500,
@@ -337,7 +337,7 @@
 			"Health": 20000,
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 300,
+			"DamageFromSling": 350,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -349,19 +349,19 @@
 			"Health": 60000,
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 300,
+			"DamageFromSling": 350,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
 		},
 		"SiegeTower": {
-			"Speed": 4,
+			"Speed": 6,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
 			"Health": 240000,
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 300,
+			"DamageFromSling": 350,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -373,7 +373,7 @@
 			"Health": 240000,
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 300,
+			"DamageFromSling": 350,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -385,7 +385,7 @@
 			"Health": 10000,
 			"DamageFromBow": 100,
 			"DamageFromCrossbow": 200,
-			"DamageFromSling": 60,
+			"DamageFromSling": 70,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -397,7 +397,7 @@
 			"Health": 20000,
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
-			"DamageFromSling": 300,
+			"DamageFromSling": 350,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -409,7 +409,7 @@
 			"Health": 20000,
 			"DamageFromBow": 2500,
 			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 1500,
+			"DamageFromSling": 1750,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -421,7 +421,7 @@
 			"Health": 20000,
 			"DamageFromBow": 2500,
 			"DamageFromCrossbow": 5000,
-			"DamageFromSling": 1500,
+			"DamageFromSling": 1750,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2

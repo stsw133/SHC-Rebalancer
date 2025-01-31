@@ -40,6 +40,7 @@ public enum AIForTroops
     Sheriff,
     Marshal,
     Abbot,
+    Unknown17,
     PlayerEurop,
     PlayerArab,
 }
@@ -213,7 +214,7 @@ public enum Resource
     Bread,
     Cheese,
     Meat,
-    Apple,
+    Fruit,
     Beer,
     Unknown15,
     Flour,

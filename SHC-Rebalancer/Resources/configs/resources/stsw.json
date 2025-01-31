@@ -1,6 +1,6 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
-	"Values": {
+	"Prices": {
 		"Wood": {
 			"Buy": 20,
 			"Sell": 5
@@ -37,7 +37,7 @@
 			"Buy": 40,
 			"Sell": 10
 		},
-		"Apple": {
+		"Fruit": {
 			"Buy": 40,
 			"Sell": 10
 		},

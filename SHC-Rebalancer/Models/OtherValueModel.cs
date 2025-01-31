@@ -7,4 +7,5 @@ public class OtherValueModel
     public int? Size { get; set; }
     public object? Value { get; set; }
     public GameVersion? Version { get; set; }
+    public bool IsEnabled { get; set; } = true;
 }

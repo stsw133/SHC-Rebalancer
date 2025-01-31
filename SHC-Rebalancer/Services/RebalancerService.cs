@@ -29,23 +29,23 @@ internal static class Rebalancer
                 if (Storage.Configs["aic"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_aic) is AicConfigModel aicConfig)
                     ProcessAicConfig(exePath.Key, aicConfig);
 
-                if (Storage.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_buildings) is BuildingsConfigModel buildingsConfig)
-                    ProcessBuildingsConfig(exePath.Key, buildingsConfig);
-                
                 if (Storage.Configs["goods"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_goods) is GoodsConfigModel goodsConfig)
                     ProcessGoodsConfig(exePath.Key, goodsConfig);
-
-                if (Storage.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_resources) is ResourcesConfigModel resourcesConfig)
-                    ProcessResourcesConfig(exePath.Key, resourcesConfig);
-
-                if (Storage.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_skirmishtrail) is SkirmishTrailConfigModel skirmishtrailModel)
-                    ProcessSkirmishTrailConfig(exePath.Key, skirmishtrailModel);
 
                 if (Storage.Configs["troops"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_troops) is TroopsConfigModel troopsConfig)
                     ProcessTroopsConfig(exePath.Key, troopsConfig);
 
+                if (Storage.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_buildings) is BuildingsConfigModel buildingsConfig)
+                    ProcessBuildingsConfig(exePath.Key, buildingsConfig);
+                
+                if (Storage.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_resources) is ResourcesConfigModel resourcesConfig)
+                    ProcessResourcesConfig(exePath.Key, resourcesConfig);
+
                 if (Storage.Configs["units"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_units) is UnitsConfigModel unitsConfig)
                     ProcessUnitsConfig(exePath.Key, unitsConfig);
+
+                if (Storage.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_skirmishtrail) is SkirmishTrailConfigModel skirmishtrailModel)
+                    ProcessSkirmishTrailConfig(exePath.Key, skirmishtrailModel);
 
                 if (Storage.Configs["customs"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_customs) is CustomsConfigModel customsConfig)
                     ProcessCustomsConfig(exePath.Key, customsConfig);
@@ -86,17 +86,11 @@ internal static class Rebalancer
                 .OrderBy(p => p.MetadataToken)
                 .ToList();
 
-            foreach (var model in config.Values.Where(x => x.Key.Between(AI.Rat, AI.Abbot)))
+            foreach (var model in config.AIs.Where(x => x.Key.Between(AI.Rat, AI.Abbot)))
             {
                 var address = Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key - 1) * 1697);
                 for (var i = 0; i < properties.Count; i++)
-                {
-                    var propertyValue = properties[i].GetValue(model.Value);
-                    if (propertyValue == null) continue;
-
-                    WriteIfDifferent(address, propertyValue, baseAddress.Size, $"{model.Key} {properties[i].Name}");
-                    address += 10;
-                }
+                    WriteIfDifferent(address + i*10, properties[i].GetValue(model.Value), baseAddress.Size, $"{model.Key} {properties[i].Name}");
             }
         }
     }
@@ -123,18 +117,35 @@ internal static class Rebalancer
     {
         /// health
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Health", out var baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.Health.HasValue))
+            foreach (var model in config.Buildings.Where(x => x.Value.Health.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Building>(baseAddress, model.Key.ToString()), model.Value.Health, baseAddress.Size, $"{model.Key} Health");
 
         /// housing
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Housing", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.Housing.HasValue))
+            foreach (var model in config.Buildings.Where(x => x.Value.Housing.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Building>(baseAddress, model.Key.ToString()), model.Value.Housing, baseAddress.Size, $"{model.Key} Housing");
 
         /// cost
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Cost", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.Cost?.Length > 0))
+            foreach (var model in config.Buildings.Where(x => x.Value.Cost?.Length > 0))
                 WriteIfDifferent(GetAddressByEnum<Building>(baseAddress, model.Key.ToString(), model.Value.Cost!.Length), model.Value.Cost, model.Value.Cost.Length, $"{model.Key} Cost");
+
+        /// outposts
+        if (Storage.BaseAddresses[gameVersion].TryGetValue("Outposts", out baseAddress))
+        {
+            var properties = typeof(OutpostModel)
+                .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(x => x.GetCustomAttribute(typeof(JsonIgnoreAttribute)) == null)
+                .OrderBy(p => p.MetadataToken)
+                .ToList();
+
+            foreach (var model in config.Outposts.Where(x => x.Key.Between(1, 16)))
+            {
+                var address = Convert.ToInt32(baseAddress.Address, 16) + ((model.Key - 1) * 52);
+                for (var i = 0; i < properties.Count; i++)
+                    WriteIfDifferent(address + i*4, properties[i].GetValue(model.Value), baseAddress.Size, $"Outpost {model.Key} {properties[i].Name}");
+            }
+        }
     }
     
     /// ProcessGoodsConfig
@@ -143,7 +154,7 @@ internal static class Rebalancer
         /// resources
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Goods Resources", out var baseAddress))
         {
-            foreach (var mode in config.Values.Where(x => x.Value.Resources != null))
+            foreach (var mode in config.Goods.Where(x => x.Value.Resources != null))
             {
                 var modeAddress = (((int)mode.Key) - 1) * (Enum.GetValues<Resource>().Length - 1) * 4;
                 foreach (var model in mode.Value.Resources!)
@@ -154,7 +165,7 @@ internal static class Rebalancer
         /// gold
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Goods Gold", out baseAddress))
         {
-            foreach (var mode in config.Values.Where(x => x.Value.Gold != null))
+            foreach (var mode in config.Goods.Where(x => x.Value.Gold != null))
             {
                 var modeAddress = Convert.ToInt32(baseAddress.Address, 16) + (((int)mode.Key) - 1) * 40;
 
@@ -174,12 +185,12 @@ internal static class Rebalancer
     {
         /// buy
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Resources Buy", out var baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.Buy.HasValue))
+            foreach (var model in config.Prices.Where(x => x.Value.Buy.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Resource>(baseAddress, model.Key.ToString()), model.Value.Buy, baseAddress.Size, $"{model.Key} Buy");
 
         /// sell
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Resources Sell", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.Sell.HasValue))
+            foreach (var model in config.Prices.Where(x => x.Value.Sell.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Resource>(baseAddress, model.Key.ToString()), model.Value.Sell, baseAddress.Size, $"{model.Key} Sell");
     }
 
@@ -187,7 +198,7 @@ internal static class Rebalancer
     private static void ProcessSkirmishTrailConfig(GameVersion gameVersion, SkirmishTrailConfigModel config)
     {
         if (Storage.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Missions", out var baseAddress))
-            foreach (var model in config.Values.Where(x => x.Key.Between(1, 80)))
+            foreach (var model in config.Missions.Where(x => x.Key.Between(1, 80)))
             {
                 var address = Convert.ToInt32(baseAddress.Address, 16) + ((model.Key - 1) * 144);
 
@@ -212,7 +223,7 @@ internal static class Rebalancer
         /// lord type
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Troops LordType", out var baseAddress))
         {
-            foreach (var model in config.Values)
+            foreach (var model in config.Troops)
                 if (model.Value.Lord?.Type != null)
                     WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + ((int)model.Key) - 1, (byte)model.Value.Lord.Type, baseAddress.Size, $"Troops {model.Key} LordType");
         }
@@ -220,7 +231,7 @@ internal static class Rebalancer
         /// lord strength
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Troops LordStrength", out baseAddress))
         {
-            foreach (var model in config.Values)
+            foreach (var model in config.Troops)
                 if (model.Value.Lord?.Strength != null)
                 {
                     var realStrength = Convert.ToInt32(model.Value.Lord.Strength * 100);
@@ -236,7 +247,7 @@ internal static class Rebalancer
         /// troops
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Troops", out baseAddress))
         {
-            foreach (var model in config.Values)
+            foreach (var model in config.Troops)
                 if (model.Value.Troops != null)
                     foreach (var mode in model.Value.Troops)
                         foreach (var unit in Enum.GetValues<Troop>())
@@ -252,49 +263,49 @@ internal static class Rebalancer
     {
         /// speed
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units Speed", out var baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.Speed.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.Speed.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.Speed, baseAddress.Size, $"{model.Key} Speed");
 
         /// canGoOnWall
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanGoOnWall", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.CanGoOnWall.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.CanGoOnWall.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanGoOnWall, baseAddress.Size, $"{model.Key} CanGoOnWall");
 
         /// canBeMoved
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanBeMoved", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.CanBeMoved.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.CanBeMoved.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanBeMoved, baseAddress.Size, $"{model.Key} CanBeMoved");
 
         /// health
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units Health", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.Health.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.Health.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.Health, baseAddress.Size, $"{model.Key} Health");
 
         /// damageFromBow
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromBow", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.DamageFromBow.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.DamageFromBow.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.DamageFromBow, baseAddress.Size, $"{model.Key} DamageFromBow");
 
         /// damageFromSling
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromSling", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.DamageFromSling.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.DamageFromSling.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.DamageFromSling, baseAddress.Size, $"{model.Key} DamageFromSling");
 
         /// damageFromCrossbow
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromCrossbow", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.DamageFromCrossbow.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.DamageFromCrossbow.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.DamageFromCrossbow, baseAddress.Size, $"{model.Key} DamageFromCrossbow");
 
         /// canMeleeDamage
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanMeleeDamage", out baseAddress))
-            foreach (var model in config.Values.Where(x => x.Value.CanMeleeDamage.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.CanMeleeDamage.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanMeleeDamage, baseAddress.Size, $"{model.Key} CanMeleeDamage");
 
         /// meleeDamage
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units MeleeDamage", out baseAddress))
         {
             var opponents = Enum.GetValues<Unit>();
-            foreach (var model in config.Values.Where(x => x.Value.MeleeDamage.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.MeleeDamage.HasValue))
             {
                 for (var i = 0; i < opponents.Length; i++)
                 {
@@ -317,7 +328,7 @@ internal static class Rebalancer
         /// canClimbLadder
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanClimbLadder", out baseAddress)
          && Storage.BaseAddresses[gameVersion].TryGetValue("Units FocusClimbLadder", out var baseAddress2))
-            foreach (var model in config.Values.Where(x => x.Value.CanClimbLadder.HasValue))
+            foreach (var model in config.Units.Where(x => x.Value.CanClimbLadder.HasValue))
             {
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanClimbLadder, baseAddress.Size, $"{model.Key} CanClimbLadder");
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress2, model.Key.ToString()), model.Value.CanClimbLadder, baseAddress2.Size, $"{model.Key} FocusClimbLadder");
@@ -327,7 +338,7 @@ internal static class Rebalancer
     /// ProcessCustomsConfig
     private static void ProcessCustomsConfig(GameVersion gameVersion, CustomsConfigModel config)
     {
-        foreach (var item in config.Values.Where(x => x.Version.In(null, gameVersion)))
+        foreach (var item in config.Values.Where(x => x.IsEnabled && x.Version.In(null, gameVersion)))
         {
             Storage.BaseAddresses[gameVersion].TryGetValue(item.Key, out var baseAddress);
 

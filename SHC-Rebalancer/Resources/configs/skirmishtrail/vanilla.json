@@ -1,6 +1,6 @@
 {
 	"Description": "Default config for Stronghold Crusader 1.41 UCP",
-	"Values": {
+	"Missions": {
 		"1": {
 			"MapNameAddress": "0x1A61A0",
 			"MapName": "A New Land",

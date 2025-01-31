@@ -1,6 +1,6 @@
 ﻿{
 	"Description": "This is the vanilla start troops configuration.",
-	"Values":
+	"Troops":
 	{
 		"Rat":
 		{

@@ -1,6 +1,6 @@
 {
 	"Description": "Default config for Stronghold Crusader 1.41 UCP",
-	"Values": {
+	"AIs": {
 		"Rat": {
 			"WallDecoration": 12,
 			"Unknown001": 0,

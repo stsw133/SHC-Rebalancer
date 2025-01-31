@@ -68,110 +68,136 @@
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Main" IconData="{x:Static se:StswIcons.Cog}"/>
                         </se:StswTabItem.Header>
-
                         <se:StswScrollView>
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="750">
                                 <se:StswLabel Content="Stronghold Crusader path:" FontWeight="Bold" Margin="3 6 3 0"/>
                                 <se:StswPathPicker Margin="3"
                                                    Placeholder="Please select Stronghold Crusader path..."
                                                    SelectedPath="{Binding GamePath, Source={x:Static local:Settings.Default}}"
-                                                   SelectionUnit="Directory"/>
+                                                   SelectionUnit="OpenDirectory"/>
 
                                 <se:StswLabel Content="Select configs to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
                                 <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5" Margin="3">
                                     <UniformGrid DockPanel.Dock="Top" Columns="2">
                                         <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
+                                            
                                             <se:StswLabel>
                                                 <StackPanel Orientation="Horizontal">
                                                     <se:StswSubButton Command="{Binding ShowUcpExplanationCommand}"
                                                                       IconData="{x:Static se:StswIcons.HelpCircle}"
                                                                       IconFill="{DynamicResource StswColor.Neutral}"
-                                                                      IconScale="1.25"/>
+                                                                      IconScale="1.25"
+                                                                      Margin="1"/>
                                                     <se:StswText Text="UCP:"/>
                                                 </StackPanel>
                                             </se:StswLabel>
                                             <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUcp, Source={x:Static local:Settings.Default}}" Margin="3"/>
+                                            
                                             <se:StswLabel Content="AIC:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_aic}" SelectedValue="{Binding ConfigName_aic, Source={x:Static local:Settings.Default}}" Type="AIC"/>
+                                            <local:ConfigBox ItemsSource="{Binding [aic], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_aic, Source={x:Static local:Settings.Default}}" Type="AIC"/>
+                                            
                                             <se:StswLabel Content="AIV:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_aiv}" SelectedValue="{Binding ConfigName_aiv, Source={x:Static local:Settings.Default}}" Type="AIV"/>
+                                            <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_aiv, Source={x:Static local:Settings.Default}}" Type="AIV"/>
+                                            
                                             <se:StswLabel Content="Goods:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_goods}" SelectedValue="{Binding ConfigName_goods, Source={x:Static local:Settings.Default}}" Type="Goods"/>
+                                            <local:ConfigBox ItemsSource="{Binding [goods], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_goods, Source={x:Static local:Settings.Default}}" Type="Goods"/>
+                                            
                                             <se:StswLabel Content="Troops:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_troops}" SelectedValue="{Binding ConfigName_troops, Source={x:Static local:Settings.Default}}" Type="Troops"/>
+                                            <local:ConfigBox ItemsSource="{Binding [troops], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_troops, Source={x:Static local:Settings.Default}}" Type="Troops"/>
+                                        
                                         </se:StswLabelPanel>
                                         <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
+                                            
                                             <se:StswLabel Content="Buildings:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_buildings}" SelectedValue="{Binding ConfigName_buildings, Source={x:Static local:Settings.Default}}" Type="Buildings"/>
+                                            <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_buildings, Source={x:Static local:Settings.Default}}" Type="Buildings"/>
+                                            
                                             <se:StswLabel Content="Resources:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_resources}" SelectedValue="{Binding ConfigName_resources, Source={x:Static local:Settings.Default}}" Type="Resources"/>
-                                            <se:StswLabel Content="Skirmish trail:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_skirmishtrail}" SelectedValue="{Binding ConfigName_skirmishtrail, Source={x:Static local:Settings.Default}}" Type="SkirmishTrail"/>
+                                            <local:ConfigBox ItemsSource="{Binding [resources], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_resources, Source={x:Static local:Settings.Default}}" Type="Resources"/>
+                                            
                                             <se:StswLabel Content="Units:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_units}" SelectedValue="{Binding ConfigName_units, Source={x:Static local:Settings.Default}}" Type="Units"/>
+                                            <local:ConfigBox ItemsSource="{Binding [units], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_units, Source={x:Static local:Settings.Default}}" Type="Units"/>
+                                            
+                                            <se:StswLabel Content="Skirmish trail:"/>
+                                            <local:ConfigBox ItemsSource="{Binding [skirmishtrail], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_skirmishtrail, Source={x:Static local:Settings.Default}}" Type="SkirmishTrail"/>
+                                            
                                             <se:StswLabel Content="Customs:"/>
-                                            <local:ConfigBox ItemsSource="{Binding Configs_customs}" SelectedValue="{Binding ConfigName_customs, Source={x:Static local:Settings.Default}}" Type="Customs"/>
+                                            <local:ConfigBox ItemsSource="{Binding [customs], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding ConfigName_customs, Source={x:Static local:Settings.Default}}" Type="Customs"/>
+                                        
                                         </se:StswLabelPanel>
                                     </UniformGrid>
                                 </se:StswBorder>
                             </StackPanel>
                         </se:StswScrollView>
                     </se:StswTabItem>
-                    <!-- bugfixes -->
-                    <se:StswTabItem Visibility="Collapsed">
+                    <!-- fixes -->
+                    <se:StswTabItem IsEnabled="False">
                         <se:StswTabItem.Header>
-                            <se:StswLabel Content="Bugfixes" IconData="{x:Static se:StswIcons.Tools}"/>
+                            <se:StswLabel Content="Fixes &amp; misc" IconData="{x:Static se:StswIcons.Tools}"/>
                         </se:StswTabItem.Header>
 
                     </se:StswTabItem>
                     <!-- aic -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
-                            <se:StswLabel Content="AIC" IconData="{x:Static se:StswIcons.Alien}"/>
+                            <se:StswLabel Content="AIC" IconData="{x:Static se:StswIcons.RobotAngryOutline}"/>
                         </se:StswTabItem.Header>
-                        <local:AicContext/>
+                        <local:AicView/>
                     </se:StswTabItem>
-                    <!-- starting goods -->
-                    <se:StswTabItem Visibility="Collapsed">
+                    <!-- aiv -->
+                    <se:StswTabItem IsEnabled="False">
                         <se:StswTabItem.Header>
-                            <se:StswLabel Content="Starting goods" IconData="{x:Static se:StswIcons.ContainStart}"/>
+                            <se:StswLabel Content="AIV" IconData="{x:Static se:StswIcons.Castle}"/>
+                        </se:StswTabItem.Header>
+
+                    </se:StswTabItem>
+                    <!-- goods -->
+                    <se:StswTabItem IsEnabled="False">
+                        <se:StswTabItem.Header>
+                            <se:StswLabel Content="Starting goods" IconData="{x:Static se:StswIcons.PackageVariant}"/>
+                        </se:StswTabItem.Header>
+
+                    </se:StswTabItem>
+                    <!-- troops -->
+                    <se:StswTabItem IsEnabled="False">
+                        <se:StswTabItem.Header>
+                            <se:StswLabel Content="Starting troops" IconData="{x:Static se:StswIcons.SwordCross}"/>
                         </se:StswTabItem.Header>
 
                     </se:StswTabItem>
                     <!-- buildings -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
-                            <se:StswLabel Content="Buildings" IconData="{x:Static se:StswIcons.Castle}"/>
+                            <se:StswLabel Content="Buildings" IconData="{x:Static se:StswIcons.Warehouse}"/>
                         </se:StswTabItem.Header>
-                        <local:BuildingsContext/>
+                        <local:BuildingsView/>
                     </se:StswTabItem>
                     <!-- resources -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
-                            <se:StswLabel Content="Resources" IconData="{x:Static se:StswIcons.PackageVariant}"/>
+                            <se:StswLabel Content="Resources" IconData="{x:Static se:StswIcons.PackageVariantClosed}"/>
                         </se:StswTabItem.Header>
-                        <local:ResourcesContext/>
+                        <local:ResourcesView/>
                     </se:StswTabItem>
                     <!-- units -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
-                            <se:StswLabel Content="Units" IconData="{x:Static se:StswIcons.AccountGroup}"/>
+                            <se:StswLabel Content="Units" IconData="{x:Static se:StswIcons.AccountGroupOutline}"/>
                         </se:StswTabItem.Header>
-                        <local:UnitsContext/>
+                        <local:UnitsView/>
                     </se:StswTabItem>
                     <!-- skirmish trail -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
-                            <se:StswLabel Content="Skirmish trail" IconData="{x:Static se:StswIcons.Map}"/>
+                            <se:StswLabel Content="Skirmish trail" IconData="{x:Static se:StswIcons.MapMarkerPath}"/>
                         </se:StswTabItem.Header>
-                        <local:SkirmishTrailContext/>
+                        <local:SkirmishTrailView/>
                     </se:StswTabItem>
                     <!-- customs -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Customs" IconData="{x:Static se:StswIcons.ProgressQuestion}"/>
                         </se:StswTabItem.Header>
-                        <local:CustomsContext/>
+                        <local:CustomsView/>
                     </se:StswTabItem>
                     <!-- finder -->
                     <se:StswTabItem>

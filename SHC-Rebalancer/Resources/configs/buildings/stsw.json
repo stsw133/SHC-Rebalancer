@@ -1,6 +1,6 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
-	"Values": {
+	"Buildings": {
 		"Barracks": {
 			"Health": 500,
 			"Housing": 0,
@@ -370,6 +370,88 @@
 			"Health": 100,
 			"Housing": 0,
 			"Cost": [ 10, 0, 0, 0, 100 ]
-		}
+		},
+	},
+	"Outposts": {
+		"1": {
+			"Unit": "EuropArcher",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"2": {
+			"Unit": "Spearman",
+			"Quantity1": 15,
+			"Quantity2": 15,
+		},
+		"3": {
+			"Unit": "Maceman",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"4": {
+			"Unit": "Swordsman",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"5": {
+			"Unit": "Knight",
+			"Quantity1": 5,
+			"Quantity2": 5,
+		},
+		"6": {
+			"Unit": "Crossbowman",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"7": {
+			"Unit": "Pikeman",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"8": {
+			"Unit": "Monk",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"9": {
+			"Unit": "ArabArcher",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"10": {
+			"Unit": "ArabSwordsman",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"11": {
+			"Unit": "Slave",
+			"Quantity1": 20,
+			"Quantity2": 20,
+		},
+		"12": {
+			"Unit": "HorseArcher",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"13": {
+			"Unit": "Firethrower",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
+		"14": {
+			"Unit": "Slinger",
+			"Quantity1": 15,
+			"Quantity2": 15,
+		},
+		"15": {
+			"Unit": "FireBallista",
+			"Quantity1": 1,
+			"Quantity2": 1,
+		},
+		"16": {
+			"Unit": "Assassin",
+			"Quantity1": 10,
+			"Quantity2": 10,
+		},
 	}
 }

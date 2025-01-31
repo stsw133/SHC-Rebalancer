@@ -1,6 +1,6 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
-	"Values": {
+	"AIs": {
 		"Rat": {
 			"WallDecoration": 12,
 			"Unknown001": 0,
@@ -170,7 +170,7 @@
 			"AttUnitMain4": "Spearman",
 			"AttMaxDefault": 100,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Player"
 		},
 		"Snake": {
 			"WallDecoration": 12,
@@ -341,7 +341,7 @@
 			"AttUnitMain4": "Spearman",
 			"AttMaxDefault": 120,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Balanced"
 		},
 		"Pig": {
 			"WallDecoration": 12,
@@ -512,7 +512,7 @@
 			"AttUnitMain4": "Maceman",
 			"AttMaxDefault": 220,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Gold"
 		},
 		"Wolf": {
 			"WallDecoration": 13,
@@ -854,7 +854,7 @@
 			"AttUnitMain4": "ArabSwordsman",
 			"AttMaxDefault": 380,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Gold"
 		},
 		"Caliph": {
 			"WallDecoration": 14,
@@ -1025,7 +1025,7 @@
 			"AttUnitMain4": "ArabSwordsman",
 			"AttMaxDefault": 240,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Balanced"
 		},
 		"Sultan": {
 			"WallDecoration": 10,
@@ -1538,7 +1538,7 @@
 			"AttUnitMain4": "Swordsman",
 			"AttMaxDefault": 360,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Gold"
 		},
 		"Phillip": {
 			"WallDecoration": 13,
@@ -1709,7 +1709,7 @@
 			"AttUnitMain4": "Monk",
 			"AttMaxDefault": 280,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Balanced"
 		},
 		"Wazir": {
 			"WallDecoration": 11,
@@ -1880,7 +1880,7 @@
 			"AttUnitMain4": "ArabSwordsman",
 			"AttMaxDefault": 340,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Balanced"
 		},
 		"Emir": {
 			"WallDecoration": 12,
@@ -2051,7 +2051,7 @@
 			"AttUnitMain4": "ArabSwordsman",
 			"AttMaxDefault": 300,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Gold"
 		},
 		"Nizar": {
 			"WallDecoration": 10,
@@ -2564,7 +2564,7 @@
 			"AttUnitMain4": "Swordsman",
 			"AttMaxDefault": 200,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Balanced"
 		},
 		"Abbot": {
 			"WallDecoration": 12,
@@ -2735,7 +2735,7 @@
 			"AttUnitMain4": "Monk",
 			"AttMaxDefault": 160,
 			"AttMainGroupsCount": 2,
-			"TargetChoice": "Closest"
+			"TargetChoice": "Gold"
 		}
 	}
 }

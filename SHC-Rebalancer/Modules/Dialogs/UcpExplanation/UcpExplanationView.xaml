@@ -34,8 +34,8 @@
                 <LineBreak/>
                 <Run Text="Disabling" FontWeight="Bold"/>
                 <Run Text="this option allows the Rebalancer to function independently of the UnofficialCrusaderPatch, but this may result in incompatibility with certain features in the Rebalancer, such as AIC"/>
-                <Run Text="(unless you manually change the base addresses)"/>
-                <Run Text=". Therefore, use this approach cautiously."/>
+                <Run Text="(unless you manually change the base addresses)."/>
+                <Run Text="Therefore, use this approach cautiously."/>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="Enabling" FontWeight="Bold"/>
@@ -66,10 +66,8 @@
                 <Run Text="&#x0a; • Disable sleeping mode for lack of resources"/>
                 <Run Text="&#x0a; • Deactivate demolishing for money of the AI lords (true | true | true)"/>
                 <Run Text="&#x0a; • Increase of the rate of additional attack troops (false | true: 3)"/>
-                <Run Text="&#x0a; • Increased armor of laddermen against ranged units"/>
                 <Run Text="&#x0a; • Arabic Swordsmen destroy walls faster"/>
                 <Run Text="&#x0a; • Restore engineer arabiach speech"/>
-                <Run Text="&#x0a; • Spearmen run by default instead of walking"/>
                 <Run Text="&#x0a; • Extend fireproof duration of extinguished buildings (6000)"/>
                 <Run Text="&#x0a; • Remove the magic bar in Extreme"/>
                 <Run Text="&#x0a; • Change the color of player 1 (4)"/>

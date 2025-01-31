@@ -26,7 +26,7 @@ public class NewConfigContext : StswObservableObject
 
             if (IsEditing)
             {
-                if (Storage.Configs[Type].Cast<IConfigModel>().Any(x => x.Name == Name) && Name != Settings.Default["ConfigName_" + Type].ToString())
+                if (Storage.Configs[Type].Cast<ConfigModel>().Any(x => x.Name == Name) && Name != Settings.Default["ConfigName_" + Type].ToString())
                 {
                     await StswMessageDialog.Show("Selected name is already taken!", "Blockade", null, StswDialogButtons.OK, StswDialogImage.Blockade);
                     return;
@@ -40,14 +40,14 @@ public class NewConfigContext : StswObservableObject
                 }
 
                 File.Move(selectedFilePath, filePath);
-                Storage.Configs[Type].Cast<IConfigModel>().First(x => x.Name == Settings.Default["ConfigName_" + Type].ToString()!).Name = Name;
+                Storage.Configs[Type].Cast<ConfigModel>().First(x => x.Name == Settings.Default["ConfigName_" + Type].ToString()!).Name = Name;
                 Settings.Default["ConfigName_" + Type] = Name;
 
                 StswContentDialog.Close("MainContentDialog");
             }
             else
             {
-                if (Storage.Configs[Type].Cast<IConfigModel>().Any(x => x.Name == Name))
+                if (Storage.Configs[Type].Cast<ConfigModel>().Any(x => x.Name == Name))
                 {
                     await StswMessageDialog.Show("Selected name is already taken!", "Blockade", null, StswDialogButtons.OK, StswDialogImage.Blockade);
                     return;
@@ -63,12 +63,7 @@ public class NewConfigContext : StswObservableObject
                 if (!File.Exists(filePath))
                 {
                     File.Copy(baseFilePath, filePath);
-                    if (!Storage.Configs[Type].Cast<IConfigModel>().Any(x => x.Name == Name))
-                    {
-                        var newConfig = Storage.ReadJsonFileAsModel<IConfigModel>(filePath, Type)!;
-                        newConfig.Name = Name;
-                        Storage.Configs[Type].Add(newConfig);
-                    }
+                    Storage.Configs[Type].Add(Storage.LoadConfigs(Type, Name)[Type].First()!);
                     Settings.Default["ConfigName_" + Type] = Name;
 
                     StswContentDialog.Close("MainContentDialog");
@@ -92,7 +87,7 @@ public class NewConfigContext : StswObservableObject
     private string _basedOn = "vanilla";
 
     /// ConfigNames
-    public IEnumerable<string?> ConfigNames => Storage.Configs[Type].Select(x => x.GetPropertyValue("Name")?.ToString());
+    public IEnumerable<string?> ConfigNames => Storage.Configs[Type].Select(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString());
 
     /// IsEditing
     public bool IsEditing

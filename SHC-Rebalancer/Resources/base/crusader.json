@@ -8,6 +8,8 @@
 	{ "Key": "Goods Resources",								"Address": "0x2151FC", "EndAddress": "0x215327", "Size": 4 },
 	{ "Key": "Goods Gold",									"Address": "0x216680", "EndAddress": "0x2166F7", "Size": 4 },
 	
+	{ "Key": "Outposts",									"Address": "0x1C19C0", "EndAddress": "0x1C1CFF", "Size": 4 },
+	
 	{ "Key": "Resources Buy",								"Address": "0x2171C0", "EndAddress": "0x217227", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x217228", "EndAddress": "0x21728F", "Size": 4 },
 	
@@ -28,6 +30,8 @@
 	{ "Key": "Units FocusClimbLadder",						"Address": "0x755300", "EndAddress": "0x75543F", "Size": 4 },
 	{ "Key": "Units CanMeleeDamage",						"Address": "0x755A80", "EndAddress": "0x755BBF", "Size": 4 },
 	{ "Key": "Units CanClimbLadder",						"Address": "0x755E40", "EndAddress": "0x755F7F", "Size": 4 },
+	
+	
 	
 	{ "Key": "Skirmish delivery % bonus",					"Address": "0x130DB4", "Size": 1 },
 	
@@ -62,33 +66,35 @@
 	{ "Key": "Tax % bonus threshold 1",						"Address": "0x0590F6", "EndAddress": "0x0590F9", "Size": 4 },
 	{ "Key": "Tax % bonus threshold 5",						"Address": "0x0590CA", "EndAddress": "0x0590CD", "Size": 4 },
 	
+	{ "Key": "Engineer and Tunneler cost (display)",		"Address": "0x0F5C8B", "EndAddress": "0x0F5C8F", "Size": 4 },
+	{ "Key": "Ladderman cost (display)",					"Address": "0x0F5C92", "EndAddress": "0x0F5C95", "Size": 4 },
+	{ "Key": "Monk cost (display)",							"Address": "0x0F5C99", "EndAddress": "0x0F5C9C", "Size": 4 },
+	
+	{ "Key": "Tunneler cost (offset)",						"Address": "0x12EC2F", "Size": 1 },
+	{ "Key": "Ladderman cost (offset)",						"Address": "0x12EC39", "Size": 1 },
+	{ "Key": "Monk cost (offset)",							"Address": "0x12EC43", "Size": 1 },
+	{ "Key": "ArabArcher cost (offset)",					"Address": "0x12EC4D", "Size": 1 },
+	{ "Key": "Slave cost (offset)",							"Address": "0x12EC57", "Size": 1 },
+	{ "Key": "Slinger cost (offset)",						"Address": "0x12EC61", "Size": 1 },
+	{ "Key": "Assassin cost (offset)",						"Address": "0x12EC6B", "Size": 1 },
+	{ "Key": "HorseArcher cost (offset)",					"Address": "0x12EC75", "Size": 1 },
+	{ "Key": "ArabSwordsman cost (offset)",					"Address": "0x12EC7F", "Size": 1 },
+	{ "Key": "Firethrower cost (offset)",					"Address": "0x12EC8D", "Size": 1 },
+	
 	{ "Key": "EuropArcher cost",							"Address": "0x6B9114", "Size": 4 },
-	{ "Key": "Spearman cost",								"Address": "0x6B911C", "Size": 4 },
-	{ "Key": "Maceman cost",								"Address": "0x6B9124", "Size": 4 },
 	{ "Key": "Crossbowman cost",							"Address": "0x6B9118", "Size": 4 },
+	{ "Key": "Spearman cost",								"Address": "0x6B911C", "Size": 4 },
 	{ "Key": "Pikeman cost",								"Address": "0x6B9120", "Size": 4 },
+	{ "Key": "Maceman cost",								"Address": "0x6B9124", "Size": 4 },
 	{ "Key": "Swordsman cost",								"Address": "0x6B9128", "Size": 4 },
 	{ "Key": "Knight cost",									"Address": "0x6B912C", "Size": 4 },
 	{ "Key": "ArabArcher cost (display)",					"Address": "0x6B913C", "Size": 4 },
-	{ "Key": "ArabArcher cost (offset)",					"Address": "0x12EC4D", "Size": 1 },
 	{ "Key": "Slave cost (display)",						"Address": "0x6B9140", "Size": 4 },
-	{ "Key": "Slave cost (offset)",							"Address": "0x12EC57", "Size": 1 },
 	{ "Key": "Slinger cost (display)",						"Address": "0x6B9144", "Size": 4 },
-	{ "Key": "Slinger cost (offset)",						"Address": "0x12EC61", "Size": 1 },
 	{ "Key": "Assassin cost (display)",						"Address": "0x6B9148", "Size": 4 },
-	{ "Key": "Assassin cost (offset)",						"Address": "0x12EC6B", "Size": 1 },
 	{ "Key": "HorseArcher cost (display)",					"Address": "0x6B914C", "Size": 4 },
-	{ "Key": "HorseArcher cost (offset)",					"Address": "0x12EC75", "Size": 1 },
 	{ "Key": "ArabSwordsman cost (display)",				"Address": "0x6B9150", "Size": 4 },
-	{ "Key": "ArabSwordsman cost (offset)",					"Address": "0x12EC7F", "Size": 1 },
 	{ "Key": "Firethrower cost (display)",					"Address": "0x6B9154", "Size": 4 },
-	{ "Key": "Firethrower cost (offset)",					"Address": "0x12EC8D", "Size": 1 },
-	{ "Key": "Engineer and Tunneler cost (display)",		"Address": "0x0F5C8B", "Size": 1 },
-	{ "Key": "Ladderman cost (display)",					"Address": "0x0F5C92", "Size": 1 },
-	{ "Key": "Ladderman cost (offset)",						"Address": "0x12EC39", "Size": 1 },
-	{ "Key": "Tunneler cost (offset)",						"Address": "0x12EC2F", "Size": 1 },
-	{ "Key": "Monk cost (display)",							"Address": "0x0F5C99", "Size": 1 },
-	{ "Key": "Monk cost (offset)",							"Address": "0x12EC43", "Size": 1 },
 	
 	{ "Key": "Archer range",								"Address": "0x1B635C", "Size": 4 },
 	{ "Key": "Catapult range",								"Address": "0x1B6360", "Size": 4 },

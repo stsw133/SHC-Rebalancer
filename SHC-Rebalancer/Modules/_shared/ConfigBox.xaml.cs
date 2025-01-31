@@ -65,13 +65,19 @@ public partial class ConfigBox : StswComboBox
         {
             var selectedRebalance = Settings.Default[ConfigName].ToString()!;
 
-            Storage.Configs[Type] = Storage.LoadConfigs(Type)[Type].Cast<object>().ToList();
-            NotifyConfigsChanged("Configs_" + Type);
+            if (!Storage.Configs.ContainsKey(Type))
+                Storage.Configs[Type] = [];
 
-            if (Storage.Configs[Type].Any(x => x.GetPropertyValue("Name")?.ToString() == selectedRebalance))
+            var newConfigs = Storage.LoadConfigs(Type)[Type];
+
+            Storage.Configs[Type].Clear();
+            foreach (var item in newConfigs)
+                Storage.Configs[Type].Add(item);
+
+            if (Storage.Configs[Type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
                 Settings.Default[ConfigName] = selectedRebalance;
             else if (Storage.Configs[Type].Count > 0)
-                Settings.Default[ConfigName] = Storage.Configs[Type].First().GetPropertyValue("Name");
+                Settings.Default[ConfigName] = Storage.Configs[Type].First().GetPropertyValue(nameof(ConfigModel.Name));
         }
         catch (Exception ex)
         {
@@ -87,9 +93,7 @@ public partial class ConfigBox : StswComboBox
             await StswContentDialog.Show(new NewConfigContext(Type), "MainContentDialog");
 
             var selectedRebalance = Settings.Default[ConfigName].ToString()!;
-            NotifyConfigsChanged("Configs_" + Type);
-
-            if (Storage.Configs[Type].Any(x => x.GetPropertyValue("Name")?.ToString() == selectedRebalance))
+            if (Storage.Configs[Type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
                 Settings.Default[ConfigName] = selectedRebalance;
         }
         catch (Exception ex)
@@ -106,10 +110,11 @@ public partial class ConfigBox : StswComboBox
             await StswContentDialog.Show(new NewConfigContext(Type, Settings.Default[ConfigName].ToString()!), "MainContentDialog");
 
             var selectedRebalance = Settings.Default[ConfigName].ToString()!;
-            NotifyConfigsChanged("Configs_" + Type);
+            var config = Storage.Configs[Type].FirstOrDefault(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance);
+            config?.GetType().GetProperty(nameof(ConfigModel.Name))?.SetValue(config, selectedRebalance);
 
-            if (Storage.Configs[Type].Any(x => x.GetPropertyValue("Name")?.ToString() == selectedRebalance))
-                Settings.Default[ConfigName] = selectedRebalance;
+            SelectedItem = null;
+            await Dispatcher.InvokeAsync(() => SelectedItem = config, System.Windows.Threading.DispatcherPriority.Background);
         }
         catch (Exception ex)
         {
@@ -168,8 +173,7 @@ public partial class ConfigBox : StswComboBox
             if (await StswMessageDialog.Show($"Are you sure you want to remove '{Settings.Default[ConfigName]}' config?", "Confirmation", null, StswDialogButtons.YesNo, StswDialogImage.Question) == true)
             {
                 File.Delete(filePath);
-                Storage.Configs[Type].Remove(Storage.Configs[Type].FirstOrDefault(x => x.GetPropertyValue("Name")?.ToString() == Settings.Default[ConfigName].ToString())!);
-                NotifyConfigsChanged("Configs_" + Type);
+                Storage.Configs[Type].Remove(Storage.Configs[Type].FirstOrDefault(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == Settings.Default[ConfigName].ToString())!);
             }
         }
         catch (Exception ex)

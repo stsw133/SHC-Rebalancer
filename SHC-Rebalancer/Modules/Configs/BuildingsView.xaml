@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="SHC_Rebalancer.BuildingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
+
+    <DockPanel>
+        <!-- configs -->
+        <DockPanel DockPanel.Dock="Top">
+            <se:StswLabel Content="Selected config:" FontWeight="Bold" Margin="3"/>
+            <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:Storage.Configs}}"
+                             SelectedItem="{Binding SelectedConfigs[buildings], Mode=OneWayToSource}"
+                             SelectedValue="{Binding ConfigName_buildings, Mode=OneWay, Source={x:Static local:Settings.Default}}"/>
+            
+        </DockPanel>
+        
+        <se:StswTabControl Margin="3" TabStripPlacement="Left">
+            <!-- buildings -->
+            <se:StswTabItem>
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Buildings" IconSource="/Images/buildings/Hovel.png"/>
+                </se:StswTabItem.Header>
+                <DockPanel Margin="-3">
+                    <!-- selector -->
+                    <se:StswSegment x:Name="BuildingsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[buildings].Buildings}" Orientation="Vertical" Width="100">
+                        <se:StswSegment.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                                    <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </se:StswSegment.ItemTemplate>
+                    </se:StswSegment>
+                    <!-- data -->
+                    <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=BuildingsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}" Margin="3">
+                        <se:StswLabelPanel DataContext="{Binding SelectedItem.Value, ElementName=BuildingsSelector}"
+                                           LabelFontWeight="Medium"
+                                           LabelHorizontalAlignment="Right"
+                                           VerticalAlignment="Center"
+                                           Width="300">
+
+                            <se:StswLabel Content="Wood cost:" IconSource="/Images/resources/Wood.png"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Cost[0]}"/>
+
+                            <se:StswLabel Content="Stone cost:" IconSource="/Images/resources/Stone.png"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Cost[1]}"/>
+
+                            <se:StswLabel Content="Iron cost:" IconSource="/Images/resources/Iron.png"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Cost[2]}"/>
+
+                            <se:StswLabel Content="Pitch cost:" IconSource="/Images/resources/Pitch.png"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Cost[3]}"/>
+
+                            <se:StswLabel Content="Gold cost:" IconSource="/Images/resources/Gold.png"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Cost[4]}"/>
+
+                            <se:StswLabel Content="Health:" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Health}"/>
+
+                            <se:StswLabel Content="Housing:" IconData="{x:Static se:StswIcons.Home}" IconFill="{DynamicResource StswDialog.None.Background}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Housing}"/>
+
+                        </se:StswLabelPanel>
+                    </se:StswScrollView>
+                </DockPanel>
+            </se:StswTabItem>
+            <!-- outposts -->
+            <se:StswTabItem>
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Outposts" IconSource="/Images/buildings/ArabOutpost.png"/>
+                </se:StswTabItem.Header>
+                <DockPanel Margin="-3">
+                    <!-- selector -->
+                    <se:StswSegment x:Name="OutpostSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[buildings].Outposts}" Orientation="Vertical" Width="100">
+                        <se:StswSegment.ItemTemplate>
+                            <DataTemplate>
+                                <se:StswText FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Padding="12 3" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
+                            </DataTemplate>
+                        </se:StswSegment.ItemTemplate>
+                    </se:StswSegment>
+                    <!-- data -->
+                    <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=OutpostSelector, Converter={x:Static se:StswNotNullConverter.Instance}}" Margin="3">
+                        <se:StswLabelPanel DataContext="{Binding SelectedItem.Value, ElementName=OutpostSelector}"
+                                           LabelFontWeight="Medium"
+                                           LabelHorizontalAlignment="Right"
+                                           VerticalAlignment="Center"
+                                           Width="300">
+
+                            <se:StswLabel Content="Unknown00:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown00}"/>
+
+                            <se:StswLabel Content="Unknown01:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown01}"/>
+
+                            <se:StswLabel Content="Quantity1:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Quantity1}"/>
+
+                            <se:StswLabel Content="Quantity2:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Quantity2}"/>
+
+                            <se:StswLabel Content="Unit:"/>
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Unit}">
+                                <se:StswComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                    </DataTemplate>
+                                </se:StswComboBox.ItemTemplate>
+                            </se:StswComboBox>
+
+                            <se:StswLabel Content="Unknown05:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown05}"/>
+
+                            <se:StswLabel Content="Unknown06:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown06}"/>
+
+                            <se:StswLabel Content="Unknown07:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown07}"/>
+
+                            <se:StswLabel Content="Unknown08:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown08}"/>
+
+                            <se:StswLabel Content="Unknown09:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown09}"/>
+
+                            <se:StswLabel Content="Unknown10:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown10}"/>
+
+                            <se:StswLabel Content="Unknown11:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown11}"/>
+
+                            <se:StswLabel Content="Unknown12:"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Unknown12}"/>
+
+                        </se:StswLabelPanel>
+                    </se:StswScrollView>
+                </DockPanel>
+            </se:StswTabItem>
+        </se:StswTabControl>
+    </DockPanel>
+</UserControl>

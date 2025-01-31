@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="SHC_Rebalancer.CustomsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
+
+    <DockPanel>
+        <!-- configs -->
+        <DockPanel DockPanel.Dock="Top">
+            <se:StswLabel Content="Selected config:" FontWeight="Bold" Margin="3"/>
+            <local:ConfigBox x:Name="CustomsSelector"
+                             ItemsSource="{Binding [customs], Source={x:Static local:Storage.Configs}}"
+                             SelectedItem="{Binding SelectedConfigs[customs], Mode=OneWayToSource}"
+                             SelectedValue="{Binding ConfigName_customs, Mode=OneWay, Source={x:Static local:Settings.Default}}"/>
+        </DockPanel>
+        <se:StswTabControl Margin="3" TabStripPlacement="Left">
+            <!-- resources -->
+            <se:StswTabItem>
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Customs" IconData="{x:Static se:StswIcons.Variable}"/>
+                </se:StswTabItem.Header>
+                <DockPanel Margin="-3">
+                    <!-- data -->
+                    <se:StswDataGrid Background="#3777"
+                                     BorderThickness="0"
+                                     CanUserAddRows="True"
+                                     CanUserDeleteRows="True"
+                                     FrozenColumnCount="1"
+                                     IsReadOnly="{Binding SelectedItem.Name, ElementName=CustomsSelector, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
+                                     ItemsSource="{Binding SelectedConfigs[customs].Values}">
+                        <se:StswDataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
+                                <DataGridTextColumn.Header>
+                                    <se:StswLabel Content="Key"/>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            <se:StswDataGridTextColumn Binding="{Binding Address}" Header="Address"/>
+                            <se:StswDataGridDecimalColumn Binding="{Binding Size}" Header="Size"/>
+                            <se:StswDataGridTextColumn Binding="{Binding Value}" Header="Value"/>
+                            <se:StswDataGridComboColumn SelectedValueBinding="{Binding Version}" Header="Version" ItemsSource="{se:StswEnumToList local:GameVersion}"/>
+                            <se:StswDataGridTextColumn Binding="{Binding Description}" Header="Description" Width="*"/>
+                            <se:StswDataGridCheckColumn Binding="{Binding IsEnabled}" Header="Is enabled"/>
+                        </se:StswDataGrid.Columns>
+                    </se:StswDataGrid>
+                </DockPanel>
+            </se:StswTabItem>
+        </se:StswTabControl>
+    </DockPanel>
+</UserControl>

@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace SHC_Rebalancer;
 public class MainContext : StswObservableObject
@@ -58,13 +57,17 @@ public class MainContext : StswObservableObject
                 var type = config.Key.ToLower();
                 var selectedRebalance = Settings.Default["ConfigName_" + type].ToString()!;
 
-                Storage.Configs[type] = Storage.LoadConfigs(type)[type].Cast<object>().ToList();
-                OnPropertyChanged("Configs_" + type);
+                var newConfigs = Storage.LoadConfigs(type)[type].Cast<object>().ToList();
+                Storage.Configs[type].Clear();
+                foreach (var item in newConfigs)
+                    Storage.Configs[type].Add(item);
 
-                if (Storage.Configs[type].Any(x => x.GetPropertyValue("Name")?.ToString() == selectedRebalance))
+                OnPropertyChanged(nameof(SelectedConfigs));
+
+                if (Storage.Configs[type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
                     Settings.Default["ConfigName_" + type] = selectedRebalance;
                 else if (Storage.Configs[type].Count > 0)
-                    Settings.Default["ConfigName_" + type] = Storage.Configs[type].First().GetPropertyValue("Name");
+                    Settings.Default["ConfigName_" + type] = Storage.Configs[type].First().GetPropertyValue(nameof(ConfigModel.Name));
             }
 
             InstallState = StswProgressState.Finished;
@@ -171,17 +174,6 @@ public class MainContext : StswObservableObject
 
 
 
-    /// Configs
-    public ObservableCollection<AicConfigModel> Configs_aic => new(Storage.Configs.ContainsKey("aic") == true ? Storage.Configs["aic"].Cast<AicConfigModel>() : []);
-    public ObservableCollection<AivConfigModel> Configs_aiv => new(Storage.Configs.ContainsKey("aiv") == true ? Storage.Configs["aiv"].Cast<AivConfigModel>() : []);
-    public ObservableCollection<BuildingsConfigModel> Configs_buildings => new(Storage.Configs.ContainsKey("buildings") == true ? Storage.Configs["buildings"].Cast<BuildingsConfigModel>() : []);
-    public ObservableCollection<GoodsConfigModel> Configs_goods => new(Storage.Configs.ContainsKey("goods") == true ? Storage.Configs["goods"].Cast<GoodsConfigModel>() : []);
-    public ObservableCollection<ResourcesConfigModel> Configs_resources => new(Storage.Configs.ContainsKey("resources") == true ? Storage.Configs["resources"].Cast<ResourcesConfigModel>() : []);
-    public ObservableCollection<SkirmishTrailConfigModel> Configs_skirmishtrail => new(Storage.Configs.ContainsKey("skirmishtrail") == true ? Storage.Configs["skirmishtrail"].Cast<SkirmishTrailConfigModel>() : []);
-    public ObservableCollection<TroopsConfigModel> Configs_troops => new(Storage.Configs.ContainsKey("troops") == true ? Storage.Configs["troops"].Cast<TroopsConfigModel>() : []);
-    public ObservableCollection<UnitsConfigModel> Configs_units => new(Storage.Configs.ContainsKey("units") == true ? Storage.Configs["units"].Cast<UnitsConfigModel>() : []);
-    public ObservableCollection<CustomsConfigModel> Configs_customs => new(Storage.Configs.ContainsKey("customs") == true ? Storage.Configs["customs"].Cast<CustomsConfigModel>() : []);
-
     /// InstallState
     public StswProgressState InstallState
     {
@@ -205,4 +197,12 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _isTermsContentDialogOpen, value);
     }
     private bool _isTermsContentDialogOpen = !Settings.Default.TermsAccepted;
+
+    /// SelectedConfigs
+    public StswDictionary<string, ConfigModel> SelectedConfigs
+    {
+        get => _selectedConfigs;
+        set => SetProperty(ref _selectedConfigs, value);
+    }
+    private StswDictionary<string, ConfigModel> _selectedConfigs = [];
 }

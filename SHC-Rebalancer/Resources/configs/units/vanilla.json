@@ -1,6 +1,6 @@
 {
 	"Description": "Default config for Stronghold Crusader 1.41 UCP",
-	"Values": {
+	"Units": {
 		"EuropArcher": {
 			"Speed": 1,
 			"CanGoOnWall": true,
