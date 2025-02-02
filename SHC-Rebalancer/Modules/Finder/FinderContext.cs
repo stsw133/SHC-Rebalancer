@@ -52,6 +52,8 @@ public class FinderContext : StswObservableObject
 
                     if (_finderResultsSize == 4)
                         fs.Write(BitConverter.GetBytes(Convert.ToInt32(stsw.Value)), 0, 4);
+                    else if (_finderResultsSize == 2)
+                        fs.Write(BitConverter.GetBytes(Convert.ToInt16(stsw.Value)), 0, 2);
                     else if (_finderResultsSize == 1)
                         fs.WriteByte(Convert.ToByte(stsw.Value));
                 }

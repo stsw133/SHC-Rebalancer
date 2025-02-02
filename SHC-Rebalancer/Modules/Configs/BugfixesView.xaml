@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SHC_Rebalancer.BugfixesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
+
+    <se:StswScrollView Margin="3">
+        <StackPanel Margin="3" Orientation="Vertical" Width="500">
+            <!-- bugfixes -->
+            <se:StswLabel Content="Bugfixes" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" IconData="{x:Static se:StswIcons.BugCheckOutline}"/>
+            
+            <se:StswCheckBox Content="???" Margin="3" HorizontalContentAlignment="Center" IsChecked="False"/>
+            
+            <!-- other -->
+            <se:StswLabel Content="Other" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" IconData="{x:Static se:StswIcons.ProgressQuestion}"/>
+
+            <se:StswCheckBox Content="???" Margin="3" HorizontalContentAlignment="Center" IsChecked="False"/>
+        </StackPanel>
+    </se:StswScrollView>
+</UserControl>

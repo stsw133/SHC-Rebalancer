@@ -77,7 +77,27 @@ public static class Storage
         }
 
         if (type == null || type == "aiv")
-            configs.TryAdd("aiv", new(Directory.GetDirectories(Path.Combine(ConfigsPath, "aiv")).Select(x => new AivConfigModel() { Name = Path.GetFileNameWithoutExtension(x) }).Cast<object>()));
+        {
+            configs.TryAdd("aiv", []);
+            foreach (var directoryPath in Directory.GetDirectories(Path.Combine(ConfigsPath, "aiv")))
+            {
+                var aivs = new Dictionary<AI, ObservableCollection<AivModel>>();
+                foreach (var filePath in Directory.GetFiles(directoryPath, "*.aiv"))
+                {
+                    var fileName = Path.GetFileNameWithoutExtension(filePath);
+                    var imagePath = Path.Combine(directoryPath, "images", fileName + ".jpg");
+                    var ai = Enum.Parse<AI>(string.Concat(fileName.Where(char.IsLetter)).Capitalize());
+                    aivs.TryAdd(ai, []);
+                    aivs[ai].Add(new()
+                    {
+                        Name = fileName,
+                        FilePath = filePath,
+                        ImagePath = File.Exists(imagePath) ? imagePath : null,
+                    });
+                }
+                configs["aiv"].Add(new AivConfigModel() { Name = new DirectoryInfo(directoryPath).Name, AIs = aivs });
+            }
+        }
         GetConfig<AicConfigModel>("aic");
         GetConfig<BuildingsConfigModel>("buildings");
         GetConfig<GoodsConfigModel>("goods");

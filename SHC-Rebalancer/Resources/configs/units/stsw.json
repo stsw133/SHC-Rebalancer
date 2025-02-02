@@ -9,6 +9,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1000,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10
@@ -21,6 +22,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1500,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 25,
@@ -36,6 +38,7 @@
 			"DamageFromBow": 1000,
 			"DamageFromCrossbow": 5000,
 			"DamageFromSling": 500,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 75,
@@ -60,6 +63,7 @@
 			"DamageFromBow": 1500,
 			"DamageFromCrossbow": 5000,
 			"DamageFromSling": 750,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10
@@ -72,6 +76,7 @@
 			"DamageFromBow": 1000,
 			"DamageFromCrossbow": 3000,
 			"DamageFromSling": 500,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 25,
@@ -87,6 +92,7 @@
 			"DamageFromBow": 200,
 			"DamageFromCrossbow": 2500,
 			"DamageFromSling": 200,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
@@ -104,6 +110,7 @@
 			"DamageFromBow": 200,
 			"DamageFromCrossbow": 2500,
 			"DamageFromSling": 200,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
@@ -121,6 +128,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1000,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10
@@ -133,6 +141,7 @@
 			"DamageFromBow": 3000,
 			"DamageFromCrossbow": 3000,
 			"DamageFromSling": 1500,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
@@ -175,6 +184,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 6000,
 			"DamageFromSling": 1500,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10
@@ -187,6 +197,7 @@
 			"DamageFromBow": 1500,
 			"DamageFromCrossbow": 7500,
 			"DamageFromSling": 750,
+			"CanDigMoat": true,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 150,
@@ -225,6 +236,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10
@@ -237,6 +249,7 @@
 			"DamageFromBow": 300,
 			"DamageFromCrossbow": 3500,
 			"DamageFromSling": 250,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
@@ -254,6 +267,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1500,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10
@@ -266,6 +280,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1500,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -278,6 +293,7 @@
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1250,
 			"DamageFromSling": 750,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -290,6 +306,7 @@
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
 			"DamageFromSling": 1500,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 20
@@ -302,6 +319,7 @@
 			"DamageFromBow": 3000,
 			"DamageFromCrossbow": 6000,
 			"DamageFromSling": 300,
+			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50
@@ -314,6 +332,7 @@
 			"DamageFromBow": 5000,
 			"DamageFromCrossbow": 10000,
 			"DamageFromSling": 3000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 50
@@ -326,6 +345,7 @@
 			"DamageFromBow": 75,
 			"DamageFromCrossbow": 150,
 			"DamageFromSling": 50,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 150
@@ -338,6 +358,7 @@
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 350,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -350,6 +371,7 @@
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 350,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -362,6 +384,7 @@
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 350,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -374,6 +397,7 @@
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 350,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -386,6 +410,7 @@
 			"DamageFromBow": 100,
 			"DamageFromCrossbow": 200,
 			"DamageFromSling": 70,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -398,6 +423,7 @@
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 350,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -410,6 +436,7 @@
 			"DamageFromBow": 2500,
 			"DamageFromCrossbow": 5000,
 			"DamageFromSling": 1750,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -422,6 +449,7 @@
 			"DamageFromBow": 2500,
 			"DamageFromCrossbow": 5000,
 			"DamageFromSling": 1750,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -434,6 +462,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -446,6 +475,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -458,6 +488,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -470,6 +501,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15
@@ -482,6 +514,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -494,6 +527,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
@@ -502,7 +536,7 @@
 				"WarDog": 20
 			}
 		},
-		"Quarryman": {
+		"StoneMason": {
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -510,11 +544,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15
 		},
-		"Goadsman": {
+		"Goadman": {
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -522,6 +557,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 15
@@ -534,6 +570,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -546,6 +583,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -558,11 +596,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
 		},
-		"HopsFarmer": {
+		"HopFarmer": {
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -570,11 +609,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
 		},
-		"Orchardman": {
+		"AppleFarmer": {
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -582,11 +622,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
 		},
-		"Dairyman": {
+		"DairyFarmer": {
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -594,6 +635,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -606,6 +648,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -618,6 +661,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -630,6 +674,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -642,6 +687,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -654,6 +700,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 15
@@ -666,6 +713,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -678,11 +726,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 2
 		},
-		"Miner": {
+		"IronMiner": {
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -690,11 +739,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
 		},
-		"IronCarrier": {
+		"Porter": {
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -702,6 +752,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -714,6 +765,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -726,6 +778,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -738,6 +791,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -750,6 +804,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -762,11 +817,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
 		},
-		"Merchant": {
+		"Trader": {
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -774,11 +830,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
 		},
-		"TradingHorse": {
+		"HorseTrader": {
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -786,6 +843,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -798,6 +856,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -810,6 +869,7 @@
 			"DamageFromBow": 4000,
 			"DamageFromCrossbow": 10000,
 			"DamageFromSling": 3000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100
@@ -822,6 +882,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -834,6 +895,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -846,6 +908,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -858,6 +921,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -870,6 +934,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -882,11 +947,12 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
 		},
-		"HunterDog": {
+		"Dog": {
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -894,6 +960,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
@@ -901,7 +968,7 @@
 				"Rabbit": 50
 			}
 		},
-		"Waterboy": {
+		"Fireman": {
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": false,
@@ -909,6 +976,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -921,6 +989,7 @@
 			"DamageFromBow": 50,
 			"DamageFromCrossbow": 50,
 			"DamageFromSling": 50,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -933,6 +1002,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -945,6 +1015,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -957,6 +1028,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -969,6 +1041,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -981,6 +1054,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -993,6 +1067,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -1005,6 +1080,7 @@
 			"DamageFromBow": 15000,
 			"DamageFromCrossbow": 15000,
 			"DamageFromSling": 5000,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -1017,6 +1093,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -1029,6 +1106,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -1041,6 +1119,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2
@@ -1053,6 +1132,7 @@
 			"DamageFromBow": 0,
 			"DamageFromCrossbow": 0,
 			"DamageFromSling": 0,
+			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
 			"MeleeDamage": 2

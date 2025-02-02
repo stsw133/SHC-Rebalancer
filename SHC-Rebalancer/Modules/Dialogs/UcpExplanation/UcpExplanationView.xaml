@@ -68,18 +68,12 @@
                 <Run Text="&#x0a; • Increase of the rate of additional attack troops (false | true: 3)"/>
                 <Run Text="&#x0a; • Arabic Swordsmen destroy walls faster"/>
                 <Run Text="&#x0a; • Restore engineer arabiach speech"/>
-                <Run Text="&#x0a; • Extend fireproof duration of extinguished buildings (6000)"/>
-                <Run Text="&#x0a; • Remove the magic bar in Extreme"/>
                 <Run Text="&#x0a; • Change the color of player 1 (4)"/>
                 <Run Text="&#x0a; • WASD-Keys and quicksaves"/>
                 <Run Text="&#x0a; • Healer heals casualties"/>
                 <Run Text="&#x0a; • Free trader post"/>
-                <Run Text="&#x0a; • No siege tent deselection"/>
-                <Run Text="&#x0a; • Always show planned moat"/>
                 <Run Text="&#x0a; • Extended game speed limits"/>
                 <Run Text="&#x0a; • Fix armory/marketplace weapon orders to match"/>
-                <Run Text="&#x0a; • Check more often for available paths"/>
-                <Run Text="&#x0a; • Set default multiplaye speed (60)"/>
                 <Run Text="&#x0a; • Shrink apple orchard's build size"/>
                 <LineBreak/>
                 <LineBreak/>

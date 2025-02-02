@@ -17,7 +17,7 @@
                              SelectedValue="{Binding ConfigName_customs, Mode=OneWay, Source={x:Static local:Settings.Default}}"/>
         </DockPanel>
         <se:StswTabControl Margin="3" TabStripPlacement="Left">
-            <!-- resources -->
+            <!-- customs -->
             <se:StswTabItem>
                 <se:StswTabItem.Header>
                     <se:StswLabel Content="Customs" IconData="{x:Static se:StswIcons.Variable}"/>

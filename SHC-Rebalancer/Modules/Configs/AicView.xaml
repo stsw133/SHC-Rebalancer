@@ -40,61 +40,76 @@
                                            LabelFontWeight="Medium"
                                            LabelHorizontalAlignment="Right"
                                            VerticalAlignment="Center"
-                                           Width="400">
+                                           Width="500">
+
+                            <se:StswLabel Content="Lord type:"/>
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:LordType}" SelectedValue="{Binding LordType}">
+                                <se:StswComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                    </DataTemplate>
+                                </se:StswComboBox.ItemTemplate>
+                            </se:StswComboBox>
+
+                            <se:StswLabel Content="Lord strength:"/>
+                            <StackPanel Margin="3">
+                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding LordStrength, Mode=OneWay, StringFormat=N1}"/>
+                                <se:StswSlider Minimum="0.5" Maximum="1.5" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="0.1" Value="{Binding LordStrength}"/>
+                            </StackPanel>
 
                             <se:StswLabel Content="WallDecoration:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding WallDecoration}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.WallDecoration}"/>
 
                             <se:StswLabel Content="Unknown001:"/>
-                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Unknown001}"/>
+                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Personality.Unknown001}"/>
 
                             <se:StswLabel Content="Unknown002:"/>
-                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Unknown002}"/>
+                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Personality.Unknown002}"/>
 
                             <se:StswLabel Content="Unknown003:"/>
-                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Unknown003}"/>
+                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Personality.Unknown003}"/>
 
                             <se:StswLabel Content="Unknown004:"/>
-                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Unknown004}"/>
+                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Personality.Unknown004}"/>
 
                             <se:StswLabel Content="Unknown005:"/>
-                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Unknown005}"/>
+                            <se:StswCheckBox Margin="3" HorizontalAlignment="Left" IsChecked="{Binding Personality.Unknown005}"/>
 
                             <se:StswLabel Content="CriticalPopularity:"/>
                             <StackPanel Margin="3">
-                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding CriticalPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
-                                <se:StswSlider Minimum="0" Maximum="10000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="100" Value="{Binding CriticalPopularity}"/>
+                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Personality.CriticalPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
+                                <se:StswSlider Minimum="0" Maximum="10000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="100" Value="{Binding Personality.CriticalPopularity}"/>
                             </StackPanel>
 
                             <se:StswLabel Content="LowestPopularity:"/>
                             <StackPanel Margin="3">
-                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding LowestPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
-                                <se:StswSlider Minimum="0" Maximum="10000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="100" Value="{Binding LowestPopularity}"/>
+                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Personality.LowestPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
+                                <se:StswSlider Minimum="0" Maximum="10000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="100" Value="{Binding Personality.LowestPopularity}"/>
                             </StackPanel>
 
                             <se:StswLabel Content="HighestPopularity:"/>
                             <StackPanel Margin="3">
-                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding HighestPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
-                                <se:StswSlider Minimum="0" Maximum="10000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="100" Value="{Binding HighestPopularity}"/>
+                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Personality.HighestPopularity, Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/100}"/>
+                                <se:StswSlider Minimum="0" Maximum="10000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="100" Value="{Binding Personality.HighestPopularity}"/>
                             </StackPanel>
 
                             <se:StswLabel Content="TaxesMin:"/>
                             <StackPanel Margin="3">
-                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding TaxesMin, Mode=OneWay}"/>
-                                <se:StswSlider Minimum="0" Maximum="11" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="1" Value="{Binding TaxesMin}"/>
+                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Personality.TaxesMin, Mode=OneWay}"/>
+                                <se:StswSlider Minimum="0" Maximum="11" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="1" Value="{Binding Personality.TaxesMin}"/>
                             </StackPanel>
 
                             <se:StswLabel Content="TaxesMax:"/>
                             <StackPanel Margin="3">
-                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding TaxesMax, Mode=OneWay}"/>
-                                <se:StswSlider Minimum="0" Maximum="11" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="1" Value="{Binding TaxesMax}"/>
+                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Personality.TaxesMax, Mode=OneWay}"/>
+                                <se:StswSlider Minimum="0" Maximum="11" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="1" Value="{Binding Personality.TaxesMax}"/>
                             </StackPanel>
 
                             <se:StswLabel Content="Unknown011:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Unknown011}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Personality.Unknown011}"/>
 
                             <se:StswLabel Content="Farm1:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm1}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Personality.Farm1}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -103,7 +118,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="Farm2:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm2}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Personality.Farm2}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -112,7 +127,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="Farm3:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm3}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Personality.Farm3}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -121,7 +136,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="Farm4:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm4}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Personality.Farm4}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -130,7 +145,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="Farm5:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm5}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Personality.Farm5}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -139,7 +154,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="Farm6:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm6}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Personality.Farm6}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -148,7 +163,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="Farm7:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm7}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Personality.Farm7}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -157,7 +172,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="Farm8:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Farm8}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Building}" SelectedValue="{Binding Personality.Farm8}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -166,97 +181,97 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="PopulationPerFarm:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding PopulationPerFarm}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.PopulationPerFarm}"/>
 
                             <se:StswLabel Content="PopulationPerWoodcutter:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding PopulationPerWoodcutter}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.PopulationPerWoodcutter}"/>
 
                             <se:StswLabel Content="PopulationPerQuarry:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding PopulationPerQuarry}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.PopulationPerQuarry}"/>
 
                             <se:StswLabel Content="PopulationPerIronmine:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding PopulationPerIronmine}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.PopulationPerIronmine}"/>
 
                             <se:StswLabel Content="PopulationPerPitchrig:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding PopulationPerPitchrig}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.PopulationPerPitchrig}"/>
 
                             <se:StswLabel Content="MaxQuarries:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MaxQuarries}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.MaxQuarries}"/>
 
                             <se:StswLabel Content="MaxIronmines:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MaxIronmines}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.MaxIronmines}"/>
 
                             <se:StswLabel Content="MaxWoodcutters:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MaxWoodcutters}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.MaxWoodcutters}"/>
 
                             <se:StswLabel Content="MaxPitchrigs:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MaxPitchrigs}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.MaxPitchrigs}"/>
 
                             <se:StswLabel Content="MaxFarms:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MaxFarms}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.MaxFarms}"/>
 
                             <se:StswLabel Content="BuildInterval:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding BuildInterval}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.BuildInterval}"/>
 
                             <se:StswLabel Content="ResourceRebuildDelay:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding ResourceRebuildDelay}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.ResourceRebuildDelay}"/>
 
                             <se:StswLabel Content="MaxFood:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MaxFood}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MaxFood}"/>
 
                             <se:StswLabel Content="MinimumApples:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MinimumApples}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MinimumApples}"/>
 
                             <se:StswLabel Content="MinimumCheese:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MinimumCheese}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MinimumCheese}"/>
 
                             <se:StswLabel Content="MinimumBread:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MinimumBread}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MinimumBread}"/>
 
                             <se:StswLabel Content="MinimumWheat:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MinimumWheat}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MinimumWheat}"/>
 
                             <se:StswLabel Content="MinimumHop:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MinimumHop}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MinimumHop}"/>
 
                             <se:StswLabel Content="TradeAmountFood:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding TradeAmountFood}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.TradeAmountFood}"/>
 
                             <se:StswLabel Content="TradeAmountEquipment:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding TradeAmountEquipment}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.TradeAmountEquipment}"/>
 
                             <se:StswLabel Content="AIRequestDelay:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AIRequestDelay}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AIRequestDelay}"/>
 
                             <se:StswLabel Content="MinimumGoodsRequiredAfterTrade:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MinimumGoodsRequiredAfterTrade}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.MinimumGoodsRequiredAfterTrade}"/>
 
                             <se:StswLabel Content="DoubleRationsFoodThreshold:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DoubleRationsFoodThreshold}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.DoubleRationsFoodThreshold}"/>
 
                             <se:StswLabel Content="MaxWood:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MaxWood}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MaxWood}"/>
 
                             <se:StswLabel Content="MaxStone:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MaxStone}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MaxStone}"/>
 
                             <se:StswLabel Content="MaxResourceOther:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MaxResourceOther}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MaxResourceOther}"/>
 
                             <se:StswLabel Content="MaxEquipment:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MaxEquipment}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MaxEquipment}"/>
 
                             <se:StswLabel Content="MaxBeer:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding MaxBeer}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="-1" Value="{Binding Personality.MaxBeer}"/>
 
                             <se:StswLabel Content="MaxResourceVariance:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MaxResourceVariance}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.MaxResourceVariance}"/>
 
                             <se:StswLabel Content="RecruitGoldThreshold:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding RecruitGoldThreshold}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.RecruitGoldThreshold}"/>
 
                             <se:StswLabel Content="BlacksmithSetting:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:BlacksmithSetting}" SelectedValue="{Binding BlacksmithSetting}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:BlacksmithSetting}" SelectedValue="{Binding Personality.BlacksmithSetting}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -265,7 +280,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="FletcherSetting:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:FletcherSetting}" SelectedValue="{Binding FletcherSetting}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:FletcherSetting}" SelectedValue="{Binding Personality.FletcherSetting}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -274,7 +289,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="PoleturnerSetting:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:PoleturnerSetting}" SelectedValue="{Binding PoleturnerSetting}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:PoleturnerSetting}" SelectedValue="{Binding Personality.PoleturnerSetting}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -283,7 +298,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource01:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource01}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource01}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -292,7 +307,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource02:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource02}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource02}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -301,7 +316,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource03:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource03}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource03}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -310,7 +325,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource04:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource04}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource04}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -319,7 +334,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource05:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource05}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource05}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -328,7 +343,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource06:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource06}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource06}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -337,7 +352,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource07:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource07}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource07}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -346,7 +361,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource08:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource08}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource08}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -355,7 +370,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource09:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource09}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource09}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -364,7 +379,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource10:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource10}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource10}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -373,7 +388,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource11:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource11}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource11}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -382,7 +397,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource12:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource12}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource12}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -391,7 +406,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource13:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource13}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource13}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -400,7 +415,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource14:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource14}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource14}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -409,7 +424,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SellResource15:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding SellResource15}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Resource}" SelectedValue="{Binding Personality.SellResource15}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -418,55 +433,55 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefWallPatrolRallyTime:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DefWallPatrolRallyTime}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.DefWallPatrolRallyTime}"/>
 
                             <se:StswLabel Content="DefWallPatrolGroups:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DefWallPatrolGroups}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.DefWallPatrolGroups}"/>
 
                             <se:StswLabel Content="DefSiegeEngineGoldThreshold:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DefSiegeEngineGoldThreshold}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.DefSiegeEngineGoldThreshold}"/>
 
                             <se:StswLabel Content="DefSiegeEngineBuildDelay:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DefSiegeEngineBuildDelay}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.DefSiegeEngineBuildDelay}"/>
 
                             <se:StswLabel Content="Unknown072:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Unknown072}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Personality.Unknown072}"/>
 
                             <se:StswLabel Content="Unknown073:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Unknown073}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Personality.Unknown073}"/>
 
                             <se:StswLabel Content="RecruitProbDefDefault:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbDefDefault}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbDefDefault}"/>
 
                             <se:StswLabel Content="RecruitProbDefWeak:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbDefWeak}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbDefWeak}"/>
 
                             <se:StswLabel Content="RecruitProbDefStrong:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbDefStrong}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbDefStrong}"/>
 
                             <se:StswLabel Content="RecruitProbRaidDefault:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbRaidDefault}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbRaidDefault}"/>
 
                             <se:StswLabel Content="RecruitProbRaidWeak:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbRaidWeak}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbRaidWeak}"/>
 
                             <se:StswLabel Content="RecruitProbRaidStrong:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbRaidStrong}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbRaidStrong}"/>
 
                             <se:StswLabel Content="RecruitProbAttackDefault:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbAttackDefault}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbAttackDefault}"/>
 
                             <se:StswLabel Content="RecruitProbAttackWeak:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbAttackWeak}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbAttackWeak}"/>
 
                             <se:StswLabel Content="RecruitProbAttackStrong:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding RecruitProbAttackStrong}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.RecruitProbAttackStrong}"/>
 
                             <se:StswLabel Content="SortieUnitRangedMin:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding SortieUnitRangedMin}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Maximum="100" Value="{Binding Personality.SortieUnitRangedMin}"/>
 
                             <se:StswLabel Content="SortieUnitRanged:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SortieUnitRanged}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SortieUnitRanged}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -475,10 +490,10 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SortieUnitMeleeMin:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding SortieUnitMeleeMin}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.SortieUnitMeleeMin}"/>
 
                             <se:StswLabel Content="SortieUnitMelee:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SortieUnitMelee}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SortieUnitMelee}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -487,10 +502,10 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefDiggingUnitMax:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DefDiggingUnitMax}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.DefDiggingUnitMax}"/>
 
                             <se:StswLabel Content="DefDiggingUnit:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefDiggingUnit}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefDiggingUnit}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -499,31 +514,31 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RecruitInterval:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding RecruitInterval}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.RecruitInterval}"/>
 
                             <se:StswLabel Content="RecruitIntervalWeak:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding RecruitIntervalWeak}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.RecruitIntervalWeak}"/>
 
                             <se:StswLabel Content="RecruitIntervalStrong:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding RecruitIntervalStrong}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.RecruitIntervalStrong}"/>
 
                             <se:StswLabel Content="DefTotal:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DefTotal}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.DefTotal}"/>
 
                             <se:StswLabel Content="OuterPatrolGroupsCount:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding OuterPatrolGroupsCount}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.OuterPatrolGroupsCount}"/>
 
                             <se:StswLabel Content="OuterPatrolGroupsMove:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding OuterPatrolGroupsMove}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.OuterPatrolGroupsMove}"/>
 
                             <se:StswLabel Content="OuterPatrolRallyDelay:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding OuterPatrolRallyDelay}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.OuterPatrolRallyDelay}"/>
 
                             <se:StswLabel Content="DefWalls:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DefWalls}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.DefWalls}"/>
 
                             <se:StswLabel Content="DefUnit1:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit1}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefUnit1}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -532,7 +547,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefUnit2:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit2}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefUnit2}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -541,7 +556,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefUnit3:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit3}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefUnit3}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -550,7 +565,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefUnit4:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit4}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefUnit4}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -559,7 +574,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefUnit5:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit5}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefUnit5}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -568,7 +583,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefUnit6:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit6}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefUnit6}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -577,7 +592,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefUnit7:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit7}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefUnit7}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -586,7 +601,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="DefUnit8:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding DefUnit8}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.DefUnit8}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -595,13 +610,13 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RaidUnitsBase:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding RaidUnitsBase}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.RaidUnitsBase}"/>
 
                             <se:StswLabel Content="RaidUnitsRandom:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding RaidUnitsRandom}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.RaidUnitsRandom}"/>
 
                             <se:StswLabel Content="RaidUnit1:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit1}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.RaidUnit1}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -610,7 +625,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RaidUnit2:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit2}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.RaidUnit2}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -619,7 +634,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RaidUnit3:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit3}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.RaidUnit3}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -628,7 +643,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RaidUnit4:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit4}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.RaidUnit4}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -637,7 +652,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RaidUnit5:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit5}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.RaidUnit5}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -646,7 +661,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RaidUnit6:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit6}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.RaidUnit6}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -655,7 +670,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RaidUnit7:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit7}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.RaidUnit7}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -664,7 +679,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="RaidUnit8:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding RaidUnit8}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.RaidUnit8}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -673,7 +688,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEngine1:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine1}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding Personality.HarassingSiegeEngine1}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -682,7 +697,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEngine2:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine2}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding Personality.HarassingSiegeEngine2}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -691,7 +706,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEngine3:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine3}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding Personality.HarassingSiegeEngine3}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -700,7 +715,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEngine4:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine4}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding Personality.HarassingSiegeEngine4}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -709,7 +724,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEngine5:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine5}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding Personality.HarassingSiegeEngine5}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -718,7 +733,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEngine6:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine6}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding Personality.HarassingSiegeEngine6}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -727,7 +742,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEngine7:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine7}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding Personality.HarassingSiegeEngine7}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -736,7 +751,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEngine8:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding HarassingSiegeEngine8}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:HarassingUnit}" SelectedValue="{Binding Personality.HarassingSiegeEngine8}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -745,37 +760,37 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="HarassingSiegeEnginesMax:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding HarassingSiegeEnginesMax}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.HarassingSiegeEnginesMax}"/>
 
                             <se:StswLabel Content="RaidRetargetDelay:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding RaidRetargetDelay}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.RaidRetargetDelay}"/>
 
                             <se:StswLabel Content="AttForceBase:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttForceBase}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttForceBase}"/>
 
                             <se:StswLabel Content="AttForceRandom:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttForceRandom}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttForceRandom}"/>
 
                             <se:StswLabel Content="AttForceSupportAllyThreshold:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttForceSupportAllyThreshold}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttForceSupportAllyThreshold}"/>
 
                             <se:StswLabel Content="AttForceRallyPercentage:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttForceRallyPercentage}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttForceRallyPercentage}"/>
 
                             <se:StswLabel Content="Unknown129:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Unknown129}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Personality.Unknown129}"/>
 
                             <se:StswLabel Content="AttAssaultDelay:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttAssaultDelay}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttAssaultDelay}"/>
 
                             <se:StswLabel Content="AttUnitPatrolRecommandDelay:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitPatrolRecommandDelay}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitPatrolRecommandDelay}"/>
 
                             <se:StswLabel Content="Unknown132:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Unknown132}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Personality.Unknown132}"/>
 
                             <se:StswLabel Content="SiegeEngine1:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine1}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SiegeEngine1}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -784,7 +799,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SiegeEngine2:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine2}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SiegeEngine2}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -793,7 +808,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SiegeEngine3:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine3}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SiegeEngine3}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -802,7 +817,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SiegeEngine4:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine4}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SiegeEngine4}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -811,7 +826,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SiegeEngine5:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine5}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SiegeEngine5}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -820,7 +835,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SiegeEngine6:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine6}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SiegeEngine6}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -829,7 +844,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SiegeEngine7:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine7}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SiegeEngine7}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -838,7 +853,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="SiegeEngine8:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding SiegeEngine8}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.SiegeEngine8}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -847,16 +862,16 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="CowThrowInterval:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding CowThrowInterval}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.CowThrowInterval}"/>
 
                             <se:StswLabel Content="Unknown142:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Unknown142}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Value="{Binding Personality.Unknown142}"/>
 
                             <se:StswLabel Content="AttMaxEngineers:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttMaxEngineers}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttMaxEngineers}"/>
 
                             <se:StswLabel Content="AttDiggingUnit:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttDiggingUnit}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttDiggingUnit}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -865,10 +880,10 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttDiggingUnitMax:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttDiggingUnitMax}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttDiggingUnitMax}"/>
 
                             <se:StswLabel Content="AttUnitVanguard:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitVanguard}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitVanguard}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -877,19 +892,19 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttUnitVanguardMax:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitVanguardMax}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitVanguardMax}"/>
 
                             <se:StswLabel Content="AttMaxAssassins:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttMaxAssassins}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttMaxAssassins}"/>
 
                             <se:StswLabel Content="AttMaxLaddermen:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttMaxLaddermen}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttMaxLaddermen}"/>
 
                             <se:StswLabel Content="AttMaxTunnelers:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttMaxTunnelers}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttMaxTunnelers}"/>
 
                             <se:StswLabel Content="AttUnitPatrol:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitPatrol}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitPatrol}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -898,13 +913,13 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttUnitPatrolMax:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitPatrolMax}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitPatrolMax}"/>
 
                             <se:StswLabel Content="AttUnitPatrolGroupsCount:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitPatrolGroupsCount}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitPatrolGroupsCount}"/>
 
                             <se:StswLabel Content="AttUnitBackup:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitBackup}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitBackup}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -913,13 +928,13 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttUnitBackupMax:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitBackupMax}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitBackupMax}"/>
 
                             <se:StswLabel Content="AttUnitBackupGroupsCount:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitBackupGroupsCount}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitBackupGroupsCount}"/>
 
                             <se:StswLabel Content="AttUnitEngage:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitEngage}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitEngage}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -928,10 +943,10 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttUnitEngageMax:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitEngageMax}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitEngageMax}"/>
 
                             <se:StswLabel Content="AttUnitSiegeDef:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitSiegeDef}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitSiegeDef}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -940,13 +955,13 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttUnitSiegeDefMax:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitSiegeDefMax}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitSiegeDefMax}"/>
 
                             <se:StswLabel Content="AttUnitSiegeDefGroupsCount:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttUnitSiegeDefGroupsCount}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttUnitSiegeDefGroupsCount}"/>
 
                             <se:StswLabel Content="AttUnitMain1:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitMain1}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitMain1}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -955,7 +970,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttUnitMain2:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitMain2}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitMain2}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -964,7 +979,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttUnitMain3:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitMain3}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitMain3}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -973,7 +988,7 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttUnitMain4:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding AttUnitMain4}">
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Personality.AttUnitMain4}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
@@ -982,13 +997,13 @@
                             </se:StswComboBox>
 
                             <se:StswLabel Content="AttMaxDefault:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttMaxDefault}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttMaxDefault}"/>
 
                             <se:StswLabel Content="AttMainGroupsCount:"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AttMainGroupsCount}"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Personality.AttMainGroupsCount}"/>
 
                             <se:StswLabel Content="TargetChoice:"/>
-                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:TargetChoice}" SelectedValue="{Binding TargetChoice}"/>
+                            <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:TargetChoice}" SelectedValue="{Binding Personality.TargetChoice}"/>
 
                         </se:StswLabelPanel>
                     </se:StswScrollView>

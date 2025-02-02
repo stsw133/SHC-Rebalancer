@@ -26,7 +26,7 @@ public class AicConfigModel : ConfigModel
 /// AivConfigModel
 public class AivConfigModel : ConfigModel
 {
-
+    public Dictionary<AI, ObservableCollection<AivModel>> AIs { get; set; } = [];
 }
 
 /// BuildingsConfigModel
@@ -57,7 +57,7 @@ public class SkirmishTrailConfigModel : ConfigModel
 /// TroopsConfigModel
 public class TroopsConfigModel : ConfigModel
 {
-    public Dictionary<AIForTroops, TroopsModel> Troops { get; set; } = [];
+    public Dictionary<AIForTroops, Dictionary<SkirmishMode, StswDictionary<Troop, int?>>> Troops { get; set; } = [];
 }
 
 /// UnitsConfigModel

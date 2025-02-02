@@ -1,5 +1,7 @@
 [
-	{ "Key": "AIC",											"Address": "0x7B66B4", "EndAddress": "0x7BD0B6", "Size": 4 },
+	{ "Key": "AIC LordType",								"Address": "0x086CF0", "EndAddress": "0x086CFF", "Size": 1 },
+	{ "Key": "AIC LordStrength",							"Address": "0x73ECE8", "EndAddress": "0x73ED67", "Size": 4 },
+	{ "Key": "AIC Personality",								"Address": "0x7B66B4", "EndAddress": "0x7BD0B6", "Size": 4 },
 	
 	{ "Key": "Buildings Health",							"Address": "0x1BA218", "EndAddress": "0x1BA3CF", "Size": 4 },
 	{ "Key": "Buildings Housing",							"Address": "0x1BA438", "EndAddress": "0x1BA5EF", "Size": 4 },
@@ -15,8 +17,6 @@
 	
 	
 	
-	{ "Key": "Troops LordType",								"Address": "0x086CF0", "EndAddress": "0x086CFF", "Size": 1 },
-	{ "Key": "Troops LordStrength",							"Address": "0x73ECE8", "EndAddress": "0x73ED67", "Size": 4 },
 	{ "Key": "Troops",										"Address": "0x2155D8", "EndAddress": "0x2167A7", "Size": 4 },
 	
 	{ "Key": "Units Speed",									"Address": "0x74E730", "EndAddress": "0x74E86F", "Size": 4 },
@@ -28,6 +28,7 @@
 	{ "Key": "Units DamageFromCrossbow",					"Address": "0x74EEB0", "EndAddress": "0x74EFEF", "Size": 4 },
 	{ "Key": "Units MeleeDamage",							"Address": "0x74EFF0", "EndAddress": "0x7508F3", "Size": 4 },
 	{ "Key": "Units FocusClimbLadder",						"Address": "0x755490", "EndAddress": "0x7555CF", "Size": 4 },
+	{ "Key": "Units FocusDigMoat",							"Address": "0x7555D0", "EndAddress": "0x75570F", "Size": 4 },
 	{ "Key": "Units CanMeleeDamage",						"Address": "0x755C10", "EndAddress": "0x755D4F", "Size": 4 },
 	{ "Key": "Units CanClimbLadder",						"Address": "0x755FD0", "EndAddress": "0x75610F", "Size": 4 },
 	

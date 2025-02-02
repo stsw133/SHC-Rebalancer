@@ -3,9 +3,6 @@
 namespace SHC_Rebalancer;
 public class SkirmishTrailModel
 {
-    [JsonIgnore]
-    public int Key { get; set; }
-
     public string? MapNameAddress { get; set; }
     public string? MapName { get; set; }
     public SkirmishDifficulty? Difficulty { get; set; }

@@ -41,11 +41,35 @@
     <None Remove="Images\ai\Image724.png" />
     <None Remove="Images\ai\Image725.png" />
     <None Remove="Images\ai\Image726.png" />
+    <None Remove="Images\ai\PlayerArab.png" />
+    <None Remove="Images\ai\PlayerEurop.png" />
+    <None Remove="Images\lords\Arab.png" />
+    <None Remove="Images\lords\Europ.png" />
+    <None Remove="Images\misc\Cost.png" />
+    <None Remove="Images\misc\Health.png" />
+    <None Remove="Images\misc\MeleeDamage.png" />
+    <None Remove="Images\misc\Range.png" />
+    <None Remove="Images\popularity\Negative.png" />
+    <None Remove="Images\popularity\Neutral.png" />
+    <None Remove="Images\popularity\Positive.png" />
+    <None Remove="Images\resources\None.png" />
     <None Remove="Images\skirmishdifficulties\Easy.png" />
     <None Remove="Images\skirmishdifficulties\Hard.png" />
     <None Remove="Images\skirmishdifficulties\Medium.png" />
     <None Remove="Images\skirmishdifficulties\VEasy.png" />
     <None Remove="Images\skirmishdifficulties\VHard.png" />
+    <None Remove="Images\skirmishtrail\Map.png" />
+    <None Remove="Images\units\AppleFarmer.png" />
+    <None Remove="Images\units\BurningBigAnimal.png" />
+    <None Remove="Images\units\BurningSmallAnimal.png" />
+    <None Remove="Images\units\Camel.png" />
+    <None Remove="Images\units\Child.png" />
+    <None Remove="Images\units\DairyFarmer.png" />
+    <None Remove="Images\units\Goadman.png" />
+    <None Remove="Images\units\HopFarmer.png" />
+    <None Remove="Images\units\None.png" />
+    <None Remove="Images\units\Porter.png" />
+    <None Remove="Images\units\WheatFarmer.png" />
     <None Remove="Resources\background.jpg" />
     <None Remove="Images\buildings\ArabOutpost.png" />
     <None Remove="Images\buildings\BatteringRam.png" />
@@ -85,7 +109,6 @@
     <None Remove="Images\units\Deer.png" />
     <None Remove="Images\units\Dog.png" />
     <None Remove="Images\units\Drunkard.png" />
-    <None Remove="Images\units\Farmer.png" />
     <None Remove="Images\units\FireEater.png" />
     <None Remove="Images\units\Fireman.png" />
     <None Remove="Images\units\Fletcher.png" />
@@ -152,6 +175,7 @@
     <None Remove="Resources\configs\aiv\stsw\frederick6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick8.aiv" />
+    <None Remove="Resources\configs\aiv\stsw\images\abbot1.jpg" />
     <None Remove="Resources\configs\aiv\stsw\marshal1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\marshal2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\marshal3.aiv" />
@@ -382,6 +406,12 @@
     <None Remove="Resources\configs\troops\vanilla.json" />
     <None Remove="Resources\ucp\crusader.txt" />
     <None Remove="Resources\ucp\extreme.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\configs\aiv\stsw\images\abbot1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -1211,15 +1241,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\ai\PlayerArab.png" />
+    <Resource Include="Images\ai\PlayerEurop.png" />
     <Resource Include="Images\buildings\BatteringRam.png" />
     <Resource Include="Images\buildings\FireBallista.png" />
     <Resource Include="Images\buildings\PortableShield.png" />
     <Resource Include="Images\buildings\SiegeTower.png" />
+    <Resource Include="Images\lords\Arab.png" />
+    <Resource Include="Images\lords\Europ.png" />
+    <Resource Include="Images\misc\Cost.png" />
+    <Resource Include="Images\misc\Health.png" />
+    <Resource Include="Images\misc\MeleeDamage.png" />
+    <Resource Include="Images\misc\Range.png" />
+    <Resource Include="Images\popularity\Negative.png" />
+    <Resource Include="Images\popularity\Neutral.png" />
+    <Resource Include="Images\popularity\Positive.png" />
+    <Resource Include="Images\resources\None.png" />
     <Resource Include="Images\skirmishdifficulties\Easy.png" />
     <Resource Include="Images\skirmishdifficulties\Hard.png" />
     <Resource Include="Images\skirmishdifficulties\Medium.png" />
     <Resource Include="Images\skirmishdifficulties\VEasy.png" />
     <Resource Include="Images\skirmishdifficulties\VHard.png" />
+    <Resource Include="Images\skirmishtrail\Map.png" />
     <Resource Include="Images\teams\Team1.png" />
     <Resource Include="Images\teams\Team2.png" />
     <Resource Include="Images\teams\Team3.png" />
@@ -1243,8 +1286,6 @@
     <Resource Include="Images\ai\Sheriff.png" />
     <Resource Include="Images\ai\Marshal.png" />
     <Resource Include="Images\ai\Abbot.png" />
-    <Resource Include="Images\ai\Europ.png" />
-    <Resource Include="Images\ai\Arab.png" />
     <Resource Include="Images\colors\Red.png" />
     <Resource Include="Images\colors\Orange.png" />
     <Resource Include="Images\colors\Yellow.png" />
@@ -1352,28 +1393,33 @@
     <Resource Include="Images\resources\Swords.png" />
     <Resource Include="Images\resources\Wheat.png" />
     <Resource Include="Images\resources\Wood.png" />
+    <Resource Include="Images\units\AppleFarmer.png" />
     <Resource Include="Images\units\Armourer.png" />
     <Resource Include="Images\units\Baker.png" />
     <Resource Include="Images\units\Bear.png" />
     <Resource Include="Images\units\Blacksmith.png" />
-    <Resource Include="Images\units\Boy.png" />
     <Resource Include="Images\units\Brewer.png" />
+    <Resource Include="Images\units\BurningBigAnimal.png" />
     <Resource Include="Images\units\BurningMan.png" />
+    <Resource Include="Images\units\BurningSmallAnimal.png" />
+    <Resource Include="Images\units\Camel.png" />
     <Resource Include="Images\units\Chicken.png" />
+    <Resource Include="Images\units\Child.png" />
     <Resource Include="Images\units\Cow.png" />
     <Resource Include="Images\units\Crow.png" />
+    <Resource Include="Images\units\DairyFarmer.png" />
     <Resource Include="Images\units\Deer.png" />
     <Resource Include="Images\units\Dog.png" />
     <Resource Include="Images\units\Drunkard.png" />
     <Resource Include="Images\units\EuropArcher.png" />
     <Resource Include="Images\units\EngineerWithOil.png" />
-    <Resource Include="Images\units\Farmer.png" />
     <Resource Include="Images\units\FireEater.png" />
     <Resource Include="Images\units\Fireman.png" />
     <Resource Include="Images\units\Fletcher.png" />
     <Resource Include="Images\units\Ghost.png" />
-    <Resource Include="Images\units\Girl.png" />
+    <Resource Include="Images\units\Goadman.png" />
     <Resource Include="Images\units\Healer.png" />
+    <Resource Include="Images\units\HopFarmer.png" />
     <Resource Include="Images\units\HorseTrader.png" />
     <Resource Include="Images\units\Hunter.png" />
     <Resource Include="Images\units\Innkeeper.png" />
@@ -1388,10 +1434,12 @@
     <Resource Include="Images\units\Monk.png" />
     <Resource Include="Images\units\Catapult.png" />
     <Resource Include="Images\units\Mother.png" />
+    <Resource Include="Images\units\None.png" />
     <Resource Include="Images\units\Ox.png" />
     <Resource Include="Images\units\Peasant.png" />
     <Resource Include="Images\units\Pitchman.png" />
     <Resource Include="Images\units\Poleturner.png" />
+    <Resource Include="Images\units\Porter.png" />
     <Resource Include="Images\units\Priest.png" />
     <Resource Include="Images\units\Rabbit.png" />
     <Resource Include="Images\units\Seagull.png" />
@@ -1422,6 +1470,7 @@
     <Resource Include="Images\units\Ladderman.png" />
     <Resource Include="Images\units\Engineer.png" />
     <Resource Include="Images\units\WarDog.png" />
+    <Resource Include="Images\units\WheatFarmer.png" />
     <Resource Include="Images\units\Wolf.png" />
     <Resource Include="Images\units\Woodcutter.png" />
     <EmbeddedResource Include="Resources\configs\troops\stsw.json">
@@ -1458,6 +1507,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Modules\Configs\BugfixesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Modules\Finder\FinderView.xaml">
       <SubType>Designer</SubType>
     </Page>

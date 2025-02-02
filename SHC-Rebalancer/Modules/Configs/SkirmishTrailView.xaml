@@ -20,7 +20,7 @@
             <!-- skirmish trail -->
             <se:StswTabItem>
                 <se:StswTabItem.Header>
-                    <se:StswLabel Content="Skirmish trail" IconSource="/Images/teams/Team1.png"/>
+                    <se:StswLabel Content="Skirmish trail" IconSource="/Images/skirmishtrail/Map.png"/>
                 </se:StswTabItem.Header>
                 <DockPanel Margin="-3">
                     <!-- selector -->
@@ -49,7 +49,7 @@
                             <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:SkirmishDifficulty}" SelectedValue="{Binding Difficulty}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
-                                        <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                        <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
                                     </DataTemplate>
                                 </se:StswComboBox.ItemTemplate>
                             </se:StswComboBox>
@@ -58,7 +58,7 @@
                             <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:SkirmishMode}" SelectedValue="{Binding Type}">
                                 <se:StswComboBox.ItemTemplate>
                                     <DataTemplate>
-                                        <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                        <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
                                     </DataTemplate>
                                 </se:StswComboBox.ItemTemplate>
                             </se:StswComboBox>

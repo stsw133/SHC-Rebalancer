@@ -78,9 +78,34 @@ internal static class Rebalancer
     /// ProcessAicConfig
     private static void ProcessAicConfig(GameVersion gameVersion, AicConfigModel config)
     {
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("AIC", out var baseAddress))
+        /// lord type
+        if (Storage.BaseAddresses[gameVersion].TryGetValue("AIC LordType", out var baseAddress))
         {
-            var properties = typeof(AicModel)
+            foreach (var model in config.AIs)
+                if (model.Value.LordType != null)
+                    WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + ((int)model.Key) - 1, (byte)model.Value.LordType, baseAddress.Size, $"{model.Key} LordType");
+        }
+
+        /// lord strength
+        if (Storage.BaseAddresses[gameVersion].TryGetValue("AIC LordStrength", out baseAddress))
+        {
+            foreach (var model in config.AIs)
+                if (model.Value.LordStrength != null)
+                {
+                    var realStrength = Convert.ToInt32(model.Value.LordStrength * 100);
+                    if (realStrength > 100)
+                        realStrength += realStrength - 100;
+                    var dots = realStrength > 100 ? Math.Min((realStrength - 100) / 20, 5) : realStrength < 100 ? Math.Min(15 - realStrength / 10, 10) : 0;
+
+                    WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key) - 1) * 8, dots, baseAddress.Size, $"{model.Key} LordStrength Dots");
+                    WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key) - 1) * 8 + 4, realStrength, baseAddress.Size, $"{model.Key} LordStrength Value");
+                }
+        }
+
+        /// personality
+        if (Storage.BaseAddresses[gameVersion].TryGetValue("AIC Personality", out baseAddress))
+        {
+            var properties = typeof(AicModel.PersonalityModel)
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
                 .Where(x => x.GetCustomAttribute(typeof(JsonIgnoreAttribute)) == null)
                 .OrderBy(p => p.MetadataToken)
@@ -90,7 +115,7 @@ internal static class Rebalancer
             {
                 var address = Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key - 1) * 1697);
                 for (var i = 0; i < properties.Count; i++)
-                    WriteIfDifferent(address + i*10, properties[i].GetValue(model.Value), baseAddress.Size, $"{model.Key} {properties[i].Name}");
+                    WriteIfDifferent(address + i*10, properties[i].GetValue(model.Value.Personality), baseAddress.Size, $"{model.Key} {properties[i].Name}");
             }
         }
     }
@@ -103,7 +128,7 @@ internal static class Rebalancer
             throw new DirectoryNotFoundException($"AIV directory '{config.Name}' not found.");
 
         Directory.CreateDirectory(Storage.AivPath);
-        foreach (var file in Directory.GetFiles(sourceDirectory))
+        foreach (var file in Directory.GetFiles(sourceDirectory, "*.aiv"))
         {
             var fileName = Path.GetFileName(file);
             var destinationPath = Path.Combine(Storage.AivPath, fileName);
@@ -197,6 +222,7 @@ internal static class Rebalancer
     /// ProcessSkirmishTrailConfig
     private static void ProcessSkirmishTrailConfig(GameVersion gameVersion, SkirmishTrailConfigModel config)
     {
+        /// missions
         if (Storage.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Missions", out var baseAddress))
             foreach (var model in config.Missions.Where(x => x.Key.Between(1, 80)))
             {
@@ -220,41 +246,16 @@ internal static class Rebalancer
     /// ProcessTroopsConfig
     private static void ProcessTroopsConfig(GameVersion gameVersion, TroopsConfigModel config)
     {
-        /// lord type
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Troops LordType", out var baseAddress))
-        {
-            foreach (var model in config.Troops)
-                if (model.Value.Lord?.Type != null)
-                    WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + ((int)model.Key) - 1, (byte)model.Value.Lord.Type, baseAddress.Size, $"Troops {model.Key} LordType");
-        }
-
-        /// lord strength
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Troops LordStrength", out baseAddress))
-        {
-            foreach (var model in config.Troops)
-                if (model.Value.Lord?.Strength != null)
-                {
-                    var realStrength = Convert.ToInt32(model.Value.Lord.Strength * 100);
-                    if (realStrength > 100)
-                        realStrength += realStrength - 100;
-                    var dots = realStrength > 100 ? Math.Min((realStrength - 100) / 20, 5) : realStrength < 100 ? Math.Min(15 - realStrength / 10, 10) : 0;
-
-                    WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key) - 1) * 8, dots, baseAddress.Size, $"Troops {model.Key} LordStrength Dots");
-                    WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key) - 1) * 8 + 4, realStrength, baseAddress.Size, $"Troops {model.Key} LordStrength Value");
-                }
-        }
-
         /// troops
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Troops", out baseAddress))
+        if (Storage.BaseAddresses[gameVersion].TryGetValue("Troops", out var baseAddress))
         {
-            foreach (var model in config.Troops)
-                if (model.Value.Troops != null)
-                    foreach (var mode in model.Value.Troops)
-                        foreach (var unit in Enum.GetValues<Troop>())
-                        {
-                            var addressOffset = (((int)model.Key) - 1) * Enum.GetValues<SkirmishMode>().Length * Enum.GetValues<Troop>().Length * 4 + (((int)mode.Key) - 1) * Enum.GetValues<Troop>().Length * 4 + ((int)unit) * 4;
-                            WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + addressOffset, mode.Value.TryGetValue(unit, out var result) ? result : 0, baseAddress.Size, $"Troops {model.Key} {mode.Key} {unit}");
-                        }
+            foreach (var ai in config.Troops)
+                foreach (var mode in ai.Value)
+                    foreach (var unit in Enum.GetValues<Troop>())
+                    {
+                        var addressOffset = (((int)ai.Key) - 1) * Enum.GetValues<SkirmishMode>().Length * Enum.GetValues<Troop>().Length * 4 + (((int)mode.Key) - 1) * Enum.GetValues<Troop>().Length * 4 + ((int)unit) * 4;
+                        WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + addressOffset, mode.Value.TryGetValue(unit, out var result) ? result : 0, baseAddress.Size, $"Troops {ai.Key} {mode.Key} {unit}");
+                    }
         }
     }
 
@@ -325,9 +326,18 @@ internal static class Rebalancer
             }
         }
 
+        /// canDigMoat
+        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanDigMoat", out baseAddress)
+         && Storage.BaseAddresses[gameVersion].TryGetValue("Units FocusDigMoat", out var baseAddress2))
+            foreach (var model in config.Units.Where(x => x.Value.CanDigMoat.HasValue))
+            {
+                WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanDigMoat, baseAddress.Size, $"{model.Key} CanDigMoat");
+                WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress2, model.Key.ToString()), model.Value.CanDigMoat, baseAddress2.Size, $"{model.Key} FocusDigMoat");
+            }
+
         /// canClimbLadder
         if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanClimbLadder", out baseAddress)
-         && Storage.BaseAddresses[gameVersion].TryGetValue("Units FocusClimbLadder", out var baseAddress2))
+         && Storage.BaseAddresses[gameVersion].TryGetValue("Units FocusClimbLadder", out baseAddress2))
             foreach (var model in config.Units.Where(x => x.Value.CanClimbLadder.HasValue))
             {
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanClimbLadder, baseAddress.Size, $"{model.Key} CanClimbLadder");
@@ -403,8 +413,10 @@ internal static class Rebalancer
         {
             bool => (T)(object)_reader!.ReadBoolean(),
             byte => (T)(object)_reader!.ReadByte(),
-            int => size == 1 ? (T)(object)(int)_reader!.ReadByte() : (T)(object)_reader!.ReadInt32(),
+            short => (T)(object)_reader!.ReadInt16(),
+            int => size == 1 ? (T)(object)(int)_reader!.ReadByte() : size == 2 ? (T)(object)(int)_reader!.ReadInt16() : (T)(object)_reader!.ReadInt32(),
             byte[] byteArray => (T)(object)_reader!.ReadBytes(byteArray.Length),
+            short[] shortArray => (T)(object)Enumerable.Range(0, shortArray.Length).Select(_ => _reader!.ReadInt16()).ToArray(),
             int[] intArray => (T)(object)Enumerable.Range(0, intArray.Length).Select(_ => _reader!.ReadInt32()).ToArray(),
             string str => (T)(object)new string(_reader!.ReadChars(str.Length)),
             _ when typeof(T).IsEnum || (typeof(T) == typeof(object) && newValue?.GetType().IsEnum == true) => (T)(object)_reader!.ReadInt32(),
@@ -415,6 +427,7 @@ internal static class Rebalancer
         var areEqual = (newValue, oldValue) switch
         {
             (byte[] newArray, byte[] oldArray) => newArray.SequenceEqual(oldArray),
+            (short[] newArray, short[] oldArray) => newArray.SequenceEqual(oldArray),
             (int[] newArray, int[] oldArray) => newArray.SequenceEqual(oldArray),
             (string newStr, string oldStr) => newStr == oldStr,
             _ when typeof(T).IsEnum || (typeof(T) == typeof(object) && newValue?.GetType().IsEnum == true) => Convert.ToInt32(newValue) == Convert.ToInt32(oldValue),
@@ -434,6 +447,8 @@ internal static class Rebalancer
                 _writer!.Write(intValue);
             else if (newValue is byte[] byteArray)
                 byteArray.ToList().ForEach(x => _writer!.Write(x));
+            else if (newValue is short[] shortArray)
+                shortArray.ToList().ForEach(x => _writer!.Write(x));
             else if (newValue is int[] intArray)
                 intArray.ToList().ForEach(x => _writer!.Write(x));
             else if (newValue is string strValue)
@@ -449,6 +464,7 @@ internal static class Rebalancer
     private static string FormatValue<T>(T value) => value switch
     {
         byte[] byteArray => string.Join(", ", byteArray),
+        short[] shortArray => string.Join(", ", shortArray),
         int[] intArray => string.Join(", ", intArray),
         _ => value?.ToString() ?? string.Empty
     };

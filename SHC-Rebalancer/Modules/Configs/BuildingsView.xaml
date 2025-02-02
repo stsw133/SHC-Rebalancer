@@ -58,10 +58,10 @@
                             <se:StswLabel Content="Gold cost:" IconSource="/Images/resources/Gold.png"/>
                             <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Cost[4]}"/>
 
-                            <se:StswLabel Content="Health:" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                            <se:StswLabel Content="Health:" IconSource="/Images/misc/Health.png"/>
                             <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Health}"/>
 
-                            <se:StswLabel Content="Housing:" IconData="{x:Static se:StswIcons.Home}" IconFill="{DynamicResource StswDialog.None.Background}"/>
+                            <se:StswLabel Content="Housing:" IconSource="/Images/units/Peasant.png"/>
                             <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Housing}"/>
 
                         </se:StswLabelPanel>

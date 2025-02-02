@@ -11,6 +11,33 @@
 		{ "Key": "Monks always run",							"Size": 1, "Value": [144, 144], "Address": "0x1678D9", "Version": "Crusader", "IsEnabled": false },
 		{ "Key": "Monks always run",							"Size": 1, "Value": [144, 144], "Address": "0x167CF9", "Version": "Extreme", "IsEnabled": false },
 		
+		{ "Key": "Fireproof duration",							"Size": 2, "Value": 6000, "Address": "0x010A38", "Version": "Crusader" },
+		{ "Key": "Fireproof duration",							"Size": 2, "Value": 6000, "Address": "0x010A48", "Version": "Extreme" },
+		
+		{ "Key": "Remove magic bar 1",							"Size": 1, "Value": 195, "Address": "0x0DA050", "Version": "Crusader" },
+		{ "Key": "Remove magic bar 2",							"Size": 1, "Value": [144, 144, 144, 144, 144, 144, 144, 144, 144, 144], "Address": "0x17C699", "Version": "Crusader" },
+		{ "Key": "Remove magic bar 1",							"Size": 1, "Value": 195, "Address": "0x0DA3E0", "Version": "Extreme" },
+		{ "Key": "Remove magic bar 2",							"Size": 1, "Value": [144, 144, 144, 144, 144, 144, 144, 144, 144, 144], "Address": "0x17CAC5", "Version": "Extreme" },
+		
+		{ "Key": "No siege tent deselection",					"Size": 1, "Value": [144, 144, 144, 144, 144, 144], "Address": "0x04612B", "Version": "Crusader" },
+		{ "Key": "No siege tent deselection",					"Size": 1, "Value": [144, 144, 144, 144, 144, 144], "Address": "0x04635B", "Version": "Extreme" },
+		
+		{ "Key": "Always show planned moat",					"Size": 1, "Value": 21, "Address": "0x0EC86D", "Version": "Crusader" },
+		{ "Key": "Always show planned moat",					"Size": 1, "Value": 21, "Address": "0x0ECBFD", "Version": "Extreme" },
+		
+		{ "Key": "Close distance of gates towards enemies",		"Size": 2, "Value": 140, "Address": "0x022ACE", "Version": "Crusader" },
+		{ "Key": "Open distance of gates towards enemies",		"Size": 2, "Value": 100, "Address": "0x022B3C", "Version": "Crusader" },
+		{ "Key": "Close distance of gates towards enemies",		"Size": 2, "Value": 140, "Address": "0x022ADE", "Version": "Extreme" },
+		{ "Key": "Open distance of gates towards enemies",		"Size": 2, "Value": 100, "Address": "0x022B4C", "Version": "Extreme" },
+		
+		{ "Key": "Check available paths delay",					"Size": 4, "Value": 50, "Address": "0x09961E", "Version": "Crusader" },
+		{ "Key": "Check available paths delay",					"Size": 4, "Value": 50, "Address": "0x09978E", "Version": "Extreme" },
+		
+		{ "Key": "Multiplayer default speed 1",					"Size": 1, "Value": 60, "Address": "0x08790B", "Version": "Crusader" },
+		{ "Key": "Multiplayer default speed 2",					"Size": 1, "Value": 60, "Address": "0x08C4A4", "Version": "Crusader" },
+		{ "Key": "Multiplayer default speed 1",					"Size": 1, "Value": 60, "Address": "0x087A1B", "Version": "Extreme" },
+		{ "Key": "Multiplayer default speed 2",					"Size": 1, "Value": 60, "Address": "0x08C5B4", "Version": "Extreme" },
+		
 		{ "Key": "Skirmish delivery % bonus",					"Size": 1, "Value": 50, "IsEnabled": false },
 		
 		{ "Key": "Resources delivery Cheese",					"Size": 1, "Value": 4 },

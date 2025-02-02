@@ -20,7 +20,7 @@
             <!-- resources -->
             <se:StswTabItem>
                 <se:StswTabItem.Header>
-                    <se:StswLabel Content="Units" IconSource="/Images/units/Swordsman.png"/>
+                    <se:StswLabel Content="Units" IconSource="/Images/units/Peasant.png"/>
                 </se:StswTabItem.Header>
                 <DockPanel Margin="-3">
                     <!-- selector -->
@@ -42,7 +42,7 @@
                                            VerticalAlignment="Center"
                                            Width="300">
 
-                            <se:StswLabel Content="Health:" IconData="{x:Static se:StswIcons.Heart}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                            <se:StswLabel Content="Health:" IconSource="/Images/misc/Health.png"/>
                             <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Health}"/>
 
                             <se:StswLabel Content="Damage from bow:" IconSource="/Images/units/EuropArcher.png"/>
@@ -64,12 +64,15 @@
                                 </se:StswSlider>
                             </StackPanel>
 
-                            <se:StswLabel Content="Melee damage:" IconData="{x:Static se:StswIcons.SwordCross}" IconFill="{DynamicResource StswDialog.Error.Background}"/>
+                            <se:StswLabel Content="Melee damage:" IconSource="/Images/misc/MeleeDamage.png"/>
                             <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MeleeDamage}"/>
 
                             <se:StswLabel Content="Can melee damage:" IconData="{x:Static se:StswIcons.Sword}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
                             <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanMeleeDamage}"/>
-
+<!--
+                            <se:StswLabel Content="Can dig moat:" IconData="{x:Static se:StswIcons.Shovel}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                            <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanDigMoat}"/>
+-->
                             <se:StswLabel Content="Can climb ladder:" IconData="{x:Static se:StswIcons.Ladder}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
                             <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanClimbLadder}"/>
 

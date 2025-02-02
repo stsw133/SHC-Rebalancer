@@ -56,6 +56,9 @@
                 <se:StswRadioBox Content="byte"
                                  IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=1}"
                                  Margin="0 0 3 0"/>
+                <se:StswRadioBox Content="short"
+                                 IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=2}"
+                                 Margin="0 0 3 0"/>
                 <se:StswRadioBox Content="int"
                                  IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=4}"
                                  Margin="0 0 3 0"/>

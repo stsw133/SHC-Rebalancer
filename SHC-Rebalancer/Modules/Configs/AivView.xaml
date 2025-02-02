@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="SHC_Rebalancer.AivView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
+
+    <DockPanel>
+        <!-- configs -->
+        <DockPanel DockPanel.Dock="Top">
+            <se:StswLabel Content="Selected config:" FontWeight="Bold" Margin="3"/>
+            <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:Storage.Configs}}"
+                             SelectedItem="{Binding SelectedConfigs[aiv], Mode=OneWayToSource}"
+                             SelectedValue="{Binding ConfigName_aiv, Mode=OneWay, Source={x:Static local:Settings.Default}}"/>
+        </DockPanel>
+
+        <se:StswTabControl Margin="3" TabStripPlacement="Left">
+            <!-- aiv -->
+            <se:StswTabItem>
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="AIV" IconSource="/Images/buildings/Keep2.png"/>
+                </se:StswTabItem.Header>
+                <DockPanel Margin="-3">
+                    <!-- selector -->
+                    <se:StswSegment x:Name="AivSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[aiv].AIs}" Orientation="Vertical" Width="100">
+                        <se:StswSegment.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                                    <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </se:StswSegment.ItemTemplate>
+                    </se:StswSegment>
+                    <!-- data -->
+                    <se:StswLabel DockPanel.Dock="Bottom" Content="{Binding SelectedItem.Name, ElementName=CastleSelector}" HorizontalAlignment="Center"/>
+                    <se:StswFlipView x:Name="CastleSelector"
+                                     IsEnabled="{Binding SelectedItem, ElementName=AivSelector, Converter={x:Static se:StswNotNullConverter.Instance}}"
+                                     ItemsSource="{Binding SelectedItem.Value, ElementName=AivSelector}">
+                        <se:StswFlipView.ItemTemplate>
+                            <DataTemplate>
+                                <se:StswImage Source="{Binding ImagePath, Converter={x:Static se:StswNullToUnsetConverter.Instance}}"/>
+                            </DataTemplate>
+                        </se:StswFlipView.ItemTemplate>
+                    </se:StswFlipView>
+                </DockPanel>
+            </se:StswTabItem>
+        </se:StswTabControl>
+    </DockPanel>
+</UserControl>
