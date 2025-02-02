@@ -23,36 +23,36 @@ internal static class Rebalancer
             using (_reader = new BinaryReader(_fs))
             using (_writer = new BinaryWriter(_fs))
             {
-                if (Settings.Default.IncludeUcp)
+                if (SettingsService.Instance.Settings.IncludeUCP)
                     ProcessUcp(exePath.Key);
 
-                if (Storage.Configs["aic"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_aic) is AicConfigModel aicConfig)
+                if (Storage.Configs["aic"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aic"]) is AicConfigModel aicConfig)
                     ProcessAicConfig(exePath.Key, aicConfig);
 
-                if (Storage.Configs["goods"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_goods) is GoodsConfigModel goodsConfig)
+                if (Storage.Configs["goods"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["goods"]) is GoodsConfigModel goodsConfig)
                     ProcessGoodsConfig(exePath.Key, goodsConfig);
 
-                if (Storage.Configs["troops"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_troops) is TroopsConfigModel troopsConfig)
+                if (Storage.Configs["troops"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["troops"]) is TroopsConfigModel troopsConfig)
                     ProcessTroopsConfig(exePath.Key, troopsConfig);
 
-                if (Storage.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_buildings) is BuildingsConfigModel buildingsConfig)
+                if (Storage.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["buildings"]) is BuildingsConfigModel buildingsConfig)
                     ProcessBuildingsConfig(exePath.Key, buildingsConfig);
                 
-                if (Storage.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_resources) is ResourcesConfigModel resourcesConfig)
+                if (Storage.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["resources"]) is ResourcesConfigModel resourcesConfig)
                     ProcessResourcesConfig(exePath.Key, resourcesConfig);
 
-                if (Storage.Configs["units"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_units) is UnitsConfigModel unitsConfig)
+                if (Storage.Configs["units"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["units"]) is UnitsConfigModel unitsConfig)
                     ProcessUnitsConfig(exePath.Key, unitsConfig);
 
-                if (Storage.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_skirmishtrail) is SkirmishTrailConfigModel skirmishtrailModel)
+                if (Storage.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["skirmishtrail"]) is SkirmishTrailConfigModel skirmishtrailModel)
                     ProcessSkirmishTrailConfig(exePath.Key, skirmishtrailModel);
 
-                if (Storage.Configs["customs"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_customs) is CustomsConfigModel customsConfig)
+                if (Storage.Configs["customs"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["customs"]) is CustomsConfigModel customsConfig)
                     ProcessCustomsConfig(exePath.Key, customsConfig);
             }
         }
 
-        if (Storage.Configs["aiv"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == Settings.Default.ConfigName_aiv) is AivConfigModel aivConfig)
+        if (Storage.Configs["aiv"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aiv"]) is AivConfigModel aivConfig)
             ProcessAivConfig(aivConfig);
     }
 

@@ -11,12 +11,13 @@ public partial class App : StswApp
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
+        Resources["Settings"] = SettingsService.Instance.Settings;
     }
 
     protected override void OnExit(ExitEventArgs e)
     {
         base.OnExit(e);
-        Settings.Default.Save();
+        SettingsService.Instance.SaveSettings();
     }
 
     private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

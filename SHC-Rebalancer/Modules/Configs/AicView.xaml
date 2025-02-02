@@ -13,7 +13,7 @@
             <se:StswLabel Content="Selected config:" FontWeight="Bold" Margin="3"/>
             <local:ConfigBox ItemsSource="{Binding [aic], Source={x:Static local:Storage.Configs}}"
                              SelectedItem="{Binding SelectedConfigs[aic], Mode=OneWayToSource}"
-                             SelectedValue="{Binding ConfigName_aic, Mode=OneWay, Source={x:Static local:Settings.Default}}"/>
+                             SelectedValue="{Binding SelectedConfigs[aic], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
 
         <se:StswTabControl Margin="3" TabStripPlacement="Left">

@@ -15,7 +15,7 @@ public class MainContext : StswObservableObject
 
     public MainContext()
     {
-        AcceptTermsCommand = new(AcceptTerms, () => Settings.Default.TermsAccepted);
+        AcceptTermsCommand = new(AcceptTerms, () => SettingsService.Instance.Settings.TermsAccepted);
         ExitAppCommand = new(App.Current.Shutdown);
 
         ReloadAllCommand = new(ReloadAll);
@@ -55,7 +55,7 @@ public class MainContext : StswObservableObject
             foreach (var config in Storage.Configs)
             {
                 var type = config.Key.ToLower();
-                var selectedRebalance = Settings.Default["ConfigName_" + type].ToString()!;
+                var selectedRebalance = SettingsService.Instance.Settings.SelectedConfigs[type];
 
                 var newConfigs = Storage.LoadConfigs(type)[type].Cast<object>().ToList();
                 Storage.Configs[type].Clear();
@@ -65,9 +65,9 @@ public class MainContext : StswObservableObject
                 OnPropertyChanged(nameof(SelectedConfigs));
 
                 if (Storage.Configs[type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
-                    Settings.Default["ConfigName_" + type] = selectedRebalance;
+                    SettingsService.Instance.Settings.SelectedConfigs[type] = selectedRebalance;
                 else if (Storage.Configs[type].Count > 0)
-                    Settings.Default["ConfigName_" + type] = Storage.Configs[type].First().GetPropertyValue(nameof(ConfigModel.Name));
+                    SettingsService.Instance.Settings.SelectedConfigs[type] = Storage.Configs[type].First().GetPropertyValue(nameof(ConfigModel.Name))!.ToString()!;
             }
 
             InstallState = StswProgressState.Finished;
@@ -113,7 +113,7 @@ public class MainContext : StswObservableObject
             Storage.SaveConfigs();
 
             InstallValue += 20;
-            if (!Settings.Default.IncludeUcp)
+            if (!SettingsService.Instance.Settings.IncludeUCP)
                 await Task.Delay(400);
 
             //Backup.Restore();
@@ -132,7 +132,7 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
-    public bool CanEditExe() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(Settings.Default.GamePath);
+    public bool CanEditExe() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath);
 
     /// Uninstall
     public async Task Uninstall()
@@ -196,7 +196,7 @@ public class MainContext : StswObservableObject
         get => _isTermsContentDialogOpen;
         set => SetProperty(ref _isTermsContentDialogOpen, value);
     }
-    private bool _isTermsContentDialogOpen = !Settings.Default.TermsAccepted;
+    private bool _isTermsContentDialogOpen = !SettingsService.Instance.Settings.TermsAccepted;
 
     /// SelectedConfigs
     public StswDictionary<string, ConfigModel> SelectedConfigs

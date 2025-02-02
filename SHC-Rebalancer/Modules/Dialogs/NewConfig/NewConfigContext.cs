@@ -26,13 +26,13 @@ public class NewConfigContext : StswObservableObject
 
             if (IsEditing)
             {
-                if (Storage.Configs[Type].Cast<ConfigModel>().Any(x => x.Name == Name) && Name != Settings.Default["ConfigName_" + Type].ToString())
+                if (Storage.Configs[Type].Cast<ConfigModel>().Any(x => x.Name == Name) && Name != SettingsService.Instance.Settings.SelectedConfigs[Type])
                 {
                     await StswMessageDialog.Show("Selected name is already taken!", "Blockade", null, StswDialogButtons.OK, StswDialogImage.Blockade);
                     return;
                 }
 
-                var selectedFilePath = Path.Combine(Storage.ConfigsPath, Type, Settings.Default["ConfigName_" + Type].ToString() + ".json");
+                var selectedFilePath = Path.Combine(Storage.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] + ".json");
                 if (!File.Exists(selectedFilePath))
                 {
                     await StswMessageDialog.Show("Edited file does not exist!", "Error", null, StswDialogButtons.OK, StswDialogImage.Error);
@@ -40,8 +40,8 @@ public class NewConfigContext : StswObservableObject
                 }
 
                 File.Move(selectedFilePath, filePath);
-                Storage.Configs[Type].Cast<ConfigModel>().First(x => x.Name == Settings.Default["ConfigName_" + Type].ToString()!).Name = Name;
-                Settings.Default["ConfigName_" + Type] = Name;
+                Storage.Configs[Type].Cast<ConfigModel>().First(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs[Type]).Name = Name;
+                SettingsService.Instance.Settings.SelectedConfigs[Type] = Name;
 
                 StswContentDialog.Close("MainContentDialog");
             }
@@ -64,7 +64,7 @@ public class NewConfigContext : StswObservableObject
                 {
                     File.Copy(baseFilePath, filePath);
                     Storage.Configs[Type].Add(Storage.LoadConfigs(Type, Name)[Type].First()!);
-                    Settings.Default["ConfigName_" + Type] = Name;
+                    SettingsService.Instance.Settings.SelectedConfigs[Type] = Name;
 
                     StswContentDialog.Close("MainContentDialog");
                 }

@@ -16,10 +16,10 @@ public static class Storage
 
     public static Dictionary<GameVersion, string> ExePath => new()
     {
-        { GameVersion.Crusader, Path.Combine(Settings.Default.GamePath, "Stronghold Crusader.exe") },
-        { GameVersion.Extreme, Path.Combine(Settings.Default.GamePath, "Stronghold_Crusader_Extreme.exe") },
+        { GameVersion.Crusader, Path.Combine(SettingsService.Instance.Settings.GamePath, "Stronghold Crusader.exe") },
+        { GameVersion.Extreme, Path.Combine(SettingsService.Instance.Settings.GamePath, "Stronghold_Crusader_Extreme.exe") },
     };
-    public static string AivPath => Path.Combine(Settings.Default.GamePath, "aiv");
+    public static string AivPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "aiv");
     public static string BaseAddressesPath => Path.Combine(AppContext.BaseDirectory, "Resources", "base");
     public static string ConfigsPath => Path.Combine(AppContext.BaseDirectory, "Resources", "configs");
     public static string UcpPath => Path.Combine(AppContext.BaseDirectory, "Resources", "ucp");
