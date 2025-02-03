@@ -28,18 +28,17 @@ public static class Finder
                                       else if (x == "?")
                                           return null;
                                       else
-                                          return filterSize == 1 ? (object)Convert.ToByte(x) : Convert.ToInt32(x);
+                                          return filterSize == 1 ? Convert.ToByte(x) : filterSize == 2 ? (object)Convert.ToInt16(x) : Convert.ToInt32(x);
                                   })
                                   .ToList();
 
-        var stepSize = filterSize == 1 ? 1 : 4;
-        for (var i = 0; i <= fileBytes.Length - pattern.Count * stepSize; i += stepSize)
+        for (var i = 0; i <= fileBytes.Length - pattern.Count * filterSize; i += filterSize)
         {
-            if (IsPatternMatch(fileBytes, i, pattern, stepSize))
+            if (IsPatternMatch(fileBytes, i, pattern, filterSize))
             {
                 for (var k = 0; k < pattern.Count; k++)
                 {
-                    int address = i + k * stepSize;
+                    int address = i + k * filterSize;
                     int value = filterSize == 1 ? fileBytes[address] : BitConverter.ToInt32(fileBytes, address);
                     finderData.Add(new FinderDataModel
                     {
@@ -63,6 +62,12 @@ public static class Finder
             if (filterSize == 1)
             {
                 if ((byte?)pattern[j] != fileBytes[startIndex + j])
+                    return false;
+            }
+            else if (filterSize == 2)
+            {
+                int value = BitConverter.ToInt16(fileBytes, startIndex + j * 2);
+                if ((short?)pattern[j] != value)
                     return false;
             }
             else if (filterSize == 4)
@@ -92,7 +97,7 @@ public static class Finder
         for (var i = 0; i < 50 && reader.BaseStream.Position < reader.BaseStream.Length; i++)
         {
             var address = reader.BaseStream.Position;
-            var value = filterSize == 1 ? reader.ReadByte() : reader.ReadInt32();
+            var value = filterSize == 1 ? reader.ReadByte() : filterSize == 2 ? reader.ReadInt16() : reader.ReadInt32();
 
             finderData.Add(new FinderDataModel
             {

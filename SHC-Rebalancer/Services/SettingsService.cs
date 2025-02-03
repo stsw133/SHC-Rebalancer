@@ -82,19 +82,11 @@ public class AppSettings : StswObservableObject
     }
     private Dictionary<string, string?> _selectedConfigs = [];
     
-    /// Bugfixes
-    public ObservableDictionary<string, object?> Bugfixes
+    /// SelectedOptions
+    public ObservableDictionary<string, object?> SelectedOptions
     {
-        get => _bugfixes;
-        set => SetProperty(ref _bugfixes, value);
+        get => _selectedOptions;
+        set => SetProperty(ref _selectedOptions, value);
     }
-    private ObservableDictionary<string, object?> _bugfixes = [];
-    
-    /// Other
-    public ObservableDictionary<string, object?> Other
-    {
-        get => _other;
-        set => SetProperty(ref _other, value);
-    }
-    private ObservableDictionary<string, object?> _other = [];
+    private ObservableDictionary<string, object?> _selectedOptions = [];
 }

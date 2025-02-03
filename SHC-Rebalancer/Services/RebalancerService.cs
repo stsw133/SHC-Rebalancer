@@ -81,29 +81,16 @@ internal static class Rebalancer
     /// ProcessOptionsConfig
     private static void ProcessOptionsConfig(GameVersion gameVersion, OptionsConfigModel config)
     {
-        /// bugfixes
-        foreach (var item in config.Bugfixes)
+        /// options
+        foreach (var item in config.Options)
         {
-            var selectedValue = SettingsService.Instance.Settings.Bugfixes[item.Key];
-            foreach (var value in item.Value.Modifications)
+            var selectedValue = SettingsService.Instance.Settings.SelectedOptions[item.Key];
+            foreach (var value in item.Value.Modifications.Where(x => x.Version == gameVersion))
             {
-                if (value.IsNewValueDynamic && selectedValue is bool boolValue)
-                    WriteIfDifferent(Convert.ToInt32(value.Address, 16), boolValue ? value.NewValue : value.OldValue, value.Size, $"Bugfixes {item.Key}");
+                if (!value.IsNewValueDynamic && bool.TryParse(selectedValue?.ToString(), out var boolValue))
+                    WriteIfDifferent(Convert.ToInt32(value.Address, 16), GetNumberOrArray(boolValue ? value.NewValue : value.OldValue, value.Size), value.Size, $"Options {item.Key}");
                 else
-                    WriteIfDifferent(Convert.ToInt32(value.Address, 16), selectedValue, value.Size, $"Bugfixes {item.Key}");
-            }
-        }
-
-        /// other
-        foreach (var item in config.Other)
-        {
-            var selectedValue = SettingsService.Instance.Settings.Other[item.Key];
-            foreach (var value in item.Value.Modifications)
-            {
-                if (value.IsNewValueDynamic && selectedValue is bool boolValue)
-                    WriteIfDifferent(Convert.ToInt32(value.Address, 16), boolValue ? value.NewValue : value.OldValue, value.Size, $"Other {item.Key}");
-                else
-                    WriteIfDifferent(Convert.ToInt32(value.Address, 16), selectedValue, value.Size, $"Other {item.Key}");
+                    WriteIfDifferent(Convert.ToInt32(value.Address, 16), GetNumberOrArray(selectedValue, value.Size), value.Size, $"Options {item.Key}");
             }
         }
     }
@@ -441,7 +428,15 @@ internal static class Rebalancer
             _fs.SetLength(address + size);
         }
         _fs!.Seek(address, SeekOrigin.Begin);
-
+        var oldValue = ReadValue(newValue, size);
+        
+        if (!AreValuesEqual(newValue, oldValue))
+        {
+            Console.WriteLine($"Address {address:X}, old value: [{FormatValue(oldValue)}], new value: [{FormatValue(newValue)}], description: {description}");
+            _fs.Seek(address, SeekOrigin.Begin);
+            WriteValue(newValue, size);
+        }
+        /*
         T oldValue = newValue switch
         {
             bool => (T)(object)_reader!.ReadBoolean(),
@@ -454,9 +449,10 @@ internal static class Rebalancer
             string str => (T)(object)new string(_reader!.ReadChars(str.Length)),
             _ when typeof(T).IsEnum || (typeof(T) == typeof(object) && newValue?.GetType().IsEnum == true) => (T)(object)_reader!.ReadInt32(),
             _ when Nullable.GetUnderlyingType(typeof(T))?.IsEnum == true => (T)(object)_reader!.ReadInt32(),
+            object obj => size == 1 ? (T)(object)(int)_reader!.ReadByte() : size == 2 ? (T)(object)(int)_reader!.ReadInt16() : (T)(object)_reader!.ReadInt32(),
             _ => throw new InvalidOperationException($"Unsupported type {typeof(T).Name}")
         };
-
+        
         var areEqual = (newValue, oldValue) switch
         {
             (byte[] newArray, byte[] oldArray) => newArray.SequenceEqual(oldArray),
@@ -476,6 +472,8 @@ internal static class Rebalancer
                 _writer!.Write(Convert.ToInt32(boolValue));
             else if (newValue is byte byteValue)
                 _writer!.Write(byteValue);
+            else if (newValue is short shortValue)
+                _writer!.Write(shortValue);
             else if (newValue is int intValue)
                 _writer!.Write(intValue);
             else if (newValue is byte[] byteArray)
@@ -491,6 +489,122 @@ internal static class Rebalancer
             else
                 throw new InvalidOperationException("Unsupported type for writing.");
         }
+        */
+    }
+
+    /// ReadValue
+    private static object ReadValue(object newValue, int size)
+    {
+        if (newValue is bool)
+            return _reader!.ReadByte() != 0;
+        if (newValue is byte)
+            return _reader!.ReadByte();
+        if (newValue is short)
+            return _reader!.ReadInt16();
+        if (newValue is int)
+        {
+            return size switch
+            {
+                1 => _reader!.ReadByte(),
+                2 => _reader!.ReadInt16(),
+                _ => _reader!.ReadInt32()
+            };
+        }
+        if (newValue is byte[] byteArr)
+            return _reader!.ReadBytes(byteArr.Length);
+        if (newValue is short[] shortArr)
+        {
+            var arr = new short[shortArr.Length];
+            for (int i = 0; i < arr.Length; i++)
+                arr[i] = _reader!.ReadInt16();
+            return arr;
+        }
+        if (newValue is int[] intArr)
+        {
+            var arr = new int[intArr.Length];
+            for (int i = 0; i < arr.Length; i++)
+                arr[i] = size == 2 ? (int)_reader!.ReadInt16() : _reader!.ReadInt32();
+            return arr;
+        }
+        if (newValue is string str)
+            return new string(_reader!.ReadChars(str.Length));
+        if (newValue.GetType().IsEnum)
+            return _reader!.ReadInt32();
+
+        throw new InvalidOperationException($"Unsupported type {newValue.GetType().Name}");
+    }
+
+    /// WriteValue
+    private static void WriteValue(object newValue, int size)
+    {
+        if (newValue is bool b)
+            _writer!.Write((byte)(b ? 1 : 0));
+        else if (newValue is byte by)
+            _writer!.Write(by);
+        else if (newValue is short s)
+            _writer!.Write(s);
+        else if (newValue is int i)
+        {
+            switch (size)
+            {
+                case 1:
+                    _writer!.Write((byte)i);
+                    break;
+                case 2:
+                    _writer!.Write((short)i);
+                    break;
+                default:
+                    _writer!.Write(i);
+                    break;
+            }
+        }
+        else if (newValue is byte[] byteArr)
+            _writer!.Write(byteArr);
+        else if (newValue is short[] shortArr)
+        {
+            foreach (var s1 in shortArr)
+                _writer!.Write(s1);
+        }
+        else if (newValue is int[] intArr)
+        {
+            if (size == 2)
+            {
+                foreach (var i1 in intArr)
+                    _writer!.Write((short)i1);
+            }
+            else
+            {
+                foreach (var i2 in intArr)
+                    _writer!.Write(i2);
+            }
+        }
+        else if (newValue is string str)
+        {
+            foreach (var c in str)
+                _writer!.Write((byte)c);
+        }
+        else if (newValue.GetType().IsEnum)
+        {
+            _writer!.Write(Convert.ToInt32(newValue));
+        }
+        else
+        {
+            throw new InvalidOperationException("Unsupported type for writing.");
+        }
+    }
+
+    /// AreValuesEqual
+    private static bool AreValuesEqual(object newValue, object oldValue)
+    {
+        return (newValue, oldValue) switch
+        {
+            (byte[] newArr, byte[] oldArr) => newArr.SequenceEqual(oldArr),
+            (short[] newArr, short[] oldArr) => newArr.SequenceEqual(oldArr),
+            (int[] newArr, int[] oldArr) => newArr.SequenceEqual(oldArr),
+            (string newStr, string oldStr) => newStr == oldStr,
+            _ when newValue.GetType().IsEnum || oldValue.GetType().IsEnum => Convert.ToInt32(newValue) == Convert.ToInt32(oldValue),
+            _ => Equals(newValue, oldValue)
+        };
     }
 
     /// FormatValue
@@ -518,5 +632,75 @@ internal static class Rebalancer
         Array.Copy(stringBytes, result, stringBytes.Length);
 
         return result;
+    }
+
+    /// GetNumberOrArray
+    private static object GetNumberOrArray(object? obj, int size)
+    {
+        if (obj is JsonElement jsonElement)
+        {
+            if (jsonElement.ValueKind == JsonValueKind.Number)
+            {
+                var number = jsonElement.GetInt32();
+                return size switch
+                {
+                    1 => (byte)number,
+                    2 => (short)number,
+                    _ => number
+                };
+            }
+            if (jsonElement.ValueKind == JsonValueKind.String && int.TryParse(jsonElement.GetString(), out int parsedValue))
+            {
+                return size switch
+                {
+                    1 => (byte)parsedValue,
+                    2 => (short)parsedValue,
+                    _ => parsedValue
+                };
+            }
+            if (jsonElement.ValueKind == JsonValueKind.Array)
+            {
+                var numbers = jsonElement.EnumerateArray()
+                                         .Where(e => e.ValueKind == JsonValueKind.Number)
+                                         .Select(e => e.GetInt32())
+                                         .ToArray();
+                return size switch
+                {
+                    1 => numbers.Select(n => (byte)n).ToArray(),
+                    2 => numbers.Select(n => (short)n).ToArray(),
+                    _ => numbers
+                };
+            }
+        }
+        else if (obj is int intValue)
+        {
+            return size switch
+            {
+                1 => (byte)intValue,
+                2 => (short)intValue,
+                _ => intValue
+            };
+        }
+        else if (obj is string strValue && int.TryParse(strValue, out int parsedStrValue))
+        {
+            return size switch
+            {
+                1 => (byte)parsedStrValue,
+                2 => (short)parsedStrValue,
+                _ => parsedStrValue
+            };
+        }
+        else if (obj is Array array)
+        {
+            var numbers = array.OfType<object>().Select(Convert.ToInt32).ToArray();
+            return size switch
+            {
+                1 => numbers.Select(n => (byte)n).ToArray(),
+                2 => numbers.Select(n => (short)n).ToArray(),
+                _ => numbers
+            };
+        }
+
+        throw new InvalidOperationException($"Unsupported value type: {obj?.GetType().Name}");
     }
 }

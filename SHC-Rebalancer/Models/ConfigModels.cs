@@ -20,8 +20,7 @@ public abstract class ConfigModel : StswObservableObject, IConfigModel
 /// OptionsConfigModel
 public class OptionsConfigModel : ConfigModel
 {
-    public Dictionary<string, OptionModel> Bugfixes { get; set; } = [];
-    public Dictionary<string, OptionModel> Other { get; set; } = [];
+    public Dictionary<string, OptionModel> Options { get; set; } = [];
 }
 
 /// AicConfigModel

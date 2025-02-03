@@ -55,7 +55,6 @@
                 <Run Text="&#x0a; • Reset lord animation after destroying buildings"/>
                 <Run Text="&#x0a; • Fix apple farm worker getting blocked"/>
                 <Run Text="&#x0a; • Fix tanners getting all the same cow"/>
-                <Run Text="&#x0a; • Fix fletcher pathing"/>
                 <Run Text="&#x0a; • Fix AI's crusader archers not lightning pitch"/>
                 <Run Text="&#x0a; • Fix bakers despawning"/>
                 <Run Text="&#x0a; • Fix despawning of digging units"/>
@@ -74,7 +73,6 @@
                 <Run Text="&#x0a; • Free trader post"/>
                 <Run Text="&#x0a; • Extended game speed limits"/>
                 <Run Text="&#x0a; • Fix armory/marketplace weapon orders to match"/>
-                <Run Text="&#x0a; • Shrink apple orchard's build size"/>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="It will not, however, include other features, including the following, which cannot yet be configured in the Rebalancer:"/>
