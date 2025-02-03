@@ -78,7 +78,7 @@
 
                                 <se:StswLabel Content="Select configs to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
                                 <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5" Margin="3">
-                                    <UniformGrid DockPanel.Dock="Top" Columns="2">
+                                    <UniformGrid Columns="2">
                                         <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
                                             
                                             <se:StswLabel>
@@ -129,12 +129,12 @@
                             </StackPanel>
                         </se:StswScrollView>
                     </se:StswTabItem>
-                    <!-- bugfixes -->
-                    <se:StswTabItem IsEnabled="False">
+                    <!-- options -->
+                    <se:StswTabItem>
                         <se:StswTabItem.Header>
-                            <se:StswLabel Content="Bugfixes" IconData="{x:Static se:StswIcons.Tools}"/>
+                            <se:StswLabel Content="Options" IconData="{x:Static se:StswIcons.Tools}"/>
                         </se:StswTabItem.Header>
-                        <local:BugfixesView/>
+                        <local:OptionsView/>
                     </se:StswTabItem>
                     <!-- aic -->
                     <se:StswTabItem>

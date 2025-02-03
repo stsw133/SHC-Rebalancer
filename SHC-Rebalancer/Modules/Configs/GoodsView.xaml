@@ -35,15 +35,16 @@
                         </se:StswSegment.ItemTemplate>
                     </se:StswSegment>
                     <!-- data -->
-                    <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=GoodsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}" Margin="3">
+                    <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=GoodsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
                         <se:StswLabelPanel DataContext="{Binding SelectedItem.Value, ElementName=GoodsSelector}"
                                            LabelFontWeight="Medium"
                                            LabelHorizontalAlignment="Right"
+                                           Margin="3"
                                            VerticalAlignment="Center"
                                            Width="500">
 
                             <se:StswLabel/>
-                            <UniformGrid Height="16" Rows="1">
+                            <UniformGrid Height="16" Margin="3" Rows="1">
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/VEasy.png"/>
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/Easy.png"/>
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/Medium.png"/>

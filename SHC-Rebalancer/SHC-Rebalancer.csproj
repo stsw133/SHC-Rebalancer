@@ -402,6 +402,7 @@
     <None Remove="Resources\configs\aiv\vanilla\wolf8.aiv" />
     <None Remove="Resources\configs\goods\stsw.json" />
     <None Remove="Resources\configs\goods\vanilla.json" />
+    <None Remove="Resources\configs\options.json" />
     <None Remove="Resources\configs\troops\stsw.json" />
     <None Remove="Resources\configs\troops\vanilla.json" />
     <None Remove="Resources\ucp\crusader.txt" />
@@ -1204,6 +1205,9 @@
     <EmbeddedResource Include="Resources\configs\buildings\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\configs\options\options.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\configs\customs\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -1500,7 +1504,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Modules\Configs\BugfixesView.xaml">
+    <Page Update="Modules\Configs\OptionsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Modules\Finder\FinderView.xaml">

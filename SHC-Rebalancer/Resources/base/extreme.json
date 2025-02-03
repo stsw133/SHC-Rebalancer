@@ -34,14 +34,7 @@
 	
 	
 	
-	{ "Key": "Skirmish delivery % bonus",					"Address": "0x1311D4", "Size": 1 },
-	
 	{ "Key": "Resources delivery Cheese",					"Address": "0x154D44", "Size": 1 },
-	
-	{ "Key": "IronMine pickup wait",						"Address": "0x166556", "Size": 1 },
-	{ "Key": "IronMine pickup replenish",					"Address": "0x166724", "Size": 1 },
-	{ "Key": "IronMine skirmish bonus",						"Address": "0x166726", "Size": 1 },
-	{ "Key": "IronMine delivery",							"Address": "0x16672E", "Size": 1 },
 	
 	{ "Key": "Religion bonus threshold A1",					"Address": "0x03EE52", "Size": 1 },
 	{ "Key": "Religion bonus threshold A2",					"Address": "0x03EE5B", "Size": 1 },

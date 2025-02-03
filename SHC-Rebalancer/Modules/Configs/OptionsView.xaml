@@ -1,0 +1,174 @@
+﻿<UserControl x:Class="SHC_Rebalancer.OptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
+    <UserControl.Resources>
+        <se:StswBindingProxy x:Key="proxy" Proxy="{Binding}"/>
+    </UserControl.Resources>
+
+    <se:StswScrollView Margin="-3">
+        <StackPanel Margin="6" Orientation="Vertical" Width="500">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type se:StswSubCheck}">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                    <Setter Property="IconUnchecked" Value="{x:Static se:StswIcons.Close}"/>
+                    <Setter Property="IconChecked" Value="{x:Static se:StswIcons.Check}"/>
+                    <Setter Property="IconIndeterminate" Value="{x:Static se:StswIcons.Help}"/>
+                    <Setter Property="IconScale" Value="2"/>
+                    <Setter Property="IconStrokeThickness" Value="1"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="IconFill" Value="{DynamicResource StswDialog.Error.Background}"/>
+                            <Setter Property="IconStroke" Value="{DynamicResource StswDialog.Error.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="IconFill" Value="{DynamicResource StswDialog.Success.Background}"/>
+                            <Setter Property="IconStroke" Value="{DynamicResource StswDialog.Success.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter Property="IconFill" Value="{DynamicResource StswDialog.Warning.Background}"/>
+                            <Setter Property="IconStroke" Value="{DynamicResource StswDialog.Warning.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                            <Setter Property="IconFill" Value="{DynamicResource StswDialog.None.Border}"/>
+                            <Setter Property="IconStroke" Value="{DynamicResource StswDialog.None.Subground}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            
+            <!-- bugfixes -->
+            <se:StswLabel Content="Bugfixes" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" IconData="{x:Static se:StswIcons.BugCheckOutline}"/>
+            <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5" Margin="3">
+                <StackPanel DataContext="{Binding [options][0].Bugfixes, Source={x:Static local:Storage.Configs}}" Margin="3">
+                    
+                    
+
+                </StackPanel>
+            </se:StswBorder>
+
+            <!-- other -->
+            <se:StswLabel Content="Other" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" IconData="{x:Static se:StswIcons.ProgressQuestion}"/>
+            <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5" Margin="3">
+                <StackPanel DataContext="{Binding [options][0].Other, Source={x:Static local:Storage.Configs}}" Margin="3">
+
+                    <!-- fireproof duration -->
+                    <se:StswSubCheck Content="Fireproof duration:"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[FireproofDuration], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!2000', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="True"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Other[FireproofDuration], Mode=OneWay, Source={StaticResource Settings}}"/>
+                    <se:StswSlider Minimum="0" Maximum="20000"
+                                   IsSelectionRangeEnabled="True"
+                                   IsSnapToTickEnabled="True"
+                                   SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
+                                   TickFrequency="200"
+                                   Value="{Binding Other[FireproofDuration], Source={StaticResource Settings}}"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [FireproofDuration].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- no extreme magicbar -->
+                    <se:StswSubCheck Content="No magic bar in Extreme"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[NoExtremeMagicbar], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!50', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [NoExtremeMagicbar].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- no tent deselection -->
+                    <se:StswSubCheck Content="No tent deselection"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[NoTentDeselection], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!50', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [NoTentDeselection].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- always show planned moat -->
+                    <se:StswSubCheck Content="Always show planned moat"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[AlwaysShowPlannedMoat], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!50', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [AlwaysShowPlannedMoat].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- gates responsiveness vs enemy -->
+                    <se:StswSubCheck Content="Gates responsiveness towards enemy"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[GatesResponsivenessVsEnemy], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!50', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [GatesResponsivenessVsEnemy].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- check available paths delay -->
+                    <se:StswSubCheck Content="Check available paths delay:"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[CheckAvailablePathsDelay], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!200', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="True"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Other[CheckAvailablePathsDelay], Mode=OneWay, Source={StaticResource Settings}}"/>
+                    <se:StswSlider Minimum="0" Maximum="500"
+                                   IsSelectionRangeEnabled="True"
+                                   IsSnapToTickEnabled="True"
+                                   SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
+                                   TickFrequency="5"
+                                   Value="{Binding Other[CheckAvailablePathsDelay], Source={StaticResource Settings}}"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [CheckAvailablePathsDelay].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- multiplayer default speed -->
+                    <se:StswSubCheck Content="Multiplayer default speed:"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[MultiplayerDefaultSpeed], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!50', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="True"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Other[MultiplayerDefaultSpeed], Mode=OneWay, Source={StaticResource Settings}}"/>
+                    <se:StswSlider Minimum="10" Maximum="100"
+                                   IsSelectionRangeEnabled="True"
+                                   IsSnapToTickEnabled="True"
+                                   SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
+                                   TickFrequency="1"
+                                   Value="{Binding Other[MultiplayerDefaultSpeed], Source={StaticResource Settings}}"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [MultiplayerDefaultSpeed].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- skirmish delivery bonus -->
+                    <se:StswSubCheck Content="Skirmish delivery % bonus:"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[SkirmishDeliveryBonus], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!50', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="True"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Other[SkirmishDeliveryBonus], Mode=OneWay, Source={StaticResource Settings}}"/>
+                    <se:StswSlider Minimum="0" Maximum="100"
+                                   IsSelectionRangeEnabled="True"
+                                   IsSnapToTickEnabled="True"
+                                   SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
+                                   TickFrequency="1"
+                                   Value="{Binding Other[SkirmishDeliveryBonus], Source={StaticResource Settings}}"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [SkirmishDeliveryBonus].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- iron mine double pickup -->
+                    <se:StswSubCheck Content="Iron mine double pickup"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding Other[IronMineDoublePickup], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!50', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [IronMineDoublePickup].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                </StackPanel>
+            </se:StswBorder>
+        </StackPanel>
+    </se:StswScrollView>
+</UserControl>

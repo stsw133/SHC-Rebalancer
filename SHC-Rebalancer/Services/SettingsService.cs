@@ -2,49 +2,48 @@
 using System.IO;
 using System.Text.Json;
 
-namespace SHC_Rebalancer
+namespace SHC_Rebalancer;
+
+public class SettingsService
 {
-    public class SettingsService
+    private static readonly Lazy<SettingsService> _instance = new(() => new SettingsService());
+    public static SettingsService Instance => _instance.Value;
+
+    private readonly string _filePath = "appsettings.json";
+    private readonly IConfigurationRoot _configuration;
+
+    public AppSettings Settings { get; private set; } = new();
+
+    private SettingsService()
     {
-        private static readonly Lazy<SettingsService> _instance = new(() => new SettingsService());
-        public static SettingsService Instance => _instance.Value;
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile(_filePath, optional: true, reloadOnChange: true);
 
-        private readonly string _filePath = "appsettings.json";
-        private readonly IConfigurationRoot _configuration;
+        _configuration = builder.Build();
+        Settings = new AppSettings();
+        ReloadSettings();
 
-        public AppSettings Settings { get; private set; } = new();
+        _configuration.GetReloadToken().RegisterChangeCallback(_ => ReloadSettings(), null);
+    }
 
-        private SettingsService()
+    /// ReloadSettings
+    private void ReloadSettings()
+    {
+        _configuration.GetSection("AppSettings").Bind(Settings);
+    }
+
+    /// SaveSettings
+    public void SaveSettings()
+    {
+        try
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(_filePath, optional: true, reloadOnChange: true);
-
-            _configuration = builder.Build();
-            Settings = new AppSettings();
-            ReloadSettings();
-
-            _configuration.GetReloadToken().RegisterChangeCallback(_ => ReloadSettings(), null);
+            var json = JsonSerializer.Serialize(new { AppSettings = Settings }, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_filePath, json);
         }
-
-        /// ReloadSettings
-        private void ReloadSettings()
+        catch (Exception ex)
         {
-            _configuration.GetSection("AppSettings").Bind(Settings);
-        }
-
-        /// SaveSettings
-        public void SaveSettings()
-        {
-            try
-            {
-                var json = JsonSerializer.Serialize(new { AppSettings = Settings }, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(_filePath, json);
-            }
-            catch (Exception ex)
-            {
-                StswMessageDialog.Show(ex, $"Error while saving settings.", true);
-            }
+            StswMessageDialog.Show(ex, $"Error while saving settings.", true);
         }
     }
 }
@@ -76,18 +75,26 @@ public class AppSettings : StswObservableObject
     private bool _includeUCP = true;
 
     /// SelectedConfigs
-    public Dictionary<string, string> SelectedConfigs
+    public Dictionary<string, string?> SelectedConfigs
     {
         get => _selectedConfigs;
         set => SetProperty(ref _selectedConfigs, value);
     }
-    private Dictionary<string, string> _selectedConfigs = [];
-
-    /// SelectedOptions
-    public Dictionary<string, object> SelectedOptions
+    private Dictionary<string, string?> _selectedConfigs = [];
+    
+    /// Bugfixes
+    public ObservableDictionary<string, object?> Bugfixes
     {
-        get => _selectedOptions;
-        set => SetProperty(ref _selectedOptions, value);
+        get => _bugfixes;
+        set => SetProperty(ref _bugfixes, value);
     }
-    private Dictionary<string, object> _selectedOptions = [];
+    private ObservableDictionary<string, object?> _bugfixes = [];
+    
+    /// Other
+    public ObservableDictionary<string, object?> Other
+    {
+        get => _other;
+        set => SetProperty(ref _other, value);
+    }
+    private ObservableDictionary<string, object?> _other = [];
 }

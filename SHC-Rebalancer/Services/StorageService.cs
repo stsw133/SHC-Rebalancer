@@ -45,7 +45,7 @@ public static class Storage
 
         return baseAddresses;
     }
-
+    
     /// LoadConfigs
     internal static Dictionary<string, ObservableCollection<object>> LoadConfigs(string? type = null, string? name = null)
     {
@@ -98,13 +98,14 @@ public static class Storage
                 configs["aiv"].Add(new AivConfigModel() { Name = new DirectoryInfo(directoryPath).Name, AIs = aivs });
             }
         }
+        GetConfig<OptionsConfigModel>("options");
         GetConfig<AicConfigModel>("aic");
-        GetConfig<BuildingsConfigModel>("buildings");
         GetConfig<GoodsConfigModel>("goods");
-        GetConfig<ResourcesConfigModel>("resources");
-        GetConfig<SkirmishTrailConfigModel>("skirmishtrail");
         GetConfig<TroopsConfigModel>("troops");
+        GetConfig<BuildingsConfigModel>("buildings");
+        GetConfig<ResourcesConfigModel>("resources");
         GetConfig<UnitsConfigModel>("units");
+        GetConfig<SkirmishTrailConfigModel>("skirmishtrail");
         GetConfig<CustomsConfigModel>("customs");
 
         return configs;
@@ -113,20 +114,22 @@ public static class Storage
     /// SaveConfigs
     internal static void SaveConfigs()
     {
+        foreach (var config in Configs["options"].Cast<OptionsConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "options", config.Name + ".json"), "options");
         foreach (var config in Configs["aic"].Cast<AicConfigModel>())
             SaveModelIntoFile(config, Path.Combine(ConfigsPath, "aic", config.Name + ".json"), "aic");
-        foreach (var config in Configs["buildings"].Cast<BuildingsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "buildings", config.Name + ".json"), "buildings");
         foreach (var config in Configs["goods"].Cast<GoodsConfigModel>())
             SaveModelIntoFile(config, Path.Combine(ConfigsPath, "goods", config.Name + ".json"), "goods");
-        foreach (var config in Configs["resources"].Cast<ResourcesConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "resources", config.Name + ".json"), "resources");
-        foreach (var config in Configs["skirmishtrail"].Cast<SkirmishTrailConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "skirmishtrail", config.Name + ".json"), "skirmishtrail");
         foreach (var config in Configs["troops"].Cast<TroopsConfigModel>())
             SaveModelIntoFile(config, Path.Combine(ConfigsPath, "troops", config.Name + ".json"), "troops");
+        foreach (var config in Configs["buildings"].Cast<BuildingsConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "buildings", config.Name + ".json"), "buildings");
+        foreach (var config in Configs["resources"].Cast<ResourcesConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "resources", config.Name + ".json"), "resources");
         foreach (var config in Configs["units"].Cast<UnitsConfigModel>())
             SaveModelIntoFile(config, Path.Combine(ConfigsPath, "units", config.Name + ".json"), "units");
+        foreach (var config in Configs["skirmishtrail"].Cast<SkirmishTrailConfigModel>())
+            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "skirmishtrail", config.Name + ".json"), "skirmishtrail");
         foreach (var config in Configs["customs"].Cast<CustomsConfigModel>())
             SaveModelIntoFile(config, Path.Combine(ConfigsPath, "customs", config.Name + ".json"), "customs");
     }

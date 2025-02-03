@@ -17,6 +17,13 @@ public abstract class ConfigModel : StswObservableObject, IConfigModel
     public string? Description { get; set; }
 }
 
+/// OptionsConfigModel
+public class OptionsConfigModel : ConfigModel
+{
+    public Dictionary<string, OptionModel> Bugfixes { get; set; } = [];
+    public Dictionary<string, OptionModel> Other { get; set; } = [];
+}
+
 /// AicConfigModel
 public class AicConfigModel : ConfigModel
 {
@@ -29,29 +36,10 @@ public class AivConfigModel : ConfigModel
     public Dictionary<AI, ObservableCollection<AivModel>> AIs { get; set; } = [];
 }
 
-/// BuildingsConfigModel
-public class BuildingsConfigModel : ConfigModel
-{
-    public Dictionary<Building, BuildingModel> Buildings { get; set; } = [];
-    public Dictionary<int, OutpostModel> Outposts { get; set; } = [];
-}
-
 /// GoodsConfigModel
 public class GoodsConfigModel : ConfigModel
 {
     public Dictionary<SkirmishMode, GoodsModel> Goods { get; set; } = [];
-}
-
-/// ResourcesConfigModel
-public class ResourcesConfigModel : ConfigModel
-{
-    public Dictionary<Resource, ResourceModel> Prices { get; set; } = [];
-}
-
-/// SkirmishTrailConfigModel
-public class SkirmishTrailConfigModel : ConfigModel
-{
-    public Dictionary<int, SkirmishTrailModel> Missions { get; set; } = [];
 }
 
 /// TroopsConfigModel
@@ -60,10 +48,29 @@ public class TroopsConfigModel : ConfigModel
     public Dictionary<AIForTroops, Dictionary<SkirmishMode, StswDictionary<Troop, int?>>> Troops { get; set; } = [];
 }
 
+/// BuildingsConfigModel
+public class BuildingsConfigModel : ConfigModel
+{
+    public Dictionary<Building, BuildingModel> Buildings { get; set; } = [];
+    public Dictionary<int, OutpostModel> Outposts { get; set; } = [];
+}
+
+/// ResourcesConfigModel
+public class ResourcesConfigModel : ConfigModel
+{
+    public Dictionary<Resource, ResourceModel> Prices { get; set; } = [];
+}
+
 /// UnitsConfigModel
 public class UnitsConfigModel : ConfigModel
 {
     public Dictionary<Unit, UnitModel> Units { get; set; } = [];
+}
+
+/// SkirmishTrailConfigModel
+public class SkirmishTrailConfigModel : ConfigModel
+{
+    public Dictionary<int, SkirmishTrailModel> Missions { get; set; } = [];
 }
 
 /// CustomsConfigModel

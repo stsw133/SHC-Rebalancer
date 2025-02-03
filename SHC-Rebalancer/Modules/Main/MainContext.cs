@@ -62,13 +62,12 @@ public class MainContext : StswObservableObject
                 foreach (var item in newConfigs)
                     Storage.Configs[type].Add(item);
 
-                OnPropertyChanged(nameof(SelectedConfigs));
-
                 if (Storage.Configs[type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
                     SettingsService.Instance.Settings.SelectedConfigs[type] = selectedRebalance;
                 else if (Storage.Configs[type].Count > 0)
                     SettingsService.Instance.Settings.SelectedConfigs[type] = Storage.Configs[type].First().GetPropertyValue(nameof(ConfigModel.Name))!.ToString()!;
             }
+            OnPropertyChanged(nameof(SelectedConfigs));
 
             InstallState = StswProgressState.Finished;
             InstallValue = 100;
@@ -90,6 +89,7 @@ public class MainContext : StswObservableObject
 
             await Task.Delay(1000);
             Storage.SaveConfigs();
+            SettingsService.Instance.SaveSettings();
 
             InstallState = StswProgressState.Finished;
             InstallValue = 100;
@@ -111,6 +111,7 @@ public class MainContext : StswObservableObject
 
             await Task.Delay(200);
             Storage.SaveConfigs();
+            SettingsService.Instance.SaveSettings();
 
             InstallValue += 20;
             if (!SettingsService.Instance.Settings.IncludeUCP)

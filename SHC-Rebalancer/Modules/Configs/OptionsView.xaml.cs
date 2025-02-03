@@ -2,11 +2,11 @@
 
 namespace SHC_Rebalancer;
 /// <summary>
-/// Interaction logic for BugfixesView.xaml
+/// Interaction logic for OptionsView.xaml
 /// </summary>
-public partial class BugfixesView : UserControl
+public partial class OptionsView : UserControl
 {
-    public BugfixesView()
+    public OptionsView()
     {
         InitializeComponent();
     }

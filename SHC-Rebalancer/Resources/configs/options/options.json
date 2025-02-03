@@ -1,0 +1,82 @@
+{
+	"Bugfixes": {
+
+	},
+	"Other": {
+		"FireproofDuration": {
+			"Description": "TEST 1 (from UCP 2.15)",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x010A38", "EndAddress": "0x010A39", "Size": 2, "OldValue": 2000, "IsNewValueDynamic": true },
+				{ "Version": "Extreme", "Address": "0x010A48", "EndAddress": "0x010A49", "Size": 2, "OldValue": 2000, "IsNewValueDynamic": true },
+			]
+		},
+		"NoExtremeMagicbar": {
+			"Description": "TEST 2 (from UCP 2.15)",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0DA050", "EndAddress": "0x0DA050", "Size": 1, "OldValue": 161, "NewValue": 195 },
+				{ "Version": "Crusader", "Address": "0x17C699", "EndAddress": "0x17C6A3", "Size": 1, "OldValue": [185, 248, 126, 102, 1, 232, 141, 68, 243, 255], "NewValue": [144, 144, 144, 144, 144, 144, 144, 144, 144, 144] },
+				{ "Version": "Extreme", "Address": "0x0DA3E0", "EndAddress": "0x0DA3E0", "Size": 1, "OldValue": 161, "NewValue": 195 },
+				{ "Version": "Extreme", "Address": "0x17CAC5", "EndAddress": "0x17CACF", "Size": 1, "OldValue": [185, 64, 175, 249, 1, 232, 209, 65, 243, 255], "NewValue": [144, 144, 144, 144, 144, 144, 144, 144, 144, 144] },
+			]
+		},
+		"NoTentDeselection": {
+			"Description": "TEST 3 (from UCP 2.15)",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x04612B", "EndAddress": "0x046130", "Size": 1, "OldValue": [137, 45, 236, 122, 254, 1], "NewValue": [144, 144, 144, 144, 144, 144] },
+				{ "Version": "Extreme", "Address": "0x04635B", "EndAddress": "0x046360", "Size": 1, "OldValue": [137, 45, 236, 175, 167, 2], "NewValue": [144, 144, 144, 144, 144, 144] },
+			]
+		},
+		"AlwaysShowPlannedMoat": {
+			"Description": "TEST 4 (from UCP 2.15)",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0EC86D", "EndAddress": "0x0EC86D", "Size": 1, "OldValue": 45, "NewValue": 21 },
+				{ "Version": "Extreme", "Address": "0x0ECBFD", "EndAddress": "0x0ECBFD", "Size": 1, "OldValue": 45, "NewValue": 21 },
+			]
+		},
+		"GatesResponsivenessVsEnemy": {
+			"Description": "TEST 5 (from UCP 2.15)",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x022ACE", "EndAddress": "0x022ACF", "Size": 2, "OldValue": 200, "NewValue": 140 },
+				{ "Version": "Crusader", "Address": "0x022B3C", "EndAddress": "0x022B3D", "Size": 2, "OldValue": 1200, "NewValue": 100 },
+				{ "Version": "Extreme", "Address": "0x022ADE", "EndAddress": "0x022ADF", "Size": 2, "OldValue": 200, "NewValue": 140 },
+				{ "Version": "Extreme", "Address": "0x022B4C", "EndAddress": "0x022B4D", "Size": 2, "OldValue": 1200, "NewValue": 100 },
+			]
+		},
+		"CheckAvailablePathsDelay": {
+			"Description": "TEST 6 (from UCP 2.15)",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x09961E", "EndAddress": "0x099621", "Size": 4, "OldValue": 200, "IsNewValueDynamic": true },
+				{ "Version": "Extreme", "Address": "0x09978E", "EndAddress": "0x099791", "Size": 4, "OldValue": 200, "IsNewValueDynamic": true },
+			]
+		},
+		"MultiplayerDefaultSpeed": {
+			"Description": "TEST 7 (from UCP 2.15)",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x08790B", "EndAddress": "0x08790B", "Size": 1, "OldValue": 40, "IsNewValueDynamic": true },
+				{ "Version": "Crusader", "Address": "0x08C4A4", "EndAddress": "0x08C4A4", "Size": 1, "OldValue": 40, "IsNewValueDynamic": true },
+				{ "Version": "Extreme", "Address": "0x087A1B", "EndAddress": "0x087A1B", "Size": 1, "OldValue": 40, "IsNewValueDynamic": true },
+				{ "Version": "Extreme", "Address": "0x08C5B4", "EndAddress": "0x08C5B4", "Size": 1, "OldValue": 40, "IsNewValueDynamic": true },
+			]
+		},
+		"SkirmishDeliveryBonus": {
+			"Description": "TEST 8",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x130DB4", "EndAddress": "0x130DB4", "Size": 1, "OldValue": 50, "IsNewValueDynamic": true },
+				{ "Version": "Extreme", "Address": "0x1311D4", "EndAddress": "0x1311D4", "Size": 1, "OldValue": 50, "IsNewValueDynamic": true },
+			]
+		},
+		"IronMineDoublePickup": {
+			"Description": "TEST 9 (from Krarilotus's Ascension project)",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x166136", "EndAddress": "0x166140", "Size": 1, "OldValue": [51, 201, 57, 136, 108, 134, 249, 0, 15, 148, 193], "NewValue": [131, 184, 108, 134, 249, 0, 1, 15, 158, 193, 144] },
+				{ "Version": "Crusader", "Address": "0x166304", "EndAddress": "0x166304", "Size": 1, "OldValue": 255, "NewValue": 254 },
+				{ "Version": "Crusader", "Address": "0x166306", "EndAddress": "0x166306", "Size": 1, "OldValue": 1, "NewValue": 1 },
+				{ "Version": "Crusader", "Address": "0x16630E", "EndAddress": "0x16630E", "Size": 1, "OldValue": 1, "NewValue": 2 },
+				{ "Version": "Extreme", "Address": "0x166556", "EndAddress": "0x166560", "Size": 1, "OldValue": [51, 201, 57, 136, 236, 138, 249, 0, 15, 148, 193], "NewValue": [131, 184, 236, 138, 249, 0, 1, 15, 158, 193, 144] },
+				{ "Version": "Extreme", "Address": "0x166724", "EndAddress": "0x166724", "Size": 1, "OldValue": 255, "NewValue": 254 },
+				{ "Version": "Extreme", "Address": "0x166726", "EndAddress": "0x166726", "Size": 1, "OldValue": 1, "NewValue": 1 },
+				{ "Version": "Extreme", "Address": "0x16672E", "EndAddress": "0x16672E", "Size": 1, "OldValue": 1, "NewValue": 2 },
+			]
+		},
+	}
+}
