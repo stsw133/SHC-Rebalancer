@@ -192,6 +192,18 @@ public enum LordType
     Arab,
 }
 
+public enum PlayerColor
+{
+    Red = 1,
+    Orange = 2,
+    Yellow = 3,
+    Blue = 4,
+    Gray = 5,
+    Purple = 6,
+    Cyan = 7,
+    Green = 8,
+}
+
 public enum PoleturnerSetting
 {
     Spears = 19,

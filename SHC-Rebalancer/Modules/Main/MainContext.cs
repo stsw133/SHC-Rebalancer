@@ -50,22 +50,22 @@ public class MainContext : StswObservableObject
             InstallState = StswProgressState.Running;
 
             await Task.Delay(1000);
-            Storage.BaseAddresses = Storage.LoadBaseAddresses();
+            StorageService.BaseAddresses = StorageService.LoadBaseAddresses();
 
-            foreach (var config in Storage.Configs)
+            foreach (var config in StorageService.Configs)
             {
                 var type = config.Key.ToLower();
                 var selectedRebalance = SettingsService.Instance.Settings.SelectedConfigs[type];
 
-                var newConfigs = Storage.LoadConfigs(type)[type].Cast<object>().ToList();
-                Storage.Configs[type].Clear();
+                var newConfigs = StorageService.LoadConfigs(type)[type].Cast<object>().ToList();
+                StorageService.Configs[type].Clear();
                 foreach (var item in newConfigs)
-                    Storage.Configs[type].Add(item);
+                    StorageService.Configs[type].Add(item);
 
-                if (Storage.Configs[type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
+                if (StorageService.Configs[type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
                     SettingsService.Instance.Settings.SelectedConfigs[type] = selectedRebalance;
-                else if (Storage.Configs[type].Count > 0)
-                    SettingsService.Instance.Settings.SelectedConfigs[type] = Storage.Configs[type].First().GetPropertyValue(nameof(ConfigModel.Name))!.ToString()!;
+                else if (StorageService.Configs[type].Count > 0)
+                    SettingsService.Instance.Settings.SelectedConfigs[type] = StorageService.Configs[type].First().GetPropertyValue(nameof(ConfigModel.Name))!.ToString()!;
             }
             OnPropertyChanged(nameof(SelectedConfigs));
 
@@ -88,7 +88,7 @@ public class MainContext : StswObservableObject
             InstallState = StswProgressState.Running;
 
             await Task.Delay(1000);
-            Storage.SaveConfigs();
+            StorageService.SaveConfigs();
             SettingsService.Instance.SaveSettings();
 
             InstallState = StswProgressState.Finished;
@@ -110,7 +110,7 @@ public class MainContext : StswObservableObject
             InstallState = StswProgressState.Running;
 
             await Task.Delay(200);
-            Storage.SaveConfigs();
+            StorageService.SaveConfigs();
             SettingsService.Instance.SaveSettings();
 
             InstallValue += 20;
@@ -118,8 +118,8 @@ public class MainContext : StswObservableObject
                 await Task.Delay(400);
 
             //Backup.Restore();
-            Backup.Make();
-            Rebalancer.Rebalance();
+            BackupService.Make();
+            RebalancerService.Rebalance();
 
             InstallValue += 40;
             await Task.Delay(400);
@@ -145,7 +145,7 @@ public class MainContext : StswObservableObject
 
             await Task.Delay(500);
 
-            Backup.Restore();
+            BackupService.Restore();
 
             InstallValue += 50;
             await Task.Delay(500);
@@ -165,7 +165,7 @@ public class MainContext : StswObservableObject
     {
         try
         {
-            await StswContentDialog.Show(new UcpExplanationContext(), "InfoContentDialog");
+            await StswContentDialog.Show(new UcpExplanationView(), "InfoContentDialog");
         }
         catch (Exception ex)
         {

@@ -13,5 +13,7 @@ public class OptionModel
         public object? OldValue { get; set; }
         public object? NewValue { get; set; }
         public bool IsNewValueDynamic { get; set; }
+        public int? AddToValue { get; set; }
+        public int? MultiplyValueBy { get; set; }
     }
 }

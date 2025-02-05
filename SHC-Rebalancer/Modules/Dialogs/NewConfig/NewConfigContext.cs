@@ -22,17 +22,17 @@ public class NewConfigContext : StswObservableObject
     {
         try
         {
-            var filePath = Path.Combine(Storage.ConfigsPath, Type, Name + ".json");
+            var filePath = Path.Combine(StorageService.ConfigsPath, Type, Name + ".json");
 
             if (IsEditing)
             {
-                if (Storage.Configs[Type].Cast<ConfigModel>().Any(x => x.Name == Name) && Name != SettingsService.Instance.Settings.SelectedConfigs[Type])
+                if (StorageService.Configs[Type].Cast<ConfigModel>().Any(x => x.Name == Name) && Name != SettingsService.Instance.Settings.SelectedConfigs[Type])
                 {
                     await StswMessageDialog.Show("Selected name is already taken!", "Blockade", null, StswDialogButtons.OK, StswDialogImage.Blockade);
                     return;
                 }
 
-                var selectedFilePath = Path.Combine(Storage.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] + ".json");
+                var selectedFilePath = Path.Combine(StorageService.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] + ".json");
                 if (!File.Exists(selectedFilePath))
                 {
                     await StswMessageDialog.Show("Edited file does not exist!", "Error", null, StswDialogButtons.OK, StswDialogImage.Error);
@@ -40,20 +40,20 @@ public class NewConfigContext : StswObservableObject
                 }
 
                 File.Move(selectedFilePath, filePath);
-                Storage.Configs[Type].Cast<ConfigModel>().First(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs[Type]).Name = Name;
+                StorageService.Configs[Type].Cast<ConfigModel>().First(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs[Type]).Name = Name;
                 SettingsService.Instance.Settings.SelectedConfigs[Type] = Name;
 
                 StswContentDialog.Close("MainContentDialog");
             }
             else
             {
-                if (Storage.Configs[Type].Cast<ConfigModel>().Any(x => x.Name == Name))
+                if (StorageService.Configs[Type].Cast<ConfigModel>().Any(x => x.Name == Name))
                 {
                     await StswMessageDialog.Show("Selected name is already taken!", "Blockade", null, StswDialogButtons.OK, StswDialogImage.Blockade);
                     return;
                 }
 
-                var baseFilePath = Path.Combine(Storage.ConfigsPath, Type, BasedOn + ".json");
+                var baseFilePath = Path.Combine(StorageService.ConfigsPath, Type, BasedOn + ".json");
                 if (!File.Exists(baseFilePath) && !IsEditing)
                 {
                     await StswMessageDialog.Show("File for base config does not exist!", "Error", null, StswDialogButtons.OK, StswDialogImage.Error);
@@ -63,7 +63,7 @@ public class NewConfigContext : StswObservableObject
                 if (!File.Exists(filePath))
                 {
                     File.Copy(baseFilePath, filePath);
-                    Storage.Configs[Type].Add(Storage.LoadConfigs(Type, Name)[Type].First()!);
+                    StorageService.Configs[Type].Add(StorageService.LoadConfigs(Type, Name)[Type].First()!);
                     SettingsService.Instance.Settings.SelectedConfigs[Type] = Name;
 
                     StswContentDialog.Close("MainContentDialog");
@@ -87,7 +87,7 @@ public class NewConfigContext : StswObservableObject
     private string _basedOn = "vanilla";
 
     /// ConfigNames
-    public IEnumerable<string?> ConfigNames => Storage.Configs[Type].Select(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString());
+    public IEnumerable<string?> ConfigNames => StorageService.Configs[Type].Select(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString());
 
     /// IsEditing
     public bool IsEditing

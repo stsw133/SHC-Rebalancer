@@ -65,19 +65,19 @@ public partial class ConfigBox : StswComboBox
         {
             var selectedRebalance = SettingsService.Instance.Settings.SelectedConfigs[Type];
 
-            if (!Storage.Configs.ContainsKey(Type))
-                Storage.Configs[Type] = [];
+            if (!StorageService.Configs.ContainsKey(Type))
+                StorageService.Configs[Type] = [];
 
-            var newConfigs = Storage.LoadConfigs(Type)[Type];
+            var newConfigs = StorageService.LoadConfigs(Type)[Type];
 
-            Storage.Configs[Type].Clear();
+            StorageService.Configs[Type].Clear();
             foreach (var item in newConfigs)
-                Storage.Configs[Type].Add(item);
+                StorageService.Configs[Type].Add(item);
 
-            if (Storage.Configs[Type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
+            if (StorageService.Configs[Type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
                 SettingsService.Instance.Settings.SelectedConfigs[Type] = selectedRebalance;
-            else if (Storage.Configs[Type].Count > 0)
-                SettingsService.Instance.Settings.SelectedConfigs[Type] = Storage.Configs[Type].First().GetPropertyValue(nameof(ConfigModel.Name))!.ToString()!;
+            else if (StorageService.Configs[Type].Count > 0)
+                SettingsService.Instance.Settings.SelectedConfigs[Type] = StorageService.Configs[Type].First().GetPropertyValue(nameof(ConfigModel.Name))!.ToString()!;
         }
         catch (Exception ex)
         {
@@ -93,7 +93,7 @@ public partial class ConfigBox : StswComboBox
             await StswContentDialog.Show(new NewConfigContext(Type), "MainContentDialog");
 
             var selectedRebalance = SettingsService.Instance.Settings.SelectedConfigs[Type];
-            if (Storage.Configs[Type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
+            if (StorageService.Configs[Type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
                 SettingsService.Instance.Settings.SelectedConfigs[Type] = selectedRebalance;
         }
         catch (Exception ex)
@@ -110,7 +110,7 @@ public partial class ConfigBox : StswComboBox
             await StswContentDialog.Show(new NewConfigContext(Type, SettingsService.Instance.Settings.SelectedConfigs[Type]), "MainContentDialog");
 
             var selectedRebalance = SettingsService.Instance.Settings.SelectedConfigs[Type];
-            var config = Storage.Configs[Type].FirstOrDefault(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance);
+            var config = StorageService.Configs[Type].FirstOrDefault(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance);
             config?.GetType().GetProperty(nameof(ConfigModel.Name))?.SetValue(config, selectedRebalance);
 
             SelectedItem = null;
@@ -127,7 +127,7 @@ public partial class ConfigBox : StswComboBox
     {
         try
         {
-            var filePath = Path.Combine(Storage.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] + ".json");
+            var filePath = Path.Combine(StorageService.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] + ".json");
 
             if (!File.Exists(filePath))
                 throw new IOException("File for selected config does not exist!");
@@ -145,7 +145,7 @@ public partial class ConfigBox : StswComboBox
     {
         try
         {
-            var directoryPath = Path.Combine(Storage.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] ?? string.Empty);
+            var directoryPath = Path.Combine(StorageService.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] ?? string.Empty);
 
             if (!Directory.Exists(directoryPath))
                 throw new IOException("Directory for selected config does not exist!");
@@ -169,11 +169,11 @@ public partial class ConfigBox : StswComboBox
                 return;
             }
 
-            var filePath = Path.Combine(Storage.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] + ".json");
+            var filePath = Path.Combine(StorageService.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] + ".json");
             if (await StswMessageDialog.Show($"Are you sure you want to remove '{SettingsService.Instance.Settings.SelectedConfigs[Type]}' config?", "Confirmation", null, StswDialogButtons.YesNo, StswDialogImage.Question) == true)
             {
                 File.Delete(filePath);
-                Storage.Configs[Type].Remove(Storage.Configs[Type].First(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == SettingsService.Instance.Settings.SelectedConfigs[Type]));
+                StorageService.Configs[Type].Remove(StorageService.Configs[Type].First(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == SettingsService.Instance.Settings.SelectedConfigs[Type]));
             }
         }
         catch (Exception ex)

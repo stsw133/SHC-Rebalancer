@@ -3,18 +3,20 @@ using System.Globalization;
 using System.IO;
 
 namespace SHC_Rebalancer;
-public static class Finder
+
+/// FinderService
+public static class FinderService
 {
     /// Find
     public static void Find(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, int filterSize, string? filterAddress, int filterSkips, string? filterValues)
     {
-        var fileBytes = File.ReadAllBytes(Storage.ExePath[gameVersion]);
+        var fileBytes = File.ReadAllBytes(StorageService.ExePath[gameVersion]);
         finderData.Clear();
 
         if (!string.IsNullOrWhiteSpace(filterValues))
             FindPatternInFile(finderData, gameVersion, fileBytes, filterSize, filterValues);
         else if (!string.IsNullOrWhiteSpace(filterAddress))
-            FindAddresses(finderData, gameVersion, Storage.ExePath[gameVersion], filterSize, filterAddress, filterSkips);
+            FindAddresses(finderData, gameVersion, StorageService.ExePath[gameVersion], filterSize, filterAddress, filterSkips);
     }
 
     /// FindPatternInFile
@@ -44,7 +46,7 @@ public static class Finder
                     {
                         Address = $"0x{address:X}",
                         Value = value,
-                        IsInConfigFile = Storage.BaseAddresses[gameVersion].Any(x => address.Between(Convert.ToInt32(x.Value.Address, 16), Convert.ToInt32(x.Value.EndAddress ?? x.Value.Address, 16)))
+                        IsInConfigFile = StorageService.BaseAddresses[gameVersion].Any(x => address.Between(Convert.ToInt32(x.Value.Address, 16), Convert.ToInt32(x.Value.EndAddress ?? x.Value.Address, 16)))
                     });
                 }
             }
@@ -103,7 +105,7 @@ public static class Finder
             {
                 Address = address.ToString("X8"),
                 Value = value,
-                IsInConfigFile = Storage.BaseAddresses[gameVersion].Any(x => address.Between(Convert.ToInt32(x.Value.Address, 16), Convert.ToInt32(x.Value.EndAddress ?? x.Value.Address, 16)))
+                IsInConfigFile = StorageService.BaseAddresses[gameVersion].Any(x => address.Between(Convert.ToInt32(x.Value.Address, 16), Convert.ToInt32(x.Value.EndAddress ?? x.Value.Address, 16)))
             });
 
             if (filterSkips != 0)

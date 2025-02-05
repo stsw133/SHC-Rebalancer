@@ -24,7 +24,7 @@ public class FinderContext : StswObservableObject
         {
             if (FinderFilterType.HasValue)
             {
-                Finder.Find(FinderResults, FinderFilterType.Value, FinderFilterSize, FinderFilterAddress, FinderFilterSkips, FinderFilterValues);
+                FinderService.Find(FinderResults, FinderFilterType.Value, FinderFilterSize, FinderFilterAddress, FinderFilterSkips, FinderFilterValues);
                 _finderResultsType = FinderFilterType.Value;
                 _finderResultsSize = FinderFilterSize;
             }
@@ -47,7 +47,7 @@ public class FinderContext : StswObservableObject
             {
                 try
                 {
-                    using FileStream fs = new FileStream(Storage.ExePath[_finderResultsType], FileMode.Open, FileAccess.ReadWrite);
+                    using FileStream fs = new FileStream(StorageService.ExePath[_finderResultsType], FileMode.Open, FileAccess.ReadWrite);
                     fs.Seek(Convert.ToInt32(model.Address, 16), SeekOrigin.Begin);
 
                     if (_finderResultsSize == 4)

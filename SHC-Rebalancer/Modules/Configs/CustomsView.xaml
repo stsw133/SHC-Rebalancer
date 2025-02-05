@@ -12,7 +12,7 @@
         <DockPanel DockPanel.Dock="Top">
             <se:StswLabel Content="Selected config:" FontWeight="Bold" Margin="3"/>
             <local:ConfigBox x:Name="CustomsSelector"
-                             ItemsSource="{Binding [customs], Source={x:Static local:Storage.Configs}}"
+                             ItemsSource="{Binding [customs], Source={x:Static local:StorageService.Configs}}"
                              SelectedItem="{Binding SelectedConfigs[customs], Mode=OneWayToSource}"
                              SelectedValue="{Binding SelectedConfigs[customs], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>

@@ -11,7 +11,7 @@
     </UserControl.Resources>
 
     <se:StswScrollView Margin="-3">
-        <StackPanel DataContext="{Binding [options][0].Options, Source={x:Static local:Storage.Configs}}" Margin="6" Orientation="Vertical" Width="500">
+        <StackPanel DataContext="{Binding [options][0].Options, Source={x:Static local:StorageService.Configs}}" Margin="6" Orientation="Vertical" Width="500">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type se:StswSubCheck}">
                     <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -86,6 +86,22 @@
                                      IsReadOnly="False"
                                      Margin="3"/>
                     <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [NoExtremeMagicbar].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- change player color -->
+                    <se:StswSubCheck Content="Change player color"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[ChangePlayerColor], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!Red', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="True"
+                                     Margin="3"/>
+                    <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:PlayerColor}" SelectedValue="{Binding SelectedOptions[ChangePlayerColor], Source={StaticResource Settings}}">
+                        <se:StswComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <se:StswLabel Content="{Binding Display}" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                            </DataTemplate>
+                        </se:StswComboBox.ItemTemplate>
+                    </se:StswComboBox>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [ChangePlayerColor].Description}" TextWrapping="Wrap"/>
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
                     <!-- no tent deselection -->

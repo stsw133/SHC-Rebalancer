@@ -5,7 +5,9 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace SHC_Rebalancer;
-internal static class Rebalancer
+
+/// RebalancerService
+internal static class RebalancerService
 {
     private static FileStream? _fs;
     private static BinaryReader? _reader;
@@ -14,7 +16,7 @@ internal static class Rebalancer
     /// Rebalance
     internal static void Rebalance()
     {
-        foreach (var exePath in Storage.ExePath)
+        foreach (var exePath in StorageService.ExePath)
         {
             if (!File.Exists(exePath.Value))
                 continue;
@@ -26,43 +28,43 @@ internal static class Rebalancer
                 if (SettingsService.Instance.Settings.IncludeUCP)
                     ProcessUcp(exePath.Key);
 
-                if (Storage.Configs["options"].Cast<IConfigModel>().FirstOrDefault() is OptionsConfigModel optionsConfig)
+                if (StorageService.Configs["options"].Cast<IConfigModel>().FirstOrDefault() is OptionsConfigModel optionsConfig)
                     ProcessOptionsConfig(exePath.Key, optionsConfig);
                 
-                if (Storage.Configs["aic"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aic"]) is AicConfigModel aicConfig)
+                if (StorageService.Configs["aic"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aic"]) is AicConfigModel aicConfig)
                     ProcessAicConfig(exePath.Key, aicConfig);
 
-                if (Storage.Configs["goods"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["goods"]) is GoodsConfigModel goodsConfig)
+                if (StorageService.Configs["goods"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["goods"]) is GoodsConfigModel goodsConfig)
                     ProcessGoodsConfig(exePath.Key, goodsConfig);
 
-                if (Storage.Configs["troops"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["troops"]) is TroopsConfigModel troopsConfig)
+                if (StorageService.Configs["troops"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["troops"]) is TroopsConfigModel troopsConfig)
                     ProcessTroopsConfig(exePath.Key, troopsConfig);
 
-                if (Storage.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["buildings"]) is BuildingsConfigModel buildingsConfig)
+                if (StorageService.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["buildings"]) is BuildingsConfigModel buildingsConfig)
                     ProcessBuildingsConfig(exePath.Key, buildingsConfig);
                 
-                if (Storage.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["resources"]) is ResourcesConfigModel resourcesConfig)
+                if (StorageService.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["resources"]) is ResourcesConfigModel resourcesConfig)
                     ProcessResourcesConfig(exePath.Key, resourcesConfig);
 
-                if (Storage.Configs["units"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["units"]) is UnitsConfigModel unitsConfig)
+                if (StorageService.Configs["units"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["units"]) is UnitsConfigModel unitsConfig)
                     ProcessUnitsConfig(exePath.Key, unitsConfig);
 
-                if (Storage.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["skirmishtrail"]) is SkirmishTrailConfigModel skirmishtrailModel)
+                if (StorageService.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["skirmishtrail"]) is SkirmishTrailConfigModel skirmishtrailModel)
                     ProcessSkirmishTrailConfig(exePath.Key, skirmishtrailModel);
 
-                if (Storage.Configs["customs"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["customs"]) is CustomsConfigModel customsConfig)
+                if (StorageService.Configs["customs"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["customs"]) is CustomsConfigModel customsConfig)
                     ProcessCustomsConfig(exePath.Key, customsConfig);
             }
         }
 
-        if (Storage.Configs["aiv"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aiv"]) is AivConfigModel aivConfig)
+        if (StorageService.Configs["aiv"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aiv"]) is AivConfigModel aivConfig)
             ProcessAivConfig(aivConfig);
     }
 
     /// ProcessUcp
     private static void ProcessUcp(GameVersion gameVersion)
     {
-        var upcStarterFilePath = Path.Combine(Storage.UcpPath, $"{gameVersion}.txt");
+        var upcStarterFilePath = Path.Combine(StorageService.UcpPath, $"{gameVersion}.txt");
         if (File.Exists(upcStarterFilePath))
         {
             var fileContent = File.ReadLines(upcStarterFilePath);
@@ -85,12 +87,21 @@ internal static class Rebalancer
         foreach (var item in config.Options)
         {
             var selectedValue = SettingsService.Instance.Settings.SelectedOptions[item.Key];
-            foreach (var value in item.Value.Modifications.Where(x => x.Version == gameVersion))
+            foreach (var model in item.Value.Modifications.Where(x => x.Version == gameVersion))
             {
-                if (!value.IsNewValueDynamic && bool.TryParse(selectedValue?.ToString(), out var boolValue))
-                    WriteIfDifferent(Convert.ToInt32(value.Address, 16), GetNumberOrArray(boolValue ? value.NewValue : value.OldValue, value.Size), value.Size, $"Options {item.Key}");
-                else
-                    WriteIfDifferent(Convert.ToInt32(value.Address, 16), GetNumberOrArray(selectedValue, value.Size), value.Size, $"Options {item.Key}");
+                var newValue = !model.IsNewValueDynamic && bool.TryParse(selectedValue?.ToString(), out var boolValue)
+                    ? GetNumberOrArray(boolValue ? model.NewValue : model.OldValue, model.Size)
+                    : GetNumberOrArray(selectedValue, model.Size);
+
+                if (int.TryParse(newValue?.ToString(), out var intValue))
+                {
+                    if (model.MultiplyValueBy != null)
+                        newValue = intValue * model.MultiplyValueBy;
+                    if (model.AddToValue != null)
+                        newValue = intValue + model.AddToValue;
+                }
+
+                WriteIfDifferent(Convert.ToInt32(model.Address, 16), newValue, model.Size, $"Options {item.Key}");
             }
         }
     }
@@ -99,7 +110,7 @@ internal static class Rebalancer
     private static void ProcessAicConfig(GameVersion gameVersion, AicConfigModel config)
     {
         /// lord type
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("AIC LordType", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("AIC LordType", out var baseAddress))
         {
             foreach (var model in config.AIs)
                 if (model.Value.LordType != null)
@@ -107,7 +118,7 @@ internal static class Rebalancer
         }
 
         /// lord strength
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("AIC LordStrength", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("AIC LordStrength", out baseAddress))
         {
             foreach (var model in config.AIs)
                 if (model.Value.LordStrength != null)
@@ -123,7 +134,7 @@ internal static class Rebalancer
         }
 
         /// personality
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("AIC Personality", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("AIC Personality", out baseAddress))
         {
             var properties = typeof(AicModel.PersonalityModel)
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
@@ -143,15 +154,15 @@ internal static class Rebalancer
     /// ProcessAivConfig
     private static void ProcessAivConfig(AivConfigModel config)
     {
-        var sourceDirectory = Path.Combine(Storage.ConfigsPath, "aiv", config.Name);
+        var sourceDirectory = Path.Combine(StorageService.ConfigsPath, "aiv", config.Name);
         if (!Directory.Exists(sourceDirectory))
             throw new DirectoryNotFoundException($"AIV directory '{config.Name}' not found.");
 
-        Directory.CreateDirectory(Storage.AivPath);
+        Directory.CreateDirectory(StorageService.AivPath);
         foreach (var file in Directory.GetFiles(sourceDirectory, "*.aiv"))
         {
             var fileName = Path.GetFileName(file);
-            var destinationPath = Path.Combine(Storage.AivPath, fileName);
+            var destinationPath = Path.Combine(StorageService.AivPath, fileName);
 
             File.Copy(file, destinationPath, overwrite: true);
         }
@@ -161,7 +172,7 @@ internal static class Rebalancer
     private static void ProcessGoodsConfig(GameVersion gameVersion, GoodsConfigModel config)
     {
         /// resources
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Goods Resources", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Goods Resources", out var baseAddress))
         {
             foreach (var mode in config.Goods.Where(x => x.Value.Resources != null))
             {
@@ -172,7 +183,7 @@ internal static class Rebalancer
         }
 
         /// gold
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Goods Gold", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Goods Gold", out baseAddress))
         {
             foreach (var mode in config.Goods.Where(x => x.Value.Gold != null))
             {
@@ -193,7 +204,7 @@ internal static class Rebalancer
     private static void ProcessTroopsConfig(GameVersion gameVersion, TroopsConfigModel config)
     {
         /// troops
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Troops", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Troops", out var baseAddress))
         {
             foreach (var ai in config.Troops)
                 foreach (var mode in ai.Value)
@@ -209,22 +220,22 @@ internal static class Rebalancer
     private static void ProcessBuildingsConfig(GameVersion gameVersion, BuildingsConfigModel config)
     {
         /// health
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Health", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Buildings Health", out var baseAddress))
             foreach (var model in config.Buildings.Where(x => x.Value.Health.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Building>(baseAddress, model.Key.ToString()), model.Value.Health, baseAddress.Size, $"{model.Key} Health");
 
         /// housing
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Housing", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Buildings Housing", out baseAddress))
             foreach (var model in config.Buildings.Where(x => x.Value.Housing.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Building>(baseAddress, model.Key.ToString()), model.Value.Housing, baseAddress.Size, $"{model.Key} Housing");
 
         /// cost
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Buildings Cost", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Buildings Cost", out baseAddress))
             foreach (var model in config.Buildings.Where(x => x.Value.Cost?.Length > 0))
                 WriteIfDifferent(GetAddressByEnum<Building>(baseAddress, model.Key.ToString(), model.Value.Cost!.Length), model.Value.Cost, model.Value.Cost.Length, $"{model.Key} Cost");
 
         /// outposts
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Outposts", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Outposts", out baseAddress))
         {
             var properties = typeof(OutpostModel)
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
@@ -245,12 +256,12 @@ internal static class Rebalancer
     private static void ProcessResourcesConfig(GameVersion gameVersion, ResourcesConfigModel config)
     {
         /// buy
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Resources Buy", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Resources Buy", out var baseAddress))
             foreach (var model in config.Prices.Where(x => x.Value.Buy.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Resource>(baseAddress, model.Key.ToString()), model.Value.Buy, baseAddress.Size, $"{model.Key} Buy");
 
         /// sell
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Resources Sell", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Resources Sell", out baseAddress))
             foreach (var model in config.Prices.Where(x => x.Value.Sell.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Resource>(baseAddress, model.Key.ToString()), model.Value.Sell, baseAddress.Size, $"{model.Key} Sell");
     }
@@ -259,47 +270,47 @@ internal static class Rebalancer
     private static void ProcessUnitsConfig(GameVersion gameVersion, UnitsConfigModel config)
     {
         /// speed
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units Speed", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units Speed", out var baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.Speed.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.Speed, baseAddress.Size, $"{model.Key} Speed");
 
         /// canGoOnWall
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanGoOnWall", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanGoOnWall", out baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.CanGoOnWall.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanGoOnWall, baseAddress.Size, $"{model.Key} CanGoOnWall");
 
         /// canBeMoved
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanBeMoved", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanBeMoved", out baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.CanBeMoved.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanBeMoved, baseAddress.Size, $"{model.Key} CanBeMoved");
 
         /// health
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units Health", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units Health", out baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.Health.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.Health, baseAddress.Size, $"{model.Key} Health");
 
         /// damageFromBow
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromBow", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units DamageFromBow", out baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.DamageFromBow.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.DamageFromBow, baseAddress.Size, $"{model.Key} DamageFromBow");
 
         /// damageFromSling
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromSling", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units DamageFromSling", out baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.DamageFromSling.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.DamageFromSling, baseAddress.Size, $"{model.Key} DamageFromSling");
 
         /// damageFromCrossbow
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units DamageFromCrossbow", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units DamageFromCrossbow", out baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.DamageFromCrossbow.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.DamageFromCrossbow, baseAddress.Size, $"{model.Key} DamageFromCrossbow");
 
         /// canMeleeDamage
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanMeleeDamage", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanMeleeDamage", out baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.CanMeleeDamage.HasValue))
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanMeleeDamage, baseAddress.Size, $"{model.Key} CanMeleeDamage");
 
         /// meleeDamage
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units MeleeDamage", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units MeleeDamage", out baseAddress))
         {
             var opponents = Enum.GetValues<Unit>();
             foreach (var model in config.Units.Where(x => x.Value.MeleeDamage.HasValue))
@@ -323,8 +334,8 @@ internal static class Rebalancer
         }
 
         /// canDigMoat
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanDigMoat", out baseAddress)
-         && Storage.BaseAddresses[gameVersion].TryGetValue("Units FocusDigMoat", out var baseAddress2))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanDigMoat", out baseAddress)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Units FocusDigMoat", out var baseAddress2))
             foreach (var model in config.Units.Where(x => x.Value.CanDigMoat.HasValue))
             {
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanDigMoat, baseAddress.Size, $"{model.Key} CanDigMoat");
@@ -332,8 +343,8 @@ internal static class Rebalancer
             }
 
         /// canClimbLadder
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("Units CanClimbLadder", out baseAddress)
-         && Storage.BaseAddresses[gameVersion].TryGetValue("Units FocusClimbLadder", out baseAddress2))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanClimbLadder", out baseAddress)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Units FocusClimbLadder", out baseAddress2))
             foreach (var model in config.Units.Where(x => x.Value.CanClimbLadder.HasValue))
             {
                 WriteIfDifferent(GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanClimbLadder, baseAddress.Size, $"{model.Key} CanClimbLadder");
@@ -345,7 +356,7 @@ internal static class Rebalancer
     private static void ProcessSkirmishTrailConfig(GameVersion gameVersion, SkirmishTrailConfigModel config)
     {
         /// missions
-        if (Storage.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Missions", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Missions", out var baseAddress))
             foreach (var model in config.Missions.Where(x => x.Key.Between(1, 80)))
             {
                 var address = Convert.ToInt32(baseAddress.Address, 16) + ((model.Key - 1) * 144);
@@ -370,7 +381,7 @@ internal static class Rebalancer
     {
         foreach (var item in config.Values.Where(x => x.IsEnabled && x.Version.In(null, gameVersion)))
         {
-            Storage.BaseAddresses[gameVersion].TryGetValue(item.Key, out var baseAddress);
+            StorageService.BaseAddresses[gameVersion].TryGetValue(item.Key, out var baseAddress);
 
             var address = Convert.ToInt32(item.Address ?? baseAddress?.Address, 16);
             if (address == default)
@@ -383,20 +394,20 @@ internal static class Rebalancer
                     if (item.Size == 1)
                     {
                         var newValue = jsonValue.EnumerateArray().Select(x => x.GetByte()).ToArray();
-                        WriteIfDifferent(address, newValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
+                        WriteIfDifferent(address, newValue, item.Size ?? StorageService.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
                     }
                     else if (item.Size == 4)
                     {
                         var newValue = jsonValue.EnumerateArray().Select(x => x.GetInt32()).ToArray();
-                        WriteIfDifferent(address, newValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
+                        WriteIfDifferent(address, newValue, item.Size ?? StorageService.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
                     }
                 }
                 else if (jsonValue.ValueKind == JsonValueKind.Number && jsonValue.TryGetInt32(out int intValue))
                 {
                     if (item.Size == 1)
-                        WriteIfDifferent(address, (byte)intValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
+                        WriteIfDifferent(address, (byte)intValue, item.Size ?? StorageService.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
                     else if (item.Size == 4)
-                        WriteIfDifferent(address, intValue, item.Size ?? Storage.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
+                        WriteIfDifferent(address, intValue, item.Size ?? StorageService.BaseAddresses[gameVersion][item.Key].Size, item.Description ?? item.Key);
                 }
             }
         }

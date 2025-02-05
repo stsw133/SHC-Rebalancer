@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SHC_Rebalancer"
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
-             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:UcpExplanationContext}">
+             mc:Ignorable="d">
     <UserControl.Background>
         <ImageBrush ImageSource="/Images/background.jpg" Opacity="0.2"/>
     </UserControl.Background>
@@ -67,7 +67,6 @@
                 <Run Text="&#x0a; • Increase of the rate of additional attack troops (false | true: 3)"/>
                 <Run Text="&#x0a; • Arabic Swordsmen destroy walls faster"/>
                 <Run Text="&#x0a; • Restore engineer arabiach speech"/>
-                <Run Text="&#x0a; • Change the color of player 1 (4)"/>
                 <Run Text="&#x0a; • WASD-Keys and quicksaves"/>
                 <Run Text="&#x0a; • Healer heals casualties"/>
                 <Run Text="&#x0a; • Free trader post"/>

@@ -94,34 +94,34 @@
                                             <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3"/>
                                             
                                             <se:StswLabel Content="AIC:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [aic], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
+                                            <local:ConfigBox ItemsSource="{Binding [aic], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
                                             
                                             <se:StswLabel Content="AIV:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[aiv], Source={StaticResource Settings}}" Type="AIV"/>
+                                            <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aiv], Source={StaticResource Settings}}" Type="AIV"/>
                                             
                                             <se:StswLabel Content="Goods:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [goods], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[goods], Source={StaticResource Settings}}" Type="Goods"/>
+                                            <local:ConfigBox ItemsSource="{Binding [goods], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[goods], Source={StaticResource Settings}}" Type="Goods"/>
                                             
                                             <se:StswLabel Content="Troops:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [troops], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[troops], Source={StaticResource Settings}}" Type="Troops"/>
+                                            <local:ConfigBox ItemsSource="{Binding [troops], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[troops], Source={StaticResource Settings}}" Type="Troops"/>
                                         
                                         </se:StswLabelPanel>
                                         <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
                                             
                                             <se:StswLabel Content="Buildings:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[buildings], Source={StaticResource Settings}}" Type="Buildings"/>
+                                            <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[buildings], Source={StaticResource Settings}}" Type="Buildings"/>
                                             
                                             <se:StswLabel Content="Resources:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [resources], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[resources], Source={StaticResource Settings}}" Type="Resources"/>
+                                            <local:ConfigBox ItemsSource="{Binding [resources], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[resources], Source={StaticResource Settings}}" Type="Resources"/>
                                             
                                             <se:StswLabel Content="Units:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [units], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[units], Source={StaticResource Settings}}" Type="Units"/>
+                                            <local:ConfigBox ItemsSource="{Binding [units], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[units], Source={StaticResource Settings}}" Type="Units"/>
                                             
                                             <se:StswLabel Content="Skirmish trail:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [skirmishtrail], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[skirmishtrail], Source={StaticResource Settings}}" Type="SkirmishTrail"/>
+                                            <local:ConfigBox ItemsSource="{Binding [skirmishtrail], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[skirmishtrail], Source={StaticResource Settings}}" Type="SkirmishTrail"/>
                                             
                                             <se:StswLabel Content="Customs:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [customs], Source={x:Static local:Storage.Configs}}" SelectedValue="{Binding SelectedConfigs[customs], Source={StaticResource Settings}}" Type="Customs"/>
+                                            <local:ConfigBox ItemsSource="{Binding [customs], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[customs], Source={StaticResource Settings}}" Type="Customs"/>
                                         
                                         </se:StswLabelPanel>
                                     </UniformGrid>

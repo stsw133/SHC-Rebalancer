@@ -4,6 +4,7 @@ using System.Text.Json;
 
 namespace SHC_Rebalancer;
 
+/// SettingsService
 public class SettingsService
 {
     private static readonly Lazy<SettingsService> _instance = new(() => new SettingsService());
@@ -48,6 +49,7 @@ public class SettingsService
     }
 }
 
+/// AppSettings
 public class AppSettings : StswObservableObject
 {
     /// GamePath

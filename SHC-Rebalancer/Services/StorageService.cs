@@ -6,9 +6,11 @@ using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 
 namespace SHC_Rebalancer;
-public static class Storage
+
+/// StorageService
+public static class StorageService
 {
-    static Storage()
+    static StorageService()
     {
         BaseAddresses = LoadBaseAddresses();
         Configs = LoadConfigs();

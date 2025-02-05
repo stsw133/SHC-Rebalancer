@@ -25,6 +25,7 @@ public class EnumToImageSourceConverter : MarkupExtension, IValueConverter
             nameof(FletcherSetting) => "/Images/resources/",
             nameof(HarassingUnit) => "/Images/units/",
             nameof(LordType) => "/Images/lords/",
+            nameof(PlayerColor) => "/Images/colors/",
             nameof(PoleturnerSetting) => "/Images/resources/",
             nameof(Resource) => "/Images/resources/",
             nameof(SkirmishDifficulty) => "/Images/skirmishdifficulties/",
