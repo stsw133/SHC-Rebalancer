@@ -22,10 +22,10 @@ public class FinderContext : StswObservableObject
     {
         try
         {
-            if (FinderFilterType.HasValue)
+            if (FinderFilterVersion.HasValue)
             {
-                FinderService.Find(FinderResults, FinderFilterType.Value, FinderFilterSize, FinderFilterAddress, FinderFilterSkips, FinderFilterValues);
-                _finderResultsType = FinderFilterType.Value;
+                FinderService.Find(FinderResults, FinderFilterVersion.Value, FinderFilterSize, FinderFilterAddress, FinderFilterSkips ?? 0, FinderFilterValues, FinderFilterLimit);
+                _finderResultsType = FinderFilterVersion.Value;
                 _finderResultsSize = FinderFilterSize;
             }
         }
@@ -50,12 +50,18 @@ public class FinderContext : StswObservableObject
                     using FileStream fs = new FileStream(StorageService.ExePath[_finderResultsType], FileMode.Open, FileAccess.ReadWrite);
                     fs.Seek(Convert.ToInt32(model.Address, 16), SeekOrigin.Begin);
 
-                    if (_finderResultsSize == 4)
-                        fs.Write(BitConverter.GetBytes(Convert.ToInt32(stsw.Value)), 0, 4);
-                    else if (_finderResultsSize == 2)
-                        fs.Write(BitConverter.GetBytes(Convert.ToInt16(stsw.Value)), 0, 2);
-                    else if (_finderResultsSize == 1)
-                        fs.WriteByte(Convert.ToByte(stsw.Value));
+                    switch (_finderResultsSize)
+                    {
+                        case 1:
+                            fs.WriteByte(Convert.ToByte(stsw.Value));
+                            break;
+                        case 2:
+                            fs.Write(BitConverter.GetBytes(Convert.ToInt16(stsw.Value)), 0, 2);
+                            break;
+                        case 4:
+                            fs.Write(BitConverter.GetBytes(Convert.ToInt32(stsw.Value)), 0, 4);
+                            break;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -72,18 +78,18 @@ public class FinderContext : StswObservableObject
 
 
     /// FinderFilterType
-    public GameVersion? FinderFilterType
+    public GameVersion? FinderFilterVersion
     {
-        get => _finderFilterType;
-        set => SetProperty(ref _finderFilterType, value);
+        get => _finderFilterVersion;
+        set => SetProperty(ref _finderFilterVersion, value, () => FindCommand.Execute(FinderFilterVersion));
     }
-    private GameVersion? _finderFilterType;
+    private GameVersion? _finderFilterVersion;
 
     /// FinderFilterSize
     public int FinderFilterSize
     {
         get => _finderFilterSize;
-        set => SetProperty(ref _finderFilterSize, value);
+        set => SetProperty(ref _finderFilterSize, value, () => FindCommand.Execute(FinderFilterVersion));
     }
     private int _finderFilterSize = 1;
 
@@ -91,37 +97,33 @@ public class FinderContext : StswObservableObject
     public string? FinderFilterAddress
     {
         get => _finderFilterAddress;
-        set
-        {
-            SetProperty(ref _finderFilterAddress, value);
-            FindCommand.Execute(FinderFilterType);
-        }
+        set => SetProperty(ref _finderFilterAddress, value, () => FindCommand.Execute(FinderFilterVersion));
     }
     private string? _finderFilterAddress;
 
     /// FinderFilterSkips
-    public int FinderFilterSkips
+    public int? FinderFilterSkips
     {
         get => _finderFilterSkips;
-        set
-        {
-            SetProperty(ref _finderFilterSkips, value);
-            FindCommand.Execute(FinderFilterType);
-        }
+        set => SetProperty(ref _finderFilterSkips, value, () => FindCommand.Execute(FinderFilterVersion));
     }
-    private int _finderFilterSkips = 0;
+    private int? _finderFilterSkips;
 
     /// FinderFilterValues
     public string? FinderFilterValues
     {
         get => _finderFilterValues;
-        set
-        {
-            SetProperty(ref _finderFilterValues, value);
-            FindCommand.Execute(FinderFilterType);
-        }
+        set => SetProperty(ref _finderFilterValues, value, () => FindCommand.Execute(FinderFilterVersion));
     }
     private string? _finderFilterValues;
+
+    /// FinderFilterLimit
+    public int FinderFilterLimit
+    {
+        get => _finderFilterLimit;
+        set => SetProperty(ref _finderFilterLimit, value, () => FindCommand.Execute(FinderFilterVersion));
+    }
+    private int _finderFilterLimit = 50;
 
     /// FinderResults
     public ObservableCollection<FinderDataModel> FinderResults

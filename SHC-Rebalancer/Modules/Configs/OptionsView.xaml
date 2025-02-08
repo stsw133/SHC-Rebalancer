@@ -39,12 +39,67 @@
                         </Trigger>
                     </Style.Triggers>
                 </Style>
+                <Style TargetType="{x:Type se:StswSubRadio}">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                    <Setter Property="IconScale" Value="2"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="IconData" Value="{x:Static se:StswIcons.Close}"/>
+                            <Setter Property="IconFill" Value="{DynamicResource StswDialog.Error.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="IconData" Value="{x:Static se:StswIcons.CheckBold}"/>
+                            <Setter Property="IconFill" Value="{DynamicResource StswDialog.Success.Background}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter Property="IconData" Value="{x:Static se:StswIcons.Help}"/>
+                            <Setter Property="IconFill" Value="{DynamicResource StswDialog.Warning.Background}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
             </StackPanel.Resources>
             
             <!-- bugfixes -->
             <se:StswLabel Content="Bugfixes" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" IconData="{x:Static se:StswIcons.BugCheckOutline}"/>
             <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5" Margin="3">
                 <StackPanel Margin="3">
+
+                    <!-- fix demolishing inaccessible buildings -->
+                    <se:StswSubCheck Content="Fix demolishing inaccessible buildings"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[FixDemolishingInaccessibleBuildings], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [FixDemolishingInaccessibleBuildings].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- fix ox tether spam -->
+                    <se:StswSubCheck Content="Fix ox tether spam"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[FixOxTetherSpam], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [FixOxTetherSpam].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- fix limit for tower engines -->
+                    <se:StswSubCheck Content="Fix limit for tower engines"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[FixLimitForTowerEngines], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [FixLimitForTowerEngines].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- fix ai no ladderman when enclosed -->
+                    <se:StswSubCheck Content="Fix AI no ladderman when enclosed"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[FixAiNoLaddermanWhenEnclosed], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [FixAiNoLaddermanWhenEnclosed].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
                     <!-- fix fletcher pathing -->
                     <se:StswSubCheck Content="Fix fletcher pathing"
@@ -53,6 +108,77 @@
                                      IsReadOnly="False"
                                      Margin="3"/>
                     <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [FixFletcherPathing].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- fix weapon order to match -->
+                    <se:StswSubCheck Content="Fix weapon order to match"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[FixWeaponOrderToMatch], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [FixWeaponOrderToMatch].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                </StackPanel>
+            </se:StswBorder>
+
+            <!-- ai -->
+            <se:StswLabel Content="AI" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" IconData="{x:Static se:StswIcons.RobotConfusedOutline}"/>
+            <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5" Margin="3">
+                <StackPanel Margin="3">
+
+                    <!-- ai attack troops limit -->
+                    <se:StswSubCheck Content="AI attack troops limit:"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[AiAttackTroopsLimit], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!200', UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="True"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding SelectedOptions[AiAttackTroopsLimit], Mode=OneWay, Source={StaticResource Settings}}"/>
+                    <se:StswSlider Minimum="0" Maximum="5000"
+                                   IsSelectionRangeEnabled="True"
+                                   IsSnapToTickEnabled="True"
+                                   SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
+                                   TickFrequency="50"
+                                   Value="{Binding SelectedOptions[AiAttackTroopsLimit], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [AiAttackTroopsLimit].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- ai attack troops increase -->
+                    <UniformGrid Rows="1">
+                        <StackPanel>
+                            <se:StswSubRadio Content="AI attack troops increase addend:"
+                                             FontWeight="Medium"
+                                             GroupName="AiAttackTroopsIncrease"
+                                             IsChecked="{Binding SelectedOptions[AiAttackTroopsIncrease], Source={StaticResource Settings}, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=0, UpdateSourceTrigger=PropertyChanged}"
+                                             Margin="3"/>
+                            <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding SelectedOptions[AiAttackTroopsIncrease0], Mode=OneWay, Source={StaticResource Settings}}"/>
+                            <se:StswSlider Minimum="0" Maximum="250"
+                                           IsEnabled="{Binding SelectedOptions[AiAttackTroopsIncrease], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='=0'}"
+                                           IsSelectionRangeEnabled="True"
+                                           IsSnapToTickEnabled="True"
+                                           SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
+                                           TickFrequency="1"
+                                           Value="{Binding SelectedOptions[AiAttackTroopsIncrease0], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"/>
+                            <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [AiAttackTroopsIncrease0].Description}" TextWrapping="Wrap"/>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <se:StswSubRadio Content="AI attack troops increase multiplier:"
+                                             FontWeight="Medium"
+                                             GroupName="AiAttackTroopsIncrease"
+                                             IsChecked="{Binding SelectedOptions[AiAttackTroopsIncrease], Source={StaticResource Settings}, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=1, UpdateSourceTrigger=PropertyChanged}"
+                                             Margin="3"/>
+                            <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding SelectedOptions[AiAttackTroopsIncrease1], Mode=OneWay, StringFormat=N1, Source={StaticResource Settings}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.1}"/>
+                            <se:StswSlider Minimum="0" Maximum="50"
+                                           IsEnabled="{Binding SelectedOptions[AiAttackTroopsIncrease], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='=1'}"
+                                           IsSelectionRangeEnabled="True"
+                                           IsSnapToTickEnabled="True"
+                                           SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
+                                           TickFrequency="1"
+                                           Value="{Binding SelectedOptions[AiAttackTroopsIncrease1], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"/>
+                            <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [AiAttackTroopsIncrease1].Description}" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </UniformGrid>
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
                 </StackPanel>
@@ -89,7 +215,7 @@
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
                     <!-- change player color -->
-                    <se:StswSubCheck Content="Change player color"
+                    <se:StswSubCheck Content="Change player color:"
                                      FontWeight="Medium"
                                      IsChecked="{Binding SelectedOptions[ChangePlayerColor], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='!Red', UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="True"
@@ -163,22 +289,22 @@
                     <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [MultiplayerDefaultSpeed].Description}" TextWrapping="Wrap"/>
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
-                    <!-- shrink orchard build size -->
-                    <se:StswSubCheck Content="Shrink orchard build size"
+                    <!-- no permanent religion bonuses -->
+                    <se:StswSubCheck Content="No permanent religion bonuses"
                                      FontWeight="Medium"
-                                     IsChecked="{Binding SelectedOptions[ShrinkOrchardBuildSize], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsChecked="{Binding SelectedOptions[NoPermanentReligionBonuses], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [ShrinkOrchardBuildSize].Description}" TextWrapping="Wrap"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [NoPermanentReligionBonuses].Description}" TextWrapping="Wrap"/>
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
-                    <!-- iron mine double pickup -->
-                    <se:StswSubCheck Content="Iron mine double pickup"
+                    <!-- decrease peasant spawnrate -->
+                    <se:StswSubCheck Content="Decrease peasant spawnrate"
                                      FontWeight="Medium"
-                                     IsChecked="{Binding SelectedOptions[IronMineDoublePickup], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsChecked="{Binding SelectedOptions[DecreasePeasantSpawnrate], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [IronMineDoublePickup].Description}" TextWrapping="Wrap"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [DecreasePeasantSpawnrate].Description}" TextWrapping="Wrap"/>
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
                     <!-- skirmish delivery bonus -->
@@ -195,6 +321,24 @@
                                    TickFrequency="1"
                                    Value="{Binding SelectedOptions[SkirmishDeliveryBonus], Source={StaticResource Settings}}"/>
                     <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [SkirmishDeliveryBonus].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- shrink orchard build size -->
+                    <se:StswSubCheck Content="Shrink orchard build size"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[ShrinkOrchardBuildSize], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [ShrinkOrchardBuildSize].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
+                    <!-- iron mine double pickup -->
+                    <se:StswSubCheck Content="Iron mine double pickup"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[IronMineDoublePickup], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [IronMineDoublePickup].Description}" TextWrapping="Wrap"/>
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
                 </StackPanel>

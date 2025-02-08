@@ -44,14 +44,10 @@
                 <Run Text="It will also include the following options migrated from the UnofficialCrusaderPatch:"/>
                 <Run Text="&#x0a; • Fix ladder climbing destination bug"/>
                 <Run Text="&#x0a; • Fire ballistae shoot monks and tunnelers"/>
-                <Run Text="&#x0a; • No demolishing of inaccessible buildings"/>
                 <Run Text="&#x0a; • Fix reinforcement of defense troops"/>
-                <Run Text="&#x0a; • Disable ox tether spam"/>
                 <Run Text="&#x0a; • Buy enough wood"/>
-                <Run Text="&#x0a; • No limit for siege engines on towers"/>
                 <Run Text="&#x0a; • No AI target change during sieges"/>
                 <Run Text="&#x0a; • Improved AI repairs"/>
-                <Run Text="&#x0a; • Fix AI not using laddermen if they are onclosed"/>
                 <Run Text="&#x0a; • Reset lord animation after destroying buildings"/>
                 <Run Text="&#x0a; • Fix apple farm worker getting blocked"/>
                 <Run Text="&#x0a; • Fix tanners getting all the same cow"/>
@@ -60,18 +56,14 @@
                 <Run Text="&#x0a; • Fix despawning of digging units"/>
                 <Run Text="&#x0a; • Let the AI build houses smarter (true:10 | true:10 | true)"/>
                 <Run Text="&#x0a; • Set AIs initial time until they recruit by the AIC parameters (30)"/>
-                <Run Text="&#x0a; • Increase of the attacking troops limit of the AIs (400)"/>
                 <Run Text="&#x0a; • Improve attack waves"/>
                 <Run Text="&#x0a; • Disable sleeping mode for lack of resources"/>
                 <Run Text="&#x0a; • Deactivate demolishing for money of the AI lords (true | true | true)"/>
-                <Run Text="&#x0a; • Increase of the rate of additional attack troops (false | true: 3)"/>
                 <Run Text="&#x0a; • Arabic Swordsmen destroy walls faster"/>
                 <Run Text="&#x0a; • Restore engineer arabiach speech"/>
                 <Run Text="&#x0a; • WASD-Keys and quicksaves"/>
                 <Run Text="&#x0a; • Healer heals casualties"/>
-                <Run Text="&#x0a; • Free trader post"/>
                 <Run Text="&#x0a; • Extended game speed limits"/>
-                <Run Text="&#x0a; • Fix armory/marketplace weapon orders to match"/>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="It will not, however, include other features, including the following, which cannot yet be configured in the Rebalancer:"/>
@@ -79,7 +71,7 @@
                 <Run Text="&#x0a; • Increased recruitment speed"/>
                 <Run Text="&#x0a; • Override the Set-up Identity menu adding new features"/>
                 <Run Text="&#x0a; • Activate Spectator-mode"/>
-                <Run Text="&#x0a; • Strongholdify"/>
+                <Run Text="&#x0a; • Strongholdify (popularity bonus from beer)"/>
                 <Run Text="&#x0a; • Manipulate random number generator"/>
                 <Run Text="&#x0a; • Spawn siege engines in the center of their tent"/>
                 <Run Text="&#x0a; • Rotate player keeps same as AI's"/>

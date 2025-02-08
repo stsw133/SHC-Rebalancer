@@ -83,11 +83,23 @@ internal static class RebalancerService
     /// ProcessOptionsConfig
     private static void ProcessOptionsConfig(GameVersion gameVersion, OptionsConfigModel config)
     {
-        /// options
-        foreach (var item in config.Options)
+        var exclusiveGroups = config.Options
+            .Where(x => !string.IsNullOrEmpty(x.Value.Group))
+            .GroupBy(x => x.Value.Group!)
+            .ToDictionary(g => g.Key, g => g.ToDictionary(y => y.Key, y => y.Value));
+
+        var independentOptions = config.Options
+            .Where(x => string.IsNullOrEmpty(x.Value.Group))
+            .ToList();
+
+        /// options (default)
+        foreach (var (key, option) in independentOptions)
         {
-            var selectedValue = SettingsService.Instance.Settings.SelectedOptions[item.Key];
-            foreach (var model in item.Value.Modifications.Where(x => x.Version == gameVersion))
+            var selectedValue = SettingsService.Instance.Settings.SelectedOptions.ContainsKey(key)
+                ? SettingsService.Instance.Settings.SelectedOptions[key]
+                : null;
+
+            foreach (var model in option.Modifications.Where(x => x.Version == gameVersion))
             {
                 var newValue = !model.IsNewValueDynamic && bool.TryParse(selectedValue?.ToString(), out var boolValue)
                     ? GetNumberOrArray(boolValue ? model.NewValue : model.OldValue, model.Size)
@@ -96,12 +108,51 @@ internal static class RebalancerService
                 if (int.TryParse(newValue?.ToString(), out var intValue))
                 {
                     if (model.MultiplyValueBy != null)
-                        newValue = intValue * model.MultiplyValueBy;
+                        newValue = (int)(intValue * model.MultiplyValueBy);
                     if (model.AddToValue != null)
-                        newValue = intValue + model.AddToValue;
+                        newValue = (int)(intValue + model.AddToValue);
                 }
 
-                WriteIfDifferent(Convert.ToInt32(model.Address, 16), newValue, model.Size, $"Options {item.Key}");
+                WriteIfDifferent(Convert.ToInt32(model.Address, 16), newValue, model.Size, $"Option {key}");
+            }
+        }
+
+        /// options (groups)
+        foreach (var (groupName, optionsDict) in exclusiveGroups)
+        {
+            foreach (var (optionKey, option) in optionsDict)
+            {
+                foreach (var model in option.Modifications.Where(x => x.Version == gameVersion))
+                {
+                    var newValue = GetNumberOrArray(model.OldValue, model.Size);
+                    WriteIfDifferent(Convert.ToInt32(model.Address, 16), newValue, model.Size, $"Default {optionKey}");
+                }
+            }
+
+            if (SettingsService.Instance.Settings.SelectedOptions.TryGetValue(groupName, out var selectedValue)
+             && int.TryParse(selectedValue?.ToString(), out var selectedIndex))
+            {
+                var selectedOptionKey = $"{groupName}{selectedIndex}";
+
+                if (optionsDict.TryGetValue(selectedOptionKey, out var selectedOption))
+                {
+                    foreach (var model in selectedOption.Modifications.Where(x => x.Version == gameVersion))
+                    {
+                        var newValue = !model.IsNewValueDynamic
+                            ? GetNumberOrArray(model.NewValue, model.Size)
+                            : GetNumberOrArray(SettingsService.Instance.Settings.SelectedOptions[selectedOptionKey], model.Size);
+
+                        if (int.TryParse(newValue?.ToString(), out var intValue))
+                        {
+                            if (model.MultiplyValueBy != null)
+                                newValue = (int)(intValue * model.MultiplyValueBy);
+                            if (model.AddToValue != null)
+                                newValue = (int)(intValue + model.AddToValue);
+                        }
+
+                        WriteIfDifferent(Convert.ToInt32(model.Address, 16), newValue, model.Size, $"Selected {selectedOptionKey}");
+                    }
+                }
             }
         }
     }
@@ -541,6 +592,15 @@ internal static class RebalancerService
             return new string(_reader!.ReadChars(str.Length));
         if (newValue.GetType().IsEnum)
             return _reader!.ReadInt32();
+        if (newValue is double)
+        {
+            return size switch
+            {
+                1 => _reader!.ReadByte(),
+                2 => _reader!.ReadInt16(),
+                _ => _reader!.ReadInt32()
+            };
+        }
 
         throw new InvalidOperationException($"Unsupported type {newValue.GetType().Name}");
     }
@@ -597,6 +657,21 @@ internal static class RebalancerService
         else if (newValue.GetType().IsEnum)
         {
             _writer!.Write(Convert.ToInt32(newValue));
+        }
+        else if (newValue is double d)
+        {
+            switch (size)
+            {
+                case 1:
+                    _writer!.Write((byte)d);
+                    break;
+                case 2:
+                    _writer!.Write((short)d);
+                    break;
+                default:
+                    _writer!.Write(d);
+                    break;
+            }
         }
         else
         {
@@ -690,6 +765,15 @@ internal static class RebalancerService
                 1 => (byte)intValue,
                 2 => (short)intValue,
                 _ => intValue
+            };
+        }
+        else if (obj is double doubleValue)
+        {
+            return size switch
+            {
+                1 => (byte)doubleValue,
+                2 => (short)doubleValue,
+                _ => (int)doubleValue
             };
         }
         else if (obj is string strValue && int.TryParse(strValue, out int parsedStrValue))
