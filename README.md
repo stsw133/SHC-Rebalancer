@@ -17,19 +17,19 @@ This program is inspired by **UnofficialCrusaderPatch 2.15** and incorporates so
 ### Main Tab
 The main tab allows you to specify game paths and select which settings to apply to the `.exe` file.
 
-![Main Tab](Screenshots/screen01.jpg)
+![Main Tab](Screenshots/screen01.webp)
 
 ### Search Engine
 Locate specific addresses and values in the `.exe` file by specifying search parameters.
 
-![Search Engine](Screenshots/screen02.jpg)
+![Search Engine](Screenshots/screen02.webp)
 
 ### Properties Tabs
 View and modify properties of specific categories, such as buildings, units, or skirmish trail.
 
-![Buildings Properties](Screenshots/screen03.jpg)
-![Units Properties](Screenshots/screen04.jpg)
-![Skirmish Trail Properties](Screenshots/screen05.jpg)
+![Buildings Properties](Screenshots/screen03.webp)
+![Units Properties](Screenshots/screen04.webp)
+![Skirmish Trail Properties](Screenshots/screen05.webp)
 
 ## Getting Started
 

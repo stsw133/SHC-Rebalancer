@@ -43,6 +43,9 @@
                                            VerticalAlignment="Center"
                                            Width="300">
 
+                            <se:StswLabel Content="Cost:" IconSource="/Images/misc/Cost.png"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Cost}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitCost}"/>
+
                             <se:StswLabel Content="Health:" IconSource="/Images/misc/Health.png"/>
                             <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Health}"/>
 

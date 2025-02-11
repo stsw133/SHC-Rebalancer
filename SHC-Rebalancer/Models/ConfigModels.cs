@@ -33,6 +33,7 @@ public class AicConfigModel : ConfigModel
 public class AivConfigModel : ConfigModel
 {
     public Dictionary<AI, ObservableCollection<AivModel>> AIs { get; set; } = [];
+    public Dictionary<string, string> Images { get; set; } = [];
 }
 
 /// GoodsConfigModel

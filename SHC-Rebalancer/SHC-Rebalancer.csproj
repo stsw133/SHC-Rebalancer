@@ -13,6 +13,7 @@
     <PackageIcon>icon.ico</PackageIcon>
     <Authors>Karol Staszewski</Authors>
 	<InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.Extensions.Configuration.Binder.SourceGeneration</InterceptorsNamespaces>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -408,12 +409,6 @@
     <None Remove="Resources\configs\troops\vanilla.json" />
     <None Remove="Resources\ucp\crusader.txt" />
     <None Remove="Resources\ucp\extreme.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Resources\configs\aiv\stsw\images\abbot1.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>

@@ -24,6 +24,9 @@ public class MainContext : StswObservableObject
         UninstallCommand = new(Uninstall, CanEditExe);
 
         ShowUcpExplanationCommand = new(ShowUcpExplanation);
+
+        StswMessanger.Instance.Register<ProgressUpdateMessage>(msg => InstallValue += msg.Increment);
+        StswMessanger.Instance.Register<ProgressTextMessage>(msg => InstallText = msg.Text);
     }
 
 
@@ -51,23 +54,7 @@ public class MainContext : StswObservableObject
 
             await Task.Delay(1000);
             StorageService.BaseAddresses = StorageService.LoadBaseAddresses();
-
-            foreach (var config in StorageService.Configs)
-            {
-                var type = config.Key.ToLower();
-                var selectedRebalance = SettingsService.Instance.Settings.SelectedConfigs[type];
-
-                var newConfigs = StorageService.LoadConfigs(type)[type].Cast<object>().ToList();
-                StorageService.Configs[type].Clear();
-                foreach (var item in newConfigs)
-                    StorageService.Configs[type].Add(item);
-
-                if (StorageService.Configs[type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
-                    SettingsService.Instance.Settings.SelectedConfigs[type] = selectedRebalance;
-                else if (StorageService.Configs[type].Count > 0)
-                    SettingsService.Instance.Settings.SelectedConfigs[type] = StorageService.Configs[type].First().GetPropertyValue(nameof(ConfigModel.Name))!.ToString()!;
-            }
-            OnPropertyChanged(nameof(SelectedConfigs));
+            ReloadConfigs();
 
             InstallState = StswProgressState.Finished;
             InstallValue = 100;
@@ -78,7 +65,29 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
-    
+    private void ReloadConfigs()
+    {
+        foreach (var config in StorageService.Configs)
+        {
+            var type = config.Key.ToLower();
+            SettingsService.Instance.Settings.SelectedConfigs.TryGetValue(type, out var selectedRebalance);
+
+            var newConfigs = StorageService.LoadConfigs(type)[type].Cast<object>().ToList();
+            StorageService.Configs[type].Clear();
+            foreach (var item in newConfigs)
+                StorageService.Configs[type].Add(item);
+
+            if (StorageService.Configs[type].Any(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance))
+                SettingsService.Instance.Settings.SelectedConfigs[type] = selectedRebalance;
+            else if (StorageService.Configs[type].Count > 0)
+                SettingsService.Instance.Settings.SelectedConfigs[type] = StorageService.Configs[type]
+                    .First()
+                    .GetPropertyValue(nameof(ConfigModel.Name))!
+                    .ToString()!;
+        }
+        OnPropertyChanged(nameof(SelectedConfigs));
+    }
+
     /// SaveAll
     public async Task SaveAll()
     {
@@ -107,29 +116,29 @@ public class MainContext : StswObservableObject
         try
         {
             InstallValue = 0;
+            InstallText = "Install starting...";
             InstallState = StswProgressState.Running;
 
-            await Task.Delay(200);
             StorageService.SaveConfigs();
             SettingsService.Instance.SaveSettings();
 
-            InstallValue += 20;
-            if (!SettingsService.Instance.Settings.IncludeUCP)
-                await Task.Delay(400);
+            InstallValueMax = RebalancerService.CountTotalOperations();
 
             //Backup.Restore();
-            BackupService.Make();
-            RebalancerService.Rebalance();
-
-            InstallValue += 40;
-            await Task.Delay(400);
+            await Task.Run(async () =>
+            {
+                BackupService.Make();
+                await RebalancerService.Rebalance(token);
+            });
 
             InstallState = StswProgressState.Finished;
-            InstallValue = 100;
+            InstallText = "Install finished!";
+            InstallValue = InstallValueMax;
         }
         catch (Exception ex)
         {
             InstallState = StswProgressState.Error;
+            InstallText = $"Install error: {ex.Message}";
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
@@ -141,6 +150,7 @@ public class MainContext : StswObservableObject
         try
         {
             InstallValue = 0;
+            InstallText = "Uninstall starting...";
             InstallState = StswProgressState.Running;
 
             await Task.Delay(500);
@@ -151,11 +161,13 @@ public class MainContext : StswObservableObject
             await Task.Delay(500);
 
             InstallState = StswProgressState.Finished;
+            InstallText = "Uninstall finished!";
             InstallValue = 100;
         }
         catch (Exception ex)
         {
             InstallState = StswProgressState.Error;
+            InstallText = $"Uninstall error: {ex.Message}";
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
@@ -183,6 +195,14 @@ public class MainContext : StswObservableObject
     }
     private StswProgressState _installState;
 
+    /// InstallText
+    public string? InstallText
+    {
+        get => _installText;
+        set => SetProperty(ref _installText, value);
+    }
+    private string? _installText;
+    
     /// InstallValue
     public int InstallValue
     {
@@ -190,6 +210,14 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _installValue, value);
     }
     private int _installValue;
+
+    /// InstallValueMax
+    public int InstallValueMax
+    {
+        get => _installValueMax;
+        set => SetProperty(ref _installValueMax, value);
+    }
+    private int _installValueMax;
 
     /// IsTermsContentDialogOpen
     public bool IsTermsContentDialogOpen

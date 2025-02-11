@@ -2,6 +2,7 @@
 	"Description": "Default config for Stronghold Crusader 1.41 UCP",
 	"Units": {
 		"EuropArcher": {
+			"Cost": 12,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -26,6 +27,7 @@
 			}
 		},
 		"Spearman": {
+			"Cost": 8,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -51,6 +53,7 @@
 			}
 		},
 		"Maceman": {
+			"Cost": 20,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -78,6 +81,7 @@
 			}
 		},
 		"Crossbowman": {
+			"Cost": 20,
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -102,6 +106,7 @@
 			}
 		},
 		"Pikeman": {
+			"Cost": 20,
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -127,6 +132,7 @@
 			}
 		},
 		"Swordsman": {
+			"Cost": 40,
 			"Speed": 4,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -154,6 +160,7 @@
 			}
 		},
 		"Knight": {
+			"Cost": 40,
 			"Speed": 1,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
@@ -181,6 +188,7 @@
 			}
 		},
 		"ArabArcher": {
+			"Cost": 75,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -218,6 +226,7 @@
 			}
 		},
 		"Slave": {
+			"Cost": 5,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -242,6 +251,7 @@
 			}
 		},
 		"Slinger": {
+			"Cost": 12,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -266,6 +276,7 @@
 			}
 		},
 		"Assassin": {
+			"Cost": 60,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -290,6 +301,7 @@
 			}
 		},
 		"HorseArcher": {
+			"Cost": 80,
 			"Speed": 1,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
@@ -314,6 +326,7 @@
 			}
 		},
 		"ArabSwordsman": {
+			"Cost": 80,
 			"Speed": 3,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -341,6 +354,7 @@
 			}
 		},
 		"Firethrower": {
+			"Cost": 100,
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -364,6 +378,7 @@
 			}
 		},
 		"Engineer": {
+			"Cost": 30,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -380,6 +395,7 @@
 			}
 		},
 		"Ladderman": {
+			"Cost": 4,
 			"Speed": 1,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
@@ -396,6 +412,7 @@
 			}
 		},
 		"Tunneler": {
+			"Cost": 30,
 			"Speed": 1,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
@@ -419,6 +436,7 @@
 			}
 		},
 		"Monk": {
+			"Cost": 10,
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,

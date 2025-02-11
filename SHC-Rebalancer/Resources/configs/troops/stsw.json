@@ -1,5 +1,40 @@
 ﻿{
-	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP
+	
+-General:
+	-AI have doubled number of starting troops
+	
+-Caliph:
+	-Normal troops changed from 6 ArabArcher, 3 ArabArcher, 3 FireThrower => 12 ArabArcher, 8 ArabSwordsman, 4 FireThrower
+	-Crusade troops changed from 70 ArabArcher => 100 ArabArcher, 16 ArabSwordsman, 16 FireThrower
+	-Deathmatch troops changed from 6 ArabArcher, 3 ArabArcher, 3 FireThrower => 12 ArabArcher, 8 ArabSwordsman, 4 FireThrower
+	
+-Sultan:
+	-Crusade troops changed from 80 Slinger, 20 ArabSwordsman => 112 Slinger, 40 ArabSwordsman, 16 FireThrower
+	
+-Emir:
+	-Normal troops changed from 10 HorseArcher, 2 ArabSwordsman => 8 EuropArcher, 8 ArabArcher, 8 ArabSwordsman
+	-Crusade troops changed from 60 HorseArcher, 5 ArabSwordsman => 64 EuropArcher, 32 ArabArcher, 16 ArabSwordsman
+	-Deathmatch troops changed from 10 HorseArcher, 2 ArabSwordsman => 8 EuropArcher, 8 ArabArcher, 8 ArabSwordsman
+	
+-Sheriff:
+	-Normal troops changed from 6 Maceman, 4 Crossbowman, 2 FireThrower => 8 Crossbowman, 12 Pikeman, 4 FireThrower
+	-Crusade troops changed from 30 Maceman, 30 Crossbowman, 10 FireThrower => 60 Crossbowman, 60 Pikeman, 20 FireThrower
+	-Deathmatch troops changed from 6 Maceman, 4 Crossbowman, 2 FireThrower => 8 Crossbowman, 12 Pikeman, 4 FireThrower
+	
+-Abbot:
+	-Crusade troops changed from 100 Monk => 80 EuropArcher, 48 Monk
+	
+-PlayerEurop:
+	-Normal troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 3 Pikeman
+	-Crusade troops changed from 40 EuropArcher, 10 Swordsman, 4 Knight => 30 EuropArcher, 3 Crossbowman, 12 Pikeman
+	-Deathmatch troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 3 Pikeman
+	
+-PlayerArab:
+	-Normal troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 3 ArabSwordsman
+	-Crusade troops changed from 50 ArabArcher, 10 ArabSwordsman => 25 ArabArcher, 12 ArabSwordsman, 3 FireThrower
+	-Deathmatch troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 3 ArabSwordsman
+	",
 	"Troops":
 	{
 		"Rat":
@@ -260,8 +295,8 @@
 			},
 			"Crusade": {
 				"EuropArcher": 30,
-				"Crossbowman": 12,
-				"Pikeman": 3,
+				"Crossbowman": 3,
+				"Pikeman": 12,
 			},
 			"Deathmatch": {
 				"EuropArcher": 6,

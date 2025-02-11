@@ -1,5 +1,27 @@
 {
-	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP
+	
+-General:
+	-Hop buy cost 75 => 90, sell cost 40 => 30
+	-Stone buy cost 70 => 60, sell cost 35 => 20
+	-Iron buy cost 225 => 150, sell cost 115 => 50
+	-Pitch buy cost 100 => 150
+	-Wheat buy cost 115 => 90, sell cost 40 => 30
+	-Bread sell cost 20 => 10
+	-Cheese sell cost 20 => 10
+	-Meat sell cost 20 => 10
+	-Fruit sell cost 20 => 10
+	-Beer buy cost 100 => 150
+	-Flour buy cost 160 => 150
+	-Bows buy cost 155 => 150, sell cost 75 => 30
+	-Crossbows buy cost 290 => 250, sell cost 150 => 50
+	-Spears sell cost 50 => 20
+	-Pikes buy cost 180 => 200, sell cost 90 => 40
+	-Maces buy cost 290 => 300, sell cost 150 => 60
+	-Swords buy cost 290 => 300, sell cost 150 => 60
+	-Leather buy cost 125 => 200, sell cost 60 => 40
+	-Armor buy cost 290 => 300, sell cost 150 => 60
+	",
 	"Prices": {
 		"Wood": {
 			"Buy": 20,
@@ -74,8 +96,8 @@
 			"Sell": 60
 		},
 		"Leather": {
-			"Buy": 150,
-			"Sell": 30
+			"Buy": 200,
+			"Sell": 40
 		},
 		"Armor": {
 			"Buy": 300,

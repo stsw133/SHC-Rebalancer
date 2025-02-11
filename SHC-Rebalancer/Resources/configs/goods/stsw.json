@@ -1,5 +1,10 @@
 ﻿{
-	"Description": "This is the stsw resource configuration. Less resources and gold.",
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP
+	
+-General:
+	-Less gold for human player
+	-More unique resources quantity for different game modes
+	",
 	"Goods":
 	{
 		"Normal":

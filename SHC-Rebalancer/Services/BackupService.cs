@@ -4,7 +4,7 @@ using System.IO.Compression;
 namespace SHC_Rebalancer;
 
 /// BackupService
-public static class BackupService
+internal static class BackupService
 {
     /// Exists
     private static bool Exists(string exePath, out string backupPath)
@@ -13,14 +13,11 @@ public static class BackupService
         var fileName = Path.GetFileNameWithoutExtension(exePath);
         backupPath = Path.Combine(directoryPath, fileName + ".exe.stsw_backup");
 
-        if (File.Exists(backupPath))
-            return true;
-
-        return false;
+        return File.Exists(backupPath);
     }
-    
+
     /// Make
-    public static void Make()
+    internal static void Make()
     {
         foreach (var exePath in StorageService.ExePath)
         {
@@ -30,11 +27,12 @@ public static class BackupService
             if (!Exists(exePath.Value, out var backupPath))
                 File.Copy(exePath.Value, backupPath, true);
         }
+
         MakeZipForAIV();
     }
 
     /// Restore
-    public static void Restore()
+    internal static void Restore()
     {
         foreach (var exePath in StorageService.ExePath)
         {
@@ -42,10 +40,12 @@ public static class BackupService
                 continue;
 
             if (Exists(exePath.Value, out var backupPath))
+            {
                 File.Copy(backupPath, exePath.Value, true);
-
-            File.Delete(backupPath);
+                File.Delete(backupPath);
+            }
         }
+
         RestoreZipForAIV();
     }
 
@@ -56,26 +56,24 @@ public static class BackupService
             return;
 
         var filesToArchive = new List<string>();
-
         foreach (var enumValue in Enum.GetValues(typeof(AI)))
         {
             for (var i = 1; i <= 8; i++)
             {
                 var fileName = $"{enumValue}{i}.aiv";
                 var filePath = Path.Combine(StorageService.AivPath, fileName);
-
                 if (File.Exists(filePath))
                     filesToArchive.Add(filePath);
             }
         }
 
         var backupPath = Path.Combine(StorageService.AivPath, "aiv.zip.stsw_backup");
-        if (!File.Exists(backupPath))
-            using (var zipArchive = ZipFile.Open(backupPath, ZipArchiveMode.Create))
-            {
-                foreach (var file in filesToArchive)
-                    zipArchive.CreateEntryFromFile(file, Path.GetFileName(file));
-            }
+        if (File.Exists(backupPath))
+            return;
+
+        using var zipArchive = ZipFile.Open(backupPath, ZipArchiveMode.Create);
+        foreach (var file in filesToArchive)
+            zipArchive.CreateEntryFromFile(file, Path.GetFileName(file));
     }
 
     /// RestoreZipForAIV
@@ -91,8 +89,12 @@ public static class BackupService
         using (var zipArchive = ZipFile.OpenRead(zipFilePath))
         {
             foreach (var entry in zipArchive.Entries)
-                entry.ExtractToFile(Path.Combine(StorageService.AivPath, entry.FullName), overwrite: true);
+            {
+                var fullDestPath = Path.Combine(StorageService.AivPath, entry.FullName);
+                entry.ExtractToFile(fullDestPath, overwrite: true);
+            }
         }
+
         File.Delete(zipFilePath);
     }
 }

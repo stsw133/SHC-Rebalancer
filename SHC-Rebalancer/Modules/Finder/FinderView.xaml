@@ -93,8 +93,8 @@
                 
                 <se:StswLabel Content="Limit:"/>
                 <StackPanel Margin="3" IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
-                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Value, Mode=OneWay, ElementName=SliderLimit}"/>
-                    <se:StswSlider x:Name="SliderLimit" Minimum="10" Maximum="1000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="10" Value="{Binding FinderFilterLimit, Delay=500}"/>
+                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding FinderFilterLimit, Mode=OneWay}"/>
+                    <se:StswSlider Minimum="10" Maximum="1000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="10" Value="{Binding FinderFilterLimit, Delay=500}"/>
                 </StackPanel>
                 
             </se:StswLabelPanel>

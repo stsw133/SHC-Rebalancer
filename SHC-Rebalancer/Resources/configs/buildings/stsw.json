@@ -1,5 +1,73 @@
 {
-	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP
+	
+-General:
+	-Barracks stone cost 15 => 10
+	-MercenaryPost health 300 => 200
+	-Armory health 500 => 200
+	-LookoutTower health 250 => 500, stone cost 10 => 15
+	-DefenseTurret health 1200 => 1750, stone cost 15 => 20
+	-SquareTower health 1600 => 2000, stone cost 35 => 40
+	-RoundTower health 2000 => 3000, stone cost 40 => 50
+	-EngineersGuild health 500 => 300
+	-TunnelersGuild health 500 => 300, wood cost 10 => 0, stone cost 0 => 5, gold cost 100 => 50
+	-Stables health 300 => 400, gold cost 400 => 200
+	-OilSmelter health 300 => 500, iron cost 10 => 5, gold cost 100 => 0
+	-LargeGatehouse health 2000 => 3000, stone cost 20 => 30
+	-Drawbridge health 0 => 100
+	-CagedWarDogs wood cost 10 => 0
+	-KillingPits wood cost 6 => 5
+	-EuropOutpost health 1500 => 3000
+	-ArabOutpost health 1500 => 3000
+	-WoodcuttersHut health 100 => 50
+	-Quarry health 300 => 250, wood cost 20 => 25
+	-OxTether health 100 => 50
+	-IronMine health 100 => 200
+	-PitchRig health 100 => 150, wood cost 20 => 15
+	-Marketplace health 300 => 50, wood cost 5 => 0
+	-HuntersHut health 100 => 50
+	-AppleFarm health 100 => 50
+	-WheatFarm health 100 => 150
+	-HopFarm health 100 => 150
+	-Hovel health 100 => 50, wood cost 6 => 5
+	-Chapel stone cost 0 => 10, gold cost 250 => 50
+	-Church health 800 => 1200, stone cost 0 => 20, gold cost 500 => 250
+	-Cathedral health 1200 => 2000, stone cost 0 => 40, gold cost 1000 => 500
+	-Apothecary health 300 => 400, gold cost 150 => 200
+	-Well health 300 => 150, stone cost 0 => 3, gold cost 30 => 0
+	-WaterPot gold cost 60 => 100
+	-Gallows health 100 => 40
+	-Cesspit gold cost 40 => 50
+	-Stocks health 100 => 60, gold cost 45 => 50
+	-BurningStake health 100 => 60, gold cost 45 => 50
+	-Dungeon gold cost 40 => 50
+	-StretchingRack health 100 => 60, gold cost 45 => 50
+	-Gibbet health 100 => 40
+	-ChoppingBlock health 100 => 60, gold cost 45 => 50
+	-DunkingStool gold cost 40 => 50
+	-Maypole health 100 => 60, gold cost 25 => 50
+	-DancingBear gold cost 20 => 50
+	-Gardens health 100 => 60, gold cost 30 => 50
+	-Statue health 100 => 40, gold cost 30 => 50
+	-Shrine health 100 => 40, gold cost 30 => 50
+	-Armourer gold cost 100 => 200
+	-Granary health 300 => 200
+	-Bakery health 300 => 200
+	-Brewery health 300 => 200
+	-Mill health 300 => 200, wood cost 20 => 15
+	-Catapult wood cost 0 => 10, stone cost 0 => 10, gold cost 150 => 100
+	-Trebuchet wood cost 0 => 15, stone cost 0 => 10
+	-SiegeTower wood cost 0 => 20, gold cost 150 => 200
+	-BatteringRam wood cost 0 => 20, gold cost 150 => 200
+	-PortableShield wood cost 0 => 5, gold cost 5 => 50
+	-FireBallista wood cost 0 => 10, pitch cost 0 => 2, gold cost 150 => 120
+	-TowerBallista wood cost 0 => 10, gold cost 50 => 100
+	-Mangonel wood cost 0 => 10, gold cost 50 => 100
+	-Outpost6 1 Catapult => 10 Crossbowman
+	-Outpost7 10 Catapult => 10 Pikeman
+	-Outpost8 10 Catapult => 12 Monk
+	-Outpost16 1 Catapult => 10 Assassin
+	",
 	"Buildings": {
 		"Barracks": {
 			"Health": 500,

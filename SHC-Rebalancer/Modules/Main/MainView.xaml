@@ -40,7 +40,14 @@
         <se:StswContentDialog Identifier="InfoContentDialog">
             <DockPanel>
                 <!-- buttons panel -->
-                <se:StswProgressBar DockPanel.Dock="Bottom" Margin="3" State="{Binding InstallState}" Value="{Binding InstallValue}"/>
+                <se:StswProgressBar DockPanel.Dock="Bottom"
+                                    HorizontalContentAlignment="Left"
+                                    Margin="3"
+                                    Maximum="{Binding InstallValueMax}"
+                                    State="{Binding InstallState}"
+                                    Text="{Binding InstallText}"
+                                    TextMode="Custom"
+                                    Value="{Binding InstallValue}"/>
                 <se:StswDirectionView DockPanel.Dock="Bottom" Background="{DynamicResource StswWindow.Static.Background}" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
                     <UniformGrid HorizontalAlignment="Center" Rows="1">
                         <se:StswButton Command="{Binding ReloadAllCommand}" Margin="3" Padding="10 3">
@@ -91,7 +98,7 @@
                                                     <se:StswText Text="UCP:"/>
                                                 </StackPanel>
                                             </se:StswLabel>
-                                            <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3"/>
+                                            <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" IsReadOnly="True" Margin="3"/>
                                             
                                             <se:StswLabel Content="AIC:"/>
                                             <local:ConfigBox ItemsSource="{Binding [aic], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
@@ -144,7 +151,7 @@
                         <local:AicView/>
                     </se:StswTabItem>
                     <!-- aiv -->
-                    <se:StswTabItem IsEnabled="False">
+                    <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="AIV" IconData="{x:Static se:StswIcons.Castle}"/>
                         </se:StswTabItem.Header>

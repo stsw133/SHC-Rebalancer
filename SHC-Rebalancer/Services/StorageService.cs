@@ -8,7 +8,7 @@ using System.Text.Json.Serialization.Metadata;
 namespace SHC_Rebalancer;
 
 /// StorageService
-public static class StorageService
+internal static class StorageService
 {
     static StorageService()
     {
@@ -36,13 +36,13 @@ public static class StorageService
 
         foreach (var filePath in Directory.GetFiles(BaseAddressesPath, "*.json"))
         {
-            var gameVersion = Enum.Parse<GameVersion>(Path.GetFileNameWithoutExtension(filePath), true);
-
-            var versionAddresses = ReadJsonFileAsModel<List<BaseAddressModel>>(filePath, string.Empty)?.ToDictionary(x => x.Key, x => x);
-            if (versionAddresses == null)
+            var fileNameWithoutExt = Path.GetFileNameWithoutExtension(filePath);
+            if (!Enum.TryParse<GameVersion>(fileNameWithoutExt, ignoreCase: true, out var gameVersion))
                 continue;
 
-            baseAddresses.Add(gameVersion, versionAddresses);
+            var versionAddresses = ReadJsonFileAsModel<List<BaseAddressModel>>(filePath, string.Empty)?.ToDictionary(x => x.Key, x => x);
+            if (versionAddresses != null)
+                baseAddresses.Add(gameVersion, versionAddresses);
         }
 
         return baseAddresses;
@@ -53,172 +53,205 @@ public static class StorageService
     {
         var configs = new Dictionary<string, ObservableCollection<object>>();
 
-        void GetConfig<T>(string t)
+        if (type == null || type == "aiv")
+            LoadAivConfigs(configs);
+
+        var knownTypes = new (string key, Type modelType)[]
         {
-            if (type != null && type != t)
-                return;
+            ("options", typeof(OptionsConfigModel)),
+            ("aic", typeof(AicConfigModel)),
+            ("goods", typeof(GoodsConfigModel)),
+            ("troops", typeof(TroopsConfigModel)),
+            ("buildings", typeof(BuildingsConfigModel)),
+            ("resources", typeof(ResourcesConfigModel)),
+            ("units", typeof(UnitsConfigModel)),
+            ("skirmishtrail", typeof(SkirmishTrailConfigModel)),
+            ("customs", typeof(CustomsConfigModel))
+        };
 
-            var directoryPath = Path.Combine(ConfigsPath, t);
+        foreach (var (folderKey, modelType) in knownTypes)
+        {
+            if (type != null && type != folderKey)
+                continue;
+
+            configs.TryAdd(folderKey, []);
+
+            var directoryPath = Path.Combine(ConfigsPath, folderKey);
             if (!Directory.Exists(directoryPath))
-                return;
+                continue;
 
-            configs.TryAdd(t, []);
-            foreach (var filePath in Directory.GetFiles(Path.Combine(ConfigsPath, t), "*.json"))
+            foreach (var filePath in Directory.GetFiles(directoryPath, "*.json"))
             {
                 var fileName = Path.GetFileNameWithoutExtension(filePath);
+
                 if (!string.IsNullOrEmpty(name) && name != fileName)
                     continue;
 
-                var config = ReadJsonFileAsModel<T>(filePath, t);
+                var config = ReadJsonFileAsModel(filePath, folderKey, modelType);
                 if (config == null)
                     continue;
 
                 config.GetType().GetProperty(nameof(ConfigModel.Name))?.SetValue(config, fileName);
-                configs[t].Add(config);
-            }
-        }
 
-        if (type == null || type == "aiv")
-        {
-            configs.TryAdd("aiv", []);
-            foreach (var directoryPath in Directory.GetDirectories(Path.Combine(ConfigsPath, "aiv")))
-            {
-                var aivs = new Dictionary<AI, ObservableCollection<AivModel>>();
-                foreach (var filePath in Directory.GetFiles(directoryPath, "*.aiv"))
-                {
-                    var fileName = Path.GetFileNameWithoutExtension(filePath);
-                    var imagePath = Path.Combine(directoryPath, "images", fileName + ".jpg");
-                    var ai = Enum.Parse<AI>(string.Concat(fileName.Where(char.IsLetter)).Capitalize());
-                    aivs.TryAdd(ai, []);
-                    aivs[ai].Add(new()
-                    {
-                        Name = fileName,
-                        FilePath = filePath,
-                        ImagePath = File.Exists(imagePath) ? imagePath : null,
-                    });
-                }
-                configs["aiv"].Add(new AivConfigModel() { Name = new DirectoryInfo(directoryPath).Name, AIs = aivs });
+                configs[folderKey].Add(config);
             }
         }
-        GetConfig<OptionsConfigModel>("options");
-        GetConfig<AicConfigModel>("aic");
-        GetConfig<GoodsConfigModel>("goods");
-        GetConfig<TroopsConfigModel>("troops");
-        GetConfig<BuildingsConfigModel>("buildings");
-        GetConfig<ResourcesConfigModel>("resources");
-        GetConfig<UnitsConfigModel>("units");
-        GetConfig<SkirmishTrailConfigModel>("skirmishtrail");
-        GetConfig<CustomsConfigModel>("customs");
 
         return configs;
     }
-    
+
+    /// LoadAivConfigs
+    private static void LoadAivConfigs(Dictionary<string, ObservableCollection<object>> configs)
+    {
+        configs.TryAdd("aiv", []);
+
+        var aivRoot = Path.Combine(ConfigsPath, "aiv");
+        if (!Directory.Exists(aivRoot))
+            return;
+
+        foreach (var directoryPath in Directory.GetDirectories(aivRoot))
+        {
+            var aivs = new Dictionary<AI, ObservableCollection<AivModel>>();
+            foreach (var filePath in Directory.GetFiles(directoryPath, "*.aiv"))
+            {
+                var fileName = Path.GetFileNameWithoutExtension(filePath);
+                var aiName = string.Concat(fileName.Where(char.IsLetter)).Capitalize();
+                var ai = Enum.Parse<AI>(aiName);
+
+                aivs.TryAdd(ai, []);
+                aivs[ai].Add(new AivModel
+                {
+                    Name = fileName,
+                    FilePath = filePath
+                });
+            }
+
+            var images = new Dictionary<string, string>();
+            if (Directory.Exists(Path.Combine(directoryPath, "Images")))
+                images = Directory.GetFiles(Path.Combine(directoryPath, "Images"), "*.webp").Select(x => new KeyValuePair<string, string>(Path.GetFileNameWithoutExtension(x), x)).ToDictionary();
+
+            configs["aiv"].Add(new AivConfigModel
+            {
+                Name = new DirectoryInfo(directoryPath).Name,
+                AIs = aivs,
+                Images = images
+            });
+        }
+    }
+
     /// SaveConfigs
     internal static void SaveConfigs()
     {
-        foreach (var config in Configs["options"].Cast<OptionsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "options", config.Name + ".json"), "options");
-        foreach (var config in Configs["aic"].Cast<AicConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "aic", config.Name + ".json"), "aic");
-        foreach (var config in Configs["goods"].Cast<GoodsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "goods", config.Name + ".json"), "goods");
-        foreach (var config in Configs["troops"].Cast<TroopsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "troops", config.Name + ".json"), "troops");
-        foreach (var config in Configs["buildings"].Cast<BuildingsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "buildings", config.Name + ".json"), "buildings");
-        foreach (var config in Configs["resources"].Cast<ResourcesConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "resources", config.Name + ".json"), "resources");
-        foreach (var config in Configs["units"].Cast<UnitsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "units", config.Name + ".json"), "units");
-        foreach (var config in Configs["skirmishtrail"].Cast<SkirmishTrailConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "skirmishtrail", config.Name + ".json"), "skirmishtrail");
-        foreach (var config in Configs["customs"].Cast<CustomsConfigModel>())
-            SaveModelIntoFile(config, Path.Combine(ConfigsPath, "customs", config.Name + ".json"), "customs");
+        var knownTypes = new (string key, Type modelType)[]
+        {
+            ("options", typeof(OptionsConfigModel)),
+            ("aic", typeof(AicConfigModel)),
+            ("goods", typeof(GoodsConfigModel)),
+            ("troops", typeof(TroopsConfigModel)),
+            ("buildings", typeof(BuildingsConfigModel)),
+            ("resources", typeof(ResourcesConfigModel)),
+            ("units", typeof(UnitsConfigModel)),
+            ("skirmishtrail", typeof(SkirmishTrailConfigModel)),
+            ("customs", typeof(CustomsConfigModel))
+        };
+
+        foreach (var (folderKey, modelType) in knownTypes)
+        {
+            if (!Configs.ContainsKey(folderKey))
+                continue;
+
+            var folderPath = Path.Combine(ConfigsPath, folderKey);
+            Directory.CreateDirectory(folderPath);
+
+            foreach (var configObj in Configs[folderKey])
+            {
+                var nameProp = configObj.GetType().GetProperty(nameof(ConfigModel.Name));
+                if (nameProp == null)
+                    continue;
+
+                var configName = nameProp.GetValue(configObj)?.ToString();
+                if (string.IsNullOrWhiteSpace(configName))
+                    continue;
+
+                var filePath = Path.Combine(folderPath, configName + ".json");
+                SaveModelIntoFile(configObj, filePath, folderKey);
+            }
+        }
+    }
+
+    /// ReadJsonFileAsModel
+    private static object? ReadJsonFileAsModel(string filePath, string folderKey, Type modelType)
+    {
+        var json = File.ReadAllText(filePath).Replace("\r\n", " ").Replace("\t", " ");
+        var options = GetJsonSerializerOptions(folderKey, forReading: true);
+
+        return JsonSerializer.Deserialize(json, modelType, options);
     }
 
     /// ReadJsonFileAsModel
     internal static T? ReadJsonFileAsModel<T>(string filePath, string type)
     {
-        var json = File.ReadAllText(filePath);
-        var jsonSerializerOptions = new JsonSerializerOptions
-        {
-            AllowTrailingCommas = true,
-            PropertyNameCaseInsensitive = true,
-            Converters = {
-                new JsonStringEnumConverter<BlacksmithSetting>(),
-                new JsonStringEnumConverter<FletcherSetting>(),
-                new JsonStringEnumConverter<GameVersion>(),
-                new JsonStringEnumConverter<HarassingUnit>(),
-                new JsonStringEnumConverter<LordType>(),
-                new JsonStringEnumConverter<PoleturnerSetting>(),
-                new JsonStringEnumConverter<TargetChoice>(),
-            }
-        };
-        if (type == "aic")
-        {
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Building>());
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Resource>());
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
-        }
-        else if (type == "buildings")
-        {
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
-        }
-        if (!type.In("goods", "troops"))
-        {
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<SkirmishMode>());
-        }
-        var options = jsonSerializerOptions;
-
-        return JsonSerializer.Deserialize<T>(json, options);
+        var obj = ReadJsonFileAsModel(filePath, type, typeof(T));
+        return (T?)obj;
     }
 
     /// SaveModelIntoFile
-    internal static void SaveModelIntoFile<T>(T obj, string filePath, string type)
+    internal static void SaveModelIntoFile(object obj, string filePath, string folderKey)
     {
-        var jsonSerializerOptions = new JsonSerializerOptions
-        {
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-            WriteIndented = true,
-            TypeInfoResolver = new DefaultJsonTypeInfoResolver
-            {
-                Modifiers = { DefaultValueModifier }
-            },
-            Converters = {
-                new JsonStringEnumConverter<BlacksmithSetting>(),
-                new JsonStringEnumConverter<FletcherSetting>(),
-                new JsonStringEnumConverter<GameVersion>(),
-                new JsonStringEnumConverter<HarassingUnit>(),
-                new JsonStringEnumConverter<LordType>(),
-                new JsonStringEnumConverter<PoleturnerSetting>(),
-                new JsonStringEnumConverter<TargetChoice>(),
-                new SingleLineArrayConverterFactory()
-            }
-        };
-        if (type == "aic")
-        {
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Building>());
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Resource>());
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
-        }
-        else if (type == "buildings")
-        {
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<Unit>());
-        }
-        if (!type.In("goods", "troops"))
-        {
-            jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter<SkirmishMode>());
-        }
-        var options = jsonSerializerOptions;
-        var json = JsonSerializer.Serialize(obj, options);
+        var options = GetJsonSerializerOptions(folderKey, forReading: false);
+        var json = JsonSerializer.Serialize(obj, obj.GetType(), options);
 
         File.WriteAllText(filePath, json);
     }
 
-    /// DefaultValueModifier
-    private static void DefaultValueModifier(JsonTypeInfo type_info)
+    /// GetJsonSerializerOptions
+    private static JsonSerializerOptions GetJsonSerializerOptions(string folderKey, bool forReading)
     {
-        foreach (var property in type_info.Properties)
+        var options = new JsonSerializerOptions
+        {
+            AllowTrailingCommas = forReading,
+            PropertyNameCaseInsensitive = forReading,
+            DefaultIgnoreCondition = forReading ? JsonIgnoreCondition.Never : JsonIgnoreCondition.WhenWritingNull,
+            WriteIndented = !forReading,
+            TypeInfoResolver = forReading ? null : new DefaultJsonTypeInfoResolver
+            {
+                Modifiers = { DefaultValueModifier }
+            }
+        };
+        if (!forReading)
+            options.Converters.Add(new SingleLineArrayConverterFactory());
+
+        options.Converters.Add(new JsonStringEnumConverter<BlacksmithSetting>());
+        options.Converters.Add(new JsonStringEnumConverter<FletcherSetting>());
+        options.Converters.Add(new JsonStringEnumConverter<GameVersion>());
+        options.Converters.Add(new JsonStringEnumConverter<HarassingUnit>());
+        options.Converters.Add(new JsonStringEnumConverter<LordType>());
+        options.Converters.Add(new JsonStringEnumConverter<PoleturnerSetting>());
+        options.Converters.Add(new JsonStringEnumConverter<TargetChoice>());
+
+        if (folderKey == "aic")
+        {
+            options.Converters.Add(new JsonStringEnumConverter<Building>());
+            options.Converters.Add(new JsonStringEnumConverter<Resource>());
+            options.Converters.Add(new JsonStringEnumConverter<Unit>());
+        }
+        else if (folderKey == "buildings")
+        {
+            options.Converters.Add(new JsonStringEnumConverter<Unit>());
+        }
+
+        if (!folderKey.In("goods", "troops"))
+        {
+            options.Converters.Add(new JsonStringEnumConverter<SkirmishMode>());
+        }
+
+        return options;
+    }
+
+    /// DefaultValueModifier
+    private static void DefaultValueModifier(JsonTypeInfo typeInfo)
+    {
+        foreach (var property in typeInfo.Properties)
             if (typeof(ICollection).IsAssignableFrom(property.PropertyType))
                 property.ShouldSerialize = (_, val) => val is ICollection collection && collection.Count > 0;
     }

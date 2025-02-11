@@ -3,6 +3,7 @@ public class OptionModel
 {
     public string? Description { get; set; }
     public string? Group { get; set; }
+    public string? Type { get; set; }
     public IEnumerable<OptionValueModel> Modifications { get; set; } = [];
 
     public class OptionValueModel
@@ -14,7 +15,7 @@ public class OptionModel
         public object? OldValue { get; set; }
         public object? NewValue { get; set; }
         public bool IsNewValueDynamic { get; set; }
-        public int? AddToValue { get; set; }
-        public double? MultiplyValueBy { get; set; }
+        public int? Addend { get; set; }
+        public double? Multiplier { get; set; }
     }
 }

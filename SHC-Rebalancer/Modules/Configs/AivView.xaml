@@ -23,25 +23,16 @@
                     <se:StswLabel Content="AIV" IconSource="/Images/buildings/Keep2.png"/>
                 </se:StswTabItem.Header>
                 <DockPanel Margin="-3">
-                    <!-- selector -->
-                    <se:StswSegment x:Name="AivSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[aiv].AIs}" Orientation="Vertical" Width="100">
-                        <se:StswSegment.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
-                                    <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </se:StswSegment.ItemTemplate>
-                    </se:StswSegment>
                     <!-- data -->
-                    <se:StswLabel DockPanel.Dock="Bottom" Content="{Binding SelectedItem.Name, ElementName=CastleSelector}" HorizontalAlignment="Center"/>
-                    <se:StswFlipView x:Name="CastleSelector"
-                                     IsEnabled="{Binding SelectedItem, ElementName=AivSelector, Converter={x:Static se:StswNotNullConverter.Instance}}"
-                                     ItemsSource="{Binding SelectedItem.Value, ElementName=AivSelector}">
+                    <se:StswLabel DockPanel.Dock="Bottom"
+                                  Background="{DynamicResource StswPanel.Static.Background}"
+                                  Content="{Binding SelectedItem.Key, ElementName=CastleSelector}"
+                                  Height="24"
+                                  HorizontalContentAlignment="Center"/>
+                    <se:StswFlipView x:Name="CastleSelector" ItemsSource="{Binding SelectedConfigs[aiv].Images}">
                         <se:StswFlipView.ItemTemplate>
                             <DataTemplate>
-                                <se:StswImage Source="{Binding ImagePath, Converter={x:Static se:StswNullToUnsetConverter.Instance}}"/>
+                                <se:StswImage Source="{Binding Value, Converter={x:Static se:StswNullToUnsetConverter.Instance}}"/>
                             </DataTemplate>
                         </se:StswFlipView.ItemTemplate>
                     </se:StswFlipView>
