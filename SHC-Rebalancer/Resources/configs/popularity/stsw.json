@@ -1,0 +1,6 @@
+{
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"Popularity": {
+		"ReligionThresholds": [20, 40, 60, 80]
+	}
+}

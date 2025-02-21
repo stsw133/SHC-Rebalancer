@@ -55,6 +55,12 @@ public class BuildingsConfigModel : ConfigModel
     public Dictionary<int, OutpostModel> Outposts { get; set; } = [];
 }
 
+/// PopularityConfigModel
+public class PopularityConfigModel : ConfigModel
+{
+    public PopularityModel Popularity { get; set; } = new();
+}
+
 /// ResourcesConfigModel
 public class ResourcesConfigModel : ConfigModel
 {

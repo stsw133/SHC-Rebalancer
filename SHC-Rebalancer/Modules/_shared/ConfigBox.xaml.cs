@@ -35,7 +35,14 @@ public partial class ConfigBox : StswComboBox
 
         if (!string.IsNullOrEmpty(Type))
         {
-            SubControls = new((IStswSubControl[])Resources["SubControls"]);
+            SubControls = [.. (IStswSubControl[])Resources["SubControls"]];
+            //foreach (var subControl in SubControls)
+            //    BindingOperations.SetBinding((FrameworkElement)subControl, IsEnabledProperty, new Binding(nameof(IsReadOnly))
+            //    {
+            //        Source = this,
+            //        Converter = StswBoolConverter.Instance,
+            //        ConverterParameter = "!"
+            //    });
 
             if (SubControls?[1] is ItemsControl menuButton)
             {

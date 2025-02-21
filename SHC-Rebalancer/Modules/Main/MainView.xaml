@@ -98,10 +98,13 @@
                                                     <se:StswText Text="UCP:"/>
                                                 </StackPanel>
                                             </se:StswLabel>
-                                            <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" IsReadOnly="True" Margin="3"/>
+                                            <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3" Unchecked="{se:StswEventToCommand CommandBinding={Binding UncheckUCPCommand}}"/>
+											
+                                            <se:StswLabel Content="Options:"/>
+                                            <se:StswCheckBox Content="include options (recommended)" IsChecked="{Binding IncludeOptions, Source={StaticResource Settings}}" IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3"/>
                                             
                                             <se:StswLabel Content="AIC:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [aic], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
+                                            <local:ConfigBox IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" ItemsSource="{Binding [aic], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
                                             
                                             <se:StswLabel Content="AIV:"/>
                                             <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aiv], Source={StaticResource Settings}}" Type="AIV"/>
@@ -117,6 +120,9 @@
                                             
                                             <se:StswLabel Content="Buildings:"/>
                                             <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[buildings], Source={StaticResource Settings}}" Type="Buildings"/>
+
+                                            <se:StswLabel Content="Popularity:"/>
+                                            <local:ConfigBox ItemsSource="{Binding [popularity], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[popularity], Source={StaticResource Settings}}" Type="Popularity"/>
                                             
                                             <se:StswLabel Content="Resources:"/>
                                             <local:ConfigBox ItemsSource="{Binding [resources], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[resources], Source={StaticResource Settings}}" Type="Resources"/>
@@ -137,14 +143,14 @@
                         </se:StswScrollView>
                     </se:StswTabItem>
                     <!-- options -->
-                    <se:StswTabItem>
+                    <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Options" IconData="{x:Static se:StswIcons.Tools}"/>
                         </se:StswTabItem.Header>
                         <local:OptionsView/>
                     </se:StswTabItem>
                     <!-- aic -->
-                    <se:StswTabItem>
+                    <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="AIC" IconData="{x:Static se:StswIcons.RobotAngryOutline}"/>
                         </se:StswTabItem.Header>
@@ -177,6 +183,13 @@
                             <se:StswLabel Content="Buildings" IconData="{x:Static se:StswIcons.Warehouse}"/>
                         </se:StswTabItem.Header>
                         <local:BuildingsView/>
+                    </se:StswTabItem>
+                    <!-- popularity -->
+                    <se:StswTabItem>
+                        <se:StswTabItem.Header>
+                            <se:StswLabel Content="Popularity" IconData="{x:Static se:StswIcons.EmoticonHappyOutline}"/>
+                        </se:StswTabItem.Header>
+                        <local:PopularityView/>
                     </se:StswTabItem>
                     <!-- resources -->
                     <se:StswTabItem>

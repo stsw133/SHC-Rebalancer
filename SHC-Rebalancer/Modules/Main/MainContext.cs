@@ -12,6 +12,7 @@ public class MainContext : StswObservableObject
     public StswAsyncCommand UninstallCommand { get; }
 
     public StswAsyncCommand ShowUcpExplanationCommand { get; }
+    public StswCommand UncheckUCPCommand => new(() => { SettingsService.Instance.Settings.IncludeOptions = false; SettingsService.Instance.Settings.SelectedConfigs["aic"] = null; });
 
     public MainContext()
     {
@@ -116,7 +117,7 @@ public class MainContext : StswObservableObject
         try
         {
             InstallValue = 0;
-            InstallText = "Install starting...";
+            InstallText = "Installation starting...";
             InstallState = StswProgressState.Running;
 
             StorageService.SaveConfigs();
@@ -132,13 +133,13 @@ public class MainContext : StswObservableObject
             });
 
             InstallState = StswProgressState.Finished;
-            InstallText = "Install finished!";
+            InstallText = "Installation completed!";
             InstallValue = InstallValueMax;
         }
         catch (Exception ex)
         {
             InstallState = StswProgressState.Error;
-            InstallText = $"Install error: {ex.Message}";
+            InstallText = $"Installation error: {ex.Message}";
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
@@ -150,7 +151,7 @@ public class MainContext : StswObservableObject
         try
         {
             InstallValue = 0;
-            InstallText = "Uninstall starting...";
+            InstallText = "Uninstallation starting...";
             InstallState = StswProgressState.Running;
 
             await Task.Delay(500);
@@ -161,13 +162,13 @@ public class MainContext : StswObservableObject
             await Task.Delay(500);
 
             InstallState = StswProgressState.Finished;
-            InstallText = "Uninstall finished!";
+            InstallText = "Uninstallation completed!";
             InstallValue = 100;
         }
         catch (Exception ex)
         {
             InstallState = StswProgressState.Error;
-            InstallText = $"Uninstall error: {ex.Message}";
+            InstallText = $"Uninstallation error: {ex.Message}";
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
@@ -228,10 +229,10 @@ public class MainContext : StswObservableObject
     private bool _isTermsContentDialogOpen = !SettingsService.Instance.Settings.TermsAccepted;
 
     /// SelectedConfigs
-    public StswDictionary<string, ConfigModel> SelectedConfigs
+    public StswDictionary<string, ConfigModel?> SelectedConfigs
     {
         get => _selectedConfigs;
         set => SetProperty(ref _selectedConfigs, value);
     }
-    private StswDictionary<string, ConfigModel> _selectedConfigs = [];
+    private StswDictionary<string, ConfigModel?> _selectedConfigs = [];
 }

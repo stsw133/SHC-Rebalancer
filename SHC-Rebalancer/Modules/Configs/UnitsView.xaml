@@ -71,6 +71,25 @@
                             <se:StswLabel Content="Melee damage:" IconSource="/Images/misc/MeleeDamage.png"/>
                             <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MeleeDamage}"/>
 
+                            <se:StswLabel Content="Melee damage vs:" IconSource="/Images/misc/MeleeDamage.png"/>
+                            <se:StswDropButton Margin="3" HorizontalContentAlignment="Center" ItemsSource="{Binding MeleeDamageVs}" se:StswScrollView.IsDynamic="False">
+                                <se:StswDropButton.Header>
+                                    <se:StswText FontSize="11" FontWeight="Bold">
+                                        <Run Text="{Binding MeleeDamageVs.Count, Mode=OneWay}"/>
+                                        <Run Text="exceptions"/>
+                                    </se:StswText>
+                                </se:StswDropButton.Header>
+                                <se:StswDropButton.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel>
+                                            <se:StswLabel DockPanel.Dock="Right" Content="{Binding Value, Mode=OneWay}" HorizontalContentAlignment="Center" Width="30"/>
+                                            <se:StswSeparator DockPanel.Dock="Right" BorderThickness="1" Orientation="Vertical"/>
+                                            <se:StswLabel Content="{Binding Key, Mode=OneWay}" IconScale="2" IconSource="{Binding Key, Mode=OneWay, Converter={local:EnumToImageSourceConverter}}" Width="150"/>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </se:StswDropButton.ItemTemplate>
+                            </se:StswDropButton>
+
                             <se:StswLabel Content="Can melee damage:" IconData="{x:Static se:StswIcons.Sword}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
                             <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanMeleeDamage}"/>
 <!--

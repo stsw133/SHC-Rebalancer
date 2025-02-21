@@ -26,14 +26,14 @@
 	-Crusade troops changed from 100 Monk => 80 EuropArcher, 48 Monk
 	
 -PlayerEurop:
-	-Normal troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 3 Pikeman
-	-Crusade troops changed from 40 EuropArcher, 10 Swordsman, 4 Knight => 30 EuropArcher, 3 Crossbowman, 12 Pikeman
-	-Deathmatch troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 3 Pikeman
+	-Normal troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 3 Spearman, 2 Swordsman
+	-Crusade troops changed from 40 EuropArcher, 10 Swordsman, 4 Knight => 30 EuropArcher, 3 Spearman, 3 Crossbowman, 8 Pikeman
+	-Deathmatch troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 3 Spearman, 2 Swordsman
 	
 -PlayerArab:
-	-Normal troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 3 ArabSwordsman
-	-Crusade troops changed from 50 ArabArcher, 10 ArabSwordsman => 25 ArabArcher, 12 ArabSwordsman, 3 FireThrower
-	-Deathmatch troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 3 ArabSwordsman
+	-Normal troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 3 Slave, 3 ArabSwordsman
+	-Crusade troops changed from 50 ArabArcher, 10 ArabSwordsman => 25 ArabArcher, 3 Slave, 12 ArabSwordsman, 3 FireThrower
+	-Deathmatch troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 3 Slave, 3 ArabSwordsman
 	",
 	"Troops":
 	{
@@ -291,31 +291,37 @@
 		{
 			"Normal": {
 				"EuropArcher": 6,
-				"Pikeman": 3,
+				"Spearman": 3,
+				"Swordsman": 2,
 			},
 			"Crusade": {
 				"EuropArcher": 30,
+				"Spearman": 3,
 				"Crossbowman": 3,
-				"Pikeman": 12,
+				"Swordsman": 8,
 			},
 			"Deathmatch": {
 				"EuropArcher": 6,
-				"Pikeman": 3,
+				"Spearman": 3,
+				"Swordsman": 2,
 			}
 		},
 		"PlayerArab":
 		{
 			"Normal": {
 				"ArabArcher": 5,
+				"Slave": 3,
 				"ArabSwordsman": 3,
 			},
 			"Crusade": {
 				"ArabArcher": 25,
+				"Slave": 3,
 				"ArabSwordsman": 12,
 				"FireThrower": 3,
 			},
 			"Deathmatch": {
 				"ArabArcher": 5,
+				"Slave": 3,
 				"ArabSwordsman": 3,
 			}
 		},

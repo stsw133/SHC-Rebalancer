@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="appsettings.json" />
     <None Remove="Images\ai\Image494.png" />
     <None Remove="Images\ai\Image496.png" />
     <None Remove="Images\ai\Image498.png" />
@@ -404,6 +405,8 @@
     <None Remove="Resources\configs\aiv\vanilla\wolf8.aiv" />
     <None Remove="Resources\configs\goods\stsw.json" />
     <None Remove="Resources\configs\goods\vanilla.json" />
+    <None Remove="Resources\configs\popularity\stsw.json" />
+    <None Remove="Resources\configs\popularity\vanilla.json" />
     <None Remove="Resources\configs\options.json" />
     <None Remove="Resources\configs\troops\stsw.json" />
     <None Remove="Resources\configs\troops\vanilla.json" />
@@ -412,828 +415,837 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\configs\aic\stsw.json">
+    <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aic\vanilla.json">
+    </Content>
+    <Content Include="Resources\configs\aic\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\base\crusader.json">
+    </Content>
+    <Content Include="Resources\configs\aic\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\base\extreme.json">
+    </Content>
+    <Content Include="Resources\base\crusader.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\abbot1.aiv">
+    </Content>
+    <Content Include="Resources\base\extreme.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\abbot2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\abbot1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\abbot3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\abbot2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\abbot4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\abbot3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\abbot5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\abbot4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\abbot6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\abbot5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\abbot7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\abbot6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\abbot8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\abbot7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\caliph1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\abbot8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\caliph2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\caliph1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\caliph3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\caliph2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\caliph4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\caliph3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\caliph5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\caliph4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\caliph6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\caliph5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\caliph7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\caliph6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\caliph8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\caliph7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\emir1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\caliph8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\emir2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\emir1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\emir3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\emir2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\emir4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\emir3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\emir5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\emir4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\emir6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\emir5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\emir7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\emir6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\emir8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\emir7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\English.txt">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\emir8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\frederick1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\English.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\frederick2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\frederick1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\frederick3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\frederick2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\frederick4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\frederick3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\frederick5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\frederick4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\frederick6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\frederick5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\frederick7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\frederick6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\frederick8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\frederick7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\marshal1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\frederick8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\marshal2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\marshal1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\marshal3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\marshal2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\marshal4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\marshal3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\marshal5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\marshal4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\marshal6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\marshal5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\marshal7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\marshal6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\marshal8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\marshal7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\nizar1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\marshal8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\nizar2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\nizar1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\nizar3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\nizar2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\nizar4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\nizar3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\nizar5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\nizar4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\nizar6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\nizar5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\nizar7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\nizar6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\nizar8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\nizar7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\phillip1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\nizar8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\phillip2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\phillip1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\phillip3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\phillip2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\phillip4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\phillip3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\phillip5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\phillip4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\phillip6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\phillip5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\phillip7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\phillip6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\phillip8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\phillip7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\pig1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\phillip8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\pig2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\pig1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\pig3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\pig2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\pig4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\pig3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\pig5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\pig4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\pig6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\pig5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\pig7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\pig6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\pig8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\pig7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\rat1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\pig8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\rat2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rat1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\rat3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rat2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\rat4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rat3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\rat5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rat4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\rat6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rat5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\rat7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rat6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\rat8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rat7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\richard1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rat8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\richard2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\richard1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\richard3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\richard2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\richard4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\richard3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\richard5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\richard4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\richard6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\richard5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\richard7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\richard6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\richard8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\richard7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\saladin1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\richard8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\saladin2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\saladin1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\saladin3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\saladin2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\saladin4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\saladin3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\saladin5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\saladin4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\saladin6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\saladin5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\saladin7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\saladin6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\saladin8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\saladin7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sheriff1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\saladin8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sheriff2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sheriff1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sheriff3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sheriff2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sheriff4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sheriff3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sheriff5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sheriff4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sheriff6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sheriff5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sheriff7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sheriff6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sheriff8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sheriff7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\snake1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sheriff8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\snake2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\snake1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\snake3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\snake2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\snake4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\snake3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\snake5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\snake4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\snake6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\snake5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\snake7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\snake6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\snake8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\snake7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sultan1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\snake8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sultan2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sultan1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sultan3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sultan2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sultan4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sultan3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sultan5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sultan4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sultan6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sultan5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sultan7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sultan6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\sultan8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sultan7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wazir1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sultan8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wazir2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wazir1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wazir3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wazir2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wazir4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wazir3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wazir5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wazir4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wazir6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wazir5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wazir7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wazir6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wazir8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wazir7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wolf1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wazir8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wolf2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wolf1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wolf3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wolf2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wolf4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wolf3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wolf5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wolf4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wolf6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wolf5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wolf7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wolf6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\stsw\wolf8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wolf7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Abbot1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\wolf8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Abbot2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Abbot1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Abbot3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Abbot2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Abbot4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Abbot3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Abbot5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Abbot4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Abbot6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Abbot5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Abbot7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Abbot6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Abbot8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Abbot7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\caliph1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Abbot8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\caliph2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\caliph1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\caliph3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\caliph2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\caliph4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\caliph3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\caliph5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\caliph4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\caliph6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\caliph5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\caliph7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\caliph6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\caliph8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\caliph7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Emir1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\caliph8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Emir2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Emir1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Emir3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Emir2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Emir4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Emir3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Emir5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Emir4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Emir6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Emir5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Emir7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Emir6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Emir8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Emir7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\frederick1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Emir8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\frederick2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\frederick1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\frederick3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\frederick2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\frederick4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\frederick3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\frederick5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\frederick4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\frederick6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\frederick5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\frederick7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\frederick6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\frederick8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\frederick7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\marshal1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\frederick8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\marshal2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\marshal1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\marshal3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\marshal2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\marshal4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\marshal3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\marshal5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\marshal4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\marshal6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\marshal5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\marshal7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\marshal6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\marshal8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\marshal7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Nizar1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\marshal8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Nizar2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Nizar1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Nizar3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Nizar2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Nizar4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Nizar3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Nizar5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Nizar4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Nizar6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Nizar5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Nizar7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Nizar6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Nizar8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Nizar7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\phillip1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Nizar8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\phillip2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\phillip1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\phillip3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\phillip2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\phillip4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\phillip3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\phillip5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\phillip4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\phillip6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\phillip5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\phillip7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\phillip6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\phillip8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\phillip7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\pig1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\phillip8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\pig2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\pig1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\pig3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\pig2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\pig4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\pig3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\pig5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\pig4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\pig6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\pig5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\pig7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\pig6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\pig8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\pig7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\rat1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\pig8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\rat2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\rat1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\rat3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\rat2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\rat4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\rat3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\rat5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\rat4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\rat6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\rat5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\rat7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\rat6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\rat8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\rat7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\richard1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\rat8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\richard2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\richard1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\richard3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\richard2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\richard4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\richard3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\richard5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\richard4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\richard6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\richard5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\richard7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\richard6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\richard8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\richard7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\saladin1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\richard8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\saladin2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\saladin1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\saladin3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\saladin2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\saladin4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\saladin3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\saladin5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\saladin4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\saladin6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\saladin5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\saladin7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\saladin6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\saladin8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\saladin7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\sheriff1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\saladin8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\sheriff2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\sheriff1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\sheriff3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\sheriff2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\sheriff4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\sheriff3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\sheriff5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\sheriff4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\sheriff6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\sheriff5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\sheriff7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\sheriff6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\sheriff8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\sheriff7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\snake1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\sheriff8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\snake2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\snake1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\snake3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\snake2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\snake4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\snake3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\snake5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\snake4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\snake6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\snake5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\snake7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\snake6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\snake8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\snake7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Sultan1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\snake8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Sultan2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Sultan1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Sultan3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Sultan2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Sultan4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Sultan3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Sultan5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Sultan4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Sultan6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Sultan5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Sultan7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Sultan6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\Sultan8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Sultan7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wazir1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\Sultan8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wazir2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wazir1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wazir3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wazir2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wazir4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wazir3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wazir5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wazir4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wazir6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wazir5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wazir7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wazir6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wazir8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wazir7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wolf1.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wazir8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wolf2.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wolf1.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wolf3.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wolf2.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wolf4.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wolf3.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wolf5.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wolf4.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wolf6.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wolf5.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wolf7.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wolf6.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\aiv\vanilla\wolf8.aiv">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wolf7.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\buildings\stsw.json">
+    </Content>
+    <Content Include="Resources\configs\aiv\vanilla\wolf8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\buildings\vanilla.json">
+    </Content>
+    <Content Include="Resources\configs\buildings\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\options\options.json">
+    </Content>
+    <Content Include="Resources\configs\buildings\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\customs\stsw.json">
+    </Content>
+    <Content Include="Resources\configs\popularity\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\customs\vanilla.json">
+    </Content>
+    <Content Include="Resources\configs\popularity\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\resources\stsw.json">
+    </Content>
+    <Content Include="Resources\configs\options\options.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\resources\vanilla.json">
+    </Content>
+    <Content Include="Resources\configs\customs\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\skirmishtrail\stsw.json">
+    </Content>
+    <Content Include="Resources\configs\customs\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\skirmishtrail\vanilla.json">
+    </Content>
+    <Content Include="Resources\configs\resources\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\units\stsw.json">
+    </Content>
+    <Content Include="Resources\configs\resources\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\units\vanilla.json">
+    </Content>
+    <Content Include="Resources\configs\skirmishtrail\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ucp\crusader.txt">
+    </Content>
+    <Content Include="Resources\configs\skirmishtrail\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ucp\extreme.txt">
+    </Content>
+    <Content Include="Resources\configs\units\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
+    <Content Include="Resources\configs\units\vanilla.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ucp\crusader.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ucp\extreme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -1475,24 +1487,21 @@
     <Resource Include="Images\units\WheatFarmer.png" />
     <Resource Include="Images\units\Wolf.png" />
     <Resource Include="Images\units\Woodcutter.png" />
-    <EmbeddedResource Include="Resources\configs\troops\stsw.json">
+    <Content Include="Resources\configs\troops\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\troops\vanilla.json">
+    </Content>
+    <Content Include="Resources\configs\troops\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\goods\stsw.json">
+    </Content>
+    <Content Include="Resources\configs\goods\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\configs\goods\vanilla.json">
+    </Content>
+    <Content Include="Resources\configs\goods\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Images\icon.ico">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -1500,6 +1509,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Modules\Configs\PopularityView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Modules\Configs\OptionsView.xaml">
       <SubType>Designer</SubType>
     </Page>

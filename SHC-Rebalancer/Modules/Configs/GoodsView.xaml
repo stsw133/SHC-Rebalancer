@@ -28,7 +28,7 @@
                         <se:StswSegment.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="24" Width="24"/>
+                                    <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
                                     <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
                                 </StackPanel>
                             </DataTemplate>

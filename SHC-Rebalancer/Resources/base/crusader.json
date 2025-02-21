@@ -12,6 +12,11 @@
 	
 	{ "Key": "Outposts",									"Address": "0x1C19C0", "EndAddress": "0x1C1CFF", "Size": 4 },
 	
+	{ "Key": "Popularity religion thresholds A",			"Address": "0x03EC12", "EndAddress": "0x03EC35", "Size": 1 },
+	{ "Key": "Popularity religion thresholds B",			"Address": "0x03FF9F", "EndAddress": "0x03FFC2", "Size": 1 },
+	{ "Key": "Popularity religion thresholds C",			"Address": "0x040001", "EndAddress": "0x040035", "Size": 1 },
+	{ "Key": "Popularity religion thresholds D",			"Address": "0x05BB32", "EndAddress": "0x05BB55", "Size": 1 },
+	
 	{ "Key": "Resources Buy",								"Address": "0x2171C0", "EndAddress": "0x217227", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x217228", "EndAddress": "0x21728F", "Size": 4 },
 	
@@ -49,32 +54,6 @@
 	{ "Key": "Units CanClimbLadder",						"Address": "0x755E40", "EndAddress": "0x755F7F", "Size": 4 },
 	
 	
-	
-	{ "Key": "Resources delivery Cheese",					"Address": "0x154924", "Size": 1 },
-	
-	{ "Key": "Religion bonus threshold A1",					"Address": "0x03EC12", "Size": 1 },
-	{ "Key": "Religion bonus threshold A2",					"Address": "0x03EC1B", "Size": 1 },
-	{ "Key": "Religion bonus threshold A3",					"Address": "0x03EC27", "Size": 1 },
-	{ "Key": "Religion bonus threshold A4",					"Address": "0x03EC35", "Size": 1 },
-	{ "Key": "Religion bonus threshold B1",					"Address": "0x03FF9F", "Size": 1 },
-	{ "Key": "Religion bonus threshold B2",					"Address": "0x03FFA8", "Size": 1 },
-	{ "Key": "Religion bonus threshold B3",					"Address": "0x03FFB4", "Size": 1 },
-	{ "Key": "Religion bonus threshold B4",					"Address": "0x03FFC2", "Size": 1 },
-	{ "Key": "Religion bonus threshold C1",					"Address": "0x040001", "Size": 1 },
-	{ "Key": "Religion bonus threshold D1",					"Address": "0x040008", "Size": 1 },
-	{ "Key": "Religion bonus threshold C2",					"Address": "0x040010", "Size": 1 },
-	{ "Key": "Religion bonus threshold D2",					"Address": "0x040017", "Size": 1 },
-	{ "Key": "Religion bonus threshold C3",					"Address": "0x04001F", "Size": 1 },
-	{ "Key": "Religion bonus threshold D3",					"Address": "0x040026", "Size": 1 },
-	{ "Key": "Religion bonus threshold C4",					"Address": "0x04002E", "Size": 1 },
-	{ "Key": "Religion bonus threshold D4",					"Address": "0x040035", "Size": 1 },
-	{ "Key": "Religion bonus threshold E1",					"Address": "0x05BB32", "Size": 1 },
-	{ "Key": "Religion bonus threshold E2",					"Address": "0x05BB3B", "Size": 1 },
-	{ "Key": "Religion bonus threshold E3",					"Address": "0x05BB47", "Size": 1 },
-	{ "Key": "Religion bonus threshold E4",					"Address": "0x05BB55", "Size": 1 },
-	
-	{ "Key": "Tax % bonus threshold 5",						"Address": "0x0590CA", "EndAddress": "0x0590CD", "Size": 4 },
-	{ "Key": "Tax % bonus threshold 1",						"Address": "0x0590F6", "EndAddress": "0x0590F9", "Size": 4 },
 	
 	{ "Key": "Archer range",								"Address": "0x1B635C", "Size": 4 },
 	{ "Key": "Catapult range",								"Address": "0x1B6360", "Size": 4 },

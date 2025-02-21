@@ -21,7 +21,7 @@
             <!-- buildings -->
             <se:StswTabItem>
                 <se:StswTabItem.Header>
-                    <se:StswLabel Content="Buildings" IconSource="/Images/buildings/Hovel.png"/>
+                    <se:StswLabel Content="Buildings" IconScale="2" IconSource="/Images/buildings/Hovel.png" Orientation="Vertical"/>
                 </se:StswTabItem.Header>
                 <DockPanel Margin="-3">
                     <!-- selector -->
@@ -72,7 +72,7 @@
             <!-- outposts -->
             <se:StswTabItem>
                 <se:StswTabItem.Header>
-                    <se:StswLabel Content="Outposts" IconSource="/Images/buildings/ArabOutpost.png"/>
+                    <se:StswLabel Content="Outposts" IconScale="2" IconSource="/Images/buildings/ArabOutpost.png" Orientation="Vertical"/>
                 </se:StswTabItem.Header>
                 <DockPanel Margin="-3">
                     <!-- selector -->

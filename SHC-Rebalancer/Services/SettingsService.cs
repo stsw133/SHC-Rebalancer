@@ -76,13 +76,21 @@ public class AppSettings : StswObservableObject
     }
     private bool _includeUCP = true;
 
+    /// IncludeOptions
+    public bool IncludeOptions
+    {
+        get => _includeOptions;
+        set => SetProperty(ref _includeOptions, value);
+    }
+    private bool _includeOptions = true;
+
     /// SelectedConfigs
-    public Dictionary<string, string?> SelectedConfigs
+    public ObservableDictionary<string, string?> SelectedConfigs
     {
         get => _selectedConfigs;
         set => SetProperty(ref _selectedConfigs, value);
     }
-    private Dictionary<string, string?> _selectedConfigs = [];
+    private ObservableDictionary<string, string?> _selectedConfigs = [];
     
     /// SelectedOptions
     public ObservableDictionary<string, object?> SelectedOptions

@@ -12,6 +12,11 @@
 	
 	{ "Key": "Outposts",									"Address": "0x1C19C0", "EndAddress": "0x1C1CFF", "Size": 4 },
 	
+	{ "Key": "Popularity religion thresholds A",			"Address": "0x03EE52", "EndAddress": "0x03EE75", "Size": 1 },
+	{ "Key": "Popularity religion thresholds B",			"Address": "0x0401DF", "EndAddress": "0x040202", "Size": 1 },
+	{ "Key": "Popularity religion thresholds C",			"Address": "0x040241", "EndAddress": "0x040275", "Size": 1 },
+	{ "Key": "Popularity religion thresholds D",			"Address": "0x05BD62", "EndAddress": "0x05BD85", "Size": 1 },
+	
 	{ "Key": "Resources Buy",								"Address": "0x217350", "EndAddress": "0x2173B7", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x2173B8", "EndAddress": "0x21741F", "Size": 4 },
 	
@@ -49,32 +54,6 @@
 	{ "Key": "Units CanClimbLadder",						"Address": "0x755FD0", "EndAddress": "0x75610F", "Size": 4 },
 	
 	
-	
-	{ "Key": "Resources delivery Cheese",					"Address": "0x154D44", "Size": 1 },
-	
-	{ "Key": "Religion bonus threshold A1",					"Address": "0x03EE52", "Size": 1 },
-	{ "Key": "Religion bonus threshold A2",					"Address": "0x03EE5B", "Size": 1 },
-	{ "Key": "Religion bonus threshold A3",					"Address": "0x03EE67", "Size": 1 },
-	{ "Key": "Religion bonus threshold A4",					"Address": "0x03EE75", "Size": 1 },
-	{ "Key": "Religion bonus threshold B1",					"Address": "0x0401DF", "Size": 1 },
-	{ "Key": "Religion bonus threshold B2",					"Address": "0x0401E8", "Size": 1 },
-	{ "Key": "Religion bonus threshold B3",					"Address": "0x0401F4", "Size": 1 },
-	{ "Key": "Religion bonus threshold B4",					"Address": "0x040202", "Size": 1 },
-	{ "Key": "Religion bonus threshold C1",					"Address": "0x040241", "Size": 1 },
-	{ "Key": "Religion bonus threshold D1",					"Address": "0x040248", "Size": 1 },
-	{ "Key": "Religion bonus threshold C2",					"Address": "0x040250", "Size": 1 },
-	{ "Key": "Religion bonus threshold D2",					"Address": "0x040257", "Size": 1 },
-	{ "Key": "Religion bonus threshold C3",					"Address": "0x04025F", "Size": 1 },
-	{ "Key": "Religion bonus threshold D3",					"Address": "0x040266", "Size": 1 },
-	{ "Key": "Religion bonus threshold C4",					"Address": "0x04026E", "Size": 1 },
-	{ "Key": "Religion bonus threshold D4",					"Address": "0x040275", "Size": 1 },
-	{ "Key": "Religion bonus threshold E1",					"Address": "0x05BD62", "Size": 1 },
-	{ "Key": "Religion bonus threshold E2",					"Address": "0x05BD6B", "Size": 1 },
-	{ "Key": "Religion bonus threshold E3",					"Address": "0x05BD77", "Size": 1 },
-	{ "Key": "Religion bonus threshold E4",					"Address": "0x05BD85", "Size": 1 },
-	
-	{ "Key": "Tax % bonus threshold 5",						"Address": "0x0592FA", "EndAddress": "0x0592FD", "Size": 4 },
-	{ "Key": "Tax % bonus threshold 1",						"Address": "0x059326", "EndAddress": "0x059329", "Size": 4 },
 	
 	{ "Key": "Archer range",								"Address": "0x1B635C", "Size": 4 },
 	{ "Key": "Catapult range",								"Address": "0x1B6360", "Size": 4 },
@@ -223,6 +202,11 @@
 	{ "Key": "Mangonel damage to BatteringRam",				"Address": "0x132296", "Size": 4, },
 	{ "Key": "Mangonel damage to SiegeTower",				"Address": "0x1322B0", "Size": 4, },
 	
-	{ "Key": "Units EuropArcher CanDigMoat (own)",			"Address": "0x15B7A8", "EndAddress": "0x15B7A8", "Size": 1 },
-	{ "Key": "Units EuropArcher CanDigMoat (enemy)",		"Address": "0x15B97D", "EndAddress": "0x15B97D", "Size": 1 },
+	{ "Key": "Units EuropArcher CanDigMoat (own) 1",		"Address": "0x15B7A8", "EndAddress": "0x15B7A8", "Size": 1 },
+	{ "Key": "Units EuropArcher DigMoatSpeed (own)",		"Address": "0x15B7F6", "EndAddress": "0x15B7F6", "Size": 4 },
+	{ "Key": "Units EuropArcher CanDigMoat (own) 2",		"Address": "0x15B894", "EndAddress": "0x15B894", "Size": 1 },
+	{ "Key": "Units EuropArcher DigMoatAnim (own)",			"Address": "0x15B8D2", "EndAddress": "0x15B8D2", "Size": 1 },
+	{ "Key": "Units EuropArcher CanDigMoat (enemy) 1",		"Address": "0x15B97D", "EndAddress": "0x15B97D", "Size": 1 },
+	{ "Key": "Units EuropArcher DigMoatSpeed (enemy)",		"Address": "0x15B9B6", "EndAddress": "0x15B9B6", "Size": 1 },
+	{ "Key": "Units EuropArcher CanDigMoat (enemy) 2",		"Address": "0x15BA9E", "EndAddress": "0x15BA9E", "Size": 1 },
 ]

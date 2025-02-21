@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="SHC_Rebalancer.PopularityView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
+
+    <DockPanel>
+        <!-- configs -->
+        <DockPanel DockPanel.Dock="Top">
+            <se:StswLabel Content="Selected config:" FontWeight="Bold" Margin="3"/>
+            <local:ConfigBox ItemsSource="{Binding [popularity], Source={x:Static local:StorageService.Configs}}"
+                             SelectedItem="{Binding SelectedConfigs[popularity], Mode=OneWayToSource}"
+                             SelectedValue="{Binding SelectedConfigs[popularity], Mode=OneWay, Source={StaticResource Settings}}"/>
+            
+        </DockPanel>
+        
+        <se:StswTabControl Margin="3" TabStripPlacement="Left">
+            <!-- popularity -->
+            <se:StswTabItem>
+                <se:StswTabItem.Header>
+                    <se:StswLabel Content="Popularity" IconSource="/Images/popularity/Positive.png"/>
+                </se:StswTabItem.Header>
+                <DockPanel Margin="-3">
+                    <!-- data -->
+                    <se:StswScrollView>
+                        <se:StswLabelPanel DataContext="{Binding SelectedConfigs[popularity].Popularity}"
+                                           LabelFontWeight="Medium"
+                                           LabelHorizontalAlignment="Right"
+                                           Margin="3"
+                                           VerticalAlignment="Center"
+                                           Width="500">
+
+                            <se:StswLabel Content="Religion thresholds:" IconScale="2" IconSource="/Images/buildings/Chapel.png"/>
+                            <UniformGrid Rows="1">
+                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[0]}"/>
+                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[1]}"/>
+                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[2]}"/>
+                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[3]}"/>
+                            </UniformGrid>
+                            <!--
+                            <se:StswLabel Content="Fear factor:" IconScale="2" IconSource="/Images/buildings/Shrine.png"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding FearFactorBonus[0]}"/>
+                            
+                            <se:StswLabel Content="Ale coverage:" IconScale="2" IconSource="/Images/buildings/Inn.png"/>
+                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AleCoverage}"/>
+                            -->
+                        </se:StswLabelPanel>
+                    </se:StswScrollView>
+                </DockPanel>
+            </se:StswTabItem>
+        </se:StswTabControl>
+    </DockPanel>
+</UserControl>

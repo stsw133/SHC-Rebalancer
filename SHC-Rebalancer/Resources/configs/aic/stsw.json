@@ -60,7 +60,6 @@
 	-All AIs AttUnitBackupGroupsCount set to 1
 	-All AIs AttUnitSiegeDefGroupsCount set to 1
 	-All AIs AttMainGroupsCount set to 2
-	-All AIs TargetChoice set to Closest
 
 Below is comparison between vanilla and stsw for every AI.
 
@@ -87,11 +86,11 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttDiggingUnit 20 Spearman => 50 Spearman
 	-AttUnitVanguard None => 75 EuropArcher (30% of total attack force)
 	-AttMaxAssassins 0 => 0
-	-AttMaxLaddermen 0 => 10 (4% of total attack force)
+	-AttMaxLaddermen 0 => 25 (10% of total attack force)
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol None => 25 EuropArcher (10% of total attack force)
-	-AttUnitBackup None => 5 EuropArcher (2% of total attack force)
-	-AttUnitEngage None => 25 Spearman (10% of total attack force)
+	-AttUnitPatrol None => 20 EuropArcher (8% of total attack force)
+	-AttUnitBackup None => None
+	-AttUnitEngage None => 20 Spearman (8% of total attack force)
 	-AttUnitSiegeDef None => 10 Spearman (4% of total attack force)
 	-AttUnitMain 200 Spearman => 100 Spearman (40% of total attack force)
 	
@@ -117,13 +116,13 @@ Below is comparison between vanilla and stsw for every AI.
 	-SiegeEngine 1 Catapult => 2 Catapult (AttMaxEngineers 2 => 6)
 	-AttDiggingUnit 20 Spearman => 50 Spearman
 	-AttUnitVanguard 20 EuropArcher => 90 EuropArcher (30% of total attack force)
-	-AttMaxAssassins 0 => 0
+	-AttMaxAssassins 0 => 6 (2% of total attack force)
 	-AttMaxLaddermen 10 => 12 (4% of total attack force)
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol None => 30 Slinger (10% of total attack force)
-	-AttUnitBackup 50 ArabArcher => 6 EuropArcher (2% of total attack force)
-	-AttUnitEngage None => 30 Spearman (10% of total attack force)
-	-AttUnitSiegeDef None => 12 Spearman (4% of total attack force)
+	-AttUnitPatrol None => 36 Slinger (12% of total attack force)
+	-AttUnitBackup 50 ArabArcher => None
+	-AttUnitEngage None => 24 Spearman (8% of total attack force)
+	-AttUnitSiegeDef None => 12 Assassin (4% of total attack force)
 	-AttUnitMain 200 Spearman => 120 Spearman (40% of total attack force)
 	
 -Pig (#10 in AI ranking):
@@ -151,10 +150,10 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxAssassins 0 => 0
 	-AttMaxLaddermen 0 => 22 (4% of total attack force)
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol None => 55 Crossbowman (10% of total attack force)
-	-AttUnitBackup 5 Crossbowman => 11 Crossbowman (2% of total attack force)
-	-AttUnitEngage None => 55 Maceman (10% of total attack force)
-	-AttUnitSiegeDef None => 22 Maceman (4% of total attack force)
+	-AttUnitPatrol None => 66 Crossbowman (12% of total attack force)
+	-AttUnitBackup 5 Crossbowman => None
+	-AttUnitEngage None => 66 Maceman (12% of total attack force)
+	-AttUnitSiegeDef None => 11 Maceman (2% of total attack force)
 	-AttUnitMain 200 Maceman => 220 Maceman (40% of total attack force)
 	
 -Wolf (#1 in AI ranking):
@@ -182,8 +181,8 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxAssassins 0 => 0
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol None => 120 EuropArcher (12% of total attack force)
-	-AttUnitBackup 30 Crossbowman => 20 EuropArcher (2% of total attack force)
+	-AttUnitPatrol None => 140 EuropArcher (14% of total attack force)
+	-AttUnitBackup 30 Crossbowman => None
 	-AttUnitEngage None => 120 Maceman (12% of total attack force)
 	-AttUnitSiegeDef 5 Swordsman => 40 Pikeman (4% of total attack force)
 	-AttUnitMain 200 Swordsman, Pikeman, Pikeman  => 400 Swordsman (40% of total attack force)
@@ -213,8 +212,8 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxAssassins 5 => 19 (2% of total attack force)
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol 20 HorseArcher => 114 HorseArcher (12% of total attack force)
-	-AttUnitBackup 20 ArabArcher => 19 ArabArcher (2% of total attack force)
+	-AttUnitPatrol 20 HorseArcher => 133 HorseArcher (14% of total attack force)
+	-AttUnitBackup 20 ArabArcher => None
 	-AttUnitEngage None => 95 Assassin (10% of total attack force)
 	-AttUnitSiegeDef 6 FireThrower => 38 Assassin (4% of total attack force)
 	-AttUnitMain 200 ArabSwordsman  => 380 ArabSwordsman (40% of total attack force)
@@ -245,8 +244,8 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
 	-AttUnitPatrol None => 60 HorseArcher (10% of total attack force)
-	-AttUnitBackup 40 HorseArcher => 12 ArabArcher (2% of total attack force)
-	-AttUnitEngage None => 60 Assassin (10% of total attack force)
+	-AttUnitBackup 40 HorseArcher => None
+	-AttUnitEngage None => 72 Assassin (12% of total attack force)
 	-AttUnitSiegeDef 10 ArabArcher => 24 Assassin (4% of total attack force)
 	-AttUnitMain 200 ArabSwordsman  => 240 ArabSwordsman (40% of total attack force)
 	
@@ -275,10 +274,10 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxAssassins 0 => 0
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol None => 42 Slinger (12% of total attack force)
-	-AttUnitBackup 120 ArabArcher => 7 ArabArcher (2% of total attack force)
-	-AttUnitEngage None => 42 Slinger (12% of total attack force)
-	-AttUnitSiegeDef None => 14 ArabSwordsman (4% of total attack force)
+	-AttUnitPatrol None => 49 Slinger (14% of total attack force)
+	-AttUnitBackup 120 ArabArcher => None
+	-AttUnitEngage None => 49 Slinger (14% of total attack force)
+	-AttUnitSiegeDef None => 7 ArabSwordsman (2% of total attack force)
 	-AttUnitMain 200 ArabSwordsman => 140 ArabSwordsman (40% of total attack force)
 	
 -Richard (#5 in AI ranking):
@@ -306,9 +305,9 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxAssassins 0 => 0
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 3 => 0
-	-AttUnitPatrol None => 96 EuropArcher (12% of total attack force)
-	-AttUnitBackup 20 EuropArcher => 16 EuropArcher (2% of total attack force)
-	-AttUnitEngage None => 96 Pikeman (12% of total attack force)
+	-AttUnitPatrol None => 80 EuropArcher (10% of total attack force)
+	-AttUnitBackup 20 EuropArcher => None
+	-AttUnitEngage None => 128 Pikeman (16% of total attack force)
 	-AttUnitSiegeDef 4 Swordsman => 32 Pikeman (4% of total attack force)
 	-AttUnitMain 200 Swordsman, Pikeman, Pikeman => 320 Swordsman (40% of total attack force)
 	
@@ -338,9 +337,9 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
 	-AttUnitPatrol 20 Crossbowman => 108 Crossbowman (12% of total attack force)
-	-AttUnitBackup 30 EuropArcher => 18 Crossbowman (2% of total attack force)
+	-AttUnitBackup 30 EuropArcher => None
 	-AttUnitEngage None => 108 Swordsman (12% of total attack force)
-	-AttUnitSiegeDef 10 Crossbowman => 36 Swordsman (4% of total attack force)
+	-AttUnitSiegeDef 10 Crossbowman => 54 Swordsman (6% of total attack force)
 	-AttUnitMain 200 Swordsman => 360 Swordsman (40% of total attack force)
 	
 -Phillip (#7 in AI ranking):
@@ -368,10 +367,10 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxAssassins 0 => 0
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol None => 84 EuropArcher (12% of total attack force)
-	-AttUnitBackup None => 14 EuropArcher (2% of total attack force)
-	-AttUnitEngage None => 84 Pikeman (12% of total attack force)
-	-AttUnitSiegeDef None => 28 Pikeman (4% of total attack force)
+	-AttUnitPatrol None => 70 EuropArcher (10% of total attack force)
+	-AttUnitBackup None => None
+	-AttUnitEngage None => 98 Pikeman (14% of total attack force)
+	-AttUnitSiegeDef None => 42 Pikeman (6% of total attack force)
 	-AttUnitMain 200 Spearman => 280 Pikeman, Monk (40% of total attack force)
 	
 -Wazir (#4 in AI ranking):
@@ -395,12 +394,12 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttForceBase 40 => 85 (AttForceRandom 5 => 17)
 	-SiegeEngine 1 Trebuchet, 3 FireBallista => 4 Trebuchet, 4 FireBallista (AttMaxEngineers 9 => 22)
 	-AttDiggingUnit 15 Slave => 60 Slave
-	-AttUnitVanguard None => 17 HorseArcher (2% of total attack force)
+	-AttUnitVanguard None => 34 HorseArcher (4% of total attack force)
 	-AttMaxAssassins 0 => 17 (2% of total attack force)
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
 	-AttUnitPatrol None => 340 HorseArcher (40% of total attack force)
-	-AttUnitBackup 80 HorseArcher => 17 FireThrower (2% of total attack force)
+	-AttUnitBackup 80 HorseArcher => None
 	-AttUnitEngage 10 FireThrower => 85 ArabSwordsman (10% of total attack force)
 	-AttUnitSiegeDef None => 34 ArabSwordsman (4% of total attack force)
 	-AttUnitMain 200 ArabSwordsman => 340 ArabSwordsman (40% of total attack force)
@@ -430,8 +429,8 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxAssassins 0 => 0
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol None => 105 HorseArcher (14% of total attack force)
-	-AttUnitBackup 80 HorseArcher => 15 ArabArcher (2% of total attack force)
+	-AttUnitPatrol None => 120 HorseArcher (16% of total attack force)
+	-AttUnitBackup 80 HorseArcher => None
 	-AttUnitEngage None => 75 Maceman (10% of total attack force)
 	-AttUnitSiegeDef None => 30 ArabSwordsman (4% of total attack force)
 	-AttUnitMain 200 ArabSwordsman => 300 ArabSwordsman (40% of total attack force)
@@ -458,12 +457,12 @@ Below is comparison between vanilla and stsw for every AI.
 	-SiegeEngine None => None
 	-AttDiggingUnit 20 Slave => 60 Slave
 	-AttUnitVanguard None => None
-	-AttMaxAssassins 40 => 270 (50% of total attack force + 2% per SiegeEngine = 60%)
+	-AttMaxAssassins 40 => 225 (40% of total attack force + 2% per SiegeEngine = 50%)
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
 	-AttUnitPatrol None => None
 	-AttUnitBackup None => None
-	-AttUnitEngage None => 45 Assassin (10% of total attack force)
+	-AttUnitEngage None => 90 Assassin (20% of total attack force)
 	-AttUnitSiegeDef None => None
 	-AttUnitMain 200 Assassin => 180 Assassin (40% of total attack force)
 	
@@ -493,8 +492,8 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 0
 	-AttUnitPatrol None => 65 Crossbowman (10% of total attack force)
-	-AttUnitBackup 50 Crossbowman => 13 Crossbowman (2% of total attack force)
-	-AttUnitEngage None => 65 Assassin (10% of total attack force)
+	-AttUnitBackup 50 Crossbowman => None
+	-AttUnitEngage None => 78 Assassin (12% of total attack force)
 	-AttUnitSiegeDef 6 Maceman => 26 Pikeman (4% of total attack force)
 	-AttUnitMain 200 Maceman => 260 Pikeman (40% of total attack force)
 	
@@ -524,8 +523,8 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxLaddermen 0 => 0
 	-AttMaxTunnelers 0 => 10 (2% of total attack force)
 	-AttUnitPatrol None => 60 EuropArcher (12% of total attack force)
-	-AttUnitBackup 30 EuropArcher => 10 EuropArcher (2% of total attack force)
-	-AttUnitEngage None => 50 Spearman (10% of total attack force)
+	-AttUnitBackup 30 EuropArcher => None
+	-AttUnitEngage None => 60 Spearman (12% of total attack force)
 	-AttUnitSiegeDef None => 20 Swordsman (4% of total attack force)
 	-AttUnitMain 200 Swordsman => 200 Swordsman (40% of total attack force)
 	
@@ -554,10 +553,10 @@ Below is comparison between vanilla and stsw for every AI.
 	-AttMaxAssassins 0 => 0
 	-AttMaxLaddermen 0 => 16 (4% of total attack force)
 	-AttMaxTunnelers 0 => 0
-	-AttUnitPatrol None => 40 EuropArcher (10% of total attack force)
-	-AttUnitBackup 40 EuropArcher => 8 EuropArcher (2% of total attack force)
-	-AttUnitEngage None => 40 Swordsman (10% of total attack force)
-	-AttUnitSiegeDef None => 16 Swordsman (4% of total attack force)
+	-AttUnitPatrol None => 48 EuropArcher (12% of total attack force)
+	-AttUnitBackup 40 EuropArcher => None
+	-AttUnitEngage None => 48 Swordsman (12% of total attack force)
+	-AttUnitSiegeDef None => 8 Swordsman (2% of total attack force)
 	-AttUnitMain 200 Monk => 160 Monk (40% of total attack force)
 	",
 	"AIs": {
@@ -714,16 +713,16 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttUnitVanguard": "EuropArcher",
 				"AttUnitVanguardMax": 75,
 				"AttMaxAssassins": 0,
-				"AttMaxLaddermen": 10,
+				"AttMaxLaddermen": 25,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "EuropArcher",
-				"AttUnitPatrolMax": 25,
+				"AttUnitPatrolMax": 20,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "EuropArcher",
-				"AttUnitBackupMax": 5,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Spearman",
-				"AttUnitEngageMax": 25,
+				"AttUnitEngageMax": 20,
 				"AttUnitSiegeDef": "Spearman",
 				"AttUnitSiegeDefMax": 10,
 				"AttUnitSiegeDefGroupsCount": 1,
@@ -888,18 +887,18 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttDiggingUnitMax": 50,
 				"AttUnitVanguard": "EuropArcher",
 				"AttUnitVanguardMax": 90,
-				"AttMaxAssassins": 0,
+				"AttMaxAssassins": 6,
 				"AttMaxLaddermen": 12,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "Slinger",
-				"AttUnitPatrolMax": 30,
+				"AttUnitPatrolMax": 36,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "EuropArcher",
-				"AttUnitBackupMax": 6,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Spearman",
-				"AttUnitEngageMax": 30,
-				"AttUnitSiegeDef": "Spearman",
+				"AttUnitEngageMax": 24,
+				"AttUnitSiegeDef": "Assassin",
 				"AttUnitSiegeDefMax": 12,
 				"AttUnitSiegeDefGroupsCount": 1,
 				"AttUnitMain1": "Spearman",
@@ -1067,15 +1066,15 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttMaxLaddermen": 22,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "Crossbowman",
-				"AttUnitPatrolMax": 55,
+				"AttUnitPatrolMax": 66,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "Crossbowman",
-				"AttUnitBackupMax": 11,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Maceman",
-				"AttUnitEngageMax": 55,
+				"AttUnitEngageMax": 66,
 				"AttUnitSiegeDef": "Maceman",
-				"AttUnitSiegeDefMax": 22,
+				"AttUnitSiegeDefMax": 11,
 				"AttUnitSiegeDefGroupsCount": 1,
 				"AttUnitMain1": "Maceman",
 				"AttUnitMain2": "Maceman",
@@ -1242,10 +1241,10 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttMaxLaddermen": 0,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "EuropArcher",
-				"AttUnitPatrolMax": 120,
+				"AttUnitPatrolMax": 140,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "EuropArcher",
-				"AttUnitBackupMax": 20,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Maceman",
 				"AttUnitEngageMax": 120,
@@ -1417,10 +1416,10 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttMaxLaddermen": 0,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "HorseArcher",
-				"AttUnitPatrolMax": 114,
+				"AttUnitPatrolMax": 133,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "ArabArcher",
-				"AttUnitBackupMax": 19,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Assassin",
 				"AttUnitEngageMax": 95,
@@ -1594,11 +1593,11 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttUnitPatrol": "HorseArcher",
 				"AttUnitPatrolMax": 60,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "ArabArcher",
-				"AttUnitBackupMax": 12,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Assassin",
-				"AttUnitEngageMax": 60,
+				"AttUnitEngageMax": 72,
 				"AttUnitSiegeDef": "Assassin",
 				"AttUnitSiegeDefMax": 24,
 				"AttUnitSiegeDefGroupsCount": 1,
@@ -1767,15 +1766,15 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttMaxLaddermen": 0,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "Slinger",
-				"AttUnitPatrolMax": 42,
+				"AttUnitPatrolMax": 49,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "ArabArcher",
-				"AttUnitBackupMax": 7,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Slinger",
-				"AttUnitEngageMax": 42,
+				"AttUnitEngageMax": 49,
 				"AttUnitSiegeDef": "ArabSwordsman",
-				"AttUnitSiegeDefMax": 14,
+				"AttUnitSiegeDefMax": 7,
 				"AttUnitSiegeDefGroupsCount": 1,
 				"AttUnitMain1": "ArabSwordsman",
 				"AttUnitMain2": "ArabSwordsman",
@@ -1942,13 +1941,13 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttMaxLaddermen": 0,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "EuropArcher",
-				"AttUnitPatrolMax": 96,
+				"AttUnitPatrolMax": 80,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "EuropArcher",
-				"AttUnitBackupMax": 16,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Pikeman",
-				"AttUnitEngageMax": 96,
+				"AttUnitEngageMax": 128,
 				"AttUnitSiegeDef": "Pikeman",
 				"AttUnitSiegeDefMax": 32,
 				"AttUnitSiegeDefGroupsCount": 1,
@@ -2119,13 +2118,13 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttUnitPatrol": "Crossbowman",
 				"AttUnitPatrolMax": 108,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "Crossbowman",
-				"AttUnitBackupMax": 18,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Swordsman",
 				"AttUnitEngageMax": 108,
 				"AttUnitSiegeDef": "Swordsman",
-				"AttUnitSiegeDefMax": 36,
+				"AttUnitSiegeDefMax": 54,
 				"AttUnitSiegeDefGroupsCount": 1,
 				"AttUnitMain1": "Swordsman",
 				"AttUnitMain2": "Swordsman",
@@ -2292,15 +2291,15 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttMaxLaddermen": 0,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "EuropArcher",
-				"AttUnitPatrolMax": 84,
+				"AttUnitPatrolMax": 70,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "EuropArcher",
-				"AttUnitBackupMax": 14,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Pikeman",
-				"AttUnitEngageMax": 84,
+				"AttUnitEngageMax": 98,
 				"AttUnitSiegeDef": "Pikeman",
-				"AttUnitSiegeDefMax": 28,
+				"AttUnitSiegeDefMax": 42,
 				"AttUnitSiegeDefGroupsCount": 1,
 				"AttUnitMain1": "Pikeman",
 				"AttUnitMain2": "Pikeman",
@@ -2462,15 +2461,15 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttDiggingUnit": "Slave",
 				"AttDiggingUnitMax": 60,
 				"AttUnitVanguard": "HorseArcher",
-				"AttUnitVanguardMax": 17,
+				"AttUnitVanguardMax": 34,
 				"AttMaxAssassins": 17,
 				"AttMaxLaddermen": 0,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "HorseArcher",
 				"AttUnitPatrolMax": 340,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "FireThrower",
-				"AttUnitBackupMax": 17,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "ArabSwordsman",
 				"AttUnitEngageMax": 85,
@@ -2642,10 +2641,10 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttMaxLaddermen": 0,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "HorseArcher",
-				"AttUnitPatrolMax": 105,
+				"AttUnitPatrolMax": 120,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "ArabArcher",
-				"AttUnitBackupMax": 15,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Maceman",
 				"AttUnitEngageMax": 75,
@@ -2813,7 +2812,7 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttDiggingUnitMax": 60,
 				"AttUnitVanguard": "None",
 				"AttUnitVanguardMax": 0,
-				"AttMaxAssassins": 270,
+				"AttMaxAssassins": 225,
 				"AttMaxLaddermen": 0,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "None",
@@ -2823,7 +2822,7 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Assassin",
-				"AttUnitEngageMax": 45,
+				"AttUnitEngageMax": 90,
 				"AttUnitSiegeDef": "None",
 				"AttUnitSiegeDefMax": 0,
 				"AttUnitSiegeDefGroupsCount": 1,
@@ -2994,11 +2993,11 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttUnitPatrol": "Crossbowman",
 				"AttUnitPatrolMax": 65,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "Crossbowman",
-				"AttUnitBackupMax": 13,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Assassin",
-				"AttUnitEngageMax": 65,
+				"AttUnitEngageMax": 78,
 				"AttUnitSiegeDef": "Pikeman",
 				"AttUnitSiegeDefMax": 26,
 				"AttUnitSiegeDefGroupsCount": 1,
@@ -3169,11 +3168,11 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttUnitPatrol": "EuropArcher",
 				"AttUnitPatrolMax": 60,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "EuropArcher",
-				"AttUnitBackupMax": 10,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Spearman",
-				"AttUnitEngageMax": 50,
+				"AttUnitEngageMax": 60,
 				"AttUnitSiegeDef": "Swordsman",
 				"AttUnitSiegeDefMax": 20,
 				"AttUnitSiegeDefGroupsCount": 1,
@@ -3342,15 +3341,15 @@ Below is comparison between vanilla and stsw for every AI.
 				"AttMaxLaddermen": 16,
 				"AttMaxTunnelers": 0,
 				"AttUnitPatrol": "EuropArcher",
-				"AttUnitPatrolMax": 40,
+				"AttUnitPatrolMax": 48,
 				"AttUnitPatrolGroupsCount": 1,
-				"AttUnitBackup": "EuropArcher",
-				"AttUnitBackupMax": 8,
+				"AttUnitBackup": "None",
+				"AttUnitBackupMax": 0,
 				"AttUnitBackupGroupsCount": 1,
 				"AttUnitEngage": "Swordsman",
-				"AttUnitEngageMax": 40,
+				"AttUnitEngageMax": 48,
 				"AttUnitSiegeDef": "Swordsman",
-				"AttUnitSiegeDefMax": 16,
+				"AttUnitSiegeDefMax": 8,
 				"AttUnitSiegeDefGroupsCount": 1,
 				"AttUnitMain1": "Monk",
 				"AttUnitMain2": "Monk",

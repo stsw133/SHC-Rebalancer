@@ -29,8 +29,9 @@ internal static class RebalancerService
 
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Options config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["options"].Cast<IConfigModel>().FirstOrDefault() is OptionsConfigModel optionsConfig)
-                    ProcessOptionsConfig(exePath.Key, optionsConfig);
+				if (SettingsService.Instance.Settings.IncludeOptions)
+					if (StorageService.Configs["options"].Cast<IConfigModel>().FirstOrDefault() is OptionsConfigModel optionsConfig)
+						ProcessOptionsConfig(exePath.Key, optionsConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<OptionsConfigModel>("options") });
 
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} AIC config..." });
@@ -57,11 +58,17 @@ internal static class RebalancerService
                     ProcessBuildingsConfig(exePath.Key, buildingsConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<BuildingsConfigModel>("buildings") });
 
+                StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Popularity config..." });
+                await Task.Delay(50, CancellationToken.None);
+                if (StorageService.Configs["popularity"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["popularity"]) is PopularityConfigModel popularityConfig)
+                    ProcessPopularityConfig(exePath.Key, popularityConfig);
+                StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<PopularityConfigModel>("popularity") });
+                
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Resources config..." });
                 await Task.Delay(50, CancellationToken.None);
                 if (StorageService.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["resources"]) is ResourcesConfigModel resourcesConfig)
                     ProcessResourcesConfig(exePath.Key, resourcesConfig);
-                StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<ResourcesConfigModel>("goresourcesods") });
+                StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<ResourcesConfigModel>("resources") });
 
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Units config..." });
                 await Task.Delay(50, CancellationToken.None);
@@ -342,6 +349,43 @@ internal static class RebalancerService
         }
     }
 
+    /// ProcessPopularityConfig
+    private static void ProcessPopularityConfig(GameVersion gameVersion, PopularityConfigModel config)
+    {
+        /// religion thresholds
+        if (config.Popularity.ReligionThresholds?.Length == 4
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds A", out var baseAddress)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds B", out var baseAddress2)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds C", out var baseAddress3)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds D", out var baseAddress4))
+        {
+            var address = Convert.ToInt32(baseAddress.Address, 16);
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress.Size, $"Popularity religion threshold A1");
+            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress.Size, $"Popularity religion threshold A2");
+            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress.Size, $"Popularity religion threshold A3");
+            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress.Size, $"Popularity religion threshold A4");
+
+            address = Convert.ToInt32(baseAddress2.Address, 16);
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress.Size, $"Popularity religion threshold B1");
+            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress.Size, $"Popularity religion threshold B2");
+            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress.Size, $"Popularity religion threshold B3");
+            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress.Size, $"Popularity religion threshold B4");
+
+            address = Convert.ToInt32(baseAddress3.Address, 16);
+            for (var i = 0; i < 4; i++)
+            {
+                BinaryPatchService.WriteIfDifferent(address + i*15, config.Popularity.ReligionThresholds[i] - 1, baseAddress.Size, $"Popularity religion threshold C{i + 1}");
+                BinaryPatchService.WriteIfDifferent(address + i*15 + 7, config.Popularity.ReligionThresholds[i], baseAddress.Size, $"Popularity religion threshold C{i + 1}");
+            }
+
+            address = Convert.ToInt32(baseAddress4.Address, 16);
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress.Size, $"Popularity religion threshold D1");
+            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress.Size, $"Popularity religion threshold D2");
+            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress.Size, $"Popularity religion threshold D3");
+            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress.Size, $"Popularity religion threshold D4");
+        }
+    }
+
     /// ProcessResourcesConfig
     private static void ProcessResourcesConfig(GameVersion gameVersion, ResourcesConfigModel config)
     {
@@ -537,6 +581,7 @@ internal static class RebalancerService
             operationCount += CountConfigOperations<GoodsConfigModel>("goods");
             operationCount += CountConfigOperations<TroopsConfigModel>("troops");
             operationCount += CountConfigOperations<BuildingsConfigModel>("buildings");
+            operationCount += CountConfigOperations<PopularityConfigModel>("popularity");
             operationCount += CountConfigOperations<ResourcesConfigModel>("resources");
             operationCount += CountConfigOperations<UnitsConfigModel>("units");
             operationCount += CountConfigOperations<SkirmishTrailConfigModel>("skirmishtrail");
