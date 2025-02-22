@@ -16,8 +16,8 @@
 -Maceman:
 	-Cost 20 => 30
 	-Health 15000 => 20000 (+33%)
-	-less damage penalty vs Swordsman & Knight
-	-additional damage vs Monk
+	-no damage penalty vs Swordsman & Knight
+	-double damage vs Monk
 	-double damage vs siege engines
 	
 -Crossbowman:
@@ -39,7 +39,7 @@
 	-DamageFromBow 150 => 200 (167 => 150 shots)
 	-DamageFromCrossbow 2200 => 2500 (12 => 12 shots)
 	-DamageFromSling 150 => 200 (167 => 150 shots)
-	-additional damage vs Pikeman
+	-additional damage vs Maceman & Pikeman
 	-small damage penalty vs ArabSwordsman
 	
 -Knight:
@@ -48,6 +48,7 @@
 	-DamageFromBow 150 => 200 (134 => 125 shots)
 	-DamageFromSling 150 => 200 (134 => 125 shots)
 	-MeleeDamage 80 => 100 (+25%)
+	-additional damage vs Maceman & Pikeman
 	-small damage penalty vs ArabSwordsman
 	
 -ArabArcher:
@@ -64,7 +65,6 @@
 	-DamageFromCrossbow 6000 => 3000 (1 => 2 shots)
 	-DamageFromSling 4000 => 2000 (2 => 3 shots)
 	-CanClimbLadder No => Yes
-	-MeleeDamage 10 => 5 (-50%)
 	-no longer takes 2x more damage from other troops
 	
 -Slinger:
@@ -103,7 +103,7 @@
 	-small damage penalty vs ArabSwordsman
 	
 -Firethrower:
-	-Cost 100 => 150
+	-Cost 100 => 120
 	-Health 7000 => 10000 (+43%)
 	-DamageFromBow 1250 => 2000 (6 => 5 shots)
 	-DamageFromSling 400 => 1500 (18 => 7 shots)
@@ -180,6 +180,7 @@
 	
 -PortableShield:
 	-Speed penalty 1 => 4
+	-CanGoOnWall Yes => No
 	-DamageFromBow 50 => 100 (200 => 100 shots)
 	-DamageFromCrossbow 150 => 200 (67 => 50 shots)
 	-DamageFromSling 10 => 70 (1000 => 143 shots)
@@ -271,8 +272,8 @@
 			"CanMeleeDamage": true,
 			"MeleeDamage": 25,
 			"MeleeDamageVs": {
-				"Knight": 50,
-				"HorseArcher": 50,
+				"Knight": 45,
+				"HorseArcher": 55,
 				"Ladderman": 100
 			}
 		},
@@ -290,9 +291,7 @@
 			"CanMeleeDamage": true,
 			"MeleeDamage": 75,
 			"MeleeDamageVs": {
-				"Swordsman": 50,
-				"Knight": 50,
-				"Monk": 125,
+				"Monk": 150,
 				"Catapult": 150,
 				"Trebuchet": 150,
 				"SiegeTower": 150,
@@ -331,8 +330,8 @@
 			"CanMeleeDamage": true,
 			"MeleeDamage": 25,
 			"MeleeDamageVs": {
-				"Knight": 50,
-				"HorseArcher": 50,
+				"Knight": 55,
+				"HorseArcher": 45,
 				"Ladderman": 100
 			}
 		},
@@ -350,6 +349,7 @@
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
 			"MeleeDamageVs": {
+				"Maceman": 125,
 				"Pikeman": 125,
 				"Swordsman": 50,
 				"Knight": 50,
@@ -370,6 +370,8 @@
 			"CanMeleeDamage": true,
 			"MeleeDamage": 100,
 			"MeleeDamageVs": {
+				"Maceman": 125,
+				"Pikeman": 125,
 				"Swordsman": 50,
 				"Knight": 50,
 				"ArabSwordsman": 75
@@ -401,7 +403,7 @@
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 5
+			"MeleeDamage": 10
 		},
 		"Slinger": {
 			"Cost": 15,
@@ -494,7 +496,7 @@
 			}
 		},
 		"Firethrower": {
-			"Cost": 150,
+			"Cost": 120,
 			"Speed": 2,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,

@@ -257,6 +257,15 @@
                     <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [GatesResponsivenessVsEnemy].Description}" TextWrapping="Wrap"/>
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
+                    <!-- spectator mode -->
+                    <se:StswSubCheck Content="Spectator mode"
+                                     FontWeight="Medium"
+                                     IsChecked="{Binding SelectedOptions[SpectatorMode], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
+                                     IsReadOnly="False"
+                                     Margin="3"/>
+                    <se:StswText FontSize="10.5" Margin="5" Opacity="0.7" Text="{Binding [SpectatorMode].Description}" TextWrapping="Wrap"/>
+                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
+
                     <!-- check available paths delay -->
                     <se:StswSubCheck Content="Check available paths delay:"
                                      FontWeight="Medium"

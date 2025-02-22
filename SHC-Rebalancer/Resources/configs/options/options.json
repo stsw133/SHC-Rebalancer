@@ -212,8 +212,6 @@
 				{ "Version": "Crusader", "Address": "0x81B21E", "EndAddress": "0x81B21E", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Crusader", "Address": "0x81B237", "EndAddress": "0x81B237", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Crusader", "Address": "0x81B23B", "EndAddress": "0x81B23B", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
-				{ "Version": "Crusader", "Address": "0x8220BE", "EndAddress": "0x8220BE", "Size": 1, "OldValue": 0, "NewValue": 144 },
-				{ "Version": "Crusader", "Address": "0x8220BF", "EndAddress": "0x8220BF", "Size": 1, "OldValue": 0, "NewValue": 144 },
 				{ "Version": "Extreme", "Address": "0x04FE4F", "EndAddress": "0x04FE4F", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Extreme", "Address": "0x04FE53", "EndAddress": "0x04FE53", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Extreme", "Address": "0x7B5CFA", "EndAddress": "0x7B5CFA", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
@@ -308,6 +306,22 @@
 				{ "Version": "Crusader", "Address": "0x022B3C", "EndAddress": "0x022B3D", "Size": 2, "OldValue": 1200, "NewValue": 100 },
 				{ "Version": "Extreme", "Address": "0x022ADE", "EndAddress": "0x022ADF", "Size": 2, "OldValue": 200, "NewValue": 140 },
 				{ "Version": "Extreme", "Address": "0x022B4C", "EndAddress": "0x022B4D", "Size": 2, "OldValue": 1200, "NewValue": 100 },
+			]
+		},
+		"SpectatorMode": {
+			"Description": "TEST (from UCP 2.15)",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0334A6", "EndAddress": "0x0334AB", "Size": 1, "OldValue": [139, 142, 88, 190, 21, 1], "NewValue": [185, 211, 19, 0, 0, 144] },
+				{ "Version": "Crusader", "Address": "0x08F919", "EndAddress": "0x08F924", "Size": 1, "OldValue": [137, 61, 220, 117, 162, 1, 137, 61, 20, 222, 145, 1], "NewValue": [233, 130, 253, 1, 2, 144, 144, 144, 144, 144, 144, 144] },
+				{ "Version": "Crusader", "Address": "0x08F96C", "EndAddress": "0x08F971", "Size": 1, "OldValue": [15, 132, 36, 1, 0, 0], "NewValue": [233, 9, 1, 0, 0, 144] },
+				{ "Version": "Crusader", "Address": "0x0956FB", "EndAddress": "0x095705", "Size": 1, "OldValue": [117, 7, 139, 197, 163, 220, 117, 162, 1, 137, 44], "NewValue": [144, 144, 144, 137, 29, 220, 117, 162, 1, 137, 60] },
+				{ "Version": "Crusader", "Address": "0x0EA265", "EndAddress": "0x0EA265", "Size": 1, "OldValue": 116, "NewValue": 235 },
+				{ "Version": "Extreme", "Address": "0x0336E6", "EndAddress": "0x0336EB", "Size": 1, "OldValue": [139, 142, 152, 234, 30, 1], "NewValue": [185, 211, 19, 0, 0, 144] },
+				{ "Version": "Extreme", "Address": "0x08FA29", "EndAddress": "0x08FA34", "Size": 1, "OldValue": [137, 61, 220, 170, 75, 2, 137, 61, 132, 78, 53, 2], "NewValue": [233, 116, 124, 175, 2, 144, 144, 144, 144, 144, 144, 144] },
+				{ "Version": "Extreme", "Address": "0x08FA7C", "EndAddress": "0x08FA81", "Size": 1, "OldValue": [15, 132, 36, 1, 0, 0], "NewValue": [233, 9, 1, 0, 0, 144] },
+				{ "Version": "Extreme", "Address": "0x09585B", "EndAddress": "0x095865", "Size": 1, "OldValue": [117, 7, 139, 197, 163, 220, 170, 75, 2, 137, 44], "NewValue": [144, 144, 144, 137, 29, 220, 170, 75, 2, 137, 60] },
+				{ "Version": "Extreme", "Address": "0x0EA5F5", "EndAddress": "0x0EA5F5", "Size": 1, "OldValue": 116, "NewValue": 235 },
 			]
 		},
 		"CheckAvailablePathsDelay": {

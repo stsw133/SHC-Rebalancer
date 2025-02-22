@@ -1,4 +1,6 @@
 [
+	{ "Key": "PatchName",									"Address": "0x798000", "EndAddress": "0x798017", "Size": 1 },
+	
 	{ "Key": "AIC LordType",								"Address": "0x086CF0", "EndAddress": "0x086CFF", "Size": 1 },
 	{ "Key": "AIC LordStrength",							"Address": "0x73ECE8", "EndAddress": "0x73ED67", "Size": 4 },
 	{ "Key": "AIC Personality",								"Address": "0x7B66B4", "EndAddress": "0x7BD0B6", "Size": 4 },

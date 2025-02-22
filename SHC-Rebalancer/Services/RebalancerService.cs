@@ -119,6 +119,9 @@ internal static class RebalancerService
 
                 BinaryPatchService.WriteIfDifferent(address, value, 1, "UCP compatible config");
             }
+
+            if (StorageService.BaseAddresses[gameVersion].TryGetValue("PatchName", out var baseAddress))
+                BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), BinaryPatchService.ConvertStringToBytesWithAutoPadding($"V1.%d{(gameVersion == GameVersion.Extreme ? "-E" : string.Empty)} stsw {StswFn.AppVersion()}", 1), 1, "PatchName");
         }
         else throw new FileNotFoundException("UCP config file not found!");
     }
