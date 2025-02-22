@@ -2,6 +2,7 @@
 public class OptionModel
 {
     public string? Description { get; set; }
+    public string? Source { get; set; }
     public string? Group { get; set; }
     public string? Type { get; set; }
     public IEnumerable<OptionValueModel> Modifications { get; set; } = [];

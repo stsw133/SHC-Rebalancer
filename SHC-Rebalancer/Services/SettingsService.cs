@@ -91,7 +91,15 @@ public class AppSettings : StswObservableObject
         set => SetProperty(ref _selectedConfigs, value);
     }
     private ObservableDictionary<string, string?> _selectedConfigs = [];
-    
+
+    /// ShowOptionsDetails
+    public bool ShowOptionsDetails
+    {
+        get => _showOptionsDetails;
+        set => SetProperty(ref _showOptionsDetails, value);
+    }
+    private bool _showOptionsDetails = true;
+
     /// SelectedOptions
     public ObservableDictionary<string, object?> SelectedOptions
     {

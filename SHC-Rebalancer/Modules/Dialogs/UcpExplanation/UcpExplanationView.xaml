@@ -55,10 +55,7 @@
                 <Run Text="&#x0a; • Fix bakers despawning"/>
                 <Run Text="&#x0a; • Fix despawning of digging units"/>
                 <Run Text="&#x0a; • Let the AI build houses smarter (true:10 | true:10 | true)"/>
-                <Run Text="&#x0a; • Set AIs initial time until they recruit by the AIC parameters (30)"/>
                 <Run Text="&#x0a; • Improve attack waves"/>
-                <Run Text="&#x0a; • Disable sleeping mode for lack of resources"/>
-                <Run Text="&#x0a; • Deactivate demolishing for money of the AI lords (true | true | true)"/>
                 <Run Text="&#x0a; • Arabic Swordsmen destroy walls faster"/>
                 <Run Text="&#x0a; • Restore engineer arabiach speech"/>
                 <Run Text="&#x0a; • WASD-Keys and quicksaves"/>
@@ -67,8 +64,6 @@
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="It will not, however, include other features, including the following, which cannot yet be configured in the Rebalancer:"/>
-                <Run Text="&#x0a; • Set AI attack target"/>
-                <Run Text="&#x0a; • Increased recruitment speed"/>
                 <Run Text="&#x0a; • Override the Set-up Identity menu adding new features"/>
                 <Run Text="&#x0a; • Strongholdify (popularity bonus from beer)"/>
                 <Run Text="&#x0a; • Manipulate random number generator"/>

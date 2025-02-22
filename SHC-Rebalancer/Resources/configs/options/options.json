@@ -1,7 +1,8 @@
 {
 	"Options": {
-		"FixDemolishingInaccessibleBuildings": {
-			"Description": "TEST (from UCP 2.15)",
+		"FixDemolishingOfInaccessibleBuildings": {
+			"Description": "Prevents the AI from demolishing buildings without access. This should stop the AI from continuously demolishing and rebuilding buildings where no access is available.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x0242C3", "EndAddress": "0x0242C3", "Size": 1, "OldValue": 117, "NewValue": 235 },
@@ -9,7 +10,8 @@
 			]
 		},
 		"FixOxTetherSpam": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Usually, the AI builds for each new stone quarry a new ox tether, independent of how many tether already exist. This can be disabled here, since it leads to ox tether spam if the AI's quarries get destroyed repeatedly.'",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x0EFF9A", "EndAddress": "0x0EFF9B", "Size": 1, "OldValue": [15, 133], "NewValue": [144, 233] },
@@ -17,15 +19,17 @@
 			]
 		},
 		"FixLimitForTowerEngines": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Usually the AI only builds up to three mangonels and ballistae each on its towers. This limit can be lifted here.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x0D20A2", "EndAddress": "0x0D20A2", "Size": 1, "OldValue": 126, "NewValue": 235 },
 				{ "Version": "Extreme", "Address": "0x0D2452", "EndAddress": "0x0D2452", "Size": 1, "OldValue": 126, "NewValue": 235 },
 			]
 		},
-		"FixAiNoLaddermanWhenEnclosed": {
-			"Description": "TEST (from UCP 2.15)",
+		"FixAiNoLaddermenWhenEnclosed": {
+			"Description": "AI (notably Snake) no longer stops using Laddermen with their sieging units if their keep is enclosed.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x05774B", "EndAddress": "0x05774B", "Size": 1, "OldValue": 0, "NewValue": 1 },
@@ -33,15 +37,17 @@
 			]
 		},
 		"FixFletcherPathing": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Fixes the behaviour where fletchers go back to the workplace after depositing the bow/crossbow instead of going straight to the stockpile.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x14E390", "EndAddress": "0x14E390", "Size": 1, "OldValue": 3, "NewValue": 1 },
 				{ "Version": "Extreme", "Address": "0x14E7B0", "EndAddress": "0x14E7B0", "Size": 1, "OldValue": 3, "NewValue": 1 },
 			]
 		},
-		"FixWeaponOrderToMatch": {
-			"Description": "TEST (from UCP 2.15)",
+		"FixWeaponOrdersToMatch": {
+			"Description": "Reorders weapon icons in armory and marketplace to have the same order. Also moves leather armor between mace and crossbow, and moves metal armor between polearm and sword for easier access while in marketplace scrolling through items.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x1FD8B0", "EndAddress": "0x1FD8B3", "Size": 4, "OldValue": 19, "NewValue": 17 },
@@ -74,16 +80,123 @@
 				{ "Version": "Extreme", "Address": "0x734614", "EndAddress": "0x734617", "Size": 4, "OldValue": 90, "NewValue": 86 },
 			]
 		},
+		"AiDefenceOnlyRecruitmentTime": {
+			"Description": "Set this value to number of months for which the AI will exclusively recruit defence troops, unless it has already filled up its defence total.",
+			"Source": "UCP 2.15",
+			"Type": "value",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0D34B1", "EndAddress": "0x0D34B4", "Size": 4, "OldValue": 4800, "IsNewValueDynamic": true, "Multiplier": 800 },
+				{ "Version": "Extreme", "Address": "0x0D3861", "EndAddress": "0x0D3864", "Size": 4, "OldValue": 4800, "IsNewValueDynamic": true, "Multiplier": 800 },
+			]
+		},
 		"AiAttackTroopsLimit": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "The number of additional units which are added after the first attack is limited to 200 in Vanilla. Here you can change this limit.",
+			"Source": "UCP 2.15",
 			"Type": "value",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x0CDEF9", "EndAddress": "0x0CDEF9", "Size": 4, "OldValue": 200, "IsNewValueDynamic": true },
 				{ "Version": "Extreme", "Address": "0x0CE149", "EndAddress": "0x0CE149", "Size": 4, "OldValue": 200, "IsNewValueDynamic": true },
 			]
 		},
+		"AiAttackTarget0": {
+			"Description": "With this setting, all AI lords will chose their next attack target in the same way. This prevents troops switching targets during a castle assault as well as sending them past other enemies' castles to gather.",
+			"Source": "UCP 2.15",
+			"Group": "AiAttackTarget",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0D47B2", "EndAddress": "0x0D47B4", "Size": 1, "OldValue": [131, 248, 4], "NewValue": [131, 248, 4] },
+				{ "Version": "Extreme", "Address": "0x0D4B62", "EndAddress": "0x0D4B62", "Size": 1, "OldValue": [131, 248, 4], "NewValue": [131, 248, 4] },
+			]
+		},
+		"AiAttackTarget1": {
+			"Description": "...",
+			"Source": "UCP 2.15",
+			"Group": "AiAttackTarget",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0D47B2", "EndAddress": "0x0D47B4", "Size": 1, "OldValue": [131, 248, 4], "NewValue": [235, 17, 144] },
+				{ "Version": "Extreme", "Address": "0x0D4B62", "EndAddress": "0x0D4B62", "Size": 1, "OldValue": [131, 248, 4], "NewValue": [235, 17, 144] },
+			]
+		},
+		"AiAttackTarget2": {
+			"Description": "...",
+			"Source": "UCP 2.15",
+			"Group": "AiAttackTarget",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0D47B2", "EndAddress": "0x0D47B4", "Size": 1, "OldValue": [131, 248, 4], "NewValue": [235, 63, 144] },
+				{ "Version": "Extreme", "Address": "0x0D4B62", "EndAddress": "0x0D4B62", "Size": 1, "OldValue": [131, 248, 4], "NewValue": [235, 63, 144] },
+			]
+		},
+		"AiAttackTarget3": {
+			"Description": "...",
+			"Source": "UCP 2.15",
+			"Group": "AiAttackTarget",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0D47B2", "EndAddress": "0x0D47B4", "Size": 1, "OldValue": [131, 248, 4], "NewValue": [235, 82, 144] },
+				{ "Version": "Extreme", "Address": "0x0D4B62", "EndAddress": "0x0D4B62", "Size": 1, "OldValue": [131, 248, 4], "NewValue": [235, 82, 144] },
+			]
+		},
+		"AiDisableSleepingWhenNoResources": {
+			"Description": "The AI usually puts its processing buildings to sleep, as soon as the needed resource is missing. This is done without regard for losing products which are just on the way f.e. to the weapon chamber. This feature can be completely disabled here.",
+			"Source": "UCP 2.15",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0CBCD5", "EndAddress": "0x0CBCD7", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBCDA", "EndAddress": "0x0CBCDC", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBCE7", "EndAddress": "0x0CBCE9", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBCF2", "EndAddress": "0x0CBCF4", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBCFD", "EndAddress": "0x0CBCFF", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBD0A", "EndAddress": "0x0CBD0C", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBD17", "EndAddress": "0x0CBD19", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBD24", "EndAddress": "0x0CBD26", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBD31", "EndAddress": "0x0CBD33", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBD3E", "EndAddress": "0x0CBD40", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Crusader", "Address": "0x0CBD4B", "EndAddress": "0x0CBD4D", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF25", "EndAddress": "0x0CBF27", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF2A", "EndAddress": "0x0CBF2C", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF37", "EndAddress": "0x0CBF39", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF42", "EndAddress": "0x0CBF44", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF4D", "EndAddress": "0x0CBF4F", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF5A", "EndAddress": "0x0CBF5C", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF67", "EndAddress": "0x0CBF69", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF74", "EndAddress": "0x0CBF76", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF81", "EndAddress": "0x0CBF83", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF8E", "EndAddress": "0x0CBF90", "Size": 1, "OldValue": [15, 148, 193], "NewValue": [48, 201, 144] },
+				{ "Version": "Extreme", "Address": "0x0CBF9B", "EndAddress": "0x0CBF9D", "Size": 1, "OldValue": [15, 148, 194], "NewValue": [48, 210, 144] },
+			]
+		},
+		"AiDisableDemolishingFortifications": {
+			"Description": "If the AI feels pressured, it likes to demolishes its economy or fortification buildings to get quick money for troops. This feature sometimes seems to be triggered without any visible reason and thus can be disabled here.",
+			"Source": "UCP 2.15",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0D03F4", "EndAddress": "0x0D03FA", "Size": 1, "OldValue": [15, 183, 6, 102, 61, 45, 0], "NewValue": [233, 21, 1, 0, 0, 144, 144] },
+				{ "Version": "Extreme", "Address": "0x0D0644", "EndAddress": "0x0D064A", "Size": 1, "OldValue": [15, 183, 6, 102, 61, 45, 0], "NewValue": [233, 21, 1, 0, 0, 144, 144] },
+			]
+		},
+		"AiDisableDemolishingIfEnclosed": {
+			"Description": "...",
+			"Source": "UCP 2.15",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0F1988", "EndAddress": "0x0F1988", "Size": 1, "OldValue": 117, "NewValue": 235 },
+				{ "Version": "Extreme", "Address": "0x0F1D18", "EndAddress": "0x0F1D18", "Size": 1, "OldValue": 117, "NewValue": 235 },
+			]
+		},
+		"AiDisableDemolishingBuildings": {
+			"Description": "...",
+			"Source": "UCP 2.15",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0D0280", "EndAddress": "0x0D0285", "Size": 1, "OldValue": [85, 189, 1, 0, 0, 0], "NewValue": [194, 8, 0, 144, 144, 144] },
+				{ "Version": "Extreme", "Address": "0x0D04D0", "EndAddress": "0x0D04D5", "Size": 1, "OldValue": [85, 189, 1, 0, 0, 0], "NewValue": [194, 8, 0, 144, 144, 144] },
+			]
+		},
 		"AiAttackTroopsIncrease0": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "In Vanilla the attack troop number is increased after each attack by 5 units on average. This value is the same for all AI lords and can be changed here.",
+			"Source": "UCP 2.15",
 			"Group": "AiAttackTroopsIncrease",
 			"Type": "value",
 			"Modifications": [
@@ -96,7 +209,8 @@
 			]
 		},
 		"AiAttackTroopsIncrease1": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Alternatively, the additional troop count can be made dependent on the troop count of the first attack. Since this value is different for each AI, the following attacks will also scale, instead of increasing by the same value for each AI lord.",
+			"Source": "UCP 2.15",
 			"Group": "AiAttackTroopsIncrease",
 			"Type": "value",
 			"Modifications": [
@@ -122,8 +236,18 @@
 				{ "Version": "Extreme", "Address": "0x0CE13C", "EndAddress": "0x0CE147", "Size": 1, "OldValue": [1, 235, 9, 141, 20, 128, 1, 150, 216, 34, 31, 1], "NewValue": [144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144] },
 			]
 		},
+		"AiIncreasedRecruitmentSpeed": {
+			"Description": "Sets the recruitment interval of all AIs to the lowest value (Rat/Richard niveau).",
+			"Source": "UCP 2.15",
+			"Type": "select",
+			"Modifications": [
+				{ "Version": "Crusader", "Address": "0x0D3B41", "EndAddress": "0x0D3B47", "Size": 1, "OldValue": [139, 132, 170, 100, 1, 0, 0], "NewValue": [184, 1, 0, 0, 0, 144, 144] },
+				{ "Version": "Extreme", "Address": "0x0D3EF1", "EndAddress": "0x0D3EF7", "Size": 1, "OldValue": [139, 132, 170, 100, 1, 0, 0], "NewValue": [184, 1, 0, 0, 0, 144, 144] },
+			]
+		},
 		"FireproofDuration": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "The duration in which extinquished buildings cannot catch fire again can be extended here.",
+			"Source": "UCP 2.15",
 			"Type": "value",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x010A38", "EndAddress": "0x010A39", "Size": 2, "OldValue": 2000, "IsNewValueDynamic": true },
@@ -131,7 +255,8 @@
 			]
 		},
 		"NoExtremeMagicbar": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Removes the magic bar in Crusader Extreme.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x0DA050", "EndAddress": "0x0DA050", "Size": 1, "OldValue": 161, "NewValue": 195 },
@@ -141,7 +266,8 @@
 			]
 		},
 		"ChangePlayerColor": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Change the color of 1st player.",
+			"Source": "UCP 2.15",
 			"Type": "value",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x04FC1F", "EndAddress": "0x04FC1F", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
@@ -283,7 +409,8 @@
 			]
 		},
 		"NoTentDeselection": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "With this setting, the game will not deselect your chosen siege equipment after placing one tent anymore. This way you can create several tents after another without having to reselect the same siege equipment every time.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x04612B", "EndAddress": "0x046130", "Size": 1, "OldValue": [137, 45, 236, 122, 254, 1], "NewValue": [144, 144, 144, 144, 144, 144] },
@@ -291,7 +418,8 @@
 			]
 		},
 		"AlwaysShowPlannedMoat": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Your own placed but not digged out moat will always be shown with this setting, even if you deselect the moat placing.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x0EC86D", "EndAddress": "0x0EC86D", "Size": 1, "OldValue": 45, "NewValue": 21 },
@@ -299,7 +427,8 @@
 			]
 		},
 		"GatesResponsivenessVsEnemy": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Gates close themselves later if enemies get into range and open faster when the danger is gone. The distance of an enemy for which the gates close will be reduced from 200 to 140. The time after which the gates open, after & all enemies left will be reduced from 1200 to 100.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x022ACE", "EndAddress": "0x022ACF", "Size": 2, "OldValue": 200, "NewValue": 140 },
@@ -309,7 +438,8 @@
 			]
 		},
 		"SpectatorMode": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Removes player 1 so that you can only spectate and makes 8 AIs in one round possible. Sometimes a bug appears in which random objects spawn all over the map. This is just visually and can be removed by saving the game, ending the mission and reloading the save file.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x0334A6", "EndAddress": "0x0334AB", "Size": 1, "OldValue": [139, 142, 88, 190, 21, 1], "NewValue": [185, 211, 19, 0, 0, 144] },
@@ -325,7 +455,8 @@
 			]
 		},
 		"CheckAvailablePathsDelay": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "In Vanilla, it took 200 game ticks to check for new paths, often stopping units to move into the castle after destroying a gate or tower immediately. You can change its value here.",
+			"Source": "UCP 2.15",
 			"Type": "value",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x09961E", "EndAddress": "0x099621", "Size": 4, "OldValue": 200, "IsNewValueDynamic": true },
@@ -333,7 +464,8 @@
 			]
 		},
 		"MultiplayerDefaultSpeed": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Set default multiplayer speed.",
+			"Source": "UCP 2.15",
 			"Type": "value",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x08790B", "EndAddress": "0x08790B", "Size": 1, "OldValue": 40, "IsNewValueDynamic": true },
@@ -342,8 +474,9 @@
 				{ "Version": "Extreme", "Address": "0x08C5B4", "EndAddress": "0x08C5B4", "Size": 1, "OldValue": 40, "IsNewValueDynamic": true },
 			]
 		},
-		"NoPermanentReligionBonuses":{
-			"Description": "TEST (from UCP 2.15)",
+		"NoPermanentReligionBonuses": {
+			"Description": "Adapts popularity bonus from cathedral and church to match Stronghold 1.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x03EC52", "EndAddress": "0x03EC52", "Size": 1, "OldValue": 25, "NewValue": 0 },
@@ -362,8 +495,9 @@
 				{ "Version": "Extreme", "Address": "0x05BDAC", "EndAddress": "0x05BDAC", "Size": 1, "OldValue": 50, "NewValue": 0 },
 			]
 		},
-		"DecreasePeasantSpawnrate":{
-			"Description": "TEST (from UCP 2.15)",
+		"DecreasePeasantSpawnrate": {
+			"Description": "Adapts spawnrate peasants to match Stronghold 1.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x05B4E4", "EndAddress": "0x05B4E9", "Size": 1, "OldValue": [57, 29, 128, 221, 145, 1], "NewValue": [131, 251, 0, 144, 144, 144] },
@@ -373,15 +507,17 @@
 			]
 		},
 		"SkirmishDeliveryBonus": {
-			"Description": "TEST (from UCP 2.15)",
+			"Description": "Here you can change % quantity of delivered resources in skirmishes.",
+			"Source": "UCP 2.15",
 			"Type": "value",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x130DB4", "EndAddress": "0x130DB4", "Size": 1, "OldValue": 50, "IsNewValueDynamic": true },
 				{ "Version": "Extreme", "Address": "0x1311D4", "EndAddress": "0x1311D4", "Size": 1, "OldValue": 50, "IsNewValueDynamic": true },
 			]
 		},
-		"ShrinkOrchardBuildSize":{
-			"Description": "TEST (from UCP 2.15)",
+		"ShrinkOrchardBuildSize": {
+			"Description": "Changes the apple orchard's build size to the size it occupies after the farm is placed down. This saves some space when building the farms and increases the rate with which the AI is able to put these farms down.",
+			"Source": "UCP 2.15",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x0FA630", "EndAddress": "0x0FA630", "Size": 1, "OldValue": 8, "NewValue": 10 },
@@ -389,7 +525,8 @@
 			]
 		},
 		"IronMineDoublePickup": {
-			"Description": "TEST (from Krarilotus's Ascension project)",
+			"Description": "Iron porters will wait until iron mine has produces at least two iron bars and will carry two of them at once.",
+			"Source": "Krarilotus's Ascension project 2.0.0",
 			"Type": "select",
 			"Modifications": [
 				{ "Version": "Crusader", "Address": "0x166136", "EndAddress": "0x166140", "Size": 1, "OldValue": [51, 201, 57, 136, 108, 134, 249, 0, 15, 148, 193], "NewValue": [131, 184, 108, 134, 249, 0, 1, 15, 158, 193, 144] },
