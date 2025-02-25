@@ -229,10 +229,10 @@ public class MainContext : StswObservableObject
     private bool _isTermsDialogOpen = !SettingsService.Instance.Settings.TermsAccepted;
 
     /// SelectedConfigs
-    public StswDictionary<string, ConfigModel?> SelectedConfigs
+    public StswObservableDictionary<string, ConfigModel?> SelectedConfigs
     {
         get => _selectedConfigs;
         set => SetProperty(ref _selectedConfigs, value);
     }
-    private StswDictionary<string, ConfigModel?> _selectedConfigs = [];
+    private StswObservableDictionary<string, ConfigModel?> _selectedConfigs = [];
 }

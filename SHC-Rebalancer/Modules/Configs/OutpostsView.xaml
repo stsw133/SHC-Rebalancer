@@ -26,7 +26,7 @@
                 </se:StswSegment.ItemTemplate>
             </se:StswSegment>
             <!-- data -->
-            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=OutpostSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
+            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=OutpostSelector, Converter={x:Static se:StswExistenceConverter.Instance}}">
                 <StackPanel DataContext="{Binding SelectedItem.Value, ElementName=OutpostSelector}" Margin="3" VerticalAlignment="Center" Width="500">
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type se:StswComboBox}">

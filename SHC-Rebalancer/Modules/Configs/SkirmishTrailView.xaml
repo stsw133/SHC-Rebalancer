@@ -26,7 +26,7 @@
                 </se:StswSegment.ItemTemplate>
             </se:StswSegment>
             <!-- data -->
-            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=SkirmishTrailSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
+            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=SkirmishTrailSelector, Converter={x:Static se:StswExistenceConverter.Instance}}">
                 <StackPanel DataContext="{Binding SelectedItem.Value, ElementName=SkirmishTrailSelector}" Margin="3" VerticalAlignment="Center" Width="500">
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type se:StswComboBox}">
@@ -44,7 +44,7 @@
                         </Style>
                     </StackPanel.Resources>
 
-                    <!-- main -->
+                    <!-- main
                     <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
                         <se:StswGroupBox.Header>
                             <se:StswLabel Content="MAIN" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
@@ -203,14 +203,14 @@
                                         </Style>
                                     </UniformGrid.Resources>
 
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" Margin="0" SelectedValue="{Binding Locations[0]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" Margin="0" SelectedValue="{Binding Locations[1]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" Margin="0" SelectedValue="{Binding Locations[2]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" Margin="0" SelectedValue="{Binding Locations[3]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" Margin="0" SelectedValue="{Binding Locations[4]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" Margin="0" SelectedValue="{Binding Locations[5]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" Margin="0" SelectedValue="{Binding Locations[6]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=9}" Margin="0" SelectedValue="{Binding Locations[7]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[0]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[1]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[2]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[3]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[4]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[5]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[6]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[7]}" se:StswDropArrow.Visibility="Collapsed"/>
                                 </UniformGrid>
                             </DockPanel>
 
@@ -291,18 +291,18 @@
                                         </Style>
                                     </UniformGrid.Resources>
 
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" Margin="0" SelectedValue="{Binding AIVs[0]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" Margin="0" SelectedValue="{Binding AIVs[1]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" Margin="0" SelectedValue="{Binding AIVs[2]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" Margin="0" SelectedValue="{Binding AIVs[3]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" Margin="0" SelectedValue="{Binding AIVs[4]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" Margin="0" SelectedValue="{Binding AIVs[5]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" Margin="0" SelectedValue="{Binding AIVs[6]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{Binding Converter={x:Static se:StswListFromRangeConverter.Instance}, ConverterParameter=8}" Margin="0" SelectedValue="{Binding AIVs[7]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[0]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[1]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[2]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[3]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[4]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[5]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[6]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[7]}" se:StswDropArrow.Visibility="Collapsed"/>
                                 </UniformGrid>
                             </DockPanel>
                         </StackPanel>
-                    </se:StswGroupBox>
+                    </se:StswGroupBox> -->
 
                 </StackPanel>
             </se:StswScrollView>

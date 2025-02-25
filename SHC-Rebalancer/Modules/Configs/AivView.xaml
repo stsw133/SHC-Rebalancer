@@ -20,11 +20,11 @@
             <!-- data -->
             <se:StswLabel DockPanel.Dock="Bottom"
                           Background="{DynamicResource StswPanel.Static.Background}"
-                          Content="{Binding SelectedItem, ElementName=CastleSelector, Converter={x:Static local:PathToNameConverter.Instance}}"
+                          Content="{Binding SelectedItem, ElementName=CastleSelector, Converter={x:Static local:PathToNameConverter.Instance}, FallbackValue=' ', TargetNullValue=''}"
                           FontSize="15"
                           FontWeight="Bold"
                           HorizontalContentAlignment="Center"/>
-            <se:StswFlipView x:Name="CastleSelector" ItemsSource="{Binding SelectedConfigs[aiv].Images}">
+            <se:StswFlipView x:Name="CastleSelector" ItemsSource="{Binding SelectedConfigs[aiv].Images}" SelectedIndex="0">
                 <se:StswFlipView.ItemTemplate>
                     <DataTemplate>
                         <se:StswImage Source="{Binding Converter={x:Static se:StswNullToUnsetConverter.Instance}}"/>

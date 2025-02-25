@@ -105,18 +105,18 @@
                             </UniformGrid>
                         </DockPanel>
 
-                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswExistenceConverter.Instance}}">
                             <se:StswLabel Content="Address:"/>
                             <se:StswIntegerBox DockPanel.Dock="Right" Placeholder="Skip bytes..." Value="{Binding FinderFilterSkips}" Width="125"/>
                             <se:StswTextBox MaxLength="8" Placeholder="Initial address to find..." Text="{Binding FinderFilterAddress}"/>
                         </DockPanel>
 
-                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswExistenceConverter.Instance}}">
                             <se:StswLabel Content="Values:"/>
                             <se:StswTextBox HorizontalContentAlignment="Left" Placeholder="Sequence of values to find... (separated by commas)" Text="{Binding FinderFilterValues}"/>
                         </DockPanel>
 
-                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswExistenceConverter.Instance}}">
                             <se:StswLabel Content="Limit:"/>
                             <se:StswIntegerBox Minimum="10" Maximum="1000" Placeholder="Set rows limit..." Value="{Binding FinderFilterLimit}"/>
                         </DockPanel>

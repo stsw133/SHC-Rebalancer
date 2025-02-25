@@ -29,7 +29,7 @@
                 </se:StswSegment.ItemTemplate>
             </se:StswSegment>
             <!-- data -->
-            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=AicSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
+            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=AicSelector, Converter={x:Static se:StswExistenceConverter.Instance}}">
                 <StackPanel DataContext="{Binding SelectedItem.Value, ElementName=AicSelector}" Margin="3" VerticalAlignment="Center" Width="500">
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type se:StswCheckBox}">
@@ -73,7 +73,7 @@
                                 <se:StswComboBox ItemsSource="{se:StswEnumToList local:LordType}" SelectedValue="{Binding LordType}">
                                     <se:StswComboBox.ItemTemplate>
                                         <DataTemplate>
-                                            <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                            <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
                                         </DataTemplate>
                                     </se:StswComboBox.ItemTemplate>
                                 </se:StswComboBox>
@@ -99,7 +99,7 @@
                                 <se:StswComboBox ItemsSource="{se:StswEnumToList local:WallDecoration}" SelectedValue="{Binding Personality.WallDecoration}">
                                     <se:StswComboBox.ItemTemplate>
                                         <DataTemplate>
-                                            <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                            <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
                                         </DataTemplate>
                                     </se:StswComboBox.ItemTemplate>
                                 </se:StswComboBox>

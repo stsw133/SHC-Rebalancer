@@ -29,7 +29,7 @@
                 </se:StswSegment.ItemTemplate>
             </se:StswSegment>
             <!-- data -->
-            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=ResourcesSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
+            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=ResourcesSelector, Converter={x:Static se:StswExistenceConverter.Instance}}">
                 <StackPanel DataContext="{Binding SelectedItem.Value, ElementName=ResourcesSelector}" Margin="3" VerticalAlignment="Center" Width="500">
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type se:StswIntegerBox}">
