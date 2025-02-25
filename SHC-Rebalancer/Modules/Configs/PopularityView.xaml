@@ -14,43 +14,56 @@
             <local:ConfigBox ItemsSource="{Binding [popularity], Source={x:Static local:StorageService.Configs}}"
                              SelectedItem="{Binding SelectedConfigs[popularity], Mode=OneWayToSource}"
                              SelectedValue="{Binding SelectedConfigs[popularity], Mode=OneWay, Source={StaticResource Settings}}"/>
-            
         </DockPanel>
-        
-        <se:StswTabControl Margin="3" TabStripPlacement="Left">
-            <!-- popularity -->
-            <se:StswTabItem>
-                <se:StswTabItem.Header>
-                    <se:StswLabel Content="Popularity" IconSource="/Images/popularity/Positive.png"/>
-                </se:StswTabItem.Header>
-                <DockPanel Margin="-3">
-                    <!-- data -->
-                    <se:StswScrollView>
-                        <se:StswLabelPanel DataContext="{Binding SelectedConfigs[popularity].Popularity}"
-                                           LabelFontWeight="Medium"
-                                           LabelHorizontalAlignment="Right"
-                                           Margin="3"
-                                           VerticalAlignment="Center"
-                                           Width="500">
+        <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
+        <DockPanel Margin="-3">
+            <!-- data -->
+            <se:StswScrollView>
+                <StackPanel DataContext="{Binding SelectedConfigs[popularity].Popularity}" Margin="3" VerticalAlignment="Center" Width="500">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type se:StswIntegerBox}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="3"/>
+                        </Style>
+                        <Style TargetType="{x:Type se:StswLabel}">
+                            <Setter Property="FontWeight" Value="Medium"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                            <Setter Property="Width" Value="200"/>
+                        </Style>
+                    </StackPanel.Resources>
 
-                            <se:StswLabel Content="Religion thresholds:" IconScale="2" IconSource="/Images/buildings/Chapel.png"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[0]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[1]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[2]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[3]}"/>
-                            </UniformGrid>
+                    <!-- religion -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="RELIGION" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
+
+                        <StackPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Religion thresholds:" IconScale="2" IconSource="/Images/buildings/Chapel.png"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[0]}"/>
+                                    <se:StswIntegerBox Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[1]}"/>
+                                    <se:StswIntegerBox Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[2]}"/>
+                                    <se:StswIntegerBox Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[3]}"/>
+                                </UniformGrid>
+                            </DockPanel>
                             <!--
-                            <se:StswLabel Content="Fear factor:" IconScale="2" IconSource="/Images/buildings/Shrine.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding FearFactorBonus[0]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Fear factor:" IconScale="2" IconSource="/Images/buildings/Shrine.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding FearFactorBonus[0]}"/>
+                            </DockPanel>
                             
-                            <se:StswLabel Content="Ale coverage:" IconScale="2" IconSource="/Images/buildings/Inn.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding AleCoverage}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Ale coverage:" IconScale="2" IconSource="/Images/buildings/Inn.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding AleCoverage}"/>
+                            </DockPanel>
                             -->
-                        </se:StswLabelPanel>
-                    </se:StswScrollView>
-                </DockPanel>
-            </se:StswTabItem>
-        </se:StswTabControl>
+                        </StackPanel>
+                    </se:StswGroupBox>
+
+                </StackPanel>
+            </se:StswScrollView>
+        </DockPanel>
     </DockPanel>
 </UserControl>

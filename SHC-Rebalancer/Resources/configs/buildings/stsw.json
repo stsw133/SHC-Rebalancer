@@ -1,72 +1,184 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP
 	
--General:
-	-Barracks stone cost 15 => 10
-	-MercenaryPost health 300 => 200
-	-Armory health 500 => 200
-	-LookoutTower health 250 => 500, stone cost 10 => 15
-	-DefenseTurret health 1200 => 1750, stone cost 15 => 20
-	-SquareTower health 1600 => 2000, stone cost 35 => 40
-	-RoundTower health 2000 => 3000, stone cost 40 => 50
-	-EngineersGuild health 500 => 300
-	-TunnelersGuild health 500 => 300, wood cost 10 => 0, stone cost 0 => 5, gold cost 100 => 50
-	-Stables health 300 => 400, gold cost 400 => 200
-	-OilSmelter health 300 => 500, iron cost 10 => 5, gold cost 100 => 0
-	-LargeGatehouse health 2000 => 3000, stone cost 20 => 30
-	-Drawbridge health 0 => 100
-	-CagedWarDogs wood cost 10 => 0
-	-KillingPits wood cost 6 => 5
-	-EuropOutpost health 1500 => 3000
-	-ArabOutpost health 1500 => 3000
-	-WoodcuttersHut health 100 => 50
-	-Quarry health 300 => 250, wood cost 20 => 25
-	-OxTether health 100 => 50
-	-IronMine health 100 => 200
-	-PitchRig health 100 => 150, wood cost 20 => 15
-	-Marketplace health 300 => 50, wood cost 5 => 0
-	-HuntersHut health 100 => 50
-	-AppleFarm health 100 => 50
-	-WheatFarm health 100 => 150
-	-HopFarm health 100 => 150
-	-Hovel health 100 => 50, wood cost 6 => 5
-	-Chapel stone cost 0 => 10, gold cost 250 => 50
-	-Church health 800 => 1200, stone cost 0 => 20, gold cost 500 => 250
-	-Cathedral health 1200 => 2000, stone cost 0 => 40, gold cost 1000 => 500
-	-Apothecary health 300 => 400, gold cost 150 => 200
-	-Well health 300 => 150, stone cost 0 => 3, gold cost 30 => 0
-	-WaterPot gold cost 60 => 100
-	-Gallows health 100 => 40
-	-Cesspit gold cost 40 => 50
-	-Stocks health 100 => 60, gold cost 45 => 50
-	-BurningStake health 100 => 60, gold cost 45 => 50
-	-Dungeon gold cost 40 => 50
-	-StretchingRack health 100 => 60, gold cost 45 => 50
-	-Gibbet health 100 => 40
-	-ChoppingBlock health 100 => 60, gold cost 45 => 50
-	-DunkingStool gold cost 40 => 50
-	-Maypole health 100 => 60, gold cost 25 => 50
-	-DancingBear gold cost 20 => 50
-	-Gardens health 100 => 60, gold cost 30 => 50
-	-Statue health 100 => 40, gold cost 30 => 50
-	-Shrine health 100 => 40, gold cost 30 => 50
-	-Armourer gold cost 100 => 200
-	-Granary health 300 => 200
-	-Bakery health 300 => 200
-	-Brewery health 300 => 200
-	-Mill health 300 => 200, wood cost 20 => 15
-	-Catapult wood cost 0 => 10, stone cost 0 => 10, gold cost 150 => 100
-	-Trebuchet wood cost 0 => 15, stone cost 0 => 10
-	-SiegeTower wood cost 0 => 20, gold cost 150 => 200
-	-BatteringRam wood cost 0 => 20, gold cost 150 => 200
-	-PortableShield wood cost 0 => 5, gold cost 5 => 50
-	-FireBallista wood cost 0 => 10, pitch cost 0 => 2, gold cost 150 => 120
-	-TowerBallista wood cost 0 => 10, gold cost 50 => 100
-	-Mangonel wood cost 0 => 10, gold cost 50 => 100
-	-Outpost6 1 Catapult => 10 Crossbowman
-	-Outpost7 10 Catapult => 10 Pikeman
-	-Outpost8 10 Catapult => 12 Monk
-	-Outpost16 1 Catapult => 10 Assassin
+-General
+	-All good and bad things' costs 50 gold now
+	-All good and bad things' health is equal to: space they take in line x 20
+	
+-Barracks
+	-Stone cost 15 => 10
+	
+-MercenaryPost
+	-Health 300 => 200
+	
+-Armory
+	-Health 500 => 200
+	
+-LookoutTower
+	-Health 250 => 500
+	-Stone cost 10 => 15
+	
+-DefenseTurret
+	-Health 1200 => 1750
+	-Stone cost 15 => 20
+	
+-SquareTower
+	-Health 1600 => 2000
+	-Stone cost 35 => 40
+	
+-RoundTower
+	-Health 2000 => 3000
+	-Stone cost 40 => 50
+	
+-EngineersGuild
+	-Health 500 => 300
+	
+-TunnelersGuild
+	-Health 500 => 300
+	-Wood cost 10 => 0
+	-Stone cost 0 => 5
+	-Gold cost 100 => 50
+	
+-Stables
+	-Health 300 => 400
+	-Gold cost 400 => 200
+	
+-OilSmelter
+	-Health 300 => 500
+	-Iron cost 10 => 5
+	-Gold cost 100 => 0
+	
+-LargeGatehouse
+	-Health 2000 => 3000
+	-Stone cost 20 => 30
+	
+-Drawbridge
+	-Health 0 => 100
+	
+-CagedWarDogs
+	-Wood cost 10 => 0
+	
+-KillingPits
+	-Wood cost 6 => 5
+	
+-EuropOutpost
+	-Health 1500 => 3000
+	
+-ArabOutpost
+	-Health 1500 => 3000
+	
+-WoodcuttersHut
+	-Health 100 => 50
+	
+-Quarry
+	-Health 300 => 250
+	-Wood cost 20 => 25
+	
+-OxTether
+	-Health 100 => 50
+	
+-IronMine
+	-Health 100 => 200
+	
+-PitchRig
+	-Health 100 => 150
+	-Wood cost 20 => 15
+	
+-Marketplace
+	-Health 300 => 50
+	-Wood cost 5 => 0
+	
+-HuntersHut
+	-Health 100 => 50
+	
+-AppleFarm
+	-Health 100 => 50
+	
+-WheatFarm
+	-Health 100 => 150
+	
+-HopFarm
+	-Health 100 => 150
+	
+-Hovel
+	-Health 100 => 50
+	-Wood cost 6 => 5
+	
+-Chapel
+	-Stone cost 0 => 10
+	-Gold cost 250 => 50
+	
+-Church
+	-Health 800 => 1200
+	-Stone cost 0 => 20
+	-Gold cost 500 => 250
+	
+-Cathedral
+	-Health 1200 => 2000
+	-Stone cost 0 => 40
+	-Gold cost 1000 => 500
+	
+-Apothecary
+	-Health 300 => 400
+	-Gold cost 150 => 200
+	
+-Well
+	-Health 300 => 150
+	-Stone cost 0 => 3
+	-Gold cost 30 => 0
+	
+-WaterPot
+	-Gold cost 60 => 100
+	
+-Armourer
+	-Gold cost 100 => 200
+	
+-Granary
+	-Health 300 => 200
+	
+-Bakery
+	-Health 300 => 200
+	
+-Brewery
+	-Health 300 => 200
+	
+-Mill
+	-Health 300 => 200
+	-Wood cost 20 => 15
+	
+-Catapult
+	-Wood cost 0 => 10
+	-Stone cost 0 => 10
+	-Gold cost 150 => 100
+	
+-Trebuchet
+	-Wood cost 0 => 15
+	-Stone cost 0 => 10
+	
+-SiegeTower
+	-Wood cost 0 => 20
+	-Gold cost 150 => 200
+	
+-BatteringRam
+	-Wood cost 0 => 20
+	-Gold cost 150 => 200
+	
+-PortableShield
+	-Wood cost 0 => 5
+	-Gold cost 5 => 50
+	
+-FireBallista
+	-Wood cost 0 => 10
+	-Pitch cost 0 => 2
+	-Gold cost 150 => 120
+	
+-TowerBallista
+	-Wood cost 0 => 10
+	-Gold cost 50 => 100
+	
+-Mangonel
+	-Wood cost 0 => 10
+	-Gold cost 50 => 100
 	",
 	"Buildings": {
 		"Barracks": {
@@ -438,248 +550,6 @@
 			"Health": 100,
 			"Housing": 0,
 			"Cost": [ 10, 0, 0, 0, 100 ]
-		},
-	},
-	"Outposts": {
-		"1": {
-			"Unknown00": 250,
-			"Unknown01": 80,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "EuropArcher",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 182,
-		},
-		"2": {
-			"Unknown00": 150,
-			"Unknown01": 50,
-			"Quantity1": 15,
-			"Quantity2": 15,
-			"Unit": "Spearman",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
-		},
-		"3": {
-			"Unknown00": 250,
-			"Unknown01": 100,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "Maceman",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
-		},
-		"4": {
-			"Unknown00": 250,
-			"Unknown01": 120,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "Swordsman",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
-		},
-		"5": {
-			"Unknown00": 250,
-			"Unknown01": 150,
-			"Quantity1": 5,
-			"Quantity2": 5,
-			"Unit": "Knight",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
-		},
-		"6": {
-			"Unknown00": 250,
-			"Unknown01": 100,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "Crossbowman",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 182,
-		},
-		"7": {
-			"Unknown00": 250,
-			"Unknown01": 100,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "Pikeman",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
-		},
-		"8": {
-			"Unknown00": 250,
-			"Unknown01": 120,
-			"Quantity1": 12,
-			"Quantity2": 12,
-			"Unit": "Monk",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
-		},
-		"9": {
-			"Unknown00": 250,
-			"Unknown01": 80,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "ArabArcher",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 182,
-		},
-		"10": {
-			"Unknown00": 250,
-			"Unknown01": 100,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "ArabSwordsman",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
-		},
-		"11": {
-			"Unknown00": 100,
-			"Unknown01": 30,
-			"Quantity1": 20,
-			"Quantity2": 20,
-			"Unit": "Slave",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
-		},
-		"12": {
-			"Unknown00": 250,
-			"Unknown01": 80,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "HorseArcher",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 182,
-		},
-		"13": {
-			"Unknown00": 250,
-			"Unknown01": 80,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "Firethrower",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 182,
-		},
-		"14": {
-			"Unknown00": 150,
-			"Unknown01": 50,
-			"Quantity1": 15,
-			"Quantity2": 15,
-			"Unit": "Slinger",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 182,
-		},
-		"15": {
-			"Unknown00": 250,
-			"Unknown01": 100,
-			"Quantity1": 1,
-			"Quantity2": 1,
-			"Unit": "FireBallista",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 182,
-		},
-		"16": {
-			"Unknown00": 250,
-			"Unknown01": 100,
-			"Quantity1": 10,
-			"Quantity2": 10,
-			"Unit": "Assassin",
-			"Unknown05": 0,
-			"Unknown06": 0,
-			"Unknown07": 0,
-			"Unknown08": 0,
-			"Unknown09": 0,
-			"Unknown10": 0,
-			"Unknown11": 0,
-			"Unknown12": 184,
 		},
 	}
 }

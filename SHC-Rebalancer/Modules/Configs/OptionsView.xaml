@@ -13,6 +13,12 @@
     <se:StswScrollView Margin="-3">
         <StackPanel DataContext="{Binding [options][0].Options, Source={x:Static local:StorageService.Configs}}" Margin="6" Orientation="Vertical" Width="500">
             <StackPanel.Resources>
+                <Style TargetType="{x:Type se:StswSlider}">
+                    <Setter Property="IsSelectionRangeEnabled" Value="True"/>
+                    <Setter Property="IsSnapToTickEnabled" Value="True"/>
+                    <Setter Property="Margin" Value="3 7"/>
+                    <Setter Property="SelectionEnd" Value="{Binding Value, RelativeSource={RelativeSource Self}}"/>
+                </Style>
                 <Style TargetType="{x:Type se:StswSubCheck}">
                     <Setter Property="HorizontalAlignment" Value="Stretch"/>
                     <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -58,6 +64,19 @@
                         </Trigger>
                     </Style.Triggers>
                 </Style>
+                <Style x:Key="Description" TargetType="{x:Type se:StswText}">
+                    <Setter Property="Background" Value="#2777"/>
+                    <Setter Property="FontSize" Value="11"/>
+                    <Setter Property="Margin" Value="3"/>
+                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="Opacity" Value="0.8"/>
+                    <Setter Property="TextAlignment" Value="Justify"/>
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                </Style>
+                <Style TargetType="{x:Type se:StswText}">
+                    <Setter Property="TextAlignment" Value="Center"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
             </StackPanel.Resources>
             
             <!-- ... -->
@@ -74,7 +93,7 @@
                                      IsChecked="{Binding SelectedOptions[FixDemolishingOfInaccessibleBuildings], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [FixDemolishingOfInaccessibleBuildings].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -89,7 +108,7 @@
                                      IsChecked="{Binding SelectedOptions[FixOxTetherSpam], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [FixOxTetherSpam].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -104,7 +123,7 @@
                                      IsChecked="{Binding SelectedOptions[FixLimitForTowerEngines], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [FixLimitForTowerEngines].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -119,7 +138,7 @@
                                      IsChecked="{Binding SelectedOptions[FixAiNoLaddermenWhenEnclosed], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [FixAiNoLaddermenWhenEnclosed].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -134,7 +153,7 @@
                                      IsChecked="{Binding SelectedOptions[FixFletcherPathing], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [FixFletcherPathing].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -149,7 +168,7 @@
                                      IsChecked="{Binding SelectedOptions[FixWeaponOrdersToMatch], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [FixWeaponOrdersToMatch].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -178,12 +197,9 @@
                                      TextAlignment="Center"
                                      VerticalAlignment="Center"
                                      Width="50"/>
-                        <se:StswSlider Minimum="0" Maximum="60" IsSnapToTickEnabled="True" TickFrequency="1"
-                                       IsSelectionRangeEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
-                                       Value="{Binding SelectedOptions[AiDefenceOnlyRecruitmentTime], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
-                                       VerticalAlignment="Center"/>
+                        <se:StswSlider Maximum="60" TickFrequency="1" Value="{Binding SelectedOptions[AiDefenceOnlyRecruitmentTime], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"/>
                     </DockPanel>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [AiDefenceOnlyRecruitmentTime].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -199,17 +215,10 @@
                                      IsReadOnly="True"
                                      Margin="3"/>
                     <DockPanel>
-                        <se:StswText DockPanel.Dock="Right"
-                                     Text="{Binding SelectedOptions[AiAttackTroopsLimit], Mode=OneWay, Source={StaticResource Settings}}"
-                                     TextAlignment="Center"
-                                     VerticalAlignment="Center"
-                                     Width="50"/>
-                        <se:StswSlider Minimum="0" Maximum="5000" IsSnapToTickEnabled="True" TickFrequency="50"
-                                       IsSelectionRangeEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
-                                       Value="{Binding SelectedOptions[AiAttackTroopsLimit], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
-                                       VerticalAlignment="Center"/>
+                        <se:StswText DockPanel.Dock="Right" Text="{Binding SelectedOptions[AiAttackTroopsLimit], Mode=OneWay, Source={StaticResource Settings}}" Width="50"/>
+                        <se:StswSlider Maximum="5000" TickFrequency="50" Value="{Binding SelectedOptions[AiAttackTroopsLimit], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"/>
                     </DockPanel>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [AiAttackTroopsLimit].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -246,7 +255,7 @@
                                          IsChecked="{Binding SelectedOptions[AiAttackTarget], Source={StaticResource Settings}, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=3, UpdateSourceTrigger=PropertyChanged}"
                                          Margin="3"/>
                     </StackPanel>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [AiAttackTarget0].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -261,7 +270,7 @@
                                      IsChecked="{Binding SelectedOptions[AiDisableSleepingWhenNoResources], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [AiDisableSleepingWhenNoResources].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -293,7 +302,7 @@
                                          IsReadOnly="False"
                                          Margin="3"/>
                     </StackPanel>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [AiDisableDemolishingFortifications].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -316,18 +325,10 @@
                                              IsChecked="{Binding SelectedOptions[AiAttackTroopsIncrease], Source={StaticResource Settings}, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=0, UpdateSourceTrigger=PropertyChanged}"
                                              Margin="3"
                                              Width="100"/>
-                            <se:StswText DockPanel.Dock="Right"
-                                         Text="{Binding SelectedOptions[AiAttackTroopsIncrease0], Mode=OneWay, Source={StaticResource Settings}}"
-                                         TextAlignment="Center"
-                                         VerticalAlignment="Center"
-                                         Width="50"/>
-                            <se:StswSlider Minimum="0" Maximum="250" IsSnapToTickEnabled="True" TickFrequency="1"
-                                           IsSelectionRangeEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
-                                           IsEnabled="{Binding SelectedOptions[AiAttackTroopsIncrease], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='=0'}"
-                                           Value="{Binding SelectedOptions[AiAttackTroopsIncrease0], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
-                                           VerticalAlignment="Center"/>
+                            <se:StswText DockPanel.Dock="Right" Text="{Binding SelectedOptions[AiAttackTroopsIncrease0], Mode=OneWay, Source={StaticResource Settings}}" Width="50"/>
+                            <se:StswSlider Maximum="250" TickFrequency="1" IsEnabled="{Binding SelectedOptions[AiAttackTroopsIncrease], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='=0'}" Value="{Binding SelectedOptions[AiAttackTroopsIncrease0], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"/>
                         </DockPanel>
-                        <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                        <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                             <Run Text="{Binding [AiAttackTroopsIncrease0].Description, Mode=OneWay}"/>
                             <LineBreak/>
                             <LineBreak/>
@@ -342,18 +343,10 @@
                                              IsChecked="{Binding SelectedOptions[AiAttackTroopsIncrease], Source={StaticResource Settings}, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=1, UpdateSourceTrigger=PropertyChanged}"
                                              Margin="3"
                                              Width="100"/>
-                            <se:StswText DockPanel.Dock="Right"
-                                         Text="{Binding SelectedOptions[AiAttackTroopsIncrease1], Mode=OneWay, StringFormat=N1, Source={StaticResource Settings}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.1}"
-                                         TextAlignment="Center"
-                                         VerticalAlignment="Center"
-                                         Width="50"/>
-                            <se:StswSlider Minimum="0" Maximum="50" IsSnapToTickEnabled="True" TickFrequency="1"
-                                           IsSelectionRangeEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
-                                           IsEnabled="{Binding SelectedOptions[AiAttackTroopsIncrease], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='=1'}"
-                                           Value="{Binding SelectedOptions[AiAttackTroopsIncrease1], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
-                                           VerticalAlignment="Center"/>
+                            <se:StswText DockPanel.Dock="Right" Text="{Binding SelectedOptions[AiAttackTroopsIncrease1], Mode=OneWay, StringFormat=N1, Source={StaticResource Settings}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.1}" Width="50"/>
+                            <se:StswSlider Maximum="50" TickFrequency="1" IsEnabled="{Binding SelectedOptions[AiAttackTroopsIncrease], Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter='=1'}" Value="{Binding SelectedOptions[AiAttackTroopsIncrease1], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"/>
                         </DockPanel>
-                        <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                        <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                             <Run Text="{Binding [AiAttackTroopsIncrease1].Description, Mode=OneWay}"/>
                             <LineBreak/>
                             <LineBreak/>
@@ -369,7 +362,7 @@
                                      IsChecked="{Binding SelectedOptions[AiIncreasedRecruitmentSpeed], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [AiIncreasedRecruitmentSpeed].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -393,17 +386,10 @@
                                      IsReadOnly="True"
                                      Margin="3"/>
                     <DockPanel>
-                        <se:StswText DockPanel.Dock="Right"
-                                     Text="{Binding SelectedOptions[FireproofDuration], Mode=OneWay, Source={StaticResource Settings}}"
-                                     TextAlignment="Center"
-                                     VerticalAlignment="Center"
-                                     Width="50"/>
-                        <se:StswSlider Minimum="0" Maximum="20000" IsSnapToTickEnabled="True" TickFrequency="200"
-                                       IsSelectionRangeEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
-                                       Value="{Binding SelectedOptions[FireproofDuration], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
-                                       VerticalAlignment="Center"/>
+                        <se:StswText DockPanel.Dock="Right" Text="{Binding SelectedOptions[FireproofDuration], Mode=OneWay, Source={StaticResource Settings}}" Width="50"/>
+                        <se:StswSlider Maximum="20000" TickFrequency="200" Value="{Binding SelectedOptions[FireproofDuration], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"/>
                     </DockPanel>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [FireproofDuration].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -418,7 +404,7 @@
                                      IsChecked="{Binding SelectedOptions[NoExtremeMagicbar], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [NoExtremeMagicbar].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -440,7 +426,7 @@
                             </DataTemplate>
                         </se:StswComboBox.ItemTemplate>
                     </se:StswComboBox>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [ChangePlayerColor].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -455,7 +441,7 @@
                                      IsChecked="{Binding SelectedOptions[NoTentDeselection], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [NoTentDeselection].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -470,7 +456,7 @@
                                      IsChecked="{Binding SelectedOptions[AlwaysShowPlannedMoat], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [AlwaysShowPlannedMoat].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -485,7 +471,7 @@
                                      IsChecked="{Binding SelectedOptions[GatesResponsivenessVsEnemy], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [GatesResponsivenessVsEnemy].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -500,7 +486,7 @@
                                      IsChecked="{Binding SelectedOptions[SpectatorMode], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [SpectatorMode].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -516,17 +502,10 @@
                                      IsReadOnly="True"
                                      Margin="3"/>
                     <DockPanel>
-                        <se:StswText DockPanel.Dock="Right"
-                                     Text="{Binding SelectedOptions[CheckAvailablePathsDelay], Mode=OneWay, Source={StaticResource Settings}}"
-                                     TextAlignment="Center"
-                                     VerticalAlignment="Center"
-                                     Width="50"/>
-                        <se:StswSlider Minimum="0" Maximum="500" IsSnapToTickEnabled="True" TickFrequency="5"
-                                       IsSelectionRangeEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
-                                       Value="{Binding SelectedOptions[CheckAvailablePathsDelay], Source={StaticResource Settings}}"
-                                       VerticalAlignment="Center"/>
+                        <se:StswText DockPanel.Dock="Right" Text="{Binding SelectedOptions[CheckAvailablePathsDelay], Mode=OneWay, Source={StaticResource Settings}}" Width="50"/>
+                        <se:StswSlider Maximum="500" TickFrequency="5" Value="{Binding SelectedOptions[CheckAvailablePathsDelay], Source={StaticResource Settings}}"/>
                     </DockPanel>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [CheckAvailablePathsDelay].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -542,17 +521,10 @@
                                      IsReadOnly="True"
                                      Margin="3"/>
                     <DockPanel>
-                        <se:StswText DockPanel.Dock="Right"
-                                     Text="{Binding SelectedOptions[MultiplayerDefaultSpeed], Mode=OneWay, Source={StaticResource Settings}}"
-                                     TextAlignment="Center"
-                                     VerticalAlignment="Center"
-                                     Width="50"/>
-                        <se:StswSlider Minimum="10" Maximum="100" IsSnapToTickEnabled="True" TickFrequency="1"
-                                       IsSelectionRangeEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
-                                       Value="{Binding SelectedOptions[MultiplayerDefaultSpeed], Source={StaticResource Settings}}"
-                                       VerticalAlignment="Center"/>
+                        <se:StswText DockPanel.Dock="Right" Text="{Binding SelectedOptions[MultiplayerDefaultSpeed], Mode=OneWay, Source={StaticResource Settings}}" Width="50"/>
+                        <se:StswSlider Minimum="10" Maximum="100" TickFrequency="1"  Value="{Binding SelectedOptions[MultiplayerDefaultSpeed], Source={StaticResource Settings}}"/>
                     </DockPanel>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [MultiplayerDefaultSpeed].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -567,7 +539,7 @@
                                      IsChecked="{Binding SelectedOptions[NoPermanentReligionBonuses], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [NoPermanentReligionBonuses].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -582,7 +554,7 @@
                                      IsChecked="{Binding SelectedOptions[DecreasePeasantSpawnrate], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [DecreasePeasantSpawnrate].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -598,17 +570,10 @@
                                      IsReadOnly="True"
                                      Margin="3"/>
                     <DockPanel>
-                        <se:StswText DockPanel.Dock="Right"
-                                     Text="{Binding SelectedOptions[SkirmishDeliveryBonus], Mode=OneWay, Source={StaticResource Settings}}"
-                                     TextAlignment="Center"
-                                     VerticalAlignment="Center"
-                                     Width="50"/>
-                        <se:StswSlider Minimum="0" Maximum="100" IsSnapToTickEnabled="True" TickFrequency="1"
-                                       IsSelectionRangeEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}"
-                                       Value="{Binding SelectedOptions[SkirmishDeliveryBonus], Source={StaticResource Settings}}"
-                                       VerticalAlignment="Center"/>
+                        <se:StswText DockPanel.Dock="Right" Text="{Binding SelectedOptions[SkirmishDeliveryBonus], Mode=OneWay, Source={StaticResource Settings}}" Width="50"/>
+                        <se:StswSlider Maximum="100" TickFrequency="1" Value="{Binding SelectedOptions[SkirmishDeliveryBonus], Source={StaticResource Settings}}"/>
                     </DockPanel>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [SkirmishDeliveryBonus].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -623,7 +588,7 @@
                                      IsChecked="{Binding SelectedOptions[ShrinkOrchardBuildSize], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [ShrinkOrchardBuildSize].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>
@@ -638,7 +603,7 @@
                                      IsChecked="{Binding SelectedOptions[IronMineDoublePickup], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
                                      IsReadOnly="False"
                                      Margin="3"/>
-                    <se:StswText Background="#2777" FontSize="11" Margin="3" Padding="5" Opacity="0.8" TextAlignment="Justify" TextWrapping="Wrap" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
+                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
                         <Run Text="{Binding [IronMineDoublePickup].Description, Mode=OneWay}"/>
                         <LineBreak/>
                         <LineBreak/>

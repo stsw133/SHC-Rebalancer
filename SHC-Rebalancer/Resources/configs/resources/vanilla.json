@@ -1,85 +1,105 @@
 {
 	"Description": "Default config for Stronghold Crusader 1.41 UCP",
-	"Prices": {
+	"Resources": {
 		"Wood": {
 			"Buy": 20,
-			"Sell": 5
+			"Sell": 5,
+			"BaseDelivery": 12
 		},
 		"Hop": {
 			"Buy": 75,
-			"Sell": 40
+			"Sell": 40,
+			"BaseDelivery": 1
 		},
 		"Stone": {
 			"Buy": 70,
-			"Sell": 35
+			"Sell": 35,
+			"BaseDelivery": 8
 		},
 		"Iron": {
 			"Buy": 225,
-			"Sell": 115
+			"Sell": 115,
+			"BaseDelivery": 1
 		},
 		"Pitch": {
 			"Buy": 100,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Wheat": {
 			"Buy": 115,
-			"Sell": 40
+			"Sell": 40,
+			"BaseDelivery": 2
 		},
 		"Bread": {
 			"Buy": 40,
-			"Sell": 20
+			"Sell": 20,
+			"BaseDelivery": 8
 		},
 		"Cheese": {
 			"Buy": 40,
-			"Sell": 20
+			"Sell": 20,
+			"BaseDelivery": 3
 		},
 		"Meat": {
 			"Buy": 40,
-			"Sell": 20
+			"Sell": 20,
+			"BaseDelivery": 6
 		},
 		"Fruit": {
 			"Buy": 40,
-			"Sell": 20
+			"Sell": 20,
+			"BaseDelivery": 3
 		},
 		"Beer": {
 			"Buy": 100,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Flour": {
 			"Buy": 160,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Bows": {
 			"Buy": 155,
-			"Sell": 75
+			"Sell": 75,
+			"BaseDelivery": 1
 		},
 		"Crossbows": {
 			"Buy": 290,
-			"Sell": 150
+			"Sell": 150,
+			"BaseDelivery": 1
 		},
 		"Spears": {
 			"Buy": 100,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Pikes": {
 			"Buy": 180,
-			"Sell": 90
+			"Sell": 90,
+			"BaseDelivery": 1
 		},
 		"Maces": {
 			"Buy": 290,
-			"Sell": 150
+			"Sell": 150,
+			"BaseDelivery": 1
 		},
 		"Swords": {
 			"Buy": 290,
-			"Sell": 150
+			"Sell": 150,
+			"BaseDelivery": 1
 		},
 		"Leather": {
 			"Buy": 125,
-			"Sell": 60
+			"Sell": 60,
+			"BaseDelivery": 1
 		},
 		"Armor": {
 			"Buy": 290,
-			"Sell": 150
+			"Sell": 150,
+			"BaseDelivery": 1
 		}
 	}
 }

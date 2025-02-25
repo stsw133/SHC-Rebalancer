@@ -37,7 +37,7 @@ public class MainContext : StswObservableObject
     {
         try
         {
-            StswContentDialog.Close("TermsContentDialog");
+            StswContentDialog.Close("TermsDialog");
         }
         catch (Exception ex)
         {
@@ -178,7 +178,7 @@ public class MainContext : StswObservableObject
     {
         try
         {
-            await StswContentDialog.Show(new UcpExplanationView(), "InfoContentDialog");
+            await StswContentDialog.Show(new UcpExplanationView(), "InfoDialog");
         }
         catch (Exception ex)
         {
@@ -220,13 +220,13 @@ public class MainContext : StswObservableObject
     }
     private int _installValueMax;
 
-    /// IsTermsContentDialogOpen
-    public bool IsTermsContentDialogOpen
+    /// IsTermsDialogOpen
+    public bool IsTermsDialogOpen
     {
-        get => _isTermsContentDialogOpen;
-        set => SetProperty(ref _isTermsContentDialogOpen, value);
+        get => _isTermsDialogOpen;
+        set => SetProperty(ref _isTermsDialogOpen, value);
     }
-    private bool _isTermsContentDialogOpen = !SettingsService.Instance.Settings.TermsAccepted;
+    private bool _isTermsDialogOpen = !SettingsService.Instance.Settings.TermsAccepted;
 
     /// SelectedConfigs
     public StswDictionary<string, ConfigModel?> SelectedConfigs

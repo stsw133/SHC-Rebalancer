@@ -46,6 +46,11 @@
     <None Remove="Images\ai\Image726.png" />
     <None Remove="Images\ai\PlayerArab.png" />
     <None Remove="Images\ai\PlayerEurop.png" />
+    <None Remove="Images\buildings\Flag1.png" />
+    <None Remove="Images\buildings\Flag2.png" />
+    <None Remove="Images\buildings\Flag3.png" />
+    <None Remove="Images\buildings\Flag4.png" />
+    <None Remove="Images\buildings\Skull.png" />
     <None Remove="Images\lords\Arab.png" />
     <None Remove="Images\lords\Europ.png" />
     <None Remove="Images\misc\Cost.png" />
@@ -73,6 +78,18 @@
     <None Remove="Images\units\None.png" />
     <None Remove="Images\units\Porter.png" />
     <None Remove="Images\units\WheatFarmer.png" />
+    <None Remove="Images\walldecorations\Brazier.png" />
+    <None Remove="Images\walldecorations\Crows.png" />
+    <None Remove="Images\walldecorations\Disease.png" />
+    <None Remove="Images\walldecorations\Explosions.png" />
+    <None Remove="Images\walldecorations\Flag1.png" />
+    <None Remove="Images\walldecorations\Flag2.png" />
+    <None Remove="Images\walldecorations\Flag3.png" />
+    <None Remove="Images\walldecorations\Flag4.png" />
+    <None Remove="Images\walldecorations\Flames.png" />
+    <None Remove="Images\walldecorations\Oil.png" />
+    <None Remove="Images\walldecorations\Skull.png" />
+    <None Remove="Images\walldecorations\Steam.png" />
     <None Remove="Resources\background.jpg" />
     <None Remove="Images\buildings\ArabOutpost.png" />
     <None Remove="Images\buildings\BatteringRam.png" />
@@ -145,7 +162,7 @@
     <None Remove="Images\units\WarDog.png" />
     <None Remove="Images\units\Wolf.png" />
     <None Remove="Images\units\Woodcutter.png" />
-    <None Remove="Resources\configs\aiv\stsw\abbot1.aiv" />
+    <None Remove="Resources\configs\aiv\stsw.json" />
     <None Remove="Resources\configs\aiv\stsw\abbot2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\abbot3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\abbot4.aiv" />
@@ -153,7 +170,6 @@
     <None Remove="Resources\configs\aiv\stsw\abbot6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\abbot7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\abbot8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\caliph1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\caliph2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\caliph3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\caliph4.aiv" />
@@ -161,7 +177,6 @@
     <None Remove="Resources\configs\aiv\stsw\caliph6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\caliph7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\caliph8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\emir1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\emir2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\emir3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\emir4.aiv" />
@@ -170,7 +185,6 @@
     <None Remove="Resources\configs\aiv\stsw\emir7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\emir8.aiv" />
     <None Remove="Resources\configs\aiv\stsw\English.txt" />
-    <None Remove="Resources\configs\aiv\stsw\frederick1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick4.aiv" />
@@ -178,8 +192,23 @@
     <None Remove="Resources\configs\aiv\stsw\frederick6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick8.aiv" />
+    <None Remove="Resources\configs\aiv\stsw\images\abbot.webp" />
     <None Remove="Resources\configs\aiv\stsw\images\abbot1.jpg" />
-    <None Remove="Resources\configs\aiv\stsw\marshal1.aiv" />
+    <None Remove="Resources\configs\aiv\stsw\images\caliph.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\emir.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\frederick.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\marshal.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\nizar.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\phillip.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\pig.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\rat.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\richard.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\saladin.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\sheriff.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\snake.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\sultan.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\wazir.webp" />
+    <None Remove="Resources\configs\aiv\stsw\images\wolf.webp" />
     <None Remove="Resources\configs\aiv\stsw\marshal2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\marshal3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\marshal4.aiv" />
@@ -187,7 +216,6 @@
     <None Remove="Resources\configs\aiv\stsw\marshal6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\marshal7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\marshal8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\nizar1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\nizar2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\nizar3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\nizar4.aiv" />
@@ -195,7 +223,6 @@
     <None Remove="Resources\configs\aiv\stsw\nizar6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\nizar7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\nizar8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\phillip1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\phillip2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\phillip3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\phillip4.aiv" />
@@ -203,7 +230,6 @@
     <None Remove="Resources\configs\aiv\stsw\phillip6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\phillip7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\phillip8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\pig1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\pig2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\pig3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\pig4.aiv" />
@@ -211,7 +237,6 @@
     <None Remove="Resources\configs\aiv\stsw\pig6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\pig7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\pig8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\rat1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\rat2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\rat3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\rat4.aiv" />
@@ -219,7 +244,6 @@
     <None Remove="Resources\configs\aiv\stsw\rat6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\rat7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\rat8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\richard1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\richard2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\richard3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\richard4.aiv" />
@@ -227,7 +251,6 @@
     <None Remove="Resources\configs\aiv\stsw\richard6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\richard7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\richard8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\saladin1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\saladin2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\saladin3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\saladin4.aiv" />
@@ -235,7 +258,6 @@
     <None Remove="Resources\configs\aiv\stsw\saladin6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\saladin7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\saladin8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\sheriff1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sheriff2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sheriff3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sheriff4.aiv" />
@@ -243,7 +265,6 @@
     <None Remove="Resources\configs\aiv\stsw\sheriff6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sheriff7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sheriff8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\snake1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\snake2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\snake3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\snake4.aiv" />
@@ -251,7 +272,6 @@
     <None Remove="Resources\configs\aiv\stsw\snake6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\snake7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\snake8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\sultan1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sultan2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sultan3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sultan4.aiv" />
@@ -259,7 +279,6 @@
     <None Remove="Resources\configs\aiv\stsw\sultan6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sultan7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\sultan8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\wazir1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wazir2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wazir3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wazir4.aiv" />
@@ -267,7 +286,6 @@
     <None Remove="Resources\configs\aiv\stsw\wazir6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wazir7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wazir8.aiv" />
-    <None Remove="Resources\configs\aiv\stsw\wolf1.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wolf2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wolf3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wolf4.aiv" />
@@ -275,6 +293,7 @@
     <None Remove="Resources\configs\aiv\stsw\wolf6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wolf7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\wolf8.aiv" />
+    <None Remove="Resources\configs\aiv\vanilla.json" />
     <None Remove="Resources\configs\aiv\vanilla\Abbot1.aiv" />
     <None Remove="Resources\configs\aiv\vanilla\Abbot2.aiv" />
     <None Remove="Resources\configs\aiv\vanilla\Abbot3.aiv" />
@@ -418,6 +437,17 @@
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\walldecorations\Brazier.png" />
+    <Resource Include="Images\walldecorations\Crows.png" />
+    <Resource Include="Images\walldecorations\Disease.png" />
+    <Resource Include="Images\walldecorations\Explosions.png" />
+    <Resource Include="Images\walldecorations\Flag1.png" />
+    <Resource Include="Images\walldecorations\Flag2.png" />
+    <Resource Include="Images\walldecorations\Flag3.png" />
+    <Resource Include="Images\walldecorations\Flag4.png" />
+    <Resource Include="Images\walldecorations\Flames.png" />
+    <Resource Include="Images\walldecorations\Oil.png" />
+    <Resource Include="Images\walldecorations\Skull.png" />
     <Content Include="Resources\configs\aic\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -430,391 +460,106 @@
     <Content Include="Resources\base\extreme.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\abbot1.aiv">
+    <Content Include="Resources\configs\aiv\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\abbot2.aiv">
+    <Content Include="Resources\configs\aiv\stsw\abbot.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\abbot3.aiv">
+    <Content Include="Resources\configs\aiv\stsw\caliph.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\abbot4.aiv">
+    <Content Include="Resources\configs\aiv\stsw\emir.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\abbot5.aiv">
+    <Content Include="Resources\configs\aiv\stsw\frederick.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\abbot6.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\abbot.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\abbot7.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\caliph.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\abbot8.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\emir.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\caliph1.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\frederick.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\caliph2.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\marshal.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\caliph3.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\nizar.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\caliph4.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\phillip.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\caliph5.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\pig.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\caliph6.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\rat.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\caliph7.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\richard.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\caliph8.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\saladin.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\emir1.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\sheriff.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\emir2.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\snake.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\emir3.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\sultan.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\emir4.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\wazir.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\emir5.aiv">
+    <Content Include="Resources\configs\aiv\stsw\images\wolf.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\emir6.aiv">
+    <Content Include="Resources\configs\aiv\stsw\marshal.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\emir7.aiv">
+    <Content Include="Resources\configs\aiv\stsw\nizar.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\emir8.aiv">
+    <Content Include="Resources\configs\aiv\stsw\phillip.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\English.txt">
+    <Content Include="Resources\configs\aiv\stsw\pig.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\frederick1.aiv">
+    <Content Include="Resources\configs\aiv\stsw\rat.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\frederick2.aiv">
+    <Content Include="Resources\configs\aiv\stsw\richard.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\frederick3.aiv">
+    <Content Include="Resources\configs\aiv\stsw\saladin.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\frederick4.aiv">
+    <Content Include="Resources\configs\aiv\stsw\sheriff.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\frederick5.aiv">
+    <Content Include="Resources\configs\aiv\stsw\snake.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\frederick6.aiv">
+    <Content Include="Resources\configs\aiv\stsw\sultan.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\frederick7.aiv">
+    <Content Include="Resources\configs\aiv\stsw\wazir.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\frederick8.aiv">
+    <Content Include="Resources\configs\aiv\stsw\wolf.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\aiv\stsw\marshal1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\marshal2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\marshal3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\marshal4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\marshal5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\marshal6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\marshal7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\marshal8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\nizar1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\nizar2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\nizar3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\nizar4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\nizar5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\nizar6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\nizar7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\nizar8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\phillip1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\phillip2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\phillip3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\phillip4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\phillip5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\phillip6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\phillip7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\phillip8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\pig1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\pig2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\pig3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\pig4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\pig5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\pig6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\pig7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\pig8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\rat1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\rat2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\rat3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\rat4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\rat5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\rat6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\rat7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\rat8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\richard1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\richard2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\richard3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\richard4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\richard5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\richard6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\richard7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\richard8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\saladin1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\saladin2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\saladin3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\saladin4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\saladin5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\saladin6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\saladin7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\saladin8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sheriff1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sheriff2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sheriff3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sheriff4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sheriff5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sheriff6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sheriff7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sheriff8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\snake1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\snake2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\snake3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\snake4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\snake5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\snake6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\snake7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\snake8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sultan1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sultan2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sultan3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sultan4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sultan5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sultan6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sultan7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\sultan8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wazir1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wazir2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wazir3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wazir4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wazir5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wazir6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wazir7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wazir8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wolf1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wolf2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wolf3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wolf4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wolf5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wolf6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wolf7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\aiv\stsw\wolf8.aiv">
+    <Content Include="Resources\configs\aiv\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\configs\aiv\vanilla\Abbot1.aiv">
@@ -1201,6 +946,12 @@
     <Content Include="Resources\configs\aiv\vanilla\wolf8.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\configs\outposts\stsw.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\outposts\vanilla.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\configs\buildings\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1343,7 +1094,6 @@
     <Resource Include="Images\buildings\PitchDitch.png" />
     <Resource Include="Images\buildings\Well.png" />
     <Resource Include="Images\buildings\HighWalls.png" />
-    <Resource Include="Images\buildings\Brazier.png" />
     <Resource Include="Images\buildings\Stocks.png" />
     <Resource Include="Images\buildings\Gibbet.png" />
     <Resource Include="Images\buildings\BurningStake.png" />
@@ -1378,7 +1128,6 @@
     <Resource Include="Images\buildings\PerimeterTurret.png" />
     <Resource Include="Images\buildings\DefenseTurret.png" />
     <Resource Include="Images\buildings\SquareTower.png" />
-    <Resource Include="Images\buildings\Flag.png" />
     <Resource Include="Images\buildings\LargeGatehouse.png" />
     <Resource Include="Images\buildings\SmallGatehouse.png" />
     <Resource Include="Images\buildings\MercenaryPost.png" />
@@ -1487,6 +1236,7 @@
     <Resource Include="Images\units\WheatFarmer.png" />
     <Resource Include="Images\units\Wolf.png" />
     <Resource Include="Images\units\Woodcutter.png" />
+    <Resource Include="Images\walldecorations\Steam.png" />
     <Content Include="Resources\configs\troops\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -56,14 +56,13 @@
                 <Run Text="&#x0a; • Fix despawning of digging units"/>
                 <Run Text="&#x0a; • Let the AI build houses smarter (true:10 | true:10 | true)"/>
                 <Run Text="&#x0a; • Improve attack waves"/>
-                <Run Text="&#x0a; • Arabic Swordsmen destroy walls faster"/>
                 <Run Text="&#x0a; • Restore engineer arabiach speech"/>
                 <Run Text="&#x0a; • WASD-Keys and quicksaves"/>
                 <Run Text="&#x0a; • Healer heals casualties"/>
                 <Run Text="&#x0a; • Extended game speed limits"/>
                 <LineBreak/>
                 <LineBreak/>
-                <Run Text="It will not, however, include other features, including the following, which cannot yet be configured in the Rebalancer:"/>
+                <Run Text="It will not, however, include some features, including the following, which cannot yet be configured in the Rebalancer:"/>
                 <Run Text="&#x0a; • Override the Set-up Identity menu adding new features"/>
                 <Run Text="&#x0a; • Strongholdify (popularity bonus from beer)"/>
                 <Run Text="&#x0a; • Manipulate random number generator"/>

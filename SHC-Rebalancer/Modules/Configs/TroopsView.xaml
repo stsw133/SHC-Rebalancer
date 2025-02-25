@@ -15,171 +15,213 @@
                              SelectedItem="{Binding SelectedConfigs[troops], Mode=OneWayToSource}"
                              SelectedValue="{Binding SelectedConfigs[troops], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
+        <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
+        <DockPanel Margin="-3">
+            <!-- selector 1 -->
+            <se:StswSegment x:Name="TroopsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[troops].Troops}" Orientation="Vertical" Width="100">
+                <se:StswSegment.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                            <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </se:StswSegment.ItemTemplate>
+            </se:StswSegment>
+            <!-- data -->
+            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=TroopsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                <StackPanel DataContext="{Binding SelectedItem.Value, ElementName=TroopsSelector}" Margin="3" VerticalAlignment="Center" Width="500">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type se:StswIntegerBox}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="3"/>
+                        </Style>
+                        <Style TargetType="{x:Type se:StswLabel}">
+                            <Setter Property="FontWeight" Value="Medium"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                            <Setter Property="Width" Value="150"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    
+                    <!-- main -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="MAIN" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
 
-        <se:StswTabControl Margin="3" TabStripPlacement="Left">
-            <!-- troops -->
-            <se:StswTabItem>
-                <se:StswTabItem.Header>
-                    <se:StswLabel Content="Troops" IconSource="/Images/units/EuropArcher.png"/>
-                </se:StswTabItem.Header>
-                <DockPanel Margin="-3">
-                    <!-- selector 1 -->
-                    <se:StswSegment x:Name="TroopsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[troops].Troops}" Orientation="Vertical" Width="100">
-                        <se:StswSegment.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
-                                    <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </se:StswSegment.ItemTemplate>
-                    </se:StswSegment>
-                    <!-- data -->
-                    <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=TroopsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
-                        <se:StswLabelPanel DataContext="{Binding SelectedItem.Value, ElementName=TroopsSelector}"
-                                           LabelFontWeight="Medium"
-                                           LabelHorizontalAlignment="Right"
-                                           Margin="3"
-                                           VerticalAlignment="Center"
-                                           Width="500">
-                            
-                            <se:StswLabel/>
-                            <UniformGrid Height="24" Margin="3" Rows="1">
+                        <StackPanel>
+                            <UniformGrid Height="24" HorizontalAlignment="Right" Margin="3" Rows="1" Width="350">
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishmodes/Normal.png"/>
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishmodes/Crusade.png"/>
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishmodes/Deathmatch.png"/>
                             </UniformGrid>
 
-                            <se:StswLabel Content="EuropArcher:" IconSource="/Images/units/EuropArcher.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][EuropArcher]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][EuropArcher]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][EuropArcher]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="EuropArcher:" IconSource="/Images/units/EuropArcher.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][EuropArcher]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][EuropArcher]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][EuropArcher]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Crossbowman:" IconSource="/Images/units/Crossbowman.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Crossbowman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Crossbowman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Crossbowman]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Crossbowman:" IconSource="/Images/units/Crossbowman.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Crossbowman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Crossbowman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Crossbowman]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Spearman:" IconSource="/Images/units/Spearman.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Spearman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Spearman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Spearman]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Spearman:" IconSource="/Images/units/Spearman.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Spearman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Spearman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Spearman]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Pikeman:" IconSource="/Images/units/Pikeman.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Pikeman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Pikeman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Pikeman]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Pikeman:" IconSource="/Images/units/Pikeman.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Pikeman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Pikeman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Pikeman]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Maceman:" IconSource="/Images/units/Maceman.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Maceman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Maceman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Maceman]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Maceman:" IconSource="/Images/units/Maceman.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Maceman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Maceman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Maceman]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Swordsman:" IconSource="/Images/units/Swordsman.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Swordsman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Swordsman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Swordsman]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Swordsman:" IconSource="/Images/units/Swordsman.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Swordsman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Swordsman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Swordsman]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Knight:" IconSource="/Images/units/Knight.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Knight]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Knight]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Knight]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Knight:" IconSource="/Images/units/Knight.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Knight]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Knight]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Knight]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Ladderman:" IconSource="/Images/units/Ladderman.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Ladderman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Ladderman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Ladderman]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Ladderman:" IconSource="/Images/units/Ladderman.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Ladderman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Ladderman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Ladderman]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Engineer:" IconSource="/Images/units/Engineer.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Engineer]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Engineer]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Engineer]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Engineer:" IconSource="/Images/units/Engineer.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Engineer]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Engineer]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Engineer]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Monk:" IconSource="/Images/units/Monk.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Monk]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Monk]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Monk]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Monk:" IconSource="/Images/units/Monk.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Monk]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Monk]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Monk]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="ArabArcher:" IconSource="/Images/units/ArabArcher.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][ArabArcher]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][ArabArcher]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][ArabArcher]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="ArabArcher:" IconSource="/Images/units/ArabArcher.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][ArabArcher]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][ArabArcher]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][ArabArcher]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Slave:" IconSource="/Images/units/Slave.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Slave]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Slave]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Slave]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Slave:" IconSource="/Images/units/Slave.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Slave]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Slave]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Slave]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Slinger:" IconSource="/Images/units/Slinger.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Slinger]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Slinger]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Slinger]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Slinger:" IconSource="/Images/units/Slinger.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Slinger]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Slinger]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Slinger]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Assassin:" IconSource="/Images/units/Assassin.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Assassin]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Assassin]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Assassin]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Assassin:" IconSource="/Images/units/Assassin.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Assassin]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Assassin]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Assassin]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="HorseArcher:" IconSource="/Images/units/HorseArcher.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][HorseArcher]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][HorseArcher]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][HorseArcher]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="HorseArcher:" IconSource="/Images/units/HorseArcher.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][HorseArcher]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][HorseArcher]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][HorseArcher]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="ArabSwordsman:" IconSource="/Images/units/ArabSwordsman.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][ArabSwordsman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][ArabSwordsman]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][ArabSwordsman]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="ArabSwordsman:" IconSource="/Images/units/ArabSwordsman.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][ArabSwordsman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][ArabSwordsman]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][ArabSwordsman]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Firethrower:" IconSource="/Images/units/Firethrower.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][Firethrower]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][Firethrower]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][Firethrower]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Firethrower:" IconSource="/Images/units/Firethrower.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Firethrower]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Firethrower]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][Firethrower]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="FireBallista:" IconSource="/Images/units/FireBallista.png" IconScale="2"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Normal][FireBallista]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Crusade][FireBallista]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding [Deathmatch][FireBallista]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="FireBallista:" IconSource="/Images/units/FireBallista.png" IconScale="2"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][FireBallista]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][FireBallista]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding [Deathmatch][FireBallista]}"/>
+                                </UniformGrid>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
 
-                        </se:StswLabelPanel>
-                    </se:StswScrollView>
-                </DockPanel>
-            </se:StswTabItem>
-        </se:StswTabControl>
+                </StackPanel>
+            </se:StswScrollView>
+        </DockPanel>
     </DockPanel>
 </UserControl>

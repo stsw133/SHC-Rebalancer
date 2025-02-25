@@ -1,107 +1,174 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP
 	
--General:
-	-Hop buy cost 75 => 90, sell cost 40 => 30
-	-Stone buy cost 70 => 60, sell cost 35 => 20
-	-Iron buy cost 225 => 150, sell cost 115 => 50
-	-Pitch buy cost 100 => 150
-	-Wheat buy cost 115 => 90, sell cost 40 => 30
-	-Bread sell cost 20 => 10
-	-Cheese sell cost 20 => 10
-	-Meat sell cost 20 => 10
-	-Fruit sell cost 20 => 10
-	-Beer buy cost 100 => 150
-	-Flour buy cost 160 => 150
-	-Bows buy cost 155 => 150, sell cost 75 => 30
-	-Crossbows buy cost 290 => 250, sell cost 150 => 50
-	-Spears sell cost 50 => 20
-	-Pikes buy cost 180 => 200, sell cost 90 => 40
-	-Maces buy cost 290 => 300, sell cost 150 => 60
-	-Swords buy cost 290 => 300, sell cost 150 => 60
-	-Leather buy cost 125 => 200, sell cost 60 => 40
-	-Armor buy cost 290 => 300, sell cost 150 => 60
+-Hop:
+	-Buy 75 => 90
+	-Sell 40 => 30
+	
+-Stone
+	-Buy 70 => 60
+	-Sell 35 => 20
+	
+-Iron
+	-Buy 225 => 150
+	-Sell 115 => 50
+	
+-Pitch
+	-Buy 100 => 150
+	
+-Wheat
+	-Buy 115 => 90
+	-Sell 40 => 30
+	
+-Bread
+	-Sell 20 => 10
+	
+-Cheese
+	-Sell 20 => 10
+	
+-Meat
+	-Sell 20 => 10
+	
+-Fruit
+	-Sell 20 => 10
+	
+-Beer
+	-Buy 100 => 150
+	
+-Flour
+	-Buy 160 => 150
+	
+-Bows
+	-Buy 155 => 150
+	-Sell 75 => 30
+	
+-Crossbows
+	-Buy 290 => 250
+	-Sell 150 => 50
+	
+-Spears
+	-Sell 50 => 20
+	
+-Pikes
+	-Buy 180 => 200
+	-Sell 90 => 40
+	
+-Maces
+	-Buy 290 => 300
+	-Sell 150 => 60
+	
+-Swords
+	-Buy 290 => 300
+	-Sell 150 => 60
+	
+-Leather
+	-Buy 125 => 200
+	-Sell 60 => 40
+	
+-Armor
+	-Buy 290 => 300
+	-Sell 150 => 60
 	",
-	"Prices": {
+	"Resources": {
 		"Wood": {
 			"Buy": 20,
-			"Sell": 5
+			"Sell": 5,
+			"BaseDelivery": 12
 		},
 		"Hop": {
 			"Buy": 90,
-			"Sell": 30
+			"Sell": 30,
+			"BaseDelivery": 1
 		},
 		"Stone": {
 			"Buy": 60,
-			"Sell": 20
+			"Sell": 20,
+			"BaseDelivery": 8
 		},
 		"Iron": {
 			"Buy": 150,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Pitch": {
 			"Buy": 150,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Wheat": {
 			"Buy": 90,
-			"Sell": 30
+			"Sell": 30,
+			"BaseDelivery": 2
 		},
 		"Bread": {
 			"Buy": 40,
-			"Sell": 10
+			"Sell": 10,
+			"BaseDelivery": 8
 		},
 		"Cheese": {
 			"Buy": 40,
-			"Sell": 10
+			"Sell": 10,
+			"BaseDelivery": 3
 		},
 		"Meat": {
 			"Buy": 40,
-			"Sell": 10
+			"Sell": 10,
+			"BaseDelivery": 6
 		},
 		"Fruit": {
 			"Buy": 40,
-			"Sell": 10
+			"Sell": 10,
+			"BaseDelivery": 3
 		},
 		"Beer": {
 			"Buy": 150,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Flour": {
 			"Buy": 150,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Bows": {
 			"Buy": 150,
-			"Sell": 30
+			"Sell": 30,
+			"BaseDelivery": 1
 		},
 		"Crossbows": {
 			"Buy": 250,
-			"Sell": 50
+			"Sell": 50,
+			"BaseDelivery": 1
 		},
 		"Spears": {
 			"Buy": 100,
-			"Sell": 20
+			"Sell": 20,
+			"BaseDelivery": 1
 		},
 		"Pikes": {
 			"Buy": 200,
-			"Sell": 40
+			"Sell": 40,
+			"BaseDelivery": 1
 		},
 		"Maces": {
 			"Buy": 300,
-			"Sell": 60
+			"Sell": 60,
+			"BaseDelivery": 1
 		},
 		"Swords": {
 			"Buy": 300,
-			"Sell": 60
+			"Sell": 60,
+			"BaseDelivery": 1
 		},
 		"Leather": {
 			"Buy": 200,
-			"Sell": 40
+			"Sell": 40,
+			"BaseDelivery": 1
 		},
 		"Armor": {
 			"Buy": 300,
-			"Sell": 60
+			"Sell": 60,
+			"BaseDelivery": 1
 		}
 	}
 }

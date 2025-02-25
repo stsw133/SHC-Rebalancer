@@ -47,30 +47,30 @@ internal static class StorageService
 
         return baseAddresses;
     }
-    
+
+    /// KnownConfigTypes
+    internal static (string key, Type modelType)[] KnownConfigTypes =
+    [
+        ("options", typeof(OptionsConfigModel)),
+        ("aic", typeof(AicConfigModel)),
+        ("aiv", typeof(AivConfigModel)),
+        ("goods", typeof(GoodsConfigModel)),
+        ("troops", typeof(TroopsConfigModel)),
+        ("buildings", typeof(BuildingsConfigModel)),
+        ("outposts", typeof(OutpostsConfigModel)),
+        ("popularity", typeof(PopularityConfigModel)),
+        ("resources", typeof(ResourcesConfigModel)),
+        ("units", typeof(UnitsConfigModel)),
+        ("skirmishtrail", typeof(SkirmishTrailConfigModel)),
+        ("customs", typeof(CustomsConfigModel))
+    ];
+
     /// LoadConfigs
     internal static Dictionary<string, ObservableCollection<object>> LoadConfigs(string? type = null, string? name = null)
     {
         var configs = new Dictionary<string, ObservableCollection<object>>();
 
-        if (type == null || type == "aiv")
-            LoadAivConfigs(configs);
-
-        var knownTypes = new (string key, Type modelType)[]
-        {
-            ("options", typeof(OptionsConfigModel)),
-            ("aic", typeof(AicConfigModel)),
-            ("goods", typeof(GoodsConfigModel)),
-            ("troops", typeof(TroopsConfigModel)),
-            ("buildings", typeof(BuildingsConfigModel)),
-            ("popularity", typeof(PopularityConfigModel)),
-            ("resources", typeof(ResourcesConfigModel)),
-            ("units", typeof(UnitsConfigModel)),
-            ("skirmishtrail", typeof(SkirmishTrailConfigModel)),
-            ("customs", typeof(CustomsConfigModel))
-        };
-
-        foreach (var (folderKey, modelType) in knownTypes)
+        foreach (var (folderKey, modelType) in KnownConfigTypes)
         {
             if (type != null && type != folderKey)
                 continue;
@@ -101,63 +101,10 @@ internal static class StorageService
         return configs;
     }
 
-    /// LoadAivConfigs
-    private static void LoadAivConfigs(Dictionary<string, ObservableCollection<object>> configs)
-    {
-        configs.TryAdd("aiv", []);
-
-        var aivRoot = Path.Combine(ConfigsPath, "aiv");
-        if (!Directory.Exists(aivRoot))
-            return;
-
-        foreach (var directoryPath in Directory.GetDirectories(aivRoot))
-        {
-            var aivs = new Dictionary<AI, ObservableCollection<AivModel>>();
-            foreach (var filePath in Directory.GetFiles(directoryPath, "*.aiv"))
-            {
-                var fileName = Path.GetFileNameWithoutExtension(filePath);
-                var aiName = string.Concat(fileName.Where(char.IsLetter)).Capitalize();
-                var ai = Enum.Parse<AI>(aiName);
-
-                aivs.TryAdd(ai, []);
-                aivs[ai].Add(new AivModel
-                {
-                    Name = fileName,
-                    FilePath = filePath
-                });
-            }
-
-            var images = new Dictionary<string, string>();
-            if (Directory.Exists(Path.Combine(directoryPath, "Images")))
-                images = Directory.GetFiles(Path.Combine(directoryPath, "Images"), "*.webp").Select(x => new KeyValuePair<string, string>(Path.GetFileNameWithoutExtension(x), x)).ToDictionary();
-
-            configs["aiv"].Add(new AivConfigModel
-            {
-                Name = new DirectoryInfo(directoryPath).Name,
-                AIs = aivs,
-                Images = images
-            });
-        }
-    }
-
     /// SaveConfigs
     internal static void SaveConfigs()
     {
-        var knownTypes = new (string key, Type modelType)[]
-        {
-            ("options", typeof(OptionsConfigModel)),
-            ("aic", typeof(AicConfigModel)),
-            ("goods", typeof(GoodsConfigModel)),
-            ("troops", typeof(TroopsConfigModel)),
-            ("buildings", typeof(BuildingsConfigModel)),
-            ("popularity", typeof(PopularityConfigModel)),
-            ("resources", typeof(ResourcesConfigModel)),
-            ("units", typeof(UnitsConfigModel)),
-            ("skirmishtrail", typeof(SkirmishTrailConfigModel)),
-            ("customs", typeof(CustomsConfigModel))
-        };
-
-        foreach (var (folderKey, modelType) in knownTypes)
+        foreach (var (folderKey, modelType) in KnownConfigTypes)
         {
             if (!Configs.ContainsKey(folderKey))
                 continue;
@@ -237,7 +184,7 @@ internal static class StorageService
             options.Converters.Add(new JsonStringEnumConverter<Resource>());
             options.Converters.Add(new JsonStringEnumConverter<Unit>());
         }
-        else if (folderKey == "buildings")
+        else if (folderKey == "outposts")
         {
             options.Converters.Add(new JsonStringEnumConverter<Unit>());
         }

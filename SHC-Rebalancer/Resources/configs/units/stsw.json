@@ -1,12 +1,18 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP
 	
+-General:
+	-Almost all troops have their damage vs walls set to 8% of their base melee damage
+	-Almost all troops have their damage vs towers set to 75% of their damage vs walls
+	-Almost all troops have their damage vs buildings set to 60% of their base melee damage (half for ranged units)
+	
 -EuropArcher:
 	-Cost 12 => 15
 	-DamageFromCrossbow 15000 => 8000 (1 => 2 shots)
 	
 -Spearman:
 	-Cost 8 => 10
+	-AlwaysRun No => Yes
 	-DamageFromBow 3500 => 2000 (3 => 5 shots)
 	-DamageFromCrossbow 15000 => 8000 (1 => 2 shots)
 	-DamageFromSling 1800 => 1500 (6 => 7 shots)
@@ -166,17 +172,16 @@
 	
 -SiegeTower:
 	-Speed penalty 3 => 6
-	-Health 240000 => 180000 (-33%)
-	-DamageFromBow 3000 => 500 (80 => 360 shots)
-	-DamageFromCrossbow 8000 => 1000 (30 => 180 shots)
-	-DamageFromSling 2000 => 350 (120 => 515 shots)
+	-Health 240000 => 150000 (-38%)
+	-DamageFromBow 3000 => 500 (80 => 300 shots)
+	-DamageFromCrossbow 8000 => 1000 (30 => 150 shots)
+	-DamageFromSling 2000 => 350 (120 => 429 shots)
 	
 -BatteringRam:
 	-Speed penalty 3 => 4
-	-Health 150000 => 180000 (+20%)
-	-DamageFromBow 3000 => 500 (50 => 360 shots)
-	-DamageFromCrossbow 8000 => 1000 (19 => 180 shots)
-	-DamageFromSling 2000 => 350 (75 => 515 shots)
+	-DamageFromBow 3000 => 500 (50 => 300 shots)
+	-DamageFromCrossbow 8000 => 1000 (19 => 150 shots)
+	-DamageFromSling 2000 => 350 (75 => 429 shots)
 	
 -PortableShield:
 	-Speed penalty 1 => 4
@@ -247,6 +252,7 @@
 		"EuropArcher": {
 			"Cost": 15,
 			"Speed": 1,
+			"AlwaysRun": true,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 10000,
@@ -256,11 +262,15 @@
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 10
+			"MeleeDamage": 10,
+			"MeleeDamageToBuildings": 3,
+			"MeleeDamageToTowers": 1,
+			"MeleeDamageToWalls": 1,
 		},
 		"Spearman": {
 			"Cost": 10,
 			"Speed": 1,
+			"AlwaysRun": true,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 10000,
@@ -275,11 +285,15 @@
 				"Knight": 45,
 				"HorseArcher": 55,
 				"Ladderman": 100
-			}
+			},
+			"MeleeDamageToBuildings": 15,
+			"MeleeDamageToTowers": 2,
+			"MeleeDamageToWalls": 2,
 		},
 		"Maceman": {
 			"Cost": 30,
 			"Speed": 1,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 20000,
@@ -300,11 +314,15 @@
 				"FireBallista": 150,
 				"TowerBallista": 150,
 				"Mangonel": 150
-			}
+			},
+			"MeleeDamageToBuildings": 45,
+			"MeleeDamageToTowers": 5,
+			"MeleeDamageToWalls": 6,
 		},
 		"Crossbowman": {
 			"Cost": 30,
 			"Speed": 2,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 15000,
@@ -314,11 +332,15 @@
 			"CanDigMoat": false,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 10
+			"MeleeDamage": 10,
+			"MeleeDamageToBuildings": 3,
+			"MeleeDamageToTowers": 1,
+			"MeleeDamageToWalls": 1,
 		},
 		"Pikeman": {
 			"Cost": 30,
 			"Speed": 2,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 60000,
@@ -333,11 +355,15 @@
 				"Knight": 55,
 				"HorseArcher": 45,
 				"Ladderman": 100
-			}
+			},
+			"MeleeDamageToBuildings": 15,
+			"MeleeDamageToTowers": 2,
+			"MeleeDamageToWalls": 2,
 		},
 		"Swordsman": {
 			"Cost": 50,
 			"Speed": 3,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 30000,
@@ -354,11 +380,15 @@
 				"Swordsman": 50,
 				"Knight": 50,
 				"ArabSwordsman": 75
-			}
+			},
+			"MeleeDamageToBuildings": 60,
+			"MeleeDamageToTowers": 6,
+			"MeleeDamageToWalls": 8,
 		},
 		"Knight": {
 			"Cost": 100,
 			"Speed": 1,
+			"AlwaysRun": false,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
 			"Health": 25000,
@@ -375,11 +405,15 @@
 				"Swordsman": 50,
 				"Knight": 50,
 				"ArabSwordsman": 75
-			}
+			},
+			"MeleeDamageToBuildings": 60,
+			"MeleeDamageToTowers": 6,
+			"MeleeDamageToWalls": 8,
 		},
 		"ArabArcher": {
 			"Cost": 60,
 			"Speed": 1,
+			"AlwaysRun": true,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 12500,
@@ -389,11 +423,15 @@
 			"CanDigMoat": false,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 10
+			"MeleeDamage": 10,
+			"MeleeDamageToBuildings": 3,
+			"MeleeDamageToTowers": 1,
+			"MeleeDamageToWalls": 1,
 		},
 		"Slave": {
 			"Cost": 10,
 			"Speed": 1,
+			"AlwaysRun": true,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 5000,
@@ -403,11 +441,15 @@
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 10
+			"MeleeDamage": 10,
+			"MeleeDamageToBuildings": 6,
+			"MeleeDamageToTowers": 0,
+			"MeleeDamageToWalls": 0,
 		},
 		"Slinger": {
 			"Cost": 15,
 			"Speed": 1,
+			"AlwaysRun": true,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 7500,
@@ -417,11 +459,15 @@
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 10
+			"MeleeDamage": 10,
+			"MeleeDamageToBuildings": 3,
+			"MeleeDamageToTowers": 1,
+			"MeleeDamageToWalls": 1,
 		},
 		"Assassin": {
 			"Cost": 60,
 			"Speed": 1,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 15000,
@@ -458,11 +504,15 @@
 				"FireBallista": 80,
 				"TowerBallista": 80,
 				"Mangonel": 80
-			}
+			},
+			"MeleeDamageToBuildings": 45,
+			"MeleeDamageToTowers": 5,
+			"MeleeDamageToWalls": 6,
 		},
 		"HorseArcher": {
 			"Cost": 90,
 			"Speed": 1,
+			"AlwaysRun": false,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
 			"Health": 12500,
@@ -472,11 +522,15 @@
 			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 10
+			"MeleeDamage": 10,
+			"MeleeDamageToBuildings": 3,
+			"MeleeDamageToTowers": 1,
+			"MeleeDamageToWalls": 1,
 		},
 		"ArabSwordsman": {
 			"Cost": 90,
 			"Speed": 2,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 22500,
@@ -493,11 +547,15 @@
 				"Swordsman": 60,
 				"Knight": 60,
 				"ArabSwordsman": 75
-			}
+			},
+			"MeleeDamageToBuildings": 54,
+			"MeleeDamageToTowers": 5,
+			"MeleeDamageToWalls": 7,
 		},
 		"Firethrower": {
 			"Cost": 120,
 			"Speed": 2,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 10000,
@@ -507,11 +565,15 @@
 			"CanDigMoat": false,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 10
+			"MeleeDamage": 10,
+			"MeleeDamageToBuildings": 3,
+			"MeleeDamageToTowers": 1,
+			"MeleeDamageToWalls": 1,
 		},
 		"Engineer": {
 			"Cost": 30,
 			"Speed": 1,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 10000,
@@ -526,6 +588,7 @@
 		"Ladderman": {
 			"Cost": 20,
 			"Speed": 1,
+			"AlwaysRun": true,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
 			"Health": 7500,
@@ -540,6 +603,7 @@
 		"Tunneler": {
 			"Cost": 30,
 			"Speed": 1,
+			"AlwaysRun": true,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 10000,
@@ -549,11 +613,15 @@
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 20
+			"MeleeDamage": 20,
+			"MeleeDamageToBuildings": 12,
+			"MeleeDamageToTowers": 3,
+			"MeleeDamageToWalls": 4,
 		},
 		"Monk": {
 			"Cost": 20,
 			"Speed": 2,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 15000,
@@ -563,10 +631,14 @@
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 50
+			"MeleeDamage": 50,
+			"MeleeDamageToBuildings": 15,
+			"MeleeDamageToTowers": 3,
+			"MeleeDamageToWalls": 4,
 		},
 		"WarDog": {
 			"Speed": 1,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 7500,
@@ -583,6 +655,7 @@
 		},
 		"Lord": {
 			"Speed": 2,
+			"AlwaysRun": false,
 			"CanGoOnWall": true,
 			"CanBeMoved": true,
 			"Health": 150000,
@@ -592,10 +665,14 @@
 			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 100
+			"MeleeDamage": 100,
+			"MeleeDamageToBuildings": 60,
+			"MeleeDamageToTowers": 6,
+			"MeleeDamageToWalls": 8,
 		},
 		"Catapult": {
 			"Speed": 6,
+			"AlwaysRun": true,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
 			"Health": 20000,
@@ -622,9 +699,10 @@
 		},
 		"SiegeTower": {
 			"Speed": 6,
+			"AlwaysRun": true,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
-			"Health": 180000,
+			"Health": 150000,
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 350,
@@ -635,19 +713,24 @@
 		},
 		"BatteringRam": {
 			"Speed": 4,
+			"AlwaysRun": false,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
-			"Health": 180000,
+			"Health": 150000,
 			"DamageFromBow": 500,
 			"DamageFromCrossbow": 1000,
 			"DamageFromSling": 350,
 			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": false,
-			"MeleeDamage": 2
+			"MeleeDamage": 2,
+			"MeleeDamageToBuildings": 50,
+			"MeleeDamageToTowers": 50,
+			"MeleeDamageToWalls": 50,
 		},
 		"PortableShield": {
 			"Speed": 4,
+			"AlwaysRun": true,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
 			"Health": 10000,
@@ -661,6 +744,7 @@
 		},
 		"FireBallista": {
 			"Speed": 5,
+			"AlwaysRun": false,
 			"CanGoOnWall": false,
 			"CanBeMoved": true,
 			"Health": 20000,

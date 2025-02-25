@@ -15,36 +15,42 @@
                              SelectedItem="{Binding SelectedConfigs[goods], Mode=OneWayToSource}"
                              SelectedValue="{Binding SelectedConfigs[goods], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
+        <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
+        <DockPanel Margin="-3">
+            <!-- selector -->
+            <se:StswSegment x:Name="GoodsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[goods].Goods}" Orientation="Vertical" Width="100">
+                <se:StswSegment.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                            <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </se:StswSegment.ItemTemplate>
+            </se:StswSegment>
+            <!-- data -->
+            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=GoodsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                <StackPanel DataContext="{Binding SelectedItem.Value, ElementName=GoodsSelector}" Margin="3" VerticalAlignment="Center" Width="500">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type se:StswIntegerBox}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="3"/>
+                        </Style>
+                        <Style TargetType="{x:Type se:StswLabel}">
+                            <Setter Property="FontWeight" Value="Medium"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                            <Setter Property="Width" Value="100"/>
+                        </Style>
+                    </StackPanel.Resources>
 
-        <se:StswTabControl Margin="3" TabStripPlacement="Left">
-            <!-- goods -->
-            <se:StswTabItem>
-                <se:StswTabItem.Header>
-                    <se:StswLabel Content="Goods" IconSource="/Images/resources/Wood.png"/>
-                </se:StswTabItem.Header>
-                <DockPanel Margin="-3">
-                    <!-- selector -->
-                    <se:StswSegment x:Name="GoodsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[goods].Goods}" Orientation="Vertical" Width="100">
-                        <se:StswSegment.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
-                                    <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </se:StswSegment.ItemTemplate>
-                    </se:StswSegment>
-                    <!-- data -->
-                    <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=GoodsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
-                        <se:StswLabelPanel DataContext="{Binding SelectedItem.Value, ElementName=GoodsSelector}"
-                                           LabelFontWeight="Medium"
-                                           LabelHorizontalAlignment="Right"
-                                           Margin="3"
-                                           VerticalAlignment="Center"
-                                           Width="500">
+                    <!-- gold -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="GOLD" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
 
-                            <se:StswLabel/>
-                            <UniformGrid Height="16" Margin="3" Rows="1">
+                        <StackPanel>
+                            <UniformGrid Height="16" HorizontalAlignment="Right" Margin="3" Rows="1" Width="400">
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/VEasy.png"/>
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/Easy.png"/>
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/Medium.png"/>
@@ -52,88 +58,141 @@
                                 <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/VHard.png"/>
                             </UniformGrid>
 
-                            <se:StswLabel Content="Human gold:" IconSource="/Images/resources/Gold.png"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.Human[0]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.Human[1]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.Human[2]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.Human[3]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.Human[4]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="Human gold:" IconSource="/Images/resources/Gold.png"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.Human[0]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.Human[1]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.Human[2]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.Human[3]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.Human[4]}"/>
+                                </UniformGrid>
+                            </DockPanel>
 
-                            <se:StswLabel Content="AI gold:" IconSource="/Images/resources/Gold.png"/>
-                            <UniformGrid Rows="1">
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.AI[0]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.AI[1]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.AI[2]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.AI[3]}"/>
-                                <se:StswIntegerBox HorizontalContentAlignment="Center" Margin="3" Value="{Binding Gold.AI[4]}"/>
-                            </UniformGrid>
+                            <DockPanel>
+                                <se:StswLabel Content="AI gold:" IconSource="/Images/resources/Gold.png"/>
+                                <UniformGrid Rows="1">
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.AI[0]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.AI[1]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.AI[2]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.AI[3]}"/>
+                                    <se:StswIntegerBox Minimum="0" Value="{Binding Gold.AI[4]}"/>
+                                </UniformGrid>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
 
-                            <se:StswLabel Content="Wood:" IconSource="/Images/resources/Wood.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Wood]}"/>
+                    <!-- resources -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="RESOURCES" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
 
-                            <se:StswLabel Content="Hop:" IconSource="/Images/resources/Hop.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Hop]}"/>
+                        <StackPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Wood:" IconSource="/Images/resources/Wood.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Wood]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Stone:" IconSource="/Images/resources/Stone.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Stone]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Hop:" IconSource="/Images/resources/Hop.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Hop]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Iron:" IconSource="/Images/resources/Iron.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Iron]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Stone:" IconSource="/Images/resources/Stone.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Stone]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Pitch:" IconSource="/Images/resources/Pitch.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Pitch]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Iron:" IconSource="/Images/resources/Iron.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Iron]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Wheat:" IconSource="/Images/resources/Wheat.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Wheat]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Pitch:" IconSource="/Images/resources/Pitch.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Pitch]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Bread:" IconSource="/Images/resources/Bread.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Bread]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Wheat:" IconSource="/Images/resources/Wheat.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Wheat]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Cheese:" IconSource="/Images/resources/Cheese.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Cheese]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Bread:" IconSource="/Images/resources/Bread.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Bread]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Meat:" IconSource="/Images/resources/Meat.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Meat]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Cheese:" IconSource="/Images/resources/Cheese.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Cheese]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Fruit:" IconSource="/Images/resources/Fruit.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Fruit]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Meat:" IconSource="/Images/resources/Meat.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Meat]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Beer:" IconSource="/Images/resources/Beer.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Beer]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Fruit:" IconSource="/Images/resources/Fruit.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Fruit]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Flour:" IconSource="/Images/resources/Flour.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Flour]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Beer:" IconSource="/Images/resources/Beer.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Beer]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Bows:" IconSource="/Images/resources/Bows.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Bows]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Flour:" IconSource="/Images/resources/Flour.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Flour]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Crossbows:" IconSource="/Images/resources/Crossbows.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Crossbows]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Bows:" IconSource="/Images/resources/Bows.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Bows]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Spears:" IconSource="/Images/resources/Spears.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Spears]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Crossbows:" IconSource="/Images/resources/Crossbows.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Crossbows]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Pikes:" IconSource="/Images/resources/Pikes.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Pikes]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Spears:" IconSource="/Images/resources/Spears.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Spears]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Maces:" IconSource="/Images/resources/Maces.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Maces]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Pikes:" IconSource="/Images/resources/Pikes.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Pikes]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Swords:" IconSource="/Images/resources/Swords.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Swords]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Maces:" IconSource="/Images/resources/Maces.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Maces]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Leather:" IconSource="/Images/resources/Leather.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Leather]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Swords:" IconSource="/Images/resources/Swords.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Swords]}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Armor:" IconSource="/Images/resources/Armor.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Resources[Armor]}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Leather:" IconSource="/Images/resources/Leather.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Leather]}"/>
+                            </DockPanel>
 
-                        </se:StswLabelPanel>
-                    </se:StswScrollView>
-                </DockPanel>
-            </se:StswTabItem>
-        </se:StswTabControl>
+                            <DockPanel>
+                                <se:StswLabel Content="Armor:" IconSource="/Images/resources/Armor.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Armor]}"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
+
+                </StackPanel>
+            </se:StswScrollView>
+        </DockPanel>
     </DockPanel>
 </UserControl>

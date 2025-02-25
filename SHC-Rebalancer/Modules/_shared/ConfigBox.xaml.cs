@@ -48,17 +48,17 @@ public partial class ConfigBox : StswComboBox
             {
                 menuButton.DataContext = this;
 
-                var buttons = menuButton.Items.Cast<StswButton>().ToList();
-                for (var i = menuButton.Items.Count - 1; i >= 0; i--)
-                {
-                    if (buttons[i].Tag == null)
-                        continue;
-
-                    if (Type == "aiv" && buttons[i].Tag.ToString() != "aiv")
-                        menuButton.Items.Remove(buttons[i]);
-                    else if (Type != "aiv" && buttons[i].Tag.ToString() == "aiv")
-                        menuButton.Items.Remove(buttons[i]);
-                }
+                //var buttons = menuButton.Items.Cast<StswButton>().ToList();
+                //for (var i = menuButton.Items.Count - 1; i >= 0; i--)
+                //{
+                //    if (buttons[i].Tag == null)
+                //        continue;
+                //
+                //    if (Type == "aiv" && buttons[i].Tag.ToString() != "aiv")
+                //        menuButton.Items.Remove(buttons[i]);
+                //    else if (Type != "aiv" && buttons[i].Tag.ToString() == "aiv")
+                //        menuButton.Items.Remove(buttons[i]);
+                //}
             }
         }
     }
@@ -153,6 +153,8 @@ public partial class ConfigBox : StswComboBox
         try
         {
             var directoryPath = Path.Combine(StorageService.ConfigsPath, Type, SettingsService.Instance.Settings.SelectedConfigs[Type] ?? string.Empty);
+            if (!Directory.Exists(directoryPath))
+                directoryPath = Path.Combine(StorageService.ConfigsPath, Type);
 
             if (!Directory.Exists(directoryPath))
                 throw new IOException("Directory for selected config does not exist!");

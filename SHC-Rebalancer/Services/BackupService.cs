@@ -56,11 +56,11 @@ internal static class BackupService
             return;
 
         var filesToArchive = new List<string>();
-        foreach (var enumValue in Enum.GetValues(typeof(AI)))
+        foreach (var ai in Enum.GetValues<AI>())
         {
             for (var i = 1; i <= 8; i++)
             {
-                var fileName = $"{enumValue}{i}.aiv";
+                var fileName = $"{ai}{i}.aiv";
                 var filePath = Path.Combine(StorageService.AivPath, fileName);
                 if (File.Exists(filePath))
                     filesToArchive.Add(filePath);

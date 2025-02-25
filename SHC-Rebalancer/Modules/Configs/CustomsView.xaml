@@ -11,42 +11,33 @@
         <!-- configs -->
         <DockPanel DockPanel.Dock="Top">
             <se:StswLabel Content="Selected config:" FontWeight="Bold" Margin="3"/>
-            <local:ConfigBox x:Name="CustomsSelector"
-                             ItemsSource="{Binding [customs], Source={x:Static local:StorageService.Configs}}"
+            <local:ConfigBox ItemsSource="{Binding [customs], Source={x:Static local:StorageService.Configs}}"
                              SelectedItem="{Binding SelectedConfigs[customs], Mode=OneWayToSource}"
                              SelectedValue="{Binding SelectedConfigs[customs], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
-        <se:StswTabControl Margin="3" TabStripPlacement="Left">
-            <!-- customs -->
-            <se:StswTabItem>
-                <se:StswTabItem.Header>
-                    <se:StswLabel Content="Customs" IconData="{x:Static se:StswIcons.Variable}"/>
-                </se:StswTabItem.Header>
-                <DockPanel Margin="-3">
-                    <!-- data -->
-                    <se:StswDataGrid Background="#3777"
-                                     BorderThickness="0"
-                                     CanUserAddRows="True"
-                                     CanUserDeleteRows="True"
-                                     FrozenColumnCount="1"
-                                     IsReadOnly="{Binding SelectedItem.Name, ElementName=CustomsSelector, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=vanilla}"
-                                     ItemsSource="{Binding SelectedConfigs[customs].Values}">
-                        <se:StswDataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
-                                <DataGridTextColumn.Header>
-                                    <se:StswLabel Content="Key"/>
-                                </DataGridTextColumn.Header>
-                            </DataGridTextColumn>
-                            <se:StswDataGridTextColumn Binding="{Binding Address}" Header="Address"/>
-                            <se:StswDataGridDecimalColumn Binding="{Binding Size}" Header="Size"/>
-                            <se:StswDataGridTextColumn Binding="{Binding Value}" Header="Value"/>
-                            <se:StswDataGridComboColumn SelectedValueBinding="{Binding Version}" Header="Version" ItemsSource="{se:StswEnumToList local:GameVersion}"/>
-                            <se:StswDataGridTextColumn Binding="{Binding Description}" Header="Description" Width="*"/>
-                            <se:StswDataGridCheckColumn Binding="{Binding IsEnabled}" Header="Is enabled"/>
-                        </se:StswDataGrid.Columns>
-                    </se:StswDataGrid>
-                </DockPanel>
-            </se:StswTabItem>
-        </se:StswTabControl>
+        <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
+        <DockPanel Margin="-3">
+            <!-- data -->
+            <se:StswDataGrid Background="#3777"
+                             BorderThickness="0"
+                             CanUserAddRows="True"
+                             CanUserDeleteRows="True"
+                             FrozenColumnCount="1"
+                             ItemsSource="{Binding SelectedConfigs[customs].Values}">
+                <se:StswDataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
+                        <DataGridTextColumn.Header>
+                            <se:StswLabel Content="Key"/>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <se:StswDataGridTextColumn Binding="{Binding Address}" Header="Address"/>
+                    <se:StswDataGridDecimalColumn Binding="{Binding Size}" Header="Size"/>
+                    <se:StswDataGridTextColumn Binding="{Binding Value}" Header="Value"/>
+                    <se:StswDataGridComboColumn SelectedValueBinding="{Binding Version}" Header="Version" ItemsSource="{se:StswEnumToList local:GameVersion}"/>
+                    <se:StswDataGridTextColumn Binding="{Binding Description}" Header="Description" Width="*"/>
+                    <se:StswDataGridCheckColumn Binding="{Binding IsEnabled}" Header="Is enabled"/>
+                </se:StswDataGrid.Columns>
+            </se:StswDataGrid>
+        </DockPanel>
     </DockPanel>
 </UserControl>

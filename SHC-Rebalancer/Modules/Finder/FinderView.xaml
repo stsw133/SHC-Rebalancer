@@ -44,60 +44,86 @@
 
         <!-- filters -->
         <se:StswScrollView>
-            <se:StswLabelPanel LabelFontWeight="Medium"
-                               LabelHorizontalAlignment="Right"
-                               Margin="3"
-                               Orientation="Horizontal"
-                               VerticalAlignment="Center"
-                               Width="500">
-                
-                <se:StswLabel Content="Edit mode:"/>
-                <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding IsEditModeEnabled}"/>
+            <StackPanel Margin="3" Orientation="Vertical" VerticalAlignment="Center" Width="500">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type se:StswComboBox}">
+                        <Setter Property="Margin" Value="3"/>
+                    </Style>
+                    <Style TargetType="{x:Type se:StswIntegerBox}">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="3"/>
+                    </Style>
+                    <Style TargetType="{x:Type se:StswLabel}">
+                        <Setter Property="FontWeight" Value="Medium"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                        <Setter Property="Width" Value="100"/>
+                    </Style>
+                    <Style TargetType="{x:Type se:StswSlider}">
+                        <Setter Property="IsSelectionRangeEnabled" Value="True"/>
+                        <Setter Property="IsSnapToTickEnabled" Value="True"/>
+                        <Setter Property="Margin" Value="3 7"/>
+                        <Setter Property="SelectionEnd" Value="{Binding Value, RelativeSource={RelativeSource Self}}"/>
+                    </Style>
+                    <Style TargetType="{x:Type se:StswText}">
+                        <Setter Property="TextAlignment" Value="Center"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="{x:Type se:StswTextBox}">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="3"/>
+                    </Style>
+                    <Style TargetType="{x:Type se:StswToggleSwitch}">
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                        <Setter Property="Margin" Value="3"/>
+                    </Style>
+                </StackPanel.Resources>
 
-                <se:StswLabel Content="Game type:"/>
-                <se:StswComboBox ItemsSource="{se:StswEnumToList local:GameVersion}"
-                                 Margin="3"
-                                 Placeholder="Select Stronghold game to search through..."
-                                 SelectedValue="{Binding FinderFilterVersion}"/>
+                <!-- parameters -->
+                <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                    <se:StswGroupBox.Header>
+                        <se:StswLabel Content="PARAMETERS" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                    </se:StswGroupBox.Header>
 
-                <se:StswLabel Content="Size:"/>
-                <UniformGrid HorizontalAlignment="Left" Margin="3" Rows="1">
-                    <se:StswRadioBox Content="byte"
-                                     IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=1}"
-                                     Margin="0 0 3 0"/>
-                    <se:StswRadioBox Content="short"
-                                     IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=2}"
-                                     Margin="0 0 3 0"/>
-                    <se:StswRadioBox Content="int"
-                                     IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=4}"
-                                     Margin="0 0 3 0"/>
-                </UniformGrid>
+                    <StackPanel>
+                        <DockPanel>
+                            <se:StswLabel Content="Edit mode:"/>
+                            <se:StswToggleSwitch IsChecked="{Binding IsEditModeEnabled}"/>
+                            <se:StswText FontSize="11" FontStyle="Italic" Text="← Remember to have a backup of .exe files (or installed Rebalancer)."/>
+                        </DockPanel>
 
-                <se:StswLabel Content="Address:"/>
-                <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
-                    <se:StswIntegerBox DockPanel.Dock="Right"
-                                       Margin="3"
-                                       Placeholder="Skip bytes..."
-                                       Value="{Binding FinderFilterSkips}"
-                                       Width="125"/>
-                    <se:StswTextBox Margin="3"
-                                    Placeholder="Initial address to find..."
-                                    Text="{Binding FinderFilterAddress}"/>
-                </DockPanel>
+                        <DockPanel>
+                            <se:StswLabel Content="Game type:"/>
+                            <se:StswComboBox ItemsSource="{se:StswEnumToList local:GameVersion}" Placeholder="Select Stronghold game to search through..." SelectedValue="{Binding FinderFilterVersion}"/>
+                        </DockPanel>
 
-                <se:StswLabel Content="Values:"/>
-                <se:StswTextBox IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}"
-                                Margin="3"
-                                Placeholder="Sequence of values to find... (separated by commas)"
-                                Text="{Binding FinderFilterValues}"/>
-                
-                <se:StswLabel Content="Limit:"/>
-                <StackPanel Margin="3" IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
-                    <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding FinderFilterLimit, Mode=OneWay}"/>
-                    <se:StswSlider Minimum="10" Maximum="1000" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionEnd="{Binding Value, RelativeSource={RelativeSource Self}}" TickFrequency="10" Value="{Binding FinderFilterLimit, Delay=500}"/>
-                </StackPanel>
-                
-            </se:StswLabelPanel>
+                        <DockPanel>
+                            <se:StswLabel Content="Size:"/>
+                            <UniformGrid HorizontalAlignment="Left" Margin="3" Rows="1">
+                                <se:StswRadioBox Content="byte" IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=1}" Margin="0 0 3 0"/>
+                                <se:StswRadioBox Content="short" IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=2}" Margin="0 0 3 0"/>
+                                <se:StswRadioBox Content="int" IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=4}" Margin="0 0 3 0"/>
+                            </UniformGrid>
+                        </DockPanel>
+
+                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                            <se:StswLabel Content="Address:"/>
+                            <se:StswIntegerBox DockPanel.Dock="Right" Placeholder="Skip bytes..." Value="{Binding FinderFilterSkips}" Width="125"/>
+                            <se:StswTextBox MaxLength="8" Placeholder="Initial address to find..." Text="{Binding FinderFilterAddress}"/>
+                        </DockPanel>
+
+                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                            <se:StswLabel Content="Values:"/>
+                            <se:StswTextBox HorizontalContentAlignment="Left" Placeholder="Sequence of values to find... (separated by commas)" Text="{Binding FinderFilterValues}"/>
+                        </DockPanel>
+
+                        <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                            <se:StswLabel Content="Limit:"/>
+                            <se:StswIntegerBox Minimum="10" Maximum="1000" Placeholder="Set rows limit..." Value="{Binding FinderFilterLimit}"/>
+                        </DockPanel>
+                    </StackPanel>
+                </se:StswGroupBox>
+
+            </StackPanel>
         </se:StswScrollView>
     </DockPanel>
 </UserControl>

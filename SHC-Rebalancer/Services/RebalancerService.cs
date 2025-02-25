@@ -21,70 +21,88 @@ internal static class RebalancerService
             {
                 BinaryPatchService.Open(exePath.Value);
 
+                /// UCP
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} UCP config..." });
                 //await Task.Delay(50, CancellationToken.None);
                 if (SettingsService.Instance.Settings.IncludeUCP)
                     ProcessUcp(exePath.Key);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountUcpOperations(exePath.Key) });
 
+                /// Options
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Options config..." });
                 await Task.Delay(50, CancellationToken.None);
 				if (SettingsService.Instance.Settings.IncludeOptions)
-					if (StorageService.Configs["options"].Cast<IConfigModel>().FirstOrDefault() is OptionsConfigModel optionsConfig)
+					if (StorageService.Configs["options"].Cast<ConfigModel>().FirstOrDefault() is OptionsConfigModel optionsConfig)
 						ProcessOptionsConfig(exePath.Key, optionsConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<OptionsConfigModel>("options") });
 
+                /// AIC
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} AIC config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["aic"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aic"]) is AicConfigModel aicConfig)
+                if (StorageService.Configs["aic"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aic"]) is AicConfigModel aicConfig)
                     ProcessAicConfig(exePath.Key, aicConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<AicConfigModel>("aic") });
 
+                /// Goods
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Goods config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["goods"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["goods"]) is GoodsConfigModel goodsConfig)
+                if (StorageService.Configs["goods"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["goods"]) is GoodsConfigModel goodsConfig)
                     ProcessGoodsConfig(exePath.Key, goodsConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<GoodsConfigModel>("goods") });
 
+                /// Troops
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Troops config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["troops"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["troops"]) is TroopsConfigModel troopsConfig)
+                if (StorageService.Configs["troops"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["troops"]) is TroopsConfigModel troopsConfig)
                     ProcessTroopsConfig(exePath.Key, troopsConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<TroopsConfigModel>("troops") });
 
+                /// Buildings
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Buildings config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["buildings"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["buildings"]) is BuildingsConfigModel buildingsConfig)
+                if (StorageService.Configs["buildings"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["buildings"]) is BuildingsConfigModel buildingsConfig)
                     ProcessBuildingsConfig(exePath.Key, buildingsConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<BuildingsConfigModel>("buildings") });
+                
+                /// Outposts
+                StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Outposts config..." });
+                await Task.Delay(50, CancellationToken.None);
+                if (StorageService.Configs["outposts"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["outposts"]) is OutpostsConfigModel outpostsConfig)
+                    ProcessOutpostsConfig(exePath.Key, outpostsConfig);
+                StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<OutpostsConfigModel>("outposts") });
 
+                /// Popularity
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Popularity config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["popularity"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["popularity"]) is PopularityConfigModel popularityConfig)
+                if (StorageService.Configs["popularity"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["popularity"]) is PopularityConfigModel popularityConfig)
                     ProcessPopularityConfig(exePath.Key, popularityConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<PopularityConfigModel>("popularity") });
                 
+                /// Resources
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Resources config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["resources"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["resources"]) is ResourcesConfigModel resourcesConfig)
+                if (StorageService.Configs["resources"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["resources"]) is ResourcesConfigModel resourcesConfig)
                     ProcessResourcesConfig(exePath.Key, resourcesConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<ResourcesConfigModel>("resources") });
 
+                /// Units
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Units config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["units"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["units"]) is UnitsConfigModel unitsConfig)
+                if (StorageService.Configs["units"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["units"]) is UnitsConfigModel unitsConfig)
                     ProcessUnitsConfig(exePath.Key, unitsConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<UnitsConfigModel>("units") });
 
+                /// SkirmishTrail
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} SkirmishTrail config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["skirmishtrail"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["skirmishtrail"]) is SkirmishTrailConfigModel skirmishtrailModel)
+                if (StorageService.Configs["skirmishtrail"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["skirmishtrail"]) is SkirmishTrailConfigModel skirmishtrailModel)
                     ProcessSkirmishTrailConfig(exePath.Key, skirmishtrailModel);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<SkirmishTrailConfigModel>("skirmishtrail") });
 
+                /// Customs
                 StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing {exePath.Key} Customs config..." });
                 await Task.Delay(50, CancellationToken.None);
-                if (StorageService.Configs["customs"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["customs"]) is CustomsConfigModel customsConfig)
+                if (StorageService.Configs["customs"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["customs"]) is CustomsConfigModel customsConfig)
                     ProcessCustomsConfig(exePath.Key, customsConfig);
                 StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<CustomsConfigModel>("customs") });
             }
@@ -94,9 +112,10 @@ internal static class RebalancerService
             }
         }
 
+        /// AIV
         StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing AIV config..." });
         await Task.Delay(50, CancellationToken.None);
-        if (StorageService.Configs["aiv"].Cast<IConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aiv"]) is AivConfigModel aivConfig)
+        if (StorageService.Configs["aiv"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["aiv"]) is AivConfigModel aivConfig)
             ProcessAivConfig(aivConfig);
         StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<AivConfigModel>("aiv") });
     }
@@ -260,11 +279,36 @@ internal static class RebalancerService
             throw new DirectoryNotFoundException($"AIV directory '{config.Name}' not found.");
 
         Directory.CreateDirectory(StorageService.AivPath);
-        foreach (var file in Directory.GetFiles(sourceDirectory, "*.aiv"))
+        var files = config.Castles.ToList();
+
+        foreach (var ai in Enum.GetValues<AI>().Where(x => ((int)x).Between(1, 16)))
         {
-            var fileName = Path.GetFileName(file);
-            var destinationPath = Path.Combine(StorageService.AivPath, fileName);
-            File.Copy(file, destinationPath, overwrite: true);
+            var defaultFileName = files.FirstOrDefault(x => Path.GetFileNameWithoutExtension(x).StartsWith(ai.ToString(), StringComparison.InvariantCultureIgnoreCase));
+            if (defaultFileName == null)
+                continue;
+
+            for (var i = 1; i <= 8; i++)
+            {
+                var fileName = $"{ai}{i}.aiv".ToLower();
+                var filePath = Path.Combine(sourceDirectory, fileName);
+
+                if (files.Contains(filePath))
+                {
+                    File.Copy(filePath, Path.Combine(StorageService.AivPath, $"{ai}{i}.aiv".ToLower()), overwrite: true);
+                    continue;
+                }
+
+                if (config.ReplaceAllCastles && defaultFileName != null)
+                {
+                    filePath = Path.Combine(sourceDirectory, defaultFileName);
+
+                    if (files.Contains(filePath))
+                    {
+                        File.Copy(filePath, Path.Combine(StorageService.AivPath, $"{ai}{i}.aiv".ToLower()), overwrite: true);
+                        continue;
+                    }
+                }
+            }
         }
     }
 
@@ -333,9 +377,13 @@ internal static class RebalancerService
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("Buildings Cost", out baseAddress))
             foreach (var model in config.Buildings.Where(x => x.Value.Cost?.Length > 0))
                 BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Building>(baseAddress, model.Key.ToString(), model.Value.Cost!.Length), model.Value.Cost, baseAddress.Size, $"{model.Key} Cost");
-
+    }
+    
+    /// ProcessOutpostsConfig
+    private static void ProcessOutpostsConfig(GameVersion gameVersion, OutpostsConfigModel config)
+    {
         /// outposts
-        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Outposts", out baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Outposts", out var baseAddress))
         {
             var properties = typeof(OutpostModel)
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
@@ -394,13 +442,23 @@ internal static class RebalancerService
     {
         /// buy
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("Resources Buy", out var baseAddress))
-            foreach (var model in config.Prices.Where(x => x.Value.Buy.HasValue))
+            foreach (var model in config.Resources.Where(x => x.Value.Buy.HasValue))
                 BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Resource>(baseAddress, model.Key.ToString()), model.Value.Buy, baseAddress.Size, $"{model.Key} Buy");
 
         /// sell
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("Resources Sell", out baseAddress))
-            foreach (var model in config.Prices.Where(x => x.Value.Sell.HasValue))
+            foreach (var model in config.Resources.Where(x => x.Value.Sell.HasValue))
                 BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Resource>(baseAddress, model.Key.ToString()), model.Value.Sell, baseAddress.Size, $"{model.Key} Sell");
+
+        /// base delivery
+        foreach (var model in config.Resources.Where(x => x.Value.BaseDelivery.HasValue && x.Key.GetAttributeOfType<ResourceBaseDeliveryAttribute>() != null))
+            if (StorageService.BaseAddresses[gameVersion].TryGetValue($"Resources BaseDelivery {model.Key}", out baseAddress))
+            {
+                if (model.Key == Resource.Iron && bool.TryParse(SettingsService.Instance.Settings.SelectedOptions["IronMineDoublePickup"]?.ToString(), out var doublePickup) && doublePickup)
+                    BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), model.Value.BaseDelivery * 2, baseAddress.Size, $"{model.Key} BaseDelivery (IronMineDoublePickup)");
+                else
+                    BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), model.Value.BaseDelivery, baseAddress.Size, $"{model.Key} BaseDelivery");
+            }
     }
 
     /// ProcessUnitsConfig
@@ -421,21 +479,16 @@ internal static class RebalancerService
                         BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress4.Address, 16), model.Value.Cost - (int)model.Key, baseAddress4.Size, $"{model.Key} Cost (offset)");
             }
         }
-        
+
         /// speed
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units Speed", out baseAddress))
             foreach (var model in config.Units.Where(x => x.Value.Speed.HasValue))
                 BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.Speed, baseAddress.Size, $"{model.Key} Speed");
 
-        /// canGoOnWall
-        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanGoOnWall", out baseAddress))
-            foreach (var model in config.Units.Where(x => x.Value.CanGoOnWall.HasValue))
-                BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanGoOnWall, baseAddress.Size, $"{model.Key} CanGoOnWall");
-
-        /// canBeMoved
-        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanBeMoved", out baseAddress))
-            foreach (var model in config.Units.Where(x => x.Value.CanBeMoved.HasValue))
-                BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanBeMoved, baseAddress.Size, $"{model.Key} CanBeMoved");
+        /// alwaysRun
+        foreach (var model in config.Units.Where(x => x.Value.AlwaysRun.HasValue && x.Key.GetAttributeOfType<UnitAlwaysRunAttribute>() != null))
+            if (StorageService.BaseAddresses[gameVersion].TryGetValue($"Units {model.Key} AlwaysRun", out baseAddress))
+                BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), (byte[])(model.Value.AlwaysRun!.Value ? [144, 144] : [116, 19]), baseAddress.Size, $"{model.Key} AlwaysRun");
 
         /// health
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units Health", out baseAddress))
@@ -486,6 +539,21 @@ internal static class RebalancerService
             }
         }
 
+        /// meleeDamageToBuildings
+        foreach (var model in config.Units.Where(x => x.Value.MeleeDamageToBuildings.HasValue && x.Key.GetAttributeOfType<UnitMeleeDamageToBuildingsAttribute>() != null))
+            if (StorageService.BaseAddresses[gameVersion].TryGetValue($"Units {model.Key} MeleeDamageToBuildings", out baseAddress))
+                BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), model.Value.MeleeDamageToBuildings, baseAddress.Size, $"{model.Key} MeleeDamageToBuildings");
+
+        /// meleeDamageToTowers
+        foreach (var model in config.Units.Where(x => x.Value.MeleeDamageToTowers.HasValue && x.Key.GetAttributeOfType<UnitMeleeDamageToTowersAttribute>() != null))
+            if (StorageService.BaseAddresses[gameVersion].TryGetValue($"Units {model.Key} MeleeDamageToTowers", out baseAddress))
+                BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), model.Value.MeleeDamageToTowers - model.Value.MeleeDamageToBuildings, baseAddress.Size, $"{model.Key} MeleeDamageToTowers");
+
+        /// meleeDamageToWalls
+        foreach (var model in config.Units.Where(x => x.Value.MeleeDamageToWalls.HasValue && x.Key.GetAttributeOfType<UnitMeleeDamageToWallsAttribute>() != null))
+            if (StorageService.BaseAddresses[gameVersion].TryGetValue($"Units {model.Key} MeleeDamageToWalls", out baseAddress))
+                BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), model.Value.MeleeDamageToWalls, baseAddress.Size, $"{model.Key} MeleeDamageToWalls");
+
         /// canDigMoat
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanDigMoat", out baseAddress)
          && StorageService.BaseAddresses[gameVersion].TryGetValue("Units FocusDigMoat", out var baseAddress2))
@@ -503,6 +571,16 @@ internal static class RebalancerService
                 BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanClimbLadder, baseAddress.Size, $"{model.Key} CanClimbLadder");
                 BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Unit>(baseAddress2, model.Key.ToString()), model.Value.CanClimbLadder, baseAddress2.Size, $"{model.Key} FocusClimbLadder");
             }
+
+        /// canGoOnWall
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanGoOnWall", out baseAddress))
+            foreach (var model in config.Units.Where(x => x.Value.CanGoOnWall.HasValue))
+                BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanGoOnWall, baseAddress.Size, $"{model.Key} CanGoOnWall");
+
+        /// canBeMoved
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanBeMoved", out baseAddress))
+            foreach (var model in config.Units.Where(x => x.Value.CanBeMoved.HasValue))
+                BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Unit>(baseAddress, model.Key.ToString()), model.Value.CanBeMoved, baseAddress.Size, $"{model.Key} CanBeMoved");
     }
 
     /// ProcessSkirmishTrailConfig
@@ -522,10 +600,10 @@ internal static class RebalancerService
                 BinaryPatchService.WriteIfDifferent(address + 4, (int?)model.Value.Difficulty, baseAddress.Size, $"Mission {model.Key}, Difficulty");
                 BinaryPatchService.WriteIfDifferent(address + 8, (int?)model.Value.Type, baseAddress.Size, $"Mission {model.Key}, Type");
                 BinaryPatchService.WriteIfDifferent(address + 12, model.Value.NumberOfPlayers, baseAddress.Size, $"Mission {model.Key}, NumberOfPlayers");
-                BinaryPatchService.WriteIfDifferent(address + 16, model.Value.AIs?.Select(x => (int)x)?.Concat(Enumerable.Repeat(0, 8 - model.Value.AIs.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, AIs");
-                BinaryPatchService.WriteIfDifferent(address + 48, model.Value.Locations?.Concat(Enumerable.Repeat(0, 8 - model.Value.Locations.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Locations");
-                BinaryPatchService.WriteIfDifferent(address + 80, model.Value.Teams?.Select(x => (int)x)?.Concat(Enumerable.Repeat(0, 8 - model.Value.Teams.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, Teams");
-                BinaryPatchService.WriteIfDifferent(address + 112, model.Value.AIVs?.Concat(Enumerable.Repeat(0, 8 - model.Value.AIVs.Length))?.ToArray(), baseAddress.Size, $"Mission {model.Key}, AIVs");
+                BinaryPatchService.WriteIfDifferent(address + 16, model.Value.AIs, baseAddress.Size, $"Mission {model.Key}, AIs");
+                BinaryPatchService.WriteIfDifferent(address + 48, model.Value.Locations, baseAddress.Size, $"Mission {model.Key}, Locations");
+                BinaryPatchService.WriteIfDifferent(address + 80, model.Value.Teams, baseAddress.Size, $"Mission {model.Key}, Teams");
+                BinaryPatchService.WriteIfDifferent(address + 112, model.Value.AIVs, baseAddress.Size, $"Mission {model.Key}, AIVs");
             }
     }
 
@@ -607,7 +685,7 @@ internal static class RebalancerService
     }
 
     /// CountConfigOperations
-    private static int CountConfigOperations<T>(string key) where T : IConfigModel
+    private static int CountConfigOperations<T>(string key) where T : ConfigModel
     {
         if (!StorageService.Configs.TryGetValue(key, out var value))
         {
@@ -615,12 +693,12 @@ internal static class RebalancerService
             return 0;
         }
 
-        IConfigModel? configModel = null;
+        ConfigModel? configModel = null;
 
         if (key == "options")
-            configModel = value.Cast<IConfigModel>().FirstOrDefault();
+            configModel = value.Cast<ConfigModel>().FirstOrDefault();
         else if (SettingsService.Instance.Settings.SelectedConfigs.TryGetValue(key, out var selectedConfigName))
-            configModel = StorageService.Configs[key].Cast<IConfigModel>().FirstOrDefault(x => x.Name == selectedConfigName);
+            configModel = StorageService.Configs[key].Cast<ConfigModel>().FirstOrDefault(x => x.Name == selectedConfigName);
 
         if (configModel is not T config)
             return 0;

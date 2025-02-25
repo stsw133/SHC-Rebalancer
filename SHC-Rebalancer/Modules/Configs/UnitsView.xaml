@@ -15,100 +15,283 @@
                              SelectedItem="{Binding SelectedConfigs[units], Mode=OneWayToSource}"
                              SelectedValue="{Binding SelectedConfigs[units], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
+        <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
+        <DockPanel Margin="-3">
+            <!-- selector -->
+            <se:StswSegment x:Name="UnitsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[units].Units}" Orientation="Vertical" Width="100">
+                <se:StswSegment.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                            <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </se:StswSegment.ItemTemplate>
+            </se:StswSegment>
+            <!-- data -->
+            <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=UnitsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
+                <StackPanel DataContext="{Binding SelectedItem.Value, ElementName=UnitsSelector}" Margin="3" VerticalAlignment="Center" Width="500">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type se:StswIntegerBox}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="3"/>
+                        </Style>
+                        <Style TargetType="{x:Type se:StswLabel}">
+                            <Setter Property="FontWeight" Value="Medium"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                            <Setter Property="Width" Value="200"/>
+                        </Style>
+                        <Style TargetType="{x:Type se:StswSlider}">
+                            <Setter Property="IsSelectionRangeEnabled" Value="True"/>
+                            <Setter Property="IsSnapToTickEnabled" Value="True"/>
+                            <Setter Property="Margin" Value="3 7"/>
+                            <Setter Property="SelectionEnd" Value="{Binding Value, RelativeSource={RelativeSource Self}}"/>
+                        </Style>
+                        <Style TargetType="{x:Type se:StswText}">
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                        <Style TargetType="{x:Type se:StswToggleSwitch}">
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Margin" Value="3"/>
+                        </Style>
+                    </StackPanel.Resources>
 
-        <se:StswTabControl Margin="3" TabStripPlacement="Left">
-            <!-- resources -->
-            <se:StswTabItem>
-                <se:StswTabItem.Header>
-                    <se:StswLabel Content="Units" IconSource="/Images/units/Peasant.png"/>
-                </se:StswTabItem.Header>
-                <DockPanel Margin="-3">
-                    <!-- selector -->
-                    <se:StswSegment x:Name="UnitsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[units].Units}" Orientation="Vertical" Width="100">
-                        <se:StswSegment.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
-                                    <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </se:StswSegment.ItemTemplate>
-                    </se:StswSegment>
-                    <!-- data -->
-                    <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=UnitsSelector, Converter={x:Static se:StswNotNullConverter.Instance}}">
-                        <se:StswLabelPanel DataContext="{Binding SelectedItem.Value, ElementName=UnitsSelector}"
-                                           LabelFontWeight="Medium"
-                                           LabelHorizontalAlignment="Right"
-                                           Margin="3"
-                                           VerticalAlignment="Center"
-                                           Width="300">
+                    <!-- cost -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="COST" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
 
-                            <se:StswLabel Content="Cost:" IconSource="/Images/misc/Cost.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Cost}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitCost}"/>
+                        <StackPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Cost:" IconSource="/Images/resources/Gold.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Cost}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitCost}"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
 
-                            <se:StswLabel Content="Health:" IconSource="/Images/misc/Health.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding Health}"/>
+                    <!-- speed -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="SPEED" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
 
-                            <se:StswLabel Content="Damage from bow:" IconSource="/Images/units/EuropArcher.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DamageFromBow}"/>
-
-                            <se:StswLabel Content="Damage from crossbow:" IconSource="/Images/units/Crossbowman.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DamageFromCrossbow}"/>
-
-                            <se:StswLabel Content="Damage from sling:" IconSource="/Images/units/Slinger.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding DamageFromSling}"/>
-
-                            <se:StswLabel Content="Speed:" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Success.Background}"/>
-                            <StackPanel Margin="3">
-                                <se:StswText FontSize="10" HorizontalAlignment="Center" Text="{Binding Speed, Mode=OneWay}"/>
-                                <se:StswSlider Minimum="0" Maximum="10" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True" SelectionStart="{Binding Value, RelativeSource={RelativeSource Self}}" SelectionEnd="10" TickFrequency="1" Value="{Binding Speed}">
+                        <StackPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Speed:" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Success.Background}"/>
+                                <se:StswText DockPanel.Dock="Right" Text="{Binding Speed, Mode=OneWay}" TextAlignment="Center" VerticalAlignment="Center" Width="50"/>
+                                <se:StswSlider Maximum="10" SelectionStart="{Binding Value, RelativeSource={RelativeSource Self}}" SelectionEnd="10" TickFrequency="1" Value="{Binding Speed}">
                                     <se:StswSlider.LayoutTransform>
                                         <ScaleTransform ScaleX="-1"/>
                                     </se:StswSlider.LayoutTransform>
                                 </se:StswSlider>
-                            </StackPanel>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Melee damage:" IconSource="/Images/misc/MeleeDamage.png"/>
-                            <se:StswIntegerBox Margin="3" HorizontalContentAlignment="Center" Minimum="0" Value="{Binding MeleeDamage}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Always run:" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                                <se:StswToggleSwitch IsChecked="{Binding AlwaysRun}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitAlwaysRun}"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
 
-                            <se:StswLabel Content="Melee damage vs:" IconSource="/Images/misc/MeleeDamage.png"/>
-                            <se:StswDropButton Margin="3" HorizontalContentAlignment="Center" ItemsSource="{Binding MeleeDamageVs}" se:StswScrollView.IsDynamic="False">
-                                <se:StswDropButton.Header>
-                                    <se:StswText FontSize="11" FontWeight="Bold">
-                                        <Run Text="{Binding MeleeDamageVs.Count, Mode=OneWay}"/>
-                                        <Run Text="exceptions"/>
+                    <!-- durability -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="DURABILITY" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
+
+                        <StackPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Health:" IconSource="/Images/misc/Health.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Health}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Damage from bow:" IconSource="/Images/units/EuropArcher.png"/>
+                                <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Left" Margin="2 0 0 0" Width="75"
+                                                 IconData="{x:Static se:StswIcons.ShieldHalfFull}" IconFill="{DynamicResource StswColor.Neutral}">
+                                    <se:StswText FontSize="11" FontWeight="Medium" Margin="-2 0 0 0">
+                                        <Run>
+                                            <Run.Text>
+                                                <MultiBinding Mode="OneWay" Converter="{x:Static local:DivisionConverter.Instance}">
+                                                    <Binding Path="Health"/>
+                                                    <Binding Path="DamageFromBow"/>
+                                                </MultiBinding>
+                                            </Run.Text>
+                                        </Run>
+                                        <Run Text="hits"/>
                                     </se:StswText>
-                                </se:StswDropButton.Header>
-                                <se:StswDropButton.ItemTemplate>
-                                    <DataTemplate>
-                                        <DockPanel>
-                                            <se:StswLabel DockPanel.Dock="Right" Content="{Binding Value, Mode=OneWay}" HorizontalContentAlignment="Center" Width="30"/>
-                                            <se:StswSeparator DockPanel.Dock="Right" BorderThickness="1" Orientation="Vertical"/>
-                                            <se:StswLabel Content="{Binding Key, Mode=OneWay}" IconScale="2" IconSource="{Binding Key, Mode=OneWay, Converter={local:EnumToImageSourceConverter}}" Width="150"/>
-                                        </DockPanel>
-                                    </DataTemplate>
-                                </se:StswDropButton.ItemTemplate>
-                            </se:StswDropButton>
+                                </se:StswSubLabel>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding DamageFromBow}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Can melee damage:" IconData="{x:Static se:StswIcons.Sword}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanMeleeDamage}"/>
-<!--
-                            <se:StswLabel Content="Can dig moat:" IconData="{x:Static se:StswIcons.Shovel}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanDigMoat}"/>
--->
-                            <se:StswLabel Content="Can climb ladder:" IconData="{x:Static se:StswIcons.Ladder}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanClimbLadder}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Damage from crossbow:" IconSource="/Images/units/Crossbowman.png"/>
+                                <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Left" Margin="2 0 0 0" Width="75"
+                                                 IconData="{x:Static se:StswIcons.ShieldHalfFull}" IconFill="{DynamicResource StswColor.Negative}">
+                                    <se:StswText FontSize="11" FontWeight="Medium" Margin="-2 0 0 0">
+                                        <Run>
+                                            <Run.Text>
+                                                <MultiBinding Mode="OneWay" Converter="{x:Static local:DivisionConverter.Instance}">
+                                                    <Binding Path="Health"/>
+                                                    <Binding Path="DamageFromCrossbow"/>
+                                                </MultiBinding>
+                                            </Run.Text>
+                                        </Run>
+                                        <Run Text="hits"/>
+                                    </se:StswText>
+                                </se:StswSubLabel>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding DamageFromCrossbow}"/>
+                            </DockPanel>
 
-                            <se:StswLabel Content="Can go on wall:" IconData="{x:Static se:StswIcons.Wall}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanGoOnWall}"/>
+                            <DockPanel>
+                                <se:StswLabel Content="Damage from sling:" IconSource="/Images/units/Slinger.png"/>
+                                <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Left" Margin="2 0 0 0" Width="75"
+                                                 IconData="{x:Static se:StswIcons.ShieldHalfFull}" IconFill="{DynamicResource StswColor.Positive}">
+                                    <se:StswText FontSize="11" FontWeight="Medium" Margin="-2 0 0 0">
+                                        <Run>
+                                            <Run.Text>
+                                                <MultiBinding Mode="OneWay" Converter="{x:Static local:DivisionConverter.Instance}">
+                                                    <Binding Path="Health"/>
+                                                    <Binding Path="DamageFromSling"/>
+                                                </MultiBinding>
+                                            </Run.Text>
+                                        </Run>
+                                        <Run Text="hits"/>
+                                    </se:StswText>
+                                </se:StswSubLabel>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding DamageFromSling}"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
 
-                            <se:StswLabel Content="Can be moved:" IconData="{x:Static se:StswIcons.CursorMove}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
-                            <se:StswToggleSwitch Margin="3" HorizontalAlignment="Left" IsChecked="{Binding CanBeMoved}"/>
+                    <!-- damage -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="DAMAGE" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
 
-                        </se:StswLabelPanel>
-                    </se:StswScrollView>
-                </DockPanel>
-            </se:StswTabItem>
-        </se:StswTabControl>
+                        <StackPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Can melee damage:" IconData="{x:Static se:StswIcons.Sword}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                                <se:StswToggleSwitch IsChecked="{Binding CanMeleeDamage}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Melee damage:" IconSource="/Images/misc/MeleeDamage.png"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding MeleeDamage}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Melee damage vs:" IconSource="/Images/misc/MeleeDamage.png"/>
+                                <se:StswDropButton Margin="3" HorizontalContentAlignment="Center" IsEnabled="{Binding MeleeDamageVs.Count, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=&gt;0}" ItemsSource="{Binding MeleeDamageVs}" se:StswScrollView.IsDynamic="False">
+                                    <se:StswDropButton.Header>
+                                        <se:StswText FontSize="11" FontWeight="Bold">
+                                            <Run Text="{Binding MeleeDamageVs.Count, Mode=OneWay}"/>
+                                            <Run Text="exceptions"/>
+                                        </se:StswText>
+                                    </se:StswDropButton.Header>
+                                    <se:StswDropButton.ItemTemplate>
+                                        <DataTemplate>
+                                            <DockPanel>
+                                                <se:StswSeparator DockPanel.Dock="Bottom" BorderThickness="1" Orientation="Horizontal"/>
+                                                <se:StswLabel DockPanel.Dock="Right" Content="{Binding Value, Mode=OneWay}" HorizontalContentAlignment="Center" Width="30"/>
+                                                <se:StswSeparator DockPanel.Dock="Right" BorderThickness="1" Orientation="Vertical"/>
+                                                <se:StswLabel Content="{Binding Key, Mode=OneWay}" IconScale="2" IconSource="{Binding Key, Mode=OneWay, Converter={local:EnumToImageSourceConverter}}"/>
+                                            </DockPanel>
+                                        </DataTemplate>
+                                    </se:StswDropButton.ItemTemplate>
+                                </se:StswDropButton>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Melee damage to buildings:" IconSource="/Images/buildings/Hovel.png"/>
+                                <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Center" Width="50">
+                                    <se:StswText FontWeight="Medium">
+                                        <Run>
+                                            <Run.Text>
+                                                <MultiBinding Mode="OneWay" Converter="{x:Static local:DivisionConverter.Instance}" ConverterParameter="100">
+                                                    <Binding Path="MeleeDamageToBuildings"/>
+                                                    <Binding Path="MeleeDamage"/>
+                                                </MultiBinding>
+                                            </Run.Text>
+                                        </Run>
+                                        <Run Text="%"/>
+                                    </se:StswText>
+                                </se:StswSubLabel>
+                                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding MeleeDamageToBuildings}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitMeleeDamageToBuildings}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Melee damage to towers:" IconSource="/Images/buildings/RoundTower.png"/>
+                                <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Center" Width="50">
+                                    <se:StswText FontWeight="Medium">
+                                        <Run>
+                                            <Run.Text>
+                                                <MultiBinding Mode="OneWay" Converter="{x:Static local:DivisionConverter.Instance}" ConverterParameter="100">
+                                                    <Binding Path="MeleeDamageToTowers"/>
+                                                    <Binding Path="MeleeDamage"/>
+                                                </MultiBinding>
+                                            </Run.Text>
+                                        </Run>
+                                        <Run Text="%"/>
+                                    </se:StswText>
+                                </se:StswSubLabel>
+                                <se:StswIntegerBox Minimum="0" Maximum="100" Value="{Binding MeleeDamageToTowers}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitMeleeDamageToTowers}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Melee damage to walls:" IconSource="/Images/buildings/HighWalls.png"/>
+                                <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Center" Width="50">
+                                    <se:StswText FontWeight="Medium">
+                                        <Run>
+                                            <Run.Text>
+                                                <MultiBinding Mode="OneWay" Converter="{x:Static local:DivisionConverter.Instance}" ConverterParameter="100">
+                                                    <Binding Path="MeleeDamageToWalls"/>
+                                                    <Binding Path="MeleeDamage"/>
+                                                </MultiBinding>
+                                            </Run.Text>
+                                        </Run>
+                                        <Run Text="%"/>
+                                    </se:StswText>
+                                </se:StswSubLabel>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding MeleeDamageToWalls}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitMeleeDamageToWalls}"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
+
+                    <!-- other -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="OTHER" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
+
+                        <StackPanel>
+                            <DockPanel Visibility="Collapsed">
+                                <se:StswLabel Content="Can dig moat:" IconData="{x:Static se:StswIcons.Shovel}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                                <se:StswToggleSwitch IsChecked="{Binding CanDigMoat}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitCanDigMoat}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Can climb ladder:" IconData="{x:Static se:StswIcons.Ladder}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                                <se:StswToggleSwitch IsChecked="{Binding CanClimbLadder}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Can go on wall:" IconData="{x:Static se:StswIcons.Wall}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                                <se:StswToggleSwitch IsChecked="{Binding CanGoOnWall}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Can be moved:" IconData="{x:Static se:StswIcons.CursorMove}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
+                                <se:StswToggleSwitch IsChecked="{Binding CanBeMoved}"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
+
+                </StackPanel>
+            </se:StswScrollView>
+        </DockPanel>
     </DockPanel>
 </UserControl>
