@@ -30,6 +30,12 @@
                             <Setter Property="HorizontalContentAlignment" Value="Right"/>
                             <Setter Property="Width" Value="200"/>
                         </Style>
+                        <Style TargetType="{x:Type se:StswSlider}">
+                            <Setter Property="IsSelectionRangeEnabled" Value="True"/>
+                            <Setter Property="IsSnapToTickEnabled" Value="True"/>
+                            <Setter Property="Margin" Value="3 7"/>
+                            <Setter Property="SelectionEnd" Value="{Binding Value, RelativeSource={RelativeSource Self}}"/>
+                        </Style>
                     </StackPanel.Resources>
 
                     <!-- religion -->
@@ -40,13 +46,25 @@
 
                         <StackPanel>
                             <DockPanel>
-                                <se:StswLabel Content="Religion thresholds:" IconScale="2" IconSource="/Images/buildings/Chapel.png"/>
+                                <se:StswLabel Content="Thresholds:" IconScale="2" IconSource="/Images/buildings/Chapel.png"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[0]}"/>
                                     <se:StswIntegerBox Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[1]}"/>
                                     <se:StswIntegerBox Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[2]}"/>
                                     <se:StswIntegerBox Minimum="1" Maximum="100" Value="{Binding ReligionThresholds[3]}"/>
                                 </UniformGrid>
+                            </DockPanel>
+                            
+                            <DockPanel>
+                                <se:StswLabel Content="Perm church bonus:" IconScale="2" IconSource="/Images/buildings/Church.png"/>
+                                <se:StswText DockPanel.Dock="Right" Text="{Binding ReligionPermBonuses[0], Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/25}" Width="50"/>
+                                <se:StswSlider Maximum="250" TickFrequency="25" Value="{Binding ReligionPermBonuses[0]}"/>
+                            </DockPanel>
+                            
+                            <DockPanel>
+                                <se:StswLabel Content="Perm cathedral bonus:" IconScale="2" IconSource="/Images/buildings/Cathedral.png"/>
+                                <se:StswText DockPanel.Dock="Right" Text="{Binding ReligionPermBonuses[1], Mode=OneWay, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=/25}" Width="50"/>
+                                <se:StswSlider Maximum="250" TickFrequency="25" Value="{Binding ReligionPermBonuses[1]}"/>
                             </DockPanel>
                             <!--
                             <DockPanel>

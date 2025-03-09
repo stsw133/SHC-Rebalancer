@@ -114,7 +114,7 @@ public partial class ConfigBox : StswComboBox
     {
         try
         {
-            await StswContentDialog.Show(new NewConfigContext(Type, SettingsService.Instance.Settings.SelectedConfigs[Type]), "MainContentDialog");
+            await StswContentDialog.Show(new NewConfigContext(Type, SettingsService.Instance.Settings.SelectedConfigs[Type]!), "MainContentDialog");
 
             var selectedRebalance = SettingsService.Instance.Settings.SelectedConfigs[Type];
             var config = StorageService.Configs[Type].FirstOrDefault(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString() == selectedRebalance);

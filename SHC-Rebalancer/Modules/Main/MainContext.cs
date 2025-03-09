@@ -5,6 +5,7 @@ public class MainContext : StswObservableObject
 {
     public StswAsyncCommand AcceptTermsCommand { get; }
     public StswCommand ExitAppCommand { get; }
+    public StswAsyncCommand GamePathChangedCommand { get; }
 
     public StswAsyncCommand ReloadAllCommand { get; }
     public StswAsyncCommand SaveAllCommand { get; }
@@ -18,16 +19,18 @@ public class MainContext : StswObservableObject
     {
         AcceptTermsCommand = new(AcceptTerms, () => SettingsService.Instance.Settings.TermsAccepted);
         ExitAppCommand = new(App.Current.Shutdown);
+        GamePathChangedCommand = new(GamePathChanged);
 
         ReloadAllCommand = new(ReloadAll);
         SaveAllCommand = new(SaveAll);
-        InstallCommand = new(Install, CanEditExe);
-        UninstallCommand = new(Uninstall, CanEditExe);
+        InstallCommand = new(Install, InstallCondition);
+        UninstallCommand = new(Uninstall, UninstallCondition);
 
         ShowUcpExplanationCommand = new(ShowUcpExplanation);
 
         StswMessanger.Instance.Register<ProgressUpdateMessage>(msg => InstallValue += msg.Increment);
         StswMessanger.Instance.Register<ProgressTextMessage>(msg => InstallText = msg.Text);
+        GamePathChangedCommand.Execute();
     }
 
 
@@ -38,6 +41,40 @@ public class MainContext : StswObservableObject
         try
         {
             StswContentDialog.Close("TermsDialog");
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+
+    /// GamePathChanged
+    public async Task GamePathChanged()
+    {
+        try
+        {
+            if (!string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath))
+            {
+                if (BackupService.Exists(StorageService.ExePath[GameVersion.Crusader], out var _)
+                 && BackupService.Exists(StorageService.ExePath[GameVersion.Extreme], out var _))
+                {
+                    InstallState = StswProgressState.Finished;
+                    InstallText = "Installed...";
+                    IsInstalled = true;
+                }
+                else
+                {
+                    InstallState = StswProgressState.Ready;
+                    InstallText = "Ready to install...";
+                    IsInstalled = false;
+                }
+            }
+            else
+            {
+                InstallState = StswProgressState.Ready;
+                InstallText = "Select game path...";
+                IsInstalled = false;
+            }
         }
         catch (Exception ex)
         {
@@ -123,18 +160,21 @@ public class MainContext : StswObservableObject
             StorageService.SaveConfigs();
             SettingsService.Instance.SaveSettings();
 
-            InstallValueMax = RebalancerService.CountTotalOperations();
+            InstallValueMax = RebalancerService.CountTotalOperations() + 100;
 
             //Backup.Restore();
+
             await Task.Run(async () =>
             {
+                InstallText = "Making backup...";
                 BackupService.Make();
                 await RebalancerService.Rebalance(token);
-            });
+            }, token);
 
             InstallState = StswProgressState.Finished;
             InstallText = "Installation completed!";
             InstallValue = InstallValueMax;
+            IsInstalled = true;
         }
         catch (Exception ex)
         {
@@ -143,7 +183,7 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
-    public bool CanEditExe() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath);
+    public bool InstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath);
 
     /// Uninstall
     public async Task Uninstall()
@@ -151,11 +191,13 @@ public class MainContext : StswObservableObject
         try
         {
             InstallValue = 0;
+            InstallValueMax = 100;
             InstallText = "Uninstallation starting...";
             InstallState = StswProgressState.Running;
 
             await Task.Delay(500);
 
+            InstallText = "Restoring backup...";
             BackupService.Restore();
 
             InstallValue += 50;
@@ -164,6 +206,7 @@ public class MainContext : StswObservableObject
             InstallState = StswProgressState.Finished;
             InstallText = "Uninstallation completed!";
             InstallValue = 100;
+            IsInstalled = false;
         }
         catch (Exception ex)
         {
@@ -172,6 +215,7 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+    public bool UninstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath) && IsInstalled;
 
     /// ShowUcpExplanation
     public async Task ShowUcpExplanation()
@@ -219,6 +263,14 @@ public class MainContext : StswObservableObject
         set => SetProperty(ref _installValueMax, value);
     }
     private int _installValueMax;
+
+    /// IsInstalled
+    public bool IsInstalled
+    {
+        get => _isInstalled;
+        set => SetProperty(ref _isInstalled, value);
+    }
+    private bool _isInstalled;
 
     /// IsTermsDialogOpen
     public bool IsTermsDialogOpen

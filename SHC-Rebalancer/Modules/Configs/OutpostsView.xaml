@@ -44,76 +44,85 @@
                         </Style>
                     </StackPanel.Resources>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown00:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown00}"/>
-                    </DockPanel>
+                    <!-- main -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="MAIN" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown01:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown01}"/>
-                    </DockPanel>
+                        <StackPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown00:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown00}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Quantity1:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Quantity1}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown01:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown01}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Quantity2:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Quantity2}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Quantity1:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Quantity1}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unit:"/>
-                        <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Unit}">
-                            <se:StswComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                </DataTemplate>
-                            </se:StswComboBox.ItemTemplate>
-                        </se:StswComboBox>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Quantity2:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Quantity2}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown05:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown05}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unit:"/>
+                                <se:StswComboBox ItemsSource="{se:StswEnumToList local:Unit}" SelectedValue="{Binding Unit}">
+                                    <se:StswComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                        </DataTemplate>
+                                    </se:StswComboBox.ItemTemplate>
+                                </se:StswComboBox>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown06:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown06}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown05:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown05}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown07:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown07}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown06:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown06}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown08:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown08}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown07:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown07}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown09:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown09}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown08:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown08}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown10:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown10}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown09:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown09}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown11:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown11}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown10:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown10}"/>
+                            </DockPanel>
 
-                    <DockPanel>
-                        <se:StswLabel Content="Unknown12:"/>
-                        <se:StswIntegerBox Minimum="0" Value="{Binding Unknown12}"/>
-                    </DockPanel>
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown11:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown11}"/>
+                            </DockPanel>
+
+                            <DockPanel>
+                                <se:StswLabel Content="Unknown12:"/>
+                                <se:StswIntegerBox Minimum="0" Value="{Binding Unknown12}"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
 
                 </StackPanel>
             </se:StswScrollView>

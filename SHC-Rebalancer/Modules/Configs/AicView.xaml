@@ -22,7 +22,7 @@
                 <se:StswSegment.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <Image Source="{Binding Key, Converter={local:EnumToImageSourceConverter}}" Height="32" Width="32"/>
+                            <Image Source="{Binding Key, Converter={local:AiNameToImageSourceConverter}}" Height="32" Width="32"/>
                             <se:StswText FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" Text="{Binding Key}" TextTrimming="CharacterEllipsis"/>
                         </StackPanel>
                     </DataTemplate>
@@ -107,27 +107,27 @@
 
                             <DockPanel>
                                 <se:StswLabel Content="Unknown001:"/>
-                                <se:StswCheckBox IsChecked="{Binding Personality.Unknown001}"/>
+                                <se:StswIntegerBox Value="{Binding Personality.Unknown001}"/>
                             </DockPanel>
 
                             <DockPanel>
                                 <se:StswLabel Content="Unknown002:"/>
-                                <se:StswCheckBox IsChecked="{Binding Personality.Unknown002}"/>
+                                <se:StswIntegerBox Value="{Binding Personality.Unknown002}"/>
                             </DockPanel>
 
                             <DockPanel>
                                 <se:StswLabel Content="Unknown003:"/>
-                                <se:StswCheckBox IsChecked="{Binding Personality.Unknown003}"/>
+                                <se:StswIntegerBox Value="{Binding Personality.Unknown003}"/>
                             </DockPanel>
 
                             <DockPanel>
                                 <se:StswLabel Content="Unknown004:"/>
-                                <se:StswCheckBox IsChecked="{Binding Personality.Unknown004}"/>
+                                <se:StswIntegerBox Value="{Binding Personality.Unknown004}"/>
                             </DockPanel>
 
                             <DockPanel>
                                 <se:StswLabel Content="Unknown005:"/>
-                                <se:StswCheckBox IsChecked="{Binding Personality.Unknown005}"/>
+                                <se:StswIntegerBox Value="{Binding Personality.Unknown005}"/>
                             </DockPanel>
                         </StackPanel>
                     </se:StswGroupBox>
@@ -769,7 +769,7 @@
 
                             <DockPanel>
                                 <se:StswLabel Content="OuterPatrolGroupsMove:"/>
-                                <se:StswIntegerBox Minimum="0" Value="{Binding Personality.OuterPatrolGroupsMove}"/>
+                                <se:StswToggleSwitch IsChecked="{Binding Personality.OuterPatrolGroupsMove}"/>
                             </DockPanel>
 
                             <DockPanel>

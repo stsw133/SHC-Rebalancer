@@ -2,7 +2,7 @@
 
 public enum AI
 {
-    None,
+    All, /// special case for all AI
     Rat,
     Snake,
     Pig,

@@ -26,14 +26,14 @@
 	-Crusade troops changed from 100 Monk => 80 EuropArcher, 48 Monk
 	
 -PlayerEurop:
-	-Normal troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 3 Spearman, 2 Swordsman
-	-Crusade troops changed from 40 EuropArcher, 10 Swordsman, 4 Knight => 30 EuropArcher, 3 Spearman, 3 Crossbowman, 8 Pikeman
-	-Deathmatch troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 3 Spearman, 2 Swordsman
+	-Normal troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 6 Spearman
+	-Crusade troops changed from 40 EuropArcher, 10 Swordsman, 4 Knight => 30 EuropArcher, 3 Crossbowman, 12 Swordsman
+	-Deathmatch troops changed from 5 EuropArcher, 7 Spearman => 6 EuropArcher, 6 Spearman
 	
 -PlayerArab:
-	-Normal troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 3 Slave, 3 ArabSwordsman
-	-Crusade troops changed from 50 ArabArcher, 10 ArabSwordsman => 25 ArabArcher, 3 Slave, 12 ArabSwordsman, 3 FireThrower
-	-Deathmatch troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 3 Slave, 3 ArabSwordsman
+	-Normal troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 7 Slave
+	-Crusade troops changed from 50 ArabArcher, 10 ArabSwordsman => 25 ArabArcher, 15 ArabSwordsman, 3 FireThrower
+	-Deathmatch troops changed from 6 ArabArcher, 6 Slave => 5 ArabArcher, 7 Slave
 	",
 	"Troops":
 	{
@@ -287,42 +287,51 @@
 				"Monk": 24,
 			}
 		},
+		"Arslan":
+		{
+			"Normal": {
+				"Spearman": 8,
+				"HorseArcher": 12,
+			},
+			"Crusade": {
+				"Spearman": 40,
+				"HorseArcher": 60,
+			},
+			"Deathmatch": {
+				"Spearman": 8,
+				"HorseArcher": 12,
+			}
+		},
 		"PlayerEurop":
 		{
 			"Normal": {
 				"EuropArcher": 6,
-				"Spearman": 3,
-				"Swordsman": 2,
+				"Spearman": 6,
 			},
 			"Crusade": {
 				"EuropArcher": 30,
-				"Spearman": 3,
 				"Crossbowman": 3,
-				"Swordsman": 8,
+				"Swordsman": 12,
 			},
 			"Deathmatch": {
 				"EuropArcher": 6,
-				"Spearman": 3,
-				"Swordsman": 2,
+				"Spearman": 6,
 			}
 		},
 		"PlayerArab":
 		{
 			"Normal": {
 				"ArabArcher": 5,
-				"Slave": 3,
-				"ArabSwordsman": 3,
+				"Slave": 7,
 			},
 			"Crusade": {
 				"ArabArcher": 25,
-				"Slave": 3,
-				"ArabSwordsman": 12,
+				"ArabSwordsman": 15,
 				"FireThrower": 3,
 			},
 			"Deathmatch": {
 				"ArabArcher": 5,
-				"Slave": 3,
-				"ArabSwordsman": 3,
+				"Slave": 7,
 			}
 		},
 	}

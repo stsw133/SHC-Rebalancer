@@ -18,6 +18,10 @@
 	{ "Key": "Popularity religion thresholds B",			"Address": "0x0401DF", "EndAddress": "0x040202", "Size": 1 },
 	{ "Key": "Popularity religion thresholds C",			"Address": "0x040241", "EndAddress": "0x040275", "Size": 1 },
 	{ "Key": "Popularity religion thresholds D",			"Address": "0x05BD62", "EndAddress": "0x05BD85", "Size": 1 },
+	{ "Key": "Popularity religion perm bonus A",			"Address": "0x03EE92", "EndAddress": "0x03EE9E", "Size": 1 },
+	{ "Key": "Popularity religion perm bonus B",			"Address": "0x040316", "EndAddress": "0x040317", "Size": 1 },
+	{ "Key": "Popularity religion perm bonus C",			"Address": "0x04039D", "EndAddress": "0x0403AC", "Size": 1 },
+	{ "Key": "Popularity religion perm bonus D",			"Address": "0x05BDA0", "EndAddress": "0x05BDAC", "Size": 1 },
 	
 	{ "Key": "Resources BaseDelivery Wood",					"Address": "0x14D60E", "EndAddress": "0x14D60E", "Size": 1 },
 	{ "Key": "Resources BaseDelivery Meat",					"Address": "0x1506A8", "EndAddress": "0x1506A8", "Size": 1 },
@@ -29,6 +33,7 @@
 	{ "Key": "Resources Buy",								"Address": "0x217350", "EndAddress": "0x2173B7", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x2173B8", "EndAddress": "0x21741F", "Size": 4 },
 	
+	{ "Key": "SkirmishTrail Maps",							"Address": "0x1A5C18", "EndAddress": "0x1A61BF", "Size": 4 },
 	{ "Key": "SkirmishTrail Missions",						"Address": "0x73EDD8", "EndAddress": "0x741AD7", "Size": 4 },
 	
 	{ "Key": "Troops",										"Address": "0x2155D8", "EndAddress": "0x2167A7", "Size": 4 },

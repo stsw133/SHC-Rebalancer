@@ -88,7 +88,7 @@
                         <DockPanel>
                             <se:StswLabel Content="Edit mode:"/>
                             <se:StswToggleSwitch IsChecked="{Binding IsEditModeEnabled}"/>
-                            <se:StswText FontSize="11" FontStyle="Italic" Text="← Remember to have a backup of .exe files (or installed Rebalancer)."/>
+                            <se:StswText FontSize="11" FontStyle="Italic" Text="← Remember to have a backup of .exe files (or installed Rebalancer)." Visibility="{Binding IsEditModeEnabled, Converter={x:Static se:StswBoolConverter.Instance}}"/>
                         </DockPanel>
 
                         <DockPanel>

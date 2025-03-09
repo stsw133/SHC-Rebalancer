@@ -81,68 +81,112 @@
                                 <se:StswPathPicker Margin="3"
                                                    Placeholder="Please select Stronghold Crusader path..."
                                                    SelectedPath="{Binding GamePath, Source={StaticResource Settings}}"
-                                                   SelectionUnit="OpenDirectory"/>
+                                                   SelectionUnit="OpenDirectory"
+                                                   SelectedPathChanged="{se:StswEventToCommand CommandBinding={Binding GamePathChangedCommand}}"/>
 
                                 <se:StswLabel Content="Select configs to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
                                 <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5" Margin="3">
                                     <UniformGrid Columns="2">
-                                        <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
-                                            
-                                            <se:StswLabel>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <se:StswSubButton Command="{Binding ShowUcpExplanationCommand}"
-                                                                      IconData="{x:Static se:StswIcons.HelpCircle}"
-                                                                      IconFill="{DynamicResource StswColor.Neutral}"
-                                                                      IconScale="1.25"
-                                                                      Margin="1"/>
-                                                    <se:StswText Text="UCP:"/>
-                                                </StackPanel>
-                                            </se:StswLabel>
-                                            <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3" Unchecked="{se:StswEventToCommand CommandBinding={Binding UncheckUCPCommand}}"/>
-											
-                                            <se:StswLabel Content="Options:"/>
-                                            <se:StswCheckBox Content="include options (recommended)" IsChecked="{Binding IncludeOptions, Source={StaticResource Settings}}" IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3"/>
-                                            
-                                            <se:StswLabel Content="AIC:"/>
-                                            <local:ConfigBox IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" ItemsSource="{Binding [aic], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
-                                            
-                                            <se:StswLabel Content="AIR:"/>
-                                            <se:StswTextBox FontSize="10" IsReadOnly="True" Margin="3" Text="Not implemented yet..."/>
-                                            
-                                            <se:StswLabel Content="AIV:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aiv], Source={StaticResource Settings}}" Type="AIV"/>
-                                            
-                                            <se:StswLabel Content="Goods:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [goods], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[goods], Source={StaticResource Settings}}" Type="Goods"/>
-                                            
-                                            <se:StswLabel Content="Troops:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [troops], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[troops], Source={StaticResource Settings}}" Type="Troops"/>
-                                        
-                                        </se:StswLabelPanel>
-                                        <se:StswLabelPanel LabelFontWeight="Bold" LabelHorizontalAlignment="Right" Margin="3" Orientation="Horizontal">
-                                            
-                                            <se:StswLabel Content="Buildings:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[buildings], Source={StaticResource Settings}}" Type="Buildings"/>
 
-                                            <se:StswLabel Content="Outposts:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [outposts], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[outposts], Source={StaticResource Settings}}" Type="Outposts"/>
-                                            
-                                            <se:StswLabel Content="Popularity:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [popularity], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[popularity], Source={StaticResource Settings}}" Type="Popularity"/>
-                                            
-                                            <se:StswLabel Content="Resources:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [resources], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[resources], Source={StaticResource Settings}}" Type="Resources"/>
-                                            
-                                            <se:StswLabel Content="Units:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [units], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[units], Source={StaticResource Settings}}" Type="Units"/>
-                                            
-                                            <se:StswLabel Content="Skirmish trail:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [skirmishtrail], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[skirmishtrail], Source={StaticResource Settings}}" Type="SkirmishTrail"/>
-                                            
-                                            <se:StswLabel Content="Customs:"/>
-                                            <local:ConfigBox ItemsSource="{Binding [customs], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[customs], Source={StaticResource Settings}}" Type="Customs"/>
-                                        
-                                        </se:StswLabelPanel>
+                                        <StackPanel Margin="3">
+                                            <StackPanel.Resources>
+                                                <Style x:Key="Header" TargetType="{x:Type se:StswLabel}">
+                                                    <Setter Property="FontWeight" Value="Bold"/>
+                                                    <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                                                    <Setter Property="Width" Value="60"/>
+                                                </Style>
+                                            </StackPanel.Resources>
+
+                                            <DockPanel>
+                                                <se:StswLabel Style="{StaticResource Header}">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <se:StswSubButton Command="{Binding ShowUcpExplanationCommand}"
+                                                                          IconData="{x:Static se:StswIcons.HelpCircle}"
+                                                                          IconFill="{DynamicResource StswColor.Neutral}"
+                                                                          IconScale="1.25"
+                                                                          Margin="1"/>
+                                                        <se:StswText Text="UCP:"/>
+                                                    </StackPanel>
+                                                </se:StswLabel>
+                                                <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3" Unchecked="{se:StswEventToCommand CommandBinding={Binding UncheckUCPCommand}}"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Options:" Style="{StaticResource Header}"/>
+                                                <se:StswCheckBox Content="include options (recommended)" IsChecked="{Binding IncludeOptions, Source={StaticResource Settings}}" IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="AIC:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" ItemsSource="{Binding [aic], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="AIR:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" ItemsSource="{Binding [air], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[air], Source={StaticResource Settings}}" Type="AIR"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="AIV:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aiv], Source={StaticResource Settings}}" Type="AIV"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Goods:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [goods], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[goods], Source={StaticResource Settings}}" Type="Goods"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Troops:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [troops], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[troops], Source={StaticResource Settings}}" Type="Troops"/>
+                                            </DockPanel>
+
+                                        </StackPanel>
+                                        <StackPanel Margin="3">
+                                            <StackPanel.Resources>
+                                                <Style x:Key="Header" TargetType="{x:Type se:StswLabel}">
+                                                    <Setter Property="FontWeight" Value="Bold"/>
+                                                    <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                                                    <Setter Property="Width" Value="80"/>
+                                                </Style>
+                                            </StackPanel.Resources>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Buildings:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[buildings], Source={StaticResource Settings}}" Type="Buildings"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Outposts:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [outposts], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[outposts], Source={StaticResource Settings}}" Type="Outposts"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Popularity:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [popularity], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[popularity], Source={StaticResource Settings}}" Type="Popularity"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Resources:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [resources], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[resources], Source={StaticResource Settings}}" Type="Resources"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Units:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [units], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[units], Source={StaticResource Settings}}" Type="Units"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Skirmish trail:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [skirmishtrail], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[skirmishtrail], Source={StaticResource Settings}}" Type="SkirmishTrail"/>
+                                            </DockPanel>
+
+                                            <DockPanel>
+                                                <se:StswLabel Content="Customs:" Style="{StaticResource Header}"/>
+                                                <local:ConfigBox ItemsSource="{Binding [customs], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[customs], Source={StaticResource Settings}}" Type="Customs"/>
+                                            </DockPanel>
+
+                                        </StackPanel>
                                     </UniformGrid>
                                 </se:StswBorder>
                             </StackPanel>
@@ -161,6 +205,13 @@
                             <se:StswLabel Content="AIC" IconData="{x:Static se:StswIcons.RobotAngryOutline}"/>
                         </se:StswTabItem.Header>
                         <local:AicView/>
+                    </se:StswTabItem>
+                    <!-- air -->
+                    <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
+                        <se:StswTabItem.Header>
+                            <se:StswLabel Content="AIR" IconData="{x:Static se:StswIcons.FolderSwapOutline}"/>
+                        </se:StswTabItem.Header>
+                        <local:AirView/>
                     </se:StswTabItem>
                     <!-- aiv -->
                     <se:StswTabItem>
@@ -233,7 +284,7 @@
                         <local:CustomsView/>
                     </se:StswTabItem>
                     <!-- finder -->
-                    <se:StswTabItem>
+                    <se:StswTabItem IsEnabled="{Binding GamePath, Source={StaticResource Settings}, Converter={x:Static se:StswExistenceConverter.Instance}, ConverterParameter=!empty}">
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Finder" IconData="{x:Static se:StswIcons.Magnify}"/>
                         </se:StswTabItem.Header>

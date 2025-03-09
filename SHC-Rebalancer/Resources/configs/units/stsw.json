@@ -86,7 +86,6 @@
 	
 -Assassin:
 	-DamageFromCrossbow 8000 => 6000 (2 => 3 shots)
-	-DamageFromSling 500 => 750 (30 => 20 shots)
 	-MeleeDamage 80 => 150 (+88%)
 	-deals less damage the more armored enemy is
 	
@@ -94,7 +93,7 @@
 	-Cost 80 => 90
 	-Health 10000 => 12500 (+25%)
 	-DamageFromBow 1250 => 2000 (8 => 7 shots)
-	-DamageFromSling 500 => 1000 (20 => 13 shots)
+	-DamageFromSling 500 => 750 (20 => 17 shots)
 	-MeleeDamage 20 => 10 (-50%)
 	
 -ArabSwordsman:
@@ -103,7 +102,6 @@
 	-Health 20000 => 22500 (+13%)
 	-DamageFromCrossbow 8000 => 3500 (3 => 7 shots)
 	-DamageFromSling 200 => 250 (100 => 90 shots)
-	-MeleeDamage 100 => 90 (-10%)
 	-more damage vs Maceman & Pikeman
 	-less damage penalty vs Swordsman & Knight
 	-small damage penalty vs ArabSwordsman
@@ -473,7 +471,7 @@
 			"Health": 15000,
 			"DamageFromBow": 1500,
 			"DamageFromCrossbow": 6000,
-			"DamageFromSling": 750,
+			"DamageFromSling": 500,
 			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
@@ -518,7 +516,7 @@
 			"Health": 12500,
 			"DamageFromBow": 2000,
 			"DamageFromCrossbow": 8000,
-			"DamageFromSling": 1000,
+			"DamageFromSling": 750,
 			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
@@ -540,17 +538,17 @@
 			"CanDigMoat": false,
 			"CanClimbLadder": false,
 			"CanMeleeDamage": true,
-			"MeleeDamage": 90,
+			"MeleeDamage": 100,
 			"MeleeDamageVs": {
-				"Maceman": 120,
-				"Pikeman": 120,
-				"Swordsman": 60,
-				"Knight": 60,
+				"Maceman": 125,
+				"Pikeman": 125,
+				"Swordsman": 50,
+				"Knight": 50,
 				"ArabSwordsman": 75
 			},
-			"MeleeDamageToBuildings": 54,
-			"MeleeDamageToTowers": 5,
-			"MeleeDamageToWalls": 7,
+			"MeleeDamageToBuildings": 60,
+			"MeleeDamageToTowers": 6,
+			"MeleeDamageToWalls": 8,
 		},
 		"Firethrower": {
 			"Cost": 120,

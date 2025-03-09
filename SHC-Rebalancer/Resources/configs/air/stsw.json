@@ -1,0 +1,22 @@
+{
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"AIs": {
+		"All": null,
+		"Rat": null,
+		"Snake": null,
+		"Pig": null,
+		"Wolf": null,
+		"Saladin": null,
+		"Caliph": null,
+		"Sultan": null,
+		"Richard": null,
+		"Frederick": null,
+		"Phillip": null,
+		"Wazir": null,
+		"Emir": null,
+		"Nizar": null,
+		"Sheriff": null,
+		"Marshal": null,
+		"Abbot": null
+	}
+}

@@ -85,12 +85,12 @@ public class AppSettings : StswObservableObject
     private bool _includeOptions = true;
 
     /// SelectedConfigs
-    public ObservableDictionary<string, string?> SelectedConfigs
+    public StswObservableDictionary<string, string?> SelectedConfigs
     {
         get => _selectedConfigs;
         set => SetProperty(ref _selectedConfigs, value);
     }
-    private ObservableDictionary<string, string?> _selectedConfigs = [];
+    private StswObservableDictionary<string, string?> _selectedConfigs = [];
 
     /// ShowOptionsDetails
     public bool ShowOptionsDetails
@@ -101,10 +101,10 @@ public class AppSettings : StswObservableObject
     private bool _showOptionsDetails = true;
 
     /// SelectedOptions
-    public ObservableDictionary<string, object?> SelectedOptions
+    public StswObservableDictionary<string, object?> SelectedOptions
     {
         get => _selectedOptions;
         set => SetProperty(ref _selectedOptions, value);
     }
-    private ObservableDictionary<string, object?> _selectedOptions = [];
+    private StswObservableDictionary<string, object?> _selectedOptions = [];
 }

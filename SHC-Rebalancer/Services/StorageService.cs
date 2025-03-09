@@ -21,13 +21,19 @@ internal static class StorageService
         { GameVersion.Crusader, Path.Combine(SettingsService.Instance.Settings.GamePath, "Stronghold Crusader.exe") },
         { GameVersion.Extreme, Path.Combine(SettingsService.Instance.Settings.GamePath, "Stronghold_Crusader_Extreme.exe") },
     };
+    public static string GameLanguage => TexService.GetTranslationAtIndex(6);
+
     public static string AivPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "aiv");
     public static string BaseAddressesPath => Path.Combine(AppContext.BaseDirectory, "Resources", "base");
+    public static string BinksPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "binks");
     public static string ConfigsPath => Path.Combine(AppContext.BaseDirectory, "Resources", "configs");
+    public static string FxSpeechPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "fx", "speech");
+    public static string GmPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "gm");
     public static string UcpPath => Path.Combine(AppContext.BaseDirectory, "Resources", "ucp");
     
     public static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> BaseAddresses { get; set; } = [];
     public static Dictionary<string, ObservableCollection<object>> Configs { get; set; } = [];
+    public static IEnumerable<string> CustomAIs { get; set; } = Directory.GetDirectories(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources/configs/air")).Select(x => Path.GetFileName(x));
 
     /// LoadBaseAddresses
     internal static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> LoadBaseAddresses()
@@ -53,6 +59,7 @@ internal static class StorageService
     [
         ("options", typeof(OptionsConfigModel)),
         ("aic", typeof(AicConfigModel)),
+        ("air", typeof(AirConfigModel)),
         ("aiv", typeof(AivConfigModel)),
         ("goods", typeof(GoodsConfigModel)),
         ("troops", typeof(TroopsConfigModel)),

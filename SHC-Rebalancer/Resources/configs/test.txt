@@ -1,0 +1,4151 @@
+﻿Copyright FireFly Studios, 2001. Wszelkie prawa zastrzeżone.
+sty
+lut
+mar
+kwi
+maj
+cze
+lip
+sie
+wrz
+paź
+lis
+gru
+styczeń
+luty
+marzec
+kwiecień
+maj
+czerwiec
+lipiec
+sierpień
+wrzesień
+październik
+listopad
+grudzień
+Rodzaje zasobów
+pnie
+drewno
+chmiel
+kamień
+zwierzęce skóry
+żelazo
+smoła
+smoła
+pszenica
+chleb
+ser
+mięso
+owoce
+piwo
+złoto
+mąka
+łuki
+kusze
+włócznie
+piki
+wekiery
+miecze
+zbroje skórzane
+zbroje stalowe
+zmniejsza popularność
+nie wpływa na popularność
+zwiększa popularność
+Zasoby początkowe
+Zasoby dostępne
+Zasoby zdobyte
+Główne menu
+Rozpocznij grę jednoosobową
+Rozpocznij grę wieloosobową
+Skorzystaj z GameSpy
+Wczytaj grę
+Wyjdź z gry
+Twój tytuł, władco?
+Witaj
+OK
+Kampania
+Budowanie
+Pojedyncza mapa
+Powrót do głównego menu
+Rozpocznij misję
+Wyjdź z gry
+Misja
+Zwycięstwo
+Klęska
+Cofnij
+Łatwy
+Normalny
+Trudny
+Bardzo trudny
+Rozpoczęcie misji
+Poziom trudności
+Pragniesz zmienić tytuł, panie?
+Kampania
+Krzyżowiec
+Swobodne budowanie
+Gra wieloosobowa
+Scenariusze
+Krzyżowiec Extreme
+Wieloosobowy Krzyżowiec Extreme
+Wyjdź z gry
+Polish
+Komentarze pomocy
+Rusz z największą armią Europy szlakiem pierwszej krucjaty, aby poznać sztukę przetrwania na pustyni.
+Wraz z armią Saladyna przepędź krzyżowców z Palestyny, zanim urosną w siłę.
+Dołącz do największych władców Europy, weź udział w trzeciej krucjacie i uchroń królestwo przed arabską potęgą.
+Ruszaj wraz z krzyżowcami, niosąc miecz przeciw wrogom króla.
+Rozwijane teksty pomocy
+Budynki zamkowe
+Cechy
+Budynki miejskie
+Raporty
+Wieże
+Bramy
+Warownie
+Zbrojownia
+Koszary
+Obóz najemników
+Stajnie
+Kamienny mur
+Mur z blankami
+Kamienne schody
+Niski mur
+Koksownik
+Wilcze doły
+Namiot oblężniczy 1
+Namiot oblężniczy 2
+Namiot oblężniczy 3
+Wieża obserwacyjna
+Wieżyczka obwodowa
+Wieżyczka obronna
+Baszta kwadratowa
+Baszta okrągła
+Fosy
+Mała brama drewniana
+Duża brama drewniana
+Mała brama kamienna
+Most zwodzony
+Kop fosę
+Dwór saski
+Drewniana warownia
+Murowana warownia
+Forteca
+Twierdza
+Farmy
+Warsztaty
+Dom
+Kamienica
+Kamieniołom
+Drwal
+Kopalnia żelaza
+Odkrywka smoły
+Skład
+Spichlerz
+Studnia
+Młyn
+Targowisko
+Wół pociągowy
+Kuźnia
+Płatnerz
+Garbarnia
+Łuczarz
+Grotnik
+Piekarnia
+Browar
+Uprawa pszenicy
+Sad jabłoni
+Uprawa chmielu
+Farma mleczna
+Chata myśliwska
+Budynki sakralne
+Karczma
+Zielarz
+Cech inżynierów
+Cech kopaczy
+Latryny
+Zakratowane okna
+Blanki
+Szubienica
+Słup majowy
+Tarcze strzeleckie
+Kukły ćwiczebne
+Dyby
+Włócznik
+Pikinier
+Łucznik
+Kusznik
+Pałkarz
+Zbrojny
+Rycerz
+Włócznie
+Piki
+Łuki
+Kusze
+Wekiery
+Miecze
+Zbroja skórzana
+Zbroja stalowa
+Duża brama kamienna
+Usuń fosę
+Ładne rzeczy
+Sadyby
+Flaga 1
+Flaga 2
+Flaga 3
+Herb
+Herb 2
+Sztandar
+Kaplica
+Kościół
+Katedra
+Ogród krzewów
+Ogródek warzywny
+Ogród miejski
+Duży ogród
+Ogród publiczny
+Zgniatacz palców
+Łamacz kciuków
+Stos
+Pal chłosty
+Wędrowna trupa
+Pojedynek na kopie
+Stołek topielca
+Ogród 6
+Ogród 7
+Ogród 8
+Ogród 9
+Ogród 10
+Ogród 11
+Ogród 12
+Budynki wojskowe
+Ogrody
+Przygnębiające rzeczy
+Rozrywki
+Budynki rolnicze
+Opcje gry
+Powrót do zamków
+Powrót do cechów
+Powrót do miasta
+Powrót do żywności
+Mangonela
+Katapulta
+Trebusz
+Wieża oblężnicza
+Taran
+Przenośna tarcza
+Kocioł z olejem
+Arabski posterunek
+Posterunek
+Menu
+Kształt pędzla
+Swobodnie lub przeciągaj
+Usuń
+Edytuj wysokość
+Edytuj teren
+Edytuj roślinność
+Edytuj faunę
+Edytuj wodę
+Edytuj cechy
+Podnieś teren
+Obniż teren
+Minimalna wysokość
+Gęste krzewy
+Wyrównaj
+Góra
+Wzgórze
+Wyniesiona równina
+Płaskowyż
+Łąka przy oazie
+Krzewy
+Skały
+Ziemia i skały
+Kamienie
+Żelazo
+Ziemia
+Piasek
+Drzewo oliwne
+Palma daktylowa
+Palma kokosowa
+Palma
+Kaktus
+Jeleń
+Lew
+Królik
+Wielbłąd
+Mewa
+Kruk
+Morze
+Płycizna
+Plaża
+Moczary
+Ropa
+Rzeka
+Bród
+Piana
+Fale
+Duży głaz - północ
+Duży głaz - wschód
+Duży głaz - południe
+Duży głaz - zachód
+Duży głaz - losowy kierunek
+Drogowskaz
+Ujście
+Cofnij
+Balista
+Wylej olej
+Patrol
+Rozwiąż
+Kop tunel
+Atakuj
+Wystrzel krowę
+Smolny rów
+Warownia gracza 1
+Warownia gracza 2
+Warownia gracza 3
+Warownia gracza 4
+Warownia gracza 5
+Warownia gracza 6
+Warownia gracza 7
+Warownia gracza 8
+Budynki przetwórcze
+Budynki zbrojeniowe
+Flaga 4
+Raport popularności
+Raport 2
+Raport 3
+Raport 4
+Raport 5
+Raport 6
+Raport 7
+Raport 8
+Konie
+Powrót do edytora krajobrazu
+Naucz się, jak przetrwać na pustyni i przeżyj najważniejsze momenty z czasów krucjat!
+Gotuj się do drogi! Sam wybierzesz bitwę, którą stoczysz.
+Buduj bez przeszkód, nie ma tu nikogo oprócz wielbłądów.
+Zniszcz wszystkich - wrogów i przyjaciół!
+Wyjdź z gry
+Ruiny
+Umieść ludzi
+Umieść ruiny
+Zaznacz / odznacz włóczników
+Zaznacz / odznacz łuczników
+Zaznacz / odznacz inżynierów
+Zaznacz / odznacz pikinierów
+Zaznacz / odznacz pałkarzy
+Zaznacz / odznacz zbrojnych
+Zaznacz / odznacz kuszników
+Zaznacz / odznacz rycerzy
+Zaznacz / odznacz mnichów
+Zaznacz / odznacz drabiniarzy
+Łucznicy
+Włócznicy
+Pikinierzy
+Pałkarze
+Kusznicy
+Zbrojni
+Rycerze
+Drabiniarze
+Inżynierowie
+Inżynierowie z olejem
+Mnisi
+Kopacze
+Zaznacz / odznacz kopaczy
+Naprawa
+Rozegraj kampanię militarną
+Rozpocznij rozgrywkę wieloosobową
+Stwórz pole bitwy dla siebie i swoich znajomych.
+Przeprowadź inwazję
+Rozegraj kampanię ekonomiczną
+Rozegraj misję ekonomiczną
+Swobodne budowanie
+PUSTY
+Wczytaj projekt lub zmień gotową mapę.
+Stwórz mapę do rozgrywki w trybie swobodnego budowania.
+Stwórz mapę dla Krzyżowca (lub mapę do rozgrywek wieloosobowych).
+Nowa mapa dla wielu graczy
+Powrót do głównego menu
+Dół kloaczny
+Stos
+Kleszcze
+Loch
+Madejowe łoże
+Pal chłosty
+Katowski pień
+Stołek topielca
+Kojec psów bojowych
+Posąg
+Ołtarz
+Pszczeli ul
+Tańczący niedźwiedź
+Sadzawka
+Niedźwiedzia jaskinia
+Samouczek
+Utrzymaj pozycję
+Postawa obronna
+Postawa agresywna
+Stop
+Buduj
+Wróć
+Zaznacz / odznacz katapulty
+Zaznacz / odznacz trebusze
+Zaznacz / odznacz tarany
+Zaznacz / odznacz wieże oblężnicze
+Zaznacz / odznacz przenośne tarcze
+Zaznacz / odznacz mangonele
+Zaznacz / odznacz balisty
+Staw
+Twórcy gry
+Rozpocznij grę
+Samouczek
+Porady
+Cele misji
+Powtórz wstęp
+Edytor map niedostępny w wersji demonstracyjnej
+20 skał za 10 kamieni
+Głowa na palu
+Wici wojenne
+Podboje Saladyna
+Królewska krucjata
+Państwa krzyżowców
+Umieść jednostki arabskie
+Arabski łucznik
+Niewolnik
+Procarz
+Asasyn
+Konny łucznik
+Arabski zbrojny
+Miotacz bomb
+Balista ogniowa
+Zaznacz / odznacz lorda
+Zaznacz / odznacz arabskich łuczników
+Zaznacz / odznacz arabskich niewolników
+Zaznacz / odznacz arabskich procarzy
+Zaznacz / odznacz arabskich asasynów
+Zaznacz / odznacz arabskich łuczników konnych
+Zaznacz / odznacz arabskich zbrojnych
+Zaznacz / odznacz arabskich miotaczy bomb
+Zaznacz / odznacz arabskie balisty ogniowe
+Cysterna
+Limit osiągnięty
+Zatwierdź drużyny
+Wyjdź i cofnij zmiany
+Kliknij i przeciągnij gracza nad drugiego, aby stworzyć drużynę
+Upuść gracza, aby opuścić drużynę
+Dodaj komputerowego przeciwnika
+Zdefiniuj drużyny
+Usuń gracza
+Rozmowa ze sprzymierzeńcami
+Ranking
+Umieść losowych graczy komputerowych
+Na twoim komputerze jest zainstalowana stara wersja DirectX, przez co gra Twierdza: Krzyżowiec nie może korzystać z trybu rozgrywki wieloosobowej
+Staw czoła najmężniejszym władcom w najbardziej wymagającym z wyzwań
+Zalej wrogów deszczem strzał! Stocz najcięższe z wieloosobowych starć!
+Zaprojektuj i stwórz własne mapy do edycji Extreme
+Tekst podpowiedzi
+Zatłoczenie obniża popularność
+Warunki mieszkaniowe stabilne
+Dodatkowa przestrzeń zwiększa popularność
+Popularność spada
+Popularność stabilna
+Popularność wzrasta
+Komentarze działań gracza
+Brakuje żelaza
+Brakuje smoły
+Brakuje złota
+Brakuje drewna i kamienia
+Brakuje drewna
+Brakuje kamienia
+W tym miesiącu nie wydano żywności
+Chłopi się buntują
+Ludzie z twoich lasów do nich dołączyli
+Umieść warownię, aby wskazać lokację swojego zamku
+Zbuduj spichlerz
+Wybierz warownię i wskaż lokację swojego zamku
+Potrzeba więcej drewna
+Brakuje drewna, panie
+Zapasy drewna są za małe, panie
+Potrzeba więcej kamienia
+Brakuje kamienia, panie
+Zapasy kamienia są za małe, panie
+Potrzebujemy chłopów, panie
+Potrzebujemy rekrutów, panie
+Potrzebujemy broni, panie
+Gra wstrzymana
+Tempo gry
+Edytor map
+Nowa mapa
+Wczytaj mapę
+Zapisz mapę
+Nowa mapa
+Główne menu
+Do mapy
+Wróć
+Do mapy
+Edytuj
+Dalej
+Zatwierdź
+Jeden gracz
+Wielu graczy
+Dwór saski
+Drewniana warownia
+Murowana warownia
+Forteca
+Twierdza
+Wybierz typ gry
+Wybierz rozmiar nowej mapy
+Wybierz rodzaj warowni
+Brak mapy
+Dostępne
+Brak tytułu
+Edytuj scenariusz
+Nowa inwazja
+Wybierz typ gry
+Oblężenie
+Inwazja
+Ekonomiczna
+Mapa testowa
+Wiadomość
+Teren
+Edytor trybu "Oblężenie"
+Zapisz mapę
+Zablokuj mapę
+Zbuduj na pustej mapie z ustalonymi zasobami możliwie najsilniejszy zamek. Rzuć wyzwanie innym graczom i pozwól im go zaatakować. Po zakończeniu oblężenia twoja twierdza zostanie oceniona!
+Rozpoczynasz grę na pustej mapie, na której możesz wznieść swą najwspanialszą twierdzę.
+Wczytuje ostatnią mapę i pozwala ci dalej rozbudowywać swój zamek.
+Zapisuje aktualnie wyświetlaną mapę jako mapę roboczą, pozwalając na jej późniejszy odczyt i dalszą edycję.
+Zapisuje mapę w wersji ostatecznej i chroni przed dalszą edycją. Po zablokowaniu mapa znajduje się na liście map trybu "Oblężenie".
+Opuść tryb "Oblężenie".
+Edytuj mapę.
+Dostępni ludzie:
+Oznacz mapę jako zrównoważoną
+Oznacz mapę jako niezrównoważoną
+Tekst wyników demo
+Wyśmienicie, lecz czy poradzisz sobie równie dobrze na wyższym stopniu trudności?
+Poziom gry =
+Miesięcy wcześniej =
+Dodatkowe uzbrojenie =
+Wynik =
+Najwyraźniej opanowałeś sztukę zarządzania zamkiem.
+Chyba nadszedł czas, aby sprawdzić się w walce.
+Imponujące starcie! Dowiodłeś swoich dowódczych talentów.
+Znacznie większe wyzwania oczekują cię w grze Twierdza: Krzyżowiec.
+Poprzedni najlepszy wynik
+Ekstra =
+Dodatkowa populacja =
+Stracone jednostki
+Gratulacje!
+Punktacja zamku =
+Straty atakujących =
+Pozostało obrońców =
+Zabite jednostki wroga
+Stracone jednostki
+Zgromadzone złoto
+Najwyższa populacja
+Współczynnik strachu
+Ranking
+Kliknij, aby kontynuować
+Zniszczone budynki wroga
+Wyprodukowana żywność
+Zgromadzone drewno
+Zgromadzony kamień
+Wytopione żelazo
+Wydobyta smoła
+Wczytaj mapę
+Nowa mapa budowy zamku
+Nowa mapa Krzyżowca
+Menu
+Popularność
+Żywność
+Populacja
+W nadchodzącym miesiącu
+Żywność
+Podatki
+Zatłoczenie
+Niska populacja
+Jarmark
+Religia
+Dostępność piwa
+Współczynnik strachu
+Free text line
+Free text line
+Free text line
+Tekst wewnątrz budynku
+Stan:
+Praca w toku
+Praca wstrzymana
+Pracownik w drodze
+Potrzebny jeszcze jeden pracownik
+Potrzeba jeszcze dwóch pracowników
+Wyłączono
+Zbyt blisko wroga, aby wezwać pracowników
+Brak dostępu do warowni
+Pracownik:
+Dwór saski
+Drewniana warownia
+Murowana warownia
+Forteca
+Twierdza
+Miejsce na
+Podatki:
+"Szczodra łapówka"
+"Większa łapówka"
+"Drobna łapówka"
+"Brak podatków"
+"Niskie podatki"
+"Umiarkowane podatki"
+"Wysokie podatki"
+"Okrutne podatki"
+"Wygórowane podatki"
+"Bezlitosne podatki"
+"Jeszcze okrutniejsze podatki"
+"Niewyobrażalne podatki"
+Żołd armii
+Karczma
+Wyłącz X
+Włącz X
+Dzbany piwa
+Rozdaj piwo
+Raport populacji
+Następny poziom przy
+Czynne karczmy
+Osiągnięto najwyższą premię 
+Free text line
+Tekst koszar
+Brak broni na wyposażenie jednostek
+Koszt
+Dostępni chłopi
+Spichlerz
+jednostki żywności.
+jednostka żywności.
+"Bez racji"
+"Połowiczne racje"
+"Pełne racje"
+"Podwójne racje"
+typy konsumowanej żywności.
+typ konsumowanej żywności.
+miesięczne zapasy.
+miesięczny zapas.
+Zapas żywności na mniej niż miesiąc.
+"Dodatkowe racje"
+Dom
+Mieszkanie dla 8 chłopów.
+Chata drwala
+Wstrzymaj wycinkę
+Wznów wycinkę
+Wół pociągowy
+Zatrzymaj wołu
+Wznów pracę wołu
+Wół przewozi kamień stąd do składu.
+Kopalnia żelaza
+Wstrzymaj wydobycie żelaza
+Wznów wydobycie żelaza
+Odkrywka smoły
+Wstrzymaj wydobycie smoły
+Wznów wydobycie smoły
+Chata myśliwska
+Wstrzymaj polowania
+Wznów polowania
+Skład
+Zbrojownia
+Warsztat łuczarza
+Wstrzymaj produkcję
+Wznów produkcję
+Kuźnia
+Wstrzymaj produkcję
+Wznów produkcję
+Wytwarza:
+Następne:
+Miecze
+Wekiery
+Łuki
+Kusze
+Włócznie
+Piki
+Produkcja wstrzymana - brak drewna
+Produkcja wstrzymana - brak żelaza
+Produkcja wstrzymana - brak krów
+Grotnik
+Wstrzymaj produkcję
+Wznów produkcję
+Płatnerz
+Wstrzymaj produkcję
+Wznów produkcję
+Garbarnia
+Wstrzymaj produkcję
+Wznów produkcję
+Piekarnia
+Wstrzymaj wypiek
+Wznów wypiek
+Browar
+Wstrzymaj warzenie piwa
+Wznów warzenie piwa
+Kamieniołom
+Wstrzymaj prace
+Wznów prace
+Składowisko kamienia
+Użyj wołu, aby przetransportować składowany tu kamień.
+Zielarz
+Wstrzymaj pracę
+Wznów pracę
+Odporność na choroby
+Cech inżynierów
+Brakuje złota dla czeladników
+Brakuje złota na wynajem jednostki
+Cech kopaczy
+Brakuje złota na szkolenie kopacza
+Targowisko
+Oto co i za ile sprzedaję.
+Wymień żywność
+Wymień surowce
+Wymień broń
+Kup
+Sprzedaj
+Kup 5 jednostek
+Sprzedaj 5 jednostek
+Brakuje złota
+Brakuje towaru
+za
+złoto
+Nie zbudowano spichlerza
+Nie zbudowano składu
+Nie zbudowano zbrojowni
+Brak miejsca w spichlerzu
+Brak miejsca w składach
+Brak miejsca w zbrojowni
+Wybierz towar na handel
+Kupuje
+Sprzedaje
+Studnia
+Kocioł z olejem
+Podgrzewa wrzący olej do obrony zamku.
+Namiot oblężniczy
+Katapulta
+Trebusz
+Wieża oblężnicza
+Taran
+Przenośna tarcza
+% ukończenia
+Balista ogniowa
+Farma pszenicy
+Wstrzymaj pracę na farmie
+Wznów pracę na farmie
+Farma chmielu
+Wstrzymaj pracę na farmie
+Wznów pracę na farmie
+Sad jabłoni
+Wstrzymaj pracę w sadzie
+Wznów pracę w sadzie
+Zagroda bydła
+Wstrzymaj pracę w zagrodzie
+Wznów pracę w zagrodzie
+Młyn
+Wstrzymaj pracę młyna
+Wznów pracę młyna
+Miele ziarno na mąkę
+Dostarcza mąkę
+Wraca z pszenicą
+Zbiera pszenicę
+Bezczynny
+Czeka na pszenicę
+Stajnie
+Konie dostępne
+Konie wykorzystywane
+Koń dostępny
+Koń wykorzystywany
+Kaplica
+Wstrzymaj modły
+Wznów modły
+Kościół
+Katedra
+Brama
+Most zwodzony
+Wysunięta brama 
+Wejście do tunelu
+Obozowisko
+Tutaj gromadzą się chłopi.
+Drogowskaz
+Wilczy dół
+Katapulta
+Trebusz
+Posterunek
+Łucznicy
+Włócznicy
+Pałkarze
+Zbrojni
+Rycerze
+Katapulty
+Katapulty +
+Katapulty ++
+Arabski posterunek
+Łucznicy
+Zbrojni
+Niewolnicy
+Konni łucznicy
+Miotacze bomb
+Procarze
+Arabskie balisty
+Katapulty
+Rozmiar
+Mały
+Duży
+Opóźnienie
+Brak
+10 min.
+Wieża
+Wieża obserwacyjna.
+Wieżyczka obwodowa.
+Wieżyczka obronna.
+Baszta kwadratowa. Może pomieścić broń oblężniczą.
+Baszta okrągła. Może pomieścić broń oblężniczą.
+Szubienica
+Obniża popularność, ale podnosi wydajność pracowników.
+Dyby
+Obniżają popularność, ale podnoszą wydajność pracowników.
+Pręgierz czarownic
+Obniża popularność, ale podnosi wydajność pracowników.
+Słup majowy
+Podnosi popularność, ale obniża wydajność pracowników.
+tekst?
+Poligon szkoleniowy
+Ogród
+Podnosi popularność, ale obniża wydajność pracowników.
+Free text line
+Tekst opcji gry
+Opcje gry
+Wczytaj
+Zapisz
+Ustawienia obrazu
+Ustawienia dźwięku
+Ustawienia sieci
+Zakończ misję
+Zakończ grę
+Koniec gry
+Wznów grę
+Rozdzielczość
+Zbliżenie
+Wł.
+Wył.
+Tempo gry
+Przesuwanie ekranu
+Wróć
+Zastosuj
+Wolno
+Normalnie
+Szybko
+Tak
+Nie
+Opcje
+Opcje rozgrywki
+Pomoc
+Nazwa
+Data
+Misja
+Nadpisać plik?
+Wczytuję
+Zapisuję
+Okno pomocy
+Dźwięk
+Głośność muzyki
+Głośność efektów
+Głośność dialogów
+Uruchom
+Odprawa
+Szczegółowość grafiki
+Wysoka
+Niska
+Zakończ bez zapisu
+Ponów misję
+Dostosuj tożsamość
+Autozapis
+Opuścić zamek?
+Lord krzyżowiec
+Inwazja?
+Krzyżowiec lub arabski szach
+Wybierz wizerunek
+Wyniki w edycji Extreme
+System pomocy
+Wstecz
+Wyjdź
+Połączenie w trybie wieloosobowym
+Stwórz nową grę
+Dołącz do gry
+Anuluj
+Wielu graczy
+Połączenie
+Rodzaje połączeń
+Utwórz
+Dołącz
+Konfiguracja nie jest wymagana
+Konfiguracja nastąpi później
+Szukanie sesji
+Adres IP gospodarza (tylko wtedy, gdy dołączasz do gry)
+Port IP (opcjonalnie)
+Numer telefonu (tylko wtedy, gdy dołączasz do gry)
+GameSpy
+Pseudonim gracza
+Podany pseudonim jest używany
+przez innego gracza. Proszę podać inny.
+Login
+Oczekiwanie na gospodarza...
+Gracz opuścił grę.
+Gracz jest teraz gospodarzem.
+Opóźnienia komunikacji. Oczekiwanie na pozostałych graczy.
+Połączenie zerwane.
+Wszyscy gracze opuścili grę.
+Automatyczny przydział warowni.
+Gracze wybierają warownie.
+Odrzuć gracza.
+Zostałeś wyrzucony z gry przez gospodarza.
+Rozmowa
+Wszystko
+Nic
+Wyślij
+Wyjdź
+Twoja drużyna
+Twoje IP:
+oferuje przymierze.
+dołączył do
+zerwał przymierze
+zabił
+otrzymuje
+złota
+Błąd połączenia. Proszę czekać.
+(zmarły)
+Błąd połączenia.
+Powrót na ostatnią bezpieczną pozycję.
+Możesz mieć tylko 1 sojusznika.
+Sojusz niemożliwy.
+Połączenie zerwane.
+Wysyłanie stanu gry
+Otrzymywanie stanu gry
+Anuluj grę
+Automatyczny zapis wyłączony
+Automatyczny zapis włączony
+Ostatni zapis:
+minut.
+oferuje przymierze
+Zerwij grę
+Zakończyć grę?
+Teraz ty jesteś gospodarzem
+Opuściłeś grę: błąd Direct Play
+Opuściłeś grę: przekroczony czas oczekiwania
+Opuściłeś grę: przekroczony czas synchronizacji
+: brak odpowiedzi
+Przekroczony czas oczekiwania
+Odrzucono
+Powrót do gry!
+Wyślij
+Handluj
+prosi cię o pomoc
+prosi cię o zaatakowanie
+prosi cię o surowce
+Reakcje panelu.
+Brakuje pracowników do obsługi budynku.
+Warsztaty muszą się znajdować przy murach.
+Musisz zbudować przy składzie.
+Musisz zbudować przy zbrojowni.
+Kopalnię żelaza musisz zbudować na złożu rudy żelaza.
+Odkrywkę smoły musisz zbudować na plamie ropy na moczarach.
+Musisz zbudować przy spichlerzu.
+Musisz zbudować przy koszarach.
+Za blisko nieprzyjaciela, aby budować.
+Panie, nasz spichlerz jest pełen.
+Panie, nasze składy są pełne.
+Panie, nasza zbrojownia jest pełna.
+Farmy musisz zakładać na nizinach.
+Teren niedostępny, panie.
+Za daleko od zamku, aby budować, panie.
+Musisz budować przy zamkowych murach, panie.
+Za blisko nieprzyjaciela, aby budować
+Za daleko od zamku, aby budować
+Musisz budować przy istniejących murach
+Za blisko nieprzyjaciela, aby usunąć
+Za blisko drogowskazu, aby budować.
+Farmy musisz zakładać w oazie.
+Te ziemie nie są dość żyzne, panie.
+Ten obiekt niegdyś był
+To był dom
+To była kamienica
+To była chata drwala
+To był wół pociągowy
+To była kopalnia żelaza
+To była odkrywka smoły
+To była chata myśliwska
+To był obóz najemników
+To były murowane koszary
+To był skład
+To była zbrojownia
+To był warsztat łuczarza
+To była kuźnia
+To był warsztat grotnika
+To był warsztat płatnerza
+To była garbarnia
+To była piekarnia
+To była gorzelnia
+To był spichlerz
+To był kamieniołom
+To był kamieniołom
+To była karczma
+To był zielarz
+To był cech inżynierów
+To był cech kopaczy
+To było targowisko
+To była studnia
+To był kocioł z olejem
+To był namiot oblężniczy
+To była farma pszenicy
+To była farma chmielu
+To był sad jabłoni
+To była zagroda bydła
+To był młyn
+To była stajnia
+To była kaplica
+To był kościół
+To była katedra
+39
+To był dwór saski
+To była drewniana warownia
+To była murowana warownia
+To była forteca
+To była twierdza
+To była główna brama
+To była wewnętrzna brama
+To była drewniana brama
+To była tylna brama
+To był most zwodzony
+To było wejście do tunelu
+To były pola defilad
+To był drogowskaz
+To były pola defilad
+To był wilczy dół
+To było obozowisko
+To były pola defilad
+To były pola defilad
+To były pola defilad
+59
+To była brama
+To była wieża
+To była szubienica
+To były dyby
+To był pręgierz czarownic
+To był słup majowy
+To był ogród
+To był wilczy dół
+To był smolny rów
+69
+70
+To były lewe wrota warowni
+To były prawe wrota warowni
+To były wrota warowni
+To była wieża obserwacyjna
+To była wieżyczka obwodowa
+To była wieża obronna
+To była baszta kwadratowa
+To była baszta okrągła
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+To był mur
+To był dół kloaczny
+To był stos
+To były kleszcze
+To był loch
+To było madejowe łoże
+To był pal chłosty
+To był katowski pień
+To był stołek topielca
+To był kojec psów bojowych
+To był posąg
+To był ołtarz
+To był pszczeli ul
+To był tańczący niedźwiedź
+To była sadzawka
+To była jaskinia niedźwiedzia
+To był posterunek
+To był arabski posterunek
+Poczekalnia Xplayer
+Wczytaj
+Główne menu
+Gotów
+Rozpocznij grę
+Oczekiwanie na graczy
+Brak gotowości
+Podgląd
+Kliknij na
+Handel
+Broń
+Żywność
+Towary
+Zasoby
+Złoto
+Popularność
+Zasoby początkowe
+Brak
+Niewiele
+Średnio
+Dużo
+Ustaw
+Jednostki początkowe
+Brak
+Mało
+Średnio
+Dużo
+Ustaw
+Gracze
+Status
+Drużyna
+Gra: Dwór saski
+Gra: Drewniana warownia
+Gra: Kamienna warownia
+Gra: Forteca
+Gra: Twierdza
+Zwycięstwo: królobójstwo
+Zwycięstwo: 10 000 sztuk złota
+Zwycięstwo: 3
+Zwycięstwo: 4
+Zwycięstwo: 5
+Zwycięstwo: 6
+Zwycięstwo: 7
+Zwycięstwo: 8
+Zwycięstwo: 9
+Zwycięstwo: 10
+Dwór saski
+Drewniana warownia
+Kamienna warownia
+Forteca
+Twierdza
+Królobójstwo
+10 000 sztuk złota
+Zwycięstwo: 3
+Zwycięstwo: 4
+Zwycięstwo: 5
+Zwycięstwo: 6
+Zwycięstwo: 7
+Zwycięstwo: 8
+Zwycięstwo: 9
+Zwycięstwo: 10
+Nie
+Nazwa
+Koniec gry
+Zwycięstwo
+Rozpocznij grę
+Wyłącznie budowanie
+Bez walki
+Oblężenie
+Poziom
+Łatwy
+Normalny
+Trudny
+Bardzo trudny
+Zaawansowany
+Punktacja
+Inwazja
+Atak
+Obrona
+Wczesne
+Pośrednie
+Późne
+Tempo gry
+Bezpłatnie
+Koszt w złocie
+Poziom technologii
+Wojska
+Stan gotowości
+Punktacja
+opuścił grę
+Punktacja Króla wzgórza
+Wyrzuć
+Zostałeś wyrzucony!
+Opcje połączenia
+Automatyczny zapis gry
+Wyłącz
+5 minut
+10 minut
+20 minut
+Wzmocnione mury
+Przymierza
+W dowolnej chwili
+Tylko na początku
+Opcje rozgrywki
+Przymierza niedozwolone.
+Wyślij mapę
+Wyślij mapę do
+Pobieranie mapy
+Proszę czekać
+Mgły wojny
+Pokaż mapę
+Szczur, Diuk Zgnilizny
+Szczur. "Gronostaj"
+Szczur, "Wydra"
+Szczur, "Fretka"
+Szczur, Diuk Camembert
+Szczur, Diuk Souris
+Szczur, Diuk Morceaux
+Szczur, Le Grand Fromage
+Wąż, Diuk Beauregard
+Wąż, Książę Wężyjęzyk
+Wąż, Diuk Żmijoząb
+Wąż, Książę Strujjagoda
+Wąż, Lord Pyton
+Wąż, Książę Grzechotnik
+Wąż, Diuk Anakonda
+Wąż, Jednooki Wyga
+Wieprz, Książę Trufli
+Wieprz, Diuk Świniogrodu
+Wieprz, "Prosiak"
+Wieprz, "Stary dzik"
+Wieprz, Książę Słoniny
+Wieprz, Baron von Bebech
+Wieprz, Książę Wieprzowa
+Wieprz, Skończona Świnia
+Wilk, Diuk Volpe
+Wilk, Lord Kieł
+Wilk, Lord Lupus
+Wilk, Earl Krwawy Kieł
+Wilk, Lord Kościogniotu
+Wilk, Lord Wyjącego Czuba
+Wilk, Lord Szarygrzbiet
+Wilk, Wielki zły wilk
+Saladyn Mądry
+Saladyn Sprawiedliwy
+Saladyn Dobry
+Saladyn Miłościwy
+Saladyn Wspaniały
+Saladyn Godny
+Saladyn Szlachetny
+Saladyn Wielki
+Kalif "Skorpion"
+Kalif "Szakal"
+Kalif "Wielbłąd"
+Kalif "Sęp"
+Kalif "Krab"
+Kalif "Hiena"
+Kalif Zły
+Kalif, "Szczur pustyni"
+Sułtan Abdul
+Sułtan Ahmed
+Sułtan Mustafa
+Sułtan Haszym
+Sułtan Karim
+Sułtan Malik
+Sułtan Szached
+Sułtan Waheb
+Lwie Serce, Ryszard I
+Lwie Serce, Ryszard II
+Lwie Serce, Ryszard III
+Lwie Serce, Ryszard IV
+Lwie Serce, Ryszard V
+Lwie Serce, Ryszard VI
+Lwie Serce, Ryszard VII
+Lwie Serce, Ryszard VIII
+Cesarz Fryderyk I
+Cesarz Fryderyk II
+Cesarz Fryderyk III
+Cesarz Fryderyk IV
+Cesarz Fryderyk V
+Cesarz Fryderyk VI
+Cesarz Fryderyk VII
+Cesarz Fryderyk VIII
+Król Filip I
+Król Filip II
+Król Filip III
+Król Filip IV
+Król Filip V
+Król Filip VI
+Król Filip VII
+Król Filip VIII
+Wezyr Straszny
+Wezyr "Plaga"
+Wezyr Bezlitosny
+Wezyr "Tyran"
+Wezyr Mściwy
+Wezyr Okrutny
+Wezyr "Huragan"
+Wezyr Paskudny
+Emir Omar
+Emir Sapehr
+Emir Najid
+Emir Nivtour
+Emir Ozhan
+Emir Atasz
+Emir Pasza
+Emir Vahdat
+Nizar Cichy
+Nizar Rączy
+Nizar Niewidzialny
+Nizar Ukryty
+Nizar Tajemniczy
+Nizar Zabójczy
+Nizar "Asasyn"
+Nizar "Wierzba"
+Szeryf z Nottingham
+Szeryf z Derby
+Szeryf z Lincoln
+Szeryf z Leicester
+Szeryf z Coventry
+Szeryf z Chester
+Szeryf z York
+Szeryf z Ockbrook
+Marszałek, Sir Długoręki
+Marszałek, Sir Podbipięta
+Marszałek, Sir Toczybeka
+Marszałek, Sir Wyrwibat
+Marszałek, Sir Kowal z Lancington
+Marszałek, Sir Portomił
+Marszałek, Sir Kopytnik
+Marszałek, Sir Pełnynos
+Opat Stirling
+Opat Dumfries
+Opat Kirkbride
+Opat Ayr
+Opat Leith
+Opat Dunbar
+Opat Clyde
+Opat Montrose
+Szczur
+Diuk Zgnilizny
+Szczur. "Gronostaj"
+Szczur, "Wydra"
+Szczur, "Fretka"
+Diuk Camembert
+Diuk Souris
+Diuk Morceaux
+Le Grand Fromage
+Wąż
+Diuk Beauregard
+Książę Wężyjęzyk
+Diuk Żmijoząb
+Książę Strujjagoda
+Lord Pyton
+Książę Grzechotnik
+Diuk Anakonda
+Jednooki Wyga
+Wieprz
+Książę Trufli
+Diuk Świniogrodu
+Wieprz, "Prosiak"
+Wieprz, "Stary dzik"
+Książę Słoniny
+Baron von Bebech
+Książę Wieprzowa
+Skończona Świnia
+Wilk
+Diuk Volpe
+Lord Kieł
+Lord Lupus
+Earl Krwawy Kieł
+Lord Kościogniotu
+Lord Wyjącego Czuba
+Lord Szarygrzbiet
+Wielki zły wilk
+Saladyn
+Mądry
+Sprawiedliwy
+Dobry
+Miłościwy
+Wspaniały
+Godny
+Szlachetny
+Wielki
+Kalif
+"Skorpion"
+"Szakal"
+"Wielbłąd"
+"Sęp"
+"Krab"
+"Hiena"
+"Szczur pustyni"
+Zły
+Sułtan
+Abdul
+Ahmed
+Mustafa
+Haszym
+Karim
+Malik
+Szached
+Waheb
+Lwie Serce
+Ryszard I
+Ryszard II
+Ryszard III
+Ryszard IV
+Ryszard V
+Ryszard VI
+Ryszard VII
+Ryszard VIII
+Fryderyk
+Fryderyk I
+Fryderyk II
+Fryderyk III
+Fryderyk IV
+Fryderyk V
+Fryderyk VI
+Fryderyk VII
+Fryderyk VIII
+Filip
+Filip I
+Filip II
+Filip III
+Filip IV
+Filip V
+Filip VI
+Filip VII
+Filip VIII
+Wezyr
+Straszny
+"Plaga"
+Bezlitosny
+Tyran
+Mściwy
+Okrutny
+"Huragan"
+Paskudny
+Emir
+Omar
+Sapehr
+Najid
+Nivtour
+Ozhan
+Atasz
+Pasza
+Vahdat
+Nizar
+Cichy
+Rączy
+Niewidzialny
+Ukryty
+Tajemniczy
+Zabójczy
+"Asasyn"
+"Wierzba"
+Szeryf
+Szeryf z Nottingham
+Szeryf z Derby
+Szeryf z Lincoln
+Szeryf z Leicester
+Szeryf z Coventry
+Szeryf z Chester
+Szeryf z York
+Szeryf z Ockbrook
+Marszałek
+Sir Długoręki
+Sir Podbipięta
+Sir Toczybeka
+Sir Wyrwibat
+Sir Kowal z Lancington
+Sir Portomił
+Sir Kopytnik
+Sir Pełnynos
+Opat
+Opat Stirling
+Opat Dumfries
+Opat Kirkbride
+Opat Ayr
+Opat Leith
+Opat Dunbar
+Opat Clyde
+Opat Montrose
+Opat Aberdeen
+Opis:
+Szczur łączy w sobie ewidentny antytalent do zarządzania zamkiem z szokująco naiwnym postrzeganiem taktyki wojskowej. Te cechy czynią go najbardziej bezużytecznym przeciwnikiem w grze!
+Wąż przejawia pewne umiejętności do władania swoimi włościami, lecz walka go przerasta. Woli zdawać się na najemnych specjalistów od mokrej roboty.
+Wieprz, sam nie będąc wybitnym ekonomistą, uwielbia walkę. Żądza (cudzego) złota szybko zachęci go do prób ataku, nawet niewielkimi siłami...
+Wilk żelazną pięścią utrzymuje porządek w swoim zamku, lecz to umiłowanie do bojów czyni go najstraszliwszym z wrogów.  Konsekwentny i wyrachowany, użyje wszelkich sił i sztuczek taktycznych, aby zapewnić sobie zwycięstwo.
+Saladyn zna zasady ekonomii pustyni lepiej niż pozostali władcy. Nie spieszy się z wyprowadzaniem swoich wojsk w pole, lecz gdy zaatakuje, to jedynie przeważającymi siłami.
+Okrutny i mściwy Kalif równie umiejętnie uprzykrza życie swoim poddanym, co tobie. Jeśli pozwolić mu dać upust swoim dyktatorskim zapędom, to jego podstępne metody walki nieustannie będą ci cierniem w stopie.
+Sułtan jest bardziej, powiedzmy, poetą niż wojownikiem, przedkładającym uczty i zabawę nad nudę zarządzania swoim zamkiem. Krótko mówiąc,nie jest najostrzejszym z mieczy pustyni. Jednak lud go kocha, a wojsko zrobi wszystko, bo go bronić.
+Lwie Serce zna się na miejscowej gospodarce. Jak na żołnierza, oczywiście. Jednak jego żywiołem jest pole bitwy. Odważny i nieznający strachu, umiejętnością prowadzenia oblężenia nie ustępuję żadnemu władcy na świecie.
+Cesarz Fryderyk jest prawdopodobnie najlepszym strategiem na całej pustyni. Jest niezłomnym rycerzem, a pozostawiony sam sobie z czasem urośnie w potęgę.
+Król Filip w pustynnej przygodzie szuka glorii i chwały, acz nierozważne próby wykorzystania przybocznych rycerzy jako głównej siły uderzeniowej często prowadzą go na skraj sromotnej klęski.
+Wezyr to niegodziwy przywódca o ognistym temperamencie. Swymi zastępami konnych łuczników potrafi skutecznie uprzykrzyć życie, choć jego umiejętność prowadzenia oblężenia pozostawia wiele do życzenia.
+Emir to prawy arabski przywódca, z którym zawsze można się porozumieć. Wszechstronny wódz, który wie, co to znaczy sprawnie zarządzać gospodarką, ale też potrafi zaatakować... i to znacznymi siłami!
+Nizar może cię łatwo zaskoczyć, jeżeli nie przygotujesz się na atak z zaskoczenia. Jego zamki, przypominające wyspy, dobrze sprawdzają się wyłącznie na nizinach, gdzie ich zdobycie może okazać się kłopotliwe.
+Szeryf... najokrutniejszy pan tych ziem i z pewnością najbardziej podstępny. Do swych niecnych celów wykorzysta zarówno Arabów, jak i krzyżowców, a swe zamczysko umocni wszystkim, co tylko mu się nawinie.
+Ten emerytowany wojak podchodzi do bitew nieco ostrożniej, niż zwykł to czynić za młodu. Jednak widok rycerzy wyjeżdżających galopem z jego zamku nadal powinno się traktować z pełną powagą.
+Opat uważa, że jego powołaniem jest obrona wiary. Dzięki licznym zastępom mściwych mnichów z łatwością sforsuje mury wrogich zamków.
+Kursor nad postacią wyświetla informacje. Kliknięcie zatwierdza wybór.
+Gracz
+To ty!
+Przeciwnik - człowiek
+Przeciwnik - komputer
+(w drużynie 1)
+(w drużynie 2)
+(w drużynie 3)
+(w drużynie 4)
+Zr
+Zrównoważona
+Niezrównoważona
+Mistrzowie potyczek
+Tekst przycisków w przerywnikach
+Główne menu
+Dalej
+Główne menu
+Ponów misję
+Wczytaj grę
+Odprawa
+Cele misji
+Porady
+Samouczek
+Pokaż odprawę
+Rozpocznij ponownie misję
+Cele misji
+Wymagana populacja:
+Władca został zabity
+Zabij wrogiego władcę
+Zgromadź złoto:
+Zgromadź żywność:
+Zgromadź broń:
+Zgromadź zasoby:
+Wyeliminuj wszystkie jednostki wroga
+Ukończ budowę zamku
+Wytęp lwy
+Negocjuj ze Szczurem
+Zabij Węża
+Zabij Wieprza
+Zabij Wilka
+Czas do ostatniej bitwy
+Zniszcz katedrę
+Czas do przegranej
+4 czynne farmy bydła
+2 czynne karczmy
+Czas do wysyłki broni
+% błogosławieństwa
+% konsumpcji piwa
+Współczynnik strachu - okrutny
+Współczynnik strachu - przyjemny
+Czas do zwycięstwa
+Cele misji wypełnione
+(przyciski raportów)
+Popularność
+Współ. strachu
+Populacja
+Żywność
+Armia
+Składy
+Uzbrojenie
+Religia
+(Tekst raportów)
+Nie wpływa na populację.
+Ludzie są szczęśliwsi, lecz mniej pracowici.
+Ludzie są mniej szczęśliwi, ale bardziej pracowici.
+Lata
+Bieżący miesiąc
+Obecnie:
+Łącznie jednostek
+% pobłogosławionych
+Wpływ na popularność:
+Wydajność %:
+Premia od katedry
+Premia od kościoła
+Księży łącznie
+Kliknięcie na żywności reguluje konsumpcję
+Najwyższy poziom okrucieństwa osiągnięty
+Największa dobrotliwość osiągnięta
+Narzędzi tortur do nast. poziomu:
+Upiększeń do nast. poziomu:
+Następny poziom przy
+Osiągnięto największą premię
+Brak premii od współczynnika strachu.
+Premia bitewna jednostek:
+Premia od katedry i kościoła
+- Określenia gracza -
+- Popularność -
+Wyklęty
+Pogardzany
+Znienawidzony
+Niepopularny
+Nielubiany
+Ignorowany
+Uznany
+Szanowany
+Kochany
+Uwielbiany
+Czczony
+- Współczynnik strachu -
+Okrutny
+Nieprzyjemny
+Twardy
+Przyjemny
+Przyjacielski
+Przymilny
+- Religia -
+Błogosławiony
+Bogobojny
+Święty
+- Piwo -
+Wstawiony
+Pijany
+Alkoholik
+- Bogactwo -
+Nędzarz
+Biedny
+Zamożny
+Bogaty
+- domyślne -
+Odizolowany
+Samotny
+Oblężony
+Młody
+Stary
+Nieszczególny
+oraz
+Imiona chłopów - mężczyźni -
+Heniek
+Bogdan
+Alek
+Szarlej
+Jaro
+Barnaba
+Janusz
+Samson
+Jan
+Włodek
+Waldek
+Dawid
+Tomasz
+Filip
+Edward
+Włochacz
+Adam
+Zbyszko
+Krótki
+Janko
+Maćko
+Jerzy
+Witek
+Piotr
+Bartek
+Maciej
+Maksym
+Karol
+Bartłomiej
+Wiktor
+Ziemowit
+Andrzej
+Tymon
+Micho
+Eryk
+Szymon
+Robert
+Krzych
+Jędrek
+Filip
+Stefan
+Darek
+Marek
+Daniel
+Łukasz
+Rysiek
+Szczepan
+Pietrek
+Tosiek
+Zenon
+Imiona chłopów - kobiety -
+Maria
+Joanna
+Jagna
+Ewa
+Matylda
+Anna
+Elżbieta
+Maja
+Izabela
+Iza
+Zuza
+Zocha
+Maryla
+Anka
+Aśka
+Marta
+Róża
+Baśka
+Kachna
+Flora
+Pozostałe przydomki -
+Smalec
+Dosia
+Krasula
+Farciarz
+Gdakacz
+Trajkotek
+Skrzekot
+Kwoka
+Ujadacz
+Włóczykij
+Pieszczoch
+Śnieżek
+Kapciuch
+Baryła
+Kopciuch
+Liliput
+Nazwiska chłopów -
+Maliniak
+Flemming
+Maślan
+Kufel
+Dongle
+Wyrwa
+Dwuszpad
+Wistbucket
+Krostczak
+Szmidt
+Becket
+Spears
+Twardypał
+Dziwiak
+Kucaj
+Miller
+Długonóg
+Małykolec
+Goodworthy
+Pryskacz
+Windsor
+Ryjowiec
+Dudnitył
+Okrąglak
+Ryżyzarost
+Koniomił
+Kaczor
+Szczoch
+Kłuta
+Młotemgo
+Małomski
+Piegus
+Glut
+Kozojed
+Hopklop
+Czół
+Tring
+Wodnik
+White
+Jiggleston
+Best
+Witchwood
+Zakwit
+Oileate
+Czerstwiak
+Małpiak
+Thompson
+Nochodź
+Bugatil
+Kąśniak
+Twardyryj
+Liściak
+Wesoł
+Udrap
+Pech
+Wórna
+Dziurabut
+Jones
+Brown
+Deskolico
+Hobson
+Grajew
+Mason
+Hewitt
+Emeny
+Luźniak
+Nulty
+Rympał
+Pritchard
+Dzwon
+(działania jednostek) -
+Czeka
+Oczekuje na miejsce magazynowe
+Płonie
+Odpoczywa
+Idzie do pracy
+Wraca z zapasami
+Pracuje
+Atakuje
+Idzie zbierać surowce
+Odnosi towary do składu
+Porusza się
+Umiera
+(królowa) -
+Wita się z ludem
+Rozmawia z prostymi ludźmi
+Zachęca chłopów do wysiłku
+Beszta chłopów
+Powraca do warowni
+Idzie do ogrodu
+Rozmyśla
+Spotyka się z ludem
+Idzie do kościoła
+(ksiądz) -
+Błogosławi
+Wysłuchuje skarg
+Udziela rozgrzeszenia
+Wygłasza kazanie
+(chłop) -
+Czeka na pracę
+Słucha
+Czeka na zatrudnienie
+Obija się
+Czeka
+Rozmawia
+Przemawia
+Opowiada dowcipy
+Snuje opowieści
+Przysięga wierność
+(wół) -
+Je trawę
+(ksiądz) -
+Idzie do karczmy
+Idzie do warowni
+(zielarz) -
+Spaceruje po ogrodach
+Wędruje
+Szuka chorych
+Leczy choroby
+(pijak) -
+Podchmielony
+Wstawiony
+Nietrzeźwy
+Zalany w trupa
+(kupiec)
+Idzie na targowisko
+Idzie do domu
+(krowa)
+Idzie za garbarzem
+Daje mleko
+Je trawę
+Czeka
+(pies) -
+Węszy
+Idzie za myśliwym
+Goni ofiarę
+Wraca do domu
+Biega w kółko
+(błazen) -
+Wraca do domu
+Dokucza
+Idzie do karczmy
+Robi fikołki
+Obija się
+(kurczak)
+Gdacze
+Trzepocze skrzydłami
+(matka)
+Idzie na mszę
+Spaceruje
+Plotkuje
+Zajmuje się dzieckiem
+(dziecko) -
+Biega
+Idzie do domu
+Gra w piłkę
+Gra w klasy
+Bawi się
+(żongler) -
+Wędruje po okolicy
+Żongluje
+(połykacz ognia) -
+Przechadza się
+Połyka ogień
+(odwiedziny rzeczy upiększającej okolicę) -
+Odpoczywa
+Ma przerwę
+Robi sobie przerwę
+Chodzi bez celu
+(specyficzne)
+Przynosi ze składu 
+Bierze 
+i zanosi do składu
+Idzie po
+Idzie po krowę
+Wraca z krową
+(drwal) -
+Idzie rąbać drewno
+Ścina drzewo
+Rąbie drewno
+Wraca z pniem
+(myśliwy) -
+Tropi zwierzynę
+Poluje
+Wraca z łupem
+Walczy
+(Extra drunk messages) - translator note could just replace all the drunk 32 terms below with just 'drunk'
+Nawalony
+Zdezorientowany
+Zbombardowany
+Ogłupiały
+Wcięty
+Jąka się
+Szuka guza
+W stanie wskazującym
+Chwiejny
+Na bańce
+Nabzdryngolony
+Bełkocze
+Na orbicie
+Mocno wypity
+Nie kontaktuje
+Znieczulony
+Zatacza się
+Ma problemy z chodzeniem
+Ogląda świat przez dno butelki
+W delirium
+Pijany
+Zagubiony
+Bełkotliwy
+Urywa mu się film
+Oczy zaszły mu mgłą
+Ćwiczy mięsień piwny
+Widzi podwójnie
+Ma kaprawe spojrzenie
+Szuka zakąski
+Pawiuje
+Ma torsje
+Zalany w trupa!
+Czeka na wybuch pożaru
+Idzie ugasić pożar
+Wraca po wodę
+Gasi ogień
+Straszy
+Wyje
+Pilnuje cię
+Szuka zemsty
+(ślub z piwowarem, który jest wiecznie pijany)
+"Kto by pomyślał, że to w ogóle możliwe?"
+"Sama przyniosła wszystkie trunki."
+"Mam nadzieję, że on lubi sobie wypić."
+"Ona zalatuje piwem."
+"Ona ledwie stoi..."
+"Chłop za kołnierz nie wylewa."
+"Wygląda na starszą, niż jest."
+"Czy ona w ogóle pierze te łachmany?"
+"Powiadają, że ona sypia w beczce po piwie."
+"Założę się, że przysięgę małżeńską ledwie wybełkoce."
+(ślub garbarza z psychopatką z dwoma nożami)
+"Powiedziałbym, że to co najmniej niebezpieczny związek."
+"Facet wygląda na lekko zbaraniałego."
+"Powiadają, że ostatniego męża zadźgała."
+"Piękna, ale szalona."
+"Prawda to, że on kocha tylko swoją krowę?"
+"A ponoć garbarz rzadko trafia pod nóż."
+"Patrzcie, przyniosła swoje noże do kościoła!"
+"Trzeba wiele odwagi, żeby wyjść za garbarza!"
+"Ciężko powiedzieć, kto jest bardziej szalony: on, czy ona."
+"Czujecie wołowinę?"
+(ślub matki z uprzejmą, zrównoważoną osobą)
+"Och, czyż ona nie wygląda uroczo?"
+"Wiecie, że to już jej ósmy mąż?"
+"Powiadają, że odrzuciła zaloty pięciu absztyfikantów."
+"Czy po ceremonii będzie się można napić?"
+"A wiecie, że to moja daleka kuzynka?"
+"Od piętnastu lat szukała sobie męża. Cieszę się razem z nią."
+"Ona ma sześcioro czy siedmioro maluchów."
+"Tydzień miesiąca miodowego spędzą na mokradłach."
+"Ona jest dla niego za dobra, mówię wam!"
+"To chyba najdłuższy ślub na świecie!"
+(różne)
+W tym miesiącu ślubów nie będzie
+RODZAJE JEDNOSTEK -
+Chłop
+Żywa pochodnia
+Drwal
+Łuczarz
+Kopacz
+Myśliwy
+Murarz z kamieniołomów
+Robotnik z kamieniołomów
+Wół z kamieniołomów
+Smolarz
+Hodowca pszenicy
+Hodowca chmielu
+Sadownik
+Mleczarz
+Młynarz
+Piekarz
+Piwowar
+Grotnik
+Kowal
+Płatnerz
+Garbarz
+Łucznik
+Kusznik
+Włócznik
+Pikinier
+Pałkarz
+Zbrojny
+Rycerz
+Drabiniarz
+Inżynier
+Górnik
+Górnik
+Ksiądz
+Zielarz
+Pijak
+Karczmarz
+Mnich
+//
+Katapulta
+Trebusz
+Mangonela
+Kupiec
+Koń
+Jeleń
+Wilk
+Królik
+Niedźwiedź
+Kruk
+Mewa
+Namiot oblężniczy
+Krowa
+Pies
+Straż ogniowa
+Duch
+Lord
+Lady
+Błazen
+Wieża oblężnicza
+Taran
+Przenośna tarcza
+Balista
+Kurczak
+Matka
+Dziecko
+Żongler
+Połykacz ognia
+(komentarze jednostek - pierwszy domyślny)
+"Dzień dobry, wasza wysokość!"
+"Ja tu tylko chwilę odpoczywam."
+"Wrócę do roboty, zanim zdążysz się zorientować!"
+"Mam przerwę obiadową, zaraz wracam."
+"Maleńka przerwa w codziennym kieracie, ot co."
+"Zasłużyłem na przerwę."
+"Teraz odpocznę, a potem wracam do pracy."
+"Rozprostuję nogi w ogrodzie."
+"Teraz dla odmiany będę wypoczywał."
+"Pójdę gdzieś i odpocznę sobie."
+"Przez moment nie będzie mnie w pracy."
+"Nie wrócę tak od razu, najpierw sobie odpocznę."
+"Długi odpoczynek dobrze mi zrobi."
+"Praca i praca. Praca może poczekać, a ja się nie rozerwę."
+"Zrobiłem sobie takie małe wakacje."
+"Wasza wysokość, ten zamek to wspaniałe miejsce do pracy."
+"Pracować? Chyba zgłupiałeś. Zresztą na urlopie bardzo mi się podoba."
+"To najprzyjemniejszy zamek, w jakim kiedykolwiek pracowałem."
+"Mógłbym tak tu sobie leżeć i spać po wsze czasy..."
+"Boże, uwielbiam ten zamek... Zzzz... Zzz..."
+"Zamek jest wspaniały, wasza wysokość. Zaraz zwiedzę go dokładnie. "
+"Panie, mam dziś dodatkową sztukę towaru."
+"Panie, mam dziś dodatkowe dwie sztuki towaru."
+"Panie, mam dziś dodatkowe trzy sztuki towaru."
+"Panie, mam dziś dodatkowe cztery sztuki towaru."
+"Panie, mam dziś dodatkowe pięć sztuk towaru."
+"Już wracam do pracy, wasza wysokość!"
+"Nie ma litości dla maluczkich, sir?"
+"Nie będę dzisiaj odpoczywał, panie."
+"Nie mogę teraz przestać. Jestem zajęty."
+"Nie lubię widoku narzędzi tortur. Chyba lepiej wrócę do pracy..."
+"Proszę się o mnie nie martwić, wasza wysokość. Staram się z wszystkich sił."
+"Jestem dobrym pracownikiem, prawda, sir? Nie będę zakuty w dyby?"
+"Praca, praca, praca - to moja nowa dewiza."
+"Teraz całymi dniami tylko pracuję, nie tak jak kiedyś..."
+"Jestem wyczerpany. Czuję się tak, jakbym od wieków nie odpoczywał."
+"Proszę, wasza wysokość! Nie każ mi pracować jeszcze ciężej."
+"Sir! Słyszałem plotki, że wtrącasz ludzi do lochu?"
+"Czuję, że słabnę. Nie mogę już tak ciężko pracować."
+"Raz dałem się wsadzić w dyby i więcej nie powtórzę tego błędu."
+"Cały czas pracuję... Błagam, czy nie mogę odpocząć choć przez chwilę?"
+"W tym zamku naprawdę gnębi się ludzi."
+"Och, nie! Proszę, wasza wysokość, tylko nie na madejowe łoże!"
+"Nie, nie! Tylko nie w dyby! Już wracam do pracy."
+"Doprawdy, jesteś najokrutniejszym władcą w tym królestwie."
+"Możesz zmiażdżyć moje ręce, ale kto wtedy będzie dla Ciebie pracował?"
+"Brak miejsca w składzie zapasów, mój panie."
+"Brak miejsca w spichlerzu, mój panie."
+"Brak miejsca w zbrojowni, mój panie."
+"Nie mogę znaleźć żadnego drzewa, mój panie."
+"Brak drewna, mój panie."
+"Nie widzę tu żadnego jelenia, mój panie."
+"Brak pszenicy, mój panie."
+"Brak mąki, mój panie."
+"Brak chmielu, mój panie."
+"Brak żelaza, mój panie."
+"Brak krów, mój panie."
+"Brak piwa, mój panie."
+(inne - racje)
+"Bez racji żywności?! Mój panie, to chyba się pomyliłeś?"
+"Co? Nie wydają żywności? Wszyscy pomrzemy!"
+"Pilnie potrzebujemy żywności, mój panie!"
+"Twój lud głoduje, wasza wysokość!"
+"Połowa racji?! Nie podoba mi się to."
+"Te racje są żałośnie małe, chciałbym prosić o więcej."
+"Mógłbym jeszcze coś zjeść, spódnica spada mi z brzucha."
+"Racje są zbyt małe, mój panie."
+"Podwójne racje! Fantastyczna sprawa!"
+"Rozpieszczasz nas swoją hojnością!"
+"Jedzenie, jedzenie, jedzenie! Za bardzo przytyję."
+"Ostatnio mamy tyle jedzenia, że robię się tłusty jak świnia."
+(podatki)
+"Ależ ogromna łapówka! Dziękuję ci, wasza wysokość."
+"Jeśli nadal będziesz mi tyle płacił, to wkrótce kupię drugie krzesło do domu."
+"Jesteś najbardziej szczodrym władcą na tej ziemi, sir!"
+"Na pewno stać cię na to, aby tyle nam płacić, sir?"
+"Łapówka? Świetnie, kocham łapówki!"
+"Wasza wysokość, prowadzisz prawdziwie nowoczesną politykę podatkową."
+"Ta łapówka to trochę za mało... Tylko żartowałem, sir!"
+"Władco, ludzie są bardzo zadowoleni z łapówek."
+"Łapóweczka? Coś nowego! To mi się podoba."
+"Łapówka? Pozwól, że się upewnię - ty wypłacasz nam pieniądze?"
+"Bardzo szlachetny gest z twojej strony, że składasz w nasze ręce te dary, sir."
+"Doszły mnie słuchy, że rozdajesz łapówki! Och! Chciałem powiedzieć: zapomogę dla ubogich..."
+"Koniec z podatkami! Cóż to całkiem miła odmiana."
+"Mam nadzieję, że rezygnacja ze ściągania podatków to dopiero początek."
+"Zerowy podatek to jedno, ale może pomyślałbyś o jakimś małym podarunku? No, śmiało... "
+"Jedyne słuszne podatki to brak podatków - taką mam dewizę."
+"Tymi okrutnymi podatkami zdzierają ze mnie skórę. Prawie nic mi nie zostaje."
+"Podatki w tym zamku są po prostu nieprawdopodobne."
+"Ja... Eee... Chciałem powiedzieć, że... domagamy się niższych podatków. Teraz... albo przynajmniej jakoś niedługo."
+"Podatki w tej wysokości to jakiś dowcip! W sąsiednim zamku są o połowę niższe."
+"Horrendalne podatki! Znowu to samo. Nie wiem już, skąd mam brać na to pieniądze."
+"Błagam cię, obniż podatki, wasza wysokość! Muszę przyodziać w coś moje dzieci."
+"Władco, czy mógłbyś obniżyć podatki? Choćby troszeczkę."
+"Ludzie cierpią z powodu ogromnych podatków, wasza wysokość."
+(inwazja)
+"Jesteśmy zgubieni!"
+"Nadchodzi apokalipsa!"
+"Boję się, mój panie!"
+"Ratuj nas, panie! Barbarzyńcy nadchodzą."
+(inne)
+"Panie, w zamku szaleje zaraza! Potrzebny nam uzdrowiciel."
+"Mieszkańcy zamku są ciężko chorzy, mój panie."
+"Czy te pogłoski o bandytach to prawda, sir?"
+"Ludzie lękają się wilków, mój panie."
+"Te wilki są wszędzie, mój panie."
+"Jeszcze nie widziałem tylu zajęcy naraz, sir!"
+"Te przeklęte zające pożerają moje plony!"
+"Gratulacje z okazji zaślubin, mój panie!"
+"Jej wysokość jest taka piękna, sir."
+"Radujemy się wraz z tobą i twoją małżonką, mój panie."
+"Obyście ty i jej wysokość byli razem szczęśliwi!"
+"Nowy błazen jest naprawdę zabawny."
+"Nie wiem, skąd ten trefniś bierze tyle energii."
+"Ta wędrowna trupa naprawdę mnie rozweseliła."
+"Uwielbiam dobry jarmark, mam to po mamusi."
+"Ci żonglerzy to prawdziwi mistrzowie, prawda?"
+"Popatrz, połykacz ognia oparzył się w rękę!"
+"Spójrz, drzewa zrzuciły liście!"
+"Plony więdną, sir."
+"Z chmielem coś jest nie w porządku, mój panie."
+"Stara mućka zachowuje się jakoś dziwnie, panie. Podobnie jak i reszta krów."
+"Dziwne, wszystkie jabłonie straciły owoce. Mój panie, to chyba sprawka jakiejś czarownicy."
+Free text line
+Free text line
+Mapy oblężnicze
+Mapy te pozwalają wznieść zamek, obsadzić go obrońcami i nanieść armię napastnika. Stworzone tutaj plansze pojawią się w opcjach walki w sekcji "Oblężenie".
+Mapy inwazji
+Mapy te powalają stworzyć pojedyncze misje podobne do scenariuszy wchodzących w skład kampanii militarnej. Stworzone tu plansze pojawią się w opcjach walki w sekcji "Inwazja".
+Mapy ekonomiczne
+Mapy te pozwalają stworzyć pojedyncze misje podobne do scenariuszy wchodzących w skład kampanii ekonomicznej. Stworzone tu plansze pojawią się w opcjach ekonomicznych w sekcji "Misja ekonomiczna".
+Mapy swobodnego budowania
+Mapy te pozwalają stworzyć prosty krajobraz używany w trybie swobodnego budowania. Stworzone tu plansze pojawią się w opcjach ekonomicznych w sekcji "Swobodne budowanie".
+Teksty obelg
+Niedołęga!
+Hultaj!
+Kiep!
+Szelma!
+Wieśniak!
+Ratunku, pomocy!
+Ja wygrałem, ty przegrałeś!
+Zawiśniesz na stryczku!
+Przeklęty głupcze!
+Uaahaha!
+Palant!
+Pajac!
+Zakuty łeb!
+Zapluty flejtuch!
+Podlec!
+Bałwan!
+Wichrzyciel!
+Ramol!
+Szczurze łajno!
+Intrygant!
+(ZAPOWIEDŹ - teksty ekranowe)
+Opowieść
+Wilk
+Wieprz
+Wąż
+Szczur
+Podczas krucjaty musisz pokonać czterech wrogów.
+Każdy z nich ma swoją osobowość i własną sztuczną inteligencję.
+Bywają humorzaści
+Wściekli
+Błagają o litość
+Denerwują się
+Każdy z przeciwników ma własne cechy osobowości, dopasowane do fabuły. Podczas kampanii wrogowie będą drwić z gracza, błagać go lub po prostu opowiadać, co się dzieje w świecie gry.
+Rozgrywka dla wielu graczy
+Do ośmiu graczy jednocześnie
+Szerokie możliwości konfiguracji
+Tryb ataku lub obrony.
+Internetowa społeczność graczy za pośrednictwem GameSpy
+I to, czego nie widać na pierwszy rzut oka
+Znacznie mądrzejsza sztuczna inteligencja
+21 misji bojowych w fabularnej kampanii
+Kampania symulacyjna (niemilitarna)
+Oblegaj lub atakuj zamki odtworzone zgodnie z realiami
+Tryb "Oblężenie" - zbuduj własny zamek w Internecie i sprawdź, jak długo wytrzyma
+Więcej możliwości
+Wilcze doły, wieże oblężnicze, tunele
+Więcej typów jednostek - rycerze, kusznicy, mnisi, zbrojni...
+Więcej przyjemnych i przygnębiających obiektów - madejowe łoże, głowa na palu, posągi, słupy majowe
+Wędrowne trupy
+Losowe wydarzenia
+(tekst samouczka)
+(1)
+Witaj wśród piasków pustyni, panie!
+Samouczek nauczy cię, jak wznieść zamek i sprawnie nim zarządzać!
+(2)
+Rozglądanie się
+Na początku musisz znaleźć odpowiednie miejsce pod budowę. Aby przesuwać okno gry, przysuń kursor do krawędzi ekranu.
+(3)
+Pierwsza osada
+Po rozpoczęciu krucjaty musisz znaleźć odpowiednie miejsce pod budowę swojego zamku. Kliknij lewym przyciskiem myszy na budynku "Dwór Saski", a następnie wskaż pusty, płaski fragment terenu.
+Przesuwaj kursor nad ekranem gry, aż pojawi się twój dwór. Kiedy uznasz, że znalazłeś dobre miejsce, kliknij lewym przyciskiem myszy, aby zbudować swoją siedzibę.
+Drewno, z którym rozpoczynałeś grę, zostało automatycznie umieszczone w twoich składach. Możesz teraz wykorzystywać je do budowy.
+(4)
+Nowi pracownicy
+W pobliżu dworu, oprócz składów powinieneś zauważyć ognisko. Przesuń nad nie kursor. Wyświetlona obwódka to wskaźnik przyrostu populacji twojego zamku.
+Im bardziej będziesz popularny, tym szybciej będzie wzrastać liczebność twojego ludu. Z każdym pełnym obrotem wskaźnika przybywa chłop, który w pobliżu ogniska będzie oczekiwał na pracę.
+Gdy staniesz się niepopularny, wskaźnik zmieni kolor na czerwony. Od tej chwili będzie on wskazywał tempo, w jakim opuszczają cię poddani.
+(5)
+Początkowa żywność
+W lewym-górnym narożniku ekranu możesz zauważyć, że wśród twoich początkowych zasobów znajduje się dużo żywności, lecz aby ją wykorzystać, musisz zbudować spichlerz.
+(6)
+Zapasy żywności
+Kliknij lewym przyciskiem myszy na budynku spichlerza, a następnie przesuń kursor w pobliże dworu. Gdy pojawi się spichlerz, kliknij lewym przyciskiem, aby go zbudować.
+Żywność, z jaką zaczynałeś grę, zostanie przeniesiona do spichlerza. Teraz twoi poddani mają obfite zapasy żywności.
+(7)
+Wchodzenie do budynków
+Prawym przyciskiem myszy opuść tryb budowy, następnie kliknij lewym przyciskiem na  wzniesionym właśnie spichlerzu, aby wywołać jego panel.
+(8)
+Korzystanie z panelu spichlerza 
+Panel ten pozwala ci śledzić szczegóły dotyczące żywności i regulować wydawanie racji żywnościowych.
+Z prawej strony panelu znajduje się pięć talerzy z różnymi porcjami żywności. Symbolizują one różne ustawienia racji: od "braku racji" do "podwójnych racji". Na razie aktywne jest ustawienie domyślne - "pełne racje".
+(9)
+Racjonowanie żywności
+Kliknij lewym przyciskiem myszy na najbardziej zapełnionym talerzu, aby wydawać podwójne racje.
+Dzięki hojnym racjom żywnościowym twoja popularność szybko rośnie, a jej symbol zmienił się w uśmiechniętą twarz. Wadą tego rozwiązania jest dwukrotnie wyższe tempo konsumpcji.
+Tempo konsumpcji możesz śledzić, obserwując zmiany paska stanu spichlerza lub po prostu jednostki żywności znikające ze spichlerza.
+(10)
+Opodatkowanie
+Kliknij prawym przyciskiem myszy, aby opuścić spichlerz, a następnie kliknij lewym przyciskiem myszy na dworze saskim, co pozwoli ci wywołać panel dworu. Panel ten umożliwia podgląd ustawień podatków i zmianę bieżących stawek.
+Swoje podatki możesz ustanawiać dowolnie: od hojnego datku do okrutnego podatku. Obecne ustawienie to "brak podatku", tak więc nie tracisz, ale i nie zyskujesz ani grosza.
+(11)
+Konsekwencje podatków
+Kliknij lewym przyciskiem myszy na prawej strzałce i ustaw podatki jako "okrutne". Dzięki temu każdego miesiąca do twojego skarbca spłynie odrobina złota, ale twoja popularność sporo na tym ucierpi.
+(12)
+Raporty skryby
+Skryba pokazuje twoją popularność, bogactwo i populację. Jego wyraz twarzy odzwierciedla twoją popularność.
+Księgi, które trzyma skryba, dostarczą ci kluczowych informacji o twoim zamku. Duże cyfry u góry pokazują twoją popularność. Kliknij lewym przyciskiem myszy na księdze raportów.
+(13)
+Raporty
+Pojawił się panel raportów. Kliknij lewym przyciskiem myszy na przycisku popularność.
+(14)
+Popularność
+W tym miejscu możesz zaobserwować wpływ twoich działań na popularność zamku w nadchodzącym miesiącu.
+Zmiana polityki podatkowej i racjonowanie żywności to dwie podstawowe metody manipulacji popularnością. Przy popularności powyżej 50 ludzie przybywają do zamku. Gdy spadnie ona poniżej 50 - zaczynają go opuszczać.
+(15)
+Ciąg dalszy
+Ustawienia podatków i racjonowanie żywności zostaną zmienione do poziomu domyślnego. Kliknij prawym przyciskiem, aby opuścić raport.
+(16)
+Rozbudowa
+Wiesz już, jak wznosić budynki, zarządzać podatkami, żywnością i dbać o popularność. Przyjrzyjmy się teraz, jak możesz rozbudować swoją osadę.
+(17)
+Interfejs budowli
+W lewej dolnej części ekranu znajduje się sześć tarcz. Są to przyciski kategorii, które zmieniają typy budowli wyświetlane na pasku wyboru budowli powyżej.
+Przesuń lewym przyciskiem myszy nad tarczami. Tarcze podświetlają się, a nad paskiem wyboru budowli pojawia się opis podświetlonego przycisku.
+(18)
+Wycinka drzew
+Lewym przyciskiem myszy kliknij na kategorii "Cechy" (młotek). Kliknij na chacie drwala na pasku wyboru budowli i zbuduj cztery takie chaty w pobliżu drzew. Klikając prawym przyciskiem myszy, opuść tryb budowania.
+(19)
+Wycinka drzew
+Zwróć uwagę, że czterech chłopów w pobliżu ogniska zmieniło się w drwali i rozpoczęło ścinanie drzew. W niedługim czasie drewno zacznie spływać do twoich składów.
+(20)
+Żywność
+Musisz teraz zadbać o zapasy żywności. Ponownie kliknij lewym przyciskiem myszy na spichlerzu.
+(21)
+Zaopatrzenie w żywność
+Dostępna żywność jest pokazywana w jednostkach i miesiącach, na jakie wystarczą zapasy. Kliknij prawym przyciskiem myszy, aby opuścić spichlerz.
+(22)
+Łowiectwo
+Kliknij lewym przyciskiem myszy na kategorii "Farmy" (jabłko). Zbuduj cztery chaty myśliwskie - pozostali chłopi zostaną myśliwymi.
+(23)
+Łowiectwo
+Gdy myśliwi sprawią upolowaną zwierzynę, umieszczą mięso w spichlerzu. Staraj się, aby dostawy żywności co najmniej pokrywały popyt na nią.
+(24)
+Budowa domów
+Liczby w dolnej części raportów skryby pokazują bieżącą populację i dostępne miejsce w domostwach. W tej chwili widzisz "8 z 8", co oznacza, że powierzchnia mieszkalna dworu saskiego jest zapełniona.
+(25)
+Budowa domów
+Kliknij na kategorii budynków mieszkalnych (dom) i wybuduj dom.
+(26)
+Kwaterunek
+Twoje możliwości kwaterunkowe wzrosną, a populacja pójdzie ich śladem. Każdy dom zapewnia miejsce dla ośmiu mieszkańców. Twoja osada się rozrasta, lecz oznacza to również więcej brzuchów do wyżywienia!
+(27)
+Inne elementy sterowania
+Teraz zapoznasz się z kilkoma dodatkowymi elementami interfejsu sterowania, które okażą się bardzo przydatne podczas gry.
+(28)
+Obracanie mapy
+Aby obrócić mapę, przesuń kursor myszy na środek ekranu, a następnie kliknij i przytrzymaj prawy przycisk myszy. Na ekranie pojawią się ikony interfejsu kamery. Przesuń kursor myszy na ikonę obrotu.
+(29)
+Przybliżanie/oddalanie mapy
+Aby oddalić widok, ponownie kliknij prawym przyciskiem myszy, przesuń kursor w prawo nad ikonę lupy i zwolnij przycisk. Aby przybliżyć widok, powtórz całą procedurę.
+(30)
+Tryb podglądu
+Aby przejść do trybu podglądu, kliknij i przytrzymaj prawy przycisk myszy, a następnie przesuń kursor nad ikonę terenu i zwolnij przycisk myszy. Aby powrócić do normalnego trybu, powtórz całą procedurę. Tryb podglądu możesz również aktywować klawiszem SPACJI.
+(31)
+Obserwowanie zakrytych obiektów
+Kliknij i przytrzymaj prawy przycisk myszy, aby przywołać interfejs kamery.
+Tym razem przesuń kursor myszy w dół, na ikonę spłaszczenia. W ten sposób wysokie obiekty, takie jak budynki czy mury, zostaną spłaszczone i będziesz mógł obserwować, co się dzieje za nimi. Zwolnij przycisk, aby krajobraz powrócił do normalnego wyglądu.
+(32)
+Samouczek ukończony!
+Gratulacje! Ukończyłeś samouczek! Jesteś gotów, aby rozpocząć pierwszą misję kampanii Krzyżowca. Czy chcesz kontynuować grę na tej mapie?
+(33)
+Pozostałe
+Kliknij na ikonie odprawy, aby zapoznać się z celami misji.
+(34)
+Czy chcesz wyjść z samouczka?
+(32demo)
+Samouczek ukończony!
+Gratulacje, ukończyłeś samouczek! Czy chcesz kontynuować grę na tej mapie?
+(przyciski samouczka, itd.)
+Dalej
+Wyjście
+Ta opcja w tym momencie jest niedostępna.
+W tej fazie samouczka nie można wykonać wskazanej czynności.
+Pomiń
+(Ekran mapy)
+Neutralne ziemie
+Twoje królestwo
+Ziemie Wieprza
+Królestwo Szczura
+Domena Węża
+Legowisko Wilka
+Free text line
+Misja 1
+Nicea, przybycie do Ziemi Świętej
+Po dotarciu do Konstantynopola dyscyplina krzyżowców uległa rozluźnieniu i zaczęli oni pustoszyć okolice w poszukiwaniu żywności. Cesarz Aleksy szybko zorganizował transport morski i eskortę wojskową, starając się  podtrzymać marsz krzyżowców.
+(1 streszczenie)
+Zajmij Niceę z pomocą greckich sprzymierzeńców. Turcy nie są przygotowani na twój atak, bitwa powinna być więc krótka. Podróż do Jerozolimy będzie wymagała wsparcia finansowego, więc jeśli chcesz, aby krucjata się powiodła, zdobądź niezbędne złoto, nie przebierając w środkach.
+(cele pierwszej misji)
+(misja pierwsza - strategia/porady)
+Gdy zapewnisz sobie solidne zaplecze ekonomiczne, zacznij sprzedawać kamień i jabłka - w ten sposób zdobędziesz złoto. 
+Umieszczenie spichlerza w oazie znacznie przyspieszy produkcję jabłek.
+Zwiększ populację i nałóż podatki, aby zdobyć więcej złota.
+Misja 2
+Heraklea, podróż na południe
+Przemarsz krucjaty przez Anatolię jest ciężki. Turcy, wycofując się na południe, spalili plony, we znaki daje się również brak właściwego dla tej strefy klimatycznej wyposażenia armii. Po kilku mniejszych starciach z wrogiem wojska są głodne i wyczerpane.
+(odprawa misji drugiej)
+Odbuduj farmy pszenicy wokół miasta Herakleja, zapewniając w ten sposób zaopatrzenie armii. Zwiadowcy zauważyli w okolicy niewielkie oddziały Turków.
+(cele drugiej misji)
+(misja druga - porady)
+Musisz zachować równowagę między produkcją włóczni i chleba.
+Trzy farmy pszenicy i jeden młyn zapewnią mąkę dla około ośmiu piekarni, pod warunkiem że zostaną dobrze umieszczone.
+Spróbuj przepędzić konnych łuczników kilkoma grupami swoich włóczników.
+Wyłączenie chleba z konsumpcji pozwoli ci znacznie szybciej zgromadzić jego potrzebną ilość.
+Misja 3
+Antiochia, oblężenie
+Antiochia jest silnie ufortyfikowana i trudna do oblegania. Na szczęście krzyżowcy mają w mieście szpiega. Dzięki jego staraniom niewielki odcinek murów pozostawiono bez obrońców i to właśnie tędy nasze wojska wkroczą do miasta.
+(odprawa misji trzeciej)
+Silna armia turecka nadciąga. Musisz szybko rozstawić ludzi na blankach i wieżach. Szlaki handlowe i zaopatrzeniowe zostały odcięte, twoje ograniczone zapasy muszą ci wystarczyć. Potrzeba będzie silnej wiary, aby utrzymać Antiochię.
+(cele trzeciej misji)
+(misja trzecia - porady)
+Musisz podtrzymać morale ludzi za pomocą religii.
+Wznieś kaplice i wydawaj połowiczne racje, aby oszczędzać żywność.
+Utrzymuj swoją popularność na dość niskim poziomie, gdyż inaczej szybko zabraknie ci żywności.
+Do obrony zamku wykorzystaj łuczników i zbrojnych.
+Misja 4
+Krak de Chevaliers, oblężenie Arqah
+W dalszym marszu na południe, pomniejsi emirowie zgadzają się na daninę, jakiej żądają krzyżowcy. Pierwszym punktem oporu jest miasto Arqah, które nie chce się poddać.
+(odprawa misji czwartej)
+Główne siły armii oblegają Arqah, lecz nasi ludzie tracą motywację do działania. Rozpocznij budowę nowego zamku, Krak de Chevaliers, i zacznij warzyć piwo, aby podnieść morale wojsk. W okolicy pojawiły się duże oddziały bandytów, które mogą okazać się zagrożeniem.
+(cele czwartej misji)
+(misja czwarta - porady)
+Najpierw rozpocznij produkcję żywności i zapewnij zamkowi obronę, a następnie zajmij się warzeniem piwa.
+Jeśli zbudujesz swój zamek na prawym zboczu wzgórza, w pobliżu oazy, uprawa chmielu będzie znacznie szybciej dawać plony.
+Wznoś budynki w dużych odległościach od siebie, aby chronić je przed rozprzestrzeniającym się pożarem.
+Nie buduj karczm, jeśli nie chcesz zużywać zapasów piwa, które musisz gromadzić!
+Misja 5
+Jerozolima, decydujący atak
+Po nieudanej próbie zdobycia Arqah krzyżowcy kontynuowali marsz na Jerozolimę. Pierwszy atak okazał się bezskuteczny ze względu na brak machin oblężniczych. Ponieważ najbliższy las jest oddalony o ponad dwadzieścia mil, ostateczny atak nastąpi za klika tygodni.
+(odprawa misji piątej)
+Teraz, gdy mamy wieże oblężnicze, wyprowadź główny atak na północne mury. Krążą wieści o silnej armii egipskiej zmierzającej aby bronić Jerozolimy, dlatego musisz zdobyć fortecę najszybciej, jak to możliwe.
+(cele misji piątej)
+(misja piąta - porady)
+Zbytni pośpiech wystawi cię na cel arabskich miotaczy bomb ogniowych.
+Rozkaż swoim łucznikom wyeliminować miotaczy bomb, zanim wyślesz pozostałe jednostki do ataku.
+Miotacze bomb ogniowych mogą atakować tylko wojska na ziemi, nie są w stanie zaatakować oddziałów na blankach.
+Misja 1
+Damaszek, zachwianie równowagi sił
+Zdecydowana większość miast dotychczas wiernych Nur ad-Dinowi akceptuje Saladyna jako swojego nowego władcę, jednak kilka wciąż się waha. Damaszek jest jednym z miast, które odmówiły podporządkowania się Saladynowi.
+(odprawa misji szóstej)
+Zgromadź armię i ruszaj na Damaszek. Użyj wszelkich środków, aby zrobić porządek z buntownikami i pokazać innym miastom ich przyszły los.
+(cele misji szóstej)
+(misja szósta - porady)
+Nie atakuj frontalnie!
+Po cichu zgromadź swoje wojska pod jednym z murów i wybij otwór, używając tarana.
+Wszystkich swoich łuczników i procarzy wyślij w jednej grupie do oczyszczenia blank z obrońców.
+Misja 2
+Kerak, zdrada Renalda
+Renald z Kerak plądruje szlaki kupieckie, łupiąc bogate statki na Morzu Czerwonym, łamie w ten sposób rozejm z Europą. Saladyn w odpowiedzi rozpoczyna oblężenie jego zamku.
+(odprawa misji siódmej)
+Renald wydaje ucztę weselną w swojej siedzibie. Zaatakuj zamek i zrównaj z ziemią katedrę, by pokazać naszą siłę. Nie ma czasu na zajęcie miasta, posiłki z Jerozolimy są w drodze. Zamiast tego, daj mu po prostu nauczkę, niszcząc katedrę w wschodniej części Keraku.
+(cele misji siódmej)
+(Misja siódma - porady)
+Twoi asasyni są kluczem do sukcesu tej misji. Wykorzystaj ich mądrze.
+Rozkaż swoim asasynom wspiąć się na pozbawione obrońców mury w pobliżu wąwozu. Uważaj jednak na zbrojnych!
+Przemieść pozostałe oddziały bliżej bramy tak, by dotarły do niej w tym samym momencie co asasyni.
+Ulokuj procarzy w wieżach z lewej strony, jednocześnie odpędzając europejskich zbrojnych przy pomocy swoich szermierzy.
+Misja 3
+Aleppo, konsolidacja władzy
+Po utarciu nosa Renaldowi, Saladyn opuszcza Kerak, kierując się na północ, w stronę Aleppo. W tym samym czasie przybywają posiłki z Jerozolimy, na ratunek gości weselnych. Aleppo do tej pory stawiało opór rządom Saladyna dzięki pomocy Europejczyków z Antiochii.
+(odprawa misji ósmej)
+Rzuć Aleppo na kolana siłami armii niewolników wystawionej przez miejscowego emira. Miasto jest silnie ufortyfikowane, będziesz musiał starannie zaplanować, jak przebić się za podwójną linię bram.
+(cele misji ósmej)
+(misja ósma - porady)
+Dobrze wykorzystani niewolnicy mogą zmienić bieg historii.
+Użyj asasynów, by wybić łuczników na wieżyczkach obserwacyjnych, a następnie rozkaż procarzom zaatakować kuszników na bramie.
+Rozkaż asasynom zająć bramę. Następnie niech twoi niewolnicy podłożą ogień pod pierwszą część zamku.
+Zajmij wewnętrzną bramę przy pomocy asasynów i zaprósz ogień wewnątrz twierdzy. Wrogich kuszników zaatakuj swoimi zbrojnymi.
+Misja 4
+Hittin, bitwa na Wzgórzu Jerozolimskim 
+Saladyn udaje się do Jerozolimy. Na spotkanie jego wojsk ruszają główne siły armii krzyżowców. Europejczycy, wierząc, że zdążą później uzupełnić zaopatrzenie, decydują się przekroczyć pustynne wzgórza bez wody. 
+(odprawa misji dziewiątej)
+Saraceni odkryli obóz spragnionych, pozbawionych wody krzyżowców na wzgórzach. Choć nasza armia jest słabsza, wojska wroga są zdemoralizowane, to wyrównuje szanse. W obozie znajduje się śmietanka władz wojskowych i religijnych. Nasze zwycięstwo byłoby ciężkim ciosem dla wroga.
+(cele misji dziewiątej)
+(misja dziewiąta - porady)
+Zasiej zamęt, podpalając zarośla.
+Wykorzystaj konnych łuczników do wyeliminowania łuczników wroga, kryjących się w lesie, a następnie podpal obozowisko, używając miotaczy bomb.
+Misja 5
+Jerozolima, odbicie Świętego Miasta
+Po zdziesiątkowaniu armii krzyżowców i zabiciu lub zniewoleniu wielu jej przywódców, Saladyn przybywa do Jerozolimy. Zatrzymuje się tutaj, cierpliwie planując atak.
+(Odprawa misji dziesiątej)
+To będzie ostateczny atak. Najsilniejszym punktem obrony Jerozolimy są grube mury, słabsze jedynie w części północno-wschodniej. Gdy mury padną, Europejczycy najprawdopodobniej się poddadzą.
+(cele misji dziesiątej)
+(misja dziesiąta - porady)
+Poczekaj, aż zaatakują cię rycerze wroga.
+Dobrze rozstaw miotaczy bomb ogniowych, jeśli nie chcesz usmażyć własnej armii.
+Za wszelką cenę broń swych balist zbrojnymi i asasynami.
+Najpierw zniszcz kadzie z wodą, a następnie podpal miasto.
+Misja 1
+Zamek Belvoir, kunktatorska taktyka 
+Pozostałości armii europejskiej, które schroniły się w Tyrze, wahają się czy poddać się Saladynowi. Europejczycy opuścili zamek Belvoir i plądrują szlaki kupieckie, by odwrócić uwagę Saladyna od Tyru.
+(odprawa misji jedenastej)
+Saladyn połknął haczyk i skierował swoje wojska na strategiczny przyczółek - zamek Belvoir. Tamtejszy garnizon nie będzie bronił się w nieskończoność, musisz jednak utrzymać się wystarczająco długo, by Tyr odbudował swoje fortyfikacje.
+(cele misji jedenastej)
+(Misja jedenasta - porady)
+Bez pośpiechu buduj balisty, rekrutuj zbrojnych i kuszników. Będą oni podstawą obrony twojego zamku.
+Zbuduj kwadratowe baszty i umieść na nich balisty.
+Wykorzystaj religię i piwo, by podnieść morale i zgromadzić fundusze.
+Umieszczenie bramy z tyłu zamku przyspieszy produkcje żelaza i kamienia.
+Misja 2
+Tyr, wyznaczanie granic
+Po udanym oblężeniu Belvoir Saladyn nakazuje forsowny marsz na Tyr.
+(odprawa misji dwunastej)
+Grupka osób, które przeżyły kampanię Saladyna, schroniły się w Tyrze. Saladyn wciąż jest daleko, jednak ma silne wpływy w regionie. Możesz spodziewać się kłopotów.
+(cele misji dwunastej)
+(misja dwunasta - porady)
+Skoncentruj swoje wysiłki na wypieku chleba.
+Rozbuduj zamek i chroń oazę, budując w jej pobliżu wieżę.
+Być może łatwiej będzie kupować chmiel, niż go uprawiać. Dzięki temu zyskasz miejsce na farmy pszenicy.
+Staraj się umieszczać smolne rowy na potencjalnych szlakach przemarszu wrogich wojsk.
+Spróbuj utrzymać równowagę ekonomiczną za pomocą religii i piwa tak, by racje żywieniowe ustawić na "brak racji".
+Misja 3
+Konya, Fryderyk Barbarossa
+Podczas gdy król Francji Filip i król Anglii Ryszard rozwiązują swoje wewnętrzne problemy, Cesarz Niemiec Fryderyk kontynuuje przemarsz przez Azję Mniejszą i rozpoczyna krucjatę, zajmując miasto Konya.
+(odprawa misji trzynastej)
+Niemiecka armia srodze ucierpiała na skutek głodu, podczas przemarszu przez Azję Mniejszą . Utrzymaj miasto Konya, by wojsko odpoczęło i zgromadziło zaopatrzenie.
+(cele misji trzynastej)
+(misja trzynasta - porady)
+Wyprowadź rycerzy z zamku i zniszcz machiny oblężnicze wroga.
+Umieść inżynierów z olejem na blankach, wzmacniając w ten sposób obronę.
+Umieszczenie zbrojnych na blankach uchroni twoich łuczników i kuszników przed atakami wrogich asasynów.
+Użyj "rzeczy przygnębiających", by zwiększyć produkcje broni.
+Misja 4
+Limassol, podbój Cypru
+Po zwycięstwie pod Konya Fryderyk kontynuuje marsz w kierunku Seleucji, lecz tonie w rzece Kalykadnos przed dotarciem na miejsce. W tym samym czasie Ryszard Lwie Serce ląduje na Cyprze i dowiaduje się, że arogancki władca grecki odmawia jego narzeczonej dostępu do suchego lądu. Ryszard, który wszczynał wojny z błahszych powodów, wpada we wściekłość i bezzwłocznie atakuje.
+(odprawa misji czternastej)
+Izaak I Komnen, niezależny władca wyspy, nie jest lubiany przez jej mieszkańców. Wycofuje się, prawdopodobnie spodziewając się przybycia posiłków. Ufortyfikuj miasto Limassol i czekaj na jego powrót.
+(cele misji czternastej)
+(misja czternasta - porady)
+Wzmocnij obronę i ekonomię, a następnie skup się na produkcji zbroi i mieczy.
+Wykorzystaj religię i piwo, by zgromadzić fundusze.
+Do wzmocnienia obrony wykorzystaj psy bojowe, wilcze doły i mangonele.
+Zbuduj dom zielarza na wypadek zarazy.
+Ustawiaj budynki w rozsądnych odstępach, by nie dopuścić do rozprzestrzeniania ognia.
+Misja 5
+Jaffa, odbicie miasta
+Izaak tłumaczy się przed Ryszardem, by ten nie zakuł go w żelazne łańcuchy. Ryszard wyraża zgodę. Specjalnie dla Izaaka zostają przygotowane srebrne łańcuchy. Po wielu zwycięstwach w wojnie z Arabami docierają do Ryszarda wieści o próbie przejęcia władzy w kraju. Rozpoczyna on przygotowania do powrotu do swojego królestwa.
+(odprawa misji piętnastej)
+Saladyn wykorzystuje nieobecność Ryszarda i zajmuje miasto Jaffa. Odbij je i utrzymaj podczas ofensywy arabskiej.
+(cele misji piętnastej)
+(misja piętnasta - porady)
+Nie wydaj całego złota na machiny oblężnicze. Będziesz go potrzebował do odbudowy zamku.
+Przy odpowiedniej dozie cierpliwości uda ci się zniszczyć wrogie balisty ogniowe swoimi trebuszami.
+Dodatkowe bramy wokół murów podniosą tempo pracy twoich robotników.
+Misja 1
+Królestwo Armenii
+Podczas gdy król rozpoczyna swoją podróż, wielu mniejszych panów, którzy dotychczas nie zdobyli bogactw, dzieli zdobyte przez niego ziemie. Niektórzy, wbrew obyczajom rycerskim, rozpoczynają plądrowanie tak zdobytych terenów.
+(misja szesnasta - odprawa)
+Umocnij Chilvan Kale w Armenii. Diuk de Puce będzie atakował z pobliskiego La Roche. Zadbaj o to, by ten Szczur nie rozszerzył swojego terytorium. 
+(misja szesnasta - cele)
+(misja szesnasta - porady)
+Musisz działać szybko, by przetrwać ataki Szczura na początku misji.
+Wyszkolenie wielu procarzy na samym początku może okazać się przydatne w czasie pierwszych fal ataków, ale pozbawi cię pieniędzy potrzebnych na rozbudowę zamku.
+Zablokuj dwa przejścia przez klify, używając murów i bram.
+Jak najszybciej przystąp do wypieku chleba, by móc sprzedawać nadwyżki na rynku, co da ci pieniądze na rekrutację żołnierzy. 
+Misja 2
+Hrabstwo Edessy
+Po zabezpieczeniu Armenii przyszły rozkazy, by zająć się przyczynami arabskiej inwazji. Plotki sugerują, że Diuk Beauregard nakłada wysokie podatki na ludność Saruju w hrabstwie Edessy, by sfinansować tych najemników.
+(misja siedemnasta - odprawa)
+Skieruj armię na wschód i wzmocnij obronę Biry. Sparaliżuj ekonomicznie Diuka Beauregarda, aby nie mógł zaciągać większej liczby najemników w czasie, gdy wykonasz ostateczny atak. 
+(misja siedemnasta - cele)
+(misja siedemnasta - porady)
+Jak najszybciej wznieś mury, by powstrzymać niewolników Węża przed sprowadzeniem twojej gospodarki do kupki tlących się zgliszczy.
+Upewnij się, że masz dobrze rozmieszczone studnie, na wypadek gdyby niewolnicy Węża przedarli się przez obronę.
+Zablokuj brody na rzece, po czym zajmij oazę i surowce znajdujące się na lewo od zamku.
+Misja 3
+Księstwo Antiochii 
+Choć Wąż wyśliznął się z uścisku, zagrożenie kolejnymi atakami najemników minęło. Jeden problem rozwiązany rodzi, niestety, następne kłopoty. Wiele karawan kupieckich zostało zaatakowanych w czasie podróży z i do Księstwa Antiochii.
+(Misja osiemnasta - odprawa)
+Wykryto, że za ostatnimi atakami stoją bracia Truffe. Zajmij pozycję w Arzghan, po drugiej stronie rzeki, naprzeciwko starych obozów Jeża i Dzika. Ta misja będzie wyzwaniem, gdyż wróg będzie miał dwa razy więcej żołnierzy od ciebie.
+(Misja osiemnasta - cele)
+(Misja osiemnasta - porady)
+Czym prędzej zacznij wydobywać kamień i postaw mury, zanim ludzie Wieprza przypuszczą pierwszy szturm.
+Zablokuj dwa brody na rzece i skup się na obronie tych słabych punktów.
+Postawienie balisty ogniowej na twoim brzegu rzeki uczyni twój zamek prawie niemożliwym do zdobycia.
+Misja 4
+Hrabstwo Trypolisu 
+Skoro uwinąłeś się z braćmi Truffe, najwyższy czas, aby postawić Węża przed obliczem sprawiedliwości. Diuk Volpe roztoczył opiekę na Diukiem Beauregardem i oddał mu Castellum Bochee w Hrabstwie Trypolisu.
+(misja dziewiętnasta - odprawa)
+Lord Lakum poprosił o pomoc po tym, jak został wzięty w dwa ognie przez wojska Węża i Wilka. Raz zabezpieczony Lakum,  to idealny punkt by wykończyć Węża na dobre.
+(misja dziewiętnasta -  cele)
+(misja dziewiętnasta -  porady)
+Szybko postaw obóz najemników, by poradzić sobie z pierwszymi falami ataków.
+Buduj mury blisko najcenniejszych budynków, co powstrzyma rozprzestrzenianie się ognia.
+Użyj balist ogniowych, by spalić odsłonięte budynki. 
+Wykorzystaj wzgórza jako punkty zborne do ataku na Wilka.
+Misja 5
+Królestwo Jerozolimskie
+Z pomocą małej perswazji Wąż ujawnił lokalizację legowiska Wilka. Okazało się również, że trzej członkowie klanu de Puce chowają się w pobliżu.
+(misja dwudziesta - odprawa)
+Skieruj się na południe do jaskini Sueth i przygotuj się na długą bitwę. Wilk ukrywa się w Tyberiadzie, korzystając z sił rodziny de Puce jako pierwszej linii obrony. Wybij ich, jednego po drugim, zanim dobierzesz się do Wilka, by odsunąć go od władzy.
+(misja dwudziesta - cele)
+(misja dwudziesta - porady)
+Wznieś mury, by zablokować przejścia przez formacje skalne. 
+Przyciśnij Szczura tak szybko, jak tylko możesz, by zredukować liczbę atakujących żołnierzy i zyskać więcej przestrzeni pod rozbudowę.
+Użyj trebuszy ustawionych na wzgórzach, by zmiękczyć Wilka. 
+(Kampania 1 tytuł/intro)
+Wezwanie do broni
+W 1094 roku armie tureckie zaczęły atakować Europejczyków w Anatolii, bezczeszcząc przy okazji miejsca święte. Zachęcone przez papieża, a także mające nadzieję na rabunek i przygodę, wielkie armie Europejczyków ściągają do Konstantynopola.
+(następstwa)
+Następstwa
+Miasto zostaje zabezpieczone, zanim egipskie posiłki mają szansę interweniować. Wraz z zajęciem Jerozolimy krucjata ta staje się pierwszą i ostatnią, która osiąga założony cel. Święte Miasto pozostaje w rękach Europejczyków przez 88 lat.
+(kampania2 tytuł/intro)
+Podboje Saladyna
+W 1174 roku umiera sułtan Nur ad-Din, a kontrolę nad jego arabskim imperium przejmuje Saladyn. Zanim zajmie się on odbijaniem miast w regionie, musi uspokoić sytuację w ojczyźnie.
+(następstwa)
+Następstwa
+Saladyn siedzi w swoim namiocie pogrążony w rozmowie z ambasadorem chrześcijańskim, podczas gdy na zewnątrz szaleje bitwa. Wkrótce miasto poddaje się bezwarunkowo Saladynowi, który mimo to pozwala wielu Europejczykom wykupić swoją wolność. Europejczycy opuszczają miasto w dwóch kolumnach: jedna to niewolnicy, druga to ludzie wolni.
+(kampania 3 tytuł/intro)
+Krucjata królów
+Upadek Jerozolimy jest szokiem dla chrześcijańskiej Europy. Mówi się, że papież Urban III umarł z żalu po usłyszeniu tej wiadomości. Jego następca, Grzegorz VIII, żąda, by królowie chrześcijańscy odłożyli na bok swoje żale i zjednoczyli siły w nowej krucjacie.
+(następstwa)
+Następstwa
+Wkrótce po zwycięstwie pod Jaffą Ryszard Lwie Serce zaczyna chorować. Saladyn próbuje zdobyć jego względy, wysyłając mu codziennie racje świeżych owoców i wody. Zanim Ryszard odbija od brzegu, by udać się do Anglii, traktat pokojowy zostaje podpisany. Pokój będzie trwał pięć lat. 
+(kampania 4 tytuł/intro)
+Państwa krzyżowców
+Ta kampania, skupiająca się na potyczkach, dzieje się zaraz po trzeciej krucjacie, ale jej zamiarem nie jest wierne oddanie historycznych wydarzeń. Przedstawia ona klimat czasów, gdy terytoria były zajmowane przez oportunistycznie nastawionych lordów z Zachodu, chcących zwiększyć swoje dochody. Będzie także szansa spotkać kilku starych znajomych.
+(następstwa)
+Następstwa
+Wraz z wybiciem pomniejszych szkodników i pozbyciem się na dobre Wilka, pokój wreszcie zapanował w regionie. Przynajmniej na razie... 
+Free text line
+(misja 28 fałszywa odprawa)
+Ta misja to scenariusz do gry w trybie budowania, toteż nie ma w niej walki oraz określonych warunków zwycięstwa. Została wprowadzona, abyś mógł się nauczyć zasad rozgrywki oraz eksperymentować z urządzaniem swojego zamku.
+Zacznij od wyszukania dobrego miejsca pod zamek i postaw warownię. Powinieneś przewinąć mapę i znaleźć otwartą przestrzeń położoną blisko kamieniołomu (obszar z okrągłymi kamieniami). Następnie wyznacz miejsce pod spichlerz, w którym zostaną umieszczone twoje początkowe zapasy żywności. Gdy wokół ogniska zaczną pokazywać się chłopi, zbuduj chatę drwala (znajduje się ona w kategorii cechów) w pobliżu lasu. Następnie zacznij zbierać żywność. Chaty myśliwskie są proste w budowie, najlepiej więc zacząć od nich (postaw kilka).
+Rozbuduj swój zamek i spróbuj postawić kilka innych budynków. Gdy zabraknie chłopów wokół ogniska, zbuduj chatę albo dwie, aby zwiększyć maksymalny limit populacji (upewnij się, że twoja warownia jest w stanie wyprodukować więcej żywności dla zwiększonej populacji w zamku). 
+To powinno wystarczyć, byś zaznajomił się z podstawami. Reszta należy do ciebie!
+XXXX
+(misja 29 - fałszywa odprawa)
+Cel: Wyprodukuj 32 beczki piwa, jednocześnie odpierając ataki Szczura i Wilka. 
+(Przed rozpoczęciem misji przejrzyj krótki poradnik do gry Krzyżowiec, który znajduje się w pliku Readme i zawiera wiele rad dotyczących rozgrywki.) 
+Ta misja pozwoli ci posmakować emocji związanych z oblężeniem, które może się przytrafić w trakcie każdej kampanii wojennej.   Wąż - w zamian za 32 beczułki piwa - obiecał przysłać oddziały gotowe zaatakować wojska oblegające zamek. Szczur i Wilk obozują wokół warowni ze szczerym zamiarem zrównania jej z ziemią.
+Już na początku misji dysponujesz wybudowaną, gotową do obrony warownią. Aby przeprowadzić zaciąg do wojska, wybierz koszary, zlokalizowane w lewym-dolnym narożniku zamku, a następnie zaznacz w panelu żądane jednostki. Do stworzenia oddziału będzie ci potrzebna odpowiednia liczba broni i zbroi w zbrojowni oraz wolni chłopi, którzy przesiadują przy ognisku przed twoją siedzibą.
+Przed kotłem z olejem (duże naczynie obok koszar) stoi grupa inżynierów, trzymających duże naczynia z wrzącym olejem. Skieruj inżynierów na mury. Aby wylać olej, wybierz ostatnią ikonę na ich panelu kontrolnym ("Wylej olej"), a następnie wskaż obszar, bądź konkretną jednostkę.
+Kiedy na ekranie pojawi się czerwony kursor celownika, kliknij lewym przyciskiem myszy. Przed warownią, na prawo od bramy głównej, znajduje się czarny rów. Jest to tzw. smolny rów wypełniony po brzegi smołą, którą można podpalić. Na murze za wykopem znajduje się samotny łucznik, który stoi obok koksownika. Kiedy zbliżą się oddziały wroga, niech łucznik wyceluje w smolny rów. Płonąca strzała podpali smołę. (Każdy łucznik, który stoi w pobliżu koksownika, jest w stanie podpalić smolny rów.)
+W tym scenariuszu nie masz możliwości rozmieszczania dodatkowych smolnych rowów, tak więc mądrze wykorzystaj to, czym dysponujesz!
+Porady. Jak najwcześniej wybuduj dwie farmy chmielu i dwa browary. Nie musisz szkolić wielkich sił do obrony zamku, gdyż warownię wystarczy utrzymać przez czas potrzebny do wyprodukowania 32 beczek piwa.
+Mądrze korzystaj z zapasu wrzącego oleju. Po jego wylaniu inżynierowie wracają do kotła, ponownie napełniają naczynia i czekają przy kotle na twoje rozkazy. Pamiętaj, aby kierować ich na odcinki murów, które odpierają najsilniejsze ataki.
+Mimo że w tej misji masz możliwość budowy karczmy, najlepiej będzie, jeśli z niej zrezygnujesz, chyba że napotkasz poważne problemy z utrzymaniem wymaganego poziomu popularności. Karczmy będą rozprowadzać produkowane piwo wśród chłopów, przez co misja stanie się nieco trudniejsza.
+XXXX
+Free text line
+Free text line
+Free text line
+Odprawa do misji z wersji demo
+Król wyjechał zaledwie kilka dni temu, a już dwóch adwersarzy szlachetnego władcy wysłało siły oblężnicze, które mają za zadanie wybadać stan naszej obrony. Przydasz się królowi wcześniej, niż ktokolwiek mógł przypuszczać. Co koń wyskoczy udaj się na wrzosowiska na południu, gdzie znajduje się niewielki zamek. Umocnij go i postaraj się za wszelką cenę odeprzeć ataki wrogów.
+Król, kiedy przygotował już swoje oddziały do kolejnej krucjaty, zarządził, aby zbrojownia jego zamku została zapełniona. Twoje hrabstwo powinno bez zwłoki dostarczyć kasztelanowi broń. Musisz przygotować transport uzbrojenia, zanim król i jego armia wyruszą za morza. Miejscowy kupiec sprzedaje żelazo - możesz kupić ten surowiec, aby wyprodukować kilka rodzajów broni z kontyngentu, który masz dostarczyć królowi.
+Inwazja 
+Obwieszczenie
+(strategia misji drugiej wersji demo)  
+Zwiększ zapasy na zamku i rozwiń produkcję żywności, a następnie skoncentruj się na szkoleniu jednostek wojskowych. Wydobywaj smołę i kop dodatkowe smolne rowy, aby utrzymać napastników z dala od zamku. Staraj się chronić zagrody bydła. Ulokowanie kuźni w pobliżu składu zapasów i zbrojowni poprawi wydajność tych obiektów.
+Rozmieszczaj smolne rowy w miejscach, z których spodziewasz się ataku wroga - przed bramami i murami lub wokół obiektów znajdujących się poza grodem.
+Rozmieść swoich włóczników na murach, aby mogli odpychać drabiny wojsk oblężniczych wroga. 
+Korzystaj ze swoich mangoneli, jak najczęściej używając opcji "Atakuj miejsce", która ułatwia rażenie zwartych grup żołnierzy przeciwnika.
+(strategia misji pierwszej wersji demo) 
+Rozpocznij od wzniesienia kilku chat drwali - im bliżej lasów je umieścisz, tym szybciej zgromadzisz zapas drewna. Następnie rozmieść zagrody bydła oraz sady, uruchamiając w ten sposób rolnictwo. Dopiero później zabierz się za produkcję broni.
+Sprzedawaj jabłka i kupuj żelazo, jednak staraj się zbytnio nie nadwątlić swoich zapasów żywności.
+Kiedy zagrody bydła zaczną działać pełną parą, możesz rozważyć wydanie zakazu spożywania jabłek przez twoich poddanych. Odpowiednia opcja znajduje się w panelu spichlerza. Dzięki temu zapasy owoców będą rosły znacznie szybciej.
+Powinieneś odpowiednio wcześnie zaplanować budowę wielu warsztatów łuczniczych i kowalskich.
+(Porady - tekst ogólny)
+Strategia
+Porady
+Porada
+Kliknij, aby wyświetlić podpowiedź.
+(Ekostrategia/porady - Misja pierwsza)
+Umieść kilka chat drwali i chat myśliwskich, by rozpocząć produkcję żywności i wycinkę drzew. Następnie zacznij stawiać zagrody bydła, a wkrótce potem farmy chmielu. Na końcu postaw kilka browarów i dwie karczmy.
+(Misja druga)
+Terenów nadających się pod uprawę nie ma zbyt wiele, więc gospodaruj rozważnie. Najpierw załóż kilka sadów jabłoni. Następnie zbuduj warsztat łuczniczy do produkcji łuków oraz zbrojownię do ich magazynowania. Na końcu postaw warsztat kowalski, aby wyprodukować potrzebne miecze.
+Wprawdzie w okolicy nie ma złóż żelaza, ale możesz kupić je za złoto pozyskane z handlu lub podatków. 
+(Misja trzecia)
+Na dobry początek rozmieść kilka chat drwali i farm pszenicy. Następnie zbuduj młyn i piekarnię (albo dwie), by rozpocząć wypiek chleba. Kiedy już zorganizujesz stałe dostawy żywności, pomyśl o ich zabezpieczeniu. Wyprodukuj kilka łuków i postaw koszary, aby zaciągnąć paru łuczników, którzy powinni pomóc rozwiązać problem królików pożerających twoje plony.
+Obserwuj uważnie zapasy żywności, bo możesz mieć problemy z dostawami pszenicy.
+Jeden młyn w zupełności wystarczy, by zaopatrzyć kilka piekarni w mąkę. 
+(Misja czwarta)
+Gdy dostawy żywności się ustabilizują i nic nie będzie im zagrażało, zbuduj tyle kamieniołomów, ile się da. Będziesz potrzebował wiele wołów, by szybko przewozić kamień do składu.
+Wykończ brakujące fragmenty muru, gdy tylko będziesz miał odpowiednio dużo kamienia. Jeśli żołnierze wroga pojawią się, zanim mury zostaną ukończone, jesteś stracony.
+(Misja piąta)
+Choć twoja popularność wydaje się niezachwiana, jesteś w potencjalnie niebezpiecznej sytuacji. Wydając podwójne racje żywnościowe, szybko opróżnisz spichlerz. Masz dwie możliwości działania: kontynuuj politykę groźnego ciemięzcy albo postępuj jak bardziej wyrozumiały władca. Cel da się osiągnąć niezależnie od przyjętej metody, ale możesz zdobyć bezcenne doświadczenie, jeśli zdecydujesz się ukończyć misję na oba sposoby.
+Jeśli wybierzesz drogę złego pana, twoi ludzi będą bardziej produktywni. Sprzedawaj nadwyżki, by zapewnić im dodatkowe jedzenie albo kupić sobie popularność.
+Jako dobry pan, będziesz musiał pogodzić się ze znacznie niższą produktywnością twoich poddanych i ciężko pracować w celu zapewnienia im żywności. Swoją wysoką popularność wykorzystaj do obłożenia ludu wysokimi podatkami. 
+Odprawa misji ekonomicznej
+Na dworze królewskim odbędzie się wkrótce wielki bankiet. Twoim zadaniem jest założenie małej wioski, która dostarczy na tę uroczystość sera i piwa. Odszukaj leśną polanę na południe od zamku króla i natychmiast zabieraj się do pracy.
+Zbrojownia królewska świeci pustkami. Udaj się do doliny na wschód od zamku i rozpocznij produkcję broni. Żyzna ziemia w dolinie nadaje się idealnie do produkcji jabłek, którymi możesz żywić swoich ludzi. Miejscowy kupiec handluje żelazem potrzebnym do wyprodukowania niektórych rodzajów broni. 
+Chcemy, abyś założył małe miasto zajmujące się dostarczaniem zboża do zamku. Równiny na zachód od grodu wydają się do tego celu idealne. Udaj się tam i zajmij się rozbudową miasta.
+Nasi zwiadowcy zauważyli na północy grasantów. Na przełęczy górskiej, na północ od miasta rozpoczęliśmy budowę zamku. Przejmij kontrolę nad budową i dopilnuj, by została ukończona - nie możesz zostawić bandytów samopas.
+Czas w końcu napełnić zamkowy skarbiec.  Zawarliśmy umowę z zagranicznym kupcem na sprzedaż smoły. Udaj się do starego zamku na bagnach i rozwiń produkcję smoły. Poprzedni lord był wielkim okrutnikiem. Wybór, czy kontynuować jego metody, czy też przyjąć łagodniejszą postawę, należy do ciebie.
+Nazwy misji
+Nicea, przybycie do Ziemi Świętej
+Heraklea, podróż na południe
+Antiochia, oblężenie
+Krak de Chevaliers, oblężenie Arqah
+Jerozolima, ostatni atak
+Damaszek, zachwianie równowagi sił
+Kerak, zdrada Renalda
+Aleppo, konsolidacja władzy
+Hittin, bitwa na Wzgórzu Jerozolimskim 
+Jerozolima, odbicie Ziemi Świętej
+Zamek Belvoir, kunktatorska taktyka 
+Tyr, wyznaczanie granic
+Konya, Fryderyk Barbarossa
+Limassol, podbój Cypru
+Jaffa, odbicie miasta
+Królestwo Armenii
+Hrabstwo Edessy
+Księstwo Antiochii
+Hrabstwo Trypolisu
+Królestwo Jerozolimskie
+Wiadomości poprzedzające atak
+Niewielka grupa żołnierzy Szczura zmierza w kierunku naszego zamku. 
+Mieszkańcy okolicznych wiosek widzieli oddział wojsk Szczura, który zmierzał w tę stronę.
+Zwiadowcy donoszą, że silny oddział wojsk Szczura maszeruje w naszym kierunku.
+Niebezpieczeństwo, panie! Ogromna armia Szczura wkrótce stanie u naszych bram.
+Niewielka grupa żołnierzy Węża zmierza w kierunku naszego zamku. 
+Mieszkańcy okolicznych wiosek widzieli oddział wojsk Węża, który zmierzał w tę stronę.
+Zwiadowcy donoszą, że silny oddział wojsk Węża maszeruje w naszym kierunku. 
+Niebezpieczeństwo, panie! Ogromna armia Węża wkrótce stanie u naszych bram. 
+Niewielka grupa żołnierzy Wieprza zmierza w kierunku naszego zamku. 
+Mieszkańcy okolicznych wiosek widzieli oddział wojsk Wieprza, który zmierzał w tę stronę.
+Zwiadowcy donoszą, że silny oddział wojsk Wieprza maszeruje w naszym kierunku. 
+Niebezpieczeństwo, panie! Ogromna armia Wieprza wkrótce stanie u naszych bram.
+Niewielka grupa żołnierzy Wilka zmierza w kierunku naszego zamku. 
+Mieszkańcy okolicznych wiosek widzieli oddział wojsk Wilka, który zmierzał w tę stronę. 
+Zwiadowcy donoszą, że silny oddział wojsk Wilka maszeruje w naszym kierunku. 
+Niebezpieczeństwo, panie! Ogromna armia Wilka wkrótce stanie u naszych bram. 
+Tekst edytora scenariuszy
+Biblioteka wiadomości
+Edytor scenariuszy
+Wyjście
+Nauka
+Tytuły
+Odprawy
+Doradcy
+Postacie
+Szczur
+Wąż
+Wieprz
+Wilk
+Docinki
+Wściekłość
+Błaganie 
+Zwycięstwo
+Nowa wiadomość
+Wybierz
+Skasuj
+Wczytaj ponownie
+Zapisz
+Zapisz i wyjdź
+Zdarzenia
+Cywilne
+Wojskowe
+Narracyjne
+Maksymalna długość TYTUŁU wynosi
+Odtwórz .wav
+Odtwórz Bink
+Nowy
+Wczytaj
+Nazwa
+Plik mapy
+Tytuł
+Odprawa
+Anuluj
+OK
+Kupiec
+Data rozpoczęcia
+Wybierz wiadomość
+Początkowe towary
+Nowa inwazja
+Nowe zdarzenie
+Edytuj
+Wczytaj plik mapy
+Inwazja
+Wiadomość
+Wydarzenie
+Wczytaj plik SCN 
+Deski
+Chmiel
+Bloki kamienia
+Bryłki żelaza
+Smoła
+Pszenica
+Chleb
+Ser
+Mięso
+Owoce
+Piwo
+Złoto
+Łuki
+Kusze
+Włócznie
+Piki
+Wekiery
+Miecze
+Zbroja skórzana
+Zbroja metalowa
+Łucznik
+Kusznik
+Włócznik
+Pikinier
+Pałkarz
+Zbrojny
+Rycerz
+Drabiniarz
+Inżynier
+Popularność
+Kup 
+Sprzedaj 
+Tygodnie poza mapą
+Tygodnie na targowisku
+Dostępne
+Niedostępne
+Zapisz wszystko
+Inne
+Rodzaj
+Z
+Rozmiar
+Łucznicy
+Kusznicy
+Włócznicy
+Pikinierzy
+Pałkarze
+Zbrojni
+Rycerze
+Drabiniarze
+Inżynierowie
+Edytuj warunki
+Edytuj działania
+Warunki zdarzeń
+Skutki zdarzeń
+Dowolne z powyższych
+Wszystkie z powyższych
+Automatyczne zatrzymanie
+Liczba ludności
+Lord zabity
+Wrogi lord zabity
+Pozyskane złoto
+Pozyskana żywność
+Pozyskana broń 
+Pozyskane towary 
+Brak wrogów i inwazji
+Siedziba ogrodzona
+Brak lwów na mapie 
+Dowolny wróg na mapie 
+Wszyscy ludzie odeszli 
+Twoje wojsko zabite 
+Wojska wroga zabite
+Brak wroga na mapie
+Katedra zniszczona 
+Pozyskana broń
+4 zagrody bydła
+2 karczmy 
+Aktywny 
+Nieaktywny 
+Zwycięstwo 
+Porażka 
+Wiadomość 
+Lew śpi 
+Lew się budzi 
+Wędrowna trupa
+Czas wyłączony
+Czas włączony
+Zrzeczenie się zamku
+Kusza dostępna 
+Wiadomość 
+Zaraza
+Choroba pszenicy
+Choroba chmielu
+Choroba jabłoni
+Grzyb na drzewach
+Wzrost populacji królików
+Atak lwów
+Bandyci
+Szalone krowy
+Łucznicy
+Małżeństwo
+Błazen
+Misja specjalna
+Auto Binks WŁ.
+Auto Binks WYŁ.
+Wygrana i wiadomość
+Przegrana i wiadomość
+Dowolne
+Katapulta
+Trebusz
+Taran
+Wieża oblężnicza
+Przenośna tarcza
+Mnisi
+Powtórz
+Adwersarze
+Łącznie
+Racjonowanie
+Wysokość podatków
+Początkowa ilość złota
+Początkowa ilość smoły
+Kopacze
+Dostępność obiektu
+Wł.
+Wył.
+Zdarzenia losowe
+Powtórz (miesiące)
+Powtórz zliczanie
+Wyłącz powtarzające się inwazje
+Kradzież ze spichlerza!
+Ogień!
+Działanie 32
+Działanie 33
+Działanie 34
+Działanie 35
+Działanie 36
+Działanie 37
+Działanie 38
+Działanie 39
+Wojska
+Broń
+% pobłogosławionych
+% konsumujących piwo
+Maksymalne okrucieństwo
+Maksymalna łagodność
+Warunek zdarzenia 24
+Warunek zdarzenia 25
+Warunek zdarzenia 26
+Warunek zdarzenia 27
+Warunek zdarzenia 28
+Warunek zdarzenia 29
+Warunek zdarzenia 30
+Warunek zdarzenia 31
+Warunek zdarzenia 32
+Warunek zdarzenia 33
+Warunek zdarzenia 34
+Warunek zdarzenia 35
+Warunek zdarzenia 36
+Warunek zdarzenia 37
+Warunek zdarzenia 38
+Licznik czasu zwycięstwa
+Miesiąc 
+Miesiące
+Atakuj teraz
+Arabski łucznik
+Arabski niewolnik
+Arabski procarz
+Arabski asasyn
+Arabski łucznik konny
+Arabski zbrojny
+Arabski miotacz bomb
+Arabska balista ogniowa
+Krzyżowiec
+Arab.
+Imiona kupców
+Kupiec 1
+Kupiec 2
+Kupiec 3
+Kupiec 4
+Kupiec 5
+Kupiec 6
+Kupiec 7
+Kupiec 8
+Kupiec 9
+Kupiec 10
+Kupiec 11
+Kupiec 12
+Kupiec 13
+Kupiec 14
+Kupiec 15
+Kupiec 16
+Kupiec 17
+Kupiec 18
+Kupiec 19
+Kupiec 20
+Wiadomości o działaniach
+Mój panie, do miasta przybyła wędrowna trupa wagantów. 
+Plaga dotknęła nasz zamek, wasza wysokość! 
+Choroba wyniszcza nasze uprawy, sir!
+Nasz chmiel dotknęła okropna choroba! Cały plon stracony, sir.
+Nasze sady nie rodzą owoców, mój panie! Ludzie podejrzewają, że to sprawka czarownic. 
+Sir, drwale donoszą, że wiele drzew obumarło w czasie suszy. 
+Króliki mnożą się w niepokojącym tempie, sir! Nasze plony są zagrożone.
+Doszły mnie niepokojące wieści, że za murami widziano lwy. Ludzie się lękają, mój panie. 
+Bandyci grasują w pobliżu zamku, wasza wysokość. 
+Nasze krowy dopadła dziwna dolegliwość, mój panie. 
+Kilku banitów z lasu zdecydowało się powrócić pod twoje skrzydła, mój panie. 
+Ludzie radują się na wieść o twoim małżeństwie, sir. 
+Sir! Do zamku przybył błazen. Pozwoliłem sobie na śmiałość i zaoferowałem mu pracę. 
+Złodzieje skradli z naszego spichlerza część żywności!
+W zamku wybuchł pożar! 
+Złodzieje skradli całą żywność z naszego spichlerza! 
+Sir, w zamku szaleje pożar, a my wciąż nie mamy żadnej studni! 
+Mój panie, w grodzie nie ma ani jednej studni! Gdyby w okolicy wybuchł pożar, będziemy mieli spore kłopoty.  
+Dół kloaczny
+Ten obiekt obniża popularność, ale podnosi wydajność pracy.
+Stos do palenia
+Ten obiekt obniża popularność, ale podnosi wydajność pracy.
+Kleszcze
+Ten obiekt obniża popularność, ale podnosi wydajność pracy.
+Lochy
+Ten obiekt obniża popularność, ale podnosi wydajność pracy.
+Madejowe łoże
+Ten obiekt obniża popularność, ale podnosi wydajność pracy.
+Pal chłosty
+Ten obiekt obniża popularność, ale podnosi wydajność pracy.
+Pień katowski
+Ten obiekt obniża popularność, ale podnosi wydajność pracy.
+Krzesło topielca
+Ten obiekt obniża popularność, ale podnosi wydajność pracy.
+Kojec psów bojowych
+Wypuścić psy! 
+Psy spuszczone!
+Posąg
+Ten obiekt podnosi popularność, ale obniża wydajność pracy.
+Święte miejsce
+Ten obiekt podnosi popularność, ale obniża wydajność pracy.
+Ul
+Ten obiekt podnosi popularność, ale obniża wydajność pracy.
+Tańczący niedźwiedź
+Ten obiekt podnosi popularność, ale obniża wydajność pracy.
+Staw
+Ten obiekt podnosi popularność, ale obniża wydajność pracy.
+Jaskinia niedźwiedzi
+Tutaj żyją niedźwiedzie.
+Kadź z wodą
+Strzeże przed pożarem w zamku
+Katedra
+Nie masz wystarczającej ilości złota dla mnichów
+Opisy i nazwy map w Krzyżowcu
+Surowce podzielone
+To duża mapa przeznaczona dla dwóch graczy. Zamki graczy są rozdzielone szerokim polem, na którym znajduje się większość surowców. Nie pozwól, by twój oponent przejął pełną kontrolę nad wzgórzami, bo znajdziesz się w naprawdę ciężkiej sytuacji.
+Walka o oazę
+Zająć wzniesienia, czy opanować dolinę? Tak czy inaczej, stawką jest cenna oaza.
+Za ciasno na wygodę
+Mapa dla dwóch osób, na której pozycje graczy znajdują się bardzo blisko siebie. Czeka cię zatem spore wyzwanie. Plansza jest bogata w zasoby, które można podkradać przeciwnikowi.
+Bród na rzece
+Chociaż masz do dyspozycji sporo zasobów, atak na przeciwnika po drugiej stronie rzeki nie będzie łatwym zadaniem. Sprytny wróg powinien bez trudu obronić bród przed napastnikami.
+Przewaga wysokości 
+Gracz w dolnym lewym rogu mapy ma przewagę wysokości terenu, ale graczowi z przeciwnego rogu łatwiej zagospodarować tereny rolne.
+Skalista grań
+Gracz po prawej stronie mapy jest otoczony wysokimi skałami i z pewnością ataki z dystansu dadzą mu się mocno we znaki. Z drugiej strony, znacznie łatwiej będzie mu odgrodzić swój gród.
+Centrum oazy 
+Każdy z graczy rozpoczyna rozgrywkę w kącie mapy i musi błyskawicznie rozszerzać swoje włości, aby opanować bogate złoża zasobów leżące w centrum planszy.
+Cel
+Duża mapa dla czterech osób. Gracze, którzy znajdą w sobie dość odwagi, aby wyruszyć na ryzykowną wędrówkę do środka mapy, napotkają tam bogate złoża surowców. Ze względu na kształt planszy gracze z przeciwnych stron będą mieć trudności z atakowaniem siebie nawzajem!
+Pustynna wyspa 
+Jedna, niewielka wyspa, mało zasobów i dużo ludzi do wyżywienia. Coś się musi stać!
+Rzeka 
+Przez pustynię płynie wartka rzeka, przyciągająca wielu śmiałków, którzy pragną zapanować nad skrywanymi przez nią bogactwami.
+W dziesiątkę 
+Im bliżej środka tej nienaturalnie skalistej krainy, tym łatwiej.
+Głupi Jaś 
+Czujesz się, jakby wszyscy się z ciebie śmiali?
+Wielkie jezioro 
+Uważaj, z kim zadzierasz. Zanim zaatakujesz któregoś z przeciwników po drugiej stronie jeziora, będziesz musiał przejść przez ziemie swoich sąsiadów.
+Pas zieleni
+Jest to mapa dla sześciu graczy. Oazy znajdują się na tyłach zamków, dzięki czemu łatwo ich bronić. Każdy gracz ma do dyspozycji dużo kamienia, żelazo oraz nieco smoły. Gracze będą musieli stoczyć walkę o pas drzew leżący w centrum.
+Kraina szczęśliwości 
+Mapa dla ośmiu osób. Gracze znajdujący się w środku są w lepszej sytuacji, niż mogłoby się początkowo wydawać. Gracze z narożników mogą się spodziewać, że będą odpierać ataki licznych armii.
+Bliskie spotkania 
+Jest to duża mapa dla ośmiu osób. Każdy z graczy jest otoczony rozległymi trawiastymi terenami, przez co plansza przypomina wielką szachownicę. Każdy z graczy ma sporo zasobów, co pozwala na budowę potężnych zamków.
+Bez odwrotu
+Jesteś uwięziony w małej skalnej rozpadlinie i musisz walczyć o przetrwanie. Rozważnie wybierz moment ataku - aby doszło do starcia, każdy musi przejść przez centrum mapy.
+Zabójcze równiny 
+Jest to rozległa mapa dla ośmiu osób. Za każdym zamkiem znajdują się rozległe oazy i tereny zielone. Każdy gracz ma również do dyspozycji duży zapas kamienia i żelaza. Gracze są rozmieszczeni blisko siebie, więc spodziewaj się krwawych starć zaraz po rozpoczęciu gry.
+Z wyspy na wyspę
+Jesteś uwięziony na niewielkiej wyspie na rozległym, otwartym oceanie. Złoża surowców są bardzo ograniczone - wszystkiego będzie ci brakować... oprócz okazji do bitwy.
+Zielony raj 
+Czy uda ci się zająć rajską krainę w środku mapy? Wątpię!!
+Północ-południe 
+Tę mapę dla ośmiu graczy najlepiej rozgrywać w dwóch czteroosobowych drużynach. Gracze na wyżynach mają do dyspozycji złoża zasobów, zaś gracze na nizinach - żyzne łąki. Jeżeli twoja drużyna ma przetrwać, musisz handlować z sąsiadami.
+Sojusz przeciwko górze 
+Trzech sojuszników musi współpracować, aby pokonać tyrana mieszkającego na szczycie góry. Atakujący mają do dyspozycji rozległe tereny zielone, ale za to samotny gracz ma spore zapasy żelaza i kamienia, doskonale nadające się do budowy potężnej fortecy górskiej.
+Zachodnie wybrzeże 
+Mapa dla sześciu osób - najlepiej będzie, jeśli gracze podzielą się na dwa zespoły trzyosobowe: jeden na północnym, a drugi na południowym brzegu rzeki.  Dwaj gracze rozlokowani skrajnie po lewej stronie przetrwają najdłużej.
+Strażnicy 
+Słupy Herkulesa strzegą całej mapy... ale co one tak naprawdę chronią?
+Ostatni posterunek 
+Czy masz dość odwagi, aby samotnie rzucić wyzwanie siedmiu przeciwnikom? Jedyne, co przemawia na twoją korzyść, to ogromne wzgórze, które zajmujesz... ale siedmiu na jednego to bardzo zły scenariusz, niezależnie od twojej przewagi.
+Leśna oaza 
+Na tej mapie będziesz musiał - dosłownie - wyrąbać sobie drogę, cokolwiek zechcesz zrobić... a przeciwnicy są bliżej, niż myślisz.
+Kilka centymetrów 
+Zapomnij o spokoju. Od wroga oddziela cię tylko niewielki zagajnik. Jeżeli myślisz o zwycięstwie, powinieneś jak najwcześniej starać się osiągnąć przewagę.
+Śpiąc z wrogiem 
+Mapa średniej wielkości, przedstawiająca trawiastą równinę. Musisz mądrze wykorzystać dostępne zasoby, aby pokonać wroga, zanim on pokona ciebie!
+Kochaj sąsiada
+Na tej mapie dla dwóch osób wszystko może się zdarzyć. Spróbuj wcześnie osiągnąć przewagę, zanim zrobi to twój wróg.
+Rów 
+Jest to mapa dla sześciu osób, na której wszyscy gracze są rozmieszczeni na wyżynach. Najlepiej grać w dwóch drużynach, po trzech graczy każda. Obniżony teren w środkowej części mapy zawiera żyzne oazy. Musisz jednak pamiętać, aby strzec swoich rolników! Jeżeli wróg wybuduje wieżę z łucznikami, będzie mógł łatwo zabijać twoich ludzi.
+Przyjaciel w potrzebie 
+Trzy drużyny toczą batalię o dużą, obfitującą w zasoby oazę. Współpracuj zgodnie ze swoim sąsiadem, jeżeli chcesz się rozwijać. W przeciwnym razie wróg będzie miał do schrupania dwa łatwe kąski.
+Z pustymi rękami 
+Rozległa mapa dla ośmiu osób, z dużymi terenami zielonymi na krawędziach. Gracze walczący o opanowanie tych bezcennych zasobów będą intensywnie ścierać się w środku.
+Bagniste piekło 
+Tereny podmokłe oferują dość ropy, aby zaspokoić twoje potrzeby. Zapewniają też zaskakująco korzystne warunki obronne!
+Rozróba nad rzeką 
+Mapa dla sześciu osób. Przez jej środek płynie rzeka blokująca dostęp do pozostałych graczy. Kilka brodów pozwala graczom przedostać się na drugą stronę. Mapa przystosowana do gry trzech na trzech.
+Prawo dżungli 
+Jesteś uwięziony na maleńkiej wysepce. Twoje jedyne wyjście to pokonać pięciu rywali i zostać jedynym władcą okolic. Wszelkie zasoby mieszczą się w centrum mapy, gdzie na potencjalnych śmiałków czeka stado wygłodniałych lwów!
+Kryjówka na wzgórzu 
+Jest to mapa do gry pięciu na jednego. Gracz rozlokowany na górze walczy przeciwko wszystkim. Ma on znacznie więcej zasobów niż pozostali. Rzeka opływająca wzgórze utrudnia dostęp do niego.
+Piekło na wzgórzu 
+Jest to mapa do rozgrywki czterech na czterech. Gracze rozmieszczeni na wzgórzu mają przewagę wysokości, ale mniej surowców. Pozostała czwórka zajmuje równiny, znacznie bogatsze w zasoby.
+Podmokłe ziemie
+Mapa dla ośmiu osób. Każdy z graczy posiada wydzielony kawałek ziem, otoczony bagnami, które mogą spowolnić ruchy wojsk. Każdy ma również wystarczającą ilość kamienia oraz oazę - ale jedyne źródło żelaza leży w centrum mapy i trzeba będzie stoczyć o nie walkę.
+Dolina
+Żyzna szeroka dolina biegnie przez piaszczystą krainę. Zawiera dość zasobów dla wszystkich, ale czy to wystarczy, aby zapewnić pokój? Marne szanse.
+Patrol graniczny
+Mapa dla czterech osób z dużymi strefami "granicznymi", uniemożliwiającymi przemieszczanie wojsk. Jedyna droga prowadzi przez środek granicy. Jeżeli graczowi uda się patrolować ten teren, będzie kontrolował grę.
+Mała pustynia 
+Na tej gościnnej ziemi nie znajdziesz zbyt wiele - więc maksymalnie wykorzystaj wszystko, co wpadnie w twoje ręce.
+Armenia
+Wolisz tereny wyżynne czy płaskie pustynie bogate w surowce?
+Edessa
+Trzeba pilnować zachodnich ziem, bo kryją wielkie bogactwa.
+Antiochia
+Idź na północ, jeżeli chcesz budować, idź na południe, jeśli chcesz walczyć!
+Trypolis
+Pasmo górskie dzieli tę ziemię. Twoim zadaniem jest ją zjednoczyć!
+Tyr
+Jeżeli zajdziesz zbyt daleko na południe, możesz się nieprzyjemnie sparzyć.
+Potężna oaza 
+Buduj swoje królestwo wzdłuż rozciągniętego pasa oazy. Jest tam więcej drzew i łąk, niż potrzebujesz.
+Kaktusowa dolina
+Ta żyzna dolina byłaby idealnym miejscem na budowę zamku, gdyby nie te przeklęte lwy...
+Wąwozy
+Buduj swoje państwo w cichym zaułku pośród skał.
+Duża pustynia
+Na tej gościnnej ziemi nie znajdziesz zbyt wiele - więc maksymalnie wykorzystaj wszystko, co wpadnie w twoje ręce.
+Wielka wyspa
+Ta wielka, zasobna wyspa pozwala ci budować z dala od niebezpieczeństw.
+Skalista oaza 
+W tej skalistej oazie aż się roi od wszelkiego zwierza. Pomyślnych łowów!
+Mała wyspa
+W tym maleńkim zielonym raju możesz wybudować zamek swoich snów.
+Oaza nad morzem
+Ten obszar ma wszystko, czego potrzebuje władca, który lubi budować - żyzne ziemie, dużo zasobów i piękne okolice.
+Demo Krzyżowca 
+Ta mapa dla pięciu osób, dostępna w demie Twierdza: Krzyżowiec, oferuje bardzo różnorodne warunki.
+Nowa ziemia 
+Załóż swój przyczółek na pustyni, ale uważnie wybieraj lokalizację!
+W cieniu 
+Czy chcesz być królem wzgórza? A może będziesz gnuśnie siedział u jego stóp, podczas gdy tyran na szczycie będzie się z ciebie śmiał.
+Źródła 
+Ten, kto włada wodą, będzie władał pustynią!!
+Wydmy 
+Piach, piach i jeszcze trochę piachu.
+Kraj kaktusa
+Jest gorąco, nieprzyjemnie i wszystko kłuje!
+To niesprawiedliwe 
+Tak naprawdę, to wcale nie! 
+Rzeka Arnon 
+Na wschód od Morza Martwego jest cenne źródło wody. Żaden gracz nie ma dostępu do wszystkich zasobów.
+Pęknięta wydma 
+Jakie siły natury mogły stworzyć coś takiego? Jeżeli znajdziesz się w środku, będziesz miał ciężkie życie.
+Bagna Cezarei 
+Prowadź bitwy, tkwiąc po pas w błocie bagien wokół Cezarei. Zdobądź kontrolę nad złożami żelaza w centrum mapy, a osiągniesz przewagę.
+Zapach kokosów
+Nie ma tu żadnych sprzyjających form topograficznych, które mógłbyś wykorzystać do obrony - tylko pusty i płaski teren.
+Nieprzyjazne skały
+Jeżeli wylądujesz na wyżynach, może zabraknąć ci kamienia. Nie pozwól, aby gracze z niższych terenów wyczerpali całe złoża!
+Kreteński półwysep
+Ośmiu graczy stoczy batalię o władzę nad wschodnim półwyspem Krety. Ale szanse na pewno nie są równe.
+Cyklady
+Te wyspy, należące do królestwa Achai, są przedmiotem sporu. Kto w końcu zostanie ich władcą?
+Ćwiartowanie 
+Wysokie pasma górskie dzielą pole walki na cztery części. Jeżeli będziesz kontrolował góry, będzie również panował nad dostawami żelaza - i zwyciężysz.
+Wydmy Nicei
+Trudne okolice Nicei - oto miejsce konfliktu. Jest tu wiele terenów zielonych, ale w pierwszej kolejności trzeba będzie zająć się chwastami.
+Równiny zalewowe Jordanu
+Jest to zielona, żyzna okolica, którą regularnie zalewa okoliczna rzeka Jordan. Rwący nurt wymył wiele brodów.
+Wielki Eufrat 
+Ta wielka rzeka przecina ziemie Edessy na pół. Wodospad na zachodzie będzie miejscem wielu krwawych starć.
+Rzeka Halys 
+Rzeka wije się przez całą mapę, rozdzielając graczy na trzy grupy. Niektóre z nich mają więcej przestrzeni życiowej niż inne.
+Ukryty krater 
+Krater jest ukryty głęboko w sercu Syrii. W okolicy jest sporo surowców, których można użyć. Kto będzie umiał najlepiej wykorzystać warunki terenowe?
+Wzgórza Antiochii
+Walcz o dominację na wzgórzach na zachód od Antiochii. Jeżeli będziesz miał pecha i zajmiesz pozycję na dole, czeka cię męcząca walka pod górkę.
+Lacus Magnus
+Lacus Magnus to rzeka, która wypływa z bagien Cezarei i płynie pomiędzy wysokimi, górzystymi wydmami aż do Morza Śródziemnego. Walcz na kolistym szlaku, wykorzystując skały.
+Jeziora Konya
+Jeziora dostarczają wodę całej okolicy. Kto będzie najbardziej spragniony takiej nagrody?
+Jezioro Qaddas
+To wspaniałe jezioro leży na wschód od Trypolisu. Maleńkie wyspy stanowią ciąg wąskich gardeł. Musisz je opanować, jeżeli myślisz o zwycięstwie.
+Litani i Jordan
+Te dwie rzeki płyną równolegle przez ziemie na południe od Trypolisu. Skorzystaj z gór, aby atakować wroga.
+Melos
+Ta wyspa leży w niespokojnym królestwie Achai, założonym podczas czwartej krucjaty. Pozycja w lewym górnym rogu mapy jest zdecydowanie najtrudniejsza.
+W kółeczku
+Drużyna złożona z dwóch graczy zajmie wzgórze w centrum mapy i stanie przeciwko całej reszcie graczy. Siły są jednak bardziej wyrównane, niż się spodziewasz.
+Prowincja Bodrum
+Ten półwysep na zachodzie jest niemal podzielony na dwie części. Pozycja na wyżynach w tym przypadku niekoniecznie da ci przewagę.
+Morze traw
+Utwórzcie trzy drużyny, po jednej na każdą z wysp. Długie, wąskie wyspy w środku powinny posłużyć do prowadzenia ataków.
+Region Koryntu
+W łacińskiej Grecji, podczas czwartej krucjaty, o ten region toczyły się zaciekłe spory. Kto narzuci tu swój porządek jako pierwszy?
+Kamienna twarz 
+Starcie dwóch na trzech. Podróżując na drugą stronę, musisz zwracać szczególną uwagę na kamienie.
+Strati
+Stocz walkę o tę maleńką wysepkę na Morzu Egejskim. Ten, kto znajdzie się w lewym górnym rogu mapy, będzie miał trochę trudniej niż pozostali.
+Tasos
+Pożywienie i surowce są równomiernie rozmieszczone, więc bitwa będzie wyrównana. Spróbujcie umieścić czterech graczy po lewej stronie i trzech po prawej.
+Tylos
+Na tej dużej wyspie wszyscy mają równe szanse. Mapa przeznaczona do gry czterech na czterech (po lewej i prawej stronie).
+Wyspa Trapesac
+Stocz walkę o ten ważny punkt poboru wody we wschodniej Antiochii. Nie daj graczowi w lewym dolnym rogu zbyt dużo czasu, bo będzie w stanie zbudować zamek nie do zdobycia. 
+Dwoje w jednym łóżku 
+Ten, kto znajdzie się na wzgórzu, będzie zbierał cięgi - ale przynajmniej będzie miał towarzystwo.
+Ściana żelaza 
+Większość wydarzeń będzie toczyć się w lewej i prawej części - niezdobyta skalista ściana w środku nie pozwala na nic innego.
+Arnon River
+This is a precious water supply to the east of the Dead Sea.  No one player has easy access to all the resources.
+Broken Dune
+What force of nature could have created this feature?  If you are caught in the middle you are likely to have a rough ride.
+Caesarea Swampland
+Fight waist deep in the swamps around Caesarea.  Gaining control of the iron in the centre will give you the edge.
+Coconut Twist
+There are no natural defences here to aid your cause on this open and level playing field.
+Craggy Cliffs
+If you are on high ground you may find yourself short of stone.  Don't let the players on low ground hog the lot!
+Crete Peninsula
+Eight players battle it out to control the eastern peninsula of Crete.  The odds are by no means even.
+Cyclades
+These islands in the Principality of Achaea are held in contention.  Will you be their ultimate ruler?
+Drawn and Quartered
+This battleground is split in four by high ridges.  If you control these ridges you control the iron supply and will ultimately win the game.
+Dunes of Nicaea
+Nicaea's uncompromising terrain is the stage for this conflict.  There is plenty of grassland to go around but you may need to do some weeding first.
+Flood Plains of Jordan
+This is one of the many areas where the river Jordan breaks away to flood the grassland.  The fast flowing river has broken many of the fords.
+Great Euphrates
+This great river cuts the County of Edessa in two.  The waterfall to the west will see a lot of bloodshed.
+Halys River
+This river snakes through the landscape splitting the players into three distinct groups, some with more space than others.
+Hidden Crater
+This crater is hidden deep inside the heart of Syria.  There are plenty of resources to go around but who will make best use of the terrain?
+Hills of Antioch
+Fight for supremacy in the hills to the west of Antioch.  If you are unlucky enough to be on low ground you will face a daunting uphill struggle.
+Lacus Magnus
+Lacus Magnus is a river that begins in the swamps of Caesarea and flows through the mountainous dunes into the Mediterranean Sea.  Fight through the circular route using the rocky outcrop to your advantage.
+Lakes of Konya
+These lakes provide water for the surrounding area but who will win this thirst-quenching prize?
+Lake Qaddas
+This great lake lies to the east of Tripoli.  The small islands create a sequence of choke points, which must be controlled to win the map.
+Litani and Jordan
+These rivers run parallel to the south of Tripoli.  Use the ridges to launch assaults on the enemy.
+Melos
+This is an island in the unstable Principality of Achaea which was established during the forth crusade.  The top left position is by far the toughest.
+Pig in a Poke
+Try a team of two on the hill in the middle against the rest.  The sides might be more even than you think.
+Province of Bodrum
+This western peninsula is almost split in two.  Being on high ground isn't necessarily an advantage here.
+Reed Sea
+Try making up three teams, one on each island.  Use the long thin islands in the middle to launch your assaults from.
+Region of Corinth
+A hotly contested area in Latin Greece during the forth crusade but who will be the first to impose order?
+Rock Face
+A two against three face off.  Leave no stone unturned when travelling to the other side.
+Strati
+Fight for this small island in the Aegean Sea.  Whoever is placed in the top left will be at a slight disadvantage to the others.
+Thasos
+The food and resources are squarely distributed making for an evenly matched battle.  Try placing four players on the left against three on the right.
+Tilos
+Everyone is on equal footing on this large island.  Try playing four on the left verses four on the right.
+Trapesac Island
+Fight over this important water supply to the east of Antioch.  Don't leave the player in the bottom left alone for too long of their castle will be virtually impenetrable.
+Two in a bed
+Whoever is placed on the hill is likely to take a pummelling but at least they'll have company.
+Wall of Iron
+Most of the action takes place on the far left and right because of the impenetrable rock face running down the middle.
+Free text line
+Free text line
+Free text line
+Free text line
+Sojusznicy 
+Nie zażądano żadnych towarów  
+Brak rozkazów 
+Żaden
+Potrzebna pomoc! 
+Wydaj rozkazy 
+Wyślij towary
+Zażądaj towarów
+Cofnij rozkazy 
+Broń mnie 
+Atakuj 
+Ilość
+Żądania
+Wybierz towary 
+Wybierz ilość 
+Wysłać żądane towary? 
+Rozkazy: 
+Broń się 
+Ty 
+Nie masz żadnych sojuszników!
+(ranga)
+Najwspanialszy lord
+Uporządkowane według złota
+Uporządkowane według żołnierzy  
+Free text line
+Free text line
+Free text line
+Sprawdzanie trybu gry wieloosobowej
+Twoja wersja jest przestarzała, prosimy o uaktualnienie 
+Ktoś używa przestarzałej wersji i powinien dokonać uaktualnienia
+(okno przeciwników militarnych)
+Z iloma przeciwnikami możesz sobie poradzić?
+Ta opcja losowo dobierze przeciwników. Wciąż będziesz mógł zmienić rodzaj przeciwników po dokonaniu wyboru. 
+(Szczur - przemówienia bitewne)
+Ty nierozważny prostaku! Z ogromną przyjemnością zajmę się z tobą osobiście!
+Ach tak! TERAZ zaczynasz się martwić?! Moje armie zaraz cię dopadną!
+Przestraszony?! Sławetne armie diuka De Puce zmiotą cię równie łatwo, jak ja odganiam muchę ze swojego ramienia!
+Oto ja - mocarny De Puce, twoje przeznaczenie! Wkrótce zatriumfuję nad tym zbiegowiskiem, które nazywasz... armią!
+Świat do reszty oszalał! Ja... Ja... To przecież ja miałem cię rozgnieść... 
+Niech to! Moi głupi żołnierze nie potrafią... Nie chcą... Arrh! Ci idioci nie wykonali mojego... genialnego planu! 
+Proszę! Błagam! Bądź wielkoduszny i nie krzywdź mnie, proszę...
+NIE MA powodu do paniki! Szczurku, tylko bez paniki! Uspokój się, proszę... Uspokój...
+Sprawy mają się dobrze?!  Tak, ehe... Myślę sobie, ehe... Myślę, że tak właśnie powinno być, czyż nie?
+Szczurek znowu wygrał! Szczurek znowu wygrał! He, he! Uhaha! 
+Moja strategia sprawdza się doskonale. Nie możesz się ze mną równać! 
+A więc, moja sławetna armia ponownie triumfuje, a ty... przechodzisz do historii!
+Zwycięstwo jest po mojej stronie... Tylko co mam zrobić z tobą?
+Mój pan potrzebuje następujących towarów. Proszę, wyślij je natychmiast. 
+Mój pan informuje, że towary, które wysłałeś, właśnie przybyły. 
+Mój pan ma zamiar odpocząć. Musisz kontynuować walkę bez niego. 
+Mój pan składa ci gratulacje z okazji ostatniego sukcesu. 
+Mój pan informuje, że usunął jednego z naszych adwersarzy. 
+Mój pan domaga się twojej natychmiastowej pomocy. 
+Mój pan życzy ci wesołych świąt. 
+21
+22
+Mój pan właśnie przystępuje do oblężenia jednego z zamków naszych wrogów. 
+Mój pan informuje, że zapewne nie przystąpi do ataku. 
+Mój pan informuje, że nie zaatakuje dzisiaj.
+Mój pan informuje, że nie może ci pomóc. 
+Mój pan informuje... że nie udzieli ci pomocy. 
+Mój pan nie wyśle towarów, o które prosiłeś. 
+Mój pan wysłał ci towary. 
+Mój pan myśli, że wygrywamy tę wojnę.
+Mój pan myśli, że przegrywamy tę wojnę.
+Mój pan wysłał ci żołnierzy na pomoc. 
+Mój pan się zgadza. 
+(Wąż)
+Ach tak... Czas umierać...
+Jeszcze żyjesz?! Ale to już długo nie potrwa...
+Słyszysz ten dźwięk, hm? Twoja śmierć nadchodzi!
+A oto nasz mały bohater...  Chyba mam dla ciebie niespodziankę!
+Wrrr! Nadużyłeś mojej cierpliwości. Czas wreszcie z tobą skończyć! 
+KIM TY JESTEŚ, żeby rzucać mi wyzwanie i kwestionować moje prawo do tych ziem?!
+Och, oszczędź mnie! Ja naprawdę zawsze chciałem być twoim sprzymierzeńcem...
+Pora znikać...
+Oh, tak sobie czasem myślę, że chyba... eh...
+Odniosłem zwycięstwo? Och, tak! Zwycięstwo! 
+To już koniec, mój przyjacielu! Spójrzmy prawdzie w oczy - przegrałeś! 
+Znowu przegrałeś?  Cóż, może po prostu nie nadajesz się do tego zawodu.
+To nieustanne wygrywanie zaczyna być męczące...
+Mój pan potrzebuje następujących towarów. Proszę, wyślij je natychmiast. 
+Mój pan informuje, że towary, które wysłałeś, właśnie przybyły. 
+Mój pan ma zamiar odpocząć. Musisz kontynuować walkę bez niego. 
+Mój pan składa ci gratulacje z okazji ostatniego sukcesu. 
+Mój pan informuje, że usunął jednego z naszych adwersarzy. 
+Mój pan domaga się twojej natychmiastowej pomocy. 
+Mój pan życzy ci wesołych świąt. 
+21
+22
+Mój pan właśnie przystępuje do oblężenia jednego z zamków naszych wrogów. 
+Mój pan informuje, że zapewne nie przystąpi do ataku. 
+Mój pan informuje, że nie zaatakuje dzisiaj.
+Mój pan informuje, że nie może ci pomóc. 
+Mój pan informuje... że nie udzieli ci pomocy. 
+Mój pan nie wyśle towarów, o które prosiłeś. 
+Mój pan wysłał ci towary. 
+Mój pan myśli, że wygrywamy tę wojnę.
+Mój pan myśli, że przegrywamy tę wojnę.
+Mój pan wysłał ci żołnierzy na pomoc. 
+Mój pan się zgadza. 
+(Wieprz)
+Przerobię cię na karmę dla świń, ha! Moi ludzie zmiażdżą wszystkie twoje kości!
+Uderzcie w bębny, zadmijcie w rogi! Oto Wieprz nadchodzi w blasku pożogi!
+Uciekaj kurczaku, bo ci przytnę skrzydełka!
+Łup, łup! Wiesz co to za dźwięk? To ja stukam cię w czaszkę! Ha, ha! ZMIAŻDŻĘ cię!
+Wrrraah! Jestem wściekły! Rozedrę cię na kawałki... Nie, ma-leń-kie ka-wa-łecz-ki!
+Z-z-zabiję cię, z-z-zabiję!
+Nie. Świnka nie umrze... Nie... Nie, nie!
+Wieprz jest dziś jakiś nieswój... Wieprz może wpaść w kłopoty... 
+Co to? Co się ze mną dzieje?
+Wygrałem, wygrałem, wygrałem! Nikt nie pokona Wieprza!
+Skończ z tą dziecinadą i zacznij naprawdę WALCZYĆ!
+Wieprz znowu wygrywa! Przygotuj się na śmierć... Powolną śmierć!
+Nie brać jeńców! Wyrżnąć wszystkich, grrrruuh! 
+Mój pan potrzebuje następujących towarów. Proszę, wyślij je natychmiast. 
+Mój pan informuje, że towary, które wysłałeś, właśnie przybyły. 
+Ratunku, ratunku! Ja chcę żyć...
+Mój pan składa ci gratulacje z okazji ostatniego sukcesu. 
+Mój pan informuje, że usunął jednego z naszych adwersarzy. 
+Mój pan domaga się twojej natychmiastowej pomocy. 
+Mój pan życzy ci wesołych świąt. 
+21
+22
+Mój pan właśnie przystępuje do oblężenia jednego z zamków naszych wrogów. 
+Mój pan informuje, że zapewne nie przystąpi do ataku. 
+Mój pan informuje, że nie zaatakuje dzisiaj.
+Mój pan informuje, że nie może ci pomóc. 
+Mój pan informuje... że nie udzieli ci pomocy. 
+Mój pan nie wyśle towarów, o które prosiłeś. 
+Mój pan wysłał ci towary. 
+Mój pan myśli, że wygrywamy tę wojnę.
+Mój pan myśli, że przegrywamy tę wojnę.
+Mój pan wysłał ci żołnierzy na pomoc. 
+Mój pan się zgadza. 
+(Wilk)
+Twój czas na tym padole dobiega końca, więc lepiej zmów modlitwy.
+Wkrótce rozdepczę ciebie i całe to... robactwo!
+Moi ludzie już nadchodzą, wkrótce raz na zawsze przestaniesz sprawiać mi kłopoty!
+Niebawem zobaczysz, co to znaczy prawdziwa wojna!
+Czy nikt nie sprzątnie tego... śmiecia, który zasłania mi horyzont?
+Bądź przeklęty chłopcze! Zbliża się godzina mojej pomsty!
+Zabij mnie od razu, bo nigdy nie ukorzę się przed tobą!
+Czyżbym cię trochę nie docenił?
+Przyznaję, walczysz lepiej niż twój ojciec.
+Jesteś słaby i niegodny zaszczytu dowodzenia armią!
+Jeśli będę musiał, zburzę twój zamek kamień po kamieniu, ale dostanę twoją głowę!
+Ja wygrałem, ty przegrałeś!
+Mój pan usunął kolejnego pretendenta do jego tytułu. 
+Mój pan potrzebuje następujących towarów. Proszę, wyślij je natychmiast. 
+Mój pan informuje, że towary, które wysłałeś, właśnie przybyły. 
+Mój pan ma zamiar odpocząć. Musisz kontynuować walkę bez niego. 
+Mój pan składa ci gratulacje z okazji ostatniego sukcesu. 
+Mój pan informuje, że usunął jednego z naszych adwersarzy. 
+Mój pan domaga się twojej natychmiastowej pomocy. 
+Mój pan życzy ci wesołych świąt. 
+21
+22
+Mój pan właśnie przystępuje do oblężenia jednego z zamków naszych wrogów. 
+Mój pan informuje, że zapewne nie przystąpi do ataku. 
+Mój pan informuje, że nie zaatakuje dzisiaj.
+Mój pan informuje, że nie może ci pomóc. 
+Mój pan informuje... że nie udzieli ci pomocy. 
+Mój pan nie wyśle towarów, o które prosiłeś. 
+Mój pan wysłał ci towary. 
+Mój pan myśli, że wygrywamy tę wojnę.
+Mój pan myśli, że przegrywamy tę wojnę.
+Mój pan wysłał ci żołnierzy na pomoc. 
+Mój pan się zgadza. 
+(Saladyn)
+Piasek w twojej klepsydrze zaraz się skończy, mój przyjacielu. 
+Jak jastrząb poluje na króliki, tak ja poluję na ciebie. 
+Twoje barbarzyńskie zwyczaje... niedojrzałe plany... Jesteś zbyt łatwy do przejrzenia, mój przyjacielu. 
+Nie jestem mściwym człowiekiem, oszczędzę cię, gdy zostaniesz moim więźniem. Może nawet pozwolę ci dbać o moje wielbłądy!
+Mimo tych wszystkich świętości, walczysz dobrze... obawiam się, że zbyt dobrze.
+Łajno wielbłąda! Zaprawdę, jesteś cierniem w moim boku.
+Jesteś potężny na polu walki... ale czy jesteś też sprawiedliwy? Zdaję się na twoją łaskę.
+Nie sprawia mi przyjemności to, co widzę. Nie mogę zawieść moich ludzi...
+Sytuacja rzeczywiście wygląda na ciężką. Może trzeba zmienić plany. 
+Jest oczywiste, że nie jesteś żadną przeszkodą dla moich oddziałów. Poddaj się, mój przyjacielu.
+Moje siły zadały ci kolejne uderzenie. To początek końca, mój przyjacielu.
+Pustynia nie jest miejscem dla ciebie. Wracaj do domu, przyjacielu, wracaj do domu. 
+Tak, jak musi być. Następny padł przede mną.
+Potrzebuję twoich zapasów. Czy jest to możliwe, byś wysłał mi następujące towary? 
+Otrzymałem towary od ciebie. Masz moje podziękowania, przyjacielu. 
+Jestem zgubiony, przyjacielu. Musisz kontynuować walkę beze mnie. 
+Dobrze walczysz, mój przyjacielu. Zadałeś potężny cios w imię naszej sprawy. 
+Usunąłem jednego z naszych wrogów, mój przyjacielu. Walka trwa dalej. 
+Jestem w poważnym niebezpieczeństwie, mój przyjacielu. Bardzo potrzebuję twojej pomocy. 
+Mamy takie powiedzenie: Gdy wielbłądy śpiewają, czas opuścić oazę. 
+21
+22
+Moje oddziały są gotowe. Mury naszych wrogów rozpadną się w pył. 
+To byłoby w najwyższym stopniu niemądre. 
+Jeszcze nie nadszedł czas, by uderzać, mój przyjacielu. 
+To byłaby daremna akcja. Przykro mi, ale nie mogę pomóc. 
+Z całego serca chciałbym ci pomóc, ale, niestety, nie mogę. 
+Na nieszczęście sam potrzebuję tych towarów. 
+Towary zostaną wysłane, mój przyjacielu. 
+Nasza gwiazda świeci coraz jaśniej, mój przyjacielu. 
+Ciemne chmury zbierają się nad naszymi zamkami - musimy być bardzo ostrożni. 
+Ludzie, których potrzebujesz, zostaną wysłani. 
+Mądra decyzja. 
+(Kalif)
+Niech zacznie się oblężenie. Nie bierzcie żadnych jeńców, zabijcie ich wszystkich.
+Sępy się zbierają. Krążą nad twoim żałosnym zamkiem. 
+Moje zwycięstwo jest w zasięgu ręki. Pustynia spłynie krwią, zanim ten dzień dobiegnie końca. 
+Przygotuj się na śmierć, niewierny. 
+Testujesz moją cierpliwość. Zmiażdżę cię za to.
+Co?! Ośmieliłeś się dokonać inwazji moje ziemie? Drogo za to zapłacisz.
+Nie pokazałem ci jeszcze wszystkiego, niewierny. 
+Natychmiast usuń swoją armię spod murów mojego zamku.
+Trzymaj się z daleka od moich ziem, niewierny. Z daleka powiedziałem.
+Jesteś słaby, niewierny. Moje siły z pewnością sprowadzą cię na kolana. 
+Pilnuj swoich pleców, rycerzu, pilnuj pleców.
+Śmierć jest zbyt łagodną karą w twoim wypadku. Zasługujesz na coś gorszego.
+Wszyscy padną przede mną. Tak jak i ty, już wkrótce.
+Potrzebuję towarów. Wyślij mi, co następuje. 
+Twoje towary przybyły. 
+Śmierć przyszła do mnie. Nie boję się, ale ty chyba powinieneś.
+Tak więc, potrafisz nieco walczyć. Cóż, postaraj się trochę bardziej.
+Więc, to ja mam się rozprawić ze wszystkimi naszymi wrogami? Cóż, nie spodziewałem się niczego innego!
+Świńscy synowie mnie otoczyli. Wyślij mi swoich najszybszych ludzi.
+Zachowujesz się jak kulawy wielbłąd. Jja jestem mistrzem potyczek. 
+21
+22
+Patrz i ucz się, niewierny.
+Czy uważasz mnie za głupca, niewierny? 
+NIE. Nie będziesz MI rozkazywał, jak jednemu ze swoich służących.
+Sam sobie poradź. 
+Nie będę marnował moich ludzi na ciebie. 
+Prosisz o niemożliwe.
+Wysłałem ci towary. 
+Dobrze nam idzie... Wszyscy teraz drżą przed potęgą Kalifa.
+Żałosny psie, przez ciebie przegrywamy tę wojnę...
+Czy Kalif znowu musi ci pokazać, jak się walczy?
+Tak.
+(Sułtan)
+Wiatr pustyni nie oszczędza twojego domu.
+Gdy gołąb odpoczywa, sokół wzlatuje. 
+Obserwuję gwiazdy i zdaje się, że nie są one zbyt przyjazne dla ciebie.
+Wielbłądy są niezmordowane. To zły znak dla ciebie, jak myślę.
+Dzisiaj niebo nie świeciło jasno nad Sułtanem. 
+Gałązki oliwne płaczą nad stratą Sułtana. 
+Tak jak wszyscy muszą zasnąć snem starożytnych, tak musi też biedny Sułtan. 
+Czerwone niebo zbliża się do fortecy Sułtana. 
+Staw wysycha w oazie Sułtana. 
+Lew ryknął, on znowu przemówi.
+Żmija kąsa tych, którzy chodzą bez butów. 
+Prosta droga do nieba dla nieprzyjaciół Sułtana. 
+Sułtan śpiewa, gdy Szakal zapada w las. 
+Brakuje nam tego, co ty z pewnością posiadasz. 
+Och, co za radość. Twój okręt przybył. 
+Dzisiaj Sułtan będzie odpoczywał pośród gwiazd. Będę ci się życzliwie przyglądał. 
+Twoje ognisko płonie jasno. Jedź dalej, mój zaufany sojuszniku. 
+Owca padła przed nosem Sułtana. 
+Sępy krążą nad moją fortecą. Zwróć na mnie swoje spojrzenie. 
+Gdy piasek przemieszcza się swobodnie po marmurowym krześle, tego dnia dłużą się godziny.
+21
+22
+Moje lojalne tygrysy są gotowe do skoku. Ostatniej nocy śniło mi się zwycięstwo. 
+Jednak biedny Sułtan obawia się, że nie może wyruszyć. 
+Może jutro... albo w jakiś inny dzień... Ale nie teraz, mój bohaterze, nie teraz. 
+Śpię snem starożytnych... I pogrążyłem się w nim zbyt głęboko. 
+Znaki są niedobre, ale nie mogę pomóc. Sułtan płacze nad tobą.
+Piasek jest piaskiem, a kość jest kością. Moje wielbłądy pozostaną uwiązane. 
+Tak, tak, mam to, czego potrzebujesz. 
+Widzę, że księżyc jest jasny dzisiaj... Obyśmy długo panowali.
+Księżyc jest... przyćmiony... Kto nas teraz uratuje?
+Powiedziano mi, że moi ludzie są zawzięci. Niech walczą, jak tygrysy, dla ciebie!
+Jeśli tego pragniesz. 
+(Ryszard)
+Moi ludzie są spragnieni bitwy tak samo jak ja! Przygotuj się do walki! 
+Mój sztandar załopocze na twojej warowni, zanim ten dzień się skończy.
+Pustynia to okrutne pole bitwy. Jesteś pewien, że masz wystarczająco dużo odwagi?
+Przepasaj się, naostrz swoje żelazo, wkrótce zostaniesz poddany próbie.
+Waleczny czyn. Walczysz, jak mężczyzna.
+Pewnie, zawsze możesz zniszczyć parę budynków? Co powiesz na uczciwą walkę?
+Tak więc, zostałem pokonany i moje biedne kości muszą pozostać wśród tych nędznych piasków.
+Moje mury są wytrzymałe, moi ludzie mają odważne serca, tak więc przynieś swoje proce i łuki.
+Wydarzenia potoczyły się całkiem inaczej, skoro król musi się kryć  w  swoim zamku. Ale kryć się muszę.
+Zwycięstwo! Lew zaryczał kolejny raz.
+Wojna to niebezpieczna gra, mój panie, jak pomału zaczynasz odkrywać.
+Mój królewski sztandar powiewa nad twoją domeną. Właściwy porządek został przywrócony. 
+Niech zabrzmią fanfary. Armie królewskie kolejny raz zwyciężyły.
+Zaczyna nam brakować następujących towarów. Czy możesz je dostarczyć?
+Twoja karawana z zaopatrzeniem przybyła. Dziękuję ci, mój lordzie.
+Padłem w bitwie. Teraz ty musisz dowodzić walką, mój lordzie.
+Dobra robota, mój lordzie. Nasza Królewska Mość jest pod wrażeniem twoich osiągnięć.
+Nasza sprawa posunęła się do przodu. Kolejny fałszywy lord padł przede mną. 
+Sztandar królewski jest w poważnym niebezpieczeństwie. Musisz przyjść mi z pomocą. 
+Gdy lwy śpią, powinieneś spać i ty. Czas iść do łóżka.
+21
+22
+Kolejne oblężenie się zbliża, mój przyjacielu. Serca moich ludzi są pełne zapału.
+Kpisz sobie, mój panie? Tylko głupiec poważyłby się na coś takiego.
+Mam ważniejsze rzeczy do zrobienia, mój panie. Zostawię ten honor tobie.
+Mamy ciężkie czasy, mój panie. Nie mogę ci pomóc.
+Odwagi, mój panie, odwagi. Musisz utrzymać się samotnie, tym razem.
+Okazuje się, że sam mam problemy z zapasami. Nie mogę ci nic wysłać.  
+Twoje towary właśnie wyruszyły. 
+Zapach zwycięstwa unosi się w powietrzu, mój przyjacielu. 
+Czasy są wyjątkowo ciężkie, mój panie. Będziesz potrzebował całej swojej odwagi w czasie najbliższych dni.
+Wysłałem ludzi, by ci pomogli.
+Maszeruję.
+(Fryderyk)
+Czas podjąć działanie. Moja armia maszeruje.
+Przygotuj swoje wojsko, czas na wojnę.
+Dziś walczymy, dziś zwyciężymy. 
+Ten dzień przejdzie do historii. Patrz, jak ona powstaje twoich oczach.
+Oblężenie jest stracone, ale daleko jeszcze do końca wojny.
+Mój zamek może się kruszyć, ale moja wola - nigdy. Nie rozproszysz mnie tak łatwo.
+Oto dzień, w którym cesarstwo straciło swojego cesarza.
+Jesteśmy przygotowani. Przyjdź po nas, a przegrasz.
+Cesarskie plany wyglądają na zużyte. Czas na nowego stratega.
+Twoi żołnierze padają przed cesarską armią. Poddaj się, nie widzisz, że jesteś zgubiony?
+Na siłę odpowiadamy siłą.
+Cesarz opłakuje twoją śmierć. Nigdy nie powinieneś stawać w szranki.
+Cesarstwo podbija następnego władcę. A opowieść snuje się dalej.
+Cesarstwo potrzebuje następujących towarów. 
+Cesarstwo jest ci wdzięczne za transport. 
+Słońce zaszło nad moim cesarstwem. Musisz nieść pochodnię dalej beze mnie.
+Twoje wojsko sprawuje się dzielnie, kolejny wróg klęknął przed nami. 
+Moja armia zwyciężyła dzisiaj jednego z naszych wrogów. Wygrywamy, przyjacielu. 
+Wróg stoi pod bramami. Bardzo potrzebuję posiłków
+Jest już późno, mój panie. Nie czujesz się zmęczony? Zawsze możemy odpocząć i walczyć następnego dnia.
+21
+22
+Moja armia jest gotowa, wkrótce następny zamek wpadnie w nasze ręce. 
+To czyste szaleństwo! Naprawdę uważasz, że to dobry pomysł?
+Nie, to nie współgra z moimi planami. 
+Nie wyślę ci żadnych żołnierzy. 
+Potrzebuję moich żołnierzy w innym miejscu. 
+W tym momencie nie mogę ci wysłać żadnych towarów. 
+Moje towary zostały wysłane. 
+Nasz sojusz stał się silniejszy tego dnia, mój przyjacielu. 
+Jesteśmy w ciężkiej sytuacji, mój przyjacielu. Jeśli szybko czegoś nie zrobimy, to będziemy zgubieni.
+Moje armie maszerują, by ci pomóc.
+Dobry plan.
+(Filip)
+Moi rycerze przetoczą się po tobie. Szarża!
+Niech bitwa się rozpocznie, moi szlachetni poddani są spragnieni sławy. 
+Rozwińcie sztandary, załóżcie zbroje. Niech walka się rozpocznie. 
+To jest dzień honoru, dzień chwały - oby trwał jak najdłużej.
+Zostaliśmy pokonani... W jaki sposób? Otaczają mnie głupcy!
+Mój Boże, wróg o czarnym sercu atakuje fundamenty naszego zamku.
+Ciemność zstąpiła na mój zamek. Jestem zgubiony. 
+Wróg się zbliża. Musimy być dzielni, nie możemy się zachwiać. Trzymać się! Trzymać!
+Nasze plany się rozleciały. Co król może jeszcze zrobić?
+Wspaniałe zwycięstwo. Armie Francji triumfują. 
+Co za dzielność! Co za dawa!. Jedźcie dalej moi szlachetni rycerze. Jedźcie dalej.
+Zostałeś pokonany, ale nie kłopocz się, mój panie. Spotkałeś najlepszego.            
+Przygotować ucztę. Nasze armie ponownie triumfują. 
+Zaczyna nam brakować towarów. Żądamy, byś wysłał nam następujące. 
+Jesteś wyjątkowo hojny. Twoje towary dotarły szczęśliwie. 
+Co za paskudny dzień... Słońce mojej chwały zaszło. Walcz dalej, mój szlachetny sojuszniku, walcz dalej. 
+Nasz sojusz przynosi owoce. Brawo, dzielny sojuszniku, brawo. 
+Maszerujemy niezmordowanie do zwycięstwu, mój szlachetny sojuszniku. Tego dnia rozprawiłem się z kolejnym z naszych wrogów.
+Jestem otoczony. Wyślij swoje armie na pomoc. 
+Cała Francja podziwia twoją odwagę. 
+21
+22
+Moi szlachetni poddani ozdabiają swoje zbroje. Wkrótce będą gotowi do OBLĘŻENIA.
+Nie, obawiam się, że prawdopodobnie nie mogę zaatakować. 
+To staje się nudne. Proszę, przestań mnie nachodzić z tymi idiotycznymi prośbami.
+Pomóc ci? Z czym? Ślepy jesteś? Wszyscy moi rycerze są martwi.
+Nie... moi rycerze nie chcą i myślę, że mają rację. 
+Nie... sam potrzebuję tych towarów. 
+Twoje drobne żądanie zostało rozpatrzone pozytywnie.
+Chwalebny dzień... Powinienem rządzić całym tym wspaniałym krajem.
+Straciłem zainteresowanie tym chorym konfliktem. 
+Wyślę ci na pomoc moich najlepszych rycerzy. 
+Na mój honor! 
+(Wezyr)
+Niech słońce zagotuje twoją krew, niech wiatr oślepi twoje oczy.
+Posłuchaj zewu pustyni. Ona śpiewa o twojej klęsce.
+Powalę cię. 
+Twoja klęska z dawna została przepowiedziana. Czas ją wypełnić.
+Moi wojownicy mnie zawiedli. 
+Zostaw ten zamek w spokoju, ty nędzny, zakuty łbie. 
+To nie było przepowiedziane, nie powinienem umrzeć... 
+Rozprosz swoich żołnierzy. Co oni robią pod moim zamkiem? 
+Jesteśmy słabi, będziemy silni. 
+Wspaniałe zwycięstwo! Twoje przeznaczenie się ujawnia.
+Kolejni raz moi ludzie niszczą twoje pomniki.
+Nikt nie może stać w cieniu Wezyra, a już na pewno nie ty! 
+Padają jak muchy w obliczu mojej wybranej, prawdziwej armii.
+Wyślij mi te towary. 
+Twoje towary przybyły. 
+Zabity! Jaka nadzieja ci teraz została... Żadna... 
+Zabiłeś jednego z naszych wrogów... Następnym razem zostaw to mnie. 
+Kolejny padł z mojej ręki, co jest zwyczajną koleją rzeczy, mój sojuszniku. 
+Siły ciemności rozłożyły się przede mną. Przybądź szybko, by mnie uratować!
+Czerwone niebo nocą cieszy oko Wezyra.
+21
+22
+Kamienie będą drżały, a pustynia spłynie krwią. Twierdza naszego wroga padnie przed zmierzchem. 
+Nie proś mnie, bym zaatakował. To pewna śmierć, wiesz o tym. 
+Nie, aż zdecyduję, że to odpowiedni moment, by zaatakować.
+Nie mogę pomóc. Sam się wyciągaj z kłopotów. 
+Więc teraz błagasz mnie o pomoc? Nie marnuj oddechu na próżno.
+Nie mam żadnych nadwyżek, które mógłbym ci wysłać. 
+Oto twoje towary. Nie zmarnuj ich. 
+Jeszcze trochę i będziemy rządzili tą pustynią. 
+Walczysz jak kulawy wielbłąd. Przez ciebie przegrywam tę wojnę. 
+Moi wojownicy pędzą ci na pomoc, chłopczyku. 
+Lepiej, żebyś miał rację. 
+(Emir)
+Wiesz...Sugeruję byś coś zrobił z tą twoja denerwującą osobą.
+Ta wojna mnie męczy. Ty mnie męczysz. Wykończę się na dobre. 
+Moje farmy marnieją, moje wielbłądy wymierają, a ty... Przynajmniej z tobą mogę coś zrobić!
+Za długo znosiłem twoją irytującą obecność. Czas ubić komara.
+O cholera... Co za katastrofa...
+Nie. Gdy atakujesz mój zamek, to tak, jakbyś mnie atakował... Mogę być zmuszony, by coś z tym zrobić.
+O jasna cholera... Mama mówiła mi, bym bardziej uważał na siebie. No cóż, Raj czeka.
+Oj, chyba nam się nóżka powinęła, co? Zobaczymy, co teraz zrobisz.
+Sprawy nie mają się dobrze... Ale nieważne.
+Krew i popioły! Co za walka!
+To takie proste... 
+Zaczyna mi się podobać ta cała wojna. A tobie? 
+Moje najszczersze przeprosiny, wygrywam zbyt łatwo. 
+Nasze magazyny są prawie puste. Mógłbyś przekazać nam trochę towarów? 
+Wielkie dzięki, mój prawy sojuszniku. 
+Idę na spotkanie z moim stwórcą. Mam nadzieję, że okaże się hojnym gospodarzem. Trzymaj się, mój zaufany sojuszniku.
+Dobra robota, dobra robota... Gdybym tylko miał twoje zdolności. 
+Zdaje się, że kogoś pokonałem. I co ty na to?
+Ze wszystkich stron otaczają mnie wrogowie. Byłoby świetnie, gdybyś mógł przyjść mi z pomocą... Jeżeli będziesz miał taką szansę.
+Czas gna, gdy spędzasz go na zabawie. Ten dzień przeleciał, jak z bicza strzelił!
+21
+22
+Wydałem rozkaz, by przystąpić do oblężenia. Zobaczymy, czy zyskamy następny zamek... 
+To jest zbyt ryzykowne. O wiele za ryzykowne.
+Dziękuję Ci za zaproszenie, ale jestem zmuszony je odrzucić.
+Mój szlachetny przyjacielu, serce mi pęka, gdy widzę cię w takim stanie, ale nie mogę ci pomóc. 
+Moi żołnierze są zajęci w tej chwili. Wytrzymaj, przyjacielu.
+Występują pewne małe trudności w wysłaniu towarów. Może później.
+Otrzymasz twoje towary. 
+Nasza ostrożna strategia zaczyna popłacać, mój przyjacielu. 
+Mamy kłopoty, czyż nie? To może być dobry moment na przemyślenie naszej strategii.
+Moi ludzie zajmą się tobą.
+Masz rację. 
+(Nizar)
+Gdy słońce osiągnie swój najwyższy punkt, poczujesz gorąco mojego oddechu.
+Nie ma takiego miejsca, w którym mógłbyś się schować. Dokąd mógłbyś uciec.
+Powoli, niezauważalnie, twoja śmierć przyjdzie do ciebie.
+Moi ludzie są szybsi niż wiatr, bardziej cisi niż wąż. Masz rację, że się ich obawiasz.
+Śmierdzący oddechu z północy, nie próbuj uciekać przed swoim przeznaczeniem. 
+Gdy odetniesz nam rękę, wyrośnie nam następna.
+...
+Pilnuj swoich pleców, głupcze!
+Jak wysokie wodne trawy, tak i ja zginam się pod wiatrem.
+Twój koniec się zbliża. Pędzi w twoim kierunku, słyszysz?
+Jak znajdujesz przyglądanie się upadkowi twojego zamku?
+Jest tak, jak powiedziałem, czyż nie? Obyś zgnił. 
+Wyciszyłem następnego.
+Potrzebuję towarów. 
+Mam je. 
+Nasz sojusz można uznać za niebyły. 
+Jednego mniej. Dobrze zrobione.
+Mamy o jednego wroga mniej. 
+Jeśli cenisz sobie moją pomoc, pomóż mi teraz.
+Żmija śpi. Czas do łóżek.
+21
+22
+Moja czarna mgła wkrótce pochłonie kolejną diabelską twierdzę. 
+Moi wojownicy niczego się nie boją, ale nie będę marnował ich życia na próżno.
+Zaatakuję, ale nie teraz... To ja decyduję, kiedy jest odpowiednia chwila.
+Kpisz sobie ze mnie. 
+Nie, musisz znaleźć własną ścieżkę. 
+Możesz wziąć ostatnie okruchy z mojego talerza. Żegnaj.
+Będę szczodry tym razem.
+Diabły płoną w żarze naszych ogni.
+Wijemy się jak węże w pustynnym słońcu.
+Obserwuj, jak Czarna Śmierć przychodzi po twoich wrogów. 
+Tak. 
+(Szeryf)
+No proszę, to chyba ten wielki wojownik we własnej osobie... Do broni!
+Jesteś mężczyzną czy myszką? W zasadzie to nie wiem, po co zadaję ci to pytanie... Zaraz będziesz zapiszczał!
+Twoje dni chwały właśnie się kończą. Przygotuj się na przeprosiny.
+Niech żyje przyszły król. Czyli ja!
+Niech to piorun strzeli... Prosisz o wykonanie prostego zadania i zobacz, co Ci się dostaje.
+To mój zamek właśnie niszczysz. Idź sobie.
+Znów porażka. 
+Dlaczego nie pójdziesz i nie zagrasz kimś innym?
+No i znowu kończą się pieniądze... Dajcie mi tu poborcę podatkowego.
+Słodycz zwycięstwa... Chcesz się teraz poddać?
+Kolejne świetne zwycięstwo moich czcigodnych chłopców... A co!
+Co za gracz! Spróbuj czegoś mniej skomplikowanego następnym razem.
+Kolejny denerwujący głupek wykonuje swoje podniosłe rozkazy...
+Sojuszniku... Nie mógłbyś tak wysłać mi trochę towarów, co?
+Świetnie, dzięki za towary. 
+Cóż, ja spadam... Pilnuj się.
+Świetnie, wreszcie kogoś zabiłeś. 
+Tak należy to robić. Patrz i ucz się. 
+Pomocy, jestem otoczony. Naprawdę, nie żartuję. 
+Rzeczywiście jesteś najokrutniejszym władcą w tej krainie. Ile razy już to słyszałem?
+21
+22
+Kolejny, biedny głupiec straci zaraz swój dom.
+Co za błyskotliwa idea... Nie sądzę.
+Nie, wykonaj swoją brudną robotę.
+Czy ja wyglądam, jak ktoś, kto mógłby ci pomóc?
+Potrzebujemy, by ktoś nas poratował? Przykro mi. 
+Jestem szeryfem, a nie gwiazdorem. Spadaj. 
+Moja hojność kiedyś mnie zabije.
+Wygląda na to, że wygrywamy dla siebie trochę piasku. Fantastycznie.
+Nie mógłbyś tak postarać się trochę bardziej? Umieranie NIE jest moim mocnym punktem.
+Wysłałem paru żołnierzy, żeby cię poratowali... To moi najlepsi ludzie. Naprawdę. 
+Skoro muszę. 
+(Marszałek)
+Żołnierze, do broni! Ruszamy po zwycięstwo!
+To nie będzie wycieczka majowa. Tak więc, postarajcie się, chłopcy.
+Walczymy za honor tych, którzy zginęli przed nami!
+Wierzę, że to będzie uczciwa walka.
+Zła taktyka z mojej strony? Lepiej iść na polowanie następnym razem.
+Zdaje się, że zamek jest atakowany.
+Bzdury... kolejna porażka, niech to szlag. 
+Wygląda to trochę ryzykownie, chłopcy. Postarajcie się przeżyć!
+Sprawy mają się nieco fatalnie, czyż nie? 
+Dzień jest nasz. Dobra robota, chłopcy.
+To jest właśnie to! Klasyczna taktyka partyzancka jest tym, co lubimy najbardziej.
+No to nie było zbyt mądre, starcze.
+No, i kolejny gryzie piach, cha, cha. 
+Trochę mało mam zapasów. Poratujesz mnie czy nie?
+Świetnie, twoje towary przybyły na czas. 
+Och! Zdaje się, że jestem skończony. Teraz to twoja broszka starcze. 
+Dobra zrobione, stara fasolo. Kolejny cham dostał to, na co zasługuje. Dobrze zrobione.
+Właśnie zmieliłem następnego na proszek. 
+Coś tak jakby niewesoła sytuacja. Nie mógłbyś tak pożyczyć paru ludzi?
+Zauważyłeś, że czas wydaje się stać w miejscu na tej przeklętej pustyni? Ot co!
+21
+22
+Ruszajmy, czas zacząć oblężenie. 
+Zbyt duże ryzyko. O wiele za duże. 
+Obawiam się, że twoje żądania zostały oddalone, starcze.
+Mam trochę kłopotów... Obecnie... Nie mogę pomóc.
+Obawiam się, że muszę odłożyć twoją żądania na święte nigdy tym razem, staruszku. Przykro mi.
+Sprawy wygląda tak, że potrzebuję tych towarów. Nie mogę wysłać... Przepraszam. 
+Ciesz się, właśnie je wysyłam. 
+Ta twoja wojna jest całkiem, całkiem. Czyż nie?
+Nie jest dobrze, starcze, nie jest dobrze. Wygląda na to, że nas wykończą tym razem.
+Kawaleria nadciąga, starcze. Trzymaj się. 
+Jak najbardziej. 
+(Opat)
+Moi ludzie przyszli, by oczyścić twój zamek.
+Wkrótce udzielę ci cennej lekcji, chłopcze. 
+Twój duch jest słaby. Bądź bardzo ostrożny. 
+Niewiele czasu pozostało ci na tym świecie. Przygotuj się na spotkanie z twoim przeznaczeniem. 
+Moim żołnierze mnie zawodzą.
+Zostaw w spokoju te mury, chłopcze, albo zapłacisz za to!
+Zapamiętam sobie tę porażkę i odpłacę ci za nią.
+Pilnuj się. Mściwy ze mnie człowiek. 
+Nie mogę się zachwiać. Muszę być silny. 
+Myślę, że moje zwycięstwo jest już tylko kwestią czasu, chłopcze.
+Następna dziura w twojej zbroi.
+Nie powinieneś wchodzić mi w drogę. Nie będę nad tym rozpaczał.
+Powoli, ale pewnie zmierzam w kierunku pełnego władztwa nad tymi ziemiami. 
+W opactwie zaczyna brakować materiałów. Proszę, dostarcz, co trzeba.
+Towary zostały dostarczone. 
+Oto wielcy upadają. Co zrobisz teraz, gdy mnie brakło?
+Niebiosa nad nami! Niech rozpocznie się walka.
+Tak należy to robić. Patrz i ucz się, chłopcze. 
+Opactwo jest oblegane. Wyślij pomoc. 
+Co za wytrzymałość, o bogowie! Dwadzieścia cztery godziny i wciąż  trzyma się mocno na nogach!
+21
+22
+Rozpocząć oblężenie! Nic nie stanie na naszej drodze.
+Wystarczy, chłopcze! Nigdy nie słyszałem tak głupiego pomysłu.
+Bracia medytują. Nie można im przeszkadzać. 
+Będziemy się modlić za ciebie. 
+Nie wydaje mi się, że nauczyłeś się już walczyć.
+Nasz pokorny kościół nie jest zrobiony ze złota. Musisz użyć swoich własnych zasobów.
+Wysłaliśmy to, czego się domagałeś.
+Te ziemie wkrótce zostaną ponownie zjednoczone pod naszymi jaśniejącymi rządami.
+Nasza nagroda zaczyna się wymykać. Musimy podwoić wysiłki.
+Ci bracia maszerują, by ci na pomoc.
+Zgoda. 
+(materiały marketingowe/PR do wersji demo)
+"Niewierni"
+Potykaj się nawet z ośmioma przeciwnikami, zarówno Arabami, jak i krzyżowcami. 
+"Wyrzuć królów dowodzących krucjatą z naszego domu"
+"Naucz się kontrolować nasze arabskie siły"
+Odeprzyj niewiernych
+Historia
+Cztery kampanie
+Walcz jako Saladyn i przepędź Europejczyków
+Walcz jako jeden z królów przewodzących krucjacie i uwolnij Ziemię Świętą 
+Wojownicy pustyni 
+Niewidzialni zabójcy, którzy wślizną się do twojego zamku
+Strażnicy uzbrojeni w bułaty 
+Łucznicy pałacowi 
+Łucznicy konni 
+Armie niewolników 
+Balista ogniowa
+Ogień grecki i wiele innych
+Więcej przeciwników 
+Mistrz oblężeń... Lwie Serce 
+Strateg... Cesarz Fryderyk 
+Mistrz... err, eee... po prostu Król Filip.
+Krucjata, Podbij pogan... Odeprzyj niewiernych
+Krucjata, Podbij pogan
+Mistrzowie potyczek
+Oto mistrzowie potyczek
+Jesteś mistrzem potyczek
+Podbij pogan
+Odeprzyj niewiernych
+i więcej....
+Już w sklepach!
+(przemówienia w czasie misji)
+Panie! Sojusznik z Edessy donosi, że Diuk Beauregard wysyła arabskich najemników, aby pomóc Diukowi de Puce.
+Oni już tu są panie! 
+Przyszliśmy, aby odbić Chilvan Kale z rąk Diuka de Puce. Zejdź nam drogi albo nie pożyjesz wystarczająco długo, by tego pożałować. 
+Stary Szczur zwiewa. Zrobiliśmy to, panie! 
+Nasi zwiadowcy mówią, że oddział arabskich najemników już wyruszył. Mogą być tu w każdej chwili panie!
+Nadchodzą, panie. Ludzie, do broni! 
+Teraz albo nigdy. Do ataku! 
+Myślę, że przeraziliśmy Węża, panie!
+Te obleśne chamy dały nogę, panie! Zostawili swojego generała, by dowodził zamkiem. 
+Panie, bracia Truffe połączyli siły w tym ataku! W jaki sposób możemy odeprzeć ich obu? 
+Fantastyczne wieści panie! Ci nadęci bracia Truffe zaczęli się kłócić, który z nich zajmie nasz zamek, po naszej śmierci. Doszło do tego, że wypowiedzieli sobie wojnę. Wygląda na to, że Wieprze ocaliły naszą skórę, panie. 
+To nieco poprawiło naszą sytuację. Jeden załatwiony, to jeden mniej do końca, panie. 
+W sumie nie tak źle, jakby się zdawało. Misja zakończona sukcesem, panie! 
+Czas zemsty nadszedł. Żadnych jeńców! 
+Niech to szlag! Oni nie marnują czasu, jak się okazuje, panie. 
+Panie! Z radością donoszę, że złapaliśmy tego wijącego się piskorza. Czeka go długa i gorąca droga do naszego lochu. 
+Panie!  Wilk wycofał się do Królestwa Jerozolimskiego. Musimy na chwilę przerwać pościg, panie. 
+Teraz, kiedy dowodzę, robię to, co chcę, i biorę, co mi się podoba. Pierwszą rzeczą, którą chcę, jest twój trup na kiju.  
+Panie! Szanse są bardzo nierówne. Jeden przeciwko czterem - to po prostu nie jest w porządku!  
+Panie! Gronostaj jest oficjalnie rozbrojony. Wygląda na to, że posuwamy się do przodu, panie.
+Kolejny gryzie piach panie! Jeszcze jeden gryzoń i możemy się zabrać za Wilka. 
+Panie! Wilk przystępuje do szarży. Jak brzmią rozkazy?  
+Następstwa.
+Free text line
+Niewielka grupa niewiernych zmierza w kierunku naszego zamku. 
+Mieszkańcy położonych dalej wiosek widzieli oddział niewiernych, który zmierzał w tę stronę.
+Zwiadowcy donoszą, że silny oddział niewiernych maszeruje w naszym kierunku.
+Niebezpieczeństwo, panie! Ogromna armia niewiernych wkrótce stanie u naszych bram. 
+Niewielka grupa żołnierzy arabskich zmierza w kierunku naszego zamku. 
+Mieszkańcy położonych dalej wiosek widzieli oddział wojsk arabskich, który zmierzał w tę stronę.
+Zwiadowcy donoszą, że silny oddział wojsk arabskich maszeruje w naszym kierunku.
+Niebezpieczeństwo, panie! Ogromna armia Arabów wkrótce stanie u naszych bram.  
+Free text line
+Free text line
+Free text line
+Free text line
+(OTHER - for translation)
+Krzyżowiec 
+Twierdza Krzyżowiec 
+Naciśnij SPACJĘ, aby spłaszczyć obiekty na mapie. 
+Doszły mnie niepokojące wieści, że za murami widziano lwy. Ludzie się lękają, mój panie.
+Przejęliśmy kontrolę nad bramą, panie. 
+Wróg pali nasze farmy 
+Wróg pali nasze kamieniołomy 
+Wróg pali nasze kopalnie
+Wróg pali nasze odkrywki smoły 
+Wróg pali nasz zamek 
+Wróg pali nasze chaty drwali 
+Lord został zabity 
+Ta opcja jest niedostępna w wersji demo 
+Spichlerz jest atakowany 
+Spichlerz został zniszczony 
+Zbrojownia jest atakowana 
+Zbrojownia została zniszczona 
+Gra zatrzymana
+Gra w toku
+Mistrzowie potyczek 
+Wynik
+Mapa 
+Drużyny 
+Raporty 
+Kliknij lewym przyciskiem myszy, aby uzyskać więcej informacji lub prawym, aby usunąć.
+Gra normalna
+Krucjata
+Potyczka
+Przewaga po stronie gracza
+Przewaga po stronie komputera
+Gracz
+Komputer
+Wybierz rodzaj gry w Krzyżowcu
+Szlak Krzyżowca
+Zagraj w 50 połączonych misji w Krzyżowcu
+Gra losowa 
+Zagraj w dostosowaną przez siebie grę w Krzyżowcu
+Szlak Krzyżowca -
+Szlak Krzyżowca ukończony!
+Lord gracza
+Lordowie komputera
+Free text line
+Opisy map
+Krzyżowiec - nazwy misji  
+Przybycie
+Wymarsz z obozu
+Kraina pyłów
+Stary przyjaciel
+Arabska przygoda
+Bezkresna pustynia
+Grecki ogień
+Piaski czasu
+Oaza
+Kraina palm
+Kamienista dolina
+Strumień
+Żar pustyni
+Kraj Arabów
+Paszcza lwa
+Łowcy pustyni
+Królestwo wielbłądów
+Pustkowie
+Spotkanie z historią
+Saracen
+Pustynny wiatr
+Czerwony dziób 
+Płaszczyzny
+Śmierć na wydmach
+Zapomniany
+Sępi szpon
+Baśnie z 1001 nocy
+Miejsce spoczynku
+Rzeki krwi
+Oko wielbłąda
+Werble
+Równiny Atum
+Zamglona rzeka
+Palmowy gaj
+Księżycowa przełęcz
+Zstąpienie
+Pożoga
+Asasyni
+Czerwone niebo
+Wydmy
+Grom w górach
+Dolina nadziei
+Wojownicy pustyni
+Pustynna zaraza
+Pustynna burza
+Senny koszmar 
+Zapomniane morze
+Hades
+Największa wojna
+Ostateczne zwycięstwo
+Pierwszy krok
+Ubłocone buty
+Woda święcona
+Terror w Tylos
+Wojna na bagnach
+Cicha ucieczka
+Bitwa w delcie
+Silny prąd
+Na krawędzi
+Miasto mangoneli
+Święta dziura
+Błogosławiony związek
+Wężowy potok
+Fatamorgana
+Cierń między różami
+Zwrot w historii
+Cios w plecy
+Jesteśmy otoczeni!
+Wąskie gardła
+Dogodne miejsce
+Szlachetni kontra łajdaki
+Naturalna obrona
+Krąg wrogów
+Diabelskie małżeństwo
+Cud wsparcia
+Powrót nad wężowy potok
+Mury śmierci
+Samotny Saladyn
+Wirująca śmierć
+Wielki moment!
+Uwaga
+Ptak w locie
+Zatoka furii
+Wężowa rzeka
+Bagnista wyspa
+Feniks
+Przybrzeżna pułapka
+Forteca Wezyra
+Rozwidlenie rzeki
+Ogrodzenie
+Szeroka równina
+Gospodarz
+Najlepsi przyjaciele
+Wyspa pająków
+Podzieleni
+Zazdrośni sąsiedzi
+Trzy świnki
+Lwie Serce
+Rozdroża
+Ostateczne zwycięstwo
+MP-Podzieleni
+MP-Przepychanka
+MP-Ziemia niczyja
+MP-Bez odwrotu
+MP-Zbocza zagłady
+MP-Wężowa rzeka
+MP-Otoczeni
+MP-Skalista granica
+MP-Dwa wodospady
+MP-Dolina panów
+Free text line
+Tekst wersji demo
+Misje Krzyżowca (łatwe)
+1. misja Extreme (normalna)
+2. misja Extreme (trudna)
+Rozegraj dwie pierwsze misje Krzyżowca.
+Łatwe i przyjemne wprowadzenie w realia edycji Extreme.
+Nieco trudniejsza misja dla bardziej doświadczonych krzyżowców.
+Kliknij na ikonie, aby użyć umiejętności taktycznych.
+Wyrąb sobie ścieżkę na coraz trudniejszym szlaku. Wraz ze wzrostem liczby przeciwników rośnie poziom trudności wyzwania!
+Spójrz na krucjaty z obu stron konfliktów. Wszystko to dzięki oryginalnej Twierdzy: Krzyżowiec i nigdy wcześniej nie publikowanym dodatkom.
+16 komputerowych przeciwników, tysiące rodzajów wojsk, miesiące ekscytującej rozrywki!
+Walcz w sieci zarówno z wrogami, jak i przyjaciółmi.
+Twórz i rozpowszechniaj nowe mapy dzięki pełnemu edytorowi plansz.
+Deszcz strzał
+Częściowo ulecz na obszarze
+Zrzuć włóczników
+Zrzuć inżynierów
+Zrzuć pałkarzy
+Odkryj złoto
+Zrzuć rycerzy
+Deszcz kamieni
+Zrzuć łuczników
+Zrzuć miotaczy bomb
+Całkowicie ulecz na obszarze
+Tekst wersji demo
+Zefir
+Nie znasz się na budowie zamków? Pozwól pustynnej bryzie owiać swoją twarz. Twój przeciwnik, Szczur, nie powinien ci się bardziej naprzykrzać niż komar. Posiadając dużą przewagę w ludziach i złocie, powinieneś sobie z nim poradzić.
+Bardzo łatwy (1/10)
+Sępi szpon
+Wpadłeś między dwóch Kalifów, nieustannie zagrażających  twojej gospodarce, ale niewielka przewaga w złocie powinna wystarczyć, by odwrócić szanse.
+Łatwy (4/10)
+Lwie Serce 
+W tej misji Ryszard Lwie Serce udzieli ci prawdziwej lekcji budowania zamków. To misja typu potyczka, tak więc każdy zaczyna z mnóstwem złota, przez co wszystkie działania będą szybkie i konkretne. Przeciwników jest tylko trzech, ale brak jakichkolwiek sojuszników zmusi cię do ostrożnego planowania.
+Trudny (8/10)
+Mistrzowie potyczek
+Przejrzyj szczegóły swoich stu najbardziej znaczących bitew. Czy możesz odnieść jeszcze bardziej zdumiewające zwycięstwo? 
+Obecność choćby jednego sojusznika w czasie potyczki dramatycznie zmienia grę...  
+...Wydaj im rozkaz ataku na wroga lub przyjścia ci z pomocą. Niech staną się twoim koniem pociągowym, napędzając gospodarkę, gdy ty zajmiesz się walką...
+... To oczywiste, że niektórzy są lepszymi sojusznikami niż inni!
+Krzyżowiec
+Kampanie historyczne
+Budowniczy
+Ścieraj się z wrogimi lordami... buduj, broń się, planuj swoje ruchy... 
+Twórz własne mapy i rozgrywaj na nich bitwy.
+Wybierz rodzaj gry
+Szlak Krzyżowca "Pierwsza edycja"
+Walcz w 50 łączących się misjach Krzyżowca
+Dostosuj rozgrywkę do własnych potrzeb.
+Nie znasz się na budowaniu zamków? Ta prosta kampania nauczy cię podstaw. 
+Zapoznaj się ze sposobami walki arabskich wojowników i ich specjalnymi zdolnościami. 
+Ta kampania pokaże ci, jak walczyć przeciwko śmiertelnie groźnym wojownikom pustyni. 
+Naucz się podstaw gry w Krzyżowca. 
+Mistrzowie potyczek
+Stwórz mapę do wykorzystania w krucjacie (również do rozgrywek wieloosobowych).
+Nowa mapa Krzyżowca 
+Warownia ogrodzona 
+Zbierz nowych przeciwników na oficjalnej stronie WWW gry Twierdza: Krzyżowiec.
+Zbierz dodatkowych przeciwników dostępnych do darmowego ściągnięcia.
+Broń wyprodukowana
+Budynki stracone 
+Szlak Krzyżowca "Warchest"
+Walcz w 30 łączących się misjach Krzyżowca.
+Szlak Krzyżowca Extreme
+Walcz w 20 powiązanych ze sobą misjach edycji Extreme
+Dostosuj rozgrywkę w edycji Extreme
+Wybierz rodzaj gry w edycji Extreme
+Punktacja edycji Extreme
+Zapisana gra
+Aby podzielić się wynikami z innymi, odwiedź
+www.fireflyworlds.com
+Rozegraj misję 
+Nowa mapa
+Nowa mapa scenariusza dowolnego 
+Rozegraj dowolny scenariusz
+Stwórz nową mapę do gry jednoosobowej.
+Stwórz nowy scenariusz dowolny 
+Wybierz rodzaj mapy
+Żołnierze 
+Towary otrzymane od sojusznika 
+Towary wysłane do sojusznika
+Sławne zwycięstwa 
+Niesławne porażki 
+Bez rzucania krowami 
+Bez psów 
+Bez pośpiechu 
+30 minut
+1 godzina
+Edytuj zamek
+Edytuj krajobraz
+Przemówienia dżina 
+Edycja Extreme
+Nadnaturalne moce lorda
+Gratulacje!
+Wielu wyruszyło,...
+...ale mało komu było dane przeżyć tę podróż.
+Ukończyłeś szlak Krzyżowca! 
+Ukończyłeś szlak Krzyżowca Extreme!
+Sojusznik odmawia 
+Towary otrzymane od sojusznika 
+Towary wysłane do sojusznika 
+Zaatakuje
+Przyjdzie ci z pomocą
+Nie zaatakuje
+Nie przyjdzie ci z pomocą
+Normalna - mało złota, niewielu żołnierzy
+Krucjata  - mało złota, wielu żołnierzy
+Potyczka - dużo złota, niewielu żołnierzy
+Sortowanie wg
+Sortuj wg 
+Wyników
+Nazwy mapy 
+Daty
+Czasu rozgrywki 
+Poziomu szlaku Krzyżowca
+Wszystkie gry 
+Tylko szlak Krzyżowca 
+Tylko gry dowolne 
+Nie odnaleziono żadnych gier
+Gry 
+Wyłącz 
+Skasować zarejestrowaną grę?
+Pomiń bieżącą misję
+Nie ma więcej kurczaków
+Nie można atakować murów. Opcja "wzmocnione mury" jest włączona!
+Tutaj złożył swe kości
+Za dużo kojców psów bojowych 
+Rozgrywka może ulec zmianie w trybie wieloosobowym
+Free text line

@@ -3,5 +3,5 @@
 /// TroopsConfigModel
 public class TroopsConfigModel : ConfigModel
 {
-    public Dictionary<AIForTroops, Dictionary<SkirmishMode, StswObservableDictionary<Troop, int?>>> Troops { get; set; } = [];
+    public Dictionary<string, Dictionary<SkirmishMode, StswObservableDictionary<Troop, int?>>> Troops { get; set; } = [];
 }

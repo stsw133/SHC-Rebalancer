@@ -12,6 +12,8 @@ internal static class RebalancerService
     /// Rebalance
     internal static async Task Rebalance(CancellationToken token)
     {
+        StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = 100 });
+
         foreach (var exePath in StorageService.ExePath)
         {
             if (!File.Exists(exePath.Value))
@@ -111,6 +113,13 @@ internal static class RebalancerService
                 BinaryPatchService.Close();
             }
         }
+
+        /// AIR
+        StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing AIR config..." });
+        await Task.Delay(50, CancellationToken.None);
+        if (StorageService.Configs["air"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["air"]) is AirConfigModel airConfig)
+            ProcessAirConfig(airConfig);
+        StswMessanger.Instance.Send(new ProgressUpdateMessage { Increment = CountConfigOperations<AirConfigModel>("air") });
 
         /// AIV
         StswMessanger.Instance.Send(new ProgressTextMessage { Text = $"Processing AIV config..." });
@@ -232,25 +241,53 @@ internal static class RebalancerService
         /// lord type
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("AIC LordType", out var baseAddress))
         {
-            foreach (var model in config.AIs)
-                if (model.Value.LordType != null)
-                    BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + ((int)model.Key) - 1, (byte)model.Value.LordType, baseAddress.Size, $"{model.Key} LordType");
+            foreach (var ai in Enum.GetValues<AI>().Where(x => x > AI.All))
+            {
+                //if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(AI.All)) is var modelAll && modelAll.Value != null)
+                //{
+                //    if (modelAll.Value.LordType != null)
+                //        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + ((int)ai) - 1, (byte)modelAll.Value.LordType, baseAddress.Size, $"{modelAll.Key} LordType");
+                //}
+                if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(ai)) is var model && model.Value != null)
+                {
+                    if (model.Value.LordType != null)
+                        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + ((int)ai) - 1, (byte)model.Value.LordType, baseAddress.Size, $"{model.Key} LordType");
+                }
+            }
         }
 
         /// lord strength
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("AIC LordStrength", out baseAddress))
         {
-            foreach (var model in config.AIs)
-                if (model.Value.LordStrength != null)
+            foreach (var ai in Enum.GetValues<AI>().Where(x => x > AI.All))
+            {
+                //if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(AI.All)) is var modelAll && modelAll.Value != null)
+                //{
+                //    if (modelAll.Value.LordStrength != null)
+                //    {
+                //        var realStrength = Convert.ToInt32(modelAll.Value.LordStrength * 100);
+                //        if (realStrength > 100)
+                //            realStrength += realStrength - 100;
+                //        var dots = realStrength > 100 ? Math.Min((realStrength - 100) / 20, 5) : realStrength < 100 ? Math.Min(15 - realStrength / 10, 10) : 0;
+                //
+                //        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)ai) - 1) * 8, dots, baseAddress.Size, $"{modelAll.Key} LordStrength Dots");
+                //        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)ai) - 1) * 8 + 4, realStrength, baseAddress.Size, $"{modelAll.Key} LordStrength Value");
+                //    }
+                //}
+                if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(ai)) is var model && model.Value != null)
                 {
-                    var realStrength = Convert.ToInt32(model.Value.LordStrength * 100);
-                    if (realStrength > 100)
-                        realStrength += realStrength - 100;
-                    var dots = realStrength > 100 ? Math.Min((realStrength - 100) / 20, 5) : realStrength < 100 ? Math.Min(15 - realStrength / 10, 10) : 0;
+                    if (model.Value.LordStrength != null)
+                    {
+                        var realStrength = Convert.ToInt32(model.Value.LordStrength * 100);
+                        if (realStrength > 100)
+                            realStrength += realStrength - 100;
+                        var dots = realStrength > 100 ? Math.Min((realStrength - 100) / 20, 5) : realStrength < 100 ? Math.Min(15 - realStrength / 10, 10) : 0;
 
-                    BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key) - 1) * 8, dots, baseAddress.Size, $"{model.Key} LordStrength Dots");
-                    BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key) - 1) * 8 + 4, realStrength, baseAddress.Size, $"{model.Key} LordStrength Value");
+                        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)ai) - 1) * 8, dots, baseAddress.Size, $"{model.Key} LordStrength Dots");
+                        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)ai) - 1) * 8 + 4, realStrength, baseAddress.Size, $"{model.Key} LordStrength Value");
+                    }
                 }
+            }
         }
 
         /// personality
@@ -262,13 +299,155 @@ internal static class RebalancerService
                 .OrderBy(p => p.MetadataToken)
                 .ToList();
 
-            foreach (var model in config.AIs.Where(x => x.Key.Between(AI.Rat, AI.Abbot)))
+            foreach (var ai in Enum.GetValues<AI>().Where(x => x > AI.All))
             {
-                var address = Convert.ToInt32(baseAddress.Address, 16) + (((int)model.Key - 1) * 1697);
-                for (var i = 0; i < properties.Count; i++)
-                    BinaryPatchService.WriteIfDifferent(address + i*10, properties[i].GetValue(model.Value.Personality), baseAddress.Size, $"{model.Key} {properties[i].Name}");
+                //if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(AI.All)) is var modelAll && modelAll.Value != null)
+                //{
+                //    var address = Convert.ToInt32(baseAddress.Address, 16) + (((int)ai - 1) * 1697);
+                //    for (var i = 0; i < properties.Count; i++)
+                //        BinaryPatchService.WriteIfDifferent(address + i * 10, properties[i].GetValue(modelAll.Value.Personality), baseAddress.Size, $"{modelAll.Key} {properties[i].Name}");
+                //}
+                if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(ai)) is var model && model.Value != null)
+                {
+                    var address = Convert.ToInt32(baseAddress.Address, 16) + (((int)ai - 1) * 1697);
+                    for (var i = 0; i < properties.Count; i++)
+                        BinaryPatchService.WriteIfDifferent(address + i * 10, properties[i].GetValue(model.Value.Personality), baseAddress.Size, $"{model.Key} {properties[i].Name}");
+                }
             }
         }
+    }
+
+    /// ProcessAirConfig
+    private static void ProcessAirConfig(AirConfigModel config)
+    {
+        /// images
+        foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString() && x.Key > AI.All))
+        {
+            GM1Service.ReplaceImageInGM1(Path.Combine(StorageService.GmPath, "interface_icons2.gm1"), new Dictionary<int, string>()
+            {
+                { 521 + (int)ai.Key, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/avatar_big.png") },
+                { 699 + (int)ai.Key, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/avatar_small.png") },
+            });
+        }
+        //TODO - else if change to original
+
+        /// speech
+        string[] prefixes = ["all", "rt", "sn", "pg", "wf", "sa", "ca", "su", "ri", "fr", "ph", "wa", "em", "ni", "sh", "ma", "ab"];
+        foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString()))
+        {
+            var speechDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/speech/{StorageService.GameLanguage}");
+            if (!Directory.Exists(speechDirectory))
+            {
+                speechDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/speech/English");
+                if (!Directory.Exists(speechDirectory))
+                    continue;
+            }
+
+            foreach (var filePath in Directory.GetFiles(speechDirectory, "*.wav"))
+            {
+                if (Path.GetFileNameWithoutExtension(filePath) == "General_Message")
+                {
+                    if (ai.Key > AI.All)
+                        File.Copy(filePath, Path.Combine(StorageService.FxSpeechPath, $"General_Message{22 + (int)ai.Key}.wav"), overwrite: true);
+                }
+                else
+                {
+                    File.Copy(filePath, Path.Combine(StorageService.FxSpeechPath, $"{prefixes[(int)ai.Key]}_{Path.GetFileName(filePath)}"), overwrite: true);
+                }
+            }
+        }
+        //TODO - else if change to original
+
+        /// text
+        foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString() && x.Key > AI.All))
+        {
+            var textFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/text/{StorageService.GameLanguage}.txt");
+            if (!File.Exists(textFile))
+            {
+                textFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/text/English.txt");
+                if (!File.Exists(textFile))
+                    continue;
+            }
+            var text = File.ReadAllLines(textFile);
+
+            TexService.ReplaceLinesInTex(new Dictionary<int, string>()
+            {
+                { 1177 + ((int)ai.Key) * 8, $"{text[0]}" }, // AI 1st full name
+                { 1178 + ((int)ai.Key) * 8, $"{text[1]}" }, // AI 2nd full name
+                { 1179 + ((int)ai.Key) * 8, $"{text[2]}" }, // AI 3rd full name
+                { 1180 + ((int)ai.Key) * 8, $"{text[3]}" }, // AI 4th full name
+                { 1181 + ((int)ai.Key) * 8, $"{text[4]}" }, // AI 5th full name
+                { 1182 + ((int)ai.Key) * 8, $"{text[5]}" }, // AI 6th full name
+                { 1183 + ((int)ai.Key) * 8, $"{text[6]}" }, // AI 7th full name
+                { 1184 + ((int)ai.Key) * 8, $"{text[7]}" }, // AI 8th full name
+                { 1304 + ((int)ai.Key) * 9, $"{text[8]}" }, // AI name
+                { 1305 + ((int)ai.Key) * 9, $"{text[9]}" }, // AI 1st title
+                { 1306 + ((int)ai.Key) * 9, $"{text[10]}" }, // AI 2nd title
+                { 1307 + ((int)ai.Key) * 9, $"{text[11]}" }, // AI 3rd title
+                { 1308 + ((int)ai.Key) * 9, $"{text[12]}" }, // AI 4th title
+                { 1309 + ((int)ai.Key) * 9, $"{text[13]}" }, // AI 5th title
+                { 1310 + ((int)ai.Key) * 9, $"{text[14]}" }, // AI 6th title
+                { 1311 + ((int)ai.Key) * 9, $"{text[15]}" }, // AI 7th title
+                { 1312 + ((int)ai.Key) * 9, $"{text[16]}" }, // AI 8th title
+                { 1458 + ((int)ai.Key), $"{text[17]}" }, // AI description
+                { 3222 + ((int)ai.Key) * 34 + 0, $"{text[18]}" }, // AI taunt_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 1, $"{text[19]}" }, // AI taunt_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 2, $"{text[20]}" }, // AI taunt_03.wav
+                { 3222 + ((int)ai.Key) * 34 + 3, $"{text[21]}" }, // AI taunt_04.wav
+                { 3222 + ((int)ai.Key) * 34 + 4, $"{text[22]}" }, // AI anger_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 5, $"{text[23]}" }, // AI anger_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 6, $"{text[24]}" }, // AI plead_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 7, $"{text[25]}" }, // AI nervous_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 8, $"{text[26]}" }, // AI nervous_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 9, $"{text[27]}" }, // AI vict_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 10, $"{text[28]}" }, // AI vict_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 11, $"{text[29]}" }, // AI vict_03.wav
+                { 3222 + ((int)ai.Key) * 34 + 12, $"{text[30]}" }, // AI vict_04.wav
+                { 3222 + ((int)ai.Key) * 34 + 13, $"{text[31]}" }, // AI req_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 14, $"{text[32]}" }, // AI thanks_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 15, $"{text[33]}" }, // AI ally_death_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 16, $"{text[34]}" }, // AI congrats_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 17, $"{text[35]}" }, // AI boast_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 18, $"{text[36]}" }, // AI help_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 19, $"{text[37]}" }, // AI extra_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 20, $"{text[38]}" }, // AI add_player_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 21, $"{text[39]}" }, // AI kick_player_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 22, $"{text[40]}" }, // AI siege_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 23, $"{text[41]}" }, // AI noattack_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 24, $"{text[42]}" }, // AI noattack_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 25, $"{text[43]}" }, // AI nohelp_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 26, $"{text[44]}" }, // AI nohelp_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 27, $"{text[45]}" }, // AI notsent_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 28, $"{text[46]}" }, // AI sent_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 29, $"{text[47]}" }, // AI team_winning_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 30, $"{text[48]}" }, // AI team_losing_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 31, $"{text[49]}" }, // AI helpsent_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 32, $"{text[50]}" }, // AI willattack_01.wav
+            });
+        }
+
+        /// videos
+        prefixes = ["bad_soldier", "rt", "sn", "pg", "wf", "saladin", "bad_arab", "sultan", "richard", "fred", "phillip", "vizir", "emir", "nazir", "sheriff", "ma", "abbot"];
+        foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString()))
+        {
+            var angryFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/videos/angry.bik");
+            var naturalFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/videos/natural.bik");
+            var nervousFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/videos/nervous.bik");
+            var tauntFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/videos/taunt.bik");
+
+            foreach (var filePath in Directory.GetFiles(StorageService.BinksPath, $"{prefixes[(int)ai.Key]}_*.bik"))
+            {
+                if (File.Exists(angryFilePath) && (filePath.Contains("angry") || filePath.Contains("anger")))
+                    File.Copy(angryFilePath, Path.Combine(StorageService.BinksPath, Path.GetFileName(filePath)), overwrite: true);
+                else if (File.Exists(naturalFilePath) && (filePath.Contains("natural") || filePath.Contains("vict")))
+                    File.Copy(naturalFilePath, Path.Combine(StorageService.BinksPath, Path.GetFileName(filePath)), overwrite: true);
+                else if (File.Exists(nervousFilePath) && (filePath.Contains("nervous") || filePath.Contains("plead") || filePath.Contains("nevous")))
+                    File.Copy(nervousFilePath, Path.Combine(StorageService.BinksPath, Path.GetFileName(filePath)), overwrite: true);
+                else if (File.Exists(tauntFilePath) && (filePath.Contains("taunt") || filePath.Contains("taunting") || filePath.Contains("confident")))
+                    File.Copy(tauntFilePath, Path.Combine(StorageService.BinksPath, Path.GetFileName(filePath)), overwrite: true);
+            }
+        }
+        //TODO - else if change to original
     }
 
     /// ProcessAivConfig
@@ -281,15 +460,17 @@ internal static class RebalancerService
         Directory.CreateDirectory(StorageService.AivPath);
         var files = config.Castles.ToList();
 
-        foreach (var ai in Enum.GetValues<AI>().Where(x => ((int)x).Between(1, 16)))
+        foreach (var ai in Enum.GetValues<AI>().Where(x => x > AI.All))
         {
-            var defaultFileName = files.FirstOrDefault(x => Path.GetFileNameWithoutExtension(x).StartsWith(ai.ToString(), StringComparison.InvariantCultureIgnoreCase));
+            var mappedAi = FindMappedAI(ai);
+
+            var defaultFileName = files.FirstOrDefault(x => Path.GetFileNameWithoutExtension(x).StartsWith(mappedAi, StringComparison.InvariantCultureIgnoreCase));
             if (defaultFileName == null)
                 continue;
 
             for (var i = 1; i <= 8; i++)
             {
-                var fileName = $"{ai}{i}.aiv".ToLower();
+                var fileName = $"{mappedAi}{i}.aiv".ToLower();
                 var filePath = Path.Combine(sourceDirectory, fileName);
 
                 if (files.Contains(filePath))
@@ -350,13 +531,26 @@ internal static class RebalancerService
         /// troops
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("Troops", out var baseAddress))
         {
-            foreach (var ai in config.Troops)
-                foreach (var mode in ai.Value)
-                    foreach (var unit in Enum.GetValues<Troop>())
-                    {
-                        var addressOffset = (((int)ai.Key) - 1) * Enum.GetValues<SkirmishMode>().Length * Enum.GetValues<Troop>().Length * 4 + (((int)mode.Key) - 1) * Enum.GetValues<Troop>().Length * 4 + ((int)unit) * 4;
-                        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + addressOffset, mode.Value.TryGetValue(unit, out var result) ? result : 0, baseAddress.Size, $"Troops {ai.Key} {mode.Key} {unit}");
-                    }
+            foreach (var ai in Enum.GetValues<AI>().Where(x => x > AI.All))
+            {
+                if (config.Troops.FirstOrDefault(x => x.Key == FindMappedAI(ai)) is var model && model.Value != null)
+                    foreach (var mode in model.Value)
+                        foreach (var unit in Enum.GetValues<Troop>())
+                        {
+                            var addressOffset = (((int)ai) - 1) * Enum.GetValues<SkirmishMode>().Length * Enum.GetValues<Troop>().Length * 4 + (((int)mode.Key) - 1) * Enum.GetValues<Troop>().Length * 4 + ((int)unit) * 4;
+                            BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + addressOffset, mode.Value.TryGetValue(unit, out var result) ? result : 0, baseAddress.Size, $"Troops {ai} {mode.Key} {unit}");
+                        }
+            }
+            foreach (var ai in Enum.GetValues<AIForTroops>().Where(x => x > AIForTroops.Unknown17))
+            {
+                if (config.Troops.FirstOrDefault(x => x.Key == ai.ToString()) is var model && model.Value != null)
+                    foreach (var mode in model.Value)
+                        foreach (var unit in Enum.GetValues<Troop>())
+                        {
+                            var addressOffset = (((int)ai) - 1) * Enum.GetValues<SkirmishMode>().Length * Enum.GetValues<Troop>().Length * 4 + (((int)mode.Key) - 1) * Enum.GetValues<Troop>().Length * 4 + ((int)unit) * 4;
+                            BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + addressOffset, mode.Value.TryGetValue(unit, out var result) ? result : 0, baseAddress.Size, $"Troops {ai} {mode.Key} {unit}");
+                        }
+            }
         }
     }
 
@@ -405,35 +599,61 @@ internal static class RebalancerService
     {
         /// religion thresholds
         if (config.Popularity.ReligionThresholds?.Length == 4
-         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds A", out var baseAddress)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds A", out var baseAddress1)
          && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds B", out var baseAddress2)
          && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds C", out var baseAddress3)
          && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion thresholds D", out var baseAddress4))
         {
-            var address = Convert.ToInt32(baseAddress.Address, 16);
-            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress.Size, $"Popularity religion threshold A1");
-            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress.Size, $"Popularity religion threshold A2");
-            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress.Size, $"Popularity religion threshold A3");
-            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress.Size, $"Popularity religion threshold A4");
+            var address = Convert.ToInt32(baseAddress1.Address, 16);
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress1.Size, $"Popularity religion threshold A1");
+            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress1.Size, $"Popularity religion threshold A2");
+            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress1.Size, $"Popularity religion threshold A3");
+            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress1.Size, $"Popularity religion threshold A4");
 
             address = Convert.ToInt32(baseAddress2.Address, 16);
-            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress.Size, $"Popularity religion threshold B1");
-            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress.Size, $"Popularity religion threshold B2");
-            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress.Size, $"Popularity religion threshold B3");
-            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress.Size, $"Popularity religion threshold B4");
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress1.Size, $"Popularity religion threshold B1");
+            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress1.Size, $"Popularity religion threshold B2");
+            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress1.Size, $"Popularity religion threshold B3");
+            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress1.Size, $"Popularity religion threshold B4");
 
             address = Convert.ToInt32(baseAddress3.Address, 16);
             for (var i = 0; i < 4; i++)
             {
-                BinaryPatchService.WriteIfDifferent(address + i*15, config.Popularity.ReligionThresholds[i] - 1, baseAddress.Size, $"Popularity religion threshold C{i + 1}");
-                BinaryPatchService.WriteIfDifferent(address + i*15 + 7, config.Popularity.ReligionThresholds[i], baseAddress.Size, $"Popularity religion threshold C{i + 1}");
+                BinaryPatchService.WriteIfDifferent(address + i*15, config.Popularity.ReligionThresholds[i] - 1, baseAddress1.Size, $"Popularity religion threshold C{i + 1}");
+                BinaryPatchService.WriteIfDifferent(address + i*15 + 7, config.Popularity.ReligionThresholds[i], baseAddress1.Size, $"Popularity religion threshold C{i + 1}");
             }
 
             address = Convert.ToInt32(baseAddress4.Address, 16);
-            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress.Size, $"Popularity religion threshold D1");
-            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress.Size, $"Popularity religion threshold D2");
-            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress.Size, $"Popularity religion threshold D3");
-            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress.Size, $"Popularity religion threshold D4");
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionThresholds[0] - 1, baseAddress1.Size, $"Popularity religion threshold D1");
+            BinaryPatchService.WriteIfDifferent(address + 9, config.Popularity.ReligionThresholds[1] - 1, baseAddress1.Size, $"Popularity religion threshold D2");
+            BinaryPatchService.WriteIfDifferent(address + 21, config.Popularity.ReligionThresholds[2] - 1, baseAddress1.Size, $"Popularity religion threshold D3");
+            BinaryPatchService.WriteIfDifferent(address + 35, config.Popularity.ReligionThresholds[3] - 1, baseAddress1.Size, $"Popularity religion threshold D4");
+        }
+
+        /// religion perm bonuses
+        if (config.Popularity.ReligionPermBonuses?.Length == 2
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion perm bonus A", out baseAddress1)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion perm bonus B", out baseAddress2)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion perm bonus C", out baseAddress3)
+         && StorageService.BaseAddresses[gameVersion].TryGetValue("Popularity religion perm bonus D", out baseAddress4))
+        {
+            var address = Convert.ToInt32(baseAddress1.Address, 16);
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionPermBonuses[0], baseAddress1.Size, $"Popularity religion perm bonus A1");
+            BinaryPatchService.WriteIfDifferent(address + 12, config.Popularity.ReligionPermBonuses[1], baseAddress1.Size, $"Popularity religion perm bonus A2");
+
+            address = Convert.ToInt32(baseAddress2.Address, 16);
+            if (config.Popularity.ReligionPermBonuses[0] == 0 && config.Popularity.ReligionPermBonuses[1] == 0)
+                BinaryPatchService.WriteIfDifferent(address, new int[] { 235, 109 }, baseAddress2.Size, $"Popularity religion perm bonus B");
+            else
+                BinaryPatchService.WriteIfDifferent(address, new int[] { 116, 57 }, baseAddress2.Size, $"Popularity religion perm bonus B");
+
+            address = Convert.ToInt32(baseAddress3.Address, 16);
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionPermBonuses[0], baseAddress3.Size, $"Popularity religion perm bonus C1");
+            BinaryPatchService.WriteIfDifferent(address + 15, config.Popularity.ReligionPermBonuses[1], baseAddress3.Size, $"Popularity religion perm bonus C2");
+
+            address = Convert.ToInt32(baseAddress4.Address, 16);
+            BinaryPatchService.WriteIfDifferent(address, config.Popularity.ReligionPermBonuses[0], baseAddress4.Size, $"Popularity religion perm bonus D1");
+            BinaryPatchService.WriteIfDifferent(address + 12, config.Popularity.ReligionPermBonuses[1], baseAddress4.Size, $"Popularity religion perm bonus D2");
         }
     }
 
@@ -644,6 +864,41 @@ internal static class RebalancerService
         }
     }
 
+    /// AirContainsAI
+    //internal static bool AirContainsAI(string aiName)
+    //{
+    //    if (SettingsService.Instance.Settings.SelectedConfigs["air"] == null)
+    //        return Enum.TryParse<AI>(aiName, out _);
+    //    if (StorageService.Configs["air"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["air"]) is AirConfigModel airConfig)
+    //        return airConfig.AIs.Any(x => x.Value == aiName);
+    //    return false;
+    //}
+
+    /// FindMappedAI
+    internal static string FindMappedAI(AI ai)
+    {
+        if (StorageService.Configs["air"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["air"]) is AirConfigModel airConfig)
+        {
+            if (airConfig.AIs.FirstOrDefault(x => x.Key == ai) is var air && air.Value != null)
+                return air.Value;
+            else
+                return ai.ToString();
+        }
+        return ai.ToString();
+    }
+
+    /// FindOriginalAI
+    //internal static AI FindOriginalAI(string aiName)
+    //{
+    //    if (StorageService.Configs["air"].Cast<ConfigModel>().FirstOrDefault(x => x.Name == SettingsService.Instance.Settings.SelectedConfigs["air"]) is AirConfigModel airConfig)
+    //    {
+    //        var ai = airConfig.AIs.FirstOrDefault(x => x.Value == aiName);
+    //        if (ai.Value != null)
+    //            return ai.Key;
+    //    }
+    //    throw new Exception("AI not found!");
+    //}
+
     /// CountTotalOperations
     internal static int CountTotalOperations()
     {
@@ -669,6 +924,7 @@ internal static class RebalancerService
             operationCount += CountConfigOperations<CustomsConfigModel>("customs");
         }
 
+        operationCount += CountConfigOperations<AirConfigModel>("air");
         operationCount += CountConfigOperations<AivConfigModel>("aiv");
 
         return operationCount;
@@ -689,7 +945,7 @@ internal static class RebalancerService
     {
         if (!StorageService.Configs.TryGetValue(key, out var value))
         {
-            Console.WriteLine($"[Error] Key '{key}' does not exists in StorageService.Configs!");
+            Console.WriteLine($"[Error] Key '{key}' does not exists in {nameof(StorageService)}.{nameof(StorageService.Configs)}!");
             return 0;
         }
 

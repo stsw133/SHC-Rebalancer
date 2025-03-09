@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="SHC_Rebalancer.AirView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
+
+    <DockPanel>
+        <!-- configs -->
+        <DockPanel DockPanel.Dock="Top">
+            <se:StswLabel Content="Selected config:" FontWeight="Bold" Margin="3"/>
+            <local:ConfigBox ItemsSource="{Binding [air], Source={x:Static local:StorageService.Configs}}"
+                             SelectedItem="{Binding SelectedConfigs[air], Mode=OneWayToSource}"
+                             SelectedValue="{Binding SelectedConfigs[air], Mode=OneWay, Source={StaticResource Settings}}"/>
+        </DockPanel>
+        <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
+        <DockPanel Margin="-3">
+            <!-- data -->
+            <se:StswScrollView>
+                <StackPanel DataContext="{Binding SelectedConfigs[air]}" Margin="3" VerticalAlignment="Center" Width="500">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type se:StswImage}">
+                            <Setter Property="Height" Value="32"/>
+                            <Setter Property="Width" Value="32"/>
+                        </Style>
+                        <Style TargetType="{x:Type se:StswTextBox}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="3"/>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <!-- main -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="MAIN" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
+
+                        <se:StswGrid AutoLayoutMode="AutoDefinitions" ColumnWidths="{se:StswMakeList '*,50,*'}">
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="0" IsReadOnly="True" Text="All">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/All.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="0" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="0" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[All]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[All], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="1" IsReadOnly="True" Text="Rat">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Rat.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="1" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="1" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Rat]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Rat], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="2" IsReadOnly="True" Text="Snake">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Snake.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="2" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="2" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Snake]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Snake], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="3" IsReadOnly="True" Text="Pig">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Pig.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="3" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="3" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Pig]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Pig], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="4" IsReadOnly="True" Text="Wolf">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Wolf.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="4" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="4" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Wolf]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Wolf], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="5" IsReadOnly="True" Text="Saladin">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Saladin.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="5" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="5" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Saladin]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Saladin], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="6" IsReadOnly="True" Text="Caliph">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Caliph.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="6" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="6" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Caliph]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Caliph], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="7" IsReadOnly="True" Text="Sultan">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Sultan.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="7" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="7" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Sultan]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Sultan], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="8" IsReadOnly="True" Text="Richard">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Richard.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="8" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="8" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Richard]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Richard], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="9" IsReadOnly="True" Text="Frederick">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Frederick.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="9" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="9" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Frederick]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Frederick], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="10" IsReadOnly="True" Text="Phillip">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Phillip.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="10" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="10" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Phillip]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Phillip], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="11" IsReadOnly="True" Text="Wazir">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Wazir.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="11" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="11" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Wazir]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Wazir], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="12" IsReadOnly="True" Text="Emir">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Emir.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="12" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="12" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Emir]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Emir], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="13" IsReadOnly="True" Text="Nizar">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Nizar.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="13" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="13" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Nizar]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Nizar], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="14" IsReadOnly="True" Text="Sheriff">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Sheriff.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="14" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="14" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Sheriff]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Sheriff], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="15" IsReadOnly="True" Text="Marshal">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Marshal.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="15" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="15" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Marshal]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Marshal], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                            <se:StswTextBox Grid.Column="0" Grid.Row="16" IsReadOnly="True" Text="Abbot">
+                                <se:StswTextBox.Icon>
+                                    <se:StswImage Source="/Images/ai/Abbot.png" Width="32"/>
+                                </se:StswTextBox.Icon>
+                            </se:StswTextBox>
+                            <se:StswIcon Grid.Column="1" Grid.Row="16" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
+                            <se:StswComboBox Grid.Column="2" Grid.Row="16" IsEditable="True" ItemsSource="{x:Static local:StorageService.CustomAIs}" SelectedItem="{Binding AIs[Abbot]}">
+                                <se:StswComboBox.Icon>
+                                    <se:StswImage Source="{Binding AIs[Abbot], Converter={x:Static local:AiNameToImageSourceConverter.Instance}}"/>
+                                </se:StswComboBox.Icon>
+                            </se:StswComboBox>
+
+                        </se:StswGrid>
+                    </se:StswGroupBox>
+
+                </StackPanel>
+            </se:StswScrollView>
+        </DockPanel>
+    </DockPanel>
+</UserControl>

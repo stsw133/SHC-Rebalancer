@@ -1,6 +1,7 @@
 {
 	"Description": "Default config for Stronghold Crusader 1.41 UCP",
 	"Popularity": {
-		"ReligionThresholds": [25, 50, 75, 95]
+		"ReligionThresholds": [ 25, 50, 75, 95 ],
+		"ReligionPermBonuses": [ 25, 50 ]
 	}
 }

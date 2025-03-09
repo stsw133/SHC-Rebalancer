@@ -3,5 +3,5 @@
 /// AicConfigModel
 public class AicConfigModel : ConfigModel
 {
-    public Dictionary<AI, AicModel> AIs { get; set; } = [];
+    public Dictionary<string, AicModel> AIs { get; set; } = [];
 }

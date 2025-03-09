@@ -44,7 +44,7 @@
                         </Style>
                     </StackPanel.Resources>
 
-                    <!-- main
+                    <!-- main -->
                     <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
                         <se:StswGroupBox.Header>
                             <se:StswLabel Content="MAIN" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
@@ -102,7 +102,7 @@
                                         <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[0]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
                                             <se:StswComboBox.ItemTemplate>
                                                 <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
                                                 </DataTemplate>
                                             </se:StswComboBox.ItemTemplate>
                                         </se:StswComboBox>
@@ -114,7 +114,7 @@
                                         <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[1]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
                                             <se:StswComboBox.ItemTemplate>
                                                 <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
                                                 </DataTemplate>
                                             </se:StswComboBox.ItemTemplate>
                                         </se:StswComboBox>
@@ -126,7 +126,7 @@
                                         <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[2]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
                                             <se:StswComboBox.ItemTemplate>
                                                 <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
                                                 </DataTemplate>
                                             </se:StswComboBox.ItemTemplate>
                                         </se:StswComboBox>
@@ -138,7 +138,7 @@
                                         <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[3]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
                                             <se:StswComboBox.ItemTemplate>
                                                 <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
                                                 </DataTemplate>
                                             </se:StswComboBox.ItemTemplate>
                                         </se:StswComboBox>
@@ -150,7 +150,7 @@
                                         <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[4]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
                                             <se:StswComboBox.ItemTemplate>
                                                 <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
                                                 </DataTemplate>
                                             </se:StswComboBox.ItemTemplate>
                                         </se:StswComboBox>
@@ -162,7 +162,7 @@
                                         <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[5]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
                                             <se:StswComboBox.ItemTemplate>
                                                 <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
                                                 </DataTemplate>
                                             </se:StswComboBox.ItemTemplate>
                                         </se:StswComboBox>
@@ -174,7 +174,7 @@
                                         <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[6]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
                                             <se:StswComboBox.ItemTemplate>
                                                 <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
                                                 </DataTemplate>
                                             </se:StswComboBox.ItemTemplate>
                                         </se:StswComboBox>
@@ -186,7 +186,7 @@
                                         <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[7]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
                                             <se:StswComboBox.ItemTemplate>
                                                 <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    <se:StswLabel Content="{Binding Display}" HorizontalContentAlignment="Left" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
                                                 </DataTemplate>
                                             </se:StswComboBox.ItemTemplate>
                                         </se:StswComboBox>
@@ -203,14 +203,14 @@
                                         </Style>
                                     </UniformGrid.Resources>
 
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[0]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[1]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[2]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[3]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[4]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[5]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[6]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='9'}" Margin="0" SelectedValue="{Binding Locations[7]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[0]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[1]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[2]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[3]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[4]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[5]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[6]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[7]}" se:StswDropArrow.Visibility="Collapsed"/>
                                 </UniformGrid>
                             </DockPanel>
 
@@ -291,18 +291,18 @@
                                         </Style>
                                     </UniformGrid.Resources>
 
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[0]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[1]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[2]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[3]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[4]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[5]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[6]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange Definition='8'}" Margin="0" SelectedValue="{Binding AIVs[7]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[0]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[1]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[2]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[3]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[4]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[5]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[6]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[7]}" se:StswDropArrow.Visibility="Collapsed"/>
                                 </UniformGrid>
                             </DockPanel>
                         </StackPanel>
-                    </se:StswGroupBox> -->
+                    </se:StswGroupBox>
 
                 </StackPanel>
             </se:StswScrollView>

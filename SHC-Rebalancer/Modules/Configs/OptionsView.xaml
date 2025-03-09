@@ -533,21 +533,6 @@
                     </se:StswText>
                     <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
 
-                    <!-- no permanent religion bonuses -->
-                    <se:StswSubCheck Content="No permanent religion bonuses"
-                                     FontWeight="Medium"
-                                     IsChecked="{Binding SelectedOptions[NoPermanentReligionBonuses], Source={StaticResource Settings}, UpdateSourceTrigger=PropertyChanged}"
-                                     IsReadOnly="False"
-                                     Margin="3"/>
-                    <se:StswText Style="{StaticResource Description}" Visibility="{Binding ShowOptionsDetails, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}}">
-                        <Run Text="{Binding [NoPermanentReligionBonuses].Description, Mode=OneWay}"/>
-                        <LineBreak/>
-                        <LineBreak/>
-                        <Run FontSize="10" Text="Source:"/>
-                        <Run FontSize="10" Text="{Binding [NoPermanentReligionBonuses].Source, Mode=OneWay}" FontWeight="Bold"/>
-                    </se:StswText>
-                    <se:StswSeparator BorderThickness="1" Margin="-3 3"/>
-
                     <!-- decrease peasant spawnrate -->
                     <se:StswSubCheck Content="Decrease peasant spawnrate"
                                      FontWeight="Medium"
