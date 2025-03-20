@@ -36,29 +36,16 @@ public partial class ConfigBox : StswComboBox
         if (!string.IsNullOrEmpty(Type))
         {
             SubControls = [.. (IStswSubControl[])Resources["SubControls"]];
-            //foreach (var subControl in SubControls)
-            //    BindingOperations.SetBinding((FrameworkElement)subControl, IsEnabledProperty, new Binding(nameof(IsReadOnly))
-            //    {
-            //        Source = this,
-            //        Converter = StswBoolConverter.Instance,
-            //        ConverterParameter = "!"
-            //    });
 
-            if (SubControls?[1] is ItemsControl menuButton)
+            if (SubControls?[0] is Button menuButton1)
             {
-                menuButton.DataContext = this;
+                menuButton1.Command = StswCommands.Clear;
+                menuButton1.CommandParameter = this;
+            }
 
-                //var buttons = menuButton.Items.Cast<StswButton>().ToList();
-                //for (var i = menuButton.Items.Count - 1; i >= 0; i--)
-                //{
-                //    if (buttons[i].Tag == null)
-                //        continue;
-                //
-                //    if (Type == "aiv" && buttons[i].Tag.ToString() != "aiv")
-                //        menuButton.Items.Remove(buttons[i]);
-                //    else if (Type != "aiv" && buttons[i].Tag.ToString() == "aiv")
-                //        menuButton.Items.Remove(buttons[i]);
-                //}
+            if (SubControls?[1] is ItemsControl menuButton2)
+            {
+                menuButton2.DataContext = this;
             }
         }
     }

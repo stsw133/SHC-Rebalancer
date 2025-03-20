@@ -9,7 +9,7 @@
                  mc:Ignorable="d">
     <se:StswComboBox.Resources>
         <x:Array x:Key="SubControls" Type="{x:Type se:IStswSubControl}">
-            <se:StswSubButton Command="{x:Static se:StswCommands.Clear}" IconData="{x:Static se:StswIcons.Close}" Margin="1"/>
+            <se:StswSubButton IconData="{x:Static se:StswIcons.Close}" Margin="1"/>
             <se:StswSubDrop IconData="{x:Static se:StswIcons.Menu}" Margin="1">
                 <se:StswButton Command="{Binding ReloadConfigsCommand}" HorizontalContentAlignment="Left" se:StswControl.IsBorderless="True">
                     <se:StswLabel Content="Reload configs" IconData="{x:Static se:StswIcons.Refresh}" IconFill="{DynamicResource StswColor.Neutral}"/>
