@@ -1,8 +1,6 @@
 ﻿namespace SHC_Rebalancer;
 public class SkirmishTrailModel
 {
-    public string? MapNameAddress { get; set; }
-
     public string? MapName { get; set; }
 
     public SkirmishDifficulty? Difficulty { get; set; }

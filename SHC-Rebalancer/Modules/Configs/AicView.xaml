@@ -16,7 +16,7 @@
                              SelectedValue="{Binding SelectedConfigs[aic], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
         <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
-        <DockPanel Margin="-3">
+        <DockPanel IsEnabled="{Binding SelectedConfigs[aic], Mode=OneWay, Converter={x:Static se:StswExistenceConverter.Instance}}" Margin="-3">
             <!-- selector -->
             <se:StswSegment x:Name="AicSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[aic].AIs}" Orientation="Vertical" Width="100">
                 <se:StswSegment.ItemTemplate>

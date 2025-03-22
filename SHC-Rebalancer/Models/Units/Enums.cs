@@ -121,6 +121,7 @@ public enum Unit
     [UnitMeleeDamageToWalls]
     ArabArcher,
     [UnitCost]
+    [UnitDigMoatSpeed]
     [UnitMeleeDamageToBuildings]
     Slave,
     [UnitCost]

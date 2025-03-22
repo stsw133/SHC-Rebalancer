@@ -68,7 +68,7 @@
                 <!-- rebalancer configuration -->
                 <se:StswTabControl AreTabsVisible="True" BorderThickness="0 1 0 0">
                     <se:StswTabControl.Background>
-                        <ImageBrush ImageSource="/Images/background.jpg" Opacity="0.2"/>
+                        <ImageBrush ImageSource="/Images/background.webp" Opacity="0.2"/>
                     </se:StswTabControl.Background>
                     <!-- main -->
                     <se:StswTabItem>

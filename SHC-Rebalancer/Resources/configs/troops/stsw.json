@@ -287,19 +287,72 @@
 				"Monk": 24,
 			}
 		},
-		"Arslan":
+		"Kahin":
 		{
 			"Normal": {
-				"Spearman": 8,
-				"HorseArcher": 12,
+				"ArabArcher": 8,
+				"Slinger": 12,
+				"Assassin": 8,
 			},
 			"Crusade": {
-				"Spearman": 40,
-				"HorseArcher": 60,
+				"ArabArcher": 40,
+				"Slinger": 60,
+				"Assassin": 40,
 			},
 			"Deathmatch": {
-				"Spearman": 8,
-				"HorseArcher": 12,
+				"ArabArcher": 8,
+				"Slinger": 12,
+				"Assassin": 8,
+			}
+		},
+		"Nawab":
+		{
+			"Normal": {
+				"ArabArcher": 12,
+				"Slave": 12,
+			},
+			"Crusade": {
+				"ArabArcher": 80,
+				"Slave": 80,
+				"Slinger": 80,
+			},
+			"Deathmatch": {
+				"ArabArcher": 12,
+				"Slave": 12,
+			}
+		},
+		"Nomad":
+		{
+			"Normal": {
+				"Spearman": 12,
+				"HorseArcher": 8,
+			},
+			"Crusade": {
+				"Spearman": 60,
+				"Slinger": 60,
+				"HorseArcher": 40,
+			},
+			"Deathmatch": {
+				"Spearman": 12,
+				"HorseArcher": 8,
+			}
+		},
+		"Shajar":
+		{
+			"Normal": {
+				"ArabArcher": 10,
+				"Assassin": 10,
+				"FireThrower": 4,
+			},
+			"Crusade": {
+				"ArabArcher": 90,
+				"Assassin": 30,
+				"FireThrower": 12,
+			},
+			"Deathmatch": {
+				"ArabArcher": 10,
+				"Assassin": 10,
+				"FireThrower": 4,
 			}
 		},
 		"PlayerEurop":

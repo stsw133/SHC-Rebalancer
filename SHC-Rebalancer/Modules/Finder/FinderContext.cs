@@ -24,7 +24,7 @@ public class FinderContext : StswObservableObject
         {
             if (FinderFilterVersion.HasValue)
             {
-                FinderService.Find(FinderResults, FinderFilterVersion.Value, FinderFilterSize, FinderFilterAddress, FinderFilterSkips ?? 0, FinderFilterValues, FinderFilterLimit);
+                FinderService.Find(FinderResults, FinderFilterVersion.Value, FinderFilterSize, FinderDisplayAsChar, FinderFilterAddress, FinderFilterSkips ?? 0, FinderFilterValues, FinderFilterLimit);
                 _finderResultsType = FinderFilterVersion.Value;
                 _finderResultsSize = FinderFilterSize;
             }
@@ -92,6 +92,14 @@ public class FinderContext : StswObservableObject
         set => SetProperty(ref _finderFilterSize, value, () => FindCommand.Execute(FinderFilterVersion));
     }
     private int _finderFilterSize = 1;
+
+    /// FinderDisplayAsChar
+    public bool FinderDisplayAsChar
+    {
+        get => _finderDisplayAsChar;
+        set => SetProperty(ref _finderDisplayAsChar, value, () => FindCommand.Execute(FinderFilterVersion));
+    }
+    private bool _finderDisplayAsChar;
 
     /// FinderFilterAddress
     public string? FinderFilterAddress

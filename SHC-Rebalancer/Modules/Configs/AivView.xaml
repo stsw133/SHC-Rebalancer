@@ -16,7 +16,7 @@
                              SelectedValue="{Binding SelectedConfigs[aiv], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
         <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
-        <DockPanel Margin="-3">
+        <DockPanel IsEnabled="{Binding SelectedConfigs[aiv], Mode=OneWay, Converter={x:Static se:StswExistenceConverter.Instance}}" Margin="-3">
             <!-- data -->
             <se:StswLabel DockPanel.Dock="Bottom"
                           Background="{DynamicResource StswPanel.Static.Background}"

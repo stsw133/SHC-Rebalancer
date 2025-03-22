@@ -16,7 +16,7 @@
                              SelectedValue="{Binding SelectedConfigs[troops], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
         <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
-        <DockPanel Margin="-3">
+        <DockPanel IsEnabled="{Binding SelectedConfigs[troops], Mode=OneWay, Converter={x:Static se:StswExistenceConverter.Instance}}" Margin="-3">
             <!-- selector 1 -->
             <se:StswSegment x:Name="TroopsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[troops].Troops}" Orientation="Vertical" Width="100">
                 <se:StswSegment.ItemTemplate>

@@ -1,8 +1,11 @@
 # SHC-Rebalancer
 
-The **SHC-Rebalancer** is a powerful tool designed to modify and rebalance various aspects of the games **Stronghold Crusader** and **Stronghold Crusader Extreme**. This includes tweaking the properties of buildings, units, resources, and more by directly overwriting the bytes of the game’s executable file. Additionally, the tool features a built-in search engine for locating and modifying specific addresses and values within the `.exe` file.
+The **SHC-Rebalancer** is a powerful tool designed to modify and rebalance various aspects of the games **Stronghold Crusader** and **Stronghold Crusader Extreme**.
+This includes tweaking the properties of buildings, units, resources, and more by directly overwriting the bytes of the game’s executable file.
+Additionally, the tool features a built-in search engine for locating and modifying specific addresses and values within the `.exe` file.
 
-This program is inspired by **UnofficialCrusaderPatch 2.15** and incorporates some of its features. It has been developed and tested specifically for **Stronghold Crusader version 1.41**.
+This program is inspired by **UnofficialCrusaderPatch 2.15** and incorporates some of its features.
+It has been developed and tested specifically for **Stronghold Crusader version 1.41**.
 
 ## Features
 
@@ -10,7 +13,7 @@ This program is inspired by **UnofficialCrusaderPatch 2.15** and incorporates so
 - **Executable File Editing**: Apply changes directly to the game's `.exe` file.
 - **Address Search Engine**: Find and edit specific values within the `.exe` file based on customizable search parameters.
 - **User-Friendly Interface**: Navigate through intuitive tabs to manage settings and edits efficiently.
-- - **Built-in Compatibility Options**: Includes configurations inspired by UnofficialCrusaderPatch for standalone use.
+- **Built-in Compatibility Options**: Includes configurations inspired by UnofficialCrusaderPatch for standalone use.
 
 ## Screenshots
 
@@ -25,11 +28,13 @@ Locate specific addresses and values in the `.exe` file by specifying search par
 ![Search Engine](Screenshots/screen02.webp)
 
 ### Properties Tabs
-View and modify properties of specific categories, such as buildings, units, or skirmish trail.
+View and modify properties of specific categories, such as buildings, units, or skirmish trail...
 
 ![Buildings Properties](Screenshots/screen03.webp)
 ![Units Properties](Screenshots/screen04.webp)
 ![Skirmish Trail Properties](Screenshots/screen05.webp)
+
+...and more: [View All Screenshots](Screenshots/)
 
 ## Getting Started
 

@@ -8,20 +8,20 @@ namespace SHC_Rebalancer;
 internal static class FinderService
 {
     /// Find
-    internal static void Find(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, int filterSize, string? filterAddress, int filterSkips, string? filterValues, int filterLimit)
+    internal static void Find(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, int filterSize, bool displayAsChar, string? filterAddress, int filterSkips, string? filterValues, int filterLimit)
     {
         finderData.Clear();
 
         var exePath = StorageService.ExePath[gameVersion];
 
         if (!string.IsNullOrWhiteSpace(filterValues))
-            FindPatternInFile(finderData, gameVersion, File.ReadAllBytes(exePath), filterSize, filterValues, filterLimit);
+            FindPatternInFile(finderData, gameVersion, File.ReadAllBytes(exePath), filterSize, displayAsChar, filterValues, filterLimit);
         else if (!string.IsNullOrWhiteSpace(filterAddress))
-            FindAddresses(finderData, gameVersion, exePath, filterSize, filterAddress, filterSkips, filterLimit);
+            FindAddresses(finderData, gameVersion, exePath, filterSize, displayAsChar, filterAddress, filterSkips, filterLimit);
     }
 
     /// FindAddresses
-    private static void FindAddresses(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, string filePath, int filterSize, string filterAddress, int filterSkips, int filterLimit)
+    private static void FindAddresses(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, string filePath, int filterSize, bool displayAsChar, string filterAddress, int filterSkips, int filterLimit)
     {
         if (!long.TryParse(filterAddress.Replace("0x", ""), NumberStyles.HexNumber, CultureInfo.InvariantCulture, out long startAddress))
             return;
@@ -58,7 +58,7 @@ internal static class FinderService
             finderData.Add(new FinderDataModel
             {
                 Address = address.ToString("X8"),
-                Value = value,
+                Value = displayAsChar ? ((char)value).ToString() : value,
                 IsInConfigFile = isInConfig,
                 Description = desc
             });
@@ -69,7 +69,7 @@ internal static class FinderService
     }
 
     /// FindPatternInFile
-    private static void FindPatternInFile(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, byte[] fileBytes, int filterSize, string filterValues, int filterLimit)
+    private static void FindPatternInFile(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, byte[] fileBytes, int filterSize, bool displayAsChar, string filterValues, int filterLimit)
     {
         var usedAddresses = GetUsedAddresses(gameVersion);
         var pattern = ParsePattern(filterValues, filterSize);
@@ -96,7 +96,7 @@ internal static class FinderService
                     finderData.Add(new FinderDataModel
                     {
                         Address = $"0x{address:X}",
-                        Value = value,
+                        Value = displayAsChar ? ((char)value).ToString() : value,
                         IsInConfigFile = isInConfig,
                         Description = desc
                     });
@@ -168,7 +168,7 @@ internal static class FinderService
     /// ParsePattern
     private static List<object?> ParsePattern(string filterValues, int filterSize)
     {
-        return filterValues
+        return [.. filterValues
             .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
             .Select(x =>
             {
@@ -185,8 +185,7 @@ internal static class FinderService
                     4 => (object?)int.Parse(x),
                     _ => throw new NotSupportedException($"filterSize={filterSize} not supported."),
                 };
-            })
-            .ToList();
+            })];
     }
 
     /// ReadValueAsInt

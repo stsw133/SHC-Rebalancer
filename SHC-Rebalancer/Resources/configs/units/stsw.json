@@ -90,14 +90,12 @@
 	-deals less damage the more armored enemy is
 	
 -HorseArcher:
-	-Cost 80 => 90
 	-Health 10000 => 12500 (+25%)
 	-DamageFromBow 1250 => 2000 (8 => 7 shots)
 	-DamageFromSling 500 => 750 (20 => 17 shots)
 	-MeleeDamage 20 => 10 (-50%)
 	
 -ArabSwordsman:
-	-Cost 80 => 90
 	-Speed penalty 3 => 2
 	-Health 20000 => 22500 (+13%)
 	-DamageFromCrossbow 8000 => 3500 (3 => 7 shots)
@@ -430,19 +428,21 @@
 			"Cost": 10,
 			"Speed": 1,
 			"AlwaysRun": true,
-			"CanGoOnWall": true,
-			"CanBeMoved": true,
 			"Health": 5000,
 			"DamageFromBow": 3000,
 			"DamageFromCrossbow": 3000,
 			"DamageFromSling": 2000,
-			"CanDigMoat": true,
-			"CanClimbLadder": true,
 			"CanMeleeDamage": true,
 			"MeleeDamage": 10,
 			"MeleeDamageToBuildings": 6,
 			"MeleeDamageToTowers": 0,
 			"MeleeDamageToWalls": 0,
+			"CanDigMoat": true,
+			"DigMoatSpeedOwn": 3,
+			"DigMoatSpeedEnemy": 2,
+			"CanClimbLadder": true,
+			"CanGoOnWall": true,
+			"CanBeMoved": true,
 		},
 		"Slinger": {
 			"Cost": 15,
@@ -478,7 +478,7 @@
 			"MeleeDamage": 150,
 			"MeleeDamageVs": {
 				"EuropArcher": 130,
-				"Spearman": 105,
+				"Spearman": 110,
 				"Maceman": 70,
 				"Crossbowman": 90,
 				"Pikeman": 65,
@@ -487,28 +487,28 @@
 				"ArabArcher": 125,
 				"Slave": 200,
 				"Slinger": 145,
-				"Assassin": 85,
+				"Assassin": 80,
 				"HorseArcher": 120,
 				"ArabSwordsman": 60,
 				"Tunneler": 140,
-				"Monk": 100,
-				"WarDog": 110,
+				"Monk": 105,
+				"WarDog": 100,
 				"Lord": 40,
-				"Catapult": 80,
-				"Trebuchet": 80,
-				"SiegeTower": 80,
-				"BatteringRam": 80,
-				"PortableShield": 80,
-				"FireBallista": 80,
-				"TowerBallista": 80,
-				"Mangonel": 80
+				"Catapult": 85,
+				"Trebuchet": 85,
+				"SiegeTower": 85,
+				"BatteringRam": 85,
+				"PortableShield": 85,
+				"FireBallista": 85,
+				"TowerBallista": 85,
+				"Mangonel": 85
 			},
 			"MeleeDamageToBuildings": 45,
 			"MeleeDamageToTowers": 5,
 			"MeleeDamageToWalls": 6,
 		},
 		"HorseArcher": {
-			"Cost": 90,
+			"Cost": 80,
 			"Speed": 1,
 			"AlwaysRun": false,
 			"CanGoOnWall": false,
@@ -526,7 +526,7 @@
 			"MeleeDamageToWalls": 1,
 		},
 		"ArabSwordsman": {
-			"Cost": 90,
+			"Cost": 80,
 			"Speed": 2,
 			"AlwaysRun": false,
 			"CanGoOnWall": true,

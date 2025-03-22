@@ -15,6 +15,8 @@ public class UnitModel
     public int? MeleeDamageToTowers { get; set; }
     public int? MeleeDamageToWalls { get; set; }
     public bool? CanDigMoat { get; set; }
+    public int? DigMoatSpeedOwn { get; set; }
+    public int? DigMoatSpeedEnemy { get; set; }
     public bool? CanClimbLadder { get; set; }
     public bool? CanGoOnWall { get; set; }
     public bool? CanBeMoved { get; set; }

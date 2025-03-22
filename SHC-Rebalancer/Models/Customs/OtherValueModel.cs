@@ -4,6 +4,7 @@ public class OtherValueModel
     public string Key { get; set; } = string.Empty;
     public string? Description { get; set; }
     public string? Address { get; set; }
+    public string? EndAddress { get; set; }
     public int? Size { get; set; }
     public object? Value { get; set; }
     public GameVersion? Version { get; set; }

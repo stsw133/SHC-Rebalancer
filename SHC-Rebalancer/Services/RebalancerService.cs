@@ -783,6 +783,15 @@ internal static class RebalancerService
                 BinaryPatchService.WriteIfDifferent(BinaryPatchService.GetAddressByEnum<Unit>(baseAddress2, model.Key.ToString()), model.Value.CanDigMoat, baseAddress2.Size, $"{model.Key} FocusDigMoat");
             }
 
+        /// digMoatSpeed
+        foreach (var model in config.Units.Where(x => x.Value.DigMoatSpeedOwn.HasValue && x.Key.GetAttributeOfType<UnitDigMoatSpeedAttribute>() != null))
+            if (StorageService.BaseAddresses[gameVersion].TryGetValue($"Units {model.Key} DigMoatSpeed (own)", out baseAddress))
+                BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), model.Value.DigMoatSpeedOwn, baseAddress.Size, $"{model.Key} DigMoatSpeed (own)");
+
+        foreach (var model in config.Units.Where(x => x.Value.DigMoatSpeedEnemy.HasValue && x.Key.GetAttributeOfType<UnitDigMoatSpeedAttribute>() != null))
+            if (StorageService.BaseAddresses[gameVersion].TryGetValue($"Units {model.Key} DigMoatSpeed (enemy)", out baseAddress))
+                BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16), model.Value.DigMoatSpeedEnemy, baseAddress.Size, $"{model.Key} DigMoatSpeed (enemy)");
+
         /// canClimbLadder
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("Units CanClimbLadder", out baseAddress)
          && StorageService.BaseAddresses[gameVersion].TryGetValue("Units FocusClimbLadder", out baseAddress2))
@@ -806,17 +815,37 @@ internal static class RebalancerService
     /// ProcessSkirmishTrailConfig
     private static void ProcessSkirmishTrailConfig(GameVersion gameVersion, SkirmishTrailConfigModel config)
     {
+        /// maps
+        var maps = new List<OtherValueModel>();
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Maps", out var baseAddress))
+        {
+            foreach (var mapName in config.Maps)
+            {
+                var newMap = new OtherValueModel()
+                {
+                    Address = (maps.Count > 0 ? (Convert.ToInt32(maps.Last().EndAddress, 16) + 1) : Convert.ToInt32(baseAddress.Address, 16)).ToString("X"),
+                    Value = mapName
+                };
+                newMap.EndAddress = (Convert.ToInt32(newMap.Address, 16) + BinaryPatchService.ConvertStringToBytesWithAutoPadding(mapName, 4).Length - 1).ToString("X");
+                maps.Add(newMap);
+            }
+            if (Convert.ToInt32(maps.Count > 0 ? maps.Last().EndAddress : baseAddress.Address, 16) > Convert.ToInt32(baseAddress.EndAddress, 16))
+                throw new Exception($"SkirmishTrail Maps address overflow by {Convert.ToInt32(maps.Last().EndAddress, 16) - Convert.ToInt32(baseAddress.EndAddress, 16)} characters.");
+
+            foreach (var map in maps)
+                BinaryPatchService.WriteIfDifferent(Convert.ToInt32(map.Address, 16), BinaryPatchService.ConvertStringToBytesWithAutoPadding(map.Value!.ToString()!, 4), 1, $"Map {map.Value}");
+        }
+
         /// missions
-        if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Missions", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Missions", out baseAddress))
+        {
+            if (config.Missions.FirstOrDefault(x => !maps.Any(y => y.Value?.ToString()?.ToLower() == x.Value.MapName?.ToLower())) is var mission && mission.Value != null)
+                throw new Exception($"SkirmishTrail Missions contains a map name that is not in the SkirmishTrail Maps list: {mission.Value.MapName}");
+
             foreach (var model in config.Missions.Where(x => x.Key.Between(1, 80)))
             {
                 var address = Convert.ToInt32(baseAddress.Address, 16) + ((model.Key - 1) * 144);
-
-                if (!string.IsNullOrWhiteSpace(model.Value.MapNameAddress) && !string.IsNullOrWhiteSpace(model.Value.MapName))
-                {
-                    BinaryPatchService.WriteIfDifferent(address + 0, Convert.ToInt32(model.Value.MapNameAddress, 16) + 0x400000, baseAddress.Size, $"Mission {model.Key}, MapNameOffset");
-                    BinaryPatchService.WriteIfDifferent(Convert.ToInt32(model.Value.MapNameAddress, 16), BinaryPatchService.ConvertStringToBytesWithAutoPadding(model.Value.MapName, 4), 1, $"Mission {model.Key}, MapName");
-                }
+                BinaryPatchService.WriteIfDifferent(address + 0, Convert.ToInt32(maps.First(x => x.Value?.ToString()?.ToLower() == model.Value.MapName?.ToLower()).Address, 16) + 0x400000, baseAddress.Size, $"Mission {model.Key}, MapNameOffset");
                 BinaryPatchService.WriteIfDifferent(address + 4, (int?)model.Value.Difficulty, baseAddress.Size, $"Mission {model.Key}, Difficulty");
                 BinaryPatchService.WriteIfDifferent(address + 8, (int?)model.Value.Type, baseAddress.Size, $"Mission {model.Key}, Type");
                 BinaryPatchService.WriteIfDifferent(address + 12, model.Value.NumberOfPlayers, baseAddress.Size, $"Mission {model.Key}, NumberOfPlayers");
@@ -825,6 +854,7 @@ internal static class RebalancerService
                 BinaryPatchService.WriteIfDifferent(address + 80, model.Value.Teams, baseAddress.Size, $"Mission {model.Key}, Teams");
                 BinaryPatchService.WriteIfDifferent(address + 112, model.Value.AIVs, baseAddress.Size, $"Mission {model.Key}, AIVs");
             }
+        }
     }
 
     /// ProcessCustomsConfig

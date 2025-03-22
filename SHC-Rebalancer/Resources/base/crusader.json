@@ -33,7 +33,7 @@
 	{ "Key": "Resources Buy",								"Address": "0x2171C0", "EndAddress": "0x217227", "Size": 4 },
 	{ "Key": "Resources Sell",								"Address": "0x217228", "EndAddress": "0x21728F", "Size": 4 },
 	
-	{ "Key": "SkirmishTrail Maps",							"Address": "0x1A5C18", "EndAddress": "0x1A61BF", "Size": 4 },
+	{ "Key": "SkirmishTrail Maps",							"Address": "0x1A5C18", "EndAddress": "0x1A61C3", "Size": 4 },
 	{ "Key": "SkirmishTrail Missions",						"Address": "0x73EC48", "EndAddress": "0x741947", "Size": 4 },
 	
 	{ "Key": "Troops",										"Address": "0x215448", "EndAddress": "0x216617", "Size": 4 },
@@ -89,6 +89,8 @@
 	{ "Key": "Units ArabArcher MeleeDamageToTowers",		"Address": "0x170B63", "EndAddress": "0x170B63", "Size": 1 },
 	{ "Key": "Units ArabArcher MeleeDamageToBuildings",		"Address": "0x170B66", "EndAddress": "0x170B66", "Size": 1 },
 	{ "Key": "Units Slave MeleeDamageToBuildings",			"Address": "0x17239D", "EndAddress": "0x17239D", "Size": 1 },
+	{ "Key": "Units Slave DigMoatSpeed (own)",				"Address": "0x1726E3", "EndAddress": "0x1726E3", "Size": 4 },
+	{ "Key": "Units Slave DigMoatSpeed (enemy)",			"Address": "0x17289F", "EndAddress": "0x17289F", "Size": 4 },
 	{ "Key": "Units Slinger MeleeDamageToWalls",			"Address": "0x1734BE", "EndAddress": "0x1734C1", "Size": 4 },
 	{ "Key": "Units Slinger MeleeDamageToTowers",			"Address": "0x1734F9", "EndAddress": "0x1734F9", "Size": 1 },
 	{ "Key": "Units Slinger MeleeDamageToBuildings",		"Address": "0x1734FC", "EndAddress": "0x1734FC", "Size": 1 },

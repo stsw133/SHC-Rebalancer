@@ -6,6 +6,11 @@ public class UnitAlwaysRunAttribute : Attribute
 }
 
 [AttributeUsage(AttributeTargets.Field)]
+public class UnitDigMoatSpeedAttribute : Attribute
+{
+}
+
+[AttributeUsage(AttributeTargets.Field)]
 public class UnitCostAttribute : Attribute
 {
 }

@@ -16,7 +16,7 @@
                              SelectedValue="{Binding SelectedConfigs[units], Mode=OneWay, Source={StaticResource Settings}}"/>
         </DockPanel>
         <se:StswSeparator DockPanel.Dock="Top" Margin="-3 3" Orientation="Horizontal"/>
-        <DockPanel Margin="-3">
+        <DockPanel IsEnabled="{Binding SelectedConfigs[units], Mode=OneWay, Converter={x:Static se:StswExistenceConverter.Instance}}" Margin="-3">
             <!-- selector -->
             <se:StswSegment x:Name="UnitsSelector" BorderThickness="0 0 2 0" ItemsSource="{Binding SelectedConfigs[units].Units}" Orientation="Vertical" Width="100">
                 <se:StswSegment.ItemTemplate>
@@ -261,10 +261,10 @@
                         </StackPanel>
                     </se:StswGroupBox>
 
-                    <!-- other -->
+                    <!-- moat -->
                     <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
                         <se:StswGroupBox.Header>
-                            <se:StswLabel Content="OTHER" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                            <se:StswLabel Content="MOAT" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
                         </se:StswGroupBox.Header>
 
                         <StackPanel>
@@ -273,6 +273,35 @@
                                 <se:StswToggleSwitch IsChecked="{Binding CanDigMoat}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitCanDigMoat}"/>
                             </DockPanel>
 
+                            <DockPanel>
+                                <se:StswLabel Content="Dig moat speed (own):" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Success.Background}"/>
+                                <se:StswText DockPanel.Dock="Right" Text="{Binding DigMoatSpeedOwn, Mode=OneWay}" TextAlignment="Center" VerticalAlignment="Center" Width="50"/>
+                                <se:StswSlider Maximum="10" SelectionStart="{Binding Value, RelativeSource={RelativeSource Self}}" SelectionEnd="10" TickFrequency="1" Value="{Binding DigMoatSpeedOwn}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitDigMoatSpeed}">
+                                    <se:StswSlider.LayoutTransform>
+                                        <ScaleTransform ScaleX="-1"/>
+                                    </se:StswSlider.LayoutTransform>
+                                </se:StswSlider>
+                            </DockPanel>
+                            
+                            <DockPanel>
+                                <se:StswLabel Content="Dig moat speed (enemy):" IconData="{x:Static se:StswIcons.RunFast}" IconFill="{DynamicResource StswDialog.Success.Background}"/>
+                                <se:StswText DockPanel.Dock="Right" Text="{Binding DigMoatSpeedEnemy, Mode=OneWay}" TextAlignment="Center" VerticalAlignment="Center" Width="50"/>
+                                <se:StswSlider Maximum="10" SelectionStart="{Binding Value, RelativeSource={RelativeSource Self}}" SelectionEnd="10" TickFrequency="1" Value="{Binding DigMoatSpeedEnemy}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitDigMoatSpeed}">
+                                    <se:StswSlider.LayoutTransform>
+                                        <ScaleTransform ScaleX="-1"/>
+                                    </se:StswSlider.LayoutTransform>
+                                </se:StswSlider>
+                            </DockPanel>
+                        </StackPanel>
+                    </se:StswGroupBox>
+
+                    <!-- other -->
+                    <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                        <se:StswGroupBox.Header>
+                            <se:StswLabel Content="OTHER" FontSize="10" FontWeight="Heavy" HorizontalContentAlignment="Center"/>
+                        </se:StswGroupBox.Header>
+
+                        <StackPanel>
                             <DockPanel>
                                 <se:StswLabel Content="Can climb ladder:" IconData="{x:Static se:StswIcons.Ladder}" IconFill="{DynamicResource StswDialog.Question.Background}"/>
                                 <se:StswToggleSwitch IsChecked="{Binding CanClimbLadder}"/>

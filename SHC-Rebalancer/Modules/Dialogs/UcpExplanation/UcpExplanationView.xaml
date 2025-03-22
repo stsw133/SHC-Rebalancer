@@ -7,7 +7,7 @@
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
              mc:Ignorable="d">
     <UserControl.Background>
-        <ImageBrush ImageSource="/Images/background.jpg" Opacity="0.2"/>
+        <ImageBrush ImageSource="/Images/background.webp" Opacity="0.2"/>
     </UserControl.Background>
 
     <se:StswGroupBox MaxHeight="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"
@@ -26,7 +26,7 @@
 
         <se:StswScrollView>
             <se:StswText Margin="5" TextAlignment="Justify" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Run Text="UCP: include compatible config" TextDecorations="Underline" FontWeight="Medium"/>
+                <Run Text="`UCP: include compatible config`" TextDecorations="Underline" FontWeight="Medium"/>
                 <Run Text="is an option that installs a package of specific (and subjectively most important)"/>
                 <Run Text="features from UnofficialCrusaderPatch 2.15 that cannot be configured in Rebalancer."/>
                 <Run Text="This allows the Rebalancer to work without requiring (but also without being compatible with) the UnofficialCrusaderPatch."/>
@@ -42,32 +42,32 @@
                 <Run Text="this option ensures that the Rebalancer operates independently of settings in the UnofficialCrusaderPatch"/>
                 <Run Text="(and will most likely require not using other modification programs and installing only on a clean, unmodified game .exe file)."/>
                 <Run Text="It will also include the following options migrated from the UnofficialCrusaderPatch:"/>
-                <Run Text="&#x0a; • Fix ladder climbing destination bug"/>
-                <Run Text="&#x0a; • Fire ballistae shoot monks and tunnelers"/>
-                <Run Text="&#x0a; • Fix reinforcement of defense troops"/>
-                <Run Text="&#x0a; • Buy enough wood"/>
-                <Run Text="&#x0a; • No AI target change during sieges"/>
-                <Run Text="&#x0a; • Improved AI repairs"/>
-                <Run Text="&#x0a; • Reset lord animation after destroying buildings"/>
-                <Run Text="&#x0a; • Fix apple farm worker getting blocked"/>
-                <Run Text="&#x0a; • Fix tanners getting all the same cow"/>
-                <Run Text="&#x0a; • Fix AI's crusader archers not lightning pitch"/>
-                <Run Text="&#x0a; • Fix bakers despawning"/>
-                <Run Text="&#x0a; • Fix despawning of digging units"/>
-                <Run Text="&#x0a; • Let the AI build houses smarter (true:10 | true:10 | true)"/>
-                <Run Text="&#x0a; • Improve attack waves"/>
-                <Run Text="&#x0a; • Restore engineer arabiach speech"/>
-                <Run Text="&#x0a; • WASD-Keys and quicksaves"/>
-                <Run Text="&#x0a; • Healer heals casualties"/>
-                <Run Text="&#x0a; • Extended game speed limits"/>
+                <Run Text="&#x0a; ✅ Fix ladder climbing destination bug"/>
+                <Run Text="&#x0a; ✅ Fire ballistae shoot monks and tunnelers"/>
+                <Run Text="&#x0a; ✅ Fix reinforcement of defense troops"/>
+                <Run Text="&#x0a; ✅ Buy enough wood"/>
+                <Run Text="&#x0a; ✅ No AI target change during sieges"/>
+                <Run Text="&#x0a; ✅ Improved AI repairs"/>
+                <Run Text="&#x0a; ✅ Reset lord animation after destroying buildings"/>
+                <Run Text="&#x0a; ✅ Fix apple farm worker getting blocked"/>
+                <Run Text="&#x0a; ✅ Fix tanners getting all the same cow"/>
+                <Run Text="&#x0a; ✅ Fix AI's crusader archers not lightning pitch"/>
+                <Run Text="&#x0a; ✅ Fix bakers despawning"/>
+                <Run Text="&#x0a; ✅ Fix despawning of digging units"/>
+                <Run Text="&#x0a; ✅ Let the AI build houses smarter (true:10 | true:10 | true)"/>
+                <Run Text="&#x0a; ✅ Improve attack waves"/>
+                <Run Text="&#x0a; ✅ Restore engineer arabiach speech"/>
+                <Run Text="&#x0a; ✅ WASD-Keys and quicksaves"/>
+                <Run Text="&#x0a; ✅ Healer heals casualties"/>
+                <Run Text="&#x0a; ✅ Extended game speed limits"/>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="It will not, however, include some features, including the following, which cannot yet be configured in the Rebalancer:"/>
-                <Run Text="&#x0a; • Override the Set-up Identity menu adding new features"/>
-                <Run Text="&#x0a; • Strongholdify (popularity bonus from beer)"/>
-                <Run Text="&#x0a; • Manipulate random number generator"/>
-                <Run Text="&#x0a; • Spawn siege engines in the center of their tent"/>
-                <Run Text="&#x0a; • Rotate player keeps same as AI's"/>
+                <Run Text="&#x0a; ❎ Override the Set-up Identity menu adding new features"/>
+                <Run Text="&#x0a; ❎ Strongholdify (popularity bonus from beer)"/>
+                <Run Text="&#x0a; ❎ Manipulate random number generator"/>
+                <Run Text="&#x0a; ❎ Spawn siege engines in the center of their tent"/>
+                <Run Text="&#x0a; ❎ Rotate player keeps same as AI's"/>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="WARNING!" FontWeight="Bold"/>

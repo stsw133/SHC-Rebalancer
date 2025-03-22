@@ -103,6 +103,7 @@
                                 <se:StswRadioBox Content="short" IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=2}" Margin="0 0 3 0"/>
                                 <se:StswRadioBox Content="int" IsChecked="{Binding FinderFilterSize, Converter={x:Static se:StswRadioConverter.Instance}, ConverterParameter=4}" Margin="0 0 3 0"/>
                             </UniformGrid>
+                            <se:StswCheckBox Content="display as char" HorizontalAlignment="Right" IsChecked="{Binding FinderDisplayAsChar}" Margin="3"/>
                         </DockPanel>
 
                         <DockPanel IsEnabled="{Binding FinderFilterVersion, Converter={x:Static se:StswExistenceConverter.Instance}}">

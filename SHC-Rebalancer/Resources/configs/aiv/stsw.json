@@ -13,8 +13,8 @@ Below is list of buildings for every AI (in build order).
 	-1x Engineer guild
 	-4x House
 	-2x Well
-	-2x Fletcher
-	-4x Poleturner
+	-3x Fletcher
+	-3x Poleturner
 	-4x Good stuff (+1 to popularity)
 	-2x Tower2
 	-2x Small gatehouse
@@ -328,10 +328,13 @@ Below is list of buildings for every AI (in build order).
 	-3x Brewery
 	-2x Inn
 	-25x Good stuff (+5 to popularity)
-	-2x Tower4
+	-4x Tower4
 	-2x Tower1
 	-4x Small gatehouse
+	-High walls
+	-High crenels
 	-Low walls
+	-Low crenels
 	-Stairs
 	-1x Drawbridge
 	-Moat
@@ -422,6 +425,98 @@ Below is list of buildings for every AI (in build order).
 	-Moat
 	-Killing pits
 	-Pitch
+	
+-Arslan (#7 in AI ranking):
+	
+-Baibars (#1 in AI ranking):
+	
+-Baldwin (#2 in AI ranking):
+	
+-Bohemond (#6 in AI ranking):
+	
+-Hugh (#13 in AI ranking):
+	
+-Kahin (#14 in AI ranking):
+	-3x Stockpile
+	-1x Granary
+	-1x Trading post
+	-1x Mercenary post
+	-1x Engineer guild
+	-6x House
+	-3x Well
+	-2x Chapel
+	-1x Healers
+	-1x Windmill
+	-8x Bakery
+	-22 Good stuff (+4 to popularity)
+	-6x Tower1
+	-3x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Low crenels
+	-Stairs
+	-3x Dog cage
+	-Killing pits
+	-Pitch
+	
+-Manuel (#4 in AI ranking):
+	
+-Melisende (#10 in AI ranking):
+	
+-Nawab (#15 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Trading post
+	-1x Mercenary post
+	-1x Engineer guild
+	-5x House
+	-2x Well
+	-3x Brewery
+	-2x Inn
+	-4x Bad stuff (-1 to popularity)
+	-1x Tower3
+	-2x Tower2
+	-2x Small gatehouse
+	-High walls
+	-High crenels
+	-Stairs
+	-2x Dog cage
+	-Killing pits
+	-Pitch
+	
+-Nomad (#16 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Mercenary post
+	-1x Engineer guild
+	-4x House
+	-2x Well
+	-1x Fletcher
+	-4x Poleturner
+	-2x Woodcutter hut
+	-2x Hunter post
+	-4x Tower1
+	-Low walls
+	-Stairs
+	-Killing pits
+	-Pitch
+	
+-Reynald (#5 in AI ranking):
+	
+-Rogue (#11 in AI ranking):
+	
+-Sentinel (#12 in AI ranking):
+	
+-Shajar (#9 in AI ranking):
+	
+-Tamara (#8 in AI ranking):
+	
+-Zengi (#3 in AI ranking):
+	
 	",
 	"ReplaceAllCastles": true
 }
