@@ -7,10 +7,10 @@
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
 
-    <se:StswContentDialog Identifier="TermsDialog" IsOpen="{Binding IsTermsDialogOpen}">
+    <se:StswContentDialog Identifier="TermsDialog" IsOpen="{Binding TermsAccepted, Mode=OneTime, Converter={x:Static se:StswBoolConverter.Instance}, ConverterParameter=!}">
         <se:StswContentDialog.DialogContent>
             <DockPanel Background="{DynamicResource StswWindow.Static.Background}"
-                       IsHitTestVisible="{Binding IsTermsDialogOpen}"
+                       IsHitTestVisible="{Binding TermsAccepted, Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}, ConverterParameter=!}"
                        Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}"
                        Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
@@ -23,13 +23,13 @@
                         <LineBreak/>
                         <Run Text="You use the Rebalancer at your own risk – the application creates backups of executable .exe files before installation, but it is recommended to create your own backups of these files as an additional precaution."/>
                     </se:StswText>
-                    <se:StswCheckBox Content="I understood and accept the risks" IsChecked="{Binding TermsAccepted, Source={StaticResource Settings}}" Margin="10"/>
+                    <se:StswCheckBox Content="I understood and accept the risks" IsChecked="{Binding TermsAccepted}" Margin="10"/>
                     <!-- buttons panel -->
                     <UniformGrid HorizontalAlignment="Center" Margin="5" Rows="1">
-                        <se:StswButton Command="{Binding AcceptTermsCommand}" Margin="5" Padding="10 3">
+                        <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFn.True}" IsEnabled="{Binding TermsAccepted}" Margin="5" Padding="10 3">
                             <se:StswLabel Content="Continue" IconData="{x:Static se:StswIcons.Check}" IconFill="{DynamicResource StswColor.Positive}"/>
                         </se:StswButton>
-                        <se:StswButton Command="{Binding ExitAppCommand}" Margin="5" Padding="10 3">
+                        <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFn.False}" Margin="5" Padding="10 3">
                             <se:StswLabel Content="Exit" IconData="{x:Static se:StswIcons.Logout}" IconFill="{DynamicResource StswColor.Negative}"/>
                         </se:StswButton>
                     </UniformGrid>

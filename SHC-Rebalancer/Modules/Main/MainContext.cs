@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
+using System.Windows;
 
 namespace SHC_Rebalancer;
 public class MainContext : StswObservableObject
 {
-    public StswAsyncCommand AcceptTermsCommand { get; }
-    public StswCommand ExitAppCommand { get; }
+    public StswAsyncCommand<bool> AcceptTermsCommand { get; }
     public StswAsyncCommand GamePathChangedCommand { get; }
 
     public StswAsyncCommand ReloadAllCommand { get; }
@@ -17,16 +17,14 @@ public class MainContext : StswObservableObject
 
     public MainContext()
     {
-        AcceptTermsCommand = new(AcceptTerms, () => SettingsService.Instance.Settings.TermsAccepted);
-        ExitAppCommand = new(App.Current.Shutdown);
+        AcceptTermsCommand = new(AcceptTerms);
         GamePathChangedCommand = new(GamePathChanged);
+        ShowUcpExplanationCommand = new(ShowUcpExplanation);
 
         ReloadAllCommand = new(ReloadAll);
         SaveAllCommand = new(SaveAll);
         InstallCommand = new(Install, InstallCondition);
         UninstallCommand = new(Uninstall, UninstallCondition);
-
-        ShowUcpExplanationCommand = new(ShowUcpExplanation);
 
         StswMessanger.Instance.Register<ProgressUpdateMessage>(msg => InstallValue += msg.Increment);
         StswMessanger.Instance.Register<ProgressTextMessage>(msg => InstallText = msg.Text);
@@ -36,11 +34,16 @@ public class MainContext : StswObservableObject
 
 
     /// AcceptTerms
-    public async Task AcceptTerms()
+    public async Task AcceptTerms(bool parameter)
     {
         try
         {
-            StswContentDialog.Close("TermsDialog");
+            if (parameter)
+            {
+                SettingsService.Instance.Settings.TermsAccepted = true;
+                StswContentDialog.Close("TermsDialog");
+            }
+            else Application.Current.Shutdown();
         }
         catch (Exception ex)
         {
@@ -81,6 +84,21 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+
+    /// ShowUcpExplanation
+    public async Task ShowUcpExplanation()
+    {
+        try
+        {
+            await StswContentDialog.Show(new UcpExplanationView(), "InfoDialog");
+        }
+        catch (Exception ex)
+        {
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+        }
+    }
+
+
 
     /// ReloadAll
     public async Task ReloadAll()
@@ -217,19 +235,6 @@ public class MainContext : StswObservableObject
     }
     public bool UninstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath) && IsInstalled;
 
-    /// ShowUcpExplanation
-    public async Task ShowUcpExplanation()
-    {
-        try
-        {
-            await StswContentDialog.Show(new UcpExplanationView(), "InfoDialog");
-        }
-        catch (Exception ex)
-        {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
-        }
-    }
-
 
 
     /// InstallState
@@ -272,13 +277,13 @@ public class MainContext : StswObservableObject
     }
     private bool _isInstalled;
 
-    /// IsTermsDialogOpen
-    public bool IsTermsDialogOpen
+    /// TermsAccepted
+    public bool TermsAccepted
     {
-        get => _isTermsDialogOpen;
-        set => SetProperty(ref _isTermsDialogOpen, value);
+        get => _termsAccepted;
+        set => SetProperty(ref _termsAccepted, value);
     }
-    private bool _isTermsDialogOpen = !SettingsService.Instance.Settings.TermsAccepted;
+    private bool _termsAccepted = SettingsService.Instance.Settings.TermsAccepted;
 
     /// SelectedConfigs
     public StswObservableDictionary<string, ConfigModel?> SelectedConfigs
