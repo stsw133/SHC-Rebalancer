@@ -14,6 +14,7 @@
     <Authors>Karol Staszewski</Authors>
 	<InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.Extensions.Configuration.Binder.SourceGeneration</InterceptorsNamespaces>
 	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -915,6 +916,48 @@
     <None Remove="Resources\configs\air\Reynald\videos\natural.bik" />
     <None Remove="Resources\configs\air\Reynald\videos\nervous.bik" />
     <None Remove="Resources\configs\air\Reynald\videos\taunt.bik" />
+    <None Remove="Resources\configs\air\Rogue\avatar_big.png" />
+    <None Remove="Resources\configs\air\Rogue\avatar_small.png" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\add_player_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\ally_death_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\anger_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\anger_02.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\boast_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\congrats_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\extra_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\General_Message.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\helpsent_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\help_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\kick_player_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\nervous_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\nervous_02.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\noattack_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\noattack_02.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\nohelp_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\nohelp_02.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\notsent_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\plead_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\req_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\sent_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\siege_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\taunt_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\taunt_02.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\taunt_03.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\taunt_04.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\team_losing_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\team_winning_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\thanks_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\vict_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\vict_02.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\vict_03.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\vict_04.wav" />
+    <None Remove="Resources\configs\air\Rogue\speech\English\willattack_01.wav" />
+    <None Remove="Resources\configs\air\Rogue\text\English.txt" />
+    <None Remove="Resources\configs\air\Rogue\text\Polish.txt" />
+    <None Remove="Resources\configs\air\Rogue\videos\angry.bik" />
+    <None Remove="Resources\configs\air\Rogue\videos\natural.bik" />
+    <None Remove="Resources\configs\air\Rogue\videos\nervous.bik" />
+    <None Remove="Resources\configs\air\Rogue\videos\taunt.bik" />
     <None Remove="Resources\configs\air\Shajar\avatar_big.png" />
     <None Remove="Resources\configs\air\Shajar\avatar_small.png" />
     <None Remove="Resources\configs\air\Shajar\speech\add_player_01.wav" />
@@ -1024,6 +1067,7 @@
     <None Remove="Resources\configs\aiv\stsw\frederick6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\frederick8.aiv" />
+    <None Remove="Resources\configs\aiv\stsw\hugh.aiv" />
     <None Remove="Resources\configs\aiv\stsw\images\abbot.webp" />
     <None Remove="Resources\configs\aiv\stsw\images\abbot1.jpg" />
     <None Remove="Resources\configs\aiv\stsw\images\caliph.webp" />
@@ -1773,6 +1817,258 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\configs\air\Bohemond\videos\taunt.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\avatar_big.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\avatar_small.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\add_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\ally_death_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\anger_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\anger_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\boast_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\congrats_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\extra_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\General_Message.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\helpsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\help_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\kick_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\nervous_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\nervous_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\noattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\noattack_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\nohelp_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\nohelp_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\notsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\plead_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\req_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\sent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\siege_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\taunt_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\taunt_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\taunt_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\taunt_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\team_losing_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\team_winning_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\thanks_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\vict_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\vict_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\vict_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\vict_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\speech\English\willattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\text\English.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\text\Polish.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\videos\angry.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\videos\natural.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\videos\nervous.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Rogue\videos\taunt.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\avatar_big.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\avatar_small.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\add_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\ally_death_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\anger_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\anger_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\boast_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\congrats_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\extra_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\General_Message.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\helpsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\help_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\kick_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\nervous_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\nervous_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\noattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\noattack_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\nohelp_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\nohelp_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\notsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\plead_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\req_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\sent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\siege_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\taunt_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\taunt_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\taunt_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\taunt_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\team_losing_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\team_winning_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\thanks_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\vict_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\vict_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\vict_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\vict_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\speech\English\willattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\text\English.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\text\Polish.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\videos\angry.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\videos\natural.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\videos\nervous.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Sentinel\videos\taunt.bik">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\configs\air\Nomad\avatar_big.png">
@@ -2787,6 +3083,24 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\configs\air\vanilla.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\images\rogue.webp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\images\sentinel.webp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\rogue.aiv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\sentinel.aiv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\hugh.aiv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\images\hugh.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\configs\aiv\stsw\images\nomad.webp">

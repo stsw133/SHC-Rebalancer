@@ -287,6 +287,21 @@
 				"Monk": 24,
 			}
 		},
+		"Hugh":
+		{
+			"Normal": {
+				"Spearman": 16,
+				"Crossbowman": 12,
+			},
+			"Crusade": {
+				"Spearman": 100,
+				"Crossbowman": 40,
+			},
+			"Deathmatch": {
+				"Spearman": 16,
+				"Crossbowman": 12,
+			}
+		},
 		"Kahin":
 		{
 			"Normal": {
@@ -303,6 +318,22 @@
 				"ArabArcher": 8,
 				"Slinger": 12,
 				"Assassin": 8,
+			}
+		},
+		"Melisende":
+		{
+			"Normal": {
+				"EuropArcher": 12,
+				"Swordsman": 12,
+			},
+			"Crusade": {
+				"EuropArcher": 80,
+				"Swordsman": 20,
+				"Knight": 8,
+			},
+			"Deathmatch": {
+				"EuropArcher": 12,
+				"Swordsman": 12,
 			}
 		},
 		"Nawab":
@@ -335,6 +366,35 @@
 			"Deathmatch": {
 				"Spearman": 12,
 				"HorseArcher": 8,
+			}
+		},
+		"Rogue":
+		{
+			"Normal": {
+				"Maceman": 24,
+			},
+			"Crusade": {
+				"EuropArcher": 80,
+				"Maceman": 80,
+			},
+			"Deathmatch": {
+				"Maceman": 24,
+			}
+		},
+		"Sentinel":
+		{
+			"Normal": {
+				"Crossbowman": 12,
+				"Pikeman": 12,
+			},
+			"Crusade": {
+				"EuropArcher": 40,
+				"Crossbowman": 40,
+				"Pikeman": 20,
+			},
+			"Deathmatch": {
+				"Crossbowman": 12,
+				"Pikeman": 12,
 			}
 		},
 		"Shajar":

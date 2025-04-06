@@ -1,6 +1,9 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP
 	
+-Wood:
+	-Buy 20 => 30
+	
 -Hop:
 	-Buy 75 => 90
 	-Sell 40 => 30
@@ -43,8 +46,8 @@
 	-Sell 75 => 30
 	
 -Crossbows
-	-Buy 290 => 250
-	-Sell 150 => 50
+	-Buy 290 => 300
+	-Sell 150 => 60
 	
 -Spears
 	-Sell 50 => 20
@@ -71,7 +74,7 @@
 	",
 	"Resources": {
 		"Wood": {
-			"Buy": 20,
+			"Buy": 30,
 			"Sell": 5,
 			"BaseDelivery": 12
 		},
@@ -136,8 +139,8 @@
 			"BaseDelivery": 1
 		},
 		"Crossbows": {
-			"Buy": 250,
-			"Sell": 50,
+			"Buy": 300,
+			"Sell": 60,
 			"BaseDelivery": 1
 		},
 		"Spears": {

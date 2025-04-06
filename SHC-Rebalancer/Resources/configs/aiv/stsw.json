@@ -434,7 +434,34 @@ Below is list of buildings for every AI (in build order).
 	
 -Bohemond (#6 in AI ranking):
 	
--Hugh (#13 in AI ranking):
+-Hugh (#12 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-7x House
+	-1x Church
+	-1x Water pot
+	-1x Well
+	-1x Fletcher
+	-2x Poleturner
+	-1x Blacksmith
+	-1x Tanner
+	-1x Armourer
+	-3x Brewery
+	-2x Inn
+	-4x Stables
+	-14x Good stuff (+3 to popularity)
+	-2x Tower5
+	-2x Tower2
+	-3x Small gatehouse
+	-High walls
+	-High crenels
+	-Stairs
+	-Moat
+	-Killing pits
 	
 -Kahin (#14 in AI ranking):
 	-3x Stockpile
@@ -448,7 +475,7 @@ Below is list of buildings for every AI (in build order).
 	-1x Healers
 	-1x Windmill
 	-8x Bakery
-	-22 Good stuff (+4 to popularity)
+	-22 Good stuff (+5 to popularity)
 	-6x Tower1
 	-3x Small gatehouse
 	-High walls
@@ -507,9 +534,57 @@ Below is list of buildings for every AI (in build order).
 	
 -Reynald (#5 in AI ranking):
 	
--Rogue (#11 in AI ranking):
+-Rogue (#13 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Mercenary post
+	-6x House
+	-1x Water pot
+	-2x Fletcher
+	-2x Poleturner
+	-2x Blacksmith
+	-2x Tanner
+	-3x Brewery
+	-2x Inn
+	-11x Bad stuff (-2 to popularity)
+	-3x Hunter post
+	-2x Tower3
+	-4x Tower2
+	-2x Small gatehouse
+	-Low walls
+	-Low crenels
+	-Stairs
+	-Pitch
 	
--Sentinel (#12 in AI ranking):
+-Sentinel (#11 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-1x Oil smelter
+	-8x House
+	-1x Church
+	-4x Chapel
+	-1x Water pot
+	-1x Well
+	-3x Fletcher
+	-2x Poleturner
+	-1x Tanner
+	-2x Armourer
+	-10x Good stuff (+2 to popularity)
+	-2x Tower5
+	-1x Tower3
+	-3x Small gatehouse
+	-High walls
+	-High crenels
+	-Stairs
+	-Moat
+	-Killing pits
 	
 -Shajar (#9 in AI ranking):
 	
