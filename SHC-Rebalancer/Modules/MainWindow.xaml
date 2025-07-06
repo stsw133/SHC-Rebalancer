@@ -6,7 +6,7 @@
                xmlns:local="clr-namespace:SHC_Rebalancer"
                xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
                mc:Ignorable="d" Height="600" Width="1000" WindowStartupLocation="CenterScreen"
-               Title="{x:Static se:StswFn.AppNameAndVersion}" Icon="/Images/icon.ico">
+               Title="{x:Static se:StswFnUI.AppNameAndVersion}" Icon="/Images/icon.ico">
 
     <se:StswContentDialog Identifier="MainContentDialog">
         <local:MainContext/>

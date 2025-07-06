@@ -14,7 +14,7 @@
     <Authors>Karol Staszewski</Authors>
 	<InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.Extensions.Configuration.Binder.SourceGeneration</InterceptorsNamespaces>
 	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-	<Version>1.1.0</Version>
+	<Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -3696,7 +3696,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.3" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.7" />
-    <PackageReference Include="StswExpress" Version="0.16.1" />
+    <PackageReference Include="StswExpress" Version="0.18.1" />
   </ItemGroup>
 
   <ItemGroup>

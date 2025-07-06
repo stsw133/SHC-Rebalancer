@@ -1,3 +1,5 @@
+**WARNING:** Project suspended due to the release of Stronghold Crusader Definitive Edition.
+
 # SHC-Rebalancer
 
 The **SHC-Rebalancer** is a powerful tool designed to modify and rebalance various aspects of the games **Stronghold Crusader** and **Stronghold Crusader Extreme**.

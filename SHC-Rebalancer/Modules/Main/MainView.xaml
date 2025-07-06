@@ -26,10 +26,10 @@
                     <se:StswCheckBox Content="I understood and accept the risks" IsChecked="{Binding TermsAccepted}" Margin="10"/>
                     <!-- buttons panel -->
                     <UniformGrid HorizontalAlignment="Center" Margin="5" Rows="1">
-                        <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFn.True}" IsEnabled="{Binding TermsAccepted}" Margin="5" Padding="10 3">
+                        <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFnUI.True}" IsEnabled="{Binding TermsAccepted}" Margin="5" Padding="10 3">
                             <se:StswLabel Content="Continue" IconData="{x:Static se:StswIcons.Check}" IconFill="{DynamicResource StswColor.Positive}"/>
                         </se:StswButton>
-                        <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFn.False}" Margin="5" Padding="10 3">
+                        <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFnUI.False}" Margin="5" Padding="10 3">
                             <se:StswLabel Content="Exit" IconData="{x:Static se:StswIcons.Logout}" IconFill="{DynamicResource StswColor.Negative}"/>
                         </se:StswButton>
                     </UniformGrid>

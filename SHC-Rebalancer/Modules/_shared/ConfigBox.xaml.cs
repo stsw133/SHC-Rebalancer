@@ -126,7 +126,7 @@ public partial class ConfigBox : StswComboBox
             if (!File.Exists(filePath))
                 throw new IOException("File for selected config does not exist!");
 
-            StswFn.OpenFile(filePath);
+            StswFn.OpenPath(filePath);
         }
         catch (Exception ex)
         {
@@ -146,7 +146,7 @@ public partial class ConfigBox : StswComboBox
             if (!Directory.Exists(directoryPath))
                 throw new IOException("Directory for selected config does not exist!");
 
-            StswFn.OpenFile(directoryPath);
+            StswFn.OpenPath(directoryPath);
         }
         catch (Exception ex)
         {
