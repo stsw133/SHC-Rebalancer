@@ -19,7 +19,7 @@
 	
 -Sheriff:
 	-Normal troops changed from 6 Maceman, 4 Crossbowman, 2 FireThrower => 8 Crossbowman, 12 Pikeman, 4 FireThrower
-	-Crusade troops changed from 30 Maceman, 30 Crossbowman, 10 FireThrower => 60 Crossbowman, 60 Pikeman, 20 FireThrower
+	-Crusade troops changed from 30 Maceman, 30 Crossbowman, 10 FireThrower => 60 Crossbowman, 40 Pikeman, 20 FireThrower
 	-Deathmatch troops changed from 6 Maceman, 4 Crossbowman, 2 FireThrower => 8 Crossbowman, 12 Pikeman, 4 FireThrower
 	
 -Abbot:
@@ -250,7 +250,7 @@
 			},
 			"Crusade": {
 				"Crossbowman": 60,
-				"Pikeman": 60,
+				"Pikeman": 40,
 				"FireThrower": 20,
 			},
 			"Deathmatch": {
@@ -287,37 +287,128 @@
 				"Monk": 24,
 			}
 		},
+		"Arslan":
+		{
+			"Normal": {
+				"Assassin": 6,
+				"HorseArcher": 12,
+			},
+			"Crusade": {
+				"Slave": 20,
+				"Assassin": 24,
+				"HorseArcher": 60,
+			},
+			"Deathmatch": {
+				"Assassin": 6,
+				"HorseArcher": 12,
+			}
+		},
+		"Baibars":
+		{
+			"Normal": {
+				"ArabArcher": 12,
+				"ArabSwordsman": 10,
+				"FireThrower": 4,
+			},
+			"Crusade": {
+				"ArabArcher": 60,
+				"Slave": 16,
+				"ArabSwordsman": 40,
+				"FireThrower": 16,
+			},
+			"Deathmatch": {
+				"ArabArcher": 12,
+				"ArabSwordsman": 10,
+				"FireThrower": 4,
+			}
+		},
+		"Baldwin":
+		{
+			"Normal": {
+				"Crossbowman": 12,
+				"Swordsman": 10,
+				"Monk": 4,
+			},
+			"Crusade": {
+				"Crossbowman": 40,
+				"Swordsman": 36,
+				"Knight": 12,
+				"Monk": 12,
+			},
+			"Deathmatch": {
+				"Crossbowman": 12,
+				"Swordsman": 10,
+				"Monk": 4,
+			}
+		},
+		"Bohemond":
+		{
+			"Normal": {
+				"EuropArcher": 12,
+				"Maceman": 12,
+				"Swordsman": 6,
+			},
+			"Crusade": {
+				"EuropArcher": 40,
+				"Maceman": 60,
+				"Swordsman": 20,
+			},
+			"Deathmatch": {
+				"EuropArcher": 12,
+				"Maceman": 12,
+				"Swordsman": 6,
+			}
+		},
 		"Hugh":
 		{
 			"Normal": {
-				"Spearman": 16,
+				"Spearman": 24,
 				"Crossbowman": 12,
 			},
 			"Crusade": {
-				"Spearman": 100,
+				"Spearman": 80,
 				"Crossbowman": 40,
+				"Knight": 24,
 			},
 			"Deathmatch": {
-				"Spearman": 16,
+				"Spearman": 24,
 				"Crossbowman": 12,
 			}
 		},
 		"Kahin":
 		{
 			"Normal": {
-				"ArabArcher": 8,
-				"Slinger": 12,
-				"Assassin": 8,
+				"ArabArcher": 16,
+				"Slinger": 16,
+				"Assassin": 5,
 			},
 			"Crusade": {
-				"ArabArcher": 40,
-				"Slinger": 60,
-				"Assassin": 40,
+				"ArabArcher": 80,
+				"Slinger": 80,
+				"Assassin": 24,
 			},
 			"Deathmatch": {
+				"ArabArcher": 16,
+				"Slinger": 16,
+				"Assassin": 5,
+			}
+		},
+		"Manuel":
+		{
+			"Normal": {
+				"Crossbowman": 8,
 				"ArabArcher": 8,
-				"Slinger": 12,
-				"Assassin": 8,
+				"ArabSwordsman": 8,
+			},
+			"Crusade": {
+				"Crossbowman": 40,
+				"ArabArcher": 40,
+				"ArabSwordsman": 32,
+			},
+			"Deathmatch": {
+				"Crossbowman": 8,
+				"ArabArcher": 8,
+				"ArabSwordsman": 8,
 			}
 		},
 		"Melisende":
@@ -325,94 +416,152 @@
 			"Normal": {
 				"EuropArcher": 12,
 				"Swordsman": 12,
+				"Monk": 4,
 			},
 			"Crusade": {
-				"EuropArcher": 80,
-				"Swordsman": 20,
-				"Knight": 8,
+				"EuropArcher": 60,
+				"Swordsman": 40,
+				"Monk": 12,
 			},
 			"Deathmatch": {
 				"EuropArcher": 12,
 				"Swordsman": 12,
+				"Monk": 4,
 			}
 		},
 		"Nawab":
 		{
 			"Normal": {
-				"ArabArcher": 12,
-				"Slave": 12,
+				"ArabArcher": 16,
+				"Slave": 40,
 			},
 			"Crusade": {
 				"ArabArcher": 80,
 				"Slave": 80,
-				"Slinger": 80,
+				"Assassin": 16,
 			},
 			"Deathmatch": {
-				"ArabArcher": 12,
-				"Slave": 12,
+				"ArabArcher": 16,
+				"Slave": 40,
 			}
 		},
 		"Nomad":
 		{
 			"Normal": {
-				"Spearman": 12,
-				"HorseArcher": 8,
+				"Spearman": 16,
+				"Slinger": 16,
 			},
 			"Crusade": {
-				"Spearman": 60,
-				"Slinger": 60,
-				"HorseArcher": 40,
+				"Spearman": 80,
+				"Slinger": 80,
+				"HorseArcher": 20,
 			},
 			"Deathmatch": {
-				"Spearman": 12,
-				"HorseArcher": 8,
+				"Spearman": 16,
+				"Slinger": 16,
+			}
+		},
+		"Reynald":
+		{
+			"Normal": {
+				"Maceman": 12,
+				"Crossbowman": 12,
+				"Assassin": 3,
+			},
+			"Crusade": {
+				"Maceman": 60,
+				"Crossbowman": 40,
+				"Assassin": 12,
+			},
+			"Deathmatch": {
+				"Maceman": 12,
+				"Crossbowman": 12,
+				"Assassin": 3,
 			}
 		},
 		"Rogue":
 		{
 			"Normal": {
-				"Maceman": 24,
+				"EuropArcher": 16,
+				"Maceman": 16,
 			},
 			"Crusade": {
-				"EuropArcher": 80,
+				"EuropArcher": 60,
 				"Maceman": 80,
 			},
 			"Deathmatch": {
-				"Maceman": 24,
+				"EuropArcher": 16,
+				"Maceman": 16,
 			}
 		},
 		"Sentinel":
 		{
 			"Normal": {
-				"Crossbowman": 12,
+				"EuropArcher": 12,
+				"Crossbowman": 8,
 				"Pikeman": 12,
 			},
 			"Crusade": {
 				"EuropArcher": 40,
-				"Crossbowman": 40,
-				"Pikeman": 20,
+				"Crossbowman": 20,
+				"Pikeman": 60,
 			},
 			"Deathmatch": {
-				"Crossbowman": 12,
+				"EuropArcher": 12,
+				"Crossbowman": 8,
 				"Pikeman": 12,
 			}
 		},
 		"Shajar":
 		{
 			"Normal": {
-				"ArabArcher": 10,
-				"Assassin": 10,
+				"ArabArcher": 16,
+				"Assassin": 8,
 				"FireThrower": 4,
 			},
 			"Crusade": {
-				"ArabArcher": 90,
-				"Assassin": 30,
-				"FireThrower": 12,
+				"ArabArcher": 80,
+				"Assassin": 32,
+				"FireThrower": 16,
 			},
 			"Deathmatch": {
-				"ArabArcher": 10,
-				"Assassin": 10,
+				"ArabArcher": 16,
+				"Assassin": 8,
 				"FireThrower": 4,
+			}
+		},
+		"Tamar":
+		{
+			"Normal": {
+				"Crossbowman": 12,
+				"Pikeman": 12,
+				"Monk": 4,
+			},
+			"Crusade": {
+				"Crossbowman": 40,
+				"Pikeman": 40,
+				"Monk": 12,
+			},
+			"Deathmatch": {
+				"Crossbowman": 12,
+				"Pikeman": 12,
+				"Monk": 4,
+			}
+		},
+		"Zengi":
+		{
+			"Normal": {
+				"ArabArcher": 16,
+				"ArabSwordsman": 8,
+			},
+			"Crusade": {
+				"ArabArcher": 80,
+				"HorseArcher": 24,
+				"ArabSwordsman": 20,
+			},
+			"Deathmatch": {
+				"ArabArcher": 16,
+				"ArabSwordsman": 8,
 			}
 		},
 		"PlayerEurop":

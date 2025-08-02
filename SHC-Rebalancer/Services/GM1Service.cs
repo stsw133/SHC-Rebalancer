@@ -27,22 +27,32 @@ public static class GM1Service
             if (index < 0 || index >= decodedFile.ImagesTGX.Count)
                 continue;
 
+            var tgxImage = decodedFile.ImagesTGX[index];
+
             int width = 0, height = 0;
             var colors = GM1Utils.LoadImage(pngFilePath, ref width, ref height, type: 1);
 
-            var tgxImage = decodedFile.ImagesTGX[index];
-
-            if (tgxImage.Header.Width != width || tgxImage.Header.Height != height)
-                continue;
-
-            tgxImage.EncodeWithoutPalette(colors, width, height);
-            tgxImage.Header.OffsetX = 0;
-            tgxImage.Header.OffsetY = 0;
             tgxImage.Header.Width = (ushort)width;
             tgxImage.Header.Height = (ushort)height;
+
+            tgxImage.Header.OffsetX = (ushort)Math.Max(0, (tgxImage.Width - width) / 2);
+            tgxImage.Header.OffsetY = (ushort)Math.Max(0, (tgxImage.Height - height) / 2);
+
+            tgxImage.EncodeWithoutPalette(colors, width, height);
         }
+
+        uint offset = 0;
+        for (int i = 0; i < decodedFile.ImagesTGX.Count; i++)
+        {
+            decodedFile.ImagesTGX[i].Offset = offset;
+            decodedFile.ImagesTGX[i].ByteSize = (uint)decodedFile.ImagesTGX[i].ImageData.Length;
+            offset += decodedFile.ImagesTGX[i].ByteSize;
+        }
+
+        decodedFile.Header.DataSize = offset;
 
         var newGm1Bytes = decodedFile.GetNewGM1Bytes();
         File.WriteAllBytes(gm1FilePath, newGm1Bytes);
     }
+
 }

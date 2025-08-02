@@ -427,12 +427,16 @@ Below is list of buildings for every AI (in build order).
 	-Pitch
 	
 -Arslan (#7 in AI ranking):
+	-??x Good stuff (+1 to popularity)
 	
 -Baibars (#1 in AI ranking):
+	-??x Good stuff (-3 to popularity)
 	
 -Baldwin (#2 in AI ranking):
+	-??x Good stuff (+2 to popularity)
 	
 -Bohemond (#6 in AI ranking):
+	-??x Good stuff (+1 to popularity)
 	
 -Hugh (#12 in AI ranking):
 	-2x Stockpile
@@ -463,33 +467,34 @@ Below is list of buildings for every AI (in build order).
 	-Moat
 	-Killing pits
 	
--Kahin (#14 in AI ranking):
+-Kahin (#13 in AI ranking):
 	-3x Stockpile
 	-1x Granary
 	-1x Trading post
 	-1x Mercenary post
 	-1x Engineer guild
 	-6x House
-	-3x Well
+	-1x Water pot
 	-2x Chapel
-	-1x Healers
+	-2x Healers
 	-1x Windmill
 	-8x Bakery
-	-22 Good stuff (+5 to popularity)
-	-6x Tower1
-	-3x Small gatehouse
-	-High walls
-	-High crenels
+	-27 Bad stuff (-5 to popularity)
+	-2x Tower5
+	-2x Tower1
+	-2x Small gatehouse
 	-Low walls
 	-Low crenels
 	-Stairs
-	-3x Dog cage
+	-2x Dog cage
 	-Killing pits
 	-Pitch
 	
 -Manuel (#4 in AI ranking):
+	-??x Good stuff (+5 to popularity)
 	
--Melisende (#10 in AI ranking):
+-Melisende (#9 in AI ranking):
+	-24x Good stuff (+4 to popularity)
 	
 -Nawab (#15 in AI ranking):
 	-2x Stockpile
@@ -522,19 +527,17 @@ Below is list of buildings for every AI (in build order).
 	-1x Engineer guild
 	-4x House
 	-2x Well
-	-1x Fletcher
 	-4x Poleturner
 	-2x Woodcutter hut
 	-2x Hunter post
-	-4x Tower1
 	-Low walls
 	-Stairs
 	-Killing pits
-	-Pitch
 	
 -Reynald (#5 in AI ranking):
+	-??x Good stuff (-4 to popularity)
 	
--Rogue (#13 in AI ranking):
+-Rogue (#14 in AI ranking):
 	-2x Stockpile
 	-1x Granary
 	-1x Armoury
@@ -586,11 +589,40 @@ Below is list of buildings for every AI (in build order).
 	-Moat
 	-Killing pits
 	
--Shajar (#9 in AI ranking):
+-Shajar (#10 in AI ranking):
+	-3x Stockpile
+	-1x Granary
+	-1x Trading post
+	-1x Mercenary post
+	-1x Engineer guild
+	-9x House
+	-1x Water pot
+	-2x Well
+	-1x Mill
+	-8x Bakery
+	-3x Brewery
+	-2x Inn
+	-1x Healers
+	-24x Good stuff (+4 to popularity)
+	-2x Tower5
+	-4x Tower1
+	-3x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Low crenels
+	-Stairs
+	-1x Drawbridge
+	-Moat
+	-2x Dog cage
+	-Killing pits
+	-Pitch
 	
--Tamara (#8 in AI ranking):
+-Tamar (#8 in AI ranking):
+	-??x Good stuff (+5 to popularity)
 	
 -Zengi (#3 in AI ranking):
+	-??x Good stuff (+3 to popularity)
 	
 	",
 	"ReplaceAllCastles": true

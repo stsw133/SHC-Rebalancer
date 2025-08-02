@@ -24,12 +24,7 @@ public class TGXImage
     public void EncodeWithoutPalette(List<ushort> colors, int width, int height)
     {
         var encodedBytes = GM1Utils.ImgToGM1ByteArray(colors, width, height, 1);
-        if (encodedBytes.Count < ByteSize)
-            encodedBytes.AddRange(new byte[ByteSize - encodedBytes.Count]);
-        else if (encodedBytes.Count > ByteSize)
-            encodedBytes = [.. encodedBytes.Take((int)ByteSize)];
-
         ImageData = [.. encodedBytes];
+        ByteSize = (uint)ImageData.Length;
     }
-
 }

@@ -19,18 +19,22 @@
 
   <ItemGroup>
     <Compile Remove="Resources\configs\air\Hugon\**" />
+    <Compile Remove="Resources\configs\air\Mufasir\**" />
     <Compile Remove="Resources\configs\air\Nomad\**" />
     <Compile Remove="Services\Validation\**" />
     <Compile Remove="Modules\_base\**" />
     <EmbeddedResource Remove="Resources\configs\air\Hugon\**" />
+    <EmbeddedResource Remove="Resources\configs\air\Mufasir\**" />
     <EmbeddedResource Remove="Resources\configs\air\Nomad\**" />
     <EmbeddedResource Remove="Services\Validation\**" />
     <EmbeddedResource Remove="Modules\_base\**" />
     <None Remove="Resources\configs\air\Hugon\**" />
+    <None Remove="Resources\configs\air\Mufasir\**" />
     <None Remove="Resources\configs\air\Nomad\**" />
     <None Remove="Services\Validation\**" />
     <None Remove="Modules\_base\**" />
     <Page Remove="Resources\configs\air\Hugon\**" />
+    <Page Remove="Resources\configs\air\Mufasir\**" />
     <Page Remove="Resources\configs\air\Nomad\**" />
     <Page Remove="Services\Validation\**" />
     <Page Remove="Modules\_base\**" />
@@ -484,6 +488,48 @@
     <None Remove="Resources\configs\air\Bohemond\videos\natural.bik" />
     <None Remove="Resources\configs\air\Bohemond\videos\nervous.bik" />
     <None Remove="Resources\configs\air\Bohemond\videos\taunt.bik" />
+    <None Remove="Resources\configs\air\Manuel\avatar_big.png" />
+    <None Remove="Resources\configs\air\Manuel\avatar_small.png" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\add_player_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\ally_death_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\anger_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\anger_02.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\boast_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\congrats_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\extra_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\General_Message.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\helpsent_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\help_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\kick_player_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\nervous_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\nervous_02.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\noattack_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\noattack_02.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\nohelp_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\nohelp_02.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\notsent_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\plead_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\req_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\sent_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\siege_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\taunt_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\taunt_02.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\taunt_03.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\taunt_04.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\team_losing_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\team_winning_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\thanks_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\vict_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\vict_02.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\vict_03.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\vict_04.wav" />
+    <None Remove="Resources\configs\air\Manuel\speech\English\willattack_01.wav" />
+    <None Remove="Resources\configs\air\Manuel\text\English.txt" />
+    <None Remove="Resources\configs\air\Manuel\text\Polish.txt" />
+    <None Remove="Resources\configs\air\Manuel\videos\angry.bik" />
+    <None Remove="Resources\configs\air\Manuel\videos\natural.bik" />
+    <None Remove="Resources\configs\air\Manuel\videos\nervous.bik" />
+    <None Remove="Resources\configs\air\Manuel\videos\taunt.bik" />
     <None Remove="Resources\configs\air\Nomad\avatar_big.png" />
     <None Remove="Resources\configs\air\Nomad\avatar_small.png" />
     <None Remove="Resources\configs\air\Nomad\speech\add_player_01.wav" />
@@ -682,84 +728,6 @@
     <None Remove="Resources\configs\air\Melisende\videos\natural.bik" />
     <None Remove="Resources\configs\air\Melisende\videos\nervous.bik" />
     <None Remove="Resources\configs\air\Melisende\videos\taunt.bik" />
-    <None Remove="Resources\configs\air\Mufasir\avatar_big.png" />
-    <None Remove="Resources\configs\air\Mufasir\avatar_small.png" />
-    <None Remove="Resources\configs\air\Mufasir\speech\add_player_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\ally_death_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\anger_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\anger_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\boast_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\congrats_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\add_player_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\ally_death_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\anger_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\anger_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\boast_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\congrats_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\extra_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\General_Message.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\helpsent_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\help_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\kick_player_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\nervous_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\nervous_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\noattack_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\noattack_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\nohelp_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\nohelp_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\notsent_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\plead_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\req_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\sent_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\siege_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\taunt_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\taunt_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\taunt_03.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\taunt_04.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\team_losing_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\team_winning_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\thanks_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\vict_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\vict_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\vict_03.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\vict_04.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\English\willattack_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\extra_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\General_Message.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\helpsent_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\help_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\kick_player_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\nervous_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\nervous_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\noattack_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\noattack_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\nohelp_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\nohelp_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\notsent_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\plead_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\req_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\sent_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\siege_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\taunt_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\taunt_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\taunt_03.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\taunt_04.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\team_losing_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\team_winning_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\thanks_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\vict_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\vict_02.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\vict_03.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\vict_04.wav" />
-    <None Remove="Resources\configs\air\Mufasir\speech\willattack_01.wav" />
-    <None Remove="Resources\configs\air\Mufasir\text\cr.txt" />
-    <None Remove="Resources\configs\air\Mufasir\text\English.txt" />
-    <None Remove="Resources\configs\air\Mufasir\text\pl.txt" />
-    <None Remove="Resources\configs\air\Mufasir\text\Polish.txt" />
-    <None Remove="Resources\configs\air\Mufasir\videos\angry.bik" />
-    <None Remove="Resources\configs\air\Mufasir\videos\natural.bik" />
-    <None Remove="Resources\configs\air\Mufasir\videos\nervous.bik" />
-    <None Remove="Resources\configs\air\Mufasir\videos\taunt.bik" />
     <None Remove="Resources\configs\air\Nawab\avatar_big.png" />
     <None Remove="Resources\configs\air\Nawab\avatar_small.png" />
     <None Remove="Resources\configs\air\Nawab\speech\add_player_01.wav" />
@@ -1036,6 +1004,90 @@
     <None Remove="Resources\configs\air\Shajar\videos\natural.bik" />
     <None Remove="Resources\configs\air\Shajar\videos\nervous.bik" />
     <None Remove="Resources\configs\air\Shajar\videos\taunt.bik" />
+    <None Remove="Resources\configs\air\Tamar\avatar_big.png" />
+    <None Remove="Resources\configs\air\Tamar\avatar_small.png" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\add_player_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\ally_death_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\anger_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\anger_02.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\boast_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\congrats_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\extra_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\General_Message.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\helpsent_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\help_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\kick_player_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\nervous_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\nervous_02.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\noattack_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\noattack_02.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\nohelp_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\nohelp_02.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\notsent_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\plead_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\req_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\sent_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\siege_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\taunt_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\taunt_02.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\taunt_03.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\taunt_04.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\team_losing_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\team_winning_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\thanks_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\vict_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\vict_02.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\vict_03.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\vict_04.wav" />
+    <None Remove="Resources\configs\air\Tamar\speech\English\willattack_01.wav" />
+    <None Remove="Resources\configs\air\Tamar\text\English.txt" />
+    <None Remove="Resources\configs\air\Tamar\text\Polish.txt" />
+    <None Remove="Resources\configs\air\Tamar\videos\angry.bik" />
+    <None Remove="Resources\configs\air\Tamar\videos\natural.bik" />
+    <None Remove="Resources\configs\air\Tamar\videos\nervous.bik" />
+    <None Remove="Resources\configs\air\Tamar\videos\taunt.bik" />
+    <None Remove="Resources\configs\air\Zengi\avatar_big.png" />
+    <None Remove="Resources\configs\air\Zengi\avatar_small.png" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\add_player_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\ally_death_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\anger_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\anger_02.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\boast_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\congrats_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\extra_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\General_Message.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\helpsent_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\help_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\kick_player_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\nervous_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\nervous_02.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\noattack_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\noattack_02.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\nohelp_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\nohelp_02.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\notsent_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\plead_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\req_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\sent_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\siege_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\taunt_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\taunt_02.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\taunt_03.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\taunt_04.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\team_losing_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\team_winning_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\thanks_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\vict_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\vict_02.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\vict_03.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\vict_04.wav" />
+    <None Remove="Resources\configs\air\Zengi\speech\English\willattack_01.wav" />
+    <None Remove="Resources\configs\air\Zengi\text\English.txt" />
+    <None Remove="Resources\configs\air\Zengi\text\Polish.txt" />
+    <None Remove="Resources\configs\air\Zengi\videos\angry.bik" />
+    <None Remove="Resources\configs\air\Zengi\videos\natural.bik" />
+    <None Remove="Resources\configs\air\Zengi\videos\nervous.bik" />
+    <None Remove="Resources\configs\air\Zengi\videos\taunt.bik" />
     <None Remove="Resources\configs\aiv\stsw.json" />
     <None Remove="Resources\configs\aiv\stsw\abbot2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\abbot3.aiv" />
@@ -1092,6 +1144,7 @@
     <None Remove="Resources\configs\aiv\stsw\marshal6.aiv" />
     <None Remove="Resources\configs\aiv\stsw\marshal7.aiv" />
     <None Remove="Resources\configs\aiv\stsw\marshal8.aiv" />
+    <None Remove="Resources\configs\aiv\stsw\melisende.aiv" />
     <None Remove="Resources\configs\aiv\stsw\nizar2.aiv" />
     <None Remove="Resources\configs\aiv\stsw\nizar3.aiv" />
     <None Remove="Resources\configs\aiv\stsw\nizar4.aiv" />
@@ -1819,6 +1872,132 @@
     <Content Include="Resources\configs\air\Bohemond\videos\taunt.bik">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\configs\air\Manuel\avatar_big.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\avatar_small.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\add_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\ally_death_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\anger_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\anger_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\boast_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\congrats_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\extra_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\General_Message.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\helpsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\help_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\kick_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\nervous_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\nervous_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\noattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\noattack_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\nohelp_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\nohelp_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\notsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\plead_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\req_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\sent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\siege_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\taunt_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\taunt_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\taunt_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\taunt_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\team_losing_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\team_winning_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\thanks_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\vict_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\vict_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\vict_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\vict_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\speech\English\willattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\text\English.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\text\Polish.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\videos\angry.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\videos\natural.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\videos\nervous.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Manuel\videos\taunt.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\configs\air\Rogue\avatar_big.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2449,132 +2628,6 @@
     <Content Include="Resources\configs\air\Melisende\videos\taunt.bik">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\configs\air\Mufasir\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\configs\air\Mufasir\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\configs\air\Nawab\avatar_big.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -3082,13 +3135,268 @@
     <Content Include="Resources\configs\air\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\configs\air\Tamar\avatar_big.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\avatar_small.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\add_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\ally_death_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\anger_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\anger_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\boast_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\congrats_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\extra_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\General_Message.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\helpsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\help_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\kick_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\nervous_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\nervous_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\noattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\noattack_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\nohelp_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\nohelp_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\notsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\plead_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\req_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\sent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\siege_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\taunt_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\taunt_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\taunt_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\taunt_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\team_losing_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\team_winning_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\thanks_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\vict_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\vict_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\vict_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\vict_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\speech\English\willattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\text\English.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\text\Polish.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\videos\angry.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\videos\natural.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\videos\nervous.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Tamar\videos\taunt.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\configs\air\vanilla.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\avatar_big.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\avatar_small.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\add_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\ally_death_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\anger_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\anger_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\boast_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\congrats_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\extra_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\General_Message.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\helpsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\help_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\kick_player_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\nervous_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\nervous_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\noattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\noattack_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\nohelp_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\nohelp_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\notsent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\plead_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\req_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\sent_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\siege_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\taunt_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\taunt_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\taunt_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\taunt_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\team_losing_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\team_winning_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\thanks_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\vict_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\vict_02.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\vict_03.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\vict_04.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\speech\English\willattack_01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\text\English.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\text\Polish.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\videos\angry.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\videos\natural.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\videos\nervous.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\air\Zengi\videos\taunt.bik">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\configs\aiv\stsw\images\rogue.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\configs\aiv\stsw\images\sentinel.webp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\configs\aiv\stsw\melisende.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\configs\aiv\stsw\rogue.aiv">
