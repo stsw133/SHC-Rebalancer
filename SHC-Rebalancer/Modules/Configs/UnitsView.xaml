@@ -65,7 +65,7 @@
 
                         <StackPanel>
                             <DockPanel>
-                                <se:StswLabel Content="Cost:" IconSource="/Images/resources/Gold.png"/>
+                                <se:StswLabel Content="Cost:" IconSource="/Resources/resources/Gold.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Cost}" IsEnabled="{Binding SelectedItem.Key, ElementName=UnitsSelector, Converter={x:Static local:EnumAttributeConverter.Instance}, ConverterParameter=UnitCost}"/>
                             </DockPanel>
                         </StackPanel>
@@ -103,12 +103,12 @@
 
                         <StackPanel>
                             <DockPanel>
-                                <se:StswLabel Content="Health:" IconSource="/Images/misc/Health.png"/>
+                                <se:StswLabel Content="Health:" IconSource="/Resources/misc/Health.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Health}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Damage from bow:" IconSource="/Images/units/EuropArcher.png"/>
+                                <se:StswLabel Content="Damage from bow:" IconSource="/Resources/units/EuropArcher.png"/>
                                 <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Left" Margin="2 0 0 0" Width="75"
                                                  IconData="{x:Static se:StswIcons.ShieldHalfFull}" IconFill="{DynamicResource StswColor.Neutral}">
                                     <se:StswText FontSize="11" FontWeight="Medium" Margin="-2 0 0 0">
@@ -127,7 +127,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Damage from crossbow:" IconSource="/Images/units/Crossbowman.png"/>
+                                <se:StswLabel Content="Damage from crossbow:" IconSource="/Resources/units/Crossbowman.png"/>
                                 <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Left" Margin="2 0 0 0" Width="75"
                                                  IconData="{x:Static se:StswIcons.ShieldHalfFull}" IconFill="{DynamicResource StswColor.Negative}">
                                     <se:StswText FontSize="11" FontWeight="Medium" Margin="-2 0 0 0">
@@ -146,7 +146,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Damage from sling:" IconSource="/Images/units/Slinger.png"/>
+                                <se:StswLabel Content="Damage from sling:" IconSource="/Resources/units/Slinger.png"/>
                                 <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Left" Margin="2 0 0 0" Width="75"
                                                  IconData="{x:Static se:StswIcons.ShieldHalfFull}" IconFill="{DynamicResource StswColor.Positive}">
                                     <se:StswText FontSize="11" FontWeight="Medium" Margin="-2 0 0 0">
@@ -179,13 +179,13 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Melee damage:" IconSource="/Images/misc/MeleeDamage.png"/>
+                                <se:StswLabel Content="Melee damage:" IconSource="/Resources/misc/MeleeDamage.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding MeleeDamage}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Melee damage vs:" IconSource="/Images/misc/MeleeDamage.png"/>
-                                <se:StswDropButton Margin="3" HorizontalContentAlignment="Center" IsEnabled="{Binding MeleeDamageVs.Count, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=&gt;0}" ItemsSource="{Binding MeleeDamageVs}" se:StswScrollView.IsDynamic="False">
+                                <se:StswLabel Content="Melee damage vs:" IconSource="/Resources/misc/MeleeDamage.png"/>
+                                <se:StswDropButton Margin="3" HorizontalContentAlignment="Center" IsEnabled="{Binding MeleeDamageVs.Count, Converter={x:Static se:StswCompareConverter.Instance}, ConverterParameter=&gt;0}" ItemsSource="{Binding MeleeDamageVs}">
                                     <se:StswDropButton.Header>
                                         <se:StswText FontSize="11" FontWeight="Bold">
                                             <Run Text="{Binding MeleeDamageVs.Count, Mode=OneWay}"/>
@@ -206,7 +206,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Melee damage to buildings:" IconSource="/Images/buildings/Hovel.png"/>
+                                <se:StswLabel Content="Melee damage to buildings:" IconSource="/Resources/buildings/Hovel.png"/>
                                 <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Center" Width="50">
                                     <se:StswText FontWeight="Medium">
                                         <Run>
@@ -224,7 +224,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Melee damage to towers:" IconSource="/Images/buildings/RoundTower.png"/>
+                                <se:StswLabel Content="Melee damage to towers:" IconSource="/Resources/buildings/RoundTower.png"/>
                                 <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Center" Width="50">
                                     <se:StswText FontWeight="Medium">
                                         <Run>
@@ -242,7 +242,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Melee damage to walls:" IconSource="/Images/buildings/HighWalls.png"/>
+                                <se:StswLabel Content="Melee damage to walls:" IconSource="/Resources/buildings/HighWalls.png"/>
                                 <se:StswSubLabel DockPanel.Dock="Right" HorizontalContentAlignment="Center" Width="50">
                                     <se:StswText FontWeight="Medium">
                                         <Run>

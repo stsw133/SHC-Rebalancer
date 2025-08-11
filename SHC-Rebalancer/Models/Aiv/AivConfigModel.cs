@@ -9,7 +9,7 @@ public class AivConfigModel : ConfigModel
     {
         get
         {
-            var directory = AppDomain.CurrentDomain.BaseDirectory + $"Resources\\configs\\aiv\\{Name}";
+            var directory = AppDomain.CurrentDomain.BaseDirectory + $"Configs\\aiv\\{Name}";
             if (Directory.Exists(directory))
                 return Directory.GetFiles(directory, "*.aiv");
             return [];
@@ -19,7 +19,7 @@ public class AivConfigModel : ConfigModel
     {
         get
         {
-            var directory = AppDomain.CurrentDomain.BaseDirectory + $"Resources\\configs\\aiv\\{Name}\\images";
+            var directory = AppDomain.CurrentDomain.BaseDirectory + $"Configs\\aiv\\{Name}\\images";
             if (Directory.Exists(directory))
                 return [..Directory.GetFiles(directory).Where(x => Path.GetExtension(x).In(".bmp", ".jpg", ".png", ".webp"))];
             return [];

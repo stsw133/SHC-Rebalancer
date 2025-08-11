@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:SHC_Rebalancer"
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
              mc:Ignorable="d">
-    <UserControl.Background>
-        <ImageBrush ImageSource="/Images/background.webp" Opacity="0.2"/>
-    </UserControl.Background>
 
     <se:StswGroupBox MaxHeight="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"
                      MaxWidth="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"
@@ -76,7 +73,7 @@
                 <Run Text="If you are not using the UnofficialCrusaderPatch or any other modification applications besides the Rebalancer, enable this option."/>
                 <Run Text="If you are using modification applications and want to retain their settings, disable this option but be cautious about compatibility issues,"/>
                 <Run Text="e.g., avoid enabling the 'AIC' option in the Rebalancer or potentially some other features or custom address changes (to be verified)."/>
-                <Run Text="Alternatively, change the base addresses in the 'Resources/base' directory before installing the Rebalancer."/>
+                <Run Text="Alternatively, change the base addresses in the 'Configs/_base' directory before installing the Rebalancer."/>
             </se:StswText>
         </se:StswScrollView>
     </se:StswGroupBox>

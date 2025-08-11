@@ -42,10 +42,10 @@ internal static class BinaryPatchService
     }
 
     /// WriteIfDifferent
-    internal static void WriteIfDifferent(int address, object? newValue, int size, string? description)
+    internal static bool WriteIfDifferent(int address, object? newValue, int size, string? description)
     {
         if (newValue == null || address == default || _fs == null || _reader == null || _writer == null)
-            return;
+            return false;
 
         if (address + size > _fs.Length)
         {
@@ -67,7 +67,11 @@ internal static class BinaryPatchService
 
             _fs.Seek(address, SeekOrigin.Begin);
             _writer.Write(newValueBytes);
+
+            return true;
         }
+
+        return false;
     }
 
     /// ReadValueAsBytes

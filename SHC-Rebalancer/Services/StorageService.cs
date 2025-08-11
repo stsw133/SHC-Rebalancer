@@ -24,16 +24,16 @@ internal static class StorageService
     public static string GameLanguage => TexService.GetTranslationAtIndex(6);
 
     public static string AivPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "aiv");
-    public static string BaseAddressesPath => Path.Combine(AppContext.BaseDirectory, "Resources", "base");
+    public static string BaseAddressesPath => Path.Combine(AppContext.BaseDirectory, "Configs", "_base");
     public static string BinksPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "binks");
-    public static string ConfigsPath => Path.Combine(AppContext.BaseDirectory, "Resources", "configs");
+    public static string ConfigsPath => Path.Combine(AppContext.BaseDirectory, "Configs");
     public static string FxSpeechPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "fx", "speech");
     public static string GmPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "gm");
-    public static string UcpPath => Path.Combine(AppContext.BaseDirectory, "Resources", "ucp");
+    public static string UcpPath => Path.Combine(AppContext.BaseDirectory, "Configs", "_ucp");
     
     public static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> BaseAddresses { get; set; } = [];
     public static Dictionary<string, ObservableCollection<object>> Configs { get; set; } = [];
-    public static IEnumerable<string> CustomAIs { get; set; } = Directory.GetDirectories(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources/configs/air")).Select(x => Path.GetFileName(x));
+    public static IEnumerable<string> CustomAIs { get; set; } = Directory.GetDirectories(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configs/air")).Select(x => Path.GetFileName(x));
 
     /// LoadBaseAddresses
     internal static Dictionary<GameVersion, Dictionary<string, BaseAddressModel>> LoadBaseAddresses()
@@ -166,6 +166,10 @@ internal static class StorageService
         var options = new JsonSerializerOptions
         {
             AllowTrailingCommas = forReading,
+            Converters =
+            {
+                new JsonStringEnumConverter()
+            },
             PropertyNameCaseInsensitive = forReading,
             DefaultIgnoreCondition = forReading ? JsonIgnoreCondition.Never : JsonIgnoreCondition.WhenWritingNull,
             WriteIndented = !forReading,
@@ -176,31 +180,7 @@ internal static class StorageService
         };
         if (!forReading)
             options.Converters.Add(new SingleLineArrayConverterFactory());
-
-        options.Converters.Add(new JsonStringEnumConverter<BlacksmithSetting>());
-        options.Converters.Add(new JsonStringEnumConverter<FletcherSetting>());
-        options.Converters.Add(new JsonStringEnumConverter<GameVersion>());
-        options.Converters.Add(new JsonStringEnumConverter<HarassingUnit>());
-        options.Converters.Add(new JsonStringEnumConverter<LordType>());
-        options.Converters.Add(new JsonStringEnumConverter<PoleturnerSetting>());
-        options.Converters.Add(new JsonStringEnumConverter<TargetChoice>());
-
-        if (folderKey == "aic")
-        {
-            options.Converters.Add(new JsonStringEnumConverter<Building>());
-            options.Converters.Add(new JsonStringEnumConverter<Resource>());
-            options.Converters.Add(new JsonStringEnumConverter<Unit>());
-        }
-        else if (folderKey == "outposts")
-        {
-            options.Converters.Add(new JsonStringEnumConverter<Unit>());
-        }
-
-        if (!folderKey.In("goods", "troops"))
-        {
-            options.Converters.Add(new JsonStringEnumConverter<SkirmishMode>());
-        }
-
+        
         return options;
     }
 

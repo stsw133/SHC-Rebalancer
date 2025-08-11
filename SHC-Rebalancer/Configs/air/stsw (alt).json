@@ -1,0 +1,22 @@
+{
+	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
+	"AIs": {
+		"All": null,
+		"Rat": "Slavemaster",
+		"Snake": "Nomad",
+		"Pig": "Shajar",
+		"Wolf": "Baibars",
+		"Saladin": "Baldwin",
+		"Caliph": "Melisende",
+		"Sultan": "Rogue",
+		"Richard": "Manuel",
+		"Frederick": "Tamar",
+		"Phillip": "Reynald",
+		"Wazir": "Zengi",
+		"Emir": "Bohemond",
+		"Nizar": "Hugh",
+		"Sheriff": "Arslan",
+		"Marshal": "Sentinel",
+		"Abbot": "Kahin"
+	}
+}

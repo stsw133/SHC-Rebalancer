@@ -51,27 +51,27 @@
 
                         <StackPanel>
                             <DockPanel>
-                                <se:StswLabel Content="Wood cost:" IconSource="/Images/resources/Wood.png"/>
+                                <se:StswLabel Content="Wood cost:" IconSource="/Resources/resources/Wood.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Cost[0]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Stone cost:" IconSource="/Images/resources/Stone.png"/>
+                                <se:StswLabel Content="Stone cost:" IconSource="/Resources/resources/Stone.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Cost[1]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Iron cost:" IconSource="/Images/resources/Iron.png"/>
+                                <se:StswLabel Content="Iron cost:" IconSource="/Resources/resources/Iron.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Cost[2]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Pitch cost:" IconSource="/Images/resources/Pitch.png"/>
+                                <se:StswLabel Content="Pitch cost:" IconSource="/Resources/resources/Pitch.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Cost[3]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Gold cost:" IconSource="/Images/resources/Gold.png"/>
+                                <se:StswLabel Content="Gold cost:" IconSource="/Resources/resources/Gold.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Cost[4]}"/>
                             </DockPanel>
                         </StackPanel>
@@ -85,12 +85,12 @@
 
                         <StackPanel>
                             <DockPanel>
-                                <se:StswLabel Content="Health:" IconSource="/Images/misc/Health.png"/>
+                                <se:StswLabel Content="Health:" IconSource="/Resources/misc/Health.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Health}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Housing:" IconSource="/Images/units/Peasant.png"/>
+                                <se:StswLabel Content="Housing:" IconSource="/Resources/units/Peasant.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Housing}"/>
                             </DockPanel>
                         </StackPanel>

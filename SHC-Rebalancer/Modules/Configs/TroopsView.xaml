@@ -51,13 +51,13 @@
 
                         <StackPanel>
                             <UniformGrid Height="24" HorizontalAlignment="Right" Margin="3" Rows="1" Width="350">
-                                <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishmodes/Normal.png"/>
-                                <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishmodes/Crusade.png"/>
-                                <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishmodes/Deathmatch.png"/>
+                                <se:StswImage HorizontalContentAlignment="Center" Source="/Resources/skirmishmodes/Normal.png"/>
+                                <se:StswImage HorizontalContentAlignment="Center" Source="/Resources/skirmishmodes/Crusade.png"/>
+                                <se:StswImage HorizontalContentAlignment="Center" Source="/Resources/skirmishmodes/Deathmatch.png"/>
                             </UniformGrid>
 
                             <DockPanel>
-                                <se:StswLabel Content="EuropArcher:" IconSource="/Images/units/EuropArcher.png" IconScale="2"/>
+                                <se:StswLabel Content="EuropArcher:" IconSource="/Resources/units/EuropArcher.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][EuropArcher]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][EuropArcher]}"/>
@@ -66,7 +66,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Crossbowman:" IconSource="/Images/units/Crossbowman.png" IconScale="2"/>
+                                <se:StswLabel Content="Crossbowman:" IconSource="/Resources/units/Crossbowman.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Crossbowman]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Crossbowman]}"/>
@@ -75,7 +75,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Spearman:" IconSource="/Images/units/Spearman.png" IconScale="2"/>
+                                <se:StswLabel Content="Spearman:" IconSource="/Resources/units/Spearman.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Spearman]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Spearman]}"/>
@@ -84,7 +84,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Pikeman:" IconSource="/Images/units/Pikeman.png" IconScale="2"/>
+                                <se:StswLabel Content="Pikeman:" IconSource="/Resources/units/Pikeman.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Pikeman]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Pikeman]}"/>
@@ -93,7 +93,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Maceman:" IconSource="/Images/units/Maceman.png" IconScale="2"/>
+                                <se:StswLabel Content="Maceman:" IconSource="/Resources/units/Maceman.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Maceman]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Maceman]}"/>
@@ -102,7 +102,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Swordsman:" IconSource="/Images/units/Swordsman.png" IconScale="2"/>
+                                <se:StswLabel Content="Swordsman:" IconSource="/Resources/units/Swordsman.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Swordsman]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Swordsman]}"/>
@@ -111,7 +111,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Knight:" IconSource="/Images/units/Knight.png" IconScale="2"/>
+                                <se:StswLabel Content="Knight:" IconSource="/Resources/units/Knight.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Knight]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Knight]}"/>
@@ -120,7 +120,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Ladderman:" IconSource="/Images/units/Ladderman.png" IconScale="2"/>
+                                <se:StswLabel Content="Ladderman:" IconSource="/Resources/units/Ladderman.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Ladderman]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Ladderman]}"/>
@@ -129,7 +129,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Engineer:" IconSource="/Images/units/Engineer.png" IconScale="2"/>
+                                <se:StswLabel Content="Engineer:" IconSource="/Resources/units/Engineer.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Engineer]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Engineer]}"/>
@@ -138,7 +138,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Monk:" IconSource="/Images/units/Monk.png" IconScale="2"/>
+                                <se:StswLabel Content="Monk:" IconSource="/Resources/units/Monk.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Monk]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Monk]}"/>
@@ -147,7 +147,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="ArabArcher:" IconSource="/Images/units/ArabArcher.png" IconScale="2"/>
+                                <se:StswLabel Content="ArabArcher:" IconSource="/Resources/units/ArabArcher.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][ArabArcher]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][ArabArcher]}"/>
@@ -156,7 +156,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Slave:" IconSource="/Images/units/Slave.png" IconScale="2"/>
+                                <se:StswLabel Content="Slave:" IconSource="/Resources/units/Slave.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Slave]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Slave]}"/>
@@ -165,7 +165,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Slinger:" IconSource="/Images/units/Slinger.png" IconScale="2"/>
+                                <se:StswLabel Content="Slinger:" IconSource="/Resources/units/Slinger.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Slinger]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Slinger]}"/>
@@ -174,7 +174,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Assassin:" IconSource="/Images/units/Assassin.png" IconScale="2"/>
+                                <se:StswLabel Content="Assassin:" IconSource="/Resources/units/Assassin.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Assassin]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Assassin]}"/>
@@ -183,7 +183,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="HorseArcher:" IconSource="/Images/units/HorseArcher.png" IconScale="2"/>
+                                <se:StswLabel Content="HorseArcher:" IconSource="/Resources/units/HorseArcher.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][HorseArcher]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][HorseArcher]}"/>
@@ -192,7 +192,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="ArabSwordsman:" IconSource="/Images/units/ArabSwordsman.png" IconScale="2"/>
+                                <se:StswLabel Content="ArabSwordsman:" IconSource="/Resources/units/ArabSwordsman.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][ArabSwordsman]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][ArabSwordsman]}"/>
@@ -201,7 +201,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Firethrower:" IconSource="/Images/units/Firethrower.png" IconScale="2"/>
+                                <se:StswLabel Content="Firethrower:" IconSource="/Resources/units/Firethrower.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][Firethrower]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][Firethrower]}"/>
@@ -210,7 +210,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="FireBallista:" IconSource="/Images/units/FireBallista.png" IconScale="2"/>
+                                <se:StswLabel Content="FireBallista:" IconSource="/Resources/units/FireBallista.png" IconScale="2"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Normal][FireBallista]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding [Crusade][FireBallista]}"/>

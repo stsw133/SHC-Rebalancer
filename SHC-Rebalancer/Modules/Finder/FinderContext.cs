@@ -4,21 +4,10 @@ using System.Reflection;
 using System.Windows.Controls;
 
 namespace SHC_Rebalancer;
-public class FinderContext : StswObservableObject
+public partial class FinderContext : StswObservableObject
 {
-    public StswAsyncCommand FindCommand { get; }
-    public StswCommand<DataGridCellEditEndingEventArgs> AddressValueChangedCommand { get; }
-
-    public FinderContext()
-    {
-        FindCommand = new(Find);
-        AddressValueChangedCommand = new(AddressValueChanged);
-    }
-
-
-
-    /// Find
-    public async Task Find()
+    [StswCommand]
+    async Task Find()
     {
         try
         {
@@ -35,8 +24,8 @@ public class FinderContext : StswObservableObject
         }
     }
 
-    /// AddressValueChanged
-    public void AddressValueChanged(DataGridCellEditEndingEventArgs? e)
+    [StswCommand]
+    void AddressValueChanged(DataGridCellEditEndingEventArgs? e)
     {
         try
         {
@@ -74,81 +63,30 @@ public class FinderContext : StswObservableObject
             StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+    
+    [StswObservableProperty] GameVersion? _finderFilterVersion;
+    partial void OnFinderFilterVersionChanged(GameVersion? oldValue, GameVersion? newValue) => FindCommand.Execute(FinderFilterVersion);
 
+    [StswObservableProperty] int _finderFilterSize = 1;
+    partial void OnFinderFilterSizeChanged(int oldValue, int newValue) => FindCommand.Execute(FinderFilterVersion);
 
+    [StswObservableProperty] bool _finderDisplayAsChar;
+    partial void OnFinderDisplayAsCharChanged(bool oldValue, bool newValue) => FindCommand.Execute(FinderFilterVersion);
 
-    /// FinderFilterType
-    public GameVersion? FinderFilterVersion
-    {
-        get => _finderFilterVersion;
-        set => SetProperty(ref _finderFilterVersion, value, () => FindCommand.Execute(FinderFilterVersion));
-    }
-    private GameVersion? _finderFilterVersion;
+    [StswObservableProperty] string? _finderFilterAddress;
+    partial void OnFinderFilterAddressChanged(string? oldValue, string? newValue) => FindCommand.Execute(FinderFilterVersion);
 
-    /// FinderFilterSize
-    public int FinderFilterSize
-    {
-        get => _finderFilterSize;
-        set => SetProperty(ref _finderFilterSize, value, () => FindCommand.Execute(FinderFilterVersion));
-    }
-    private int _finderFilterSize = 1;
+    [StswObservableProperty] int? _finderFilterSkips;
+    partial void OnFinderFilterSkipsChanged(int? oldValue, int? newValue) => FindCommand.Execute(FinderFilterVersion);
 
-    /// FinderDisplayAsChar
-    public bool FinderDisplayAsChar
-    {
-        get => _finderDisplayAsChar;
-        set => SetProperty(ref _finderDisplayAsChar, value, () => FindCommand.Execute(FinderFilterVersion));
-    }
-    private bool _finderDisplayAsChar;
+    [StswObservableProperty] string? _finderFilterValues;
+    partial void OnFinderFilterValuesChanged(string? oldValue, string? newValue) => FindCommand.Execute(FinderFilterVersion);
 
-    /// FinderFilterAddress
-    public string? FinderFilterAddress
-    {
-        get => _finderFilterAddress;
-        set => SetProperty(ref _finderFilterAddress, value, () => FindCommand.Execute(FinderFilterVersion));
-    }
-    private string? _finderFilterAddress;
+    [StswObservableProperty] int _finderFilterLimit = 50;
+    partial void OnFinderFilterLimitChanged(int oldValue, int newValue) => FindCommand.Execute(FinderFilterVersion);
 
-    /// FinderFilterSkips
-    public int? FinderFilterSkips
-    {
-        get => _finderFilterSkips;
-        set => SetProperty(ref _finderFilterSkips, value, () => FindCommand.Execute(FinderFilterVersion));
-    }
-    private int? _finderFilterSkips;
-
-    /// FinderFilterValues
-    public string? FinderFilterValues
-    {
-        get => _finderFilterValues;
-        set => SetProperty(ref _finderFilterValues, value, () => FindCommand.Execute(FinderFilterVersion));
-    }
-    private string? _finderFilterValues;
-
-    /// FinderFilterLimit
-    public int FinderFilterLimit
-    {
-        get => _finderFilterLimit;
-        set => SetProperty(ref _finderFilterLimit, value, () => FindCommand.Execute(FinderFilterVersion));
-    }
-    private int _finderFilterLimit = 50;
-
-    /// FinderResults
-    public ObservableCollection<FinderDataModel> FinderResults
-    {
-        get => _finderResults;
-        set => SetProperty(ref _finderResults, value);
-    }
-    private ObservableCollection<FinderDataModel> _finderResults = [];
-
+    [StswObservableProperty] ObservableCollection<FinderDataModel> _finderResults = [];
     private GameVersion _finderResultsType;
     private int _finderResultsSize;
-
-    /// IsEditModeEnabled
-    public bool IsEditModeEnabled
-    {
-        get => _isEditModeEnabled;
-        set => SetProperty(ref _isEditModeEnabled, value);
-    }
-    private bool _isEditModeEnabled;
+    [StswObservableProperty] bool _isEditModeEnabled;
 }

@@ -2,39 +2,17 @@
 using System.Windows;
 
 namespace SHC_Rebalancer;
-public class MainContext : StswObservableObject
+public partial class MainContext : StswObservableObject
 {
-    public StswAsyncCommand<bool> AcceptTermsCommand { get; }
-    public StswAsyncCommand GamePathChangedCommand { get; }
-
-    public StswAsyncCommand ReloadAllCommand { get; }
-    public StswAsyncCommand SaveAllCommand { get; }
-    public StswCancellableAsyncCommand InstallCommand { get; }
-    public StswAsyncCommand UninstallCommand { get; }
-
-    public StswAsyncCommand ShowUcpExplanationCommand { get; }
-    public StswCommand UncheckUCPCommand => new(() => { SettingsService.Instance.Settings.IncludeOptions = false; SettingsService.Instance.Settings.SelectedConfigs["aic"] = null; });
-
     public MainContext()
     {
-        AcceptTermsCommand = new(AcceptTerms);
-        GamePathChangedCommand = new(GamePathChanged);
-        ShowUcpExplanationCommand = new(ShowUcpExplanation);
-
-        ReloadAllCommand = new(ReloadAll);
-        SaveAllCommand = new(SaveAll);
-        InstallCommand = new(Install, InstallCondition);
-        UninstallCommand = new(Uninstall, UninstallCondition);
-
         StswMessanger.Instance.Register<ProgressUpdateMessage>(msg => InstallValue += msg.Increment);
         StswMessanger.Instance.Register<ProgressTextMessage>(msg => InstallText = msg.Text);
         GamePathChangedCommand.Execute();
     }
 
-
-
-    /// AcceptTerms
-    public async Task AcceptTerms(bool parameter)
+    [StswCommand]
+    async Task AcceptTerms(bool parameter)
     {
         try
         {
@@ -51,8 +29,8 @@ public class MainContext : StswObservableObject
         }
     }
 
-    /// GamePathChanged
-    public async Task GamePathChanged()
+    [StswCommand]
+    async Task GamePathChanged()
     {
         try
         {
@@ -85,8 +63,8 @@ public class MainContext : StswObservableObject
         }
     }
 
-    /// ShowUcpExplanation
-    public async Task ShowUcpExplanation()
+    [StswCommand]
+    async Task ShowUcpExplanation()
     {
         try
         {
@@ -100,8 +78,8 @@ public class MainContext : StswObservableObject
 
 
 
-    /// ReloadAll
-    public async Task ReloadAll()
+    [StswCommand]
+    async Task ReloadAll()
     {
         try
         {
@@ -121,6 +99,7 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+
     private void ReloadConfigs()
     {
         foreach (var config in StorageService.Configs)
@@ -144,8 +123,8 @@ public class MainContext : StswObservableObject
         OnPropertyChanged(nameof(SelectedConfigs));
     }
 
-    /// SaveAll
-    public async Task SaveAll()
+    [StswCommand]
+    async Task SaveAll()
     {
         try
         {
@@ -165,9 +144,9 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
-    
-    /// Install
-    public async Task Install(CancellationToken token)
+
+    [StswCommand(ConditionMethodName = nameof(InstallCondition))]
+    async Task Install(CancellationToken token)
     {
         try
         {
@@ -201,10 +180,10 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
-    public bool InstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath);
+    bool InstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath);
 
-    /// Uninstall
-    public async Task Uninstall()
+    [StswCommand(ConditionMethodName = nameof(UninstallCondition))]
+    async Task Uninstall()
     {
         try
         {
@@ -233,63 +212,20 @@ public class MainContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
-    public bool UninstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath) && IsInstalled;
-
-
-
-    /// InstallState
-    public StswProgressState InstallState
-    {
-        get => _installState;
-        set => SetProperty(ref _installState, value);
-    }
-    private StswProgressState _installState;
-
-    /// InstallText
-    public string? InstallText
-    {
-        get => _installText;
-        set => SetProperty(ref _installText, value);
-    }
-    private string? _installText;
+    bool UninstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath) && IsInstalled;
     
-    /// InstallValue
-    public int InstallValue
+    [StswCommand]
+    void UncheckUCP()
     {
-        get => _installValue;
-        set => SetProperty(ref _installValue, value);
+        SettingsService.Instance.Settings.IncludeOptions = false;
+        SettingsService.Instance.Settings.SelectedConfigs["aic"] = null;
     }
-    private int _installValue;
 
-    /// InstallValueMax
-    public int InstallValueMax
-    {
-        get => _installValueMax;
-        set => SetProperty(ref _installValueMax, value);
-    }
-    private int _installValueMax;
-
-    /// IsInstalled
-    public bool IsInstalled
-    {
-        get => _isInstalled;
-        set => SetProperty(ref _isInstalled, value);
-    }
-    private bool _isInstalled;
-
-    /// TermsAccepted
-    public bool TermsAccepted
-    {
-        get => _termsAccepted;
-        set => SetProperty(ref _termsAccepted, value);
-    }
-    private bool _termsAccepted = SettingsService.Instance.Settings.TermsAccepted;
-
-    /// SelectedConfigs
-    public StswObservableDictionary<string, ConfigModel?> SelectedConfigs
-    {
-        get => _selectedConfigs;
-        set => SetProperty(ref _selectedConfigs, value);
-    }
-    private StswObservableDictionary<string, ConfigModel?> _selectedConfigs = [];
+    [StswObservableProperty] StswProgressState _installState;
+    [StswObservableProperty] string? _installText;
+    [StswObservableProperty] int _installValue;
+    [StswObservableProperty] int _installValueMax;
+    [StswObservableProperty] bool _isInstalled;
+    [StswObservableProperty] bool _termsAccepted = SettingsService.Instance.Settings.TermsAccepted;
+    [StswObservableProperty] StswObservableDictionary<string, ConfigModel?> _selectedConfigs = [];
 }

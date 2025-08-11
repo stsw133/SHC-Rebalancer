@@ -18,14 +18,14 @@ public class AiNameToImageSourceConverter : MarkupExtension, IValueConverter
             return null;
 
         if (Enum.TryParse<AI>(value.ToString(), out var ai) && ai == 0)
-            return $"/Images/ai/{parameter}.png";
+            return $"/Resources/ai/{parameter}.png";
 
-        var relativePath = $"Resources\\configs\\air\\{value}\\avatar_small.png";
+        var relativePath = $"Configs\\air\\{value}\\avatar_small.png";
         var absolutePath = Path.Join(AppDomain.CurrentDomain.BaseDirectory, relativePath);
         if (Path.Exists(absolutePath))
             return new BitmapImage(new Uri(absolutePath, UriKind.Absolute));
 
-        return $"/Images/ai/{value}.png";
+        return $"/Resources/ai/{value}.png";
     }
 
     /// ConvertBack

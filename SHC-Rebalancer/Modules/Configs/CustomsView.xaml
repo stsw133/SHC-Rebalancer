@@ -25,11 +25,7 @@
                              FrozenColumnCount="1"
                              ItemsSource="{Binding SelectedConfigs[customs].Values}">
                 <se:StswDataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" IsReadOnly="True">
-                        <DataGridTextColumn.Header>
-                            <se:StswLabel Content="Key"/>
-                        </DataGridTextColumn.Header>
-                    </DataGridTextColumn>
+                    <se:StswDataGridTextColumn Binding="{Binding Key}" FontWeight="Bold" Header="Key"/>
                     <se:StswDataGridTextColumn Binding="{Binding Address}" Header="Address"/>
                     <se:StswDataGridDecimalColumn Binding="{Binding Size}" Header="Size"/>
                     <se:StswDataGridTextColumn Binding="{Binding Value}" Header="Value"/>

@@ -18,22 +18,22 @@ public class EnumToImageSourceConverter : MarkupExtension, IValueConverter
 
         var basePath = value.GetType().Name switch
         {
-            nameof(AI) => "/Images/ai/",
-            nameof(AIForTroops) => "/Images/ai/",
-            nameof(BlacksmithSetting) => "/Images/resources/",
-            nameof(Building) => "/Images/buildings/",
-            nameof(FletcherSetting) => "/Images/resources/",
-            nameof(HarassingUnit) => "/Images/units/",
-            nameof(LordType) => "/Images/lords/",
-            nameof(PlayerColor) => "/Images/colors/",
-            nameof(PoleturnerSetting) => "/Images/resources/",
-            nameof(Resource) => "/Images/resources/",
-            nameof(SkirmishDifficulty) => "/Images/skirmishdifficulties/",
-            nameof(SkirmishMode) => "/Images/skirmishmodes/",
-            nameof(SkirmishTeam) => "/Images/teams/",
-            nameof(Troop) => "/Images/units/",
-            nameof(Unit) => "/Images/units/",
-            nameof(WallDecoration) => "/Images/walldecorations/",
+            nameof(AI) => "/Resources/ai/",
+            nameof(AIForTroops) => "/Resources/ai/",
+            nameof(BlacksmithSetting) => "/Resources/resources/",
+            nameof(Building) => "/Resources/buildings/",
+            nameof(FletcherSetting) => "/Resources/resources/",
+            nameof(HarassingUnit) => "/Resources/units/",
+            nameof(LordType) => "/Resources/lords/",
+            nameof(PlayerColor) => "/Resources/colors/",
+            nameof(PoleturnerSetting) => "/Resources/resources/",
+            nameof(Resource) => "/Resources/resources/",
+            nameof(SkirmishDifficulty) => "/Resources/skirmishdifficulties/",
+            nameof(SkirmishMode) => "/Resources/skirmishmodes/",
+            nameof(SkirmishTeam) => "/Resources/teams/",
+            nameof(Troop) => "/Resources/units/",
+            nameof(Unit) => "/Resources/units/",
+            nameof(WallDecoration) => "/Resources/walldecorations/",
             _ => throw new NotImplementedException()
         };
         var relativePath = $"{basePath}{value}.png";

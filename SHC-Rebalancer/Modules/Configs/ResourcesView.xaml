@@ -51,12 +51,12 @@
 
                         <StackPanel>
                             <DockPanel>
-                                <se:StswLabel Content="Buy:" IconSource="/Images/resources/Gold.png"/>
+                                <se:StswLabel Content="Buy:" IconSource="/Resources/resources/Gold.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Buy}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Sell:" IconSource="/Images/resources/Gold.png"/>
+                                <se:StswLabel Content="Sell:" IconSource="/Resources/resources/Gold.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Sell}"/>
                             </DockPanel>
 

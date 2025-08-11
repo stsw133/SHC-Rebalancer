@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:SHC_Rebalancer"
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance local:NewConfigContext}">
-    <UserControl.Background>
-        <ImageBrush ImageSource="/Images/background.webp" Opacity="0.2"/>
-    </UserControl.Background>
 
     <se:StswGroupBox MaxHeight="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"
                      MaxWidth="{Binding ActualWidth, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}, Converter={x:Static se:StswCalculateConverter.Instance}, ConverterParameter=*0.8}"

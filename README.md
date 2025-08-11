@@ -60,7 +60,7 @@ View and modify properties of specific categories, such as buildings, units, or 
 ### Compatibility Notes
 - The tool features a compatibility mode (`UCP: include compatible config`) inspired by UnofficialCrusaderPatch, which applies specific settings to the `.exe` file.  
 - Enabling this mode makes the Rebalancer work independently of UnofficialCrusaderPatch, requiring a clean, unmodified `.exe` file.  
-- Disabling this mode allows compatibility with other modification tools but may result in issues like address conflicts. Be cautious when combining features such as "AIC" or custom address changes without reviewing base addresses in the `Resources/base` directory.
+- Disabling this mode allows compatibility with other modification tools but may result in issues like address conflicts. Be cautious when combining features such as "AIC" or custom address changes without reviewing base addresses in the `Configs/_base` directory.
 
 ## Warnings and Recommendations
 - **Backup Your Files**: Always back up your game’s `.exe` file before applying changes to avoid data loss or corruption.

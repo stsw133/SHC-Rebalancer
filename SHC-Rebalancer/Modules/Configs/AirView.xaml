@@ -41,7 +41,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="0" IsReadOnly="True" Text="All">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/All.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/All.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="0" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -53,7 +53,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="1" IsReadOnly="True" Text="Rat">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Rat.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Rat.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="1" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -65,7 +65,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="2" IsReadOnly="True" Text="Snake">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Snake.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Snake.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="2" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -77,7 +77,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="3" IsReadOnly="True" Text="Pig">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Pig.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Pig.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="3" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -89,7 +89,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="4" IsReadOnly="True" Text="Wolf">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Wolf.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Wolf.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="4" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -101,7 +101,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="5" IsReadOnly="True" Text="Saladin">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Saladin.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Saladin.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="5" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -113,7 +113,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="6" IsReadOnly="True" Text="Caliph">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Caliph.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Caliph.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="6" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -125,7 +125,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="7" IsReadOnly="True" Text="Sultan">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Sultan.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Sultan.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="7" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -137,7 +137,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="8" IsReadOnly="True" Text="Richard">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Richard.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Richard.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="8" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -149,7 +149,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="9" IsReadOnly="True" Text="Frederick">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Frederick.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Frederick.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="9" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -161,7 +161,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="10" IsReadOnly="True" Text="Phillip">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Phillip.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Phillip.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="10" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -173,7 +173,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="11" IsReadOnly="True" Text="Wazir">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Wazir.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Wazir.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="11" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -185,7 +185,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="12" IsReadOnly="True" Text="Emir">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Emir.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Emir.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="12" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -197,7 +197,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="13" IsReadOnly="True" Text="Nizar">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Nizar.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Nizar.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="13" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -209,7 +209,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="14" IsReadOnly="True" Text="Sheriff">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Sheriff.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Sheriff.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="14" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -221,7 +221,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="15" IsReadOnly="True" Text="Marshal">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Marshal.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Marshal.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="15" Data="{x:Static se:StswIcons.ArrowRightBold}"/>
@@ -233,7 +233,7 @@
 
                             <se:StswTextBox Grid.Column="0" Grid.Row="16" IsReadOnly="True" Text="Abbot">
                                 <se:StswTextBox.Icon>
-                                    <se:StswImage Source="/Images/ai/Abbot.png" Width="32"/>
+                                    <se:StswImage Source="/Resources/ai/Abbot.png" Width="32"/>
                                 </se:StswTextBox.Icon>
                             </se:StswTextBox>
                             <se:StswIcon Grid.Column="1" Grid.Row="16" Data="{x:Static se:StswIcons.ArrowRightBold}"/>

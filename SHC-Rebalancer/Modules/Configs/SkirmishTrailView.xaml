@@ -32,10 +32,6 @@
             <se:StswScrollView IsEnabled="{Binding SelectedItem, ElementName=SkirmishTrailSelector, Converter={x:Static se:StswExistenceConverter.Instance}}">
                 <StackPanel DataContext="{Binding SelectedItem.Value, ElementName=SkirmishTrailSelector}" Margin="3" VerticalAlignment="Center" Width="500">
                     <StackPanel.Resources>
-                        <Style TargetType="{x:Type se:StswComboBox}">
-                            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-                            <Setter Property="Margin" Value="3"/>
-                        </Style>
                         <Style x:Key="Header" TargetType="{x:Type se:StswLabel}">
                             <Setter Property="FontWeight" Value="Medium"/>
                             <Setter Property="HorizontalContentAlignment" Value="Right"/>
@@ -46,6 +42,17 @@
                             <Setter Property="Margin" Value="3"/>
                         </Style>
                     </StackPanel.Resources>
+                    
+                    <!-- edit map bindings -->
+                    <se:StswDropButton>
+                        <se:StswDropButton.Header>
+                            <se:StswLabel Content="Edit map bindings" IconData="{x:Static se:StswIcons.Map}"/>
+                        </se:StswDropButton.Header>
+                        <se:StswTextBox AcceptsReturn="True"
+                                        HorizontalContentAlignment="Left"
+                                        Text="{Binding Proxy.SelectedConfigs[skirmishtrail].MapMappingsSingleView, Source={StaticResource proxy}}"
+                                        se:StswControl.IsBorderless="True"/>
+                    </se:StswDropButton>
 
                     <!-- main -->
                     <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
@@ -54,261 +61,201 @@
                         </se:StswGroupBox.Header>
 
                         <StackPanel>
-                            <se:StswDropButton Margin="3">
-                                <se:StswDropButton.Header>
-                                    <se:StswLabel Content="Edit map bindings" IconData="{x:Static se:StswIcons.Map}"/>
-                                </se:StswDropButton.Header>
-                                <se:StswTextBox AcceptsReturn="True"
-                                                HorizontalContentAlignment="Left"
-                                                Text="{Binding Proxy.SelectedConfigs[skirmishtrail].MapsSingleView, Source={StaticResource proxy}}"
-                                                se:StswControl.IsBorderless="True"/>
-                            </se:StswDropButton>
-
+                            <!-- map name -->
                             <DockPanel>
                                 <se:StswLabel Content="Map name:" Style="{StaticResource Header}"/>
-                                <se:StswComboBox ItemsSource="{Binding Proxy.SelectedConfigs[skirmishtrail].Maps, Source={StaticResource proxy}}" SelectedItem="{Binding MapName}"/>
+                                <se:StswComboBox HorizontalContentAlignment="Left"
+                                                 ItemsSource="{Binding Proxy.SelectedConfigs[skirmishtrail].MapMappings, Source={StaticResource proxy}}"
+                                                 Margin="3"
+                                                 SelectedItem="{Binding MapName}"/>
                             </DockPanel>
-
+                            <!-- difficulty -->
                             <DockPanel>
                                 <se:StswLabel Content="Difficulty:" Style="{StaticResource Header}"/>
-                                <se:StswComboBox Margin="3" ItemsSource="{se:StswEnumToList local:SkirmishDifficulty}" SelectedValue="{Binding Difficulty}">
-                                    <se:StswComboBox.ItemTemplate>
+                                <se:StswSegment CornerClipping="True" CornerRadius="6" Margin="3" ItemsSource="{se:StswEnumToList local:SkirmishDifficulty}" SelectedValue="{Binding Difficulty}">
+                                    <se:StswSegment.ItemTemplate>
                                         <DataTemplate>
-                                            <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                            <se:StswImage Source="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Height="20" Width="20"/>
                                         </DataTemplate>
-                                    </se:StswComboBox.ItemTemplate>
-                                </se:StswComboBox>
+                                    </se:StswSegment.ItemTemplate>
+                                </se:StswSegment>
                             </DockPanel>
-
+                            <!-- type -->
                             <DockPanel>
                                 <se:StswLabel Content="Type:" Style="{StaticResource Header}"/>
-                                <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishMode}" SelectedValue="{Binding Type}">
-                                    <se:StswComboBox.ItemTemplate>
+                                <se:StswSegment CornerClipping="True" CornerRadius="6" Margin="3" ItemsSource="{se:StswEnumToList local:SkirmishMode}" SelectedValue="{Binding Type}">
+                                    <se:StswSegment.ItemTemplate>
                                         <DataTemplate>
-                                            <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                            <se:StswOutlinedText Fill="{Binding Value, Converter={x:Static se:StswColorConverter.Instance}, ConverterParameter='G B?15% S75%'}"
+                                                                 FontSize="15" FontWeight="Heavy"
+                                                                 Stroke="{DynamicResource StswText.Static.Foreground}"
+                                                                 Text="{Binding Value}"/>
                                         </DataTemplate>
-                                    </se:StswComboBox.ItemTemplate>
-                                </se:StswComboBox>
+                                    </se:StswSegment.ItemTemplate>
+                                </se:StswSegment>
                             </DockPanel>
-
+                            <!-- ais -->
                             <DockPanel>
                                 <se:StswLabel Content="AIs:" Style="{StaticResource Header}"/>
-                                <UniformGrid Margin="3" Rows="1">
-                                    <UniformGrid.Resources>
-                                        <SolidColorBrush x:Key="StswButton.Static.Background" Color="Transparent"/>
-                                        <SolidColorBrush x:Key="StswButton.MouseOver.Background" Color="Transparent"/>
-                                        <SolidColorBrush x:Key="StswButton.Pressed.Background" Color="Transparent"/>
-                                        <Style TargetType="{x:Type se:StswIcon}">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                        </Style>
-                                    </UniformGrid.Resources>
+                                <se:StswBorder BorderThickness="1" Margin="3" Height="36">
+                                    <UniformGrid Rows="1">
+                                        <UniformGrid.Resources>
+                                            <SolidColorBrush x:Key="StswButton.Static.Background" Color="Transparent"/>
+                                            <SolidColorBrush x:Key="StswButton.MouseOver.Background" Color="#3777"/>
+                                            <SolidColorBrush x:Key="StswButton.Pressed.Background" Color="#7777"/>
+                                            <SolidColorBrush x:Key="StswButton.Disabled.Background" Color="Transparent"/>
+                                            <Style TargetType="{x:Type se:StswComboBox}">
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="ItemsSource" Value="{se:StswEnumToList local:AI}"/>
+                                                <Setter Property="se:StswControl.IsBorderless" Value="True"/>
+                                                <Setter Property="se:StswDropArrow.Visibility" Value="Collapsed"/>
+                                                <Setter Property="ItemTemplate">
+                                                    <Setter.Value>
+                                                        <DataTemplate>
+                                                            <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
+                                                        </DataTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                            <Style TargetType="{x:Type se:StswIcon}">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                            </Style>
+                                        </UniformGrid.Resources>
 
-                                    <se:StswBorder>
-                                        <se:StswBorder.Background>
-                                            <ImageBrush ImageSource="/Images/colors/Red.png" Opacity="0.6" Stretch="Fill"/>
-                                        </se:StswBorder.Background>
-                                        <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[0]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </se:StswBorder>
-                                    <se:StswBorder>
-                                        <se:StswBorder.Background>
-                                            <ImageBrush ImageSource="/Images/colors/Orange.png" Opacity="0.6" Stretch="Fill"/>
-                                        </se:StswBorder.Background>
-                                        <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[1]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </se:StswBorder>
-                                    <se:StswBorder>
-                                        <se:StswBorder.Background>
-                                            <ImageBrush ImageSource="/Images/colors/Yellow.png" Opacity="0.6" Stretch="Fill"/>
-                                        </se:StswBorder.Background>
-                                        <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[2]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </se:StswBorder>
-                                    <se:StswBorder>
-                                        <se:StswBorder.Background>
-                                            <ImageBrush ImageSource="/Images/colors/Blue.png" Opacity="0.6" Stretch="Fill"/>
-                                        </se:StswBorder.Background>
-                                        <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[3]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </se:StswBorder>
-                                    <se:StswBorder>
-                                        <se:StswBorder.Background>
-                                            <ImageBrush ImageSource="/Images/colors/Gray.png" Opacity="0.6" Stretch="Fill"/>
-                                        </se:StswBorder.Background>
-                                        <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[4]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </se:StswBorder>
-                                    <se:StswBorder>
-                                        <se:StswBorder.Background>
-                                            <ImageBrush ImageSource="/Images/colors/Purple.png" Opacity="0.6" Stretch="Fill"/>
-                                        </se:StswBorder.Background>
-                                        <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[5]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </se:StswBorder>
-                                    <se:StswBorder>
-                                        <se:StswBorder.Background>
-                                            <ImageBrush ImageSource="/Images/colors/Cyan.png" Opacity="0.6" Stretch="Fill"/>
-                                        </se:StswBorder.Background>
-                                        <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[6]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </se:StswBorder>
-                                    <se:StswBorder>
-                                        <se:StswBorder.Background>
-                                            <ImageBrush ImageSource="/Images/colors/Green.png" Opacity="0.6" Stretch="Fill"/>
-                                        </se:StswBorder.Background>
-                                        <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswEnumToList local:AI}" Margin="0" SelectedValue="{Binding AIs[7]}" se:StswDropArrow.Visibility="Collapsed" se:StswControl.IsBorderless="True">
-                                            <se:StswComboBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <se:StswLabel Content="{Binding Display}" IconScale="2.5" IconSource="{Binding Value, Converter={x:Static local:AiNameToImageSourceConverter.Instance}, ConverterParameter=None}" Padding="0"/>
-                                                </DataTemplate>
-                                            </se:StswComboBox.ItemTemplate>
-                                        </se:StswComboBox>
-                                    </se:StswBorder>
-                                </UniformGrid>
+                                        <Grid>
+                                            <Grid.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Red.png" Opacity="0.6" Stretch="Fill"/>
+                                            </Grid.Background>
+                                            <se:StswComboBox SelectedValue="{Binding AIs[0]}"/>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Orange.png" Opacity="0.6" Stretch="Fill"/>
+                                            </Grid.Background>
+                                            <se:StswComboBox SelectedValue="{Binding AIs[1]}"/>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Yellow.png" Opacity="0.6" Stretch="Fill"/>
+                                            </Grid.Background>
+                                            <se:StswComboBox SelectedValue="{Binding AIs[2]}"/>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Blue.png" Opacity="0.6" Stretch="Fill"/>
+                                            </Grid.Background>
+                                            <se:StswComboBox SelectedValue="{Binding AIs[3]}"/>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Gray.png" Opacity="0.6" Stretch="Fill"/>
+                                            </Grid.Background>
+                                            <se:StswComboBox SelectedValue="{Binding AIs[4]}"/>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Purple.png" Opacity="0.6" Stretch="Fill"/>
+                                            </Grid.Background>
+                                            <se:StswComboBox SelectedValue="{Binding AIs[5]}"/>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Cyan.png" Opacity="0.6" Stretch="Fill"/>
+                                            </Grid.Background>
+                                            <se:StswComboBox SelectedValue="{Binding AIs[6]}"/>
+                                        </Grid>
+                                        <Grid>
+                                            <Grid.Background>
+                                                <ImageBrush ImageSource="/Resources/colors/Green.png" Opacity="0.6" Stretch="Fill"/>
+                                            </Grid.Background>
+                                            <se:StswComboBox SelectedValue="{Binding AIs[7]}"/>
+                                        </Grid>
+                                    </UniformGrid>
+                                </se:StswBorder>
                             </DockPanel>
-
+                            <!-- locations -->
                             <DockPanel>
                                 <se:StswLabel Content="Locations:" Style="{StaticResource Header}"/>
                                 <UniformGrid Margin="3" Rows="1">
                                     <UniformGrid.Resources>
+                                        <Style TargetType="{x:Type se:StswComboBox}">
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="ItemsSource" Value="{se:StswListFromRange 9}"/>
+                                            <Setter Property="se:StswDropArrow.Visibility" Value="Collapsed"/>
+                                        </Style>
                                         <Style TargetType="{x:Type se:StswIcon}">
                                             <Setter Property="Visibility" Value="Collapsed"/>
                                         </Style>
                                     </UniformGrid.Resources>
 
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[0]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[1]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[2]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[3]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[4]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[5]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[6]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 9}" Margin="0" SelectedValue="{Binding Locations[7]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox SelectedValue="{Binding Locations[0]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Locations[1]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Locations[2]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Locations[3]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Locations[4]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Locations[5]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Locations[6]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Locations[7]}"/>
                                 </UniformGrid>
                             </DockPanel>
-
+                            <!-- teams -->
                             <DockPanel>
                                 <se:StswLabel Content="Teams:" Style="{StaticResource Header}"/>
                                 <UniformGrid Margin="3" Rows="1">
                                     <UniformGrid.Resources>
+                                        <Style TargetType="{x:Type se:StswComboBox}">
+                                            <Setter Property="ItemsSource" Value="{se:StswEnumToList local:SkirmishTeam}"/>
+                                            <Setter Property="Padding" Value="6 3"/>
+                                            <Setter Property="se:StswDropArrow.Visibility" Value="Collapsed"/>
+                                            <Setter Property="ItemTemplate">
+                                                <Setter.Value>
+                                                    <DataTemplate>
+                                                        <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
+                                                    </DataTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
                                         <Style TargetType="{x:Type se:StswIcon}">
                                             <Setter Property="Visibility" Value="Collapsed"/>
                                         </Style>
                                     </UniformGrid.Resources>
 
-                                    <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" Margin="0" Padding="6 3" SelectedValue="{Binding Teams[0]}" se:StswDropArrow.Visibility="Collapsed">
-                                        <se:StswComboBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                            </DataTemplate>
-                                        </se:StswComboBox.ItemTemplate>
-                                    </se:StswComboBox>
-                                    <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" Margin="0" Padding="6 3" SelectedValue="{Binding Teams[1]}" se:StswDropArrow.Visibility="Collapsed">
-                                        <se:StswComboBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                            </DataTemplate>
-                                        </se:StswComboBox.ItemTemplate>
-                                    </se:StswComboBox>
-                                    <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" Margin="0" Padding="6 3" SelectedValue="{Binding Teams[2]}" se:StswDropArrow.Visibility="Collapsed">
-                                        <se:StswComboBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                            </DataTemplate>
-                                        </se:StswComboBox.ItemTemplate>
-                                    </se:StswComboBox>
-                                    <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" Margin="0" Padding="6 3" SelectedValue="{Binding Teams[3]}" se:StswDropArrow.Visibility="Collapsed">
-                                        <se:StswComboBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                            </DataTemplate>
-                                        </se:StswComboBox.ItemTemplate>
-                                    </se:StswComboBox>
-                                    <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" Margin="0" Padding="6 3" SelectedValue="{Binding Teams[4]}" se:StswDropArrow.Visibility="Collapsed">
-                                        <se:StswComboBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                            </DataTemplate>
-                                        </se:StswComboBox.ItemTemplate>
-                                    </se:StswComboBox>
-                                    <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" Margin="0" Padding="6 3" SelectedValue="{Binding Teams[5]}" se:StswDropArrow.Visibility="Collapsed">
-                                        <se:StswComboBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                            </DataTemplate>
-                                        </se:StswComboBox.ItemTemplate>
-                                    </se:StswComboBox>
-                                    <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" Margin="0" Padding="6 3" SelectedValue="{Binding Teams[6]}" se:StswDropArrow.Visibility="Collapsed">
-                                        <se:StswComboBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                            </DataTemplate>
-                                        </se:StswComboBox.ItemTemplate>
-                                    </se:StswComboBox>
-                                    <se:StswComboBox ItemsSource="{se:StswEnumToList local:SkirmishTeam}" Margin="0" Padding="6 3" SelectedValue="{Binding Teams[7]}" se:StswDropArrow.Visibility="Collapsed">
-                                        <se:StswComboBox.ItemTemplate>
-                                            <DataTemplate>
-                                                <se:StswLabel Content="{Binding Display}" IconSource="{Binding Value, Converter={local:EnumToImageSourceConverter}}" Padding="0"/>
-                                            </DataTemplate>
-                                        </se:StswComboBox.ItemTemplate>
-                                    </se:StswComboBox>
+                                    <se:StswComboBox SelectedValue="{Binding Teams[0]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Teams[1]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Teams[2]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Teams[3]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Teams[4]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Teams[5]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Teams[6]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding Teams[7]}"/>
                                 </UniformGrid>
                             </DockPanel>
-
+                            <!-- aivs -->
                             <DockPanel>
                                 <se:StswLabel Content="AIVs:" Style="{StaticResource Header}"/>
                                 <UniformGrid Margin="3" Rows="1">
                                     <UniformGrid.Resources>
+                                        <Style TargetType="{x:Type se:StswComboBox}">
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="ItemsSource" Value="{se:StswListFromRange 8}"/>
+                                            <Setter Property="se:StswDropArrow.Visibility" Value="Collapsed"/>
+                                        </Style>
                                         <Style TargetType="{x:Type se:StswIcon}">
                                             <Setter Property="Visibility" Value="Collapsed"/>
                                         </Style>
                                     </UniformGrid.Resources>
 
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[0]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[1]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[2]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[3]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[4]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[5]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[6]}" se:StswDropArrow.Visibility="Collapsed"/>
-                                    <se:StswComboBox HorizontalContentAlignment="Center" ItemsSource="{se:StswListFromRange 8}" Margin="0" SelectedValue="{Binding AIVs[7]}" se:StswDropArrow.Visibility="Collapsed"/>
+                                    <se:StswComboBox SelectedValue="{Binding AIVs[0]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding AIVs[1]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding AIVs[2]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding AIVs[3]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding AIVs[4]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding AIVs[5]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding AIVs[6]}"/>
+                                    <se:StswComboBox SelectedValue="{Binding AIVs[7]}"/>
                                 </UniformGrid>
                             </DockPanel>
+                            
                         </StackPanel>
                     </se:StswGroupBox>
 

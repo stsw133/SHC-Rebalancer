@@ -9,26 +9,11 @@ namespace SHC_Rebalancer;
 /// </summary>
 public partial class ConfigBox : StswComboBox
 {
-    public StswCommand<object?> ReloadConfigsCommand { get; }
-    public StswAsyncCommand AddConfigCommand { get; }
-    public StswAsyncCommand RenameConfigCommand { get; }
-    public StswAsyncCommand OpenConfigCommand { get; }
-    public StswAsyncCommand OpenDirectoryCommand { get; }
-    public StswAsyncCommand RemoveConfigCommand { get; }
-
     public ConfigBox()
     {
         InitializeComponent();
-
-        ReloadConfigsCommand = new(ReloadConfigs);
-        AddConfigCommand = new(AddConfig);
-        RenameConfigCommand = new(RenameConfig, () => !SettingsService.Instance.Settings.SelectedConfigs[Type].In(null, "vanilla"));
-        OpenConfigCommand = new(OpenConfig, () => SettingsService.Instance.Settings.SelectedConfigs[Type] != null);
-        OpenDirectoryCommand = new(OpenDirectory, () => SettingsService.Instance.Settings.SelectedConfigs[Type] != null);
-        RemoveConfigCommand = new(RemoveConfig, () => !SettingsService.Instance.Settings.SelectedConfigs[Type].In(null, "vanilla"));
     }
 
-    /// OnApplyTemplate
     public override void OnApplyTemplate()
     {
         base.OnApplyTemplate();
@@ -50,10 +35,8 @@ public partial class ConfigBox : StswComboBox
         }
     }
 
-
-
-    /// ReloadConfigs
-    private void ReloadConfigs(object? parameter)
+    [StswCommand]
+    void ReloadConfigs(object? parameter)
     {
         try
         {
@@ -79,8 +62,8 @@ public partial class ConfigBox : StswComboBox
         }
     }
 
-    /// AddConfig
-    private async Task AddConfig()
+    [StswCommand]
+    async Task AddConfig()
     {
         try
         {
@@ -96,8 +79,8 @@ public partial class ConfigBox : StswComboBox
         }
     }
 
-    /// RenameConfig
-    private async Task RenameConfig()
+    [StswCommand(ConditionMethodName = nameof(RenameConfigCondition))]
+    async Task RenameConfig()
     {
         try
         {
@@ -115,9 +98,10 @@ public partial class ConfigBox : StswComboBox
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+    bool RenameConfigCondition() => !SettingsService.Instance.Settings.SelectedConfigs[Type].In(null, "vanilla");
 
-    /// OpenConfig
-    private async Task OpenConfig()
+    [StswCommand(ConditionMethodName = nameof(OpenConfigCondition))]
+    async Task OpenConfig()
     {
         try
         {
@@ -133,9 +117,10 @@ public partial class ConfigBox : StswComboBox
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
-    
-    /// OpenDirectory
-    private async Task OpenDirectory()
+    bool OpenConfigCondition() => SettingsService.Instance.Settings.SelectedConfigs[Type] != null;
+
+    [StswCommand(ConditionMethodName = nameof(OpenDirectoryCondition))]
+    async Task OpenDirectory()
     {
         try
         {
@@ -153,9 +138,10 @@ public partial class ConfigBox : StswComboBox
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+    bool OpenDirectoryCondition() => SettingsService.Instance.Settings.SelectedConfigs[Type] != null;
 
-    /// RemoveConfig
-    private async Task RemoveConfig()
+    [StswCommand(ConditionMethodName = nameof(RemoveConfigCondition))]
+    async Task RemoveConfig()
     {
         try
         {
@@ -177,17 +163,14 @@ public partial class ConfigBox : StswComboBox
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+    bool RemoveConfigCondition() => !SettingsService.Instance.Settings.SelectedConfigs[Type].In(null, "vanilla");
 
-
-
-    /// NotifyConfigsChanged
     public void NotifyConfigsChanged(string name)
     {
         if (DataContext is StswObservableObject observableObject)
             observableObject.GetType().GetMethod("OnPropertyChanged", BindingFlags.NonPublic | BindingFlags.Instance)?.Invoke(observableObject, [name]);
     }
 
-    /// Type
     public string Type
     {
         get => (string)GetValue(TypeProperty);

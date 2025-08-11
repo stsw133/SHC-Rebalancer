@@ -2,23 +2,17 @@
 using System.Reflection;
 
 namespace SHC_Rebalancer;
-public class NewConfigContext : StswObservableObject
+public partial class NewConfigContext : StswObservableObject
 {
-    public StswAsyncCommand SaveChangesCommand { get; }
-
     public NewConfigContext(string type = "", string name = "")
     {
         Type = type.ToLower();
         Name = name;
         IsEditing = !string.IsNullOrEmpty(name);
-
-        SaveChangesCommand = new(SaveChanges, () => !string.IsNullOrEmpty(Name));
     }
 
-
-
-    /// SaveChanges
-    public async Task SaveChanges()
+    [StswCommand(ConditionMethodName = nameof(SaveChangesCondition))]
+    async Task SaveChanges()
     {
         try
         {
@@ -75,41 +69,11 @@ public class NewConfigContext : StswObservableObject
             await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
         }
     }
+    bool SaveChangesCondition() => !string.IsNullOrEmpty(Name);
 
-
-
-    /// BasedOn
-    public string BasedOn
-    {
-        get => _basedOn;
-        set => SetProperty(ref _basedOn, value);
-    }
-    private string _basedOn = "vanilla";
-
-    /// ConfigNames
+    [StswObservableProperty] string _basedOn = "vanilla";
     public IEnumerable<string?> ConfigNames => StorageService.Configs[Type].Select(x => x.GetPropertyValue(nameof(ConfigModel.Name))?.ToString());
-
-    /// IsEditing
-    public bool IsEditing
-    {
-        get => _isEditing;
-        set => SetProperty(ref _isEditing, value);
-    }
-    private bool _isEditing;
-
-    /// Name
-    public string Name
-    {
-        get => _name;
-        set => SetProperty(ref _name, value);
-    }
-    private string _name = string.Empty;
-
-    /// Type
-    public string Type
-    {
-        get => _type;
-        set => SetProperty(ref _type, value);
-    }
-    private string _type = string.Empty;
+    [StswObservableProperty] bool _isEditing;
+    [StswObservableProperty] string _name = string.Empty;
+    [StswObservableProperty] string _type = string.Empty;
 }

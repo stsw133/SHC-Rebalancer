@@ -51,15 +51,15 @@
 
                         <StackPanel>
                             <UniformGrid Height="16" HorizontalAlignment="Right" Margin="3" Rows="1" Width="400">
-                                <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/VEasy.png"/>
-                                <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/Easy.png"/>
-                                <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/Medium.png"/>
-                                <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/Hard.png"/>
-                                <se:StswImage HorizontalContentAlignment="Center" Source="/Images/skirmishdifficulties/VHard.png"/>
+                                <se:StswImage HorizontalContentAlignment="Center" Source="/Resources/skirmishdifficulties/VEasy.png"/>
+                                <se:StswImage HorizontalContentAlignment="Center" Source="/Resources/skirmishdifficulties/Easy.png"/>
+                                <se:StswImage HorizontalContentAlignment="Center" Source="/Resources/skirmishdifficulties/Medium.png"/>
+                                <se:StswImage HorizontalContentAlignment="Center" Source="/Resources/skirmishdifficulties/Hard.png"/>
+                                <se:StswImage HorizontalContentAlignment="Center" Source="/Resources/skirmishdifficulties/VHard.png"/>
                             </UniformGrid>
 
                             <DockPanel>
-                                <se:StswLabel Content="Human gold:" IconSource="/Images/resources/Gold.png"/>
+                                <se:StswLabel Content="Human gold:" IconSource="/Resources/resources/Gold.png"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding Gold.Human[0]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding Gold.Human[1]}"/>
@@ -70,7 +70,7 @@
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="AI gold:" IconSource="/Images/resources/Gold.png"/>
+                                <se:StswLabel Content="AI gold:" IconSource="/Resources/resources/Gold.png"/>
                                 <UniformGrid Rows="1">
                                     <se:StswIntegerBox Minimum="0" Value="{Binding Gold.AI[0]}"/>
                                     <se:StswIntegerBox Minimum="0" Value="{Binding Gold.AI[1]}"/>
@@ -90,102 +90,102 @@
 
                         <StackPanel>
                             <DockPanel>
-                                <se:StswLabel Content="Wood:" IconSource="/Images/resources/Wood.png"/>
+                                <se:StswLabel Content="Wood:" IconSource="/Resources/resources/Wood.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Wood]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Hop:" IconSource="/Images/resources/Hop.png"/>
+                                <se:StswLabel Content="Hop:" IconSource="/Resources/resources/Hop.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Hop]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Stone:" IconSource="/Images/resources/Stone.png"/>
+                                <se:StswLabel Content="Stone:" IconSource="/Resources/resources/Stone.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Stone]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Iron:" IconSource="/Images/resources/Iron.png"/>
+                                <se:StswLabel Content="Iron:" IconSource="/Resources/resources/Iron.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Iron]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Pitch:" IconSource="/Images/resources/Pitch.png"/>
+                                <se:StswLabel Content="Pitch:" IconSource="/Resources/resources/Pitch.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Pitch]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Wheat:" IconSource="/Images/resources/Wheat.png"/>
+                                <se:StswLabel Content="Wheat:" IconSource="/Resources/resources/Wheat.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Wheat]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Bread:" IconSource="/Images/resources/Bread.png"/>
+                                <se:StswLabel Content="Bread:" IconSource="/Resources/resources/Bread.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Bread]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Cheese:" IconSource="/Images/resources/Cheese.png"/>
+                                <se:StswLabel Content="Cheese:" IconSource="/Resources/resources/Cheese.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Cheese]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Meat:" IconSource="/Images/resources/Meat.png"/>
+                                <se:StswLabel Content="Meat:" IconSource="/Resources/resources/Meat.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Meat]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Fruit:" IconSource="/Images/resources/Fruit.png"/>
+                                <se:StswLabel Content="Fruit:" IconSource="/Resources/resources/Fruit.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Fruit]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Beer:" IconSource="/Images/resources/Beer.png"/>
+                                <se:StswLabel Content="Beer:" IconSource="/Resources/resources/Beer.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Beer]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Flour:" IconSource="/Images/resources/Flour.png"/>
+                                <se:StswLabel Content="Flour:" IconSource="/Resources/resources/Flour.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Flour]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Bows:" IconSource="/Images/resources/Bows.png"/>
+                                <se:StswLabel Content="Bows:" IconSource="/Resources/resources/Bows.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Bows]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Crossbows:" IconSource="/Images/resources/Crossbows.png"/>
+                                <se:StswLabel Content="Crossbows:" IconSource="/Resources/resources/Crossbows.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Crossbows]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Spears:" IconSource="/Images/resources/Spears.png"/>
+                                <se:StswLabel Content="Spears:" IconSource="/Resources/resources/Spears.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Spears]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Pikes:" IconSource="/Images/resources/Pikes.png"/>
+                                <se:StswLabel Content="Pikes:" IconSource="/Resources/resources/Pikes.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Pikes]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Maces:" IconSource="/Images/resources/Maces.png"/>
+                                <se:StswLabel Content="Maces:" IconSource="/Resources/resources/Maces.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Maces]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Swords:" IconSource="/Images/resources/Swords.png"/>
+                                <se:StswLabel Content="Swords:" IconSource="/Resources/resources/Swords.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Swords]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Leather:" IconSource="/Images/resources/Leather.png"/>
+                                <se:StswLabel Content="Leather:" IconSource="/Resources/resources/Leather.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Leather]}"/>
                             </DockPanel>
 
                             <DockPanel>
-                                <se:StswLabel Content="Armor:" IconSource="/Images/resources/Armor.png"/>
+                                <se:StswLabel Content="Armor:" IconSource="/Resources/resources/Armor.png"/>
                                 <se:StswIntegerBox Minimum="0" Value="{Binding Resources[Armor]}"/>
                             </DockPanel>
                         </StackPanel>

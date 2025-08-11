@@ -24,9 +24,14 @@ internal static class BackupService
             if (!File.Exists(exePath.Value))
                 continue;
 
-            if (!Exists(exePath.Value, out var backupPath))
-                File.Copy(exePath.Value, backupPath, true);
+            if (!Exists(exePath.Value, out var backupExeFilePath))
+                File.Copy(exePath.Value, backupExeFilePath, true);
         }
+
+        /// text
+        var backupTextFilePath = Path.Combine(SettingsService.Instance.Settings.GamePath, "cr.tex.stsw_backup");
+        if (!File.Exists(backupTextFilePath) && File.Exists(TexService.TexFilePath))
+            File.Copy(TexService.TexFilePath, backupTextFilePath, true);
 
         if (!string.IsNullOrEmpty(SettingsService.Instance.Settings.SelectedConfigs["air"]))
             MakeZipForAIR();
@@ -42,11 +47,18 @@ internal static class BackupService
             if (!File.Exists(exePath.Value))
                 continue;
 
-            if (Exists(exePath.Value, out var backupPath))
+            if (Exists(exePath.Value, out var backupExeFilePath))
             {
-                File.Copy(backupPath, exePath.Value, true);
-                File.Delete(backupPath);
+                File.Copy(backupExeFilePath, exePath.Value, true);
+                File.Delete(backupExeFilePath);
             }
+        }
+
+        /// text
+        if (Path.Combine(SettingsService.Instance.Settings.GamePath, "cr.tex.stsw_backup") is string backupTextFilePath && File.Exists(backupTextFilePath))
+        {
+            File.Copy(backupTextFilePath, TexService.TexFilePath, true);
+            File.Delete(backupTextFilePath);
         }
 
         RestoreZipForAIR();
@@ -57,38 +69,33 @@ internal static class BackupService
     private static void MakeZipForAIR()
     {
         /// images
-        var backupPath = Path.Combine(StorageService.GmPath, "gm.zip.stsw_backup");
-        if (!File.Exists(backupPath))
+        var backupFilePath = Path.Combine(StorageService.GmPath, "gm.zip.stsw_backup");
+        if (!File.Exists(backupFilePath))
         {
-            using var zipArchive = ZipFile.Open(backupPath, ZipArchiveMode.Create);
+            using var zipArchive = ZipFile.Open(backupFilePath, ZipArchiveMode.Create);
             if (Path.Combine(StorageService.GmPath, "interface_icons2.gm1") is string filePath && File.Exists(filePath))
                 zipArchive.CreateEntryFromFile(filePath, Path.GetFileName(filePath));
         }
 
         /// speech
-        backupPath = Path.Combine(StorageService.FxSpeechPath, "speech.zip.stsw_backup");
-        if (!File.Exists(backupPath))
+        backupFilePath = Path.Combine(StorageService.FxSpeechPath, "speech.zip.stsw_backup");
+        if (!File.Exists(backupFilePath))
         {
             string[] prefixes = ["all", "rt", "sn", "pg", "wf", "sa", "ca", "su", "ri", "fr", "ph", "wa", "em", "ni", "sh", "ma", "ab"];
-            using var zipArchive = ZipFile.Open(backupPath, ZipArchiveMode.Create);
+            using var zipArchive = ZipFile.Open(backupFilePath, ZipArchiveMode.Create);
             foreach (var prefix in prefixes)
                 foreach (var filePath in Directory.GetFiles(StorageService.FxSpeechPath, $"{prefix}_*.wav"))
                     zipArchive.CreateEntryFromFile(filePath, Path.GetFileName(filePath));
-            for (var i = 23; i < 38; i++)
+            for (var i = 23; i <= 38; i++)
                 zipArchive.CreateEntryFromFile(Path.Combine(StorageService.FxSpeechPath, $"General_Message{i}.wav"), $"General_Message{i}.wav");
         }
 
-        /// text
-        backupPath = Path.Combine(SettingsService.Instance.Settings.GamePath, "cr.tex.stsw_backup");
-        if (!File.Exists(backupPath) && File.Exists(TexService.TexFilePath))
-            File.Copy(TexService.TexFilePath, backupPath, true);
-
         /// videos
-        backupPath = Path.Combine(StorageService.BinksPath, "bik.zip.stsw_backup");
-        if (!File.Exists(backupPath))
+        backupFilePath = Path.Combine(StorageService.BinksPath, "bik.zip.stsw_backup");
+        if (!File.Exists(backupFilePath))
         {
             string[] prefixes = ["bad_soldier", "rt", "sn", "pg", "wf", "saladin", "bad_arab", "sultan", "richard", "fred", "phillip", "vizir", "emir", "nazir", "sheriff", "ma", "abbot"];
-            using var zipArchive = ZipFile.Open(backupPath, ZipArchiveMode.Create);
+            using var zipArchive = ZipFile.Open(backupFilePath, ZipArchiveMode.Create);
             foreach (var prefix in prefixes)
                 foreach (var filePath in Directory.GetFiles(StorageService.BinksPath, $"{prefix}_*.bik"))
                     zipArchive.CreateEntryFromFile(filePath, Path.GetFileName(filePath));
@@ -124,13 +131,6 @@ internal static class BackupService
         }
         File.Delete(zipFilePath);
 
-        /// text
-        if (Path.Combine(SettingsService.Instance.Settings.GamePath, "cr.tex.stsw_backup") is string backupFile && File.Exists(backupFile))
-        {
-            File.Copy(backupFile, TexService.TexFilePath, true);
-            File.Delete(backupFile);
-        }
-
         /// videos
         if (!Directory.Exists(StorageService.BinksPath))
             Directory.CreateDirectory(StorageService.BinksPath);
@@ -151,8 +151,8 @@ internal static class BackupService
         if (!Directory.Exists(StorageService.AivPath))
             return;
 
-        var backupPath = Path.Combine(StorageService.AivPath, "aiv.zip.stsw_backup");
-        if (File.Exists(backupPath))
+        var backupFilePath = Path.Combine(StorageService.AivPath, "aiv.zip.stsw_backup");
+        if (File.Exists(backupFilePath))
             return;
 
         var filesToArchive = new List<string>();
@@ -166,7 +166,7 @@ internal static class BackupService
                     filesToArchive.Add(filePath);
             }
         }
-        using var zipArchive = ZipFile.Open(backupPath, ZipArchiveMode.Create);
+        using var zipArchive = ZipFile.Open(backupFilePath, ZipArchiveMode.Create);
         foreach (var file in filesToArchive)
             zipArchive.CreateEntryFromFile(file, Path.GetFileName(file));
     }

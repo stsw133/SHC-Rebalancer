@@ -68,24 +68,42 @@
                 <!-- rebalancer configuration -->
                 <se:StswTabControl AreTabsVisible="True" BorderThickness="0 1 0 0">
                     <se:StswTabControl.Background>
-                        <ImageBrush ImageSource="/Images/background.webp" Opacity="0.2"/>
+                        <ImageBrush ImageSource="/Resources/background.webp" Opacity="0.3" Stretch="UniformToFill"/>
                     </se:StswTabControl.Background>
-                    <!-- main -->
+                    <!-- main tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Main" IconData="{x:Static se:StswIcons.Cog}"/>
                         </se:StswTabItem.Header>
                         <se:StswScrollView>
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="750">
-                                <se:StswLabel Content="Stronghold Crusader path:" FontWeight="Bold" Margin="3 6 3 0"/>
-                                <se:StswPathPicker Margin="3"
-                                                   Placeholder="Please select Stronghold Crusader path..."
-                                                   SelectedPath="{Binding GamePath, Source={StaticResource Settings}}"
-                                                   SelectionUnit="OpenDirectory"
-                                                   SelectedPathChanged="{se:StswEventToCommand CommandBinding={Binding GamePathChangedCommand}}"/>
+                                <!-- select path -->
+                                <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                                    <se:StswGroupBox.Header>
+                                        <DockPanel>
+                                            <local:GifImage DockPanel.Dock="Right"
+                                                            Margin="-3"
+                                                            Source="/Resources/misc/PointingArrow.gif"
+                                                            Visibility="{Binding GamePath, Source={StaticResource Settings}, Converter={x:Static se:StswExistenceConverter.Instance}, ConverterParameter='null empty'}"
+                                                            Height="24" Width="24"/>
+                                            <se:StswLabel Content="Stronghold Crusader path:" FontSize="10" FontWeight="Medium"/>
+                                        </DockPanel>
+                                    </se:StswGroupBox.Header>
+                                    
+                                    <se:StswPathPicker Margin="-3" Padding="6"
+                                                       Placeholder="Please select Stronghold Crusader path..."
+                                                       SelectedPath="{Binding GamePath, Source={StaticResource Settings}}"
+                                                       SelectionUnit="OpenDirectory"
+                                                       SeparatorThickness="0"
+                                                       se:StswControl.IsBorderless="True"
+                                                       SelectedPathChanged="{se:StswEventToCommand CommandBinding={Binding GamePathChangedCommand}}"/>
+                                </se:StswGroupBox>
+                                <!-- select configs -->
+                                <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                                    <se:StswGroupBox.Header>
+                                        <se:StswLabel Content="Select configs to apply:" FontSize="10" FontWeight="Medium"/>
+                                    </se:StswGroupBox.Header>
 
-                                <se:StswLabel Content="Select configs to apply:" FontWeight="Bold" Margin="3 6 3 0"/>
-                                <se:StswBorder Background="{DynamicResource StswBox.Static.Background}" CornerRadius="5" Margin="3">
                                     <UniformGrid Columns="2">
 
                                         <StackPanel Margin="3">
@@ -188,102 +206,102 @@
 
                                         </StackPanel>
                                     </UniformGrid>
-                                </se:StswBorder>
+                                </se:StswGroupBox>
                             </StackPanel>
                         </se:StswScrollView>
                     </se:StswTabItem>
-                    <!-- options -->
+                    <!-- options tab -->
                     <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Options" IconData="{x:Static se:StswIcons.Tools}"/>
                         </se:StswTabItem.Header>
                         <local:OptionsView/>
                     </se:StswTabItem>
-                    <!-- aic -->
+                    <!-- aic tab -->
                     <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="AIC" IconData="{x:Static se:StswIcons.RobotAngryOutline}"/>
                         </se:StswTabItem.Header>
                         <local:AicView/>
                     </se:StswTabItem>
-                    <!-- air -->
+                    <!-- air tab -->
                     <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="AIR" IconData="{x:Static se:StswIcons.FolderSwapOutline}"/>
                         </se:StswTabItem.Header>
                         <local:AirView/>
                     </se:StswTabItem>
-                    <!-- aiv -->
+                    <!-- aiv tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="AIV" IconData="{x:Static se:StswIcons.Castle}"/>
                         </se:StswTabItem.Header>
                         <local:AivView/>
                     </se:StswTabItem>
-                    <!-- goods -->
+                    <!-- goods tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Goods" IconData="{x:Static se:StswIcons.PackageVariant}"/>
                         </se:StswTabItem.Header>
                         <local:GoodsView/>
                     </se:StswTabItem>
-                    <!-- troops -->
+                    <!-- troops tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Troops" IconData="{x:Static se:StswIcons.SwordCross}"/>
                         </se:StswTabItem.Header>
                         <local:TroopsView/>
                     </se:StswTabItem>
-                    <!-- buildings -->
+                    <!-- buildings tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Buildings" IconData="{x:Static se:StswIcons.Warehouse}"/>
                         </se:StswTabItem.Header>
                         <local:BuildingsView/>
                     </se:StswTabItem>
-                    <!-- outposts -->
+                    <!-- outposts tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Outposts" IconData="{x:Static se:StswIcons.Post}"/>
                         </se:StswTabItem.Header>
                         <local:OutpostsView/>
                     </se:StswTabItem>
-                    <!-- popularity -->
+                    <!-- popularity tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Popularity" IconData="{x:Static se:StswIcons.EmoticonHappyOutline}"/>
                         </se:StswTabItem.Header>
                         <local:PopularityView/>
                     </se:StswTabItem>
-                    <!-- resources -->
+                    <!-- resources tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Resources" IconData="{x:Static se:StswIcons.PackageVariantClosed}"/>
                         </se:StswTabItem.Header>
                         <local:ResourcesView/>
                     </se:StswTabItem>
-                    <!-- units -->
+                    <!-- units tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Units" IconData="{x:Static se:StswIcons.AccountGroupOutline}"/>
                         </se:StswTabItem.Header>
                         <local:UnitsView/>
                     </se:StswTabItem>
-                    <!-- skirmish trail -->
+                    <!-- skirmishtrail tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Skirmish trail" IconData="{x:Static se:StswIcons.MapMarkerPath}"/>
                         </se:StswTabItem.Header>
                         <local:SkirmishTrailView/>
                     </se:StswTabItem>
-                    <!-- customs -->
+                    <!-- customs tab -->
                     <se:StswTabItem>
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Customs" IconData="{x:Static se:StswIcons.Variable}"/>
                         </se:StswTabItem.Header>
                         <local:CustomsView/>
                     </se:StswTabItem>
-                    <!-- finder -->
+                    <!-- finder tab -->
                     <se:StswTabItem IsEnabled="{Binding GamePath, Source={StaticResource Settings}, Converter={x:Static se:StswExistenceConverter.Instance}, ConverterParameter=!empty}">
                         <se:StswTabItem.Header>
                             <se:StswLabel Content="Finder" IconData="{x:Static se:StswIcons.Magnify}"/>

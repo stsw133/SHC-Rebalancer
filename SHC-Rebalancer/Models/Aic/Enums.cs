@@ -57,9 +57,10 @@ public enum PoleturnerSetting
 
 public enum TargetChoice
 {
-    Gold = 0,
-    Balanced = 1,
+    Richest = 0,
+    Weakest = 1,
     Closest = 2,
+    Random = 3,
     Player = 4
 }
 
@@ -67,10 +68,10 @@ public enum WallDecoration
 {
     Oil = 8,
     Flames = 9,
-    Flag1 = 10,
-    Flag2 = 11,
-    Flag3 = 12,
-    Flag4 = 13,
+    SmallFlag = 10,
+    BigFlag = 11,
+    MediumFlag = 12,
+    GiantFlag = 13,
     Brazier = 14,
     Skull = 15,
     Steam = 21,

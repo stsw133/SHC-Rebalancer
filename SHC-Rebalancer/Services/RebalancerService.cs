@@ -169,9 +169,7 @@ internal static class RebalancerService
         /// options (default)
         foreach (var (key, option) in independentOptions)
         {
-            var selectedValue = SettingsService.Instance.Settings.SelectedOptions.ContainsKey(key)
-                ? SettingsService.Instance.Settings.SelectedOptions[key]
-                : null;
+            var selectedValue = SettingsService.Instance.Settings.SelectedOptions.TryGetValue(key);
 
             foreach (var model in option.Modifications.Where(x => x.Version == gameVersion))
             {
@@ -243,11 +241,6 @@ internal static class RebalancerService
         {
             foreach (var ai in Enum.GetValues<AI>().Where(x => x > AI.All))
             {
-                //if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(AI.All)) is var modelAll && modelAll.Value != null)
-                //{
-                //    if (modelAll.Value.LordType != null)
-                //        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + ((int)ai) - 1, (byte)modelAll.Value.LordType, baseAddress.Size, $"{modelAll.Key} LordType");
-                //}
                 if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(ai)) is var model && model.Value != null)
                 {
                     if (model.Value.LordType != null)
@@ -261,19 +254,6 @@ internal static class RebalancerService
         {
             foreach (var ai in Enum.GetValues<AI>().Where(x => x > AI.All))
             {
-                //if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(AI.All)) is var modelAll && modelAll.Value != null)
-                //{
-                //    if (modelAll.Value.LordStrength != null)
-                //    {
-                //        var realStrength = Convert.ToInt32(modelAll.Value.LordStrength * 100);
-                //        if (realStrength > 100)
-                //            realStrength += realStrength - 100;
-                //        var dots = realStrength > 100 ? Math.Min((realStrength - 100) / 20, 5) : realStrength < 100 ? Math.Min(15 - realStrength / 10, 10) : 0;
-                //
-                //        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)ai) - 1) * 8, dots, baseAddress.Size, $"{modelAll.Key} LordStrength Dots");
-                //        BinaryPatchService.WriteIfDifferent(Convert.ToInt32(baseAddress.Address, 16) + (((int)ai) - 1) * 8 + 4, realStrength, baseAddress.Size, $"{modelAll.Key} LordStrength Value");
-                //    }
-                //}
                 if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(ai)) is var model && model.Value != null)
                 {
                     if (model.Value.LordStrength != null)
@@ -301,12 +281,6 @@ internal static class RebalancerService
 
             foreach (var ai in Enum.GetValues<AI>().Where(x => x > AI.All))
             {
-                //if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(AI.All)) is var modelAll && modelAll.Value != null)
-                //{
-                //    var address = Convert.ToInt32(baseAddress.Address, 16) + (((int)ai - 1) * 1697);
-                //    for (var i = 0; i < properties.Count; i++)
-                //        BinaryPatchService.WriteIfDifferent(address + i * 10, properties[i].GetValue(modelAll.Value.Personality), baseAddress.Size, $"{modelAll.Key} {properties[i].Name}");
-                //}
                 if (config.AIs.FirstOrDefault(x => x.Key == FindMappedAI(ai)) is var model && model.Value != null)
                 {
                     var address = Convert.ToInt32(baseAddress.Address, 16) + (((int)ai - 1) * 1697);
@@ -325,20 +299,20 @@ internal static class RebalancerService
         {
             GM1Service.ReplaceImageInGM1(Path.Combine(StorageService.GmPath, "interface_icons2.gm1"), new Dictionary<int, string>()
             {
-                { 521 + (int)ai.Key, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/avatar_big.png") },
-                { 699 + (int)ai.Key, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/avatar_small.png") },
+                { 521 + (int)ai.Key, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/avatar_big.png") },
+                { 699 + (int)ai.Key, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/avatar_small.png") },
             });
         }
-        //TODO - else if change to original
+        //TODO - else if change to original (extract from backup archive zip)
 
         /// speech
         string[] prefixes = ["all", "rt", "sn", "pg", "wf", "sa", "ca", "su", "ri", "fr", "ph", "wa", "em", "ni", "sh", "ma", "ab"];
         foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString()))
         {
-            var speechDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/speech/{StorageService.GameLanguage}");
+            var speechDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/speech/{StorageService.GameLanguage}");
             if (!Directory.Exists(speechDirectory))
             {
-                speechDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/speech/English");
+                speechDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/speech/English");
                 if (!Directory.Exists(speechDirectory))
                     continue;
             }
@@ -352,88 +326,91 @@ internal static class RebalancerService
                 }
                 else
                 {
+                    //TODO - Path.GetFileName(filePath) should be replaced with a smarter way to handle file names when for exaple we have "angry" but some AI files have "anger" instead
                     File.Copy(filePath, Path.Combine(StorageService.FxSpeechPath, $"{prefixes[(int)ai.Key]}_{Path.GetFileName(filePath)}"), overwrite: true);
                 }
             }
         }
-        //TODO - else if change to original
+        //TODO - else if change to original (extract from backup archive zip)
 
         /// text
         foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString() && x.Key > AI.All))
         {
-            var textFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/text/{StorageService.GameLanguage}.txt");
+            var textFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/text/{StorageService.GameLanguage}.txt");
             if (!File.Exists(textFile))
             {
-                textFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/text/English.txt");
+                textFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/text/English.txt");
                 if (!File.Exists(textFile))
                     continue;
             }
             var text = File.ReadAllLines(textFile);
 
+            //TODO - maybe list below can be shortened by generating some texts in a loop?
             TexService.ReplaceLinesInTex(new Dictionary<int, string>()
             {
-                { 1177 + ((int)ai.Key) * 8, $"{text[0]}" }, // AI 1st full name
-                { 1178 + ((int)ai.Key) * 8, $"{text[1]}" }, // AI 2nd full name
-                { 1179 + ((int)ai.Key) * 8, $"{text[2]}" }, // AI 3rd full name
-                { 1180 + ((int)ai.Key) * 8, $"{text[3]}" }, // AI 4th full name
-                { 1181 + ((int)ai.Key) * 8, $"{text[4]}" }, // AI 5th full name
-                { 1182 + ((int)ai.Key) * 8, $"{text[5]}" }, // AI 6th full name
-                { 1183 + ((int)ai.Key) * 8, $"{text[6]}" }, // AI 7th full name
-                { 1184 + ((int)ai.Key) * 8, $"{text[7]}" }, // AI 8th full name
-                { 1304 + ((int)ai.Key) * 9, $"{text[8]}" }, // AI name
-                { 1305 + ((int)ai.Key) * 9, $"{text[9]}" }, // AI 1st title
-                { 1306 + ((int)ai.Key) * 9, $"{text[10]}" }, // AI 2nd title
-                { 1307 + ((int)ai.Key) * 9, $"{text[11]}" }, // AI 3rd title
-                { 1308 + ((int)ai.Key) * 9, $"{text[12]}" }, // AI 4th title
-                { 1309 + ((int)ai.Key) * 9, $"{text[13]}" }, // AI 5th title
-                { 1310 + ((int)ai.Key) * 9, $"{text[14]}" }, // AI 6th title
-                { 1311 + ((int)ai.Key) * 9, $"{text[15]}" }, // AI 7th title
-                { 1312 + ((int)ai.Key) * 9, $"{text[16]}" }, // AI 8th title
-                { 1458 + ((int)ai.Key), $"{text[17]}" }, // AI description
-                { 3222 + ((int)ai.Key) * 34 + 0, $"{text[18]}" }, // AI taunt_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 1, $"{text[19]}" }, // AI taunt_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 2, $"{text[20]}" }, // AI taunt_03.wav
-                { 3222 + ((int)ai.Key) * 34 + 3, $"{text[21]}" }, // AI taunt_04.wav
-                { 3222 + ((int)ai.Key) * 34 + 4, $"{text[22]}" }, // AI anger_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 5, $"{text[23]}" }, // AI anger_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 6, $"{text[24]}" }, // AI plead_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 7, $"{text[25]}" }, // AI nervous_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 8, $"{text[26]}" }, // AI nervous_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 9, $"{text[27]}" }, // AI vict_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 10, $"{text[28]}" }, // AI vict_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 11, $"{text[29]}" }, // AI vict_03.wav
-                { 3222 + ((int)ai.Key) * 34 + 12, $"{text[30]}" }, // AI vict_04.wav
-                { 3222 + ((int)ai.Key) * 34 + 13, $"{text[31]}" }, // AI req_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 14, $"{text[32]}" }, // AI thanks_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 15, $"{text[33]}" }, // AI ally_death_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 16, $"{text[34]}" }, // AI congrats_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 17, $"{text[35]}" }, // AI boast_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 18, $"{text[36]}" }, // AI help_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 19, $"{text[37]}" }, // AI extra_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 20, $"{text[38]}" }, // AI add_player_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 21, $"{text[39]}" }, // AI kick_player_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 22, $"{text[40]}" }, // AI siege_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 23, $"{text[41]}" }, // AI noattack_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 24, $"{text[42]}" }, // AI noattack_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 25, $"{text[43]}" }, // AI nohelp_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 26, $"{text[44]}" }, // AI nohelp_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 27, $"{text[45]}" }, // AI notsent_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 28, $"{text[46]}" }, // AI sent_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 29, $"{text[47]}" }, // AI team_winning_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 30, $"{text[48]}" }, // AI team_losing_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 31, $"{text[49]}" }, // AI helpsent_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 32, $"{text[50]}" }, // AI willattack_01.wav
+                { 1177 + ((int)ai.Key) * 8, text[00] }, // AI 1st full name
+                { 1178 + ((int)ai.Key) * 8, text[01] }, // AI 2nd full name
+                { 1179 + ((int)ai.Key) * 8, text[02] }, // AI 3rd full name
+                { 1180 + ((int)ai.Key) * 8, text[03] }, // AI 4th full name
+                { 1181 + ((int)ai.Key) * 8, text[04] }, // AI 5th full name
+                { 1182 + ((int)ai.Key) * 8, text[05] }, // AI 6th full name
+                { 1183 + ((int)ai.Key) * 8, text[06] }, // AI 7th full name
+                { 1184 + ((int)ai.Key) * 8, text[07] }, // AI 8th full name
+                { 1304 + ((int)ai.Key) * 9, text[08] }, // AI name
+                { 1305 + ((int)ai.Key) * 9, text[09] }, // AI 1st title
+                { 1306 + ((int)ai.Key) * 9, text[10] }, // AI 2nd title
+                { 1307 + ((int)ai.Key) * 9, text[11] }, // AI 3rd title
+                { 1308 + ((int)ai.Key) * 9, text[12] }, // AI 4th title
+                { 1309 + ((int)ai.Key) * 9, text[13] }, // AI 5th title
+                { 1310 + ((int)ai.Key) * 9, text[14] }, // AI 6th title
+                { 1311 + ((int)ai.Key) * 9, text[15] }, // AI 7th title
+                { 1312 + ((int)ai.Key) * 9, text[16] }, // AI 8th title
+                { 1458 + ((int)ai.Key) * 1, text[17] }, // AI description
+                { 3222 + ((int)ai.Key) * 34 + 00, text[18] }, // AI taunt_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 01, text[19] }, // AI taunt_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 02, text[20] }, // AI taunt_03.wav
+                { 3222 + ((int)ai.Key) * 34 + 03, text[21] }, // AI taunt_04.wav
+                { 3222 + ((int)ai.Key) * 34 + 04, text[22] }, // AI anger_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 05, text[23] }, // AI anger_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 06, text[24] }, // AI plead_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 07, text[25] }, // AI nervous_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 08, text[26] }, // AI nervous_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 09, text[27] }, // AI vict_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 10, text[28] }, // AI vict_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 11, text[29] }, // AI vict_03.wav
+                { 3222 + ((int)ai.Key) * 34 + 12, text[30] }, // AI vict_04.wav
+                { 3222 + ((int)ai.Key) * 34 + 13, text[31] }, // AI req_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 14, text[32] }, // AI thanks_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 15, text[33] }, // AI ally_death_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 16, text[34] }, // AI congrats_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 17, text[35] }, // AI boast_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 18, text[36] }, // AI help_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 19, text[37] }, // AI extra_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 20, text[38] }, // AI add_player_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 21, text[39] }, // AI kick_player_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 22, text[40] }, // AI siege_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 23, text[41] }, // AI noattack_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 24, text[42] }, // AI noattack_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 25, text[43] }, // AI nohelp_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 26, text[44] }, // AI nohelp_02.wav
+                { 3222 + ((int)ai.Key) * 34 + 27, text[45] }, // AI notsent_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 28, text[46] }, // AI sent_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 29, text[47] }, // AI team_winning_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 30, text[48] }, // AI team_losing_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 31, text[49] }, // AI helpsent_01.wav
+                { 3222 + ((int)ai.Key) * 34 + 32, text[50] }, // AI willattack_01.wav
             });
         }
+        //TODO - else if change to original (extract from backup archive cr)
 
         /// videos
         prefixes = ["bad_soldier", "rt", "sn", "pg", "wf", "saladin", "bad_arab", "sultan", "richard", "fred", "phillip", "vizir", "emir", "nazir", "sheriff", "ma", "abbot"];
         foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString()))
         {
-            var angryFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/videos/angry.bik");
-            var naturalFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/videos/natural.bik");
-            var nervousFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/videos/nervous.bik");
-            var tauntFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Resources/configs/air/{ai.Value}/videos/taunt.bik");
+            var angryFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/videos/angry.bik");
+            var naturalFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/videos/natural.bik");
+            var nervousFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/videos/nervous.bik");
+            var tauntFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/videos/taunt.bik");
 
             foreach (var filePath in Directory.GetFiles(StorageService.BinksPath, $"{prefixes[(int)ai.Key]}_*.bik"))
             {
@@ -447,7 +424,7 @@ internal static class RebalancerService
                     File.Copy(tauntFilePath, Path.Combine(StorageService.BinksPath, Path.GetFileName(filePath)), overwrite: true);
             }
         }
-        //TODO - else if change to original
+        //TODO - else if change to original (extract from backup archive zip)
     }
 
     /// ProcessAivConfig
@@ -589,7 +566,12 @@ internal static class RebalancerService
             {
                 var address = Convert.ToInt32(baseAddress.Address, 16) + ((model.Key - 1) * 52);
                 for (var i = 0; i < properties.Count; i++)
-                    BinaryPatchService.WriteIfDifferent(address + i * 4, properties[i].GetValue(model.Value), baseAddress.Size, $"Outpost {model.Key} {properties[i].Name}");
+                    if (BinaryPatchService.WriteIfDifferent(address + i * 4, properties[i].GetValue(model.Value), baseAddress.Size, $"Outpost {model.Key} {properties[i].Name}")
+                     && properties[i].Name == nameof(OutpostModel.Unit))
+                        TexService.ReplaceLinesInTex(new Dictionary<int, string>()
+                        {
+                            { 770 + model.Key + (model.Key > 8 ? 1 : 0), properties[i].GetValue(model.Value)?.ToString() ?? string.Empty }
+                        });
             }
         }
     }
@@ -815,37 +797,37 @@ internal static class RebalancerService
     /// ProcessSkirmishTrailConfig
     private static void ProcessSkirmishTrailConfig(GameVersion gameVersion, SkirmishTrailConfigModel config)
     {
-        /// maps
-        var maps = new List<OtherValueModel>();
-        if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Maps", out var baseAddress))
+        /// map mappings
+        var mapMappings = new List<OtherValueModel>();
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail MapsMappings", out var baseAddress))
         {
-            foreach (var mapName in config.Maps)
+            foreach (var mapName in config.MapMappings)
             {
-                var newMap = new OtherValueModel()
+                var newMapMapping = new OtherValueModel()
                 {
-                    Address = (maps.Count > 0 ? (Convert.ToInt32(maps.Last().EndAddress, 16) + 1) : Convert.ToInt32(baseAddress.Address, 16)).ToString("X"),
+                    Address = (mapMappings.Count > 0 ? (Convert.ToInt32(mapMappings.Last().EndAddress, 16) + 1) : Convert.ToInt32(baseAddress.Address, 16)).ToString("X"),
                     Value = mapName
                 };
-                newMap.EndAddress = (Convert.ToInt32(newMap.Address, 16) + BinaryPatchService.ConvertStringToBytesWithAutoPadding(mapName, 4).Length - 1).ToString("X");
-                maps.Add(newMap);
+                newMapMapping.EndAddress = (Convert.ToInt32(newMapMapping.Address, 16) + BinaryPatchService.ConvertStringToBytesWithAutoPadding(mapName, 4).Length - 1).ToString("X");
+                mapMappings.Add(newMapMapping);
             }
-            if (Convert.ToInt32(maps.Count > 0 ? maps.Last().EndAddress : baseAddress.Address, 16) > Convert.ToInt32(baseAddress.EndAddress, 16))
-                throw new Exception($"SkirmishTrail Maps address overflow by {Convert.ToInt32(maps.Last().EndAddress, 16) - Convert.ToInt32(baseAddress.EndAddress, 16)} characters.");
+            if (Convert.ToInt32(mapMappings.Count > 0 ? mapMappings.Last().EndAddress : baseAddress.Address, 16) > Convert.ToInt32(baseAddress.EndAddress, 16))
+                throw new Exception($"SkirmishTrail Maps address overflow by {Convert.ToInt32(mapMappings.Last().EndAddress, 16) - Convert.ToInt32(baseAddress.EndAddress, 16)} characters.");
 
-            foreach (var map in maps)
+            foreach (var map in mapMappings)
                 BinaryPatchService.WriteIfDifferent(Convert.ToInt32(map.Address, 16), BinaryPatchService.ConvertStringToBytesWithAutoPadding(map.Value!.ToString()!, 4), 1, $"Map {map.Value}");
         }
 
         /// missions
         if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail Missions", out baseAddress))
         {
-            if (config.Missions.FirstOrDefault(x => !maps.Any(y => y.Value?.ToString()?.ToLower() == x.Value.MapName?.ToLower())) is var mission && mission.Value != null)
+            if (config.Missions.FirstOrDefault(x => !mapMappings.Any(y => y.Value?.ToString()?.ToLower() == x.Value.MapName?.ToLower())) is var mission && mission.Value != null)
                 throw new Exception($"SkirmishTrail Missions contains a map name that is not in the SkirmishTrail Maps list: {mission.Value.MapName}");
 
             foreach (var model in config.Missions.Where(x => x.Key.Between(1, 80)))
             {
                 var address = Convert.ToInt32(baseAddress.Address, 16) + ((model.Key - 1) * 144);
-                BinaryPatchService.WriteIfDifferent(address + 0, Convert.ToInt32(maps.First(x => x.Value?.ToString()?.ToLower() == model.Value.MapName?.ToLower()).Address, 16) + 0x400000, baseAddress.Size, $"Mission {model.Key}, MapNameOffset");
+                BinaryPatchService.WriteIfDifferent(address + 0, Convert.ToInt32(mapMappings.First(x => x.Value?.ToString()?.ToLower() == model.Value.MapName?.ToLower()).Address, 16) + 0x400000, baseAddress.Size, $"Mission {model.Key}, MapNameOffset");
                 BinaryPatchService.WriteIfDifferent(address + 4, (int?)model.Value.Difficulty, baseAddress.Size, $"Mission {model.Key}, Difficulty");
                 BinaryPatchService.WriteIfDifferent(address + 8, (int?)model.Value.Type, baseAddress.Size, $"Mission {model.Key}, Type");
                 BinaryPatchService.WriteIfDifferent(address + 12, model.Value.NumberOfPlayers, baseAddress.Size, $"Mission {model.Key}, NumberOfPlayers");
