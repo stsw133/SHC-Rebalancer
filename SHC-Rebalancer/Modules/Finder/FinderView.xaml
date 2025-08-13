@@ -18,8 +18,8 @@
                          Width="200"
                          CellEditEnding="{se:StswEventToCommand CommandBinding={Binding AddressValueChangedCommand}, PassEventArgsAsParameter=True}">
             <se:StswDataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Address}" FontSize="11" Header="Address" IsReadOnly="True" Width="*"/>
-                <se:StswDataGridDecimalColumn Binding="{Binding Value}" FontSize="11" Header="Value" Width="*"/>
+                <se:StswDataGridTextColumn Binding="{Binding Address}" FontSize="11" Header="Address" IsReadOnly="True" Width="*"/>
+                <se:StswDataGridTextColumn Binding="{Binding Value}" FontSize="11" Header="Value" TextWrapping="NoWrap" Width="*"/>
             </se:StswDataGrid.Columns>
 
             <se:StswDataGrid.CellStyle>

@@ -13,14 +13,14 @@ public partial class FinderContext : StswObservableObject
         {
             if (FinderFilterVersion.HasValue)
             {
-                FinderService.Find(FinderResults, FinderFilterVersion.Value, FinderFilterSize, FinderDisplayAsChar, FinderFilterAddress, FinderFilterSkips ?? 0, FinderFilterValues, FinderFilterLimit);
+                FinderResults = [.. FinderService.Find(FinderFilterVersion.Value, FinderFilterSize, FinderDisplayAsChar, FinderFilterAddress, FinderFilterSkips ?? 0, FinderFilterValues, FinderFilterLimit)];
                 _finderResultsType = FinderFilterVersion.Value;
                 _finderResultsSize = FinderFilterSize;
             }
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
 
@@ -32,7 +32,7 @@ public partial class FinderContext : StswObservableObject
             if (e == null)
                 return;
 
-            if (e.Row.Item is FinderDataModel model && e.EditingElement is StswDecimalBox stsw)
+            if (e.Row.Item is FinderDataModel model && e.EditingElement is StswTextBox stsw)
             {
                 try
                 {
@@ -42,25 +42,25 @@ public partial class FinderContext : StswObservableObject
                     switch (_finderResultsSize)
                     {
                         case 1:
-                            fs.WriteByte(Convert.ToByte(stsw.Value));
+                            fs.WriteByte(Convert.ToByte(stsw.Text));
                             break;
                         case 2:
-                            fs.Write(BitConverter.GetBytes(Convert.ToInt16(stsw.Value)), 0, 2);
+                            fs.Write(BitConverter.GetBytes(Convert.ToInt16(stsw.Text)), 0, 2);
                             break;
                         case 4:
-                            fs.Write(BitConverter.GetBytes(Convert.ToInt32(stsw.Value)), 0, 4);
+                            fs.Write(BitConverter.GetBytes(Convert.ToInt32(stsw.Text)), 0, 4);
                             break;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Wystąpił błąd: {ex.Message}");
+                    Console.WriteLine($"Error writing to file: {ex.Message}");
                 }
             }
         }
         catch (Exception ex)
         {
-            StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
     
@@ -71,7 +71,7 @@ public partial class FinderContext : StswObservableObject
     partial void OnFinderFilterSizeChanged(int oldValue, int newValue) => FindCommand.Execute(FinderFilterVersion);
 
     [StswObservableProperty] bool _finderDisplayAsChar;
-    partial void OnFinderDisplayAsCharChanged(bool oldValue, bool newValue) => FindCommand.Execute(FinderFilterVersion);
+    partial void OnFinderDisplayAsCharChanged(bool oldValue, bool newValue) => FinderResults.ForEach(x => x.Value = Fn.AsciiConvert(x.Value));
 
     [StswObservableProperty] string? _finderFilterAddress;
     partial void OnFinderFilterAddressChanged(string? oldValue, string? newValue) => FindCommand.Execute(FinderFilterVersion);

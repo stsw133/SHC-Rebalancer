@@ -334,7 +334,7 @@ internal static class RebalancerService
         //TODO - else if change to original (extract from backup archive zip)
 
         /// text
-        foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString() && x.Key > AI.All))
+        foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString()))
         {
             var textFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/text/{StorageService.GameLanguage}.txt");
             if (!File.Exists(textFile))
@@ -345,66 +345,92 @@ internal static class RebalancerService
             }
             var text = File.ReadAllLines(textFile);
 
-            //TODO - maybe list below can be shortened by generating some texts in a loop?
-            TexService.ReplaceLinesInTex(new Dictionary<int, string>()
-            {
-                { 1177 + ((int)ai.Key) * 8, text[00] }, // AI 1st full name
-                { 1178 + ((int)ai.Key) * 8, text[01] }, // AI 2nd full name
-                { 1179 + ((int)ai.Key) * 8, text[02] }, // AI 3rd full name
-                { 1180 + ((int)ai.Key) * 8, text[03] }, // AI 4th full name
-                { 1181 + ((int)ai.Key) * 8, text[04] }, // AI 5th full name
-                { 1182 + ((int)ai.Key) * 8, text[05] }, // AI 6th full name
-                { 1183 + ((int)ai.Key) * 8, text[06] }, // AI 7th full name
-                { 1184 + ((int)ai.Key) * 8, text[07] }, // AI 8th full name
-                { 1304 + ((int)ai.Key) * 9, text[08] }, // AI name
-                { 1305 + ((int)ai.Key) * 9, text[09] }, // AI 1st title
-                { 1306 + ((int)ai.Key) * 9, text[10] }, // AI 2nd title
-                { 1307 + ((int)ai.Key) * 9, text[11] }, // AI 3rd title
-                { 1308 + ((int)ai.Key) * 9, text[12] }, // AI 4th title
-                { 1309 + ((int)ai.Key) * 9, text[13] }, // AI 5th title
-                { 1310 + ((int)ai.Key) * 9, text[14] }, // AI 6th title
-                { 1311 + ((int)ai.Key) * 9, text[15] }, // AI 7th title
-                { 1312 + ((int)ai.Key) * 9, text[16] }, // AI 8th title
-                { 1458 + ((int)ai.Key) * 1, text[17] }, // AI description
-                { 3222 + ((int)ai.Key) * 34 + 00, text[18] }, // AI taunt_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 01, text[19] }, // AI taunt_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 02, text[20] }, // AI taunt_03.wav
-                { 3222 + ((int)ai.Key) * 34 + 03, text[21] }, // AI taunt_04.wav
-                { 3222 + ((int)ai.Key) * 34 + 04, text[22] }, // AI anger_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 05, text[23] }, // AI anger_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 06, text[24] }, // AI plead_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 07, text[25] }, // AI nervous_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 08, text[26] }, // AI nervous_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 09, text[27] }, // AI vict_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 10, text[28] }, // AI vict_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 11, text[29] }, // AI vict_03.wav
-                { 3222 + ((int)ai.Key) * 34 + 12, text[30] }, // AI vict_04.wav
-                { 3222 + ((int)ai.Key) * 34 + 13, text[31] }, // AI req_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 14, text[32] }, // AI thanks_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 15, text[33] }, // AI ally_death_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 16, text[34] }, // AI congrats_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 17, text[35] }, // AI boast_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 18, text[36] }, // AI help_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 19, text[37] }, // AI extra_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 20, text[38] }, // AI add_player_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 21, text[39] }, // AI kick_player_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 22, text[40] }, // AI siege_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 23, text[41] }, // AI noattack_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 24, text[42] }, // AI noattack_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 25, text[43] }, // AI nohelp_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 26, text[44] }, // AI nohelp_02.wav
-                { 3222 + ((int)ai.Key) * 34 + 27, text[45] }, // AI notsent_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 28, text[46] }, // AI sent_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 29, text[47] }, // AI team_winning_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 30, text[48] }, // AI team_losing_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 31, text[49] }, // AI helpsent_01.wav
-                { 3222 + ((int)ai.Key) * 34 + 32, text[50] }, // AI willattack_01.wav
-            });
+            //TODO - maybe lists below can be shortened by generating some texts in a loop?
+            if (ai.Key == AI.All)
+                for (var i = (int)AI.Rat; i <= (int)AI.Wolf; i++)
+                    TexService.ReplaceLinesInTex(new Dictionary<int, string>()
+                    {
+                        { 3222 + i * 34 + 13, text[31] }, // AI req_01.wav
+                        { 3222 + i * 34 + 14, text[32] }, // AI thanks_01.wav
+                        { 3222 + i * 34 + 15, text[33] }, // AI ally_death_01.wav
+                        { 3222 + i * 34 + 16, text[34] }, // AI congrats_01.wav
+                        { 3222 + i * 34 + 17, text[35] }, // AI boast_01.wav
+                        { 3222 + i * 34 + 18, text[36] }, // AI help_01.wav
+                        { 3222 + i * 34 + 19, text[37] }, // AI extra_01.wav
+                        { 3222 + i * 34 + 20, text[38] }, // AI add_player_01.wav
+                        { 3222 + i * 34 + 21, text[39] }, // AI kick_player_01.wav
+                        { 3222 + i * 34 + 22, text[40] }, // AI siege_01.wav
+                        { 3222 + i * 34 + 23, text[41] }, // AI noattack_01.wav
+                        { 3222 + i * 34 + 24, text[42] }, // AI noattack_02.wav
+                        { 3222 + i * 34 + 25, text[43] }, // AI nohelp_01.wav
+                        { 3222 + i * 34 + 26, text[44] }, // AI nohelp_02.wav
+                        { 3222 + i * 34 + 27, text[45] }, // AI notsent_01.wav
+                        { 3222 + i * 34 + 28, text[46] }, // AI sent_01.wav
+                        { 3222 + i * 34 + 29, text[47] }, // AI team_winning_01.wav
+                        { 3222 + i * 34 + 30, text[48] }, // AI team_losing_01.wav
+                        { 3222 + i * 34 + 31, text[49] }, // AI helpsent_01.wav
+                        { 3222 + i * 34 + 32, text[50] }, // AI willattack_01.wav
+                    });
+            else
+                TexService.ReplaceLinesInTex(new Dictionary<int, string>()
+                {
+                    { 1177 + ((int)ai.Key) * 8, text[00] }, // AI 1st full name
+                    { 1178 + ((int)ai.Key) * 8, text[01] }, // AI 2nd full name
+                    { 1179 + ((int)ai.Key) * 8, text[02] }, // AI 3rd full name
+                    { 1180 + ((int)ai.Key) * 8, text[03] }, // AI 4th full name
+                    { 1181 + ((int)ai.Key) * 8, text[04] }, // AI 5th full name
+                    { 1182 + ((int)ai.Key) * 8, text[05] }, // AI 6th full name
+                    { 1183 + ((int)ai.Key) * 8, text[06] }, // AI 7th full name
+                    { 1184 + ((int)ai.Key) * 8, text[07] }, // AI 8th full name
+                    { 1304 + ((int)ai.Key) * 9, text[08] }, // AI name
+                    { 1305 + ((int)ai.Key) * 9, text[09] }, // AI 1st title
+                    { 1306 + ((int)ai.Key) * 9, text[10] }, // AI 2nd title
+                    { 1307 + ((int)ai.Key) * 9, text[11] }, // AI 3rd title
+                    { 1308 + ((int)ai.Key) * 9, text[12] }, // AI 4th title
+                    { 1309 + ((int)ai.Key) * 9, text[13] }, // AI 5th title
+                    { 1310 + ((int)ai.Key) * 9, text[14] }, // AI 6th title
+                    { 1311 + ((int)ai.Key) * 9, text[15] }, // AI 7th title
+                    { 1312 + ((int)ai.Key) * 9, text[16] }, // AI 8th title
+                    { 1458 + ((int)ai.Key) * 1, text[17] }, // AI description
+                    { 3222 + ((int)ai.Key) * 34 + 00, text[18] }, // AI taunt_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 01, text[19] }, // AI taunt_02.wav
+                    { 3222 + ((int)ai.Key) * 34 + 02, text[20] }, // AI taunt_03.wav
+                    { 3222 + ((int)ai.Key) * 34 + 03, text[21] }, // AI taunt_04.wav
+                    { 3222 + ((int)ai.Key) * 34 + 04, text[22] }, // AI anger_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 05, text[23] }, // AI anger_02.wav
+                    { 3222 + ((int)ai.Key) * 34 + 06, text[24] }, // AI plead_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 07, text[25] }, // AI nervous_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 08, text[26] }, // AI nervous_02.wav
+                    { 3222 + ((int)ai.Key) * 34 + 09, text[27] }, // AI vict_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 10, text[28] }, // AI vict_02.wav
+                    { 3222 + ((int)ai.Key) * 34 + 11, text[29] }, // AI vict_03.wav
+                    { 3222 + ((int)ai.Key) * 34 + 12, text[30] }, // AI vict_04.wav
+                    { 3222 + ((int)ai.Key) * 34 + 13, text[31] }, // AI req_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 14, text[32] }, // AI thanks_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 15, text[33] }, // AI ally_death_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 16, text[34] }, // AI congrats_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 17, text[35] }, // AI boast_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 18, text[36] }, // AI help_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 19, text[37] }, // AI extra_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 20, text[38] }, // AI add_player_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 21, text[39] }, // AI kick_player_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 22, text[40] }, // AI siege_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 23, text[41] }, // AI noattack_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 24, text[42] }, // AI noattack_02.wav
+                    { 3222 + ((int)ai.Key) * 34 + 25, text[43] }, // AI nohelp_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 26, text[44] }, // AI nohelp_02.wav
+                    { 3222 + ((int)ai.Key) * 34 + 27, text[45] }, // AI notsent_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 28, text[46] }, // AI sent_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 29, text[47] }, // AI team_winning_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 30, text[48] }, // AI team_losing_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 31, text[49] }, // AI helpsent_01.wav
+                    { 3222 + ((int)ai.Key) * 34 + 32, text[50] }, // AI willattack_01.wav
+                });
         }
         //TODO - else if change to original (extract from backup archive cr)
 
         /// videos
-        prefixes = ["bad_soldier", "rt", "sn", "pg", "wf", "saladin", "bad_arab", "sultan", "richard", "fred", "phillip", "vizir", "emir", "nazir", "sheriff", "ma", "abbot"];
+        prefixes = ["bad_soldier", "rt", "sn", "pg", "wf", "saladin", "bad_arab", "sultan", "richard", "fred", "philip", "vizir", "emir", "nazir", "sheriff", "ma", "abbot"];
         foreach (var ai in config.AIs.Where(x => x.Value != null && x.Key.ToString() != x.Value.ToString()))
         {
             var angryFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Configs/air/{ai.Value}/videos/angry.bik");
@@ -799,7 +825,7 @@ internal static class RebalancerService
     {
         /// map mappings
         var mapMappings = new List<OtherValueModel>();
-        if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail MapsMappings", out var baseAddress))
+        if (StorageService.BaseAddresses[gameVersion].TryGetValue("SkirmishTrail MapMappings", out var baseAddress))
         {
             foreach (var mapName in config.MapMappings)
             {

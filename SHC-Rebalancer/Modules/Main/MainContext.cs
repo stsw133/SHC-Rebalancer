@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Windows;
 
 namespace SHC_Rebalancer;
 public partial class MainContext : StswObservableObject
@@ -12,20 +11,16 @@ public partial class MainContext : StswObservableObject
     }
 
     [StswCommand]
-    async Task AcceptTerms(bool parameter)
+    async Task ShowTerms()
     {
         try
         {
-            if (parameter)
-            {
-                SettingsService.Instance.Settings.TermsAccepted = true;
-                StswContentDialog.Close("TermsDialog");
-            }
-            else Application.Current.Shutdown();
+            if (!SettingsService.Instance.Settings.TermsAccepted)
+                await StswContentDialog.Show(new TermsContext(), "MainContentDialog");
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
 
@@ -59,7 +54,7 @@ public partial class MainContext : StswObservableObject
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
 
@@ -68,11 +63,11 @@ public partial class MainContext : StswObservableObject
     {
         try
         {
-            await StswContentDialog.Show(new UcpExplanationView(), "InfoDialog");
+            await StswContentDialog.Show(new UcpExplanationView(), "MainContentDialog");
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
 
@@ -96,7 +91,7 @@ public partial class MainContext : StswObservableObject
         catch (Exception ex)
         {
             InstallState = StswProgressState.Error;
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
 
@@ -141,7 +136,7 @@ public partial class MainContext : StswObservableObject
         catch (Exception ex)
         {
             InstallState = StswProgressState.Error;
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
 
@@ -177,7 +172,7 @@ public partial class MainContext : StswObservableObject
         {
             InstallState = StswProgressState.Error;
             InstallText = $"Installation error: {ex.Message}";
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
     bool InstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath);
@@ -209,7 +204,7 @@ public partial class MainContext : StswObservableObject
         {
             InstallState = StswProgressState.Error;
             InstallText = $"Uninstallation error: {ex.Message}";
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
     bool UninstallCondition() => InstallState != StswProgressState.Running && !string.IsNullOrEmpty(SettingsService.Instance.Settings.GamePath) && IsInstalled;
@@ -226,6 +221,5 @@ public partial class MainContext : StswObservableObject
     [StswObservableProperty] int _installValue;
     [StswObservableProperty] int _installValueMax;
     [StswObservableProperty] bool _isInstalled;
-    [StswObservableProperty] bool _termsAccepted = SettingsService.Instance.Settings.TermsAccepted;
     [StswObservableProperty] StswObservableDictionary<string, ConfigModel?> _selectedConfigs = [];
 }

@@ -9,13 +9,13 @@
 	
 -EuropArcher:
 	-Cost 12 => 15
-	-DamageFromCrossbow 15000 => 8000 (1 => 2 shots)
+	-DamageFromCrossbow 15000 => 7999 (1 => 2 shots)
 	
 -Spearman:
 	-Cost 8 => 10
 	-AlwaysRun No => Yes
 	-DamageFromBow 3500 => 2000 (3 => 5 shots)
-	-DamageFromCrossbow 15000 => 8000 (1 => 2 shots)
+	-DamageFromCrossbow 15000 => 7999 (1 => 2 shots)
 	-DamageFromSling 1800 => 1500 (6 => 7 shots)
 	-MeleeDamage 20 => 25 (+25%)
 	-40% more damage vs Knight
@@ -25,7 +25,7 @@
 	-Cost 20 => 30
 	-Health 15000 => 17500 (+17%)
 	-less damage penalty vs Swordsman & Knight
-	-40% more damage vs Monk
+	-20% more damage vs Monk
 	-100% more damage vs siege engines
 	
 -Crossbowman:
@@ -57,7 +57,7 @@
 -ArabArcher:
 	-Cost 75 => 60
 	-Health 12000 => 12500 (+4%)
-	-DamageFromCrossbow 10000 => 8000 (2 => 2 shots)
+	-DamageFromCrossbow 10000 => 7999 (2 => 2 shots)
 	-DamageFromSling 500 => 1000 (24 => 13 shots)
 	
 -Slave:
@@ -86,6 +86,7 @@
 	-Speed penalty 1 => 2
 	-Health 10000 => 12500 (+25%)
 	-DamageFromBow 1250 => 2000 (8 => 7 shots)
+	-DamageFromCrossbow 8000 => 7999 (2 => 2 shots)
 	-DamageFromSling 500 => 1000 (20 => 13 shots)
 	-MeleeDamage 20 => 10 (-50%)
 	
@@ -99,12 +100,13 @@
 	-Cost 100 => 120
 	-Health 7000 => 10000 (+43%)
 	-DamageFromBow 1250 => 2000 (6 => 5 shots)
+	-DamageFromCrossbow 8000 => 7999 (2 => 2 shots)
 	-DamageFromSling 400 => 1500 (18 => 7 shots)
 	-MeleeDamage 15 => 10 (-33%)
 	
 -Engineer:
 	-Health 5000 => 10000 (+100%)
-	-DamageFromCrossbow 10000 => 8000 (1 => 2 shots)
+	-DamageFromCrossbow 10000 => 7999 (1 => 2 shots)
 	-DamageFromSling 2000 => 1500 (3 => 7 shots)
 	
 -Ladderman:
@@ -116,7 +118,7 @@
 	
 -Tunneler:
 	-DamageFromBow 5000 => 2000 (2 => 5 shots)
-	-DamageFromCrossbow 15000 => 8000 (1 => 2 shots)
+	-DamageFromCrossbow 15000 => 7999 (1 => 2 shots)
 	-DamageFromSling 5000 => 1500 (2 => 7 shots)
 	-MeleeDamage 25 => 20 (-20%)
 	-damage vs walls set to 60% of his base melee damage
@@ -133,7 +135,6 @@
 	-Speed penalty 2 => 1
 	-Health 6000 => 7500 (+25%)
 	-DamageFromBow 4000 => 5000 (2 => 2 shots)
-	-DamageFromCrossbow 10000 => 10000 (1 => 1 shots)
 	-DamageFromSling 2000 => 3000 (3 => 3 shots)
 	-100% more damage vs Assassin
 	
@@ -241,7 +242,7 @@
 			"CanBeMoved": true,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 8000,
+			"DamageFromCrossbow": 7999,
 			"DamageFromSling": 1000,
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
@@ -259,7 +260,7 @@
 			"CanBeMoved": true,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 8000,
+			"DamageFromCrossbow": 7999,
 			"DamageFromSling": 1500,
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
@@ -401,7 +402,7 @@
 			"CanBeMoved": true,
 			"Health": 12500,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 8000,
+			"DamageFromCrossbow": 7999,
 			"DamageFromSling": 1000,
 			"CanDigMoat": false,
 			"CanClimbLadder": true,
@@ -502,7 +503,7 @@
 			"CanBeMoved": true,
 			"Health": 12500,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 8000,
+			"DamageFromCrossbow": 7999,
 			"DamageFromSling": 1000,
 			"CanDigMoat": false,
 			"CanClimbLadder": false,
@@ -543,7 +544,7 @@
 			"CanBeMoved": true,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 8000,
+			"DamageFromCrossbow": 7999,
 			"DamageFromSling": 1500,
 			"CanDigMoat": false,
 			"CanClimbLadder": true,
@@ -561,7 +562,7 @@
 			"CanBeMoved": true,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 8000,
+			"DamageFromCrossbow": 7999,
 			"DamageFromSling": 1500,
 			"CanDigMoat": true,
 			"CanClimbLadder": true,
@@ -591,7 +592,7 @@
 			"CanBeMoved": true,
 			"Health": 10000,
 			"DamageFromBow": 2000,
-			"DamageFromCrossbow": 8000,
+			"DamageFromCrossbow": 7999,
 			"DamageFromSling": 1500,
 			"CanDigMoat": true,
 			"CanClimbLadder": true,

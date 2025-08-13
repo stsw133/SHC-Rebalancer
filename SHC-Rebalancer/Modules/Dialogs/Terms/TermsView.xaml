@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="SHC_Rebalancer.TermsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHC_Rebalancer"
+             xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:TermsContext}"
+             Background="{DynamicResource StswWindow.Static.Background}"
+             Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}"
+             Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
+        <!-- terms of use -->
+        <se:StswText Margin="10" TextAlignment="Justify" TextWrapping="Wrap">
+            <Run Text="WARNING!" FontWeight="Bold"/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="For proper functionality, the Rebalancer requires UCP version 2.15 installed with the appropriate configuration (it can be included through specific option in Rebalancer), unless you modify the configuration of base addresses and disable the installation of certain modules, e.g. AIC."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="You use the Rebalancer at your own risk – the application creates backups of executable .exe files before installation, but it is recommended to create your own backups of these files as an additional precaution."/>
+        </se:StswText>
+        <se:StswCheckBox Content="I understood and accept the risks" IsChecked="{Binding TermsAccepted}" Margin="10"/>
+        <!-- buttons panel -->
+        <UniformGrid HorizontalAlignment="Center" Margin="5" Rows="1">
+            <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFnUI.True}" IsEnabled="{Binding TermsAccepted}" Margin="5" Padding="10 3">
+                <se:StswLabel Content="Continue" IconData="{x:Static se:StswIcons.Check}" IconFill="{DynamicResource StswColor.Positive}"/>
+            </se:StswButton>
+            <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFnUI.False}" Margin="5" Padding="10 3">
+                <se:StswLabel Content="Exit" IconData="{x:Static se:StswIcons.Logout}" IconFill="{DynamicResource StswColor.Negative}"/>
+            </se:StswButton>
+        </UniformGrid>
+    </StackPanel>
+</UserControl>

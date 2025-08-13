@@ -7,40 +7,10 @@
              xmlns:se="clr-namespace:StswExpress;assembly=StswExpress"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance local:MainContext}">
 
-    <se:StswContentDialog Identifier="TermsDialog" IsOpen="{Binding TermsAccepted, Mode=OneTime, Converter={x:Static se:StswBoolConverter.Instance}, ConverterParameter=!}">
-        <se:StswContentDialog.DialogContent>
-            <DockPanel Background="{DynamicResource StswWindow.Static.Background}"
-                       IsHitTestVisible="{Binding TermsAccepted, Mode=OneWay, Source={StaticResource Settings}, Converter={x:Static se:StswBoolConverter.Instance}, ConverterParameter=!}"
-                       Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}"
-                       Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type se:StswContentDialog}}}">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
-                    <se:StswText Margin="10" TextAlignment="Justify" TextWrapping="Wrap">
-                        <Run Text="WARNING!" FontWeight="Bold"/>
-                        <LineBreak/>
-                        <LineBreak/>
-                        <Run Text="For proper functionality, the Rebalancer requires UCP version 2.15 installed with the appropriate configuration (it can be included through specific option in Rebalancer), unless you modify the configuration of base addresses and disable the installation of certain modules, e.g. AIC."/>
-                        <LineBreak/>
-                        <LineBreak/>
-                        <Run Text="You use the Rebalancer at your own risk – the application creates backups of executable .exe files before installation, but it is recommended to create your own backups of these files as an additional precaution."/>
-                    </se:StswText>
-                    <se:StswCheckBox Content="I understood and accept the risks" IsChecked="{Binding TermsAccepted}" Margin="10"/>
-                    <!-- buttons panel -->
-                    <UniformGrid HorizontalAlignment="Center" Margin="5" Rows="1">
-                        <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFnUI.True}" IsEnabled="{Binding TermsAccepted}" Margin="5" Padding="10 3">
-                            <se:StswLabel Content="Continue" IconData="{x:Static se:StswIcons.Check}" IconFill="{DynamicResource StswColor.Positive}"/>
-                        </se:StswButton>
-                        <se:StswButton Command="{Binding AcceptTermsCommand}" CommandParameter="{x:Static se:StswFnUI.False}" Margin="5" Padding="10 3">
-                            <se:StswLabel Content="Exit" IconData="{x:Static se:StswIcons.Logout}" IconFill="{DynamicResource StswColor.Negative}"/>
-                        </se:StswButton>
-                    </UniformGrid>
-                </StackPanel>
-            </DockPanel>
-        </se:StswContentDialog.DialogContent>
-
-        <se:StswContentDialog Identifier="InfoDialog">
-            <DockPanel>
-                <!-- buttons panel -->
-                <se:StswProgressBar DockPanel.Dock="Bottom"
+    <se:StswContentDialog Identifier="MainContentDialog" Loaded="{se:StswEventToCommand CommandBinding={Binding ShowTermsCommand}}">
+        <DockPanel>
+            <!-- buttons panel -->
+            <se:StswProgressBar DockPanel.Dock="Bottom"
                                     HorizontalContentAlignment="Left"
                                     Margin="3"
                                     Maximum="{Binding InstallValueMax}"
@@ -48,268 +18,267 @@
                                     Text="{Binding InstallText}"
                                     TextMode="Custom"
                                     Value="{Binding InstallValue}"/>
-                <se:StswDirectionView DockPanel.Dock="Bottom" Background="{DynamicResource StswWindow.Static.Background}" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
-                    <UniformGrid HorizontalAlignment="Center" Rows="1">
-                        <se:StswButton Command="{Binding ReloadAllCommand}" Margin="3" Padding="10 3">
-                            <se:StswLabel Content="Reload all configs" IconData="{x:Static se:StswIcons.Reload}" IconFill="{DynamicResource StswColor.Neutral}"/>
-                        </se:StswButton>
-                        <se:StswButton Command="{Binding SaveAllCommand}" Margin="3" Padding="10 3">
-                            <se:StswLabel Content="Save all changes" IconData="{x:Static se:StswIcons.ContentSaveAll}" IconFill="{DynamicResource StswColor.Modify}"/>
-                        </se:StswButton>
-                        <se:StswButton Command="{Binding InstallCommand}" Margin="3" Padding="10 3">
-                            <se:StswLabel Content="Install" IconData="{x:Static se:StswIcons.Play}" IconFill="{DynamicResource StswColor.Positive}"/>
-                        </se:StswButton>
-                        <se:StswButton Command="{Binding UninstallCommand}" Margin="3" Padding="10 3">
-                            <se:StswLabel Content="Uninstall" IconData="{x:Static se:StswIcons.TrashCan}" IconFill="{DynamicResource StswColor.Negative}"/>
-                        </se:StswButton>
-                    </UniformGrid>
-                </se:StswDirectionView>
-                <se:StswSeparator DockPanel.Dock="Bottom" Margin="0 0 0 3" Orientation="Horizontal"/>
-                <!-- rebalancer configuration -->
-                <se:StswTabControl AreTabsVisible="True" BorderThickness="0 1 0 0">
-                    <se:StswTabControl.Background>
-                        <ImageBrush ImageSource="/Resources/background.webp" Opacity="0.3" Stretch="UniformToFill"/>
-                    </se:StswTabControl.Background>
-                    <!-- main tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Main" IconData="{x:Static se:StswIcons.Cog}"/>
-                        </se:StswTabItem.Header>
-                        <se:StswScrollView>
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="750">
-                                <!-- select path -->
-                                <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
-                                    <se:StswGroupBox.Header>
-                                        <DockPanel>
-                                            <local:GifImage DockPanel.Dock="Right"
+            <se:StswDirectionView DockPanel.Dock="Bottom" Background="{DynamicResource StswWindow.Static.Background}" BBtnThickness="0 0 1 0" FBtnThickness="1 0 0 0" Orientation="Horizontal">
+                <UniformGrid HorizontalAlignment="Center" Rows="1">
+                    <se:StswButton Command="{Binding ReloadAllCommand}" Margin="3" Padding="10 3">
+                        <se:StswLabel Content="Reload all configs" IconData="{x:Static se:StswIcons.Reload}" IconFill="{DynamicResource StswColor.Neutral}"/>
+                    </se:StswButton>
+                    <se:StswButton Command="{Binding SaveAllCommand}" Margin="3" Padding="10 3">
+                        <se:StswLabel Content="Save all changes" IconData="{x:Static se:StswIcons.ContentSaveAll}" IconFill="{DynamicResource StswColor.Modify}"/>
+                    </se:StswButton>
+                    <se:StswButton Command="{Binding InstallCommand}" Margin="3" Padding="10 3">
+                        <se:StswLabel Content="Install" IconData="{x:Static se:StswIcons.Play}" IconFill="{DynamicResource StswColor.Positive}"/>
+                    </se:StswButton>
+                    <se:StswButton Command="{Binding UninstallCommand}" Margin="3" Padding="10 3">
+                        <se:StswLabel Content="Uninstall" IconData="{x:Static se:StswIcons.TrashCan}" IconFill="{DynamicResource StswColor.Negative}"/>
+                    </se:StswButton>
+                </UniformGrid>
+            </se:StswDirectionView>
+            <se:StswSeparator DockPanel.Dock="Bottom" Margin="0 0 0 3" Orientation="Horizontal"/>
+            <!-- rebalancer configuration -->
+            <se:StswTabControl AreTabsVisible="True" BorderThickness="0 1 0 0">
+                <se:StswTabControl.Background>
+                    <ImageBrush ImageSource="/Resources/background.webp" Opacity="0.3" Stretch="UniformToFill"/>
+                </se:StswTabControl.Background>
+                <!-- main tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Main" IconData="{x:Static se:StswIcons.Cog}"/>
+                    </se:StswTabItem.Header>
+                    <se:StswScrollView>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="750">
+                            <!-- select path -->
+                            <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                                <se:StswGroupBox.Header>
+                                    <DockPanel>
+                                        <local:GifImage DockPanel.Dock="Right"
                                                             Margin="-3"
                                                             Source="/Resources/misc/PointingArrow.gif"
                                                             Visibility="{Binding GamePath, Source={StaticResource Settings}, Converter={x:Static se:StswExistenceConverter.Instance}, ConverterParameter='null empty'}"
                                                             Height="24" Width="24"/>
-                                            <se:StswLabel Content="Stronghold Crusader path:" FontSize="10" FontWeight="Medium"/>
-                                        </DockPanel>
-                                    </se:StswGroupBox.Header>
-                                    
-                                    <se:StswPathPicker Margin="-3" Padding="6"
+                                        <se:StswLabel Content="Stronghold Crusader path:" FontSize="10" FontWeight="Medium"/>
+                                    </DockPanel>
+                                </se:StswGroupBox.Header>
+
+                                <se:StswPathPicker Margin="-3" Padding="6"
                                                        Placeholder="Please select Stronghold Crusader path..."
                                                        SelectedPath="{Binding GamePath, Source={StaticResource Settings}}"
                                                        SelectionUnit="OpenDirectory"
                                                        SeparatorThickness="0"
                                                        se:StswControl.IsBorderless="True"
                                                        SelectedPathChanged="{se:StswEventToCommand CommandBinding={Binding GamePathChangedCommand}}"/>
-                                </se:StswGroupBox>
-                                <!-- select configs -->
-                                <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
-                                    <se:StswGroupBox.Header>
-                                        <se:StswLabel Content="Select configs to apply:" FontSize="10" FontWeight="Medium"/>
-                                    </se:StswGroupBox.Header>
+                            </se:StswGroupBox>
+                            <!-- select configs -->
+                            <se:StswGroupBox BorderThickness="1" Margin="0 5" SeparatorThickness="1">
+                                <se:StswGroupBox.Header>
+                                    <se:StswLabel Content="Select configs to apply:" FontSize="10" FontWeight="Medium"/>
+                                </se:StswGroupBox.Header>
 
-                                    <UniformGrid Columns="2">
+                                <UniformGrid Columns="2">
 
-                                        <StackPanel Margin="3">
-                                            <StackPanel.Resources>
-                                                <Style x:Key="Header" TargetType="{x:Type se:StswLabel}">
-                                                    <Setter Property="FontWeight" Value="Bold"/>
-                                                    <Setter Property="HorizontalContentAlignment" Value="Right"/>
-                                                    <Setter Property="Width" Value="60"/>
-                                                </Style>
-                                            </StackPanel.Resources>
+                                    <StackPanel Margin="3">
+                                        <StackPanel.Resources>
+                                            <Style x:Key="Header" TargetType="{x:Type se:StswLabel}">
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                                                <Setter Property="Width" Value="60"/>
+                                            </Style>
+                                        </StackPanel.Resources>
 
-                                            <DockPanel>
-                                                <se:StswLabel Style="{StaticResource Header}">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <se:StswSubButton Command="{Binding ShowUcpExplanationCommand}"
+                                        <DockPanel>
+                                            <se:StswLabel Style="{StaticResource Header}">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <se:StswSubButton Command="{Binding ShowUcpExplanationCommand}"
                                                                           IconData="{x:Static se:StswIcons.HelpCircle}"
                                                                           IconFill="{DynamicResource StswColor.Neutral}"
                                                                           IconScale="1.25"
                                                                           Margin="1"/>
-                                                        <se:StswText Text="UCP:"/>
-                                                    </StackPanel>
-                                                </se:StswLabel>
-                                                <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3" Unchecked="{se:StswEventToCommand CommandBinding={Binding UncheckUCPCommand}}"/>
-                                            </DockPanel>
+                                                    <se:StswText Text="UCP:"/>
+                                                </StackPanel>
+                                            </se:StswLabel>
+                                            <se:StswCheckBox Content="include compatible config (recommended)" IsChecked="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3" Unchecked="{se:StswEventToCommand CommandBinding={Binding UncheckUCPCommand}}"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Options:" Style="{StaticResource Header}"/>
-                                                <se:StswCheckBox Content="include options (recommended)" IsChecked="{Binding IncludeOptions, Source={StaticResource Settings}}" IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Options:" Style="{StaticResource Header}"/>
+                                            <se:StswCheckBox Content="include options (recommended)" IsChecked="{Binding IncludeOptions, Source={StaticResource Settings}}" IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" Margin="3"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="AIC:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" ItemsSource="{Binding [aic], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="AIC:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" ItemsSource="{Binding [aic], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aic], Source={StaticResource Settings}}" Type="AIC"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="AIR:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" ItemsSource="{Binding [air], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[air], Source={StaticResource Settings}}" Type="AIR"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="AIR:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}" ItemsSource="{Binding [air], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[air], Source={StaticResource Settings}}" Type="AIR"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="AIV:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aiv], Source={StaticResource Settings}}" Type="AIV"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="AIV:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [aiv], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[aiv], Source={StaticResource Settings}}" Type="AIV"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Goods:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [goods], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[goods], Source={StaticResource Settings}}" Type="Goods"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Goods:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [goods], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[goods], Source={StaticResource Settings}}" Type="Goods"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Troops:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [troops], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[troops], Source={StaticResource Settings}}" Type="Troops"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Troops:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [troops], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[troops], Source={StaticResource Settings}}" Type="Troops"/>
+                                        </DockPanel>
 
-                                        </StackPanel>
-                                        <StackPanel Margin="3">
-                                            <StackPanel.Resources>
-                                                <Style x:Key="Header" TargetType="{x:Type se:StswLabel}">
-                                                    <Setter Property="FontWeight" Value="Bold"/>
-                                                    <Setter Property="HorizontalContentAlignment" Value="Right"/>
-                                                    <Setter Property="Width" Value="80"/>
-                                                </Style>
-                                            </StackPanel.Resources>
+                                    </StackPanel>
+                                    <StackPanel Margin="3">
+                                        <StackPanel.Resources>
+                                            <Style x:Key="Header" TargetType="{x:Type se:StswLabel}">
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                                                <Setter Property="Width" Value="80"/>
+                                            </Style>
+                                        </StackPanel.Resources>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Buildings:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[buildings], Source={StaticResource Settings}}" Type="Buildings"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Buildings:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [buildings], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[buildings], Source={StaticResource Settings}}" Type="Buildings"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Outposts:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [outposts], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[outposts], Source={StaticResource Settings}}" Type="Outposts"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Outposts:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [outposts], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[outposts], Source={StaticResource Settings}}" Type="Outposts"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Popularity:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [popularity], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[popularity], Source={StaticResource Settings}}" Type="Popularity"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Popularity:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [popularity], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[popularity], Source={StaticResource Settings}}" Type="Popularity"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Resources:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [resources], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[resources], Source={StaticResource Settings}}" Type="Resources"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Resources:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [resources], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[resources], Source={StaticResource Settings}}" Type="Resources"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Units:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [units], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[units], Source={StaticResource Settings}}" Type="Units"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Units:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [units], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[units], Source={StaticResource Settings}}" Type="Units"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Skirmish trail:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [skirmishtrail], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[skirmishtrail], Source={StaticResource Settings}}" Type="SkirmishTrail"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Skirmish trail:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [skirmishtrail], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[skirmishtrail], Source={StaticResource Settings}}" Type="SkirmishTrail"/>
+                                        </DockPanel>
 
-                                            <DockPanel>
-                                                <se:StswLabel Content="Customs:" Style="{StaticResource Header}"/>
-                                                <local:ConfigBox ItemsSource="{Binding [customs], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[customs], Source={StaticResource Settings}}" Type="Customs"/>
-                                            </DockPanel>
+                                        <DockPanel>
+                                            <se:StswLabel Content="Customs:" Style="{StaticResource Header}"/>
+                                            <local:ConfigBox ItemsSource="{Binding [customs], Source={x:Static local:StorageService.Configs}}" SelectedValue="{Binding SelectedConfigs[customs], Source={StaticResource Settings}}" Type="Customs"/>
+                                        </DockPanel>
 
-                                        </StackPanel>
-                                    </UniformGrid>
-                                </se:StswGroupBox>
-                            </StackPanel>
-                        </se:StswScrollView>
-                    </se:StswTabItem>
-                    <!-- options tab -->
-                    <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Options" IconData="{x:Static se:StswIcons.Tools}"/>
-                        </se:StswTabItem.Header>
-                        <local:OptionsView/>
-                    </se:StswTabItem>
-                    <!-- aic tab -->
-                    <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="AIC" IconData="{x:Static se:StswIcons.RobotAngryOutline}"/>
-                        </se:StswTabItem.Header>
-                        <local:AicView/>
-                    </se:StswTabItem>
-                    <!-- air tab -->
-                    <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="AIR" IconData="{x:Static se:StswIcons.FolderSwapOutline}"/>
-                        </se:StswTabItem.Header>
-                        <local:AirView/>
-                    </se:StswTabItem>
-                    <!-- aiv tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="AIV" IconData="{x:Static se:StswIcons.Castle}"/>
-                        </se:StswTabItem.Header>
-                        <local:AivView/>
-                    </se:StswTabItem>
-                    <!-- goods tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Goods" IconData="{x:Static se:StswIcons.PackageVariant}"/>
-                        </se:StswTabItem.Header>
-                        <local:GoodsView/>
-                    </se:StswTabItem>
-                    <!-- troops tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Troops" IconData="{x:Static se:StswIcons.SwordCross}"/>
-                        </se:StswTabItem.Header>
-                        <local:TroopsView/>
-                    </se:StswTabItem>
-                    <!-- buildings tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Buildings" IconData="{x:Static se:StswIcons.Warehouse}"/>
-                        </se:StswTabItem.Header>
-                        <local:BuildingsView/>
-                    </se:StswTabItem>
-                    <!-- outposts tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Outposts" IconData="{x:Static se:StswIcons.Post}"/>
-                        </se:StswTabItem.Header>
-                        <local:OutpostsView/>
-                    </se:StswTabItem>
-                    <!-- popularity tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Popularity" IconData="{x:Static se:StswIcons.EmoticonHappyOutline}"/>
-                        </se:StswTabItem.Header>
-                        <local:PopularityView/>
-                    </se:StswTabItem>
-                    <!-- resources tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Resources" IconData="{x:Static se:StswIcons.PackageVariantClosed}"/>
-                        </se:StswTabItem.Header>
-                        <local:ResourcesView/>
-                    </se:StswTabItem>
-                    <!-- units tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Units" IconData="{x:Static se:StswIcons.AccountGroupOutline}"/>
-                        </se:StswTabItem.Header>
-                        <local:UnitsView/>
-                    </se:StswTabItem>
-                    <!-- skirmishtrail tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Skirmish trail" IconData="{x:Static se:StswIcons.MapMarkerPath}"/>
-                        </se:StswTabItem.Header>
-                        <local:SkirmishTrailView/>
-                    </se:StswTabItem>
-                    <!-- customs tab -->
-                    <se:StswTabItem>
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Customs" IconData="{x:Static se:StswIcons.Variable}"/>
-                        </se:StswTabItem.Header>
-                        <local:CustomsView/>
-                    </se:StswTabItem>
-                    <!-- finder tab -->
-                    <se:StswTabItem IsEnabled="{Binding GamePath, Source={StaticResource Settings}, Converter={x:Static se:StswExistenceConverter.Instance}, ConverterParameter=!empty}">
-                        <se:StswTabItem.Header>
-                            <se:StswLabel Content="Finder" IconData="{x:Static se:StswIcons.Magnify}"/>
-                        </se:StswTabItem.Header>
-                        <local:FinderContext/>
-                    </se:StswTabItem>
-                </se:StswTabControl>
-            </DockPanel>
-        </se:StswContentDialog>
+                                    </StackPanel>
+                                </UniformGrid>
+                            </se:StswGroupBox>
+                        </StackPanel>
+                    </se:StswScrollView>
+                </se:StswTabItem>
+                <!-- options tab -->
+                <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Options" IconData="{x:Static se:StswIcons.Tools}"/>
+                    </se:StswTabItem.Header>
+                    <local:OptionsView/>
+                </se:StswTabItem>
+                <!-- aic tab -->
+                <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="AIC" IconData="{x:Static se:StswIcons.RobotAngryOutline}"/>
+                    </se:StswTabItem.Header>
+                    <local:AicView/>
+                </se:StswTabItem>
+                <!-- air tab -->
+                <se:StswTabItem IsEnabled="{Binding IncludeUCP, Source={StaticResource Settings}}">
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="AIR" IconData="{x:Static se:StswIcons.FolderSwapOutline}"/>
+                    </se:StswTabItem.Header>
+                    <local:AirView/>
+                </se:StswTabItem>
+                <!-- aiv tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="AIV" IconData="{x:Static se:StswIcons.Castle}"/>
+                    </se:StswTabItem.Header>
+                    <local:AivView/>
+                </se:StswTabItem>
+                <!-- goods tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Goods" IconData="{x:Static se:StswIcons.PackageVariant}"/>
+                    </se:StswTabItem.Header>
+                    <local:GoodsView/>
+                </se:StswTabItem>
+                <!-- troops tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Troops" IconData="{x:Static se:StswIcons.SwordCross}"/>
+                    </se:StswTabItem.Header>
+                    <local:TroopsView/>
+                </se:StswTabItem>
+                <!-- buildings tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Buildings" IconData="{x:Static se:StswIcons.Warehouse}"/>
+                    </se:StswTabItem.Header>
+                    <local:BuildingsView/>
+                </se:StswTabItem>
+                <!-- outposts tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Outposts" IconData="{x:Static se:StswIcons.Post}"/>
+                    </se:StswTabItem.Header>
+                    <local:OutpostsView/>
+                </se:StswTabItem>
+                <!-- popularity tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Popularity" IconData="{x:Static se:StswIcons.EmoticonHappyOutline}"/>
+                    </se:StswTabItem.Header>
+                    <local:PopularityView/>
+                </se:StswTabItem>
+                <!-- resources tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Resources" IconData="{x:Static se:StswIcons.PackageVariantClosed}"/>
+                    </se:StswTabItem.Header>
+                    <local:ResourcesView/>
+                </se:StswTabItem>
+                <!-- units tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Units" IconData="{x:Static se:StswIcons.AccountGroupOutline}"/>
+                    </se:StswTabItem.Header>
+                    <local:UnitsView/>
+                </se:StswTabItem>
+                <!-- skirmishtrail tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Skirmish trail" IconData="{x:Static se:StswIcons.MapMarkerPath}"/>
+                    </se:StswTabItem.Header>
+                    <local:SkirmishTrailView/>
+                </se:StswTabItem>
+                <!-- customs tab -->
+                <se:StswTabItem>
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Customs" IconData="{x:Static se:StswIcons.Variable}"/>
+                    </se:StswTabItem.Header>
+                    <local:CustomsView/>
+                </se:StswTabItem>
+                <!-- finder tab -->
+                <se:StswTabItem IsEnabled="{Binding GamePath, Source={StaticResource Settings}, Converter={x:Static se:StswExistenceConverter.Instance}, ConverterParameter=!empty}">
+                    <se:StswTabItem.Header>
+                        <se:StswLabel Content="Finder" IconData="{x:Static se:StswIcons.Magnify}"/>
+                    </se:StswTabItem.Header>
+                    <local:FinderContext/>
+                </se:StswTabItem>
+            </se:StswTabControl>
+        </DockPanel>
     </se:StswContentDialog>
 </UserControl>

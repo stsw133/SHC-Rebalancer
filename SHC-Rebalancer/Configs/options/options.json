@@ -275,7 +275,7 @@
 				{ "Version": "Crusader", "Address": "0x81ACF8", "EndAddress": "0x81ACF8", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Crusader", "Address": "0x81ACFC", "EndAddress": "0x81ACFC", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Crusader", "Address": "0x81AD17", "EndAddress": "0x81AD17", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
-				{ "Version": "Crusader", "Address": "0x81AD18", "EndAddress": "0x81AD18", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
+				{ "Version": "Crusader", "Address": "0x81AD1B", "EndAddress": "0x81AD1B", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Crusader", "Address": "0x81AD36", "EndAddress": "0x81AD36", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Crusader", "Address": "0x81AD3A", "EndAddress": "0x81AD3A", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },
 				{ "Version": "Crusader", "Address": "0x81AD56", "EndAddress": "0x81AD56", "Size": 1, "OldValue": 1, "IsNewValueDynamic": true },

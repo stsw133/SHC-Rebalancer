@@ -42,6 +42,136 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="Configs\air\Nawab\avatar_big.png" />
+    <None Remove="Configs\air\Nawab\avatar_small.png" />
+    <None Remove="Configs\air\Nawab\Nawab.png" />
+    <None Remove="Configs\air\Nawab\speech\English\add_player_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\ally_death_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\anger_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\anger_02.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\boast_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\congrats_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\extra_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\General_Message.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\helpsent_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\help_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\kick_player_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\nervous_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\nervous_02.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\noattack_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\noattack_02.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\nohelp_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\nohelp_02.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\notsent_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\plead_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\req_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\sent_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\siege_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\taunt_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\taunt_02.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\taunt_03.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\taunt_04.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\team_losing_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\team_winning_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\thanks_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\vict_01.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\vict_02.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\vict_03.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\vict_04.wav" />
+    <None Remove="Configs\air\Nawab\speech\English\willattack_01.wav" />
+    <None Remove="Configs\air\Nawab\text\English.txt" />
+    <None Remove="Configs\air\Nawab\text\Polish.txt" />
+    <None Remove="Configs\air\Nawab\videos\angry.bik" />
+    <None Remove="Configs\air\Nawab\videos\natural.bik" />
+    <None Remove="Configs\air\Nawab\videos\nervous.bik" />
+    <None Remove="Configs\air\Nawab\videos\taunt.bik" />
+    <None Remove="Configs\air\Scribe\avatar_big.png" />
+    <None Remove="Configs\air\Scribe\avatar_small.png" />
+    <None Remove="Configs\air\Scribe\Scribe.png" />
+    <None Remove="Configs\air\Scribe\speech\English\add_player_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\ally_death_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\anger_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\anger_02.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\boast_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\congrats_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\extra_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\General_Message.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\helpsent_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\help_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\kick_player_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\nervous_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\nervous_02.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\noattack_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\noattack_02.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\nohelp_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\nohelp_02.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\notsent_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\plead_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\req_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\sent_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\siege_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\taunt_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\taunt_02.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\taunt_03.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\taunt_04.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\team_losing_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\team_winning_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\thanks_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\vict_01.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\vict_02.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\vict_03.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\vict_04.wav" />
+    <None Remove="Configs\air\Scribe\speech\English\willattack_01.wav" />
+    <None Remove="Configs\air\Scribe\text\English.txt" />
+    <None Remove="Configs\air\Scribe\text\Polish.txt" />
+    <None Remove="Configs\air\Scribe\videos\angry.bik" />
+    <None Remove="Configs\air\Scribe\videos\natural.bik" />
+    <None Remove="Configs\air\Scribe\videos\nervous.bik" />
+    <None Remove="Configs\air\Scribe\videos\taunt.bik" />
+    <None Remove="Configs\air\Sergeant\avatar_big.png" />
+    <None Remove="Configs\air\Sergeant\avatar_small.png" />
+    <None Remove="Configs\air\Sergeant\Sergeant.png" />
+    <None Remove="Configs\air\Sergeant\speech\English\add_player_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\ally_death_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\anger_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\anger_02.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\boast_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\congrats_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\extra_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\General_Message.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\helpsent_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\help_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\kick_player_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\nervous_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\nervous_02.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\noattack_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\noattack_02.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\nohelp_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\nohelp_02.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\notsent_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\plead_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\req_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\sent_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\siege_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\taunt_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\taunt_02.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\taunt_03.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\taunt_04.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\team_losing_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\team_winning_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\thanks_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\vict_01.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\vict_02.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\vict_03.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\vict_04.wav" />
+    <None Remove="Configs\air\Sergeant\speech\English\willattack_01.wav" />
+    <None Remove="Configs\air\Sergeant\text\English.txt" />
+    <None Remove="Configs\air\Sergeant\text\Polish.txt" />
+    <None Remove="Configs\air\Sergeant\videos\angry.bik" />
+    <None Remove="Configs\air\Sergeant\videos\natural.bik" />
+    <None Remove="Configs\air\Sergeant\videos\nervous.bik" />
+    <None Remove="Configs\air\Sergeant\videos\taunt.bik" />
+    <None Remove="Configs\aiv\stsw\bohemond.aiv" />
     <None Remove="Configs\test.txt" />
     <None Remove="Resources\ai\Image494.png" />
     <None Remove="Resources\ai\Image496.png" />
@@ -1336,2089 +1466,244 @@
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\air\Arslan\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Arslan\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baldwin\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Baibars\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Bohemond\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Manuel\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Rogue\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Sentinel\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Nomad\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Hugh\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Melisende\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Reynald\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Kahin\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Shajar\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\Slavemaster.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Slavemaster\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Configs\air\Arslan\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configs\air\Arslan\speech\English\*.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configs\air\Arslan\text\*.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configs\air\Arslan\videos\*.bik">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	  <Content Include="Configs\air\Baibars\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Baibars\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Baibars\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Baibars\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Baldwin\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Baldwin\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Baldwin\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Baldwin\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Bohemond\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Bohemond\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Bohemond\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Bohemond\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Manuel\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Manuel\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Manuel\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Manuel\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Nawab\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Nawab\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Nawab\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Nawab\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Nomad\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Nomad\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Nomad\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Nomad\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Rogue\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Rogue\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Rogue\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Rogue\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Sentinel\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Sentinel\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Sentinel\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Sentinel\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Hugh\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Hugh\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Hugh\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Hugh\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Melisende\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Melisende\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Melisende\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Melisende\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Reynald\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Reynald\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Reynald\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Reynald\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Kahin\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Kahin\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Kahin\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Kahin\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Sergeant\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Sergeant\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Sergeant\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Sergeant\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Shajar\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Shajar\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Shajar\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Shajar\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Slavemaster\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Slavemaster\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Slavemaster\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Slavemaster\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Scribe\*.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Scribe\speech\English\*.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Scribe\text\*.txt">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Scribe\videos\*.bik">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
     <Content Include="Configs\air\stsw %28alt%29.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\air\Tamar\avatar_big.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Tamar\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+	  <Content Include="Configs\air\Tamar\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Tamar\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Tamar\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Tamar\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
     <Content Include="Configs\air\vanilla.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\air\Zengi\avatar_big.png">
+	  <Content Include="Configs\air\Zengi\*.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Zengi\speech\English\*.wav">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Zengi\text\*.txt">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Configs\air\Zengi\videos\*.bik">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+    <Content Include="Configs\aiv\stsw\*.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\air\Zengi\avatar_small.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\add_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\ally_death_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\anger_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\anger_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\boast_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\congrats_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\extra_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\General_Message.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\helpsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\help_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\kick_player_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\nervous_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\nervous_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\noattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\noattack_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\nohelp_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\nohelp_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\notsent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\plead_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\req_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\sent_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\siege_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\taunt_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\taunt_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\taunt_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\taunt_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\team_losing_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\team_winning_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\thanks_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\vict_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\vict_02.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\vict_03.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\vict_04.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\speech\English\willattack_01.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\text\English.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\text\Polish.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\videos\angry.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\videos\natural.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\videos\nervous.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\air\Zengi\videos\taunt.bik">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\arslan.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\arslan.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\melisende.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\reynald.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\rogue.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\sentinel.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\slavemaster.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\melisende.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\reynald.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\rogue.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\sentinel.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\hugh.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\hugh.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\nomad.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\kahin.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\shajar.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\nomad.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\kahin.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\shajar.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\slavemaster.aiv">
+    <Content Include="Configs\aiv\stsw\images\*.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Configs\outposts\stsw %28mp%29.json">
@@ -3427,568 +1712,47 @@
     <Content Include="Configs\outposts\stsw %28coop%29.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\ai\All.png" />
-    <Resource Include="Resources\ai\None.png" />
-    <Resource Include="Resources\buildings\None.png" />
-    <Resource Include="Resources\misc\PointingArrow.gif" />
-    <Resource Include="Resources\walldecorations\Brazier.png" />
-    <Resource Include="Resources\walldecorations\Crows.png" />
-    <Resource Include="Resources\walldecorations\Disease.png" />
-    <Resource Include="Resources\walldecorations\Explosions.png" />
-    <Resource Include="Resources\walldecorations\SmallFlag.png" />
-    <Resource Include="Resources\walldecorations\BigFlag.png" />
-    <Resource Include="Resources\walldecorations\MediumFlag.png" />
-    <Resource Include="Resources\walldecorations\GiantFlag.png" />
-    <Resource Include="Resources\walldecorations\Flames.png" />
-    <Resource Include="Resources\walldecorations\Oil.png" />
-    <Resource Include="Resources\walldecorations\Skull.png" />
-    <Content Include="Configs\aic\stsw.json">
+    <Resource Include="Resources\ai\*.png" />
+    <Resource Include="Resources\buildings\*.png" />
+    <Resource Include="Resources\misc\*.gif" />
+    <Resource Include="Resources\walldecorations\*.png" />
+    <Content Include="Configs\aic\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aic\vanilla.json">
+    <Content Include="Configs\_base\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\_base\crusader.json">
+    <Content Include="Configs\aiv\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\_base\extreme.json">
+    <Content Include="Configs\aiv\vanilla\*.aiv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw.json">
+    <Content Include="Configs\outposts\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw\abbot.aiv">
+    <Content Include="Configs\buildings\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw\caliph.aiv">
+    <Content Include="Configs\popularity\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw\emir.aiv">
+    <Content Include="Configs\options\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw\frederick.aiv">
+    <Content Include="Configs\customs\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw\images\abbot.webp">
+    <Content Include="Configs\resources\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw\images\caliph.webp">
+    <Content Include="Configs\skirmishtrail\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw\images\emir.webp">
+    <Content Include="Configs\units\*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Configs\aiv\stsw\images\frederick.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\marshal.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\nizar.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\phillip.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\pig.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\rat.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\richard.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\saladin.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\sheriff.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\snake.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\sultan.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\wazir.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\images\wolf.webp">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\marshal.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\nizar.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\phillip.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\pig.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\rat.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\richard.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\saladin.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\sheriff.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\snake.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\sultan.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\wazir.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\stsw\wolf.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Abbot1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Abbot2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Abbot3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Abbot4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Abbot5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Abbot6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Abbot7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Abbot8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\caliph1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\caliph2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\caliph3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\caliph4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\caliph5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\caliph6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\caliph7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\caliph8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Emir1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Emir2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Emir3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Emir4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Emir5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Emir6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Emir7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Emir8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\frederick1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\frederick2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\frederick3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\frederick4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\frederick5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\frederick6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\frederick7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\frederick8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\marshal1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\marshal2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\marshal3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\marshal4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\marshal5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\marshal6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\marshal7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\marshal8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Nizar1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Nizar2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Nizar3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Nizar4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Nizar5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Nizar6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Nizar7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Nizar8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\phillip1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\phillip2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\phillip3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\phillip4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\phillip5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\phillip6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\phillip7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\phillip8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\pig1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\pig2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\pig3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\pig4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\pig5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\pig6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\pig7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\pig8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\rat1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\rat2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\rat3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\rat4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\rat5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\rat6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\rat7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\rat8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\richard1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\richard2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\richard3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\richard4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\richard5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\richard6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\richard7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\richard8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\saladin1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\saladin2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\saladin3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\saladin4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\saladin5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\saladin6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\saladin7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\saladin8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\sheriff1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\sheriff2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\sheriff3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\sheriff4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\sheriff5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\sheriff6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\sheriff7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\sheriff8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\snake1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\snake2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\snake3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\snake4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\snake5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\snake6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\snake7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\snake8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Sultan1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Sultan2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Sultan3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Sultan4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Sultan5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Sultan6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Sultan7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\Sultan8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wazir1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wazir2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wazir3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wazir4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wazir5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wazir6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wazir7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wazir8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wolf1.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wolf2.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wolf3.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wolf4.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wolf5.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wolf6.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wolf7.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\aiv\vanilla\wolf8.aiv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\outposts\stsw %28sp%29.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\outposts\vanilla.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\buildings\stsw.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\buildings\vanilla.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\popularity\stsw.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\popularity\vanilla.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\options\options.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\customs\stsw.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\customs\vanilla.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\resources\stsw.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\resources\vanilla.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\skirmishtrail\stsw.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\skirmishtrail\vanilla.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\units\stsw.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\units\vanilla.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\_ucp\crusader.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\_ucp\extreme.txt">
+    <Content Include="Configs\_ucp\*.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -4001,236 +1765,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\ai\PlayerArab.png" />
-    <Resource Include="Resources\ai\PlayerEurop.png" />
-    <Resource Include="Resources\buildings\BatteringRam.png" />
-    <Resource Include="Resources\buildings\FireBallista.png" />
-    <Resource Include="Resources\buildings\PortableShield.png" />
-    <Resource Include="Resources\buildings\SiegeTower.png" />
-    <Resource Include="Resources\lords\Arab.png" />
-    <Resource Include="Resources\lords\Europ.png" />
-    <Resource Include="Resources\misc\Health.png" />
-    <Resource Include="Resources\misc\MeleeDamage.png" />
-    <Resource Include="Resources\misc\Range.png" />
-    <Resource Include="Resources\popularity\Negative.png" />
-    <Resource Include="Resources\popularity\Neutral.png" />
-    <Resource Include="Resources\popularity\Positive.png" />
-    <Resource Include="Resources\resources\None.png" />
-    <Resource Include="Resources\skirmishdifficulties\Easy.png" />
-    <Resource Include="Resources\skirmishdifficulties\Hard.png" />
-    <Resource Include="Resources\skirmishdifficulties\Medium.png" />
-    <Resource Include="Resources\skirmishdifficulties\VEasy.png" />
-    <Resource Include="Resources\skirmishdifficulties\VHard.png" />
-    <Resource Include="Resources\skirmishtrail\Map.png" />
-    <Resource Include="Resources\teams\Team1.png" />
-    <Resource Include="Resources\teams\Team2.png" />
-    <Resource Include="Resources\teams\Team3.png" />
-    <Resource Include="Resources\teams\Team4.png" />
-    <Resource Include="Resources\skirmishmodes\Normal.png" />
-    <Resource Include="Resources\skirmishmodes\Crusade.png" />
-    <Resource Include="Resources\skirmishmodes\Deathmatch.png" />
-    <Resource Include="Resources\ai\Rat.png" />
-    <Resource Include="Resources\ai\Snake.png" />
-    <Resource Include="Resources\ai\Pig.png" />
-    <Resource Include="Resources\ai\Wolf.png" />
-    <Resource Include="Resources\ai\Saladin.png" />
-    <Resource Include="Resources\ai\Caliph.png" />
-    <Resource Include="Resources\ai\Sultan.png" />
-    <Resource Include="Resources\ai\Richard.png" />
-    <Resource Include="Resources\ai\Frederick.png" />
-    <Resource Include="Resources\ai\Phillip.png" />
-    <Resource Include="Resources\ai\Wazir.png" />
-    <Resource Include="Resources\ai\Emir.png" />
-    <Resource Include="Resources\ai\Nizar.png" />
-    <Resource Include="Resources\ai\Sheriff.png" />
-    <Resource Include="Resources\ai\Marshal.png" />
-    <Resource Include="Resources\ai\Abbot.png" />
-    <Resource Include="Resources\colors\Red.png" />
-    <Resource Include="Resources\colors\Orange.png" />
-    <Resource Include="Resources\colors\Yellow.png" />
-    <Resource Include="Resources\colors\Blue.png" />
-    <Resource Include="Resources\colors\Gray.png" />
-    <Resource Include="Resources\colors\Purple.png" />
-    <Resource Include="Resources\colors\Cyan.png" />
-    <Resource Include="Resources\colors\Green.png" />
+    <Resource Include="Resources\lords\*.png" />
+    <Resource Include="Resources\misc\*.png" />
+    <Resource Include="Resources\popularity\*.png" />
+    <Resource Include="Resources\skirmishdifficulties\*.png" />
+    <Resource Include="Resources\skirmishtrail\*.png" />
+    <Resource Include="Resources\teams\*.png" />
+    <Resource Include="Resources\skirmishmodes\*.png" />
+    <Resource Include="Resources\colors\*.png" />
     <Resource Include="Resources\background.webp" />
-    <Resource Include="Resources\buildings\ArabOutpost.png" />
-    <Resource Include="Resources\buildings\Armory.png" />
-    <Resource Include="Resources\buildings\EngineersGuild.png" />
-    <Resource Include="Resources\buildings\EuropOutpost.png" />
-    <Resource Include="Resources\buildings\HopFarm.png" />
-    <Resource Include="Resources\buildings\WheatFarm.png" />
-    <Resource Include="Resources\buildings\AppleFarm.png" />
-    <Resource Include="Resources\buildings\DairyFarm.png" />
-    <Resource Include="Resources\buildings\Poleturner.png" />
-    <Resource Include="Resources\buildings\Armourer.png" />
-    <Resource Include="Resources\buildings\Tanner.png" />
-    <Resource Include="Resources\buildings\Blacksmith.png" />
-    <Resource Include="Resources\buildings\Fletcher.png" />
-    <Resource Include="Resources\buildings\Chapel.png" />
-    <Resource Include="Resources\buildings\Church.png" />
-    <Resource Include="Resources\buildings\HighCrenels.png" />
-    <Resource Include="Resources\buildings\Cathedral.png" />
-    <Resource Include="Resources\buildings\Gardens.png" />
-    <Resource Include="Resources\buildings\MayPole.png" />
-    <Resource Include="Resources\buildings\Gallows.png" />
-    <Resource Include="Resources\buildings\RoundTower.png" />
-    <Resource Include="Resources\buildings\OilSmelter.png" />
-    <Resource Include="Resources\buildings\Mangonel.png" />
-    <Resource Include="Resources\buildings\Catapult.png" />
-    <Resource Include="Resources\buildings\LowWalls.png" />
-    <Resource Include="Resources\buildings\Trebuchet.png" />
-    <Resource Include="Resources\buildings\TowerBallista.png" />
-    <Resource Include="Resources\buildings\Apothecary.png" />
-    <Resource Include="Resources\buildings\KillingPits.png" />
-    <Resource Include="Resources\buildings\Drawbridge.png" />
-    <Resource Include="Resources\buildings\WaterPot.png" />
-    <Resource Include="Resources\buildings\PitchDitch.png" />
-    <Resource Include="Resources\buildings\Well.png" />
-    <Resource Include="Resources\buildings\HighWalls.png" />
-    <Resource Include="Resources\buildings\Stocks.png" />
-    <Resource Include="Resources\buildings\Gibbet.png" />
-    <Resource Include="Resources\buildings\BurningStake.png" />
-    <Resource Include="Resources\buildings\Cesspit.png" />
-    <Resource Include="Resources\buildings\Dungeon.png" />
-    <Resource Include="Resources\buildings\StretchingRack.png" />
-    <Resource Include="Resources\buildings\ChoppingBlock.png" />
-    <Resource Include="Resources\buildings\DunkingStool.png" />
-    <Resource Include="Resources\buildings\CagedWarDogs.png" />
-    <Resource Include="Resources\buildings\Stairs.png" />
-    <Resource Include="Resources\buildings\Statue.png" />
-    <Resource Include="Resources\buildings\Shrine.png" />
-    <Resource Include="Resources\buildings\DancingBear.png" />
-    <Resource Include="Resources\buildings\LookoutTower.png" />
-    <Resource Include="Resources\buildings\HuntersHut.png" />
-    <Resource Include="Resources\buildings\Granary.png" />
-    <Resource Include="Resources\buildings\Mill.png" />
-    <Resource Include="Resources\buildings\Bakery.png" />
-    <Resource Include="Resources\buildings\Brewery.png" />
-    <Resource Include="Resources\buildings\Inn.png" />
-    <Resource Include="Resources\buildings\Marketplace.png" />
-    <Resource Include="Resources\buildings\WoodcuttersHut.png" />
-    <Resource Include="Resources\buildings\Stockpile.png" />
-    <Resource Include="Resources\buildings\Quarry.png" />
-    <Resource Include="Resources\buildings\OxTether.png" />
-    <Resource Include="Resources\buildings\PitchRig.png" />
-    <Resource Include="Resources\buildings\IronMine.png" />
-    <Resource Include="Resources\buildings\Hovel.png" />
-    <Resource Include="Resources\buildings\Keep1.png" />
-    <Resource Include="Resources\buildings\Keep2.png" />
-    <Resource Include="Resources\buildings\Keep3.png" />
-    <Resource Include="Resources\buildings\PerimeterTurret.png" />
-    <Resource Include="Resources\buildings\DefenseTurret.png" />
-    <Resource Include="Resources\buildings\SquareTower.png" />
-    <Resource Include="Resources\buildings\LargeGatehouse.png" />
-    <Resource Include="Resources\buildings\SmallGatehouse.png" />
-    <Resource Include="Resources\buildings\MercenaryPost.png" />
-    <Resource Include="Resources\buildings\Barracks.png" />
-    <Resource Include="Resources\buildings\Stables.png" />
-    <Resource Include="Resources\buildings\TunnelersGuild.png" />
     <Resource Include="Resources\icon.ico" />
-    <Resource Include="Resources\resources\Fruit.png" />
-    <Resource Include="Resources\resources\Armor.png" />
-    <Resource Include="Resources\resources\Beer.png" />
-    <Resource Include="Resources\resources\Bows.png" />
-    <Resource Include="Resources\resources\Bread.png" />
-    <Resource Include="Resources\resources\Cheese.png" />
-    <Resource Include="Resources\resources\Crossbows.png" />
-    <Resource Include="Resources\resources\Flour.png" />
-    <Resource Include="Resources\resources\Gold.png" />
-    <Resource Include="Resources\resources\Hop.png" />
-    <Resource Include="Resources\resources\Iron.png" />
-    <Resource Include="Resources\resources\Leather.png" />
-    <Resource Include="Resources\resources\Maces.png" />
-    <Resource Include="Resources\resources\Meat.png" />
-    <Resource Include="Resources\resources\Pikes.png" />
-    <Resource Include="Resources\resources\Pitch.png" />
-    <Resource Include="Resources\resources\Spears.png" />
-    <Resource Include="Resources\resources\Stone.png" />
-    <Resource Include="Resources\resources\Swords.png" />
-    <Resource Include="Resources\resources\Wheat.png" />
-    <Resource Include="Resources\resources\Wood.png" />
-    <Resource Include="Resources\units\AppleFarmer.png" />
-    <Resource Include="Resources\units\Armourer.png" />
-    <Resource Include="Resources\units\Baker.png" />
-    <Resource Include="Resources\units\Bear.png" />
-    <Resource Include="Resources\units\Blacksmith.png" />
-    <Resource Include="Resources\units\Brewer.png" />
-    <Resource Include="Resources\units\BurningBigAnimal.png" />
-    <Resource Include="Resources\units\BurningMan.png" />
-    <Resource Include="Resources\units\BurningSmallAnimal.png" />
-    <Resource Include="Resources\units\Camel.png" />
-    <Resource Include="Resources\units\Chicken.png" />
-    <Resource Include="Resources\units\Child.png" />
-    <Resource Include="Resources\units\Cow.png" />
-    <Resource Include="Resources\units\Crow.png" />
-    <Resource Include="Resources\units\DairyFarmer.png" />
-    <Resource Include="Resources\units\Deer.png" />
-    <Resource Include="Resources\units\Dog.png" />
-    <Resource Include="Resources\units\Drunkard.png" />
-    <Resource Include="Resources\units\EuropArcher.png" />
-    <Resource Include="Resources\units\EngineerWithOil.png" />
-    <Resource Include="Resources\units\FireEater.png" />
-    <Resource Include="Resources\units\Fireman.png" />
-    <Resource Include="Resources\units\Fletcher.png" />
-    <Resource Include="Resources\units\Ghost.png" />
-    <Resource Include="Resources\units\Goadman.png" />
-    <Resource Include="Resources\units\Healer.png" />
-    <Resource Include="Resources\units\HopFarmer.png" />
-    <Resource Include="Resources\units\HorseTrader.png" />
-    <Resource Include="Resources\units\Hunter.png" />
-    <Resource Include="Resources\units\Innkeeper.png" />
-    <Resource Include="Resources\units\IronMiner.png" />
-    <Resource Include="Resources\units\Jester.png" />
-    <Resource Include="Resources\units\Juggler.png" />
-    <Resource Include="Resources\units\Lady.png" />
-    <Resource Include="Resources\units\Lion.png" />
-    <Resource Include="Resources\units\Lord.png" />
-    <Resource Include="Resources\units\Mangonel.png" />
-    <Resource Include="Resources\units\Miller.png" />
-    <Resource Include="Resources\units\Monk.png" />
-    <Resource Include="Resources\units\Catapult.png" />
-    <Resource Include="Resources\units\Mother.png" />
-    <Resource Include="Resources\units\None.png" />
-    <Resource Include="Resources\units\Ox.png" />
-    <Resource Include="Resources\units\Peasant.png" />
-    <Resource Include="Resources\units\Pitchman.png" />
-    <Resource Include="Resources\units\Poleturner.png" />
-    <Resource Include="Resources\units\Porter.png" />
-    <Resource Include="Resources\units\Priest.png" />
-    <Resource Include="Resources\units\Rabbit.png" />
-    <Resource Include="Resources\units\Seagull.png" />
-    <Resource Include="Resources\units\StoneMason.png" />
-    <Resource Include="Resources\units\Tanner.png" />
-    <Resource Include="Resources\units\Tent.png" />
-    <Resource Include="Resources\units\TowerBallista.png" />
-    <Resource Include="Resources\units\Trader.png" />
-    <Resource Include="Resources\units\Trebuchet.png" />
-    <Resource Include="Resources\units\BatteringRam.png" />
-    <Resource Include="Resources\units\SiegeTower.png" />
-    <Resource Include="Resources\units\PortableShield.png" />
-    <Resource Include="Resources\units\Tunneler.png" />
-    <Resource Include="Resources\units\ArabArcher.png" />
-    <Resource Include="Resources\units\Slave.png" />
-    <Resource Include="Resources\units\Spearman.png" />
-    <Resource Include="Resources\units\Slinger.png" />
-    <Resource Include="Resources\units\Assassin.png" />
-    <Resource Include="Resources\units\HorseArcher.png" />
-    <Resource Include="Resources\units\ArabSwordsman.png" />
-    <Resource Include="Resources\units\Firethrower.png" />
-    <Resource Include="Resources\units\FireBallista.png" />
-    <Resource Include="Resources\units\Pikeman.png" />
-    <Resource Include="Resources\units\Maceman.png" />
-    <Resource Include="Resources\units\Crossbowman.png" />
-    <Resource Include="Resources\units\Swordsman.png" />
-    <Resource Include="Resources\units\Knight.png" />
-    <Resource Include="Resources\units\Ladderman.png" />
-    <Resource Include="Resources\units\Engineer.png" />
-    <Resource Include="Resources\units\WarDog.png" />
-    <Resource Include="Resources\units\WheatFarmer.png" />
-    <Resource Include="Resources\units\Wolf.png" />
-    <Resource Include="Resources\units\Woodcutter.png" />
-    <Resource Include="Resources\walldecorations\Steam.png" />
+    <Resource Include="Resources\resources\*.png" />
+    <Resource Include="Resources\units\*.png" />
     <Content Include="Configs\troops\stsw.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

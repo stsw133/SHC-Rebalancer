@@ -1,7 +1,7 @@
 {
 	"Description": "stsw config for Stronghold Crusader 1.41 UCP",
 	"AIs": {
-		"All": null,
+		"All": "Scribe",
 		"Rat": "Slavemaster",
 		"Snake": "Nomad",
 		"Pig": "Shajar",

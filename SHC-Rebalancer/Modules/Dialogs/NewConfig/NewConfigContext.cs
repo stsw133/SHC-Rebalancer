@@ -66,7 +66,7 @@ public partial class NewConfigContext : StswObservableObject
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
     bool SaveChangesCondition() => !string.IsNullOrEmpty(Name);

@@ -188,7 +188,6 @@ Below is list of buildings for every AI (in build order).
 	-2x Small gatehouse
 	-High walls
 	-High crenels
-	-Low walls
 	-Stairs
 	-1x Drawbridge
 	-Moat
@@ -458,7 +457,35 @@ Below is list of buildings for every AI (in build order).
 	-20x Good stuff (+2 to popularity)
 	
 -Bohemond (#6 in AI ranking):
-	-9x Good stuff (+1 to popularity)
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-1x Oil smelter
+	-12x House
+	-1x Church
+	-1x Healers
+	-2x Water pot
+	-1x Well
+	-3x Fletcher
+	-6x Blacksmith
+	-3x Tanner
+	-3x Armourer
+	-2x Stables
+	-10x Good stuff (+1 to popularity)
+	-4x Tower4
+	-4x Tower2
+	-2x Large gatehouse
+	-2x Small gatehouse
+	-High walls
+	-High crenels
+	-Low walls
+	-Stairs
+	-3x Drawbridge
+	-Moat
+	-Killing pits
 	
 -Hugh (#12 in AI ranking):
 	-2x Stockpile

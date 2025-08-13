@@ -1,8 +1,8 @@
 ﻿namespace SHC_Rebalancer;
-public class FinderDataModel
+public partial class FinderDataModel : StswObservableObject
 {
-    public string Address { get; set; } = string.Empty;
-    public object? Value { get; set; }
-    public bool IsInConfigFile { get; set; }
-    public string? Description { get; set; }
+    [StswObservableProperty] string _address = string.Empty;
+    [StswObservableProperty] object? _value;
+    [StswObservableProperty] bool _isInConfigFile;
+    [StswObservableProperty] string? _description;
 }

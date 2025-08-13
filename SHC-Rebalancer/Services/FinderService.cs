@@ -1,6 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using System.Globalization;
+﻿using System.Globalization;
 using System.IO;
+using System.Text;
 
 namespace SHC_Rebalancer;
 
@@ -8,29 +8,29 @@ namespace SHC_Rebalancer;
 internal static class FinderService
 {
     /// Find
-    internal static void Find(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, int filterSize, bool displayAsChar, string? filterAddress, int filterSkips, string? filterValues, int filterLimit)
+    internal static IEnumerable<FinderDataModel> Find(GameVersion gameVersion, int filterSize, bool displayAsChar, string? filterAddress, int filterSkips, string? filterValues, int filterLimit)
     {
-        finderData.Clear();
-
         var exePath = StorageService.ExePath[gameVersion];
 
-        if (!string.IsNullOrWhiteSpace(filterValues))
-            FindPatternInFile(finderData, gameVersion, File.ReadAllBytes(exePath), filterSize, displayAsChar, filterValues, filterLimit);
-        else if (!string.IsNullOrWhiteSpace(filterAddress))
-            FindAddresses(finderData, gameVersion, exePath, filterSize, displayAsChar, filterAddress, filterSkips, filterLimit);
+        if (!string.IsNullOrWhiteSpace(filterAddress))
+            return FindAddresses(gameVersion, exePath, filterSize, displayAsChar, filterAddress, filterSkips, filterLimit); 
+        else if (!string.IsNullOrWhiteSpace(filterValues))
+            return FindPatternInFile(gameVersion, File.ReadAllBytes(exePath), filterSize, displayAsChar, filterValues, filterLimit);
+        else
+            return [];
     }
 
     /// FindAddresses
-    private static void FindAddresses(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, string filePath, int filterSize, bool displayAsChar, string filterAddress, int filterSkips, int filterLimit)
+    private static IEnumerable<FinderDataModel> FindAddresses(GameVersion gameVersion, string filePath, int filterSize, bool displayAsChar, string filterAddress, int filterSkips, int filterLimit)
     {
         if (!long.TryParse(filterAddress.Replace("0x", ""), NumberStyles.HexNumber, CultureInfo.InvariantCulture, out long startAddress))
-            return;
+            yield break;
 
         using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
         using var reader = new BinaryReader(fs);
 
         if (startAddress >= reader.BaseStream.Length)
-            return;
+            yield break;
 
         reader.BaseStream.Seek(startAddress, SeekOrigin.Begin);
 
@@ -55,13 +55,13 @@ internal static class FinderService
                 ?.Key;
             var isInConfig = desc != null;
 
-            finderData.Add(new FinderDataModel
+            yield return new FinderDataModel
             {
                 Address = address.ToString("X8"),
                 Value = displayAsChar ? ((char)value).ToString() : value,
                 IsInConfigFile = isInConfig,
                 Description = desc
-            });
+            };
 
             if (filterSkips != 0)
                 reader.BaseStream.Seek(filterSkips, SeekOrigin.Current);
@@ -69,43 +69,107 @@ internal static class FinderService
     }
 
     /// FindPatternInFile
-    private static void FindPatternInFile(ObservableCollection<FinderDataModel> finderData, GameVersion gameVersion, byte[] fileBytes, int filterSize, bool displayAsChar, string filterValues, int filterLimit)
+    private static IEnumerable<FinderDataModel> FindPatternInFile(GameVersion gameVersion, byte[] fileBytes, int filterSize, bool displayAsChar, string filterValues, int filterLimit)
     {
-        var usedAddresses = GetUsedAddresses(gameVersion);
+        /// 1) compile pattern to int?[] and prepare only non-null indices/values
         var pattern = ParsePattern(filterValues, filterSize);
+        var idx = new List<int>(pattern.Length);
+        var vals = new List<int>(pattern.Length);
+        for (var j = 0; j < pattern.Length; j++)
+            if (pattern[j].HasValue)
+            {
+                idx.Add(j);
+                vals.Add(pattern[j]!.Value);
+            }
+        var idxArr = idx.Count > 0 ? idx.ToArray() : [];
+        var valsArr = vals.Count > 0 ? vals.ToArray() : [];
+
+        /// 2) select the first constant element for pre-check (if exists)
+        int m0 = -1, v0 = 0;
+        if (idxArr.Length > 0)
+        {
+            m0 = idxArr[0];
+            v0 = valsArr[0];
+        }
+
+        /// 3) compile ranges of descriptions (only for hits)
+        var ranges = GetUsedAddresses(gameVersion)
+            .Select(x => (
+                Start: Convert.ToInt32(x.Address, 16),
+                End: Convert.ToInt32(x.EndAddress ?? x.Address, 16),
+                x.Key))
+            .ToArray();
 
         var found = 0;
-        var maxIndex = fileBytes.Length - pattern.Count * filterSize;
+        var step = filterSize;
+        var lastStart = fileBytes.Length - pattern.Length * filterSize;
 
-        for (var i = 0; i <= maxIndex; i += filterSize)
+        /// 4) fast path: pattern is all wildcards — matches everywhere
+        if (idxArr.Length == 0)
         {
-            if (IsPatternMatch(fileBytes, i, pattern, filterSize))
+            for (var i = 0; i <= lastStart && found < filterLimit; i += step)
             {
-                for (var k = 0; k < pattern.Count; k++)
+                for (var k = 0; k < pattern.Length; k++)
                 {
                     var address = i + k * filterSize;
                     var value = ReadValueAsInt(fileBytes, address, filterSize);
 
-                    var desc = usedAddresses
-                        .FirstOrDefault(x => address.Between(
-                            Convert.ToInt32(x.Address, 16),
-                            Convert.ToInt32(x.EndAddress ?? x.Address, 16)))
-                        ?.Key;
-                    var isInConfig = desc != null;
+                    string? desc = null;
+                    for (var r = 0; r < ranges.Length; r++)
+                    {
+                        var rr = ranges[r];
+                        if (address >= rr.Start && address <= rr.End) { desc = rr.Key; break; }
+                    }
 
-                    finderData.Add(new FinderDataModel
+                    yield return new FinderDataModel
                     {
                         Address = $"0x{address:X}",
                         Value = displayAsChar ? ((char)value).ToString() : value,
-                        IsInConfigFile = isInConfig,
+                        IsInConfigFile = desc != null,
                         Description = desc
-                    });
+                    };
+                }
+                found++;
+            }
+            yield break;
+        }
+
+        /// 5) Iterate through the file bytes, checking for matches
+        for (int i = 0; i <= lastStart; i += step)
+        {
+            /// PRE-CHECK: check only the first value from the pattern
+            int preOffset = i + m0 * filterSize;
+            int preValue = ReadValueAsInt(fileBytes, preOffset, filterSize);
+            if (preValue != v0) continue;
+
+            /// full match check if pre-check passed
+            if (!IsPatternMatch(fileBytes, i, idxArr, valsArr, filterSize))
+                continue;
+
+            /// report the entire "piece" of the pattern (including wildcards)
+            for (int k = 0; k < pattern.Length; k++)
+            {
+                var address = i + k * filterSize;
+                var value = ReadValueAsInt(fileBytes, address, filterSize);
+
+                string? desc = null;
+                for (int r = 0; r < ranges.Length; r++)
+                {
+                    var rr = ranges[r];
+                    if (address >= rr.Start && address <= rr.End) { desc = rr.Key; break; }
                 }
 
-                found++;
-                if (found >= filterLimit)
-                    break;
+                yield return new FinderDataModel
+                {
+                    Address = $"0x{address:X}",
+                    Value = displayAsChar ? ((char)value).ToString() : value,
+                    IsInConfigFile = desc != null,
+                    Description = desc
+                };
             }
+
+            if (++found >= filterLimit)
+                yield break;
         }
     }
 
@@ -136,56 +200,119 @@ internal static class FinderService
     }
 
     /// IsPatternMatch
-    private static bool IsPatternMatch(byte[] fileBytes, int startIndex, List<object?> pattern, int filterSize)
+    private static bool IsPatternMatch(byte[] src, int startIndex, int[] idx, int[] vals, int size)
     {
-        for (var j = 0; j < pattern.Count; j++)
+        for (int m = 0; m < idx.Length; m++)
         {
-            if (pattern[j] == null)
-                continue;
-
-            var offset = startIndex + j * filterSize;
-            var value = ReadValueAsInt(fileBytes, offset, filterSize);
-
-            if (filterSize == 1)
-            {
-                if ((byte)pattern[j]! != (byte)value)
-                    return false;
-            }
-            else if (filterSize == 2)
-            {
-                if ((short)pattern[j]! != (short)value)
-                    return false;
-            }
-            else
-            {
-                if ((int)pattern[j]! != value)
-                    return false;
-            }
+            int offset = startIndex + idx[m] * size;
+            int v = ReadValueAsInt(src, offset, size);
+            if (v != vals[m]) return false;
         }
         return true;
     }
 
-    /// ParsePattern
-    private static List<object?> ParsePattern(string filterValues, int filterSize)
+    /// NormalizeToFilterSize
+    private static int NormalizeToFilterSize(int value, int filterSize) => filterSize switch
     {
-        return [.. filterValues
-            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
-            .Select(x =>
+        1 => checked((byte)value),
+        2 => checked((short)value),
+        4 => value,
+        _ => throw new NotSupportedException($"filterSize={filterSize} not supported.")
+    };
+
+    /// ParseEscapedChar
+    private static char ParseEscapedChar(string s)
+    {
+        if (s.Length == 1)
+            return s[0];
+
+        return ParseEscapedString(s) switch
+        {
+            var str when str.Length > 0 => str[0],
+            _ => '\0'
+        };
+    }
+
+    /// ParseEscapedString
+    private static string ParseEscapedString(string s)
+    {
+        var sb = new StringBuilder(s.Length);
+        for (int i = 0; i < s.Length; i++)
+        {
+            var c = s[i];
+            if (c != '\\') { sb.Append(c); continue; }
+            if (i + 1 >= s.Length) { sb.Append('\\'); break; }
+
+            var n = s[++i];
+            sb.Append(n switch
             {
-                if (x.StartsWith("'") && x.EndsWith("'") && x.Length == 3)
-                    return (object?)(byte)x[1];
+                '\\' => '\\',
+                '"' => '"',
+                '\'' => '\'',
+                'n' => '\n',
+                'r' => '\r',
+                't' => '\t',
+                // \xHH (optional)
+                'x' when i + 2 < s.Length && IsHex(s[i + 1]) && IsHex(s[i + 2]) =>
+                    (char)Convert.ToInt32(s.Substring(i + 1, 2), 16),
+                _ => n
+            });
 
-                if (x == "?")
-                    return null;
+            if (n == 'x' && i + 2 < s.Length && IsHex(s[i + 1]) && IsHex(s[i + 2]))
+                i += 2;
+        }
+        return sb.ToString();
 
-                return filterSize switch
-                {
-                    1 => (object?)byte.Parse(x),
-                    2 => (object?)short.Parse(x),
-                    4 => (object?)int.Parse(x),
-                    _ => throw new NotSupportedException($"filterSize={filterSize} not supported."),
-                };
-            })];
+        static bool IsHex(char ch) =>
+            (ch >= '0' && ch <= '9') ||
+            (ch >= 'a' && ch <= 'f') ||
+            (ch >= 'A' && ch <= 'F');
+    }
+
+    /// ParsePattern
+    private static int?[] ParsePattern(string filterValues, int filterSize)
+    {
+        var list = new List<int?>();
+
+        foreach (var token in Tokenize(filterValues))
+        {
+            var x = token.Trim();
+            if (x.Length == 0) continue;
+
+            if (x == "?")
+            {
+                list.Add(null);
+                continue;
+            }
+
+            // 'a'
+            if (x.Length >= 3 && x.StartsWith('\'') && x.EndsWith('\''))
+            {
+                var inner = x[1..^1];
+                var ch = ParseEscapedChar(inner);
+                list.Add(NormalizeToFilterSize(ch, filterSize));
+                continue;
+            }
+
+            // "abc"
+            if (x.Length >= 2 && x.StartsWith('"') && x.EndsWith('"'))
+            {
+                var inner = x[1..^1];
+                var text = ParseEscapedString(inner);
+                foreach (var ch in text)
+                    list.Add(NormalizeToFilterSize(ch, filterSize));
+                continue;
+            }
+
+            // dec/hex number
+            int number = x.StartsWith("0x", StringComparison.OrdinalIgnoreCase)
+                ? int.Parse(x.AsSpan(2), NumberStyles.HexNumber, CultureInfo.InvariantCulture)
+                : int.Parse(x, NumberStyles.Integer, CultureInfo.InvariantCulture);
+
+            list.Add(NormalizeToFilterSize(number, filterSize));
+        }
+
+        return [.. list];
     }
 
     /// ReadValueAsInt
@@ -196,4 +323,47 @@ internal static class FinderService
         4 => BitConverter.ToInt32(fileBytes, offset),
         _ => throw new NotSupportedException($"filterSize={size} not supported.")
     };
+
+    /// Tokenize
+    private static IEnumerable<string> Tokenize(string input)
+    {
+        var list = new List<string>();
+        var sb = new StringBuilder();
+        bool inDq = false, inSq = false, escape = false;
+
+        foreach (var ch in input)
+        {
+            if (escape)
+            {
+                sb.Append(ch);
+                escape = false;
+                continue;
+            }
+
+            if (ch == '\\')
+            {
+                sb.Append(ch);
+                escape = true;
+                continue;
+            }
+
+            if (ch == '"' && !inSq) { inDq = !inDq; sb.Append(ch); continue; }
+            if (ch == '\'' && !inDq) { inSq = !inSq; sb.Append(ch); continue; }
+
+            if (ch == ',' && !inDq && !inSq)
+            {
+                var piece = sb.ToString().Trim();
+                if (piece.Length > 0) list.Add(piece);
+                sb.Clear();
+                continue;
+            }
+
+            sb.Append(ch);
+        }
+
+        var last = sb.ToString().Trim();
+        if (last.Length > 0) list.Add(last);
+
+        return list;
+    }
 }

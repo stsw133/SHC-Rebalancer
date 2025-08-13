@@ -1,0 +1,51 @@
+The Conscientious Scribe
+The Honest Scribe
+The Diligent Scribe
+The Loyal Scribe
+The Observant Scribe
+The Persevering Scribe
+The Patient Scribe
+The Wise Scribe
+Scribe
+Conscientious
+Honest
+Diligent
+Loyal
+Observant
+Persevering
+Patient
+Wise
+The Scribe is your loyal envoy, messenger, and trusted bearer of news from allies. Always with a quill and parchment in hand, ready to bring you the latest reports from the front, requests for aid, or accounts of victories.
+The enemy declares their intent to seize our lands, my lord. Let us prepare.
+The enemy forces have arrived, my lord. Let us ready for battle.
+The enemy plans to attack our castle, my lord. There is no time to waste.
+The enemy seeks to claim a new castle and has set their sights on yours, my lord.
+The enemy army has been repelled, my lord. But they will surely return.
+The enemy demands that we cease the destruction of their castle, my lord.
+The enemy has sworn vengeance upon us, my lord.
+The enemy demands the withdrawal of our forces, my lord.
+The enemy wishes us to keep our distance from them, my lord.
+The enemy forces have claimed victory, my lord.
+The enemy has triumphed in battle, my lord.
+The enemy boasts of their recent victory, my lord.
+The enemy has defeated us, my lord.
+An ally requires specific goods and requests we send them, my lord.
+The goods sent to our ally have arrived safely, my lord.
+Our ally has been defeated. From now on, we must act alone, my lord.
+Our ally congratulates you on your recent success, my lord.
+Our ally has vanquished one of our shared enemies, my lord.
+Our ally urgently requests our assistance, my lord.
+Our ally sends you holiday greetings, my lord.
+Yes, my lord?
+Farewell, my lord...
+Our ally has begun the siege of an enemy castle, my lord.
+Our ally will not attack at this time, my lord.
+Our ally has refused to attack the enemy we have chosen, my lord.
+Our ally informs us they cannot assist us, my lord.
+Our ally has refused to give aid, my lord.
+Our ally will not send the goods we requested, my lord.
+Our ally has sent us goods, my lord.
+Our ally believes we are winning this war, my lord.
+Our ally believes the situation is unfavorable, my lord.
+Our ally has sent us troops in aid, my lord.
+Our ally agrees with the plan, my lord.

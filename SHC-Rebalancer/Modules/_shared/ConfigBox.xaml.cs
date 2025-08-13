@@ -58,7 +58,7 @@ public partial class ConfigBox : StswComboBox
         }
         catch (Exception ex)
         {
-            StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
 
@@ -75,7 +75,7 @@ public partial class ConfigBox : StswComboBox
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
 
@@ -95,7 +95,7 @@ public partial class ConfigBox : StswComboBox
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
     bool RenameConfigCondition() => !SettingsService.Instance.Settings.SelectedConfigs[Type].In(null, "vanilla");
@@ -114,7 +114,7 @@ public partial class ConfigBox : StswComboBox
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
     bool OpenConfigCondition() => SettingsService.Instance.Settings.SelectedConfigs[Type] != null;
@@ -135,7 +135,7 @@ public partial class ConfigBox : StswComboBox
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
     bool OpenDirectoryCondition() => SettingsService.Instance.Settings.SelectedConfigs[Type] != null;
@@ -160,7 +160,7 @@ public partial class ConfigBox : StswComboBox
         }
         catch (Exception ex)
         {
-            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name, true);
+            await StswMessageDialog.Show(ex, MethodBase.GetCurrentMethod()?.Name);
         }
     }
     bool RemoveConfigCondition() => !SettingsService.Instance.Settings.SelectedConfigs[Type].In(null, "vanilla");
