@@ -165,7 +165,6 @@
 	
 -PortableShield
 	-Wood cost 0 => 5
-	-Gold cost 5 => 50
 	
 -FireBallista
 	-Wood cost 0 => 10
@@ -534,7 +533,7 @@
 		"PortableShield": {
 			"Health": 100,
 			"Housing": 0,
-			"Cost": [ 5, 0, 0, 0, 50 ]
+			"Cost": [ 5, 0, 0, 0, 5 ]
 		},
 		"FireBallista": {
 			"Health": 100,

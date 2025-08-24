@@ -440,8 +440,8 @@ Below is list of buildings for every AI (in build order).
 	-4x Tower5
 	-4x Tower1
 	-1x Large gatehouse
-	-1x Small gatehouse
-	-1x Drawbridge
+	-3x Small gatehouse
+	-3x Drawbridge
 	-High walls
 	-High crenels
 	-Low walls
@@ -541,7 +541,37 @@ Below is list of buildings for every AI (in build order).
 	-Pitch
 	
 -Manuel (#5 in AI ranking):
+	-2x Stockpile
+	-1x Granary
+	-1x Armoury
+	-1x Trading post
+	-1x Barracks
+	-1x Engineer guild
+	-1x Mercenary post
+	-1x Tunneler guild
+	-12x House
+	-1x Church
+	-2x Chapel
+	-1x Healers
+	-2x Water pot
+	-1x Well
+	-4x Fletcher
+	-4x Blacksmith
+	-4x Armourer
+	-1x Mill
+	-9x Bakery
+	-4x Stables
 	-36x Good stuff (+5 to popularity)
+	-4x Tower4
+	-8x Tower1
+	-1x Large gatehouse
+	-3x Small gatehouse
+	-3x Drawbridge
+	-High walls
+	-High crenels
+	-Low walls
+	-Low crenels
+	-Stairs
 	
 -Melisende (#9 in AI ranking):
 	-3x Stockpile

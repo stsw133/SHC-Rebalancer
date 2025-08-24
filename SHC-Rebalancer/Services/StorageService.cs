@@ -21,7 +21,7 @@ internal static class StorageService
         { GameVersion.Crusader, Path.Combine(SettingsService.Instance.Settings.GamePath, "Stronghold Crusader.exe") },
         { GameVersion.Extreme, Path.Combine(SettingsService.Instance.Settings.GamePath, "Stronghold_Crusader_Extreme.exe") },
     };
-    public static string GameLanguage => TexService.GetTranslationAtIndex(6);
+    public static string GameLanguage { get; } = TexService.GetTranslationAtIndex(6);
 
     public static string AivPath => Path.Combine(SettingsService.Instance.Settings.GamePath, "aiv");
     public static string BaseAddressesPath => Path.Combine(AppContext.BaseDirectory, "Configs", "_base");
@@ -145,11 +145,7 @@ internal static class StorageService
     }
 
     /// ReadJsonFileAsModel
-    internal static T? ReadJsonFileAsModel<T>(string filePath, string type)
-    {
-        var obj = ReadJsonFileAsModel(filePath, type, typeof(T));
-        return (T?)obj;
-    }
+    internal static T? ReadJsonFileAsModel<T>(string filePath, string type) => (T?)ReadJsonFileAsModel(filePath, type, typeof(T));
 
     /// SaveModelIntoFile
     internal static void SaveModelIntoFile(object obj, string filePath, string folderKey)

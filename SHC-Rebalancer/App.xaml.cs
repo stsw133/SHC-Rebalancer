@@ -23,6 +23,9 @@ public partial class App : StswApp
 
     private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
     {
-        StswLog.Write(StswInfoType.Error, e.Exception.ToString());
+        if (StswFn.IsUiThreadAvailable())
+            StswMessageDialog.Show(e.Exception, "Error");
+        else
+            StswLog.WriteException(e.Exception);
     }
 }

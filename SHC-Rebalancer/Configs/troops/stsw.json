@@ -306,20 +306,19 @@
 		"Baibars":
 		{
 			"Normal": {
-				"ArabArcher": 12,
-				"ArabSwordsman": 10,
-				"FireThrower": 4,
+				"Crossbowman": 8,
+				"ArabArcher": 8,
+				"ArabSwordsman": 8,
 			},
 			"Crusade": {
-				"ArabArcher": 60,
-				"Slave": 16,
-				"ArabSwordsman": 40,
-				"FireThrower": 16,
+				"Crossbowman": 40,
+				"ArabArcher": 40,
+				"ArabSwordsman": 32,
 			},
 			"Deathmatch": {
-				"ArabArcher": 12,
-				"ArabSwordsman": 10,
-				"FireThrower": 4,
+				"Crossbowman": 8,
+				"ArabArcher": 8,
+				"ArabSwordsman": 8,
 			}
 		},
 		"Baldwin":
@@ -396,19 +395,19 @@
 		"Manuel":
 		{
 			"Normal": {
-				"Crossbowman": 8,
-				"ArabArcher": 8,
-				"ArabSwordsman": 8,
+				"EuropArcher": 12,
+				"Swordsman": 12,
+				"ArabArcher": 2,
 			},
 			"Crusade": {
-				"Crossbowman": 40,
-				"ArabArcher": 40,
-				"ArabSwordsman": 32,
+				"EuropArcher": 60,
+				"Swordsman": 40,
+				"ArabArcher": 24,
 			},
 			"Deathmatch": {
-				"Crossbowman": 8,
-				"ArabArcher": 8,
-				"ArabSwordsman": 8,
+				"EuropArcher": 12,
+				"Swordsman": 12,
+				"ArabArcher": 2,
 			}
 		},
 		"Melisende":
